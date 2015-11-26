@@ -1,0 +1,161 @@
+\documentclass[a4paper, onecolumn, 10pt]{article}
+
+    %%--Input Português/(...)--%%
+    \usepackage[english]{babel}
+    \usepackage[utf8]{inputenc}
+
+    %%--Packages Opcionais--%%
+    \usepackage{graphicx}
+    \usepackage{epstopdf}
+    \usepackage{textcomp}
+    \usepackage{amsmath}
+    \usepackage{amstext}
+    \usepackage{SIunits}
+    \usepackage{pgfplots}
+    \usepackage{float}
+    \usepackage[scale=0.80]{geometry}
+    \usepackage{enumerate}
+    \usepackage{subfig}
+    \usepackage{tabularx}
+    \usepackage{xcolor}
+    \usepackage[colorlinks=true,urlcolor=blue,linkcolor=magenta]{hyperref}
+    \usepackage{listings}
+    \DeclareMathOperator*{\argmax}{\mathbf{arg\,max\,\,}}
+
+    %%--Packages de Tipos de Letra--$$
+    \usepackage[mathscr]{euscript} 
+    %\renewcommand*\ttdefault{pcr}
+    \usepackage{libertine}
+    %\usepackage{mathptmx}
+    \usepackage{inconsolata}
+    \usepackage{carlito}
+    %%-- Customizing the Code Presentation -- %%
+    \definecolor{codegreen}{rgb}{0,0.6,0}
+    \definecolor{codegray}{rgb}{0.5,0.5,0.5}
+    \definecolor{codepurple}{rgb}{0.58,0,0.82}
+    \definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+    \definecolor{sectioncol}{HTML}{9C0906}
+    \definecolor{subsectioncol}{HTML}{CC100C}
+
+
+	\lstdefinestyle{mystyle}{
+	backgroundcolor=\color{backcolour},   
+	commentstyle=\color{codegreen},
+	keywordstyle=\color{magenta},
+	numberstyle=\ttfamily\tiny\color{codegray},
+	stringstyle=\color{codepurple},
+	basicstyle=\ttfamily\scriptsize,
+	breakatwhitespace=false,         
+	breaklines=true,                 
+	captionpos=b,                    
+	keepspaces=true,                 
+	numbers=left,                    
+	numbersep=5pt,                  
+	showspaces=false,                
+	showstringspaces=false,
+	showtabs=false,                  
+	tabsize=2
+	}
+    \lstset{style=mystyle}
+
+    %%--Cabeçalho de Rodapé--%%
+    \usepackage{fancyhdr}
+    \pagestyle{fancy}
+    \cfoot{\large\thepage}
+    \rfoot{}
+    \lhead{}
+    \chead{}
+    \rhead{}
+    \renewcommand{\headrulewidth}{0.5pt}
+    \renewcommand{\footrulewidth}{0.5pt}
+    \newcommand{\mc}[1]{\mathcal{#1}}	
+    \newcommand{\mb}[1]{\mathbf{#1}}	
+    \newcommand{\prob}[1]{\mathrm{P}\left( #1 \right)}
+    \newcommand{\compon}{X_1 = x_1^{(k)}, X_2 = x_2^{(k)}, \dots, X_D = x_D^{(k)}}
+    \newcommand{\prodBay}{\prod_{i=1}^{D} \prob{X_i = x_i^{(k)} | Y = c_j }}
+    	%%--Estilo das Secções--%%
+    \usepackage[sf]{titlesec}    
+
+    \titlespacing{\section}{0em}{2.5em}{2em}
+    \titleformat{\section}
+    {\color{sectioncol}\sffamily\scshape\Large\bfseries}
+    {\color{sectioncol}\LARGE\thesection}{1em}{}
+    
+    \titlespacing{\subsection}{1em}{1.5em}{1em}
+    \titleformat{\subsection}
+    {\color{subsectioncol}\sffamily\slshape\normalsize\bfseries}
+    {\color{subsectioncol}\thesubsection \hspace{5pt} -- }{5pt}{}
+    
+    \titlespacing{\subsubsection}{2em}{1.5em}{1em}
+    \titleformat{\subsubsection}
+    {\color{subsectioncol}\sffamily\slshape\normalsize}
+    {\color{subsectioncol}\thesubsubsection \hspace{5pt} -- }{5pt}{}
+
+    \title{\Huge PDI -- Relatório de Progresso}
+    \author{\itshape \href{mailto:ee11126@fe.up.pt}{José Pedro Castro Fonseca}   } 
+    
+\begin{document}
+
+\pagestyle{plain}
+
+\begin{figure}
+	\centering
+	\includegraphics[scale=0.3]{logo_feup.eps}
+\end{figure}
+\sffamily
+\maketitle
+
+%\vspace{80pt}
+
+%\begin{titlepage}
+%\sffamily
+%	{\huge\bfseries Machine Learning -- Homework 2} \\
+%	\vspace{20pt}
+%	{\large\itshape  José Pedro Castro Fonseca} \\
+%	\vspace{15pt}
+%	{\bfseries November 2, 2015 -- Porto, Portugal} \\
+%\end{titlepage}
+
+%\maketitle
+\rmfamily\pagestyle{fancy}
+\section{Análise Introdutória do Problema a Tratar}
+
+\section{Trabalho Realizado}
+Nesta secção é feita uma pequena demonstração das interações com o Orientador, assim como os eventos anteriores à atribuição do tema de dissertação que motivaram a proposta do mesmo.
+
+	\subsection{Pessoas Envolvidas na Dissertação}
+	Para além de mim, o Candidato ao grau de Mestre, incluem-se duas pessoas, nomeadamente
+
+	\begin{itemize}
+		\item
+			\textbf{Orientador --} O \href{https://sigarra.up.pt/feup/pt/func_geral.formview?p_codigo=210963}{Professor João Canas Ferreira}, professor Auxiliar do Departamento de Engenharia Electrotécnica e de Computadores da Faculdade de Engenharia da Universidade do Porto, e meu antigo docente da UC de \href{https://sigarra.up.pt/feup/pt/UCURR_GERAL.FICHA_UC_VIEW?pv_ocorrencia_id=352359}{Projecto de Circuitos VLSI}.
+
+			\textbf{Co-Orientador --} O \href{http://www.cl.cam.ac.uk/~ijpdmt2/}{Ivo Timóteo}, candidato a PhD em Ciência de Computadores, na área de Inteligência Artificial, na Universidade de Cambridge, Reino Unido.
+	
+	\end{itemize}	
+
+
+	\subsection{Instâncias de Interação com o Orientador}
+	As principais instâncias de interação com o orientador resumem-se nos seguintes pontos.
+	\begin{itemize}
+		\item
+			\textbf{Sondagem dos Temas Disponíveis (4 de Setembro de 2015) --} Após me ter inscrito à UC de \href{https://sigarra.up.pt/feup/pt/ucurr_geral.ficha_uc_view?pv_ocorrencia_id=374787}{Aprendizagem Computacional}, comecei a navegar um pouco pelo mundo das aplicações do Machine Learning e da forma como este pode ser acelerado com estruturas de Hardware dedicadas, ao invés de utilizar Processadores convencionais. Adicionalmente, colegas de anos anteriores sugeriram-me que o Prof. João Canas Ferreira poderia ter algum trabalho disponível nessa área. Assim, enviei um email ao Prof. João Canas Ferreira para sondar os temas que teria disponíveis nesta área, e obtive resposta positiva. Combinamos, então, uma reunião Skype em que discutiriamos com mais detalhe esta hipótese, no dia 15 de Setembro.
+
+		\item
+			\textbf{Reunião por Skype (15 de Setembro de 2015) --} Nesta reunião, o Prof. Canas deu-me a conhecer alguns projectos em concreto que tinha em mente, e a abordagem ao problema que deveria ser seguida. Acordamos, então, que ele iria submeter uma \href{https://sigarra.up.pt/feup/pt/estagios_empresas.ver_dados_proposta?p_id=191431&pv_perfil=ALU&p_aluno_id=116261}{Proposta de Tema de Dissertação}, mas não seria imediatamente alocada para mim, dado que eu gostaria de dar uma vista de olhos pelas restantes Temas, e só depois tomar uma decisão final e porque a minha média me permitiria escolher o tema em concurso normal, sem o problema de eu ser afastado pelo processo de seriação.
+
+		\item
+			\textbf{Envio da Proposta de Dissertação (17 de Setembro de 2015) --} Envio, por email, da proposta de dissertação redigida pelo Prof. Canas, para minha análise. Esta proposta é uma indicação geral do trabalho a ser desenvolvido, sendo que o algoritmo específico e o equipamento utilizado poderiam sofrer modificações com o desenrolar da pesquisa.
+
+		\item
+			\textbf{Submissão da minha lista de preferências no Concurso Normal (27 de Setembro de 2015) --} Neste dia, submeto a minha lista de preferências de escolha de tema de dissertação, em que me decido definitivamente por este tema. Informei, por email,  o Prof. Canas da mesma escolha. Sugiro a possibilidade de se incluir como co-orientador o Ivo Timóteo.
+
+		\item
+			\textbf{Reunião Presencial (5 de Novembro de 2015) --} Discussão do plano de trabalhos, dos objectivos a serem atingidos e das metodologias a serem desenvolvidas. Nesta reunião, apresentei também alguns resultados preliminares da minha primeira pesquisa sobre a matéria, e o Orientador sugere, adicionalmente, a incorporação dos eventuais resultados da dissertação num projecto em desenvolvimento no INESC, como uma possibilidade.
+
+		\item
+			\textbf{Reunião Presencial (26 de Novembro de 2015) --} Neste dia, apresento uma versão preliminar deste relatório ao Orientador para discussão, assim como uma primeira ideia de trabalho, explicada na Secção~\ref{sec:analiseProb}.
+	\end{itemize}
+
+
+\end{document}
