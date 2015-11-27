@@ -22,6 +22,9 @@
     \usepackage{listings}
     \DeclareMathOperator*{\argmax}{\mathbf{arg\,max\,\,}}
 
+    %%--Gestão de Referências Bibliográficas--%%
+    \usepackage{biblatex}
+    \bibliography{references}
     %%--Packages de Tipos de Letra--$$
     \usepackage[mathscr]{euscript} 
     %\renewcommand*\ttdefault{pcr}
@@ -119,9 +122,10 @@
 %\maketitle
 \rmfamily\pagestyle{fancy}
 \section{Análise Introdutória do Problema a Tratar}
-	
+Esta Tese de Dissertação consistirá no projecto e implementação de um Acelerador de Hardware reconfigurável -- baseado em FPGA\footnote{\textit{Field-Programmable Gate Array}, um tipo de Circuitos Integrados reconfiguráveis em Software, cuja estrutura é \textbf{descrita} usando linguagens como Verilog ou VHDL} -- para estruturas de Aprendizagem Computacional, nomeadamente \textbf{Redes Neuronais Recursivas}. 	
 	\subsection{Contexto}
-
+	As \textbf{Redes Neuronais Artificiais} são, desde o seu aparecimento nos anos 80, um dos algoritmos de classificação mais populares do mundo da Inteligência Artificial. Tal como o nome sugere, são estruturas cuja operação é inspirada na forma como os blocos constituintes do nosso cérebro, os neurónios, operam. Apesar da sua elevada performance, um dos seus \textit{shortcomings} é o facto de não conseguir reter informação de eventos anteriores na sua decisão actual, i.e. perante um vector de entrada $x_i$, a decisão sobre o vector de saída $y_i$ não possui influência directa de entradas anteriores $x_{i-1}, x_{i-2}, ...$, sendo assim desajustada para o processamento de séries temporais de dados, em que entradas actuais têm uma elevada dependência informacional e sintatica de entradas anteriores, como a análise de texto, sinais deterministicos e a predição de novos valores dessas séries.
+	Uma das formas de melhorar o aspecto anterior, foi a introdução nos anos 80 de \textbf{elementos de memória}, sendo isto feito atrvés do \textit{feedback} das camadas exteriores de decisão para as camadas interiores, ou escondidas. A estrutura que utilizarei neste trabalho serão as \textit{Long Short-Term Memory Networks} \cite{hochreiter-lstm}, apresentada em que permite a  
 
 	\subsection{Motivação}
 
@@ -137,7 +141,7 @@ Nesta secção é feita uma pequena demonstração das interações com o Orient
 	\begin{itemize}
 		\item
 			\textbf{Orientador --} O \href{https://sigarra.up.pt/feup/pt/func_geral.formview?p_codigo=210963}{Professor João Canas Ferreira}, professor Auxiliar do Departamento de Engenharia Electrotécnica e de Computadores da Faculdade de Engenharia da Universidade do Porto, e meu antigo docente da UC de \href{https://sigarra.up.pt/feup/pt/UCURR_GERAL.FICHA_UC_VIEW?pv_ocorrencia_id=352359}{Projecto de Circuitos VLSI}.
-
+		\item
 			\textbf{Co-Orientador --} O \href{http://www.cl.cam.ac.uk/~ijpdmt2/}{Ivo Timóteo}, candidato a PhD em Ciência de Computadores, na área de Inteligência Artificial, na Universidade de Cambridge, Reino Unido.
 	
 	\end{itemize}	
@@ -167,7 +171,5 @@ Nesta secção é feita uma pequena demonstração das interações com o Orient
 
 	\section{Pontos a Concretizar}
 
-	\section{Referências}
-
-
+	\printbibliography
 \end{document}
