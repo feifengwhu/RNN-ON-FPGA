@@ -1,0 +1,5 @@
+[0] Config.pm:321> INFO - This is Biber 1.9
+[0] Config.pm:324> INFO - Logfile is 'references.blg'
+[62] biber:277> INFO - === Sat Nov 28, 2015, 00:22:23
+[119] Utils.pm:160> ERROR - Cannot find control file 'references.bcf'! - did you pass the "backend=biber" option to BibLaTeX?
+[119] Biber.pm:111> INFO - ERRORS: 1

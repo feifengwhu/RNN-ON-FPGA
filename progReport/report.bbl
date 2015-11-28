@@ -1,0 +1,191 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.4 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \sortlist{none}{none}
+    \entry{hochreiter-lstm}{article}{}
+      \name{labelname}{2}{}{%
+        {{hash=41b31e29fb2bdbf9f5c9c1b0d5b3e815}{Hochreiter}{H\bibinitperiod}{Sepp}{S\bibinitperiod}{}{}{}{}}%
+        {{hash=c3a004dc2b8b6fb4dd79c5b8c1469da7}{Schmidhuber}{S\bibinitperiod}{Jurgen}{J\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{2}{}{%
+        {{hash=41b31e29fb2bdbf9f5c9c1b0d5b3e815}{Hochreiter}{H\bibinitperiod}{Sepp}{S\bibinitperiod}{}{}{}{}}%
+        {{hash=c3a004dc2b8b6fb4dd79c5b8c1469da7}{Schmidhuber}{S\bibinitperiod}{Jurgen}{J\bibinitperiod}{}{}{}{}}%
+      }
+      \list{language}{1}{%
+        {English}%
+      }
+      \strng{namehash}{ed8d27cce26f5380dbdf235ccef1a4f6}
+      \strng{fullhash}{ed8d27cce26f5380dbdf235ccef1a4f6}
+      \field{sortinit}{0}
+      \field{sortinithash}{a08a9549c5c2429f8cec5d1a581b26ca}
+      \field{labeltitle}{Long short-term memory}
+      \field{issn}{08997667}
+      \field{journaltitle}{Neural Computation}
+      \field{number}{8}
+      \field{title}{Long short-term memory}
+      \field{volume}{9}
+      \field{year}{1997}
+      \field{pages}{1735\bibrangedash 1735}
+    \endentry
+    \entry{hochreiter-hrr}{article}{}
+      \name{labelname}{6}{}{%
+        {{hash=e9d271964ec48d4099436ab756fe0d0e}{Graves}{G\bibinitperiod}{A.}{A\bibinitperiod}{}{}{}{}}%
+        {{hash=98f15ebdd047e81b2371584b7da0a2af}{Liwicki}{L\bibinitperiod}{M.}{M\bibinitperiod}{}{}{}{}}%
+        {{hash=7c706cc0d4de44a20cc9f83a9fad3e5b}{Fernandez}{F\bibinitperiod}{S.}{S\bibinitperiod}{}{}{}{}}%
+        {{hash=921ad3d273207074bd4bcf4c5a62b2a3}{Bertolami}{B\bibinitperiod}{R.}{R\bibinitperiod}{}{}{}{}}%
+        {{hash=70bcbe1cf010b2edb3370eff6b21f444}{Bunke}{B\bibinitperiod}{H.}{H\bibinitperiod}{}{}{}{}}%
+        {{hash=08804cf84eaa686cdd2168f68feb5b0f}{Schmidhuber}{S\bibinitperiod}{J.}{J\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{6}{}{%
+        {{hash=e9d271964ec48d4099436ab756fe0d0e}{Graves}{G\bibinitperiod}{A.}{A\bibinitperiod}{}{}{}{}}%
+        {{hash=98f15ebdd047e81b2371584b7da0a2af}{Liwicki}{L\bibinitperiod}{M.}{M\bibinitperiod}{}{}{}{}}%
+        {{hash=7c706cc0d4de44a20cc9f83a9fad3e5b}{Fernandez}{F\bibinitperiod}{S.}{S\bibinitperiod}{}{}{}{}}%
+        {{hash=921ad3d273207074bd4bcf4c5a62b2a3}{Bertolami}{B\bibinitperiod}{R.}{R\bibinitperiod}{}{}{}{}}%
+        {{hash=70bcbe1cf010b2edb3370eff6b21f444}{Bunke}{B\bibinitperiod}{H.}{H\bibinitperiod}{}{}{}{}}%
+        {{hash=08804cf84eaa686cdd2168f68feb5b0f}{Schmidhuber}{S\bibinitperiod}{J.}{J\bibinitperiod}{}{}{}{}}%
+      }
+      \list{language}{1}{%
+        {English}%
+      }
+      \list{location}{1}{%
+        {USA}%
+      }
+      \strng{namehash}{ae3fdce7b68b654b1031de2d87af93e0}
+      \strng{fullhash}{87d256f6a99e76a595598f8204168511}
+      \field{sortinit}{0}
+      \field{sortinithash}{a08a9549c5c2429f8cec5d1a581b26ca}
+      \field{labeltitle}{A novel connectionist system for unconstrained handwriting recognition}
+      \field{issn}{0162-8828}
+      \field{journaltitle}{IEEE Trans. Pattern Anal. Mach. Intell. (USA)}
+      \field{number}{5}
+      \field{title}{A novel connectionist system for unconstrained handwriting recognition}
+      \field{volume}{31}
+      \field{year}{2009/05/}
+      \field{pages}{855\bibrangedash 68}
+    \endentry
+    \entry{speechRec-lstm}{inproceedings}{}
+      \name{labelname}{3}{}{%
+        {{hash=dfca94b0427da7f9088af596e23b46c0}{Graves}{G\bibinitperiod}{Alex}{A\bibinitperiod}{}{}{}{}}%
+        {{hash=282778b1d5f8e44206b4d0282ff747d6}{Mohamed}{M\bibinitperiod}{Abdel-Rahman}{A\bibinithyphendelim R\bibinitperiod}{}{}{}{}}%
+        {{hash=9a8750ccdb2a4cf14d2655face1ce016}{Hinton}{H\bibinitperiod}{Geoffrey}{G\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{3}{}{%
+        {{hash=dfca94b0427da7f9088af596e23b46c0}{Graves}{G\bibinitperiod}{Alex}{A\bibinitperiod}{}{}{}{}}%
+        {{hash=282778b1d5f8e44206b4d0282ff747d6}{Mohamed}{M\bibinitperiod}{Abdel-Rahman}{A\bibinithyphendelim R\bibinitperiod}{}{}{}{}}%
+        {{hash=9a8750ccdb2a4cf14d2655face1ce016}{Hinton}{H\bibinitperiod}{Geoffrey}{G\bibinitperiod}{}{}{}{}}%
+      }
+      \list{language}{1}{%
+        {English}%
+      }
+      \list{location}{1}{%
+        {Vancouver, BC, Canada}%
+      }
+      \strng{namehash}{19305ebe70ce635e8001de9caead9991}
+      \strng{fullhash}{19305ebe70ce635e8001de9caead9991}
+      \field{sortinit}{0}
+      \field{sortinithash}{a08a9549c5c2429f8cec5d1a581b26ca}
+      \field{labeltitle}{Speech recognition with deep recurrent neural networks}
+      \field{issn}{15206149}
+      \field{journaltitle}{ICASSP, IEEE International Conference on Acoustics, Speech and Signal Processing - Proceedings}
+      \field{title}{Speech recognition with deep recurrent neural networks}
+      \field{year}{2013}
+      \field{pages}{6645\bibrangedash 6649}
+    \endentry
+    \entry{fpgalstm}{unpublished}{}
+      \name{labelname}{3}{}{%
+        {{hash=73f9a030d83d44992ea27548759e1ce9}{Chang}{C\bibinitperiod}{A.\bibnamedelimi X.\bibnamedelimi M.}{A\bibinitperiod\bibinitdelim X\bibinitperiod\bibinitdelim M\bibinitperiod}{}{}{}{}}%
+        {{hash=c118a4d41d9aa505a866a275eff62be5}{Martini}{M\bibinitperiod}{B.}{B\bibinitperiod}{}{}{}{}}%
+        {{hash=d2b4e2e32ae5f9a0c1197aeef00db913}{Culurciello}{C\bibinitperiod}{E.}{E\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{3}{}{%
+        {{hash=73f9a030d83d44992ea27548759e1ce9}{Chang}{C\bibinitperiod}{A.\bibnamedelimi X.\bibnamedelimi M.}{A\bibinitperiod\bibinitdelim X\bibinitperiod\bibinitdelim M\bibinitperiod}{}{}{}{}}%
+        {{hash=c118a4d41d9aa505a866a275eff62be5}{Martini}{M\bibinitperiod}{B.}{B\bibinitperiod}{}{}{}{}}%
+        {{hash=d2b4e2e32ae5f9a0c1197aeef00db913}{Culurciello}{C\bibinitperiod}{E.}{E\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{7c394ca39fbf3aa33091891a16f23730}
+      \strng{fullhash}{7c394ca39fbf3aa33091891a16f23730}
+      \field{sortinit}{0}
+      \field{sortinithash}{a08a9549c5c2429f8cec5d1a581b26ca}
+      \field{labeltitle}{Recurrent {N}eural {N}etworks {H}ardware {I}mplementation on {FPGA}}
+      \field{title}{Recurrent {N}eural {N}etworks {H}ardware {I}mplementation on {FPGA}}
+      \field{year}{2015/11/17}
+      \verb{url}
+      \verb http://arxiv.org/abs/1511.05552
+      \endverb
+    \endentry
+    \entry{turingcompletenessRNN}{article}{}
+      \name{labelname}{1}{}{%
+        {{hash=543b5873fbc905679e854901355751ec}{Siegelmann}{S\bibinitperiod}{H.T.}{H\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=543b5873fbc905679e854901355751ec}{Siegelmann}{S\bibinitperiod}{H.T.}{H\bibinitperiod}{}{}{}{}}%
+      }
+      \list{language}{1}{%
+        {English}%
+      }
+      \list{location}{1}{%
+        {USA}%
+      }
+      \strng{namehash}{543b5873fbc905679e854901355751ec}
+      \strng{fullhash}{543b5873fbc905679e854901355751ec}
+      \field{sortinit}{0}
+      \field{sortinithash}{a08a9549c5c2429f8cec5d1a581b26ca}
+      \field{labeltitle}{Computation beyond the {T}uring limit}
+      \field{abstract}{Extensive efforts have been made to prove the Church-Turing thesis, which suggests that all realizable dynamical and physical systems cannot be more powerful than classical models of computation. A simply described but highly chaotic dynamical system called the analog shift map is presented, which has computational power beyond the Turing limit (super-Turing); it computes exactly like neural networks and analog machines. This dynamical system is conjectured to describe natural physical phenomenal.}
+      \field{issn}{0036-8075}
+      \field{journaltitle}{Science (USA)}
+      \field{number}{5210}
+      \field{title}{Computation beyond the {T}uring limit}
+      \field{volume}{268}
+      \field{year}{1995/04/28}
+      \field{pages}{545\bibrangedash 8}
+      \verb{url}
+      \verb http://dx.doi.org/10.1126/science.268.5210.545
+      \endverb
+      \keyw{automata theory;computation theory;Turing machines;}
+    \endentry
+    \entry{turingcompletenessRNN2}{inproceedings}{}
+      \name{labelname}{2}{}{%
+        {{hash=c1168447023aab1c82069af9b1daab3b}{Cabessa}{C\bibinitperiod}{J.}{J\bibinitperiod}{}{}{}{}}%
+        {{hash=9323ed36ee36f0b0d26b649bff5f7858}{Villa}{V\bibinitperiod}{A.E.P.}{A\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{2}{}{%
+        {{hash=c1168447023aab1c82069af9b1daab3b}{Cabessa}{C\bibinitperiod}{J.}{J\bibinitperiod}{}{}{}{}}%
+        {{hash=9323ed36ee36f0b0d26b649bff5f7858}{Villa}{V\bibinitperiod}{A.E.P.}{A\bibinitperiod}{}{}{}{}}%
+      }
+      \list{language}{1}{%
+        {English}%
+      }
+      \strng{namehash}{dffb7505ec67e4a385e9f4c6d26750d8}
+      \strng{fullhash}{dffb7505ec67e4a385e9f4c6d26750d8}
+      \field{sortinit}{0}
+      \field{sortinithash}{a08a9549c5c2429f8cec5d1a581b26ca}
+      \field{labeltitle}{{R}ecurrent {N}eural {N}etworks: {A} {N}atural {M}odel of {C}omputation beyond the {T}uring {L}imits}
+      \field{abstract}{According to the Church-Turing Thesis, the classical Turing machine model is capable of capturing all possible aspects of algorithmic computation. However, in neural computation, several basic neural models were proven to be capable of computational capabilities located beyond the Turing limits. In this context, we present an overview of recent results concerning the super-Turing computational power of recurrent neural networks, and show that recurrent neural networks provide a suitable and natural model of computation beyond the Turing limits. We nevertheless don't draw any hasty conclusion about the controversial issue of a possible predominance of biological intelligence over the potentialities of artificial intelligence.}
+      \field{journaltitle}{Proceedings of the 4th International Joint Conference on Computational Intelligence (IJCCI 2012)}
+      \field{title}{{R}ecurrent {N}eural {N}etworks: {A} {N}atural {M}odel of {C}omputation beyond the {T}uring {L}imits}
+      \field{year}{2012}
+      \field{pages}{594\bibrangedash 9}
+      \keyw{recurrent neural nets;Turing machines;}
+    \endentry
+  \endsortlist
+\endrefsection
+\endinput
+
