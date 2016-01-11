@@ -1,163 +1,130 @@
-# -*- coding: utf-8 -*-
-"""
-LSTM Layer Class
-@author: José Pedro Castro Fonseca, University of Porto, PORTUGAL
-"""
 import numpy as np
+import matplotlib.pyplot as plt
 import time
+import LSTMlayer
 
-# Defines the seed for random() as the current time in seconds
-np.random.seed(round(time.time()))
+np.random.seed(5)
 
-# Evaluates the Sigmoid Function
+# compute sigmoid nonlinearity
 def sigmoid(x):
     output = 1/(1+np.exp(-x))
     return output
 
-# Evaluates the derivative of the Sigmoid Func, based on a previous sigmoid() call
+# convert output of sigmoid function to its derivative
+def sigmoid_output_to_derivative(output):
+    return output*(1-output)
+
 def sigmoidPrime(output):
     return output*(1-output)
 
-# Evaluates the derivative of the TanH Func, based on a previous np.tanh() call
 def tanhPrime(output):
     return (1-output**2)
 
-class LSTMlayer :
+# training dataset generation
+int2binary = {}
+binary_dim = 32 
 
-    def __init__(self, inputUnits, hiddenUnits, learnRate, T):
-        # The Network Parameters, passed by the user
-        self.inputUnits  = inputUnits
-        self.hiddenUnits = hiddenUnits
-        self.learnRate   = learnRate
-        self.T           = T
-        self.t           = 0
+largest_number = pow(2,binary_dim)
 
-        # Initializing the matrix weights
-        #LSTM Block
-        self.Wz = np.random.random((hiddenUnits, inputUnits)) - 0.5
-        self.Wi = np.random.random((hiddenUnits, inputUnits)) - 0.5
-        self.Wf = np.random.random((hiddenUnits, inputUnits)) - 0.5
-        self.Wo = np.random.random((hiddenUnits, inputUnits)) - 0.5
-        
-        self.Rz = np.random.random((hiddenUnits, hiddenUnits)) - 0.5
-        self.Ri = np.random.random((hiddenUnits, hiddenUnits)) - 0.5
-        self.Rf = np.random.random((hiddenUnits, hiddenUnits)) - 0.5
-        self.Ro = np.random.random((hiddenUnits, hiddenUnits)) - 0.5
-        
-        self.pi = np.random.random((hiddenUnits)) - 0.5
-        self.pf = np.random.random((hiddenUnits)) - 0.5
-        self.po = np.random.random((hiddenUnits)) - 0.5
-        
-        self.bz = np.random.random((hiddenUnits)) - 0.5
-        self.bi = np.random.random((hiddenUnits)) - 0.5
-        self.bo = np.random.random((hiddenUnits)) - 0.5
-        self.bf = np.random.random((hiddenUnits)) - 0.5
-        
-        # Updates
-        self.Wz_update = np.zeros_like(self.Wz)
-        self.Wi_update = np.zeros_like(self.Wi)
-        self.Wf_update = np.zeros_like(self.Wf)
-        self.Wo_update = np.zeros_like(self.Wo)
-        
-        self.Rz_update = np.zeros_like(self.Rz)
-        self.Ri_update = np.zeros_like(self.Ri)
-        self.Rf_update = np.zeros_like(self.Rf)
-        self.Ro_update = np.zeros_like(self.Ro)
-        
-        self.po_update = np.zeros_like(self.po)
-        self.pf_update = np.zeros_like(self.pf)
-        self.pi_update = np.zeros_like(self.pi)
-        
-        self.bz_update = np.zeros_like(self.bz)
-        self.bi_update = np.zeros_like(self.bi)
-        self.bf_update = np.zeros_like(self.bf)
-        self.bo_update = np.zeros_like(self.bo)
-        
-        # State vars
-        self.y_prev = np.zeros((hiddenUnits,self.T))
-        self.x_prev = np.zeros((inputUnits,self.T))
-        self.o_prev = np.zeros((hiddenUnits,self.T))
-        self.f_prev = np.zeros((hiddenUnits,self.T))
-        self.c_prev = np.zeros((hiddenUnits,self.T))
-        self.z_prev = np.zeros((hiddenUnits,self.T))
-        self.i_prev = np.zeros((hiddenUnits,self.T))
-        
-        self.delta_y_list = np.zeros((hiddenUnits,self.T))
-        self.delta_o_list = np.zeros((hiddenUnits,self.T))
-        self.delta_c_list = np.zeros((hiddenUnits,self.T))
-        self.delta_f_list = np.zeros((hiddenUnits,self.T))
-        self.delta_i_list = np.zeros((hiddenUnits,self.T))
-        self.delta_z_list = np.zeros((hiddenUnits,self.T))
-        
-        self.future_y = np.zeros_like(self.y_prev[:,1])
-        self.future_c = np.zeros_like(self.c_prev[:,1])
+# input variables
+alpha = 0.22
+input_dim = 2
+hidden_dim = 18 
+output_dim = 1
+
+# initialize neural network weights
+synapse_1        = 2*np.random.random(hidden_dim) - 1
+synapse_1_update = 2*np.random.random(hidden_dim) - 1
+y_prev = np.zeros((hidden_dim,binary_dim))
+lstmLayer1 = LSTMlayer.LSTMlayer(input_dim, hidden_dim, alpha, binary_dim)
+plt.axis([0, 30000, 0, 1000000])
+plt.ion()
+plt.show()
+
+total_error = 0
+prev_total_error = 0
+synapse_1_update = 0
+layer_2 = np.ndarray((1,1))
+
+# training logic
+for j in range(100000):
     
-    def forwardPropagate(self, X):    
+    # generate a simple addition problem (a + b = c)
+    a_int = np.random.randint(largest_number/2) # int version
+    a = np.binary_repr(a_int, width=binary_dim)# binary encoding
 
-        # Note that in a list, accessing [-1] corresponds to the last element appended. so y_prev[-1] == y^(t-1)
-        if (self.t != 0):                
-            self.z_prev[:,self.t] = np.tanh( np.dot(self.Wz,X) + np.dot(self.Rz,self.y_prev[:,self.t-1]) + self.bz.T ) 
-            self.i_prev[:,self.t] = sigmoid( np.dot(self.Wi,X) + np.dot(self.Ri,self.y_prev[:,self.t-1]) + np.multiply(self.pi,self.c_prev[:,self.t-1]) + self.bi.T ) 
-            self.f_prev[:,self.t] = sigmoid( np.dot(self.Wf,X) + np.dot(self.Rf,self.y_prev[:,self.t-1]) + np.multiply(self.pf,self.c_prev[:,self.t-1]) + self.bf.T ) 
-            self.c_prev[:,self.t] = np.multiply(self.z_prev[:,self.t],self.i_prev[:,self.t]) + np.multiply(self.c_prev[:,self.t-1],self.f_prev[:,self.t])
-            self.o_prev[:,self.t] = sigmoid( np.dot(self.Wo,X) + np.dot(self.Ro,self.y_prev[:,self.t-1]) + np.multiply(self.po,self.c_prev[:,self.t]) + self.bo.T )
-            self.y_prev[:,self.t] = np.multiply(np.tanh(self.c_prev[:,self.t]), self.o_prev[:,self.t])
-        else:
-            self.z_prev[:,self.t] = np.tanh( np.dot(self.Wz,X) + np.dot(self.Rz,self.future_y) + self.bz.T ) 
-            self.i_prev[:,self.t] = sigmoid( np.dot(self.Wi,X) + np.dot(self.Ri,self.future_y) + self.bi.T ) 
-            self.f_prev[:,self.t] = sigmoid( np.dot(self.Wf,X) + np.dot(self.Rf,self.future_y) + self.bf.T ) 
-            self.c_prev[:,self.t] = np.multiply(self.z_prev[:,self.t],self.i_prev[:,self.t]) + np.multiply(self.future_c,self.f_prev[:,self.t])
-            self.o_prev[:,self.t] = sigmoid( np.dot(self.Wo,X) + np.dot(self.Ro,self.future_y) + np.multiply(self.po, self.c_prev[:,self.t]) + self.bo.T )
-            self.y_prev[:,self.t] = np.multiply(np.tanh(self.c_prev[:,self.t]), self.o_prev[:,self.t])
-                
-        self.x_prev[:,self.t] = X
-        
-        if (self.t == self.T-1) :
-            self.future_y = self.y_prev[:,self.t]  # Saving the state of these variables between iterations, otherwise y_prev will be zero!
-            self.future_c = self.c_prev[:,self.t]
-            self.t = 0                             # Reset the time pointer within time frame
-            return self.y_prev[:,self.T-1]
-        else:
-            self.t += 1
-            return self.y_prev[:,self.t-1]
-        
-        
-        
-    def backPropagate_T(self, upperLayerDeltas):
-        # EVALUATING THE DELTAS
-        for t in reversed(range(self.T)):
-            if (t == self.T-1):
-                self.delta_y_list[:,t] = (upperLayerDeltas[t])
-                self.delta_o_list[:,t] = (np.multiply( np.multiply(upperLayerDeltas[t],np.tanh(self.c_prev[:,t])), sigmoidPrime(self.o_prev[:,t])))
-                self.delta_c_list[:,t] = (np.multiply(np.multiply(self.delta_y_list[:,t],tanhPrime(np.tanh(self.c_prev[:,t]))), self.o_prev[:,t]))
-            else:
-                self.delta_y_list[:,t] = (upperLayerDeltas[t] + np.dot(self.Rz,self.delta_z_list[:,t+1]) + np.dot(self.Ri,self.delta_i_list[:,t+1]) + np.dot(self.Rf,self.delta_f_list[:,t+1]) + np.dot(self.Ro,self.delta_o_list[:,t+1]))
-                self.delta_o_list[:,t] = (np.multiply( np.multiply(upperLayerDeltas[t],np.tanh(self.c_prev[:,t])), sigmoidPrime(self.o_prev[:,t])))
-                self.delta_c_list[:,t] = (np.multiply(np.multiply(self.delta_y_list[:,t],tanhPrime(np.tanh(self.c_prev[:,t]))), self.o_prev[:,t]) + np.multiply(self.delta_c_list[:,t+1],self.f_prev[:,t+1]))
-            
-            if (t != 0) :
-                self.delta_f_list[:,t] = (np.multiply(np.multiply(self.delta_c_list[:,t],self.c_prev[:,t-1]), sigmoidPrime(self.f_prev[:,t])))
-            
-            self.delta_i_list[:,t] = (np.multiply( np.multiply(self.delta_c_list[:,t],self.z_prev[:,t]), sigmoidPrime(self.i_prev[:,t])))
-            self.delta_z_list[:,t] = (np.multiply( np.multiply(self.delta_c_list[:,t],self.i_prev[:,t]), tanhPrime(self.z_prev[:,t])))
-            
-        # EVALUATING THE UPDATES
-        for t in range(self.T):
-            self.Wz += self.learnRate * np.outer(self.delta_z_list[:,t],self.x_prev[:,t])
-            self.Wi += self.learnRate * np.outer(self.delta_i_list[:,t],self.x_prev[:,t])
-            self.Wf += self.learnRate * np.outer(self.delta_f_list[:,t],self.x_prev[:,t])
-            self.Wo += self.learnRate * np.outer(self.delta_o_list[:,t],self.x_prev[:,t])
-            self.po += self.learnRate * np.multiply(self.c_prev[:,t],self.delta_o_list[:,t])
-            self.bz += self.learnRate * self.delta_z_list[:,t]
-            self.bi += self.learnRate * self.delta_i_list[:,t]
-            self.bf += self.learnRate * self.delta_f_list[:,t]
-            self.bo += self.learnRate * self.delta_o_list[:,t]
+    b_int = np.random.randint(largest_number/2) # int version
+    b = np.binary_repr(b_int, width=binary_dim) # binary encoding
 
-            if(t < self.T-1):    
-                self.Rz += self.learnRate * np.outer(self.delta_z_list[:,t+1],self.y_prev[:,t])
-                self.Ri += self.learnRate * np.outer(self.delta_i_list[:,t+1],self.y_prev[:,t])
-                self.Rf += self.learnRate * np.outer(self.delta_f_list[:,t+1],self.y_prev[:,t])
-                self.Ro += self.learnRate * np.outer(self.delta_o_list[:,t+1],self.y_prev[:,t])
-                self.pi += self.learnRate * np.multiply(self.c_prev[:,t],self.delta_i_list[:,t+1])
-                self.pf += self.learnRate * np.multiply(self.c_prev[:,t],self.delta_f_list[:,t+1])
+    # true answer
+    c_int = a_int + b_int
+    c = np.binary_repr(c_int, width=binary_dim) 
+    
+    # where we'll store our best guess (binary encoded)
+    d = list()
 
+    overallError = 0
+    
+    layer_2_deltas = list()
+    layer_1_values = list()
+    layer_1_values.append(np.zeros(hidden_dim))
+
+
+    # -------------- THE FORWARD PROPAGATION STEP -------------- #
+    for position in range(binary_dim):
+        
+        # generate input and output
+        X = np.array([int(a[binary_dim - position - 1]), int(b[binary_dim - position - 1])]).T
+        y = np.array([int(c[binary_dim - position - 1])]).T
+
+        # Perform a forward propagation through the network
+        y_prev[:,position] = lstmLayer1.forwardPropagate(X)
+        
+        # Output Layer (uses output from LSTM, i.e y_curr).
+        layer_2 = sigmoid(np.dot(y_prev[:,position], synapse_1))
+
+        # did we miss?... if so, by how much?
+        layer_2_error = y[0] - layer_2
+        layer_2_deltas.append((layer_2_error)*sigmoid_output_to_derivative(layer_2))
+    
+        # decode estimate so we can print it out
+        d.append(str(int(np.round(layer_2))))
+        overallError += np.abs(y - np.round(layer_2))
+        total_error += overallError
+        
+    future_layer_1_delta = np.zeros(hidden_dim)
+
+    # -------------- THE BACKPROPAGATION STEP -------------- #
+    
+    # FOR THE OUTPUT LAYER
+    for position in range(binary_dim):
+
+        layer_1      = y_prev[:,-position-1]
+        # error at output layer
+        layer_2_delta = layer_2_deltas[-position-1]
+
+        # let's update all our weights so we can try again
+        synapse_1_update += layer_1 * layer_2_delta
+
+    synapse_1 += synapse_1_update * alpha
+    synapse_1_update *= 0
+  
+    # FOR THE LSTM LAYER
+    lstmLayer1.backPropagate_T(layer_2_deltas)
+    
+    # print out progress
+    if(j % 200 == 0):
+        res = str()
+        for i in reversed(range(len(d))):
+            res += str(d[i])
+
+        print("Error:" + str(overallError))
+        print("Error Increase:" + str(total_error))
+        print("Pred:" + res)
+        print("True:" + str(c))
+        print("Iteration:" + str(j))
+        print(str(a_int) + " + " + str(b_int) + " = " + res )
+        print("------------")
+        plt.scatter(j, total_error, linestyle='-.')
+        plt.draw()
+        prev_total_error = total_error
