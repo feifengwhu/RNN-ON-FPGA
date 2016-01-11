@@ -1,0 +1,12 @@
+\select@language {english}
+\contentsline {chapter}{\numberline {1}Theoretical Background}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Basic Concepts of Machine Learning}{1}{section.1.1}
+\contentsline {section}{\numberline {1.2}Artificial Neural Networks}{2}{section.1.2}
+\contentsline {section}{\numberline {1.3}Recurrent Neural Networks}{4}{section.1.3}
+\contentsline {section}{\numberline {1.4}Long Short-Term Memory Networks}{4}{section.1.4}
+\contentsline {chapter}{\numberline {A}Loren Ipsum}{7}{appendix.A}
+\contentsline {section}{\numberline {A.1}O que \IeC {\'e} o \emph {Loren Ipsum}?}{7}{section.A.1}
+\contentsline {section}{\numberline {A.2}De onde Vem o Loren?}{7}{section.A.2}
+\contentsline {section}{\numberline {A.3}Porque se usa o Loren?}{8}{section.A.3}
+\contentsline {section}{\numberline {A.4}Onde se Podem Encontrar Exemplos?}{8}{section.A.4}
+\contentsline {chapter}{References}{9}{section*.11}

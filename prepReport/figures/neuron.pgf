@@ -1,0 +1,32 @@
+\usetikzlibrary{positioning}
+
+%% --- Declaring the Shapes --- %%
+
+
+\tikzstyle{invnode}=[rectangle, minimum size=6mm, rounded corners=3mm, very thick, draw=white, top color=white]
+\tikzstyle{node}=[circle, radius=10mm, rounded corners=3mm, very thick, draw=black, top color=white]
+
+%% --- Building the image --- %%
+
+\begin{tikzpicture}
+	
+	%% Inputs
+	\node (l1n1)           [invnode]                                        {$x_1$};
+	\node (l1n2)           [invnode, below = of l1n1]              {$x_2$};
+	\node (l1n3)           [invnode, below = of l1n2]              {$x_3$};
+	\node (ldots)          [invnode, below = of l1n3]	          {$\vdots$};
+	\node (l1n4)           [invnode, below = of ldots]             {$x_n$};
+	\node (bias)           [invnode, right   = 4.28cm of l1n1]       {$b_0$};
+	%% Activation node and output
+	\node (acivf)           [node, right = 4cm of l1n3]			  {$f(\cdot)$};
+	\node (output)       [invnode, right = 3cm of acivf]	 	  {$y$};
+
+	%% Connections
+	\draw[->] (l1n1) -- (acivf) node[midway, above=3pt]{$w_1$} ; 
+	\draw[->] (l1n2) -- (acivf) node[midway, above=3pt]{$w_2$};	
+	\draw[->] (l1n3) -- (acivf) node[midway, above=3pt]{$w_3$};
+	\draw[->] (l1n4) -- (acivf) node[midway, above=3pt]{$w_n$};
+	\draw[->] (bias) -- (acivf) node[midway, right=3pt]   {$1$};
+	\draw[->] (acivf) -- (output);
+
+\end{tikzpicture}

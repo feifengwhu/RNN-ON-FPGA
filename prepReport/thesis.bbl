@@ -1,0 +1,49 @@
+\begin{thebibliography}{5}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Bengio(1991)]{Bengio1991}
+Yoshua Bengio.
+\newblock \emph{Artificial Neural Networks and Their Application to Sequence
+  Recognition}.
+\newblock PhD thesis, McGill University, Montreal, Que., Canada, Canada, 1991.
+\newblock UMI Order No. GAXNN-72116 (Canadian dissertation).
+
+\bibitem[Bengio et~al.(1994)Bengio, Simard, and Frasconi]{Yoshua94}
+Yoshua Bengio, Patrice Simard, and Paolo Frasconi.
+\newblock Learning long-term dependencies with gradient descent is difficult.
+\newblock \emph{IEEE Transactions on Neural Networks}, 5\penalty0 (2):\penalty0
+  157 -- 166, 1994.
+\newblock ISSN 10459227.
+\newblock URL \url{http://dx.doi.org/10.1109/72.279181}.
+\newblock Gradient based learning algorithms;Information latching;Input/output
+  sequences;Learning algorithms;Parametric dynamical system;Recurrent neural
+  network training;Temporal contingencies;.
+
+\bibitem[Bishop(2006)]{Bishop2006}
+Christopher~M. Bishop.
+\newblock \emph{Pattern Recognition and Machine Learning (Information Science
+  and Statistics)}.
+\newblock Springer-Verlag New York, Inc., Secaucus, NJ, USA, 2006.
+\newblock ISBN 0387310738.
+
+\bibitem[Hochreiter and Schmidhuber(1997)]{Hoch97}
+S.~Hochreiter and J.~Schmidhuber.
+\newblock Long short-term memory.
+\newblock \emph{Neural Computation}, 9\penalty0 (8):\penalty0 1735 -- 80, 1997.
+\newblock ISSN 0899-7667.
+\newblock URL \url{http://dx.doi.org/10.1162/neco.1997.9.8.1735}.
+
+\bibitem[Hochreiter et~al.(2001)Hochreiter, Bengio, Frasconi, and
+  Schmidhuber]{Yoshua01}
+Sepp Hochreiter, Yoshua Bengio, Paolo Frasconi, and Jürgen Schmidhuber.
+\newblock Gradient flow in recurrent nets: the difficulty of learning long-term
+  dependencies.
+\newblock 2001.
+\newblock URL
+  \url{http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.24.7321}.
+
+\end{thebibliography}
