@@ -91,6 +91,9 @@ class LSTMlayer :
         
         self.future_y = np.zeros_like(self.y_prev[:,1])
         self.future_c = np.zeros_like(self.c_prev[:,1])
+
+        # Delta vectors for a previous layer
+        self.delta_x = np.zeros((inputUnits,self.T))
     
     def forwardPropagate(self, X):    
 
@@ -127,12 +130,12 @@ class LSTMlayer :
         # EVALUATING THE DELTAS
         for t in reversed(range(self.T)):
             if (t == self.T-1):
-                self.delta_y_list[:,t] = (upperLayerDeltas[t])
-                self.delta_o_list[:,t] = (np.multiply( np.multiply(upperLayerDeltas[t],np.tanh(self.c_prev[:,t])), sigmoidPrime(self.o_prev[:,t])))
+                self.delta_y_list[:,t] = (upperLayerDeltas[:,t])
+                self.delta_o_list[:,t] = (np.multiply( np.multiply(upperLayerDeltas[:,t],np.tanh(self.c_prev[:,t])), sigmoidPrime(self.o_prev[:,t])))
                 self.delta_c_list[:,t] = (np.multiply(np.multiply(self.delta_y_list[:,t],tanhPrime(np.tanh(self.c_prev[:,t]))), self.o_prev[:,t]))
             else:
-                self.delta_y_list[:,t] = (upperLayerDeltas[t] + np.dot(self.Rz,self.delta_z_list[:,t+1]) + np.dot(self.Ri,self.delta_i_list[:,t+1]) + np.dot(self.Rf,self.delta_f_list[:,t+1]) + np.dot(self.Ro,self.delta_o_list[:,t+1]))
-                self.delta_o_list[:,t] = (np.multiply( np.multiply(upperLayerDeltas[t],np.tanh(self.c_prev[:,t])), sigmoidPrime(self.o_prev[:,t])))
+                self.delta_y_list[:,t] = (upperLayerDeltas[:,t] + np.dot(self.Rz,self.delta_z_list[:,t+1]) + np.dot(self.Ri,self.delta_i_list[:,t+1]) + np.dot(self.Rf,self.delta_f_list[:,t+1]) + np.dot(self.Ro,self.delta_o_list[:,t+1]))
+                self.delta_o_list[:,t] = (np.multiply( np.multiply(upperLayerDeltas[:,t],np.tanh(self.c_prev[:,t])), sigmoidPrime(self.o_prev[:,t])))
                 self.delta_c_list[:,t] = (np.multiply(np.multiply(self.delta_y_list[:,t],tanhPrime(np.tanh(self.c_prev[:,t]))), self.o_prev[:,t]) + np.multiply(self.delta_c_list[:,t+1],self.f_prev[:,t+1]))
             
             if (t != 0) :
@@ -140,6 +143,7 @@ class LSTMlayer :
             
             self.delta_i_list[:,t] = (np.multiply( np.multiply(self.delta_c_list[:,t],self.z_prev[:,t]), sigmoidPrime(self.i_prev[:,t])))
             self.delta_z_list[:,t] = (np.multiply( np.multiply(self.delta_c_list[:,t],self.i_prev[:,t]), tanhPrime(self.z_prev[:,t])))
+            self.delta_x[:,t] = np.dot(self.Wz.T,self.delta_z_list[:,t]) + np.dot(self.Wi.T,self.delta_i_list[:,t]) + np.dot(self.Wf.T,self.delta_f_list[:,t]) + np.dot(self.Wo.T,self.delta_o_list[:,t]) 
             
         # EVALUATING THE UPDATES
         for t in range(self.T):
@@ -160,4 +164,6 @@ class LSTMlayer :
                 self.Ro += self.learnRate * np.outer(self.delta_o_list[:,t+1],self.y_prev[:,t])
                 self.pi += self.learnRate * np.multiply(self.c_prev[:,t],self.delta_i_list[:,t+1])
                 self.pf += self.learnRate * np.multiply(self.c_prev[:,t],self.delta_f_list[:,t+1])
+
+        return  self.delta_x
 
