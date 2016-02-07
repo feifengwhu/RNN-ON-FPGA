@@ -99,12 +99,15 @@ Figure~\ref{fig:recneuron} suggests a possible structure for a neuron of a hidde
 
 %% METE AQUI A FIGURA
 
-FALAR EM BPTT
+The training of an RNN is usually performed using a variation of Backpropagation, called \textbf{Backpropagation Through Time} (BPTT), that as the name implies, performs the same backpropagation procedure discussed for the ANNs, but now taking into account the unfolding of the network through a fixed training epoch $T$ like Figure~\ref{fig:recneuron}. Due to this very fact, this training procedure is memory and performance consuming, and so it will not be used in my final work, but instead a novel approach, the \textbf{Simulatneous Perturbation Stochastic Approximation}. 
 
-Even though RNNs outperform static ANNs in sequence recognition problems~\cite{Bengio1991}, they fail to retain long-term dependencies. Of course that the weight training process is itself a form of memory, but the problem is that the weight update is much slower than the activations~\cite{Yoshua01}, and therefore this memory only retains short-term dependencies. This is because of the so-called \textbf{Vanishing Gradients Problem}~\cite{Yoshua94,Yoshua01}, where the error decays exponentially through time, and the impact of previous incoming data points on the training of the weights quickly decrease. 
+Even though RNNs outperform static ANNs in sequence recognition problems~\cite{Bengio1991}, they fail to retain long-term dependencies. Of course that the weight training process is itself a form of memory, but the problem is that the weight update is much slower than the activations~\cite{Yoshua01}, and therefore this memory only retains short-term dependencies. This is because of the so-called \textbf{Vanishing Gradients Problem}~\cite{Yoshua94,Yoshua01}, where the error decays exponentially through time, and the impact of previous incoming data points on the training of the weights, and thus the current decision, quickly decreases. 
 
-To overcome this issue, Hochreiter and Schmidhüber proposed, in 1997, a novel approach, called the Long-Short Term Network~\cite{Hoch97}. The next section explains the main structure of this approach, and also how it is trained, serving as a support basis for the work of this thesis.
+To overcome this issue, Hochreiter and Schmidhüber proposed, in 1997, a novel approach, called the Long-Short Term Network~\cite{Hoch97}. The next section explains the main idea of this approach~\ref{sec:struct_lstm}, and also how it is trained\ref{sec:training_lstm}, serving as a support basis for the work of this thesis.
 
 \section{Long Short-Term Memory Networks}\label{sec:theorBack_lstm}
 
+\subsection{Structure, Operation and Equations}\label{sec:struct_lstm}
+
+\subsection{Training -- SPSA}\label{sec:training_lstm}
 
