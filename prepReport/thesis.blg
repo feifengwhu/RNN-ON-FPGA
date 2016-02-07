@@ -1,4 +1,4 @@
-This is BibTeX, Version 0.99d (TeX Live 2015/dev/Debian)
+This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: thesis.aux
 A level-1 auxiliary file: abstract.aux
@@ -8,6 +8,14 @@ A level-1 auxiliary file: abbrevs.aux
 A level-1 auxiliary file: theorBack.aux
 A level-1 auxiliary file: appendix1.aux
 The style file: plainnat.bst
+Illegal, another \bibstyle command---line 36 of file thesis.aux
+ : \bibstyle
+ :          {IEEETran}
+I'm skipping whatever remains of this command
+Illegal, another \bibdata command---line 37 of file thesis.aux
+ : \bibdata
+ :         {bibliography}
+I'm skipping whatever remains of this command
 Database file #1: bibliography.bib
 Warning--I didn't find a database entry for "kn:Lip08"
 Warning--empty journal in Yoshua01
@@ -52,4 +60,4 @@ warning$ -- 1
 while$ -- 17
 width$ -- 0
 write$ -- 87
-(There were 2 warnings)
+(There were 2 error messages)

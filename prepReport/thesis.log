@@ -1,15 +1,15 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.10.24)  26 DEC 2015 23:15
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.1.26)  1 FEB 2016 12:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **thesis.tex
 (./thesis.tex
-LaTeX2e <2014/05/01>
-Babel <3.9l> and hyphenation patterns for 79 languages loaded.
+LaTeX2e <2011/06/27>
+Babel <3.9h> and hyphenation patterns for 78 languages loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/report.cls
-Document Class: report 2014/09/29 v1.4h Standard LaTeX document class
+Document Class: report 2007/10/19 v1.4h Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/size11.clo
-File: size11.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+File: size11.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
 \c@chapter=\count80
@@ -25,19 +25,19 @@ File: size11.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 \bibindent=\dimen102
 )
 (/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
-Package: inputenc 2014/04/30 v1.2b Input encoding file
+Package: inputenc 2008/03/30 v1.1d Input encoding file
 \inpenc@prehook=\toks14
 \inpenc@posthook=\toks15
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def
-File: utf8.def 2014/09/29 v1.1m UTF-8 support for inputenc
+File: utf8.def 2008/04/05 v1.1m UTF-8 support for inputenc
 Now handling font encoding OML ...
 ... no UTF-8 mapping file for font encoding OML
 Now handling font encoding T1 ...
 ... processing UTF-8 mapping file for font encoding T1
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/t1enc.dfu
-File: t1enc.dfu 2014/09/29 v1.1m UTF-8 support for inputenc
+File: t1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A1 (decimal 161)
    defining Unicode char U+00A3 (decimal 163)
    defining Unicode char U+00AB (decimal 171)
@@ -187,7 +187,7 @@ Now handling font encoding OT1 ...
 ... processing UTF-8 mapping file for font encoding OT1
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/ot1enc.dfu
-File: ot1enc.dfu 2014/09/29 v1.1m UTF-8 support for inputenc
+File: ot1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A1 (decimal 161)
    defining Unicode char U+00A3 (decimal 163)
    defining Unicode char U+00B8 (decimal 184)
@@ -218,7 +218,7 @@ Now handling font encoding OMS ...
 ... processing UTF-8 mapping file for font encoding OMS
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/omsenc.dfu
-File: omsenc.dfu 2014/09/29 v1.1m UTF-8 support for inputenc
+File: omsenc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A7 (decimal 167)
    defining Unicode char U+00B6 (decimal 182)
    defining Unicode char U+00B7 (decimal 183)
@@ -252,7 +252,7 @@ Package: caption3 2013/05/02 v1.6-88 caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 57.
 
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
-Package: keyval 2014/05/08 v1.15 key=value parser (DPC)
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks16
 )
 \captionmargin=\dimen103
@@ -284,13 +284,13 @@ File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
 ))
 (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
-Package: babel 2014/09/25 3.9l The Babel package
+Package: babel 2013/12/03 3.9h The Babel package
 
 (/usr/share/texlive/texmf-dist/tex/generic/babel-english/english.ldf
 Language: english 2012/08/20 v3.3p English support from the babel system
 
 (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
-File: babel.def 2014/09/25 3.9l Babel common definitions
+File: babel.def 2013/12/03 3.9h Babel common definitions
 \babel@savecnt=\count91
 \U@D=\dimen110
 )
@@ -364,7 +364,7 @@ Package: couriers 2004/07/10 Scaled Courier (HS)
 Package: helvet 2005/04/12 PSNFSS-v9.2a (WaS) 
 )
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
-Package: graphicx 2014/04/25 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
@@ -399,7 +399,7 @@ Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 Package: setspace 2011/12/19 v6.7a set line spacing
 )
 (/usr/share/texlive/texmf-dist/tex/latex/base/makeidx.sty
-Package: makeidx 2014/09/29 v1.0m Standard LaTeX package
+Package: makeidx 2000/03/29 v1.0m Standard LaTeX package
 ) (./lineno.sty
 Package: lineno 2005/11/02 line numbers on paragraphs v4.41
 \linenopenalty=\count96
@@ -562,26 +562,41 @@ Package hyperref Info: Option `colorlinks' set `true' on input line 497.
 \openout2 = `mymacros.aux'.
 
 (./mymacros.tex) (./thesis.aux (./abstract.aux) (./acknows.aux) (./quote.aux)
-(./abbrevs.aux) (./theorBack.aux) (./appendix1.aux))
+(./abbrevs.aux) (./theorBack.aux) (./appendix1.aux)
+
+Package natbib Warning: Citation `Bengio1991' multiply defined.
+
+
+Package natbib Warning: Citation `Yoshua94' multiply defined.
+
+
+Package natbib Warning: Citation `Bishop2006' multiply defined.
+
+
+Package natbib Warning: Citation `Hoch97' multiply defined.
+
+
+Package natbib Warning: Citation `Yoshua01' multiply defined.
+
+)
 \openout1 = `thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Try loading font information for T1+ptm on input line 60.
-
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1ptm.fd
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Try loading font information for T1+ptm on input line 57.
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1ptm.fd
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 )
 Package caption Info: Begin \AtBeginDocument code.
@@ -654,14 +669,14 @@ e
 \AtBeginShipoutBox=\box30
 
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
-Package: color 2014/04/23 v1.1a Standard LaTeX Color (DPC)
+Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
 
 (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/color.cfg
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
-Package color Info: Driver file: pdftex.def on input line 137.
+Package color Info: Driver file: pdftex.def on input line 130.
 )
-Package hyperref Info: Link coloring ON on input line 60.
+Package hyperref Info: Link coloring ON on input line 57.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -671,9 +686,9 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count120
 )
-LaTeX Info: Redefining \ref on input line 60.
-LaTeX Info: Redefining \pageref on input line 60.
-LaTeX Info: Redefining \nameref on input line 60.
+LaTeX Info: Redefining \ref on input line 57.
+LaTeX Info: Redefining \pageref on input line 57.
+LaTeX Info: Redefining \nameref on input line 57.
 
 (./thesis.out) (./thesis.out)
 \@outlinefile=\write3
@@ -681,17 +696,17 @@ LaTeX Info: Redefining \nameref on input line 60.
 
 \@crestbox=\box31
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 101.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 98.
 LaTeX Font Info:    Font shape `T1/ptm/bx/sc' in size <14.4> not available
-(Font)              Font shape `T1/ptm/b/sc' tried instead on input line 101.
+(Font)              Font shape `T1/ptm/b/sc' tried instead on input line 98.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <24.88> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 101.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 98.
 
 <figures/uporto-feup.pdf, id=64, 338.26375pt x 126.4725pt>
 File: figures/uporto-feup.pdf Graphic file (type pdf)
 
 <use figures/uporto-feup.pdf>
-Package pdftex.def Info: figures/uporto-feup.pdf used on input line 101.
+Package pdftex.def Info: figures/uporto-feup.pdf used on input line 98.
 (pdftex.def)             Requested size: 204.85983pt x 76.59618pt.
  [-3
 
@@ -700,19 +715,18 @@ Package pdftex.def Info: figures/uporto-feup.pdf used on input line 101.
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./figures/uporto-feup.pdf>
 ]
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 101.
-
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 98.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 101.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 98.
  [-2
 
 ]
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <17.28> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 101.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 98.
  [-1
 
 
@@ -829,96 +843,98 @@ Underfull \vbox (badness 6380) has occurred while \output is active []
 
 
 ]
+[2]
 Package epstopdf Info: Source file: <figures/neuron.eps>
-(epstopdf)                    date: 2015-12-23 15:27:05
+(epstopdf)                    date: 2016-02-01 10:23:30
 (epstopdf)                    size: 122444 bytes
 (epstopdf)             Output file: <figures/neuron-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-12-23 15:27:37
+(epstopdf)                    date: 2016-02-01 10:23:30
 (epstopdf)                    size: 10626 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/neuron-eps-convert
 ed-to.pdf figures/neuron.eps>
-(epstopdf)             \includegraphics on input line 33.
+(epstopdf)             \includegraphics on input line 35.
 Package epstopdf Info: Output file is already uptodate.
-
-<figures/neuron-eps-converted-to.pdf, id=199, 275.0275pt x 212.795pt>
+ <figures/neuron-eps-converted-to.pdf, id=206, 275.0275pt x 212.795pt>
 File: figures/neuron-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/neuron-eps-converted-to.pdf>
 Package pdftex.def Info: figures/neuron-eps-converted-to.pdf used on input line
- 33.
+ 35.
 (pdftex.def)             Requested size: 192.0548pt x 148.60155pt.
 
-<figures/multipolarNeuron.png, id=200, 627.34375pt x 404.51125pt>
+<figures/multipolarNeuron.png, id=207, 627.34375pt x 404.51125pt>
 File: figures/multipolarNeuron.png Graphic file (type png)
 
 <use figures/multipolarNeuron.png>
-Package pdftex.def Info: figures/multipolarNeuron.png used on input line 39.
+Package pdftex.def Info: figures/multipolarNeuron.png used on input line 41.
 (pdftex.def)             Requested size: 192.0548pt x 123.83559pt.
 
-Overfull \hbox (2.0805pt too wide) in paragraph at lines 31--43
+Overfull \hbox (2.0805pt too wide) in paragraph at lines 33--45
 []$[]$ $[]$ 
  []
 
-[2]
 Package epstopdf Info: Source file: <figures/activFunc.eps>
-(epstopdf)                    date: 2015-12-23 17:17:28
+(epstopdf)                    date: 2016-02-01 10:23:30
 (epstopdf)                    size: 130968 bytes
 (epstopdf)             Output file: <figures/activFunc-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-12-23 17:34:49
+(epstopdf)                    date: 2016-02-01 10:23:30
 (epstopdf)                    size: 14077 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/activFunc-eps-conv
 erted-to.pdf figures/activFunc.eps>
-(epstopdf)             \includegraphics on input line 53.
+(epstopdf)             \includegraphics on input line 55.
 Package epstopdf Info: Output file is already uptodate.
- <figures/activFunc-eps-converted-to.pdf, id=214, 578.16pt x 433.62pt>
+<figures/activFunc-eps-converted-to.pdf, id=213, 578.16pt x 433.62pt>
 File: figures/activFunc-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/activFunc-eps-converted-to.pdf>
 Package pdftex.def Info: figures/activFunc-eps-converted-to.pdf used on input l
-ine 53.
+ine 55.
 (pdftex.def)             Requested size: 384.1096pt x 288.0824pt.
 Package epstopdf Info: Source file: <figures/ann.eps>
-(epstopdf)                    date: 2015-12-25 19:22:39
+(epstopdf)                    date: 2016-02-01 10:23:30
 (epstopdf)                    size: 158518 bytes
 (epstopdf)             Output file: <figures/ann-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-12-25 19:26:29
+(epstopdf)                    date: 2016-02-01 10:23:30
 (epstopdf)                    size: 12583 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/ann-eps-converted-
 to.pdf figures/ann.eps>
-(epstopdf)             \includegraphics on input line 64.
+(epstopdf)             \includegraphics on input line 66.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/ann-eps-converted-to.pdf, id=216, 442.65375pt x 290.08376pt>
+<figures/ann-eps-converted-to.pdf, id=215, 442.65375pt x 290.08376pt>
 File: figures/ann-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/ann-eps-converted-to.pdf>
-Package pdftex.def Info: figures/ann-eps-converted-to.pdf used on input line 64
+Package pdftex.def Info: figures/ann-eps-converted-to.pdf used on input line 66
 .
 (pdftex.def)             Requested size: 384.1096pt x 251.73343pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
  [3]
 
-LaTeX Warning: Reference `fig:recneuron' on page 4 undefined on input line 96.
+LaTeX Warning: Reference `fig:recneuron' on page 4 undefined on input line 98.
 
-) [4] [5 <./figures/neuron-eps-converted-to.pdf> <./figures/multipolarNeuron.pn
-g> <./figures/activFunc-eps-converted-to.pdf>] [6 <./figures/ann-eps-converted-
-to.pdf>]
+[4]) [5] [6 <./figures/neuron-eps-converted-to.pdf> <./figures/multipolarNeuron
+.png> <./figures/activFunc-eps-converted-to.pdf>] [7 <./figures/ann-eps-convert
+ed-to.pdf>]
 \openout2 = `appendix1.aux'.
 
- (./appendix1.tex
+ (./appendix1.tex [8
+
+
+
+]
 Appendix A.
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <14.4> not available
 (Font)              Font shape `T1/ptm/b/it' tried instead on input line 7.
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <10.95> not available
 (Font)              Font shape `T1/ptm/b/it' tried instead on input line 9.
 
-Package natbib Warning: Citation `kn:Lip08' on page 7 undefined on input line 1
+Package natbib Warning: Citation `kn:Lip08' on page 9 undefined on input line 1
 7.
 
-[7
-
-
-
-]) [8] (./thesis.bbl
+[9]) [10] (./thesis.bbl
 LaTeX Font Info:    Try loading font information for T1+pcrs on input line 21.
 
 (/usr/share/texlive/texmf-dist/tex/latex/courier-scaled/t1pcrs.fd
@@ -927,36 +943,71 @@ File: t1pcrs.fd 2004/07/09 scalable font definitions for T1/pcrs.
 LaTeX Font Info:    Font shape `T1/pcrs/m/n' will be
 (Font)              scaled to size 10.40245pt on input line 21.
 )
+(./thesis.bbl [11
+
+
+
+] [12
+
+]pdfTeX warning (ext4): destination with the same identifier (name{cite.Bengio1
+991}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.8 \bibitem[Bengio(1991)]{Bengio1991}
+                                      pdfTeX warning (ext4): destination with t
+he same identifier (name{cite.Yoshua94}) has been already used, duplicate ignor
+ed
+<to be read again> 
+                   \relax 
+l.15 ...94)Bengio, Simard, and Frasconi]{Yoshua94}
+                                                  pdfTeX warning (ext4): destin
+ation with the same identifier (name{cite.Bishop2006}) has been already used, d
+uplicate ignored
+<to be read again> 
+                   \relax 
+l.26 \bibitem[Bishop(2006)]{Bishop2006}
+                                       pdfTeX warning (ext4): destination with 
+the same identifier (name{cite.Hoch97}) has been already used, duplicate ignore
+d
+<to be read again> 
+                   \relax 
+l.33 ...[Hochreiter and Schmidhuber(1997)]{Hoch97}
+                                                  pdfTeX warning (ext4): destin
+ation with the same identifier (name{cite.Yoshua01}) has been already used, dup
+licate ignored
+<to be read again> 
+                   \relax 
+l.41   Schmidhuber]{Yoshua01}
+                             )
 
 Package natbib Warning: There were undefined citations.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 144.
-[9
 
+Package natbib Warning: There were multiply defined citations.
 
-
-]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 144.
- (./thesis.aux (./abstract.aux) (./acknows.aux) (./quote.aux) (./abbrevs.aux) (
-./theorBack.aux) (./appendix1.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 144.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 144.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 142.
+[13]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 142.
+ (./thesis.aux (./abstract.aux) (./acknows.aux) (./quote.aux)
+(./abbrevs.aux) (./theorBack.aux) (./appendix1.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 142.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 142.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: 73C176AC1DD8D5525BF616DF660C0CE1;974.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 144.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 142.
  ) 
 Here is how much of TeX's memory you used:
- 8642 strings out of 493105
- 127056 string characters out of 6137071
- 225756 words of memory out of 5000000
- 11811 multiletter control sequences out of 15000+600000
+ 8631 strings out of 493304
+ 126881 string characters out of 6139871
+ 222469 words of memory out of 5000000
+ 11787 multiletter control sequences out of 15000+600000
  73838 words of font info for 91 fonts, out of 8000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 42i,11n,45p,1345b,499s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 957 hyphenation exceptions out of 8191
+ 42i,12n,45p,1346b,499s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist
@@ -973,10 +1024,10 @@ urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi
 8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/sh
 are/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on thesis.pdf (29 pages, 322708 bytes).
+Output written on thesis.pdf (33 pages, 326703 bytes).
 PDF statistics:
- 398 PDF objects out of 1000 (max. 8388607)
- 338 compressed objects within 4 object streams
- 67 named destinations out of 1000 (max. 500000)
+ 420 PDF objects out of 1000 (max. 8388607)
+ 356 compressed objects within 4 object streams
+ 72 named destinations out of 1000 (max. 500000)
  146 words of extra memory for PDF output out of 10000 (max. 10000000)
 
