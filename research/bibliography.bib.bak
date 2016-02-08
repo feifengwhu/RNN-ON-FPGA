@@ -91,25 +91,6 @@
   File                     = {:nn_2005.pdf:PDF}
 }
 
-@Article{Graves2005,
-  Title                    = {Framewise phoneme classification with bidirectional LSTM and other neural network architectures},
-  Author                   = {Graves, A. and Schmidhuber, J.},
-  Journal                  = {Neural Networks},
-  Year                     = {2005},
-  Note                     = {framewise phoneme classification;bidirectional LSTM;neural network architectures;bidirectional long short term memory networks;LSTM learning algorithm;TIMIT database;recurrent neural nets;multilayer perceptrons;contextual information;speech processing;},
-  Number                   = { 5-6},
-  Pages                    = {602 - 10},
-  Volume                   = { 18},
-
-  Abstract                 = {In this paper, we present bidirectional Long Short Term Memory (LSTM) networks, and a modified, full gradient version of the LSTM learning algorithm. We evaluate Bidirectional LSTM (BLSTM) and several other network architectures on the benchmark task of framewise phoneme classification, using the TIMIT database. Our main findings are that bidirectional networks outperform unidirectional ones, and Long Short Term Memory (LSTM) is much faster and also more accurate than both standard Recurrent Neural Nets (RNNs) and time-windowed Multilayer Perceptrons (MLPs). Our results support the view that contextual information is crucial to speech processing, and suggest that BLSTM is an effective architecture with which to exploit it.<sup>1</sup>1An abbreviated version of some portions of this article appeared in (Graves and Schmidhuber, 2005), as part of the IJCNN 2005 conference proceedings, published under the IEEE copyright. [All rights reserved Elsevier].},
-  Address                  = {UK},
-  Copyright                = {Copyright 2006, IEE},
-  ISSN                     = {0893-6080},
-  Keywords                 = {multilayer perceptrons;neural net architecture;pattern classification;recurrent neural nets;speech processing;},
-  Language                 = {English},
-  Url                      = {http://dx.doi.org/10.1016/j.neunet.2005.06.042}
-}
-
 @Article{Greff15,
   Title                    = {{LSTM:} {A} Search Space Odyssey},
   Author                   = {Klaus Greff and Rupesh Kumar Srivastava and Jan Koutn{\'{\i}}k and Bas R. Steunebrink and J{\"{u}}rgen Schmidhuber},
@@ -122,6 +103,25 @@
   File                     = {:lstm_asearchspaceodyssey.pdf:PDF},
   Timestamp                = {Thu, 09 Apr 2015 11:33:20 +0200},
   Url                      = {http://arxiv.org/abs/1503.04069}
+}
+
+@Article{Hirokami05,
+  Title                    = {Estimation using simultaneous perturbation stochastic approximation},
+  Author                   = {Hirokami, T. and Maeda, Y. and Tsukada, H.},
+  Journal                  = {Electrical Engineering in Japan},
+  Year                     = {2006/01/30},
+  Note                     = {simultaneous perturbation stochastic approximation;Kiefer-Wolfowitz stochastic approximation algorithm;parameter estimation algorithm;convergence theorem;identification scheme;},
+  Number                   = { 2},
+  Pages                    = {30 - 9},
+  Volume                   = { 154},
+
+  Abstract                 = {The simultaneous perturbation stochastic approximation (SPSA) is an extension of the Kiefer-Wolfowitz stochastic approximation algorithm. In SPSA, since all parameters are perturbed simultaneously, it is possible to modify parameters with only two measurements of an evaluation function regardless of the dimension of the parameter. We propose a parameter estimation algorithm using the SPSA. A convergence theorem for the proposed algorithm is shown. A simulation result also reveals the feasibility of the identification scheme proposed here.},
+  Address                  = {USA},
+  Copyright                = {Copyright 2006, The Institution of Engineering and Technology},
+  ISSN                     = {0424-7760},
+  Keywords                 = {approximation theory;convergence of numerical methods;parameter estimation;perturbation techniques;stochastic processes;},
+  Language                 = {English},
+  Url                      = {http://dx.doi.org/10.1002/eej.20239}
 }
 
 @Article{Yoshua01,
@@ -144,9 +144,29 @@
 
   Address                  = {USA},
   Copyright                = {Copyright 1997, IEE},
+  File                     = {:Hochreiter97_lstm.pdf:PDF},
   ISSN                     = {0899-7667},
   Language                 = {English},
   Url                      = {http://dx.doi.org/10.1162/neco.1997.9.8.1735}
+}
+
+@Article{Maeda05,
+  Title                    = {Simultaneous perturbation learning rule for recurrent neural networks and its FPGA implementation},
+  Author                   = {Maeda, Y. and Wakamura, M.},
+  Journal                  = {IEEE Transactions on Neural Networks},
+  Year                     = {2005},
+  Note                     = {perturbation learning rule;recurrent neural network;FPGA;dynamic information processing;feedforward neural network;recursive learning scheme;correlation learning;analog learning;oscillatory solution;hardware implementation;Hopfield neural network;field-programmable gate array;},
+  Number                   = { 6},
+  Pages                    = {1664 - 72},
+  Volume                   = { 16},
+
+  Abstract                 = {Recurrent neural networks have interesting properties and can handle dynamic information processing unlike ordinary feedforward neural networks. However, they are generally difficult to use because there is no convenient learning scheme. In this paper, a recursive learning scheme for recurrent neural networks using the simultaneous perturbation method is described. The detailed procedure of the scheme for recurrent neural networks is explained. Unlike ordinary correlation learning, this method is applicable to analog learning and the learning of oscillatory solutions of recurrent neural networks. Moreover, as a typical example of recurrent neural networks, we consider the hardware implementation of Hopfield neural networks using a field-programmable gate array (FPGA). The details of the implementation are described. Two examples of a Hopfield neural network system for analog and oscillatory targets are shown. These results show that the learning scheme proposed here is feasible.},
+  Address                  = {USA},
+  Copyright                = {Copyright 2005, IEE},
+  ISSN                     = {1045-9227},
+  Keywords                 = {analogue computer circuits;feedforward neural nets;field programmable gate arrays;learning (artificial intelligence);perturbation techniques;recurrent neural nets;},
+  Language                 = {English},
+  Url                      = {http://dx.doi.org/10.1109/TNN.2005.852237}
 }
 
 @Article{Werbos90,

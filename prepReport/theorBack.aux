@@ -11,30 +11,52 @@
 \newlabel{eq:gradDesc}{{1.3}{3}{Artificial Neural Networks}{equation.1.2.3}{}}
 \newlabel{eq:partialE}{{1.4}{3}{Artificial Neural Networks}{equation.1.2.4}{}}
 \citation{Bishop2006}
-\citation{Bengio1991}
-\citation{Yoshua01}
-\citation{Yoshua94,Yoshua01}
 \newlabel{eq:deltaj}{{1.5}{4}{Artificial Neural Networks}{equation.1.2.5}{}}
 \newlabel{eq:update}{{1.6}{4}{Artificial Neural Networks}{equation.1.2.6}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {1.3}Recurrent Neural Networks}{4}{section.1.3}}
 \newlabel{sec:theorBack_rnn}{{1.3}{4}{Recurrent Neural Networks}{section.1.3}{}}
+\citation{Bengio1991}
+\citation{Yoshua01}
+\citation{Yoshua94,Yoshua01}
 \citation{Hoch97}
+\citation{Gers00}
+\citation{Gers2000}
+\citation{Graves05}
+\citation{Greff15}
 \@writefile{toc}{\contentsline {section}{\numberline {1.4}Long Short-Term Memory Networks}{5}{section.1.4}}
 \newlabel{sec:theorBack_lstm}{{1.4}{5}{Long Short-Term Memory Networks}{section.1.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.4.1}Structure, Operation and Equations}{5}{subsection.1.4.1}}
+\newlabel{sec:struct_lstm}{{1.4.1}{5}{Structure, Operation and Equations}{subsection.1.4.1}{}}
+\citation{Greff15}
+\citation{Graves05}
+\citation{Graves05}
+\citation{Graves05}
+\citation{Hoch97}
+\citation{Greff15}
+\citation{Spall98}
+\citation{Maeda05}
+\citation{Maeda05}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.4.2}Training -- SPSA}{7}{subsection.1.4.2}}
+\newlabel{sec:training_lstm}{{1.4.2}{7}{Training -- SPSA}{subsection.1.4.2}{}}
+\newlabel{eq:spsa_weightUpdate}{{1.13}{7}{Training -- SPSA}{equation.1.4.13}{}}
+\newlabel{eq:spsa_updateRule}{{1.14}{7}{Training -- SPSA}{equation.1.4.14}{}}
+\newlabel{eq:spsa_gradProof}{{1.15}{7}{Training -- SPSA}{equation.1.4.15}{}}
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
-\newlabel{fig:modelNeuron_a}{{1.1a}{6}{Neural Network Node\relax }{figure.caption.8}{}}
-\newlabel{sub@fig:modelNeuron_a}{{a}{6}{Neural Network Node\relax }{figure.caption.8}{}}
-\newlabel{fig:modelNeuron_b}{{1.1b}{6}{Biological Neuron Diagram\relax }{figure.caption.8}{}}
-\newlabel{sub@fig:modelNeuron_b}{{b}{6}{Biological Neuron Diagram\relax }{figure.caption.8}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1.1}{\ignorespaces In Figure~\ref  {fig:modelNeuron_a}. each input feature $x_i$ is weighted by its corresponding weight $w_i$. During the training procedure, these weights are adjusted so that the output $y$ approaches the target value. In Figure~\ref  {fig:modelNeuron_b}, we see the diagram of an actual multi polar neuron. The dendrites, where the stimuli are received, plays a role similar to that of the input nodes. The axon transmits the signal to the synaptic terminals, that are similar to the $y$ output\relax }}{6}{figure.caption.8}}
-\newlabel{fig:modelNeuron}{{1.1}{6}{In Figure~\ref {fig:modelNeuron_a}. each input feature $x_i$ is weighted by its corresponding weight $w_i$. During the training procedure, these weights are adjusted so that the output $y$ approaches the target value. In Figure~\ref {fig:modelNeuron_b}, we see the diagram of an actual multi polar neuron. The dendrites, where the stimuli are received, plays a role similar to that of the input nodes. The axon transmits the signal to the synaptic terminals, that are similar to the $y$ output\relax }{figure.caption.8}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1.2}{\ignorespaces Three different activation functions. As you can see, the hyperbolic tangent has the same extreme value as the sign step function, but has a smooth transition between them, which can be interpreted as a \emph  {soft decision} in the more ambiguous middle region, reflecting the degree of uncertainty on the decision. On the other hand, the sigmoid function goes from zero to one, and is also smooth like the hyperbolic tangent\relax }}{6}{figure.caption.9}}
-\newlabel{fig:activFunc}{{1.2}{6}{Three different activation functions. As you can see, the hyperbolic tangent has the same extreme value as the sign step function, but has a smooth transition between them, which can be interpreted as a \emph {soft decision} in the more ambiguous middle region, reflecting the degree of uncertainty on the decision. On the other hand, the sigmoid function goes from zero to one, and is also smooth like the hyperbolic tangent\relax }{figure.caption.9}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1.3}{\ignorespaces A three layer ANN. We have omitted some of the connections in the hidden layer, for simplification purposes. $\mathbf  {w}_1$ represents the weight matrix of the input layer, $\mathbf  {w}_2$ the weight matrix of the connections between the input layer and the hidden layer, and $\mathbf  {w}_3$ the weight connections between the hidden and the output layer. $f_{ij}(\dots  )$ is the activation function of the $j$-th neuron of the $i$-th layer. Since they can be different, I chose different indexes to each.\relax }}{7}{figure.caption.10}}
-\newlabel{fig:neuralnet}{{1.3}{7}{A three layer ANN. We have omitted some of the connections in the hidden layer, for simplification purposes. $\mb {w}_1$ represents the weight matrix of the input layer, $\mb {w}_2$ the weight matrix of the connections between the input layer and the hidden layer, and $\mb {w}_3$ the weight connections between the hidden and the output layer. $f_{ij}(\dots )$ is the activation function of the $j$-th neuron of the $i$-th layer. Since they can be different, I chose different indexes to each.\relax }{figure.caption.10}{}}
+\newlabel{fig:modelNeuron_a}{{1.1a}{8}{Neural Network Node\relax }{figure.caption.8}{}}
+\newlabel{sub@fig:modelNeuron_a}{{a}{8}{Neural Network Node\relax }{figure.caption.8}{}}
+\newlabel{fig:modelNeuron_b}{{1.1b}{8}{Biological Neuron Diagram\relax }{figure.caption.8}{}}
+\newlabel{sub@fig:modelNeuron_b}{{b}{8}{Biological Neuron Diagram\relax }{figure.caption.8}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.1}{\ignorespaces In Figure~\ref  {fig:modelNeuron_a}. each input feature $x_i$ is weighted by its corresponding weight $w_i$. During the training procedure, these weights are adjusted so that the output $y$ approaches the target value. In Figure~\ref  {fig:modelNeuron_b}, we see the diagram of an actual multi polar neuron. The dendrites, where the stimuli are received, plays a role similar to that of the input nodes. The axon transmits the signal to the synaptic terminals, that are similar to the $y$ output\relax }}{8}{figure.caption.8}}
+\newlabel{fig:modelNeuron}{{1.1}{8}{In Figure~\ref {fig:modelNeuron_a}. each input feature $x_i$ is weighted by its corresponding weight $w_i$. During the training procedure, these weights are adjusted so that the output $y$ approaches the target value. In Figure~\ref {fig:modelNeuron_b}, we see the diagram of an actual multi polar neuron. The dendrites, where the stimuli are received, plays a role similar to that of the input nodes. The axon transmits the signal to the synaptic terminals, that are similar to the $y$ output\relax }{figure.caption.8}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.2}{\ignorespaces Three different activation functions. As you can see, the hyperbolic tangent has the same extreme value as the sign step function, but has a smooth transition between them, which can be interpreted as a \emph  {soft decision} in the more ambiguous middle region, reflecting the degree of uncertainty on the decision. On the other hand, the sigmoid function goes from zero to one, and is also smooth like the hyperbolic tangent\relax }}{8}{figure.caption.9}}
+\newlabel{fig:activFunc}{{1.2}{8}{Three different activation functions. As you can see, the hyperbolic tangent has the same extreme value as the sign step function, but has a smooth transition between them, which can be interpreted as a \emph {soft decision} in the more ambiguous middle region, reflecting the degree of uncertainty on the decision. On the other hand, the sigmoid function goes from zero to one, and is also smooth like the hyperbolic tangent\relax }{figure.caption.9}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.3}{\ignorespaces A three layer ANN. We have omitted some of the connections in the hidden layer, for simplification purposes. $\mathbf  {w}_1$ represents the weight matrix of the input layer, $\mathbf  {w}_2$ the weight matrix of the connections between the input layer and the hidden layer, and $\mathbf  {w}_3$ the weight connections between the hidden and the output layer. $f_{ij}(\dots  )$ is the activation function of the $j$-th neuron of the $i$-th layer. Since they can be different, I chose different indexes to each.\relax }}{9}{figure.caption.10}}
+\newlabel{fig:neuralnet}{{1.3}{9}{A three layer ANN. We have omitted some of the connections in the hidden layer, for simplification purposes. $\mb {w}_1$ represents the weight matrix of the input layer, $\mb {w}_2$ the weight matrix of the connections between the input layer and the hidden layer, and $\mb {w}_3$ the weight connections between the hidden and the output layer. $f_{ij}(\dots )$ is the activation function of the $j$-th neuron of the $i$-th layer. Since they can be different, I chose different indexes to each.\relax }{figure.caption.10}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.4}{\ignorespaces A complete LSTM neuron, with all the features as described in~\cite  {Graves05}\relax }}{9}{figure.caption.11}}
+\newlabel{fig:lstmneuron}{{1.4}{9}{A complete LSTM neuron, with all the features as described in~\cite {Graves05}\relax }{figure.caption.11}{}}
 \@setckpt{theorBack}{
-\setcounter{page}{8}
-\setcounter{equation}{6}
+\setcounter{page}{10}
+\setcounter{equation}{15}
 \setcounter{enumi}{0}
 \setcounter{enumii}{0}
 \setcounter{enumiii}{0}
@@ -44,20 +66,21 @@
 \setcounter{part}{0}
 \setcounter{chapter}{1}
 \setcounter{section}{4}
-\setcounter{subsection}{0}
+\setcounter{subsection}{2}
 \setcounter{subsubsection}{0}
 \setcounter{paragraph}{0}
 \setcounter{subparagraph}{0}
-\setcounter{figure}{3}
+\setcounter{figure}{4}
 \setcounter{table}{0}
 \setcounter{ContinuedFloat}{0}
 \setcounter{subfigure}{0}
 \setcounter{subtable}{0}
+\setcounter{parentequation}{0}
 \setcounter{linenumber}{0}
-\setcounter{LN@truepage}{27}
+\setcounter{LN@truepage}{29}
 \setcounter{NAT@ctr}{0}
 \setcounter{Item}{0}
 \setcounter{Hfootnote}{0}
-\setcounter{bookmark@seq@number}{9}
-\setcounter{section@level}{1}
+\setcounter{bookmark@seq@number}{11}
+\setcounter{section@level}{2}
 }

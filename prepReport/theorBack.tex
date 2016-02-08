@@ -103,11 +103,69 @@ The training of an RNN is usually performed using a variation of Backpropagation
 
 Even though RNNs outperform static ANNs in sequence recognition problems~\cite{Bengio1991}, they fail to retain long-term dependencies. Of course that the weight training process is itself a form of memory, but the problem is that the weight update is much slower than the activations~\cite{Yoshua01}, and therefore this memory only retains short-term dependencies. This is because of the so-called \textbf{Vanishing Gradients Problem}~\cite{Yoshua94,Yoshua01}, where the error decays exponentially through time, and the impact of previous incoming data points on the training of the weights, and thus the current decision, quickly decreases. 
 
-To overcome this issue, Hochreiter and Schmidhüber proposed, in 1997, a novel approach, called the Long-Short Term Network~\cite{Hoch97}. The next section explains the main idea of this approach~\ref{sec:struct_lstm}, and also how it is trained\ref{sec:training_lstm}, serving as a support basis for the work of this thesis.
 
 \section{Long Short-Term Memory Networks}\label{sec:theorBack_lstm}
+To overcome the issue of failing to remember long-term dependencies, Hochreiter and Schmidhüber proposed, in 1997, a novel approach to the RNNs called the \textit{Long-Short Term Network}~\cite{Hoch97}. This section explains the main idea of this approach~\ref{sec:struct_lstm}, and also how it is trained\ref{sec:training_lstm}, serving as a support basis for the work of this thesis.
+Although originally formulated in 1997, its formulation has been incrementally updated in~\cite{Gers00} and~\cite{Gers2000}, and the most current version is the one in~\cite{Graves05}. One of the inital proposers of LSTM, Prof. Jürgen Schmidhüber, did a survey on the most common variations of the structure~\cite{Greff15} last year, and this will the basis of this short theoretical presenation, as well as the work that will be developed in this thesis. 
 
 \subsection{Structure, Operation and Equations}\label{sec:struct_lstm}
+A single LSTM neuron is presented in Figure~\ref{fig:lstmneuron}. As we can see from the picture, we still have the recurrent connections from the regular RNNs, but now there are multiple entry points that control the flow of information through the network. Although ommited from the  picture, all the gates are biased, as is suggested in Equations~\ref{eq:equationsLstm}. The main components, their role and relevance, are explained as follows
+
+\begin{itemize}
+
+    \item \textbf{Input Gate} -- this is the input gate, where the importance of each feature of the input vector at time $t$, $\mb{x}^t$, and the output vector at the previous time step $\mb{y}^{t-1}$ is weighed in, producing an output $\mb{i}^{t}$.
+
+    \item \textbf{Block Input Gate} -- as the name implies, this gate controls the flow of information from the input gate to the memory cell. It also receives the input vector and the previous output vector as inputs, but it does not have peephole connections and its dynamics are controlled by a different set of weights. The \textbf{activation function of this gate can be any}, but the most common choice is the \textbf{Hyperbolic Tangent}.
+
+    \item \textbf{Forget Gate} -- its role is to control the contents of the Memory Cell, either to set them or reset them, using the \textit{Hadamard Elementwise} matrix multiplication of its output at time $t$, $\mb{c}^{(t)}$, with the contents of the memory unit at the previous time step, $\mb{c}^{(t-1)}$. The activation function of this gate is \textbf{always sigmoid}.
+
+    \item \textbf{Output Block Gate} -- this gate has a role very similar to that of the Block Input Gate, but now it controls the information flow \textit{out} of the LSTM neuron, namely the activated Memory Cell output.
+
+    \item \textbf{Memory Cell} -- the cornerstone of the LSTM neuron. This is the memory element of the neuron, where the previous state is kept, and updated accordingly to the dynamics of the gates that connect to it. Also, this is where the peephole connections come from:  
+
+    \item \textbf{Output Activation} -- the output of the Memory Cell goes through this activation function that, as the gate activation function, can be any, but the \textit{hyperbolic tangent} is the most common choice.
+
+    \item \textbf{Peepholes} -- direct connections \textit{from} the memory cell that allow for gates to `peep' the states of the memory cell. They were added after the initial 1997 formulation, and their absence was proven to have a minimal performance impact~\cite{Greff15}.
+\end{itemize}
+
+After this small conceptual definitions, that allow us to grasp some intuition on the operation of a \textit{single} LSTM cell, I can present the overview of a \textit{layer} of LSTM neurons and their formal mathematical formulation, that will be needed both for the high-level model and the HDL description. The operation of each gate of the layer is given by the following set of equations
+
+\begin{align}
+    \mb{z}^{(t)} & = g(\mb{W}_z \mb{x}^{(t)} + \mb{R}_z \mb{y}^{(t-1)} + \mb{b}_z) \\
+    \mb{i}^{(t)} & = \sigma(\mb{W}_i \mb{x}^{(t)} + \mb{R}_i \mb{y}^{(t-1)} + \mb{p}_i \odot \mb{c}^{(t-1)} + \mb{b}_i) \\
+    \mb{f}^{(t)} & = \sigma(\mb{W}_f \mb{x}^{(t)} + \mb{R}_f \mb{y}^{(t-1)} + \mb{p}_f \odot \mb{c}^{(t-1)} + \mb{b}_f) \\
+    \mb{c}^{(t)} & = \mb{i}^{(t)} \odot \mb{z}^{(t)} + \mb{f}^{(t)} \odot \mb{c}^{(t-1)} \\
+    \mb{o}^{(t)} & = \sigma(\mb{W}_o \mb{x}^{(t)} + \mb{R}_o \mb{y}^{(t-1)} + \mb{p}_o \odot \mb{c}^{(t)} + \mb{b}_o) \\
+    \mb{c}^{(t)} & = \mb{o}^{(t)} \odot h(\mb{z}^{(t)}) 
+\end{align}
+The $i$-th element of the previous vectors in bold corresponds to the value of the gate of the $i$-th neuron of the layer, which is a very convenient and compact representation of the whole layer. Although useful for a high-level description in a programming language, the matrix representation  may not be suitable for a direct HDL port. In that case, all the above equations still hold, but instead of \textit{vectors} of outputs, we will have a single output, and we only use the appropriate value in the weight matrices $\mb{W}_{\cdot}$ and $\mb{R}_{\cdot}$
+\begin{figure}
+	\centering
+	\includegraphics[width=0.9\linewidth]{figures/lstmneuron.png}
+    \caption{A complete LSTM neuron, with all the features as described in~\cite{Graves05}}
+	\label{fig:lstmneuron}
+\end{figure}
 
 \subsection{Training -- SPSA}\label{sec:training_lstm}
+Since this work aims to perform on-chip learning, it is important to find a suitable learning scheme. Since I am aiming at an hardware implementation, and although the memory resources of nowadays FPGAs are abundant, one must find an algorithm that uses the less memory as possible (at the smallest performance cost possible), in order to use the additional memory, for instance, to add additional LSTM cells that can improve the performance of our system. 
+That being said, we see that the usual training algorithms for LSTM cells -- i.e. Real-Time Recurrent Learning (RTRL), Truncated Backpropagation Through Time (BPTT) or a mixture of both~\cite{Graves05}~\cite{Hoch97}~\cite{Greff15} -- usually involve the storage of the deltas of each layer for every time instant in the training epoch (from $0$ to $T$), which is a highly non-scalable solution both in terms of memory and performance. A most efficient approach to training times series dependant structures like LSTM is the use of \textbf{Simultaneous Perturbation Stochastic Approximation} (SPSA)~\cite{Spall98}. The weight update for the $i$-th weight at the time step $t$ is given by 
+
+\begin{equation}\label{eq:spsa_weightUpdate}
+    \Delta w_i^{(t)} = \frac{J(\mb{w}^{(t)} + \beta \mb{s}^{(t)}) - J(\mb{w}^{(t)})}{\beta s_i^{(t)}}
+\end{equation}
+where $\beta$ is the magnitude of the perturbation to be introduced, $\mb{s}^{(t)}$ is a \textit{sign vector} whose $i$-th element, $s_i^{(t)}$, is either $-1$ or $1$. This way, we see that every weight is \textbf{randomly} incremented either by $-\beta$ or $\beta$, and we only need to keep a duplicate of the weight matrix with the perturbations, and we only need to evaluate the cost function twice per incoming sample. As for the \textit{update rule} is concerned, we have 
+
+\begin{equation}\label{eq:spsa_updateRule}
+    w_i^{(t+1)} = w_i^{(t)} - \eta \Delta w_i^{(t)}
+\end{equation}
+where $\eta$ is the learning rate, and $\Delta w_i^{(t)}$ is the update for the $i$-th weight evaluated in~\ref{eq:spsa_weightUpdate}.
+According to the analysis performed in~\cite{Maeda05}, performing a second-order Taylor expansion at $\mb{w} = \mb{w}^{(t)}$, and taking the expected value of the equation, we get that
+
+\begin{equation}\label{eq:spsa_gradProof}
+    E(\Delta w_i^{(t)}) = \frac{\partial J(\mb{w}^{(t)})}{\partial w_i^{(t)}}
+\end{equation}
+that is, the weight update approximates the gradient of the cost function relative to that weight, and so the learning rule is a special form of \textit{Stochastic Gradient Descent}.
+
+One last comment to be made concerning the update rule, is the hipothetical need for \textbf{limits} to the weight values, when the update rule exceeds $|w_{\text{max}}|$ (in that case, we set $w_i^{(t+1)} = \pm w_{\text{max}}$), which sometimes might be needed if the behaviour of the weight update is not appropriate~\cite{Maeda05}.
+
 

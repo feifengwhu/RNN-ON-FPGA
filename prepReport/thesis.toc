@@ -4,9 +4,11 @@
 \contentsline {section}{\numberline {1.2}Artificial Neural Networks}{2}{section.1.2}
 \contentsline {section}{\numberline {1.3}Recurrent Neural Networks}{4}{section.1.3}
 \contentsline {section}{\numberline {1.4}Long Short-Term Memory Networks}{5}{section.1.4}
-\contentsline {chapter}{\numberline {A}Loren Ipsum}{9}{appendix.A}
-\contentsline {section}{\numberline {A.1}O que \IeC {\'e} o \emph {Loren Ipsum}?}{9}{section.A.1}
-\contentsline {section}{\numberline {A.2}De onde Vem o Loren?}{9}{section.A.2}
-\contentsline {section}{\numberline {A.3}Porque se usa o Loren?}{10}{section.A.3}
-\contentsline {section}{\numberline {A.4}Onde se Podem Encontrar Exemplos?}{10}{section.A.4}
-\contentsline {chapter}{References}{11}{section*.11}
+\contentsline {subsection}{\numberline {1.4.1}Structure, Operation and Equations}{5}{subsection.1.4.1}
+\contentsline {subsection}{\numberline {1.4.2}Training -- SPSA}{7}{subsection.1.4.2}
+\contentsline {chapter}{\numberline {A}Loren Ipsum}{11}{appendix.A}
+\contentsline {section}{\numberline {A.1}O que \IeC {\'e} o \emph {Loren Ipsum}?}{11}{section.A.1}
+\contentsline {section}{\numberline {A.2}De onde Vem o Loren?}{11}{section.A.2}
+\contentsline {section}{\numberline {A.3}Porque se usa o Loren?}{12}{section.A.3}
+\contentsline {section}{\numberline {A.4}Onde se Podem Encontrar Exemplos?}{12}{section.A.4}
+\contentsline {chapter}{References}{13}{section*.12}
