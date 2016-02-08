@@ -1,79 +1,233 @@
+% This file was created with JabRef 2.10.
+% Encoding: UTF-8
 
 
 @PhdThesis{Bengio1991,
-  author =    {Bengio, Yoshua},
-  title =     {Artificial Neural Networks and Their Application to Sequence Recognition},
-  school =    {McGill University},
-  year =      {1991},
-  address =   {Montreal, Que., Canada, Canada},
-  note =      {UMI Order No. GAXNN-72116 (Canadian dissertation)},
-  publisher = {McGill University}
-}
+  Title                    = {Artificial Neural Networks and Their Application to Sequence Recognition},
+  Author                   = {Bengio, Yoshua},
+  School                   = {McGill University},
+  Year                     = {1991},
 
-@Book{Bishop2006,
-  title =     {Pattern Recognition and Machine Learning (Information Science and Statistics)},
-  publisher = {Springer-Verlag New York, Inc.},
-  year =      {2006},
-  author =    {Bishop, Christopher M.},
-  address =   {Secaucus, NJ, USA},
-  isbn =      {0387310738}
-}
+  Address                  = {Montreal, Que., Canada, Canada},
+  Note                     = {UMI Order No. GAXNN-72116 (Canadian dissertation)},
 
-@Article{Hoch97,
-  author =    {Hochreiter, S. and Schmidhuber, J.},
-  title =     {Long short-term memory},
-  journal =   {Neural Computation},
-  year =      {1997},
-  volume =    { 9},
-  number =    { 8},
-  pages =     {1735 - 80},
-  address =   {USA},
-  copyright = {Copyright 1997, IEE},
-  issn =      {0899-7667},
-  language =  {English},
-  url =       {http://dx.doi.org/10.1162/neco.1997.9.8.1735}
-}
-
-@Article{Werbos90,
-  author =    {Werbos, P.J.},
-  title =     {Backpropagation through time: what it does and how to do it},
-  journal =   {Proceedings of the IEEE},
-  year =      {1990},
-  volume =    { 78},
-  number =    { 10},
-  pages =     {1550 - 60},
-  note =      {pseudocode;pattern recognition;fault diagnosis;backpropagation;systems identification;neural networks;},
-  abstract =  {Basic backpropagation, which is a simple method now being widely used in areas like pattern recognition and fault diagnosis, is reviewed. The basic equations for backpropagation through time, and applications to areas like pattern recognition involving dynamic systems, systems identification, and control are discussed. Further extensions of this method, to deal with systems other than neural networks, systems involving simultaneous equations, or true recurrent networks, and other practical issues arising with the method are described. Pseudocode is provided to clarify the algorithms. The chain rule for ordered derivatives-the theorem which underlies backpropagation-is briefly discussed. The focus is on designing a simpler version of backpropagation which can be translated into computer code and applied directly by neutral network users.},
-  address =   {USA},
-  copyright = {Copyright 1991, IEE},
-  issn =      {0018-9219},
-  keywords =  {identification;neural nets;pattern recognition;},
-  language =  {English},
-  url =       {http://dx.doi.org/10.1109/5.58337}
-}
-
-@Article{Yoshua01,
-  author = {Sepp Hochreiter and Yoshua Bengio and Paolo Frasconi and Jürgen Schmidhuber},
-  title =  {Gradient Flow in Recurrent Nets: the Difficulty of Learning Long-Term Dependencies},
-  year =   {2001},
-  file =   {:yoshua01gradient.pdf:PDF},
-  url =    {http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.24.7321}
+  Publisher                = {McGill University}
 }
 
 @Article{Yoshua94,
-  author =    {Bengio, Yoshua and Simard, Patrice and Frasconi, Paolo},
-  title =     {Learning long-term dependencies with gradient descent is difficult},
-  journal =   {IEEE Transactions on Neural Networks},
-  year =      {1994},
-  volume =    {5},
-  number =    {2},
-  pages =     {157 - 166},
-  note =      {Gradient based learning algorithms;Information latching;Input/output sequences;Learning algorithms;Parametric dynamical system;Recurrent neural network training;Temporal contingencies;},
-  abstract =  {Recurrent neural networks can be used to map input sequences to output sequences, such as for recognition, production or prediction problems. However, practical difficulties have been reported in training recurrent neural networks to perform tasks in which the temporal contingencies present in the input/output sequences span long intervals. We show why gradient based learning algorithms face an increasingly difficult problem as the duration of the dependencies to be captured increases. These results expose a trade-off between efficient learning by gradient descent and latching on information for long periods. Based on an understanding of this problem, alternatives to standard gradient descent are considered.},
-  copyright = {Compilation and indexing terms, Copyright 2015 Elsevier Inc.},
-  file =      {:tnn-94-gradient.pdf:PDF},
-  issn =      {10459227},
-  key =       {Neural networks},
-  language =  {English},
-  url =       {http://dx.doi.org/10.1109/72.279181}
+  Title                    = {Learning long-term dependencies with gradient descent is difficult},
+  Author                   = {Bengio, Yoshua and Simard, Patrice and Frasconi, Paolo},
+  Journal                  = {IEEE Transactions on Neural Networks},
+  Year                     = {1994},
+  Note                     = {Gradient based learning algorithms;Information latching;Input/output sequences;Learning algorithms;Parametric dynamical system;Recurrent neural network training;Temporal contingencies;},
+  Number                   = {2},
+  Pages                    = {157 - 166},
+  Volume                   = {5},
+
+  Abstract                 = {Recurrent neural networks can be used to map input sequences to output sequences, such as for recognition, production or prediction problems. However, practical difficulties have been reported in training recurrent neural networks to perform tasks in which the temporal contingencies present in the input/output sequences span long intervals. We show why gradient based learning algorithms face an increasingly difficult problem as the duration of the dependencies to be captured increases. These results expose a trade-off between efficient learning by gradient descent and latching on information for long periods. Based on an understanding of this problem, alternatives to standard gradient descent are considered.},
+  Copyright                = {Compilation and indexing terms, Copyright 2015 Elsevier Inc.},
+  File                     = {:tnn-94-gradient.pdf:PDF},
+  ISSN                     = {10459227},
+  Key                      = {Neural networks},
+  Language                 = {English},
+  Url                      = {http://dx.doi.org/10.1109/72.279181}
 }
+
+@Book{Bishop2006,
+  Title                    = {Pattern Recognition and Machine Learning (Information Science and Statistics)},
+  Author                   = {Bishop, Christopher M.},
+  Publisher                = {Springer-Verlag New York, Inc.},
+  Year                     = {2006},
+
+  Address                  = {Secaucus, NJ, USA},
+
+  ISBN                     = {0387310738}
+}
+
+@Article{Chang15,
+  Title                    = {Recurrent Neural Networks Hardware Implementation on {FPGA}},
+  Author                   = {Andre Xian Ming Chang and
+ Berin Martini and
+ Eugenio Culurciello},
+  Journal                  = {CoRR},
+  Year                     = {2015},
+  Volume                   = {abs/1511.05552},
+
+  Bibsource                = {dblp computer science bibliography, http://dblp.org},
+  Biburl                   = {http://dblp.uni-trier.de/rec/bib/journals/corr/ChangMC15},
+  Timestamp                = {Tue, 01 Dec 2015 19:22:34 +0100},
+  Url                      = {http://arxiv.org/abs/1511.05552}
+}
+
+@InProceedings{Gers2000,
+  Title                    = {Recurrent nets that time and count},
+  Author                   = {Gers, F.A. and Schmidhuber, J.},
+  Year                     = {2000},
+
+  Address                  = {Los Alamitos, CA, USA},
+  Note                     = {recurrent neural networks;RNN;timing;counting;time intervals;sequential tasks;motor control;rhythm detection;long short-term memory;LSTM;peephole connections;internal cells;multiplicative gates;discrete time steps;stable sequences;highly-nonlinear precisely-timed spike sequences;},
+  Pages                    = {189 - 94},
+  Volume                   = {vol.3},
+
+  Abstract                 = {The size of the time intervals between events conveys information essential for numerous sequential tasks such as motor control and rhythm detection. While hidden Markov models tend to ignore this information, recurrent neural networks (RNN) can in principle learn to make use of it. We focus on long short-term memory (LSTM) because it usually outperforms other RNN. Surprisingly, LSTM augmented by &ldquo;peephole connections&rdquo; from its internal cells to its multiplicative gates can learn the fine distinction between sequences of spikes separated by either 50 or 49 discrete time steps, without the help of any short training exemplars. Without external resets or teacher forcing or loss of performance on tasks reported earlier, our LSTM variant also learns to generate very stable sequences of highly nonlinear, precisely timed spikes. This makes LSTM a promising approach for real-world tasks that require to time and count.},
+  Copyright                = {Copyright 2000, IEE},
+  Journal                  = {Proceedings of the IEEE-INNS-ENNS International Joint Conference on Neural Networks. IJCNN 2000. Neural Computing: New Challenges and Perspectives for the New Millennium},
+  Keywords                 = {counting circuits;learning (artificial intelligence);recurrent neural nets;sequences;timing;},
+  Language                 = {English},
+  Url                      = {http://dx.doi.org/10.1109/IJCNN.2000.861302}
+}
+
+@Article{Gers00,
+  Title                    = {Learning to forget: continual prediction with LSTM},
+  Author                   = {Gers, F.A. and Schmidhuber, J. and Cummins, F.},
+  Journal                  = {Neural Computation},
+  Year                     = {2000},
+  Note                     = {LSTM;learning algorithms;recurrent neural networks;LSTM networks;continual input streams;forget gate;},
+  Number                   = { 10},
+  Pages                    = {2451 - 71},
+  Volume                   = { 12},
+
+  Abstract                 = {Long short-term memory (Hochreiter &amp; Schmidhuber, 1997) can solve numerous tasks not solvable by previous learning algorithms for recurrent neural networks (RNNs). We identify a weakness of LSTM networks processing continual input streams that are not a priori segmented into subsequences with explicitly marked ends at which the network's internal state could be reset. Without resets, the state may grow indefinitely and eventually cause the network to break down. Our remedy is a novel, adaptive &ldquo;forget gate&rdquo; that enables an LSTM cell to learn to reset itself at appropriate times, thus releasing internal resources. We review illustrative benchmark problems on which standard LSTM outperforms other RNN algorithms. Ail algorithms (including LSTM) fail to solve continual versions of these problems. LSTM with forget gates, however, easily solves them, and in an elegant way.},
+  Address                  = {USA},
+  Copyright                = {Copyright 2000, IEE},
+  ISSN                     = {0899-7667},
+  Keywords                 = {learning (artificial intelligence);recurrent neural nets;},
+  Language                 = {English},
+  Url                      = {http://dx.doi.org/10.1162/089976600300015015}
+}
+
+@Article{Graves05,
+  Title                    = {Framewise phoneme classification with bidirectional lstm and other neural network architectures},
+  Author                   = {Alex Graves and Jürgen Schmidhuber},
+  Journal                  = {Neural Networks},
+  Year                     = {2005},
+  Pages                    = {5--6},
+
+  File                     = {:nn_2005.pdf:PDF}
+}
+
+@Article{Greff15,
+  Title                    = {{LSTM:} {A} Search Space Odyssey},
+  Author                   = {Klaus Greff and Rupesh Kumar Srivastava and Jan Koutn{\'{\i}}k and Bas R. Steunebrink and J{\"{u}}rgen Schmidhuber},
+  Journal                  = {CoRR},
+  Year                     = {2015},
+  Volume                   = {abs/1503.04069},
+
+  Bibsource                = {dblp computer science bibliography, http://dblp.org},
+  Biburl                   = {http://dblp.uni-trier.de/rec/bib/journals/corr/GreffSKSS15},
+  File                     = {:lstm_asearchspaceodyssey.pdf:PDF},
+  Timestamp                = {Thu, 09 Apr 2015 11:33:20 +0200},
+  Url                      = {http://arxiv.org/abs/1503.04069}
+}
+
+@Article{Hirokami05,
+  Title                    = {Estimation using simultaneous perturbation stochastic approximation},
+  Author                   = {Hirokami, T. and Maeda, Y. and Tsukada, H.},
+  Journal                  = {Electrical Engineering in Japan},
+  Year                     = {2006/01/30},
+  Note                     = {simultaneous perturbation stochastic approximation;Kiefer-Wolfowitz stochastic approximation algorithm;parameter estimation algorithm;convergence theorem;identification scheme;},
+  Number                   = { 2},
+  Pages                    = {30 - 9},
+  Volume                   = { 154},
+
+  Abstract                 = {The simultaneous perturbation stochastic approximation (SPSA) is an extension of the Kiefer-Wolfowitz stochastic approximation algorithm. In SPSA, since all parameters are perturbed simultaneously, it is possible to modify parameters with only two measurements of an evaluation function regardless of the dimension of the parameter. We propose a parameter estimation algorithm using the SPSA. A convergence theorem for the proposed algorithm is shown. A simulation result also reveals the feasibility of the identification scheme proposed here.},
+  Address                  = {USA},
+  Copyright                = {Copyright 2006, The Institution of Engineering and Technology},
+  ISSN                     = {0424-7760},
+  Keywords                 = {approximation theory;convergence of numerical methods;parameter estimation;perturbation techniques;stochastic processes;},
+  Language                 = {English},
+  Url                      = {http://dx.doi.org/10.1002/eej.20239}
+}
+
+@Article{Yoshua01,
+  Title                    = {Gradient Flow in Recurrent Nets: the Difficulty of Learning Long-Term Dependencies},
+  Author                   = {Sepp Hochreiter and Yoshua Bengio and Paolo Frasconi and Jürgen Schmidhuber},
+  Year                     = {2001},
+
+  File                     = {:yoshua01gradient.pdf:PDF},
+  Url                      = {http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.24.7321}
+}
+
+@Article{Hoch97,
+  Title                    = {Long short-term memory},
+  Author                   = {Hochreiter, S. and Schmidhuber, J.},
+  Journal                  = {Neural Computation},
+  Year                     = {1997},
+  Number                   = { 8},
+  Pages                    = {1735 - 80},
+  Volume                   = { 9},
+
+  Address                  = {USA},
+  Copyright                = {Copyright 1997, IEE},
+  File                     = {:Hochreiter97_lstm.pdf:PDF},
+  ISSN                     = {0899-7667},
+  Language                 = {English},
+  Url                      = {http://dx.doi.org/10.1162/neco.1997.9.8.1735}
+}
+
+@Article{Maeda05,
+  Title                    = {Simultaneous perturbation learning rule for recurrent neural networks and its FPGA implementation},
+  Author                   = {Maeda, Y. and Wakamura, M.},
+  Journal                  = {IEEE Transactions on Neural Networks},
+  Year                     = {2005},
+  Note                     = {perturbation learning rule;recurrent neural network;FPGA;dynamic information processing;feedforward neural network;recursive learning scheme;correlation learning;analog learning;oscillatory solution;hardware implementation;Hopfield neural network;field-programmable gate array;},
+  Number                   = { 6},
+  Pages                    = {1664 - 72},
+  Volume                   = { 16},
+
+  Abstract                 = {Recurrent neural networks have interesting properties and can handle dynamic information processing unlike ordinary feedforward neural networks. However, they are generally difficult to use because there is no convenient learning scheme. In this paper, a recursive learning scheme for recurrent neural networks using the simultaneous perturbation method is described. The detailed procedure of the scheme for recurrent neural networks is explained. Unlike ordinary correlation learning, this method is applicable to analog learning and the learning of oscillatory solutions of recurrent neural networks. Moreover, as a typical example of recurrent neural networks, we consider the hardware implementation of Hopfield neural networks using a field-programmable gate array (FPGA). The details of the implementation are described. Two examples of a Hopfield neural network system for analog and oscillatory targets are shown. These results show that the learning scheme proposed here is feasible.},
+  Address                  = {USA},
+  Copyright                = {Copyright 2005, IEE},
+  ISSN                     = {1045-9227},
+  Keywords                 = {analogue computer circuits;feedforward neural nets;field programmable gate arrays;learning (artificial intelligence);perturbation techniques;recurrent neural nets;},
+  Language                 = {English},
+  Url                      = {http://dx.doi.org/10.1109/TNN.2005.852237}
+}
+
+@InProceedings{Spall98,
+  Title                    = {Adaptive stochastic approximation by the simultaneous perturbation method},
+  Author                   = {Spall, J.C.},
+  Year                     = {1998},
+
+  Address                  = {Piscataway, NJ, USA},
+  Note                     = {stochastic approximation;loss functions;stochastic search;Newton-Raphson algorithm;Hessian matrix;iterative method;optimization;root-finding;parameter estimation;adaptive estimation;},
+  Pages                    = {3872 - 9},
+  Volume                   = {vol.4},
+
+  Abstract                 = {Stochastic approximation (SA) has long been applied for problems of minimizing loss functions or root-finding with noisy input information. As with all stochastic search algorithms, there are adjustable algorithm coefficients that must be specified and that can have a profound effect on algorithm performance. It is known that picking these coefficients according to an SA analogue of the deterministic Newton-Raphson algorithm provides an optimal or near-optimal form of the algorithm. This paper presents a general adaptive SA algorithm that is based on an easy method for estimating the Hessian matrix at each iteration while concurrently estimating the primary parameters of interest. The approach applies in both the gradient-free optimization (Kiefer-Wolfowitz) and root-finding/stochastic gradient-based (Robbins-Monro) settings and is based on the &ldquo;simultaneous perturbation&rdquo; idea introduced previously.},
+  Copyright                = {Copyright 1999, IEE},
+  Journal                  = {Proceedings of the 37th IEEE Conference on Decision and Control (Cat. No.98CH36171)},
+  Keywords                 = {adaptive estimation;approximation theory;Hessian matrices;Newton-Raphson method;optimisation;search problems;stochastic processes;},
+  Language                 = {English},
+  Url                      = {http://dx.doi.org/10.1109/CDC.1998.761833}
+}
+
+@Article{Werbos90,
+  Title                    = {Backpropagation through time: what it does and how to do it},
+  Author                   = {Werbos, P.J.},
+  Journal                  = {Proceedings of the IEEE},
+  Year                     = {1990},
+  Note                     = {pseudocode;pattern recognition;fault diagnosis;backpropagation;systems identification;neural networks;},
+  Number                   = { 10},
+  Pages                    = {1550 - 60},
+  Volume                   = { 78},
+
+  Abstract                 = {Basic backpropagation, which is a simple method now being widely used in areas like pattern recognition and fault diagnosis, is reviewed. The basic equations for backpropagation through time, and applications to areas like pattern recognition involving dynamic systems, systems identification, and control are discussed. Further extensions of this method, to deal with systems other than neural networks, systems involving simultaneous equations, or true recurrent networks, and other practical issues arising with the method are described. Pseudocode is provided to clarify the algorithms. The chain rule for ordered derivatives-the theorem which underlies backpropagation-is briefly discussed. The focus is on designing a simpler version of backpropagation which can be translated into computer code and applied directly by neutral network users.},
+  Address                  = {USA},
+  Copyright                = {Copyright 1991, IEE},
+  File                     = {:Werbos.backprop.pdf:PDF},
+  ISSN                     = {0018-9219},
+  Keywords                 = {identification;neural nets;pattern recognition;},
+  Language                 = {English},
+  Url                      = {http://dx.doi.org/10.1109/5.58337}
+}
+
+@comment{jabref-meta: groupsversion:3;}
+
+@comment{jabref-meta: groupstree:
+0 AllEntriesGroup:;
+1 ExplicitGroup:Vanishing Gradients\;0\;Bishop2006\;Yoshua01\;Yoshua94
+\;;
+1 ExplicitGroup:Books\;0\;Bishop2006\;;
+}
+

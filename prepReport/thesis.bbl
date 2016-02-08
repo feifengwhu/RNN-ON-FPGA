@@ -6,6 +6,12 @@ Alex Graves and Jürgen Schmidhuber.
   neural network architectures.
 \newblock {\em Neural Networks}, pages 5--6, 2005.
 
+\bibitem{Greff15}
+Klaus Greff, Rupesh~Kumar Srivastava, Jan Koutn{\'{\i}}k, Bas~R. Steunebrink,
+  and J{\"{u}}rgen Schmidhuber.
+\newblock {LSTM:} {A} search space odyssey.
+\newblock {\em CoRR}, abs/1503.04069, 2015.
+
 \bibitem{Bishop2006}
 Christopher~M. Bishop.
 \newblock {\em Pattern Recognition and Machine Learning (Information Science
@@ -55,12 +61,6 @@ F.A. Gers and J.~Schmidhuber.
   time steps;stable sequences;highly-nonlinear precisely-timed spike
   sequences;.
 
-\bibitem{Greff15}
-Klaus Greff, Rupesh~Kumar Srivastava, Jan Koutn{\'{\i}}k, Bas~R. Steunebrink,
-  and J{\"{u}}rgen Schmidhuber.
-\newblock {LSTM:} {A} search space odyssey.
-\newblock {\em CoRR}, abs/1503.04069, 2015.
-
 \bibitem{Spall98}
 J.C. Spall.
 \newblock Adaptive stochastic approximation by the simultaneous perturbation
@@ -79,5 +79,10 @@ Y.~Maeda and M.~Wakamura.
   information processing;feedforward neural network;recursive learning
   scheme;correlation learning;analog learning;oscillatory solution;hardware
   implementation;Hopfield neural network;field-programmable gate array;.
+
+\bibitem{Chang15}
+Andre Xian~Ming Chang, Berin Martini, and Eugenio Culurciello.
+\newblock Recurrent neural networks hardware implementation on {FPGA}.
+\newblock {\em CoRR}, abs/1511.05552, 2015.
 
 \end{thebibliography}

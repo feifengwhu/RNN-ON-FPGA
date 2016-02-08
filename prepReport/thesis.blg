@@ -1,9 +1,6 @@
 This is BibTeX, Version 0.99d (TeX Live 2015/dev/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: thesis.aux
-A level-1 auxiliary file: abstract.aux
-A level-1 auxiliary file: acknows.aux
-A level-1 auxiliary file: quote.aux
 A level-1 auxiliary file: abbrevs.aux
 A level-1 auxiliary file: intro.aux
 A level-1 auxiliary file: theorBack.aux
@@ -16,45 +13,45 @@ Database file #1: bibliography.bib
 Warning--empty journal in Yoshua01
 Warning--empty booktitle in Gers2000
 Warning--empty booktitle in Spall98
-You've used 11 entries,
+You've used 12 entries,
             1791 wiz_defined-function locations,
-            545 strings with 6645 characters,
-and the built_in function-call counts, 2755 in all, are:
-= -- 262
-> -- 97
+            547 strings with 6763 characters,
+and the built_in function-call counts, 2919 in all, are:
+= -- 275
+> -- 108
 < -- 5
-+ -- 37
-- -- 26
-* -- 170
-:= -- 427
-add.period$ -- 39
-call.type$ -- 11
-change.case$ -- 9
++ -- 41
+- -- 29
+* -- 179
+:= -- 458
+add.period$ -- 42
+call.type$ -- 12
+change.case$ -- 10
 chr.to.int$ -- 0
-cite$ -- 14
-duplicate$ -- 129
-empty$ -- 259
-format.name$ -- 26
-if$ -- 636
+cite$ -- 15
+duplicate$ -- 137
+empty$ -- 273
+format.name$ -- 29
+if$ -- 671
 int.to.chr$ -- 0
-int.to.str$ -- 11
-missing$ -- 11
-newline$ -- 64
-num.names$ -- 11
-pop$ -- 26
+int.to.str$ -- 12
+missing$ -- 12
+newline$ -- 69
+num.names$ -- 12
+pop$ -- 27
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 74
+skip$ -- 78
 stack$ -- 0
 substring$ -- 192
-swap$ -- 39
+swap$ -- 40
 text.length$ -- 5
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 3
-while$ -- 22
-width$ -- 13
-write$ -- 136
+while$ -- 23
+width$ -- 14
+write$ -- 147
 (There were 3 warnings)
