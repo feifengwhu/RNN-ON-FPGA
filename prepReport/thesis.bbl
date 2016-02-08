@@ -1,4 +1,4 @@
-\begin{thebibliography}{5}
+\begin{thebibliography}{11}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -30,6 +30,41 @@ Christopher~M. Bishop.
 \newblock Springer-Verlag New York, Inc., Secaucus, NJ, USA, 2006.
 \newblock ISBN 0387310738.
 
+\bibitem[Gers and Schmidhuber(2000)]{Gers2000}
+F.A. Gers and J.~Schmidhuber.
+\newblock Recurrent nets that time and count.
+\newblock volume vol.3, pages 189 -- 94, Los Alamitos, CA, USA, 2000.
+\newblock URL \url{http://dx.doi.org/10.1109/IJCNN.2000.861302}.
+\newblock recurrent neural networks;RNN;timing;counting;time
+  intervals;sequential tasks;motor control;rhythm detection;long short-term
+  memory;LSTM;peephole connections;internal cells;multiplicative gates;discrete
+  time steps;stable sequences;highly-nonlinear precisely-timed spike
+  sequences;.
+
+\bibitem[Gers et~al.(2000)Gers, Schmidhuber, and Cummins]{Gers00}
+F.A. Gers, J.~Schmidhuber, and F.~Cummins.
+\newblock Learning to forget: continual prediction with lstm.
+\newblock \emph{Neural Computation}, 12\penalty0 (10):\penalty0 2451 -- 71,
+  2000.
+\newblock ISSN 0899-7667.
+\newblock URL \url{http://dx.doi.org/10.1162/089976600300015015}.
+\newblock LSTM;learning algorithms;recurrent neural networks;LSTM
+  networks;continual input streams;forget gate;.
+
+\bibitem[Graves and Schmidhuber(2005)]{Graves05}
+Alex Graves and Jürgen Schmidhuber.
+\newblock Framewise phoneme classification with bidirectional lstm and other
+  neural network architectures.
+\newblock \emph{Neural Networks}, pages 5--6, 2005.
+
+\bibitem[Greff et~al.(2015)Greff, Srivastava, Koutn{\'{\i}}k, Steunebrink, and
+  Schmidhuber]{Greff15}
+Klaus Greff, Rupesh~Kumar Srivastava, Jan Koutn{\'{\i}}k, Bas~R. Steunebrink,
+  and J{\"{u}}rgen Schmidhuber.
+\newblock {LSTM:} {A} search space odyssey.
+\newblock \emph{CoRR}, abs/1503.04069, 2015.
+\newblock URL \url{http://arxiv.org/abs/1503.04069}.
+
 \bibitem[Hochreiter and Schmidhuber(1997)]{Hoch97}
 S.~Hochreiter and J.~Schmidhuber.
 \newblock Long short-term memory.
@@ -45,5 +80,28 @@ Sepp Hochreiter, Yoshua Bengio, Paolo Frasconi, and Jürgen Schmidhuber.
 \newblock 2001.
 \newblock URL
   \url{http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.24.7321}.
+
+\bibitem[Maeda and Wakamura(2005)]{Maeda05}
+Y.~Maeda and M.~Wakamura.
+\newblock Simultaneous perturbation learning rule for recurrent neural networks
+  and its fpga implementation.
+\newblock \emph{IEEE Transactions on Neural Networks}, 16\penalty0
+  (6):\penalty0 1664 -- 72, 2005.
+\newblock ISSN 1045-9227.
+\newblock URL \url{http://dx.doi.org/10.1109/TNN.2005.852237}.
+\newblock perturbation learning rule;recurrent neural network;FPGA;dynamic
+  information processing;feedforward neural network;recursive learning
+  scheme;correlation learning;analog learning;oscillatory solution;hardware
+  implementation;Hopfield neural network;field-programmable gate array;.
+
+\bibitem[Spall(1998)]{Spall98}
+J.C. Spall.
+\newblock Adaptive stochastic approximation by the simultaneous perturbation
+  method.
+\newblock volume vol.4, pages 3872 -- 9, Piscataway, NJ, USA, 1998.
+\newblock URL \url{http://dx.doi.org/10.1109/CDC.1998.761833}.
+\newblock stochastic approximation;loss functions;stochastic
+  search;Newton-Raphson algorithm;Hessian matrix;iterative
+  method;optimization;root-finding;parameter estimation;adaptive estimation;.
 
 \end{thebibliography}

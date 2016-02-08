@@ -1,7 +1,8 @@
-\chapter{Theoretical Background}\label{chap:theorBack}
+\chapter{Problem Characterization}\label{chap:theorBack}
 
+\section{Theoretical Background}
 
-\section{Basic Concepts of Machine Learning}
+\subsection{Basic Concepts of Machine Learning}
 Machine Learning is a field of Computer Science that studies the development of mathematical techniques that allow software to learn autonomously, without an explicit description of each rule of operation. Its goal is to extract latent features from the data that allow an immediate classification of each input data into a particular class -- the catch is that there is no previous rule formulation, but instead we have an adaptive model that adjusts is parameters accordingly with the input data it receives, improving the estimates it yields as it receives new input samples. 
 
 Let us consider a practical example. For instance, suppose we want to build a program that given an input audio waveform representation of a spoken word, it matches it into a particular word of a dictionary. We could, of course, devise a set of rules and exceptions for each word analysing some of its features (perhaps the Fourier representation of each one, and, from it, manually finding the appropriate rules for each), but apart from it being a very complex task, it wouldn't be a scalable solution, given the enormous number of words in each language. The approach taken by Machine Learning is diametrically different, and instead of manually processing each waveform, we build a large dataset, of size $N$, containing the waveforms of several words $\left[ \mb{x}_1 \; \mb{x}_2 \;\mb{x}_2 \; \dots \mb{x}_N \right]$ -- we call this dataset the \textbf{training dataset} -- and we feed it to our model. Each of the $i$-th data point was previously labelled, and in fact we feed each training data point $\mb{x}_i$ \emph{along} with its corresponding label $t_i$, so that the model can adapt its parameters accordingly to the \emph{target value} it is supposed to classify. This set of labels $\mb{t} = \left[ t_1 \; t_2 \; t_3 \; \dots \; t_N \right]$ is called the \textbf{target vector}. 
@@ -20,7 +21,7 @@ In summary, the most typical setting for a Machine Learning problem is having a 
 
 Now that the basic Machine Learning concepts have been presented, I will discuss, henceforth, one of the most important algorithms that address the supervised classification problems, the \emph{Artificial Neural Networks} that will be discussed in Section~\ref{sec:theorBack_ann} as somewhat of a contextual introduction to the main theme of the thesis, which will be Recurrent Neural Networks (Section~\ref{sec:theorBack_rnn}), namely the \textbf{Long Short-Term Memory Networks} (Section~\ref{sec:theorBack_lstm}), both of which are improvements over the initial formulation of the ANNs. These two last networks branch even further from these set of problems, and are usually employed in \textit{Deep Learning} tasks, where we try to extract even higher level information from data at the expense of increased model complexity. 
 
-\section{Artificial Neural Networks}\label{sec:theorBack_ann}
+\subsection{Artificial Neural Networks}\label{sec:theorBack_ann}
 
 Artificial Neural Networks (ANN) are mathematical structures that, as the name suggests, try to mimic the Human Brain. ANN's building blocks, like their biological counterpart, model the high-level behaviour of biological neurons, in the sense that they neglect unnecessary biological aspects (such as modeling all the voltages across the neuron and all its electromagnetic interactions), and only retain its fundamental underlying mathematical function, which is a weighted linear combination of its inputs subject to a \emph{activation function}, i.e. a function that outputs a decision value depending on its inputs.  Mathematically, we have
 
@@ -93,7 +94,7 @@ The interpretation of these equations is simple. If $w_{ji}$ is the weight of th
 we see that, from~\ref{eq:partialE}  it simply is the product of the error of the current neuron, $\delta_j$, with the output of the previous neuron $f(a_i)$. In turn, from~\ref{eq:deltaj}, we see the recurrence relationship between it and the weighted sum of all posterior neurons that connect to it. Hence, the name backpropagation is now clear: we are, in fact, propagating the errors backwards into the neuron of interest, weighted by the corresponding weight, but now \emph{backwards} instead of forward, as before. For the output units, the $\delta_j$ is simply the difference between the produced output and the corresponding label for that sample. This two-step process is performed for every data point in out dataset. %%Place where I can include an algorithmic overview?
 For a complete proof of the above formulas, see~\cite[chap. 5.3.1]{Bishop2006}.
 
-\section{Recurrent Neural Networks}\label{sec:theorBack_rnn}
+\subsection{Recurrent Neural Networks}\label{sec:theorBack_rnn}
 A Recurrent Neural Network (RNN) is, essentially, a regular ANN where some neurons (especially in the hidden layer) have \emph{feedback connections} to themselves, i.e. their outputs are fed as inputs. The relevance of this different structure is the possibility to retain \emph{sequence} information about the data. Before, each incoming data point only contributed to the training of the network, but no information about the correlation between themselves and the data points that preceded them did not influence the training step. They were regarded as if no temporal relationship existed, and therefore each data point is conditionally independent of any other. This is obviously not necessarily truth, and in fact there are many cases, where the correlation between data points is high for those closely spaced in time, in which it is actually completely false, as in video signals, audio signals, or other kinds of \emph{temporal sequences} of data. Therefore, the feedback connection of the neuron to himself acts as a kind of \emph{memory element} that takes into account in the present decision, the history of decisions previously taken, and hence the previous data. 
 Figure~\ref{fig:recneuron} suggests a possible structure for a neuron of a hidden layer in an RNN, and also an alternate representation, where the structure is unfold through time.
 
@@ -104,15 +105,22 @@ The training of an RNN is usually performed using a variation of Backpropagation
 Even though RNNs outperform static ANNs in sequence recognition problems~\cite{Bengio1991}, they fail to retain long-term dependencies. Of course that the weight training process is itself a form of memory, but the problem is that the weight update is much slower than the activations~\cite{Yoshua01}, and therefore this memory only retains short-term dependencies. This is because of the so-called \textbf{Vanishing Gradients Problem}~\cite{Yoshua94,Yoshua01}, where the error decays exponentially through time, and the impact of previous incoming data points on the training of the weights, and thus the current decision, quickly decreases. 
 
 
-\section{Long Short-Term Memory Networks}\label{sec:theorBack_lstm}
+\subsection{Long Short-Term Memory Networks}\label{sec:theorBack_lstm}
 To overcome the issue of failing to remember long-term dependencies, Hochreiter and Schmidhüber proposed, in 1997, a novel approach to the RNNs called the \textit{Long-Short Term Network}~\cite{Hoch97}. This section explains the main idea of this approach~\ref{sec:struct_lstm}, and also how it is trained\ref{sec:training_lstm}, serving as a support basis for the work of this thesis.
 Although originally formulated in 1997, its formulation has been incrementally updated in~\cite{Gers00} and~\cite{Gers2000}, and the most current version is the one in~\cite{Graves05}. One of the inital proposers of LSTM, Prof. Jürgen Schmidhüber, did a survey on the most common variations of the structure~\cite{Greff15} last year, and this will the basis of this short theoretical presenation, as well as the work that will be developed in this thesis. 
 
-\subsection{Structure, Operation and Equations}\label{sec:struct_lstm}
+\subsubsection{Structure, Operation and Equations}\label{sec:struct_lstm}
 A single LSTM neuron is presented in Figure~\ref{fig:lstmneuron}. As we can see from the picture, we still have the recurrent connections from the regular RNNs, but now there are multiple entry points that control the flow of information through the network. Although ommited from the  picture, all the gates are biased, as is suggested in Equations~\ref{eq:equationsLstm}. The main components, their role and relevance, are explained as follows
 
-\begin{itemize}
 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\linewidth]{figures/lstmneuron.png}
+    \caption{A complete LSTM neuron, with all the features as described in~\cite{Graves05}}
+	\label{fig:lstmneuron}
+\end{figure}
+
+\begin{itemize}
     \item \textbf{Input Gate} -- this is the input gate, where the importance of each feature of the input vector at time $t$, $\mb{x}^t$, and the output vector at the previous time step $\mb{y}^{t-1}$ is weighed in, producing an output $\mb{i}^{t}$.
 
     \item \textbf{Block Input Gate} -- as the name implies, this gate controls the flow of information from the input gate to the memory cell. It also receives the input vector and the previous output vector as inputs, but it does not have peephole connections and its dynamics are controlled by a different set of weights. The \textbf{activation function of this gate can be any}, but the most common choice is the \textbf{Hyperbolic Tangent}.
@@ -128,9 +136,9 @@ A single LSTM neuron is presented in Figure~\ref{fig:lstmneuron}. As we can see 
     \item \textbf{Peepholes} -- direct connections \textit{from} the memory cell that allow for gates to `peep' the states of the memory cell. They were added after the initial 1997 formulation, and their absence was proven to have a minimal performance impact~\cite{Greff15}.
 \end{itemize}
 
-After this small conceptual definitions, that allow us to grasp some intuition on the operation of a \textit{single} LSTM cell, I can present the overview of a \textit{layer} of LSTM neurons and their formal mathematical formulation, that will be needed both for the high-level model and the HDL description. The operation of each gate of the layer is given by the following set of equations
+After these small conceptual definitions, that allow us to grasp some intuition on the operation of a \textit{single} LSTM cell, I can present the overview of a \textit{layer} of LSTM neurons and their formal mathematical formulation, that will be needed both for the high-level model and the HDL description. The operation of each set of gates of the layer is given by the following set of equations
 
-\begin{align}
+\begin{align}\label{eq:equationsLSTM}
     \mb{z}^{(t)} & = g(\mb{W}_z \mb{x}^{(t)} + \mb{R}_z \mb{y}^{(t-1)} + \mb{b}_z) \\
     \mb{i}^{(t)} & = \sigma(\mb{W}_i \mb{x}^{(t)} + \mb{R}_i \mb{y}^{(t-1)} + \mb{p}_i \odot \mb{c}^{(t-1)} + \mb{b}_i) \\
     \mb{f}^{(t)} & = \sigma(\mb{W}_f \mb{x}^{(t)} + \mb{R}_f \mb{y}^{(t-1)} + \mb{p}_f \odot \mb{c}^{(t-1)} + \mb{b}_f) \\
@@ -138,15 +146,9 @@ After this small conceptual definitions, that allow us to grasp some intuition o
     \mb{o}^{(t)} & = \sigma(\mb{W}_o \mb{x}^{(t)} + \mb{R}_o \mb{y}^{(t-1)} + \mb{p}_o \odot \mb{c}^{(t)} + \mb{b}_o) \\
     \mb{c}^{(t)} & = \mb{o}^{(t)} \odot h(\mb{z}^{(t)}) 
 \end{align}
-The $i$-th element of the previous vectors in bold corresponds to the value of the gate of the $i$-th neuron of the layer, which is a very convenient and compact representation of the whole layer. Although useful for a high-level description in a programming language, the matrix representation  may not be suitable for a direct HDL port. In that case, all the above equations still hold, but instead of \textit{vectors} of outputs, we will have a single output, and we only use the appropriate value in the weight matrices $\mb{W}_{\cdot}$ and $\mb{R}_{\cdot}$
-\begin{figure}
-	\centering
-	\includegraphics[width=0.9\linewidth]{figures/lstmneuron.png}
-    \caption{A complete LSTM neuron, with all the features as described in~\cite{Graves05}}
-	\label{fig:lstmneuron}
-\end{figure}
+The $i$-th element of the previous vectors in bold corresponds to the value of the gate of the $i$-th neuron of the layer, which is a very convenient and compact representation of the whole layer. Furthermore, if the layer has $N$ LSTM neurons and $M$ inputs (i.e. the size of the layer that precedes this), we see that the input weight matrices $\mb{W}_*$ and the  recurrent weight matrices $\mb{R}_*$ all have size $N \times M$, and that the bias weight matrices $\mb{b}_*$, the peephole weight matrices $\mb{p}_*$ and the matrices $\mb{z}^{(t)}$ through $\mb{c}^{(t)}$ have size $N \times 1$. Although useful for a high-level description in a programming language, the matrix representation  may not be suitable for a direct HDL port. In that case, in order to represent the operation of the $i$-\textit{single neuron}, all the above equations still hold, but instead of \textit{vectors} of outputs, we will have a single scalar output, and we only use the appropriate row in the weight matrices $\mb{W}_{\cdot}$, $\mb{R}_{\cdot}$ and the remaining.
 
-\subsection{Training -- SPSA}\label{sec:training_lstm}
+\subsubsection{Training -- SPSA}\label{sec:training_lstm}
 Since this work aims to perform on-chip learning, it is important to find a suitable learning scheme. Since I am aiming at an hardware implementation, and although the memory resources of nowadays FPGAs are abundant, one must find an algorithm that uses the less memory as possible (at the smallest performance cost possible), in order to use the additional memory, for instance, to add additional LSTM cells that can improve the performance of our system. 
 That being said, we see that the usual training algorithms for LSTM cells -- i.e. Real-Time Recurrent Learning (RTRL), Truncated Backpropagation Through Time (BPTT) or a mixture of both~\cite{Graves05}~\cite{Hoch97}~\cite{Greff15} -- usually involve the storage of the deltas of each layer for every time instant in the training epoch (from $0$ to $T$), which is a highly non-scalable solution both in terms of memory and performance. A most efficient approach to training times series dependant structures like LSTM is the use of \textbf{Simultaneous Perturbation Stochastic Approximation} (SPSA)~\cite{Spall98}. The weight update for the $i$-th weight at the time step $t$ is given by 
 

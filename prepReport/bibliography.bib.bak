@@ -74,7 +74,6 @@
   file =      {:tnn-94-gradient.pdf:PDF},
   issn =      {10459227},
   key =       {Neural networks},
-  keywords =  {Algorithms;Binary sequences;Computational complexity;Data storage equipment;Discrete time control systems;Information retrieval systems;Input output programs;Learning systems;Parameter estimation;},
   language =  {English},
   url =       {http://dx.doi.org/10.1109/72.279181}
 }
