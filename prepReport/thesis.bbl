@@ -85,4 +85,60 @@ Andre Xian~Ming Chang, Berin Martini, and Eugenio Culurciello.
 \newblock Recurrent neural networks hardware implementation on {FPGA}.
 \newblock {\em CoRR}, abs/1511.05552, 2015.
 
+\bibitem{Bertolami09}
+A.~Graves, M.~Liwicki, S.~Fernandez, R.~Bertolami, H.~Bunke, and
+  J.~Schmidhuber.
+\newblock A novel connectionist system for unconstrained handwriting
+  recognition.
+\newblock {\em Pattern Analysis and Machine Intelligence, IEEE Transactions
+  on}, 31(5):855--868, May 2009.
+
+\bibitem{ICDAR09}
+E.~Grosicki and H.~El~Abed.
+\newblock Icdar 2009 handwriting recognition competition.
+\newblock In {\em Document Analysis and Recognition, 2009. ICDAR '09. 10th
+  International Conference on}, pages 1398--1402, July 2009.
+
+\bibitem{Graves13}
+A.~Graves, A.-R. Mohamed, and G.~Hinton.
+\newblock Speech recognition with deep recurrent neural networks.
+\newblock In {\em Acoustics, Speech and Signal Processing (ICASSP), 2013 IEEE
+  International Conference on}, pages 6645--6649, May 2013.
+
+\bibitem{Sak14}
+Hasim Sak, Andrew~W. Senior, and Fran{\c{c}}oise Beaufays.
+\newblock Long short-term memory recurrent neural network architectures for
+  large scale acoustic modeling.
+\newblock In {\em {INTERSPEECH} 2014, 15th Annual Conference of the
+  International Speech Communication Association, Singapore, September 14-18,
+  2014}, pages 338--342, 2014.
+
+\bibitem{Maeda95}
+Yutaka Maeda, Hiroaki Hirano, and Yakichi Kanata.
+\newblock A learning rule of neural networks via simultaneous perturbation and
+  its hardware implementation.
+\newblock {\em Neural Networks}, pages 251--259, 1995.
+
+\bibitem{Cauwen96}
+G.~Cauwenberghs.
+\newblock An analog vlsi recurrent neural network learning a continuous-time
+  trajectory.
+\newblock {\em Neural Networks, IEEE Transactions on}, 7(2):346--361, Mar 1996.
+
+\bibitem{Figueiredo97}
+Y.~Maeda and Rui~J.P. de~Figueiredo.
+\newblock Learning rules for neuro-controller via simultaneous perturbation.
+\newblock {\em Neural Networks, IEEE Transactions on}, 8(5):1119--1130, 1997.
+
+\bibitem{Tavear13}
+R.~Tavear, J.~Dedic, D.~Bokal, and A.~Zemva.
+\newblock Transforming the lstm training algorithm for efficient fpga -based
+  adaptive control of nonlinear dynamic systems.
+\newblock {\em Informacije MIDEM}, 43(2):131 -- 8, 2013.
+
+\bibitem{Hochreiter07}
+Sepp Hochreiter, Martin Heusel, and Klaus Obermayer.
+\newblock Fast model-based protein homology detection without alignment.
+\newblock {\em BIOINFORMATICS}, {23}({14}):{1728--1736}, {JUL 15} 2007.
+
 \end{thebibliography}

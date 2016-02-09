@@ -14,16 +14,16 @@
 \contentsline {section}{\numberline {2.2}Proposed Solution}{12}{section.2.2}
 \contentsline {chapter}{\numberline {3}State of the Art}{15}{chapter.3}
 \contentsline {section}{\numberline {3.1}LSTM Applications (non-FPGA related)}{15}{section.3.1}
-\contentsline {section}{\numberline {3.2}Hardware Implementations of LSTM}{15}{section.3.2}
+\contentsline {section}{\numberline {3.2}Hardware Implementations of LSTM}{16}{section.3.2}
 \contentsline {section}{\numberline {3.3}Training Algorithms and Implementation}{16}{section.3.3}
-\contentsline {section}{\numberline {3.4}Final Overview}{16}{section.3.4}
-\contentsline {chapter}{\numberline {4}Work Plan}{17}{chapter.4}
-\contentsline {section}{\numberline {4.1}Main Tasks}{17}{section.4.1}
-\contentsline {section}{\numberline {4.2}Approach}{17}{section.4.2}
-\contentsline {section}{\numberline {4.3}Tentative Scheduling}{17}{section.4.3}
-\contentsline {section}{\numberline {4.4}Software and Hardware Resources to be used}{17}{section.4.4}
-\contentsline {chapter}{\numberline {5}Early Work}{19}{chapter.5}
-\contentsline {chapter}{\numberline {A}Loren Ipsum}{21}{appendix.A}
-\contentsline {section}{\numberline {A.1}O que \IeC {\'e} o \emph {Loren Ipsum}?}{21}{section.A.1}
-\contentsline {section}{\numberline {A.2}De onde Vem o Loren?}{21}{section.A.2}
-\contentsline {chapter}{References}{23}{section*.9}
+\contentsline {section}{\numberline {3.4}Final Overview}{17}{section.3.4}
+\contentsline {chapter}{\numberline {4}Work Plan}{19}{chapter.4}
+\contentsline {section}{\numberline {4.1}Main Tasks}{19}{section.4.1}
+\contentsline {section}{\numberline {4.2}Approach}{19}{section.4.2}
+\contentsline {section}{\numberline {4.3}Tentative Scheduling}{19}{section.4.3}
+\contentsline {section}{\numberline {4.4}Software and Hardware Resources to be used}{19}{section.4.4}
+\contentsline {chapter}{\numberline {5}Early Work}{21}{chapter.5}
+\contentsline {chapter}{\numberline {A}Loren Ipsum}{23}{appendix.A}
+\contentsline {section}{\numberline {A.1}O que \IeC {\'e} o \emph {Loren Ipsum}?}{23}{section.A.1}
+\contentsline {section}{\numberline {A.2}De onde Vem o Loren?}{23}{section.A.2}
+\contentsline {chapter}{References}{25}{section*.9}
