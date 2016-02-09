@@ -1,10 +1,16 @@
 \chapter{State of the Art}\label{chap:stateArt}
 
+Over the course of this chapter, I am going to present an overview of the most recent developments related to the work of this thesis, both in terms of existing dedicated hardware implementations~\ref{sec:sa_hardware}, the most relevant work in adapting suitable training algorithms to hardware~\ref{sec:sa_training} and also some of the most relevant applications of LSTM~\ref{sec:sa_apps}, which are not FPGA-based, but demonstrate how LSTM is useful by itself, and how well it competes with other Machine Learning algorithms in terms of long time-series dependences in data.
 
-\section{LSTM Applications (non-FPGA related)} 
+\section{LSTM Applications (non-FPGA related)}\label{sec:sa_apps} 
 
-\section{Hardware Implementations of LSTM}
+\section{Hardware Implementations of LSTM}\label{sec:sa_hardware}
+Hitherto, there is but one actual implementation of an LSTM network in hardware, published recently (November 2015) by Chang et al.~\cite{Chang15} in the Computing Research Repository (CoRR). Is consists on the proposal of an LSTM cell architecture for dedicated hardware, targeting a Xilinx\textregistered Zedboard implementation. It uses a character-level language model from Andrej Karpathy, written in Lua using the Torch7 framework (the Lua calls are implemented in C, so no performance is lost).
 
-\section{Training Algorithms and Implementation}
+Although the article is not clear on whether there is active learning by the ARM CPU -- the authors refer that the CPU loads the weights before operation, and that it changes them during operation, although how and why that change is done is not even clearly explained, neither mathematically nor conceptually --, \textbf{there is no on-chip learning module} in the FPGA according to the description provided. 
 
-\section{Final Overview}
+The implementation itself makes an extensive use of the Multiply-and-Accumulate units (MAC) of the FPGA, which since they are limited in number in the target platform, limits the number of neurons that we can deploy in parallel. The authors report a nearly 75\% usage for only 8 LSTM neurons. Although an apparently excessive number, I am left to scrutinize whether the usage of MACs is compulsory to obtain a better performance than a CPU or if it can be discarded, allowing for smaller cells. This way, we can have a layer of more neurons occupying the same area and, hopefully, the same, or even less, resources within the FPGA.
+
+\section{Training Algorithms and Implementation}\label{sec:sa_training}
+
+\section{Final Overview}\label{sec:overview}
