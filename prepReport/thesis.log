@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.10.24)  9 FEB 2016 21:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.10.24)  9 FEB 2016 22:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1157,10 +1157,10 @@ Overfull \hbox (4.26689pt too wide) in paragraph at lines 36--37
 the Multiply-and-Accumulate units (MAC)
  []
 
-)
+
 Underfull \vbox (badness 3482) has occurred while \output is active []
 
- [17]
+ [17])
 [18]
 \openout2 = `workPlan.aux'.
 
@@ -1276,10 +1276,10 @@ xlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist
 w/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a
 .pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on thesis.pdf (37 pages, 1511527 bytes).
+Output written on thesis.pdf (37 pages, 1512517 bytes).
 PDF statistics:
- 609 PDF objects out of 1000 (max. 8388607)
- 536 compressed objects within 6 object streams
+ 612 PDF objects out of 1000 (max. 8388607)
+ 539 compressed objects within 6 object streams
  127 named destinations out of 1000 (max. 500000)
  271 words of extra memory for PDF output out of 10000 (max. 10000000)
 
