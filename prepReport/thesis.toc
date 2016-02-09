@@ -16,7 +16,7 @@
 \contentsline {section}{\numberline {3.1}LSTM Applications (non-FPGA related)}{15}{section.3.1}
 \contentsline {section}{\numberline {3.2}Hardware Implementations of LSTM}{16}{section.3.2}
 \contentsline {section}{\numberline {3.3}Training Algorithms and Implementation}{17}{section.3.3}
-\contentsline {section}{\numberline {3.4}Final Overview}{17}{section.3.4}
+\contentsline {section}{\numberline {3.4}Final Overview}{18}{section.3.4}
 \contentsline {chapter}{\numberline {4}Work Plan}{19}{chapter.4}
 \contentsline {section}{\numberline {4.1}Main Tasks}{19}{section.4.1}
 \contentsline {section}{\numberline {4.2}Approach}{19}{section.4.2}

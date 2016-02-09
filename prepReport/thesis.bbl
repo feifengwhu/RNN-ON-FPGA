@@ -99,6 +99,14 @@ E.~Grosicki and H.~El~Abed.
 \newblock In {\em Document Analysis and Recognition, 2009. ICDAR '09. 10th
   International Conference on}, pages 1398--1402, July 2009.
 
+\bibitem{Breuel13}
+Thomas~M. Breuel, Adnan Ul-Hasan, Mayce~Ali Al-Azawi, and Faisal Shafait.
+\newblock High-performance ocr for printed english and fraktur using lstm
+  networks.
+\newblock In {\em Proceedings of the 2013 12th International Conference on
+  Document Analysis and Recognition}, ICDAR '13, pages 683--687, Washington,
+  DC, USA, 2013. IEEE Computer Society.
+
 \bibitem{Graves13}
 A.~Graves, A.-R. Mohamed, and G.~Hinton.
 \newblock Speech recognition with deep recurrent neural networks.
@@ -112,6 +120,11 @@ Hasim Sak, Andrew~W. Senior, and Fran{\c{c}}oise Beaufays.
 \newblock In {\em {INTERSPEECH} 2014, 15th Annual Conference of the
   International Speech Communication Association, Singapore, September 14-18,
   2014}, pages 338--342, 2014.
+
+\bibitem{Graves13_2}
+Alex Graves.
+\newblock Generating sequences with recurrent neural networks.
+\newblock {\em CoRR}, abs/1308.0850, 2013.
 
 \bibitem{Sustkever14}
 Ilya Sutskever, Oriol Vinyals, and Quoc~V. Le.
@@ -128,10 +141,48 @@ Soren~Kaae Sonderby, Casper~Kaae Sonderby, Henrik Nielsen, and Ole Winther.
 \newblock Convolutional lstm networks for subcellular localization of proteins.
 \newblock volume 9199, pages 68 -- 80, Mexico City, Mexico, 2015.
 
+\bibitem{Lehner15}
+B.~Lehner, G.~Widmer, and S.~Bock.
+\newblock A low-latency, real-time-capable singing voice detection method with
+  lstm recurrent neural networks.
+\newblock pages 21 -- 5, Piscataway, NJ, USA, 2015.
+
 \bibitem{Bock12}
 Sebastian Bock and Markus Schedl.
 \newblock Polyphonic piano note transcription with recurrent neural networks.
 \newblock pages 121 -- 124, Kyoto, Japan, 2012.
+
+\bibitem{Coca13}
+Andres~E. Coca, Debora~C. Correa, and Liang Zhao.
+\newblock Computer-aided music composition with lstm neural network and chaotic
+  inspiration.
+\newblock pages International Neural Network Society (INNS); IEEE Computational
+  Intelligence Society (IEEE--CIS) --, Dallas, TX, United states, 2013.
+
+\bibitem{Eck02}
+D.~Eck and J.~Schmidhuber.
+\newblock Finding temporal structure in music: Blues improvisation with lstm
+  recurrent networks.
+\newblock volume 2002-January, pages 747 -- 756, Martigny, Switzerland, 2002.
+
+\bibitem{Vinyals14}
+Oriol Vinyals, Alexander Toshev, Samy Bengio, and Dumitru Erhan.
+\newblock Show and tell: {A} neural image caption generator.
+\newblock {\em CoRR}, abs/1411.4555, 2014.
+
+\bibitem{Donahue14}
+Subhashini Venugopalan, Huijuan Xu, Jeff Donahue, Marcus Rohrbach, Raymond~J.
+  Mooney, and Kate Saenko.
+\newblock Translating videos to natural language using deep recurrent neural
+  networks.
+\newblock {\em CoRR}, abs/1412.4729, 2014.
+
+\bibitem{Donahue14_2}
+Jeff Donahue, Lisa~Anne Hendricks, Sergio Guadarrama, Marcus Rohrbach,
+  Subhashini Venugopalan, Kate Saenko, and Trevor Darrell.
+\newblock Long-term recurrent convolutional networks for visual recognition and
+  description.
+\newblock {\em CoRR}, abs/1411.4389, 2014.
 
 \bibitem{Maeda95}
 Yutaka Maeda, Hiroaki Hirano, and Yakichi Kanata.

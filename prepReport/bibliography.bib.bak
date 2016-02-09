@@ -76,6 +76,25 @@
   Url                      = {http://dx.doi.org/10.1109/ICASSP.2012.6287832}
 }
 
+@InProceedings{Breuel13,
+  Title                    = {High-Performance OCR for Printed English and Fraktur Using LSTM Networks},
+  Author                   = {Breuel, Thomas M. and Ul-Hasan, Adnan and Al-Azawi, Mayce Ali and Shafait, Faisal},
+  Booktitle                = {Proceedings of the 2013 12th International Conference on Document Analysis and Recognition},
+  Year                     = {2013},
+
+  Address                  = {Washington, DC, USA},
+  Pages                    = {683--687},
+  Publisher                = {IEEE Computer Society},
+  Series                   = {ICDAR '13},
+
+  Acmid                    = {2549524},
+  Doi                      = {10.1109/ICDAR.2013.140},
+  ISBN                     = {978-0-7695-4999-6},
+  Keywords                 = {RNN, LSTM Networks, OCR},
+  Numpages                 = {5},
+  Url                      = {http://dx.doi.org/10.1109/ICDAR.2013.140}
+}
+
 @Article{Cauwen96,
   Title                    = {An analog VLSI recurrent neural network learning a continuous-time trajectory},
   Author                   = {Cauwenberghs, G.},
@@ -123,7 +142,27 @@
   Url                      = {http://dx.doi.org/10.1109/IJCNN.2013.6706747}
 }
 
-@InProceedings{20160201794918,
+@Article{Donahue14_2,
+  Title                    = {Long-term Recurrent Convolutional Networks for Visual Recognition
+ and Description},
+  Author                   = {Jeff Donahue and
+ Lisa Anne Hendricks and
+ Sergio Guadarrama and
+ Marcus Rohrbach and
+ Subhashini Venugopalan and
+ Kate Saenko and
+ Trevor Darrell},
+  Journal                  = {CoRR},
+  Year                     = {2014},
+  Volume                   = {abs/1411.4389},
+
+  Bibsource                = {dblp computer science bibliography, http://dblp.org},
+  Biburl                   = {http://dblp.uni-trier.de/rec/bib/journals/corr/DonahueHGRVSD14},
+  Timestamp                = {Mon, 01 Dec 2014 14:32:13 +0100},
+  Url                      = {http://arxiv.org/abs/1411.4389}
+}
+
+@InProceedings{Eck02,
   Title                    = {Finding temporal structure in music: Blues improvisation with LSTM recurrent networks},
   Author                   = {Eck, D. and Schmidhuber, J.},
   Year                     = {2002},
@@ -173,6 +212,20 @@
   Keywords                 = {learning (artificial intelligence);recurrent neural nets;},
   Language                 = {English},
   Url                      = {http://dx.doi.org/10.1162/089976600300015015}
+}
+
+@Article{Graves13_2,
+  Title                    = {Generating Sequences With Recurrent Neural Networks},
+  Author                   = {Alex Graves},
+  Journal                  = {CoRR},
+  Year                     = {2013},
+  Volume                   = {abs/1308.0850},
+
+  Bibsource                = {dblp computer science bibliography, http://dblp.org},
+  Biburl                   = {http://dblp.uni-trier.de/rec/bib/journals/corr/Graves13},
+  File                     = {:/home/josefonseca/Documents/thesis/research/generatingSeqLSTM.pdf:PDF},
+  Timestamp                = {Tue, 10 Dec 2013 12:03:02 +0100},
+  Url                      = {http://arxiv.org/abs/1308.0850}
 }
 
 @Article{Bertolami09,
@@ -421,6 +474,41 @@
   File                     = {:/home/josefonseca/Documents/thesis/research/MIDEM_43(2013)2p131.pdf:PDF},
   ISSN                     = {0352-9045},
   Language                 = {English}
+}
+
+@Article{Donahue14,
+  Title                    = {Translating Videos to Natural Language Using Deep Recurrent Neural
+ Networks},
+  Author                   = {Subhashini Venugopalan and
+ Huijuan Xu and
+ Jeff Donahue and
+ Marcus Rohrbach and
+ Raymond J. Mooney and
+ Kate Saenko},
+  Journal                  = {CoRR},
+  Year                     = {2014},
+  Volume                   = {abs/1412.4729},
+
+  Bibsource                = {dblp computer science bibliography, http://dblp.org},
+  Biburl                   = {http://dblp.uni-trier.de/rec/bib/journals/corr/VenugopalanXDRMS14},
+  File                     = {:/home/josefonseca/Documents/thesis/research/videocaption.pdf:PDF},
+  Timestamp                = {Thu, 01 Jan 2015 19:51:08 +0100},
+  Url                      = {http://arxiv.org/abs/1412.4729}
+}
+
+@Article{Vinyals14,
+  Title                    = {Show and Tell: {A} Neural Image Caption Generator},
+  Author                   = {Oriol Vinyals and
+ Alexander Toshev and
+ Samy Bengio and
+ Dumitru Erhan},
+  Journal                  = {CoRR},
+  Year                     = {2014},
+  Volume                   = {abs/1411.4555},
+
+  File                     = {:/home/josefonseca/Documents/thesis/research/showandtell.pdf:PDF},
+  Timestamp                = {Mon, 01 Dec 2014 14:32:13 +0100},
+  Url                      = {http://arxiv.org/abs/1411.4555}
 }
 
 @Article{Werbos90,

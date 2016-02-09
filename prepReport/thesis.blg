@@ -12,7 +12,6 @@ The style file: unsrt.bst
 Database file #1: bibliography.bib
 A bad cross reference---entry "Sak14"
 refers to entry "DBLP:conf/interspeech/2014", which doesn't exist
-Warning--I didn't find a database entry for "Lehner15"
 Warning--I didn't find a database entry for "DBLP:conf/interspeech/2014"
 Warning--empty journal in Yoshua01
 Warning--empty booktitle in Gers2000
@@ -20,46 +19,49 @@ Warning--empty booktitle in Spall98
 Warning--empty booktitle in Sustkever14
 Warning--can't use both volume and number fields in Sustkever14
 Warning--empty booktitle in Sonderby15
+Warning--empty booktitle in Lehner15
 Warning--empty booktitle in Bock12
-You've used 24 entries,
+Warning--empty booktitle in Coca13
+Warning--empty booktitle in Eck02
+You've used 32 entries,
             1791 wiz_defined-function locations,
-            641 strings with 9431 characters,
-and the built_in function-call counts, 6915 in all, are:
-= -- 655
-> -- 239
-< -- 14
-+ -- 89
-- -- 65
-* -- 449
-:= -- 996
-add.period$ -- 78
-call.type$ -- 24
-change.case$ -- 22
+            690 strings with 11253 characters,
+and the built_in function-call counts, 11693 in all, are:
+= -- 1211
+> -- 344
+< -- 19
++ -- 127
+- -- 95
+* -- 669
+:= -- 1507
+add.period$ -- 103
+call.type$ -- 32
+change.case$ -- 30
 chr.to.int$ -- 0
-cite$ -- 31
-duplicate$ -- 333
-empty$ -- 659
-format.name$ -- 65
-if$ -- 1634
+cite$ -- 42
+duplicate$ -- 622
+empty$ -- 1032
+format.name$ -- 95
+if$ -- 2865
 int.to.chr$ -- 0
-int.to.str$ -- 24
-missing$ -- 24
-newline$ -- 129
-num.names$ -- 24
-pop$ -- 71
+int.to.str$ -- 32
+missing$ -- 32
+newline$ -- 169
+num.names$ -- 32
+pop$ -- 98
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 218
+skip$ -- 557
 stack$ -- 0
-substring$ -- 559
-swap$ -- 128
-text.length$ -- 14
+substring$ -- 1124
+swap$ -- 346
+text.length$ -- 19
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 7
-while$ -- 56
-width$ -- 26
-write$ -- 281
+warning$ -- 10
+while$ -- 73
+width$ -- 34
+write$ -- 373
 (There was 1 error message)

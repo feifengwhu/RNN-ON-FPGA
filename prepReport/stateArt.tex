@@ -6,10 +6,12 @@ Over the course of this chapter, I am going to present an overview of the most r
 LSTM Networks are nowadays one of the state of the art algorithms in deep-learning, and their performance is superior to that of other kinds of RNNs and Hidden Markov Models, both of which are generally used to address the same set of problems where LSTM are employed, namely predicting and producing classification decisions from time-series data \textbf{citation needed!}. A very comprehensive description of applications can be found in one of the initial authors webpage dedicated to the subject~\footnote{\href{http://people.idsia.ch/~juergen/rnn.html}{http://people.idsia.ch/~juergen/rnn.html}}. I will now enumerate some of the bleeding edge applications of LSTM.
 
 \begin{itemize}
-    \item \textbf{Handwriting Recognition} -- and LSTM-based network~\cite{Bertolami09}, submitted by a team of the Technische Universität München, won the 2009 ICDAR Handwriting Recognition Contest, achieveing a recognition rate of up to 91\%~\cite{ICDAR09}.
+    \item \textbf{Handwriting Recognition} -- and LSTM-based network~\cite{Bertolami09}, submitted by a team of the Technische Universität München, won the 2009 ICDAR Handwriting Recognition Contest, achieveing a recognition rate of up to 91\%~\cite{ICDAR09}. LSTMs have also proven to surpass HMM based models in terms of optical character recognition in printed text, as~\cite{Breuel13} suggests.
+
     \item \textbf{Speech Recognition} -- an architecture\cite{Graves13} proposed by Graves et al. in 2013 achieved an astonishing 17.7\% of accuracy on the TIMT Phoneme Recognition Benchmark, which up to the date is a new record. Furthermore, it has also been used for large scale acoustic modelling of speech~\cite{Sak14}.
-    \item \textbf{Handwriting Synthesis} -- 
-    \item \textbf{Speech Synthesis} --
+
+    \item \textbf{Handwriting Synthesis} -- a comprehensive study by Graves shows, among other sequence generation tasks such as Text Prediction, the use of LSTM to produce synthetic handwriting, that looks incredibly similar to human-produced handwriting~\cite{Graves13_2}.
+
     \item \textbf{Translation} -- LSTM was used by Sutskever et al. (Google) to perform sequence-to-sequence translation on the WMT'14 dataset, translating English to French with a close to state of the art score~\cite{Sustkever14}.
 
     \item \textbf{Biomedical Applications} -- this network architecture was used in a protein homology detection scheme~\cite{Hochreiter07} using the SCOP 1.53 benchmark dataset, displaying a staggering performance when compared to other methods. Similarly, a recent article from 2015 by Sønderby et al. suggested the use of standalone LSTM and also Convolutional LSTM to perform subcellular localization of proteins, given solely their protein sequence, with an astounding accuracy of 0.902~\cite{Sonderby15}
@@ -17,7 +19,8 @@ LSTM Networks are nowadays one of the state of the art algorithms in deep-learni
     \item \textbf{Music Analysis and Composition} -- Lehner et al. proposed a low-latecy solution based on LSTM, suitable for real-time detection of a singing voice in music recordings~\cite{Lehner15} whose performance surpassed other baseline methods, with lower latency. 
         In terms of music transcription from audio data, there is a study that proposes the use of LSTM cells to perform a transcription of piano recordings to musical notes~\cite{Bock12}, in order to automate music transcription. The model was trained with recordings of both acoustic pianos and synthesized pianos, and the labelling was performed using an associated MIDI file for each piece that was used in the training, showing promising results. \cite{Coca13} suggests the use of LSTM to perform autonomous computer music composition, and Eck and Schmidhüber proposed LSTM to perform Blues improvisation in~\cite{Eck02}.
 
-    \item \textbf{Video and Image Analysis} -- 
+    \item \textbf{Video and Image Analysis} -- Vinyals et al., at Google, proposed and LSTM network for \textbf{image captioning}, preceded by a Convolutional Neural Network to apply preprocessing to the images~\cite{Vinyals14}. This way, the LSTM works as \emph{sentence generator}, that captions the images, with state of the art performance. 
+        Besides image captioning, video captioning is also an interesting topic. Venugopalan et al. recently proposed a CNN + LSTM architecture to translate video sequences to natural language~\cite{Donahue14}, using the Microsoft Research Video Description Corpus as a dataset.Tthere are other similar studies that combine image and video captioning~\cite{Donahue14_2}.
 
 
 \end{itemize}
