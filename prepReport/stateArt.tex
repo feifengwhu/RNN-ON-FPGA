@@ -8,11 +8,16 @@ LSTM Networks are nowadays one of the state of the art algorithms in deep-learni
 \begin{itemize}
     \item \textbf{Handwriting Recognition} -- and LSTM-based network~\cite{Bertolami09}, submitted by a team of the Technische Universität München, won the 2009 ICDAR Handwriting Recognition Contest, achieveing a recognition rate of up to 91\%~\cite{ICDAR09}.
     \item \textbf{Speech Recognition} -- an architecture\cite{Graves13} proposed by Graves et al. in 2013 achieved an astonishing 17.7\% of accuracy on the TIMT Phoneme Recognition Benchmark, which up to the date is a new record. Furthermore, it has also been used for large scale acoustic modelling of speech~\cite{Sak14}.
-    \item \textbf{Handwriting Synthesis} --
+    \item \textbf{Handwriting Synthesis} -- 
     \item \textbf{Speech Synthesis} --
-    \item \textbf{Biomedical Applications} --
-    \item \textbf{Music Analysis and Generation} --
-    \item \textbf{Video data Analysis} --
+    \item \textbf{Translation} -- LSTM was used by Sutskever et al. (Google) to perform sequence-to-sequence translation on the WMT'14 dataset, translating English to French with a close to state of the art score~\cite{Sustkever14}.
+
+    \item \textbf{Biomedical Applications} -- this network architecture was used in a protein homology detection scheme~\cite{Hochreiter07} using the SCOP 1.53 benchmark dataset, displaying a staggering performance when compared to other methods. Similarly, a recent article from 2015 by Sønderby et al. suggested the use of standalone LSTM and also Convolutional LSTM to perform subcellular localization of proteins, given solely their protein sequence, with an astounding accuracy of 0.902~\cite{Sonderby15}
+
+    \item \textbf{Music Analysis and Composition} -- Lehner et al. proposed a low-latecy solution based on LSTM, suitable for real-time detection of a singing voice in music recordings~\cite{Lehner15} whose performance surpassed other baseline methods, with lower latency. 
+        In terms of music transcription from audio data, there is a study that proposes the use of LSTM cells to perform a transcription of piano recordings to musical notes~\cite{Bock12}, in order to automate music transcription. The model was trained with recordings of both acoustic pianos and synthesized pianos, and the labelling was performed using an associated MIDI file for each piece that was used in the training, showing promising results. \cite{Coca13} suggests the use of LSTM to perform autonomous computer music composition, and Eck and Schmidhüber proposed LSTM to perform Blues improvisation in~\cite{Eck02}.
+
+    \item \textbf{Video and Image Analysis} -- 
 
 
 \end{itemize}

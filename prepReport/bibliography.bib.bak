@@ -2,6 +2,24 @@
 % Encoding: UTF-8
 
 
+@InProceedings{Sak14,
+  Title                    = {Long short-term memory recurrent neural network architectures for
+ large scale acoustic modeling},
+  Author                   = {Hasim Sak and
+ Andrew W. Senior and
+ Fran{\c{c}}oise Beaufays},
+  Booktitle                = {{INTERSPEECH} 2014, 15th Annual Conference of the International Speech
+ Communication Association, Singapore, September 14-18, 2014},
+  Year                     = {2014},
+  Pages                    = {338--342},
+
+  Bibsource                = {dblp computer science bibliography, http://dblp.org},
+  Biburl                   = {http://dblp.uni-trier.de/rec/bib/conf/interspeech/SakSB14},
+  Crossref                 = {DBLP:conf/interspeech/2014},
+  Timestamp                = {Wed, 18 Feb 2015 08:47:28 +0100},
+  Url                      = {http://www.isca-speech.org/archive/interspeech_2014/i14_0338.html}
+}
+
 @PhdThesis{Bengio1991,
   Title                    = {Artificial Neural Networks and Their Application to Sequence Recognition},
   Author                   = {Bengio, Yoshua},
@@ -44,6 +62,20 @@
   ISBN                     = {0387310738}
 }
 
+@InProceedings{Bock12,
+  Title                    = {Polyphonic piano note transcription with recurrent neural networks},
+  Author                   = {Bock, Sebastian and Schedl, Markus},
+  Year                     = {2012},
+
+  Address                  = {Kyoto, Japan},
+  Pages                    = {121 - 124},
+
+  Copyright                = {Compilation and indexing terms, Copyright 2016 Elsevier Inc.},
+  ISSN                     = {15206149},
+  Journal                  = {ICASSP, IEEE International Conference on Acoustics, Speech and Signal Processing - Proceedings},
+  Url                      = {http://dx.doi.org/10.1109/ICASSP.2012.6287832}
+}
+
 @Article{Cauwen96,
   Title                    = {An analog VLSI recurrent neural network learning a continuous-time trajectory},
   Author                   = {Cauwenberghs, G.},
@@ -73,6 +105,37 @@
   File                     = {:/home/josefonseca/Documents/thesis/research/chang5.pdf:PDF},
   Timestamp                = {Tue, 01 Dec 2015 19:22:34 +0100},
   Url                      = {http://arxiv.org/abs/1511.05552}
+}
+
+@InProceedings{Coca13,
+  Title                    = {Computer-aided music composition with LSTM neural network and chaotic inspiration},
+  Author                   = {Coca, Andres E. and Correa, Debora C. and Zhao, Liang},
+  Year                     = {2013},
+
+  Address                  = {Dallas, TX, United states},
+  Pages                    = {International Neural Network Society (INNS); IEEE Computational Intelligence Society (IEEE-CIS) - },
+
+  Copyright                = {Compilation and indexing terms, Copyright 2016 Elsevier Inc.},
+  Journal                  = {Proceedings of the International Joint Conference on Neural Networks},
+  Key                      = {Neural networks},
+  Keywords                 = {Chaotic systems;Complex networks;},
+  Language                 = {English},
+  Url                      = {http://dx.doi.org/10.1109/IJCNN.2013.6706747}
+}
+
+@InProceedings{20160201794918,
+  Title                    = {Finding temporal structure in music: Blues improvisation with LSTM recurrent networks},
+  Author                   = {Eck, D. and Schmidhuber, J.},
+  Year                     = {2002},
+
+  Address                  = {Martigny, Switzerland},
+  Pages                    = {747 - 756},
+  Volume                   = {2002-January},
+
+  Copyright                = {Compilation and indexing terms, Copyright 2016 Elsevier Inc.},
+  Journal                  = {Neural Networks for Signal Processing - Proceedings of the IEEE Workshop},
+  Language                 = {English},
+  Url                      = {http://dx.doi.org/10.1109/NNSP.2002.1030094}
 }
 
 @InProceedings{Gers2000,
@@ -238,6 +301,21 @@
   Url                      = {http://dx.doi.org/10.1162/neco.1997.9.8.1735}
 }
 
+@InProceedings{Lehner15,
+  Title                    = {A low-latency, real-time-capable singing voice detection method with LSTM recurrent neural networks},
+  Author                   = {Lehner, B. and Widmer, G. and Bock, S.},
+  Year                     = {2015},
+
+  Address                  = {Piscataway, NJ, USA},
+  Pages                    = {21 - 5},
+
+  Copyright                = {Copyright 2016, The Institution of Engineering and Technology},
+  File                     = {:/home/josefonseca/Documents/thesis/research/lstmSinging.pdf:PDF},
+  Journal                  = {2015 23rd European Signal Processing Conference (EUSIPCO). Proceedings},
+  Language                 = {English},
+  Url                      = {http://dx.doi.org/10.1109/EUSIPCO.2015.7362337}
+}
+
 @Article{Figueiredo97,
   Title                    = {Learning rules for neuro-controller via simultaneous perturbation},
   Author                   = {Maeda, Y. and de Figueiredo, Rui J.P.},
@@ -280,6 +358,21 @@
   Url                      = {http://dx.doi.org/10.1109/TNN.2005.852237}
 }
 
+@InProceedings{Sonderby15,
+  Title                    = {Convolutional LSTM networks for subcellular localization of proteins},
+  Author                   = {Sonderby, Soren Kaae and Sonderby, Casper Kaae and Nielsen, Henrik and Winther, Ole},
+  Year                     = {2015},
+
+  Address                  = {Mexico City, Mexico},
+  Pages                    = {68 - 80},
+  Volume                   = {9199},
+
+  Copyright                = {Compilation and indexing terms, Copyright 2016 Elsevier Inc.},
+  ISSN                     = {03029743},
+  Journal                  = {Lecture Notes in Computer Science (including subseries Lecture Notes in Artificial Intelligence and Lecture Notes in Bioinformatics)},
+  Language                 = {English}
+}
+
 @InProceedings{Spall98,
   Title                    = {Adaptive stochastic approximation by the simultaneous perturbation method},
   Author                   = {Spall, J.C.},
@@ -296,6 +389,22 @@
   Keywords                 = {adaptive estimation;approximation theory;Hessian matrices;Newton-Raphson method;optimisation;search problems;stochastic processes;},
   Language                 = {English},
   Url                      = {http://dx.doi.org/10.1109/CDC.1998.761833}
+}
+
+@InProceedings{Sustkever14,
+  Title                    = {Sequence to sequence learning with neural networks},
+  Author                   = {Sutskever, Ilya and Vinyals, Oriol and Le, Quoc V.},
+  Year                     = {2014},
+
+  Address                  = {Montreal, QC, Canada},
+  Number                   = {January},
+  Pages                    = {3104 - 3112},
+  Volume                   = {4},
+
+  Copyright                = {Compilation and indexing terms, Copyright 2016 Elsevier Inc.},
+  ISSN                     = {10495258},
+  Journal                  = {Advances in Neural Information Processing Systems},
+  Language                 = {English}
 }
 
 @Article{Tavear13,

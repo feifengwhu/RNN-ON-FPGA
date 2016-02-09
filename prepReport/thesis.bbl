@@ -113,6 +113,26 @@ Hasim Sak, Andrew~W. Senior, and Fran{\c{c}}oise Beaufays.
   International Speech Communication Association, Singapore, September 14-18,
   2014}, pages 338--342, 2014.
 
+\bibitem{Sustkever14}
+Ilya Sutskever, Oriol Vinyals, and Quoc~V. Le.
+\newblock Sequence to sequence learning with neural networks.
+\newblock volume~4, pages 3104 -- 3112, Montreal, QC, Canada, 2014.
+
+\bibitem{Hochreiter07}
+Sepp Hochreiter, Martin Heusel, and Klaus Obermayer.
+\newblock Fast model-based protein homology detection without alignment.
+\newblock {\em BIOINFORMATICS}, {23}({14}):{1728--1736}, {JUL 15} 2007.
+
+\bibitem{Sonderby15}
+Soren~Kaae Sonderby, Casper~Kaae Sonderby, Henrik Nielsen, and Ole Winther.
+\newblock Convolutional lstm networks for subcellular localization of proteins.
+\newblock volume 9199, pages 68 -- 80, Mexico City, Mexico, 2015.
+
+\bibitem{Bock12}
+Sebastian Bock and Markus Schedl.
+\newblock Polyphonic piano note transcription with recurrent neural networks.
+\newblock pages 121 -- 124, Kyoto, Japan, 2012.
+
 \bibitem{Maeda95}
 Yutaka Maeda, Hiroaki Hirano, and Yakichi Kanata.
 \newblock A learning rule of neural networks via simultaneous perturbation and
@@ -135,10 +155,5 @@ R.~Tavear, J.~Dedic, D.~Bokal, and A.~Zemva.
 \newblock Transforming the lstm training algorithm for efficient fpga -based
   adaptive control of nonlinear dynamic systems.
 \newblock {\em Informacije MIDEM}, 43(2):131 -- 8, 2013.
-
-\bibitem{Hochreiter07}
-Sepp Hochreiter, Martin Heusel, and Klaus Obermayer.
-\newblock Fast model-based protein homology detection without alignment.
-\newblock {\em BIOINFORMATICS}, {23}({14}):{1728--1736}, {JUL 15} 2007.
 
 \end{thebibliography}

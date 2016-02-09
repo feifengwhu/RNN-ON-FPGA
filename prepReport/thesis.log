@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.10.24)  9 FEB 2016 16:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.10.24)  9 FEB 2016 18:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1152,7 +1152,11 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 6.
 [15]
-Overfull \hbox (4.26689pt too wide) in paragraph at lines 28--29
+
+LaTeX Warning: Citation `Lehner15' on page 16 undefined on input line 17.
+
+
+Overfull \hbox (4.26689pt too wide) in paragraph at lines 33--34
 []\T1/ptm/m/n/10.95 The im-ple-men-ta-tion it-self makes an ex-ten-sive use of 
 the Multiply-and-Accumulate units (MAC)
  []
@@ -1250,10 +1254,10 @@ LaTeX Warning: There were undefined references.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 145.
  ) 
 Here is how much of TeX's memory you used:
- 9551 strings out of 493105
- 138956 string characters out of 6137071
- 233951 words of memory out of 5000000
- 12636 multiletter control sequences out of 15000+600000
+ 9558 strings out of 493105
+ 139041 string characters out of 6137071
+ 234047 words of memory out of 5000000
+ 12640 multiletter control sequences out of 15000+600000
  87059 words of font info for 112 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  42i,12n,45p,1346b,491s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1272,10 +1276,10 @@ xlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist
 w/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a
 .pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on thesis.pdf (36 pages, 1506731 bytes).
+Output written on thesis.pdf (36 pages, 1508087 bytes).
 PDF statistics:
- 577 PDF objects out of 1000 (max. 8388607)
- 505 compressed objects within 6 object streams
- 115 named destinations out of 1000 (max. 500000)
+ 584 PDF objects out of 1000 (max. 8388607)
+ 512 compressed objects within 6 object streams
+ 118 named destinations out of 1000 (max. 500000)
  271 words of extra memory for PDF output out of 10000 (max. 10000000)
 
