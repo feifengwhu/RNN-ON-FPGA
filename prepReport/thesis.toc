@@ -18,12 +18,14 @@
 \contentsline {section}{\numberline {3.3}Training Algorithms and Implementation}{17}{section.3.3}
 \contentsline {section}{\numberline {3.4}Final Overview}{18}{section.3.4}
 \contentsline {chapter}{\numberline {4}Work Plan}{19}{chapter.4}
-\contentsline {section}{\numberline {4.1}Main Tasks}{19}{section.4.1}
-\contentsline {section}{\numberline {4.2}Approach}{19}{section.4.2}
-\contentsline {section}{\numberline {4.3}Tentative Scheduling}{19}{section.4.3}
-\contentsline {section}{\numberline {4.4}Software and Hardware Resources to be used}{19}{section.4.4}
-\contentsline {chapter}{\numberline {5}Early Work}{21}{chapter.5}
-\contentsline {chapter}{\numberline {A}Loren Ipsum}{23}{appendix.A}
-\contentsline {section}{\numberline {A.1}O que \IeC {\'e} o \emph {Loren Ipsum}?}{23}{section.A.1}
-\contentsline {section}{\numberline {A.2}De onde Vem o Loren?}{23}{section.A.2}
-\contentsline {chapter}{References}{25}{section*.9}
+\contentsline {section}{\numberline {4.1}Approach and Main Tasks}{19}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Task Description}{19}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}Tentative Task Scheduling}{21}{subsection.4.1.2}
+\contentsline {section}{\numberline {4.2}Software and Hardware resources to be used}{24}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Hardware Resources}{24}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Software Resources}{24}{subsection.4.2.2}
+\contentsline {chapter}{\numberline {5}Early Work}{25}{chapter.5}
+\contentsline {chapter}{\numberline {A}Loren Ipsum}{27}{appendix.A}
+\contentsline {section}{\numberline {A.1}O que \IeC {\'e} o \emph {Loren Ipsum}?}{27}{section.A.1}
+\contentsline {section}{\numberline {A.2}De onde Vem o Loren?}{27}{section.A.2}
+\contentsline {chapter}{References}{29}{section*.9}
