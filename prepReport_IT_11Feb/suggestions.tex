@@ -1,0 +1,185 @@
+% !TEX TS-program = pdflatex
+% !TEX encoding = UTF-8 Unicode
+
+% This is a simple template for a LaTeX document using the "article" class.
+% See "book", "report", "letter" for other types of document.
+
+\documentclass[11pt]{scrartcl} % use larger type; default would be 10pt
+
+\usepackage[utf8]{inputenc} % set input encoding (not needed with XeLaTeX)
+
+%%% Examples of Article customizations
+% These packages are optional, depending whether you want the features they provide.
+% See the LaTeX Companion or other references for full information.
+
+%%% PAGE DIMENSIONS
+\usepackage{geometry} % to change the page dimensions
+\geometry{a4paper} % or letterpaper (US) or a5paper or....
+% \geometry{margin=2in} % for example, change the margins to 2 inches all round
+% \geometry{landscape} % set up the page for landscape
+%   read geometry.pdf for detailed page layout information
+
+\usepackage{graphicx} % support the \includegraphics command and options
+
+% \usepackage[parfill]{parskip} % Activate to begin paragraphs with an empty line rather than an indent
+
+%%% PACKAGES
+\usepackage{titling}
+\usepackage{booktabs} % for much better looking tables
+\usepackage{array} % for better arrays (eg matrices) in maths
+\usepackage{verbatim} % adds environment for commenting out blocks of text & for better verbatim
+\usepackage{subfig} % make it possible to include more than one captioned figure/table in a single float
+% These packages are all incorporated in the memoir class to one degree or another...
+
+%%% HEADERS & FOOTERS
+\usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
+\pagestyle{fancy} % options: empty , plain , fancy
+\renewcommand{\headrulewidth}{0pt} % customise the layout...
+\lhead{}\chead{}\rhead{}
+\lfoot{}\cfoot{\thepage}\rfoot{}
+
+%%% MATH PACKAGES
+\usepackage{amsmath}
+
+%%% END Article customizations
+
+%%% The "real" document content comes below...
+
+\title{Suggestions for the ``Dissertation preparation'' document.}
+\author{Ivo Timóteo \\11$^{\text{th}}$ February, 2016}
+\date{}
+\pretitle{\begin{flushleft}\LARGE}
+\posttitle{\end{flushleft}}
+\preauthor{\begin{flushleft}}
+\postauthor{\end{flushleft}\rule{\linewidth}{0.5mm}}
+\predate{}
+\postdate{}
+
+\begin{document}
+\maketitle
+
+Next time make the .tex compile without errors so that I can suggest inline. 
+
+Also, careful with commas and sentence structure. It's better to have multiple shorter, clear sentences than nested monsters requiring the reader to keep a stack of depth 4. And don't separate conjunctions with commas, please!
+
+Furthermore, I am not correcting everything because I am too lazy to type. Make sure to give another very good passage over the text afterwards.
+
+\subsection*{List of figures}
+\begin{itemize}
+	\item Use short captions on the figures otherwise LoF looks awful.
+	\begin{verbatim}\caption[Short version for LoF]{Full caption}\end{verbatim}
+\end{itemize}
+
+\subsection*{Introduction}
+\begin{itemize}
+	\item {\bf REPLACE} [first sentence]\\{\bf BY} Brief overview of the report:
+	\item {\bf REPLACE} the objectives of it\\{\bf BY} its objectives
+	\item {\bf REPLACE} help me achieve it \\{\bf BY} help me achieve them
+	\item {\bf SPELLING} theoreical
+	\item {\bf REMOVE} for the unsuspicious reader that is not versed in that area of knowledge
+	\item {\bf REMOVE} are presented, in consecutive order.
+	\item {\bf REPLACE} I will use in the final solution, that will be outlined \\{\bf BY} will be used in the final solution, which is outlined
+	\item {\bf REMOVE} exhaustively
+	\item {\bf REPLACE} in tasks \\{\bf BY} as tasks
+	\item {\bf REPLACE} Chart \\{\bf BY} chart
+	\item {\bf REPLACE} utilizing during the course of my work \\{\bf BY} using in my work
+	\item {\bf REPLACE} that I have already done to prepare this thesis \\{\bf BY} already concluded
+\end{itemize}
+
+\subsection*{Background}
+\begin{itemize}
+	\item {\bf REMOVE} The
+	\item {\bf REPLACE} learning structures \\{\bf BY} models
+	\item {\bf REMOVE} , itself,
+	\item {\bf REPLACE} its \\{\bf BY} their
+	\item {\bf SPELLING} beign
+	\item {\bf REMOVE} that extend
+	\item {\bf WTF} faltacitação
+	\item {\bf COMMENT} Not really clear at all from the short explanation why LSTM improves over HMM and RNN which is what your sentence kind of makes us expect... 
+\end{itemize}
+
+\subsection*{Motivation}
+\begin{itemize}
+	\item {\bf REMOVE} [comma after realization]
+	\item {\bf REMOVE} , hitherto,
+	\item {\bf REPLACE} still needs to be \\{\bf BY} is
+	\item {\bf REMOVE} possible
+	\item {\bf REMOVE} [comma after automatic]
+	\item {\bf REPLACE} , and saving \\{\bf BY} thus saving
+	\item {\bf WTF} performance room
+\end{itemize}
+
+\subsection*{Objectives}
+\begin{itemize}
+	\item {\bf REPLACE} done \\{\bf BY} presented
+	\item {\bf REMOVE} , to make justice to the name thesis, 
+\end{itemize}
+
+\subsection*{Theoretical background}
+\begin{itemize}
+	\item {\bf COMMENT} Not all learning is for classification; not all learning wants to extract features (e.g., we might just want a simple blackbox predictor); not all learning is supervised. Explicit vector representations have commas separating different components.
+	\item {\bf REMOVE} diametrically
+	\item {\bf COMMENT} refer that the sum of squares error is common because it's what appears under the assumption of Gaussian noise.
+	\item {\bf COMMENT} ``try to extract higher level information from data''. Can you explain? Weren't you just looking for $y_i$? What is a higher level prediction?
+\end{itemize}
+
+\subsection*{Artificial Neural Networks}
+\begin{itemize}
+	\item {\bf COMMENT} ``try to mimic the Human Brain'' -- I don't think this is actually accepted at all; no one I know believes this to be true. Also, why the capitalization? Also, right after that you claim to know the underlying mathematical function of a human neuron. Finally, you present a linear model as being equivalent to a function which is incredibly reductive (can't you have a function that is a non-linear model of its inputs?).
+	\item {\bf COMMENT} $b_0$ is usually called $w_0$ and you define $x = [1, x_1, \dots, x_n]$ giving you $y=f(\bf{w}^T\bf{x})$. Also, you have $N$ as number of data points and $n$ as number of features of the input which can be confusing.
+	\item {\bf COMMENT} Step functions are usually between 0 and 1. On the plot it would be nicer if every function had the same range.
+	\item {\bf COMMENT} Why are layers important?
+	\item {\bf COMMENT} When discussing the equations (2.3) to (2.6) it would be nice to have the schematics of at least three chained neurons.
+\end{itemize}
+
+\subsection*{Recurrent Neural Networks}
+\begin{itemize}
+	\item {\bf REMOVE} , essentially,
+	\item {\bf REPLACE} especially \\{\bf BY} commonly
+	\item {\bf COMMENT} ``but no information about the correlation between themselves and the data points that preceded them did not influence the training step'' -- this is a double negative which I don't think you wanted.
+	\item {\bf REPLACE} They were regarded as if no temporal relationship existed, and therefore each data point is conditionally independent of any other. \\{\bf BY} Temporal relationship is disregarded and  each data point considered conditionally independent of any other.
+	\item {\bf REPLACE} truth \\{\bf BY} true
+	\item {\bf REPLACE} , in which it is actually completely false, \\{\bf BY} such
+	\item {\bf SPELLING} Simulatneous
+	\item {\bf COMMENT} Stop the weird unnecessary capitalization of stuff :)
+\end{itemize}
+
+\subsection*{LSTMN}
+\begin{itemize}
+	\item {\bf REMOVE} basis
+	\item {\bf REPLACE} its formulation \\{\bf BY} it
+	\item {\bf REPLACE} structure [2] last year \\{\bf BY} model last year [2]
+	\item {\bf SPELLING} presenation
+	\item {\bf REPLACE} as well as the work \\{\bf BY} as well as of the work
+	\item {\bf COMMENT} ``Hadamard elementwise matrix multiplication'' is {\bf very} redundant. Why is the activation function of the forget gate always sigmoid? Btw, even though sigmoid is usually seen as the logistic function it actually refers to the entire family of S-shaped functions.
+	\item {\bf REMOVE} [commas around ``can be any'']
+	\item {\bf REPLACE} As for the update rule is concerned, we have \\{\bf BY} The update rule is
+	\item {\bf SPELLING} hipothetical
+	\item {\bf COMMENT} how do you assess whether the behaviour of the weight is appropriate or not?
+\end{itemize}
+
+\subsection*{Proposed Solution}
+\begin{itemize}
+	\item {\bf REPLACE} work, their \\{\bf BY} work and their
+	\item {\bf SPELLING} acheived 
+\end{itemize}
+
+\subsection*{State of the art}
+\begin{itemize}
+	\item {\bf COMMENT} ``bleeding edge'' is a bit too informal. Also, too many adjectives in 3.1; staggering, incredibly, astonishing, astounding, etc  
+	\item {\bf SPELLING} Tthere
+	\item {\bf SPELLING} restric
+\end{itemize}
+
+\subsection*{Work plan}
+\begin{itemize}
+	\item {\bf COMMENT} I don't know what to say about the first paragraph...
+	\item {\bf SPELLING} subtaskswhich
+	\item {\bf SPELLING} throgh
+	\item {\bf SPELLING} asses
+	\item {\bf SPELLING} [T3.1 is badly typed]
+\end{itemize}
+
+
+
+\end{document}
