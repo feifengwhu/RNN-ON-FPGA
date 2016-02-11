@@ -89,6 +89,7 @@
 
   Acmid                    = {2549524},
   Doi                      = {10.1109/ICDAR.2013.140},
+  File                     = {:/home/josefonseca/Documents/thesis/research/ocrRec.pdf:PDF},
   ISBN                     = {978-0-7695-4999-6},
   Keywords                 = {RNN, LSTM Networks, OCR},
   Numpages                 = {5},
@@ -426,22 +427,20 @@
   Language                 = {English}
 }
 
-@InProceedings{Spall98,
-  Title                    = {Adaptive stochastic approximation by the simultaneous perturbation method},
+@Article{Spall98,
+  Title                    = {Multivariate stochastic approximation using a simultaneous perturbation gradient approximation},
   Author                   = {Spall, J.C.},
-  Year                     = {1998},
+  Journal                  = {Automatic Control, IEEE Transactions on},
+  Year                     = {1992},
 
-  Address                  = {Piscataway, NJ, USA},
-  Note                     = {stochastic approximation;loss functions;stochastic search;Newton-Raphson algorithm;Hessian matrix;iterative method;optimization;root-finding;parameter estimation;adaptive estimation;},
-  Pages                    = {3872 - 9},
-  Volume                   = {vol.4},
+  Month                    = {Mar},
+  Number                   = {3},
+  Pages                    = {332-341},
+  Volume                   = {37},
 
-  Abstract                 = {Stochastic approximation (SA) has long been applied for problems of minimizing loss functions or root-finding with noisy input information. As with all stochastic search algorithms, there are adjustable algorithm coefficients that must be specified and that can have a profound effect on algorithm performance. It is known that picking these coefficients according to an SA analogue of the deterministic Newton-Raphson algorithm provides an optimal or near-optimal form of the algorithm. This paper presents a general adaptive SA algorithm that is based on an easy method for estimating the Hessian matrix at each iteration while concurrently estimating the primary parameters of interest. The approach applies in both the gradient-free optimization (Kiefer-Wolfowitz) and root-finding/stochastic gradient-based (Robbins-Monro) settings and is based on the &ldquo;simultaneous perturbation&rdquo; idea introduced previously.},
-  Copyright                = {Copyright 1999, IEE},
-  Journal                  = {Proceedings of the 37th IEEE Conference on Decision and Control (Cat. No.98CH36171)},
-  Keywords                 = {adaptive estimation;approximation theory;Hessian matrices;Newton-Raphson method;optimisation;search problems;stochastic processes;},
-  Language                 = {English},
-  Url                      = {http://dx.doi.org/10.1109/CDC.1998.761833}
+  Doi                      = {10.1109/9.119632},
+  ISSN                     = {0018-9286},
+  Keywords                 = {function approximation;Kiefer-Wolfowitz type;function approximation;function minimization;multivariate gradient equation;noisy measurements;root;simultaneous perturbation gradient approximation;stochastic approximation;Acceleration;Adaptive control;Approximation algorithms;Convergence;Design for experiments;Differential equations;Finite difference methods;Neural networks;Q measurement;Stochastic processes}
 }
 
 @InProceedings{Sustkever14,

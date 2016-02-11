@@ -1,1 +1,4 @@
 \chapter{Early Work}\label{chap:earlyWork}
+In order to better undesrtand LSTM,  gain some useful insight on their operation, and to have a software implementation, that is not part of any framework, with which I can validate in the future my FPGA implementation, I have developed an fully functional LSTM Layer in Python and Numpy, that still uses BPTT as a training algorithm (the governing equations are in appendix A of~\cite{Greff15}). The idea is to adapt it to use SPSA in the beginning of my Master's Thesis. The code is present in
+
+\lstinputlisting[language=Python, caption=Implementation of a LSTM Layer]{LSTMlayer.py}

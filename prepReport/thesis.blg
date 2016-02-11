@@ -7,7 +7,6 @@ A level-1 auxiliary file: theorBack.aux
 A level-1 auxiliary file: stateArt.aux
 A level-1 auxiliary file: workPlan.aux
 A level-1 auxiliary file: earlyWork.aux
-A level-1 auxiliary file: appendix1.aux
 The style file: unsrt.bst
 Database file #1: bibliography.bib
 A bad cross reference---entry "Sak14"
@@ -15,7 +14,6 @@ refers to entry "DBLP:conf/interspeech/2014", which doesn't exist
 Warning--I didn't find a database entry for "DBLP:conf/interspeech/2014"
 Warning--empty journal in Yoshua01
 Warning--empty booktitle in Gers2000
-Warning--empty booktitle in Spall98
 Warning--empty booktitle in Sustkever14
 Warning--can't use both volume and number fields in Sustkever14
 Warning--empty booktitle in Sonderby15
@@ -25,43 +23,43 @@ Warning--empty booktitle in Coca13
 Warning--empty booktitle in Eck02
 You've used 32 entries,
             1791 wiz_defined-function locations,
-            690 strings with 11253 characters,
-and the built_in function-call counts, 11693 in all, are:
-= -- 1211
+            688 strings with 11031 characters,
+and the built_in function-call counts, 11513 in all, are:
+= -- 1187
 > -- 344
-< -- 19
+< -- 17
 + -- 127
 - -- 95
 * -- 669
-:= -- 1507
-add.period$ -- 103
+:= -- 1494
+add.period$ -- 102
 call.type$ -- 32
 change.case$ -- 30
 chr.to.int$ -- 0
-cite$ -- 42
-duplicate$ -- 622
-empty$ -- 1032
+cite$ -- 41
+duplicate$ -- 607
+empty$ -- 1019
 format.name$ -- 95
-if$ -- 2865
+if$ -- 2811
 int.to.chr$ -- 0
 int.to.str$ -- 32
 missing$ -- 32
-newline$ -- 169
+newline$ -- 168
 num.names$ -- 32
-pop$ -- 98
+pop$ -- 94
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 557
+skip$ -- 539
 stack$ -- 0
-substring$ -- 1124
-swap$ -- 346
-text.length$ -- 19
+substring$ -- 1110
+swap$ -- 333
+text.length$ -- 17
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 10
-while$ -- 73
+warning$ -- 9
+while$ -- 72
 width$ -- 34
-write$ -- 373
+write$ -- 370
 (There was 1 error message)

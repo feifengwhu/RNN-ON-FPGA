@@ -74,12 +74,10 @@ F.A. Gers and J.~Schmidhuber.
 
 \bibitem{Spall98}
 J.C. Spall.
-\newblock Adaptive stochastic approximation by the simultaneous perturbation
-  method.
-\newblock volume vol.4, pages 3872 -- 9, Piscataway, NJ, USA, 1998.
-\newblock stochastic approximation;loss functions;stochastic
-  search;Newton-Raphson algorithm;Hessian matrix;iterative
-  method;optimization;root-finding;parameter estimation;adaptive estimation;.
+\newblock Multivariate stochastic approximation using a simultaneous
+  perturbation gradient approximation.
+\newblock {\em Automatic Control, IEEE Transactions on}, 37(3):332--341, Mar
+  1992.
 
 \bibitem{Maeda05}
 Y.~Maeda and M.~Wakamura.

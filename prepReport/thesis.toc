@@ -25,8 +25,5 @@
 \contentsline {section}{\numberline {4.2}Software and Hardware resources to be used}{26}{section.4.2}
 \contentsline {subsection}{\numberline {4.2.1}Hardware Resources}{26}{subsection.4.2.1}
 \contentsline {subsection}{\numberline {4.2.2}Software Resources}{26}{subsection.4.2.2}
-\contentsline {chapter}{\numberline {5}Early Work}{27}{chapter.5}
-\contentsline {chapter}{\numberline {A}Loren Ipsum}{29}{appendix.A}
-\contentsline {section}{\numberline {A.1}O que \IeC {\'e} o \emph {Loren Ipsum}?}{29}{section.A.1}
-\contentsline {section}{\numberline {A.2}De onde Vem o Loren?}{29}{section.A.2}
-\contentsline {chapter}{References}{31}{section*.8}
+\contentsline {chapter}{\numberline {5}Early Work}{29}{chapter.5}
+\contentsline {chapter}{References}{33}{section*.9}

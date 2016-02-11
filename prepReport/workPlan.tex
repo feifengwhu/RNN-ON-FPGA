@@ -89,7 +89,14 @@ Here is the Gantt Chart that depicts the temporal extension of the tasks describ
 \section{Software and Hardware resources to be used}\label{sec:wp_sh}
 
 \subsection{Hardware Resources}
-The main hardware resource that I will use for my solution is the \textbf{Xilinx\textregistered~ Zedboard}, whose core is a Zynq-7000 System-on-Chip that features both an FPGA core and an ARM \textregistered~ Cortex\texttrademark~-A9 processor. It is an FPGA development board that features several I/O interfaces such as Etherner, HDMI output, VGA output, Audio IOs, USB and UART, among other capabilites, making it easy to prototype additional features to the core design (i.e. for building the note transcription system of~\cite{Bock12}, and to make it operate in real-time, I would need an audio input, which I can easily get from the Audio IO, without investing time in connecting the codec and programming the FPGA to interface it).
+The main hardware resource that I will use for my solution is the \textbf{Xilinx\textregistered~ Zedboard} (Figure~\ref{fig:zedboard}, whose core is a Zynq-7000 System-on-Chip that features both an FPGA core and an ARM \textregistered~ Cortex\texttrademark~-A9 processor. It is an FPGA development board that features several I/O interfaces such as Etherner, HDMI output, VGA output, Audio IOs, USB and UART, among other capabilites, making it easy to prototype additional features to the core design (i.e. for building the note transcription system of~\cite{Bock12}, and to make it operate in real-time, I would need an audio input, which I can easily get from the Audio IO, without investing time in connecting the codec and programming the FPGA to interface it).
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\linewidth]{figures/zedboard.jpg}
+    \caption{The Zedboard FPGA Development Board. Source: \href{http://www.xilinx.com}{Xilinx}}
+    \label{fig:zedboard}
+\end{figure}
 
 \subsection{Software Resources}
 In terms of software resources related to the FPGA development, I will need an \textbf{HDL simulation tool} to simulate and verify the Verilog code that I will develop, and a \textbf{Synthesis tool} to synthesize the Verilog files into RTL code, and to map that description into the resources available in the FPGA. The simulation tool used will be Questasim\texttrademark, the successor of the well-known Modelsim\texttrademark, which is an industry-standard tool in the area. For the synthesis tool, I will use Xilinx\textregistered Vivado Suite, also an industry-standard tool, and that is the only alternative, since the Zedboard is also produced by Xilinx\textregistered. These two tools are proprietary, but there are licenses available at FEUP. Furthermore, I am planning to use FloPoCo~\footnote{\href{http://flopoco.gforge.inria.fr/}{http://flopoco.gforge.inria.fr/}} to generate some of the modules that perform arithmetic operations, to hasten the developing effort/time, and to ensure that they are the most efficient possible, and don't pose a performance bottleneck to my design; this software is freeware, and a standard in Academia.
