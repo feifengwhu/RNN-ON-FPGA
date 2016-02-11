@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.10.24)  10 FEB 2016 22:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.10.24)  11 FEB 2016 01:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1326,38 +1326,29 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
 
  [3
 
-] [4
-
-] (./thesis.lot)
-\tf@lot=\write7
-\openout7 = `thesis.lot'.
-
- [5
-
 ]
 \openout2 = `abbrevs.aux'.
 
- (./abbrevs.tex [6
+ (./abbrevs.tex [4
 
 
-]) [7] [8
+]) [5] [6
 
 
 ]
 \openout2 = `intro.aux'.
 
-
-(./intro.tex
+ (./intro.tex
 Chapter 1.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <20.74> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 1.
-) [1
+[1
 
 
-]
+] [2]) [3]
 \openout2 = `theorBack.aux'.
 
- (./theorBack.tex [2
+ (./theorBack.tex [4
 
 
 
@@ -1368,8 +1359,8 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
 
 Underfull \vbox (badness 6758) has occurred while \output is active []
 
- [3]
-[4]
+ [5]
+[6]
 Package epstopdf Info: Source file: <figures/neuron.eps>
 (epstopdf)                    date: 2016-02-07 15:14:45
 (epstopdf)                    size: 122444 bytes
@@ -1380,7 +1371,7 @@ Package epstopdf Info: Source file: <figures/neuron.eps>
 ed-to.pdf figures/neuron.eps>
 (epstopdf)             \includegraphics on input line 36.
 Package epstopdf Info: Output file is already uptodate.
- <figures/neuron-eps-converted-to.pdf, id=265, 275.0275pt x 212.795pt>
+ <figures/neuron-eps-converted-to.pdf, id=297, 275.0275pt x 212.795pt>
 File: figures/neuron-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/neuron-eps-converted-to.pdf>
@@ -1388,7 +1379,7 @@ Package pdftex.def Info: figures/neuron-eps-converted-to.pdf used on input line
  36.
 (pdftex.def)             Requested size: 192.0548pt x 148.60155pt.
 
-<figures/MultipolarNeuron.png, id=266, 2509.375pt x 1618.045pt>
+<figures/MultipolarNeuron.png, id=298, 2509.375pt x 1618.045pt>
 File: figures/MultipolarNeuron.png Graphic file (type png)
 
 <use figures/MultipolarNeuron.png>
@@ -1409,7 +1400,7 @@ Package epstopdf Info: Source file: <figures/activFunc.eps>
 erted-to.pdf figures/activFunc.eps>
 (epstopdf)             \includegraphics on input line 56.
 Package epstopdf Info: Output file is already uptodate.
-<figures/activFunc-eps-converted-to.pdf, id=274, 578.16pt x 433.62pt>
+<figures/activFunc-eps-converted-to.pdf, id=306, 578.16pt x 433.62pt>
 File: figures/activFunc-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/activFunc-eps-converted-to.pdf>
@@ -1419,7 +1410,7 @@ ine 56.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [5 <./figures/neuron-eps-converted-to.pdf> <./figures/MultipolarNeuron.png>]
+ [7 <./figures/neuron-eps-converted-to.pdf> <./figures/MultipolarNeuron.png>]
 Package epstopdf Info: Source file: <figures/ann.eps>
 (epstopdf)                    date: 2016-02-07 15:14:45
 (epstopdf)                    size: 158518 bytes
@@ -1431,7 +1422,7 @@ to.pdf figures/ann.eps>
 (epstopdf)             \includegraphics on input line 67.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/ann-eps-converted-to.pdf, id=303, 442.65375pt x 290.08376pt>
+<figures/ann-eps-converted-to.pdf, id=336, 442.65375pt x 290.08376pt>
 File: figures/ann-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/ann-eps-converted-to.pdf>
@@ -1441,26 +1432,27 @@ Package pdftex.def Info: figures/ann-eps-converted-to.pdf used on input line 67
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [6 <./figures/activFunc-eps-converted-to.pdf>]
+ [8 <./figures/activFunc-eps-converted-to.pdf>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [7 <./figures/ann-eps-converted-to.pdf>]
+ [9 <./figures/ann-eps-converted-to.pdf>]
 
-LaTeX Warning: Reference `fig:recneuron' on page 8 undefined on input line 99.
+LaTeX Warning: Reference `fig:recneuron' on page 10 undefined on input line 99.
 
 
-LaTeX Warning: Reference `fig:recneuron' on page 8 undefined on input line 103.
 
+LaTeX Warning: Reference `fig:recneuron' on page 10 undefined on input line 103
+.
 
 
 Underfull \vbox (badness 5578) has occurred while \output is active []
 
- [8]
+ [10]
 
-LaTeX Warning: Reference `eq:equationsLstm' on page 9 undefined on input line 1
-13.
+LaTeX Warning: Reference `eq:equationsLstm' on page 11 undefined on input line 
+113.
 
-<figures/lstmneuron.png, id=378, 913.16156pt x 409.53pt>
+<figures/lstmneuron.png, id=410, 913.16156pt x 409.53pt>
 File: figures/lstmneuron.png Graphic file (type png)
 
 <use figures/lstmneuron.png>
@@ -1469,20 +1461,15 @@ Package pdftex.def Info: figures/lstmneuron.png used on input line 117.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [9]
-[10 <./figures/lstmneuron.png>]
+ [11]
+[12 <./figures/lstmneuron.png>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [11]
-Overfull \hbox (1.7255pt too wide) in paragraph at lines 175--176
-[]\T1/ptm/m/n/10.95 As dis-cussed in Chap-ter [][]3[][], hith-erto there is onl
-y one FPGA im-ple-men-ta-tion of LSTM cells [[]],
- []
-
-) [12] [13]
+ [13])
+[14] [15]
 \openout2 = `stateArt.aux'.
 
- (./stateArt.tex [14
+ (./stateArt.tex [16
 
 
 
@@ -1494,7 +1481,7 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 6.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 6.
-[15] [16]
+[17] [18]
 Overfull \hbox (4.26689pt too wide) in paragraph at lines 36--37
 []\T1/ptm/m/n/10.95 The im-ple-men-ta-tion it-self makes an ex-ten-sive use of 
 the Multiply-and-Accumulate units (MAC)
@@ -1503,47 +1490,47 @@ the Multiply-and-Accumulate units (MAC)
 
 Underfull \vbox (badness 3482) has occurred while \output is active []
 
- [17])
-[18]
+ [19])
+[20]
 \openout2 = `workPlan.aux'.
 
  (./workPlan.tex
 Chapter 4.
-[19
+[21
 
 
 
-] [20]
+] [22]
 
-LaTeX Warning: Reference `chap:sa_apps' on page 21 undefined on input line 47.
+LaTeX Warning: Reference `chap:sa_apps' on page 23 undefined on input line 47.
 
-[21]
+[23]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [22
+ [24
 
 ]
 Overfull \vbox (10.35497pt too high) has occurred while \output is active []
 
 
-[23]
+[25]
 LaTeX Font Info:    Font shape `TS1/ptm/bx/n' in size <10.95> not available
 (Font)              Font shape `TS1/ptm/b/n' tried instead on input line 92.
-) [24
+) [26
 
 ]
 \openout2 = `earlyWork.aux'.
 
  (./earlyWork.tex
 Chapter 5.
-) [25
+) [27
 
 
 
 ]
 \openout2 = `appendix1.aux'.
 
- (./appendix1.tex [26
+ (./appendix1.tex [28
 
 
 
@@ -1551,73 +1538,73 @@ Chapter 5.
 Appendix A.
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <14.4> not available
 (Font)              Font shape `T1/ptm/b/it' tried instead on input line 7.
-) [27] [28
+) [29] [30
 
 
 ] (./thesis.bbl
-Underfull \hbox (badness 4634) in paragraph at lines 55--63
+Underfull \hbox (badness 4634) in paragraph at lines 66--74
 []\T1/ptm/m/n/10.95 F.A. Gers and J. Schmid-hu-ber.  Re-cur-rent nets that time
  and count.  vol-
  []
 
 
-Underfull \hbox (badness 2460) in paragraph at lines 55--63
+Underfull \hbox (badness 2460) in paragraph at lines 66--74
 \T1/ptm/m/n/10.95 ume vol.3, pages 189 -- 94, Los Alami-tos, CA, USA, 2000.  re
 -cur-rent neu-ral
  []
 
 
-Underfull \hbox (badness 1137) in paragraph at lines 55--63
+Underfull \hbox (badness 1137) in paragraph at lines 66--74
 \T1/ptm/m/n/10.95 net-works;RNN;timing;counting;time in-ter-vals;sequential tas
 ks;motor con-trol;rhythm de-
  []
 
 
-Underfull \hbox (badness 3690) in paragraph at lines 55--63
+Underfull \hbox (badness 3690) in paragraph at lines 66--74
 \T1/ptm/m/n/10.95 gates;discrete time steps;stable sequences;highly-nonlinear p
 recisely-timed spike se-
  []
 
+[31
 
-Underfull \hbox (badness 1796) in paragraph at lines 74--82
+]
+Underfull \hbox (badness 1796) in paragraph at lines 85--93
 []\T1/ptm/m/n/10.95 Y. Maeda and M. Waka-mura.  Si-mul-ta-ne-ous per-tur-ba-tio
 n learn-ing rule for re-cur-
  []
 
 
-Underfull \hbox (badness 1715) in paragraph at lines 74--82
+Underfull \hbox (badness 1715) in paragraph at lines 85--93
 \T1/ptm/m/n/10.95 rent neu-ral net-works and its fpga im-ple-men-ta-tion.  \T1/
 ptm/m/it/10.95 IEEE Trans-ac-tions on Neu-ral
  []
 
 
-Underfull \hbox (badness 1484) in paragraph at lines 74--82
+Underfull \hbox (badness 1484) in paragraph at lines 85--93
 \T1/ptm/m/it/10.95 Net-works\T1/ptm/m/n/10.95 , 16(6):1664 -- 72, 2005.  per-tu
 r-ba-tion learn-ing rule;recurrent neu-ral net-
  []
 
-[29
-
-] [30]) [31]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 147.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 147.
+[32]) [33]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 144.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 144.
  (./thesis.aux (./abbrevs.aux) (./intro.aux) (./theorBack.aux)
 (./stateArt.aux) (./workPlan.aux) (./earlyWork.aux) (./appendix1.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 147.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 147.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 144.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 144.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: AB8919E7ECFE74D3A874B92A718AF0AE;2185.
+(rerunfilecheck)             Checksum: 6CC19D91D9A2E60747906CE62E9BF0AC;2202.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 147.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 144.
  ) 
 Here is how much of TeX's memory you used:
- 21661 strings out of 493105
- 408238 string characters out of 6137071
- 482774 words of memory out of 5000000
- 24479 multiletter control sequences out of 15000+600000
+ 21663 strings out of 493105
+ 408293 string characters out of 6137071
+ 483047 words of memory out of 5000000
+ 24485 multiletter control sequences out of 15000+600000
  87370 words of font info for 113 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,12n,87p,1346b,780s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1636,10 +1623,10 @@ xlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist
 w/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a
 .pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on thesis.pdf (41 pages, 1529546 bytes).
+Output written on thesis.pdf (41 pages, 1535376 bytes).
 PDF statistics:
- 671 PDF objects out of 1000 (max. 8388607)
- 594 compressed objects within 6 object streams
- 137 named destinations out of 1000 (max. 500000)
+ 700 PDF objects out of 1000 (max. 8388607)
+ 622 compressed objects within 7 object streams
+ 136 named destinations out of 1000 (max. 500000)
  299 words of extra memory for PDF output out of 10000 (max. 10000000)
 
