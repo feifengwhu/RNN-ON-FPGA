@@ -99,6 +99,12 @@ A Recurrent Neural Network (RNN) is, essentially, a regular ANN where some neuro
 Figure~\ref{fig:recneuron} suggests a possible structure for a neuron of a hidden layer in an RNN, and also an alternate representation, where the structure is unfold through time.
 
 %% METE AQUI A FIGURA
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\linewidth]{figures/recneuron_unf.eps}
+    \caption{An unfolded recurrent neuron}
+	\label{fig:recneuron}
+\end{figure}
 
 The training of an RNN is usually performed using a variation of Backpropagation, called \textbf{Backpropagation Through Time} (BPTT), that as the name implies, performs the same backpropagation procedure discussed for the ANNs, but now taking into account the unfolding of the network through a fixed training epoch $T$ like Figure~\ref{fig:recneuron}. Due to this very fact, this training procedure is memory and performance consuming, and so it will not be used in my final work, but instead a novel approach, the \textbf{Simulatneous Perturbation Stochastic Approximation}. 
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.10.24)  11 FEB 2016 03:13
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.10.24)  11 FEB 2016 13:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1399,7 +1399,7 @@ Package epstopdf Info: Source file: <figures/neuron.eps>
 ed-to.pdf figures/neuron.eps>
 (epstopdf)             \includegraphics on input line 36.
 Package epstopdf Info: Output file is already uptodate.
- <figures/neuron-eps-converted-to.pdf, id=285, 275.0275pt x 212.795pt>
+ <figures/neuron-eps-converted-to.pdf, id=287, 275.0275pt x 212.795pt>
 File: figures/neuron-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/neuron-eps-converted-to.pdf>
@@ -1407,7 +1407,7 @@ Package pdftex.def Info: figures/neuron-eps-converted-to.pdf used on input line
  36.
 (pdftex.def)             Requested size: 192.0548pt x 148.60155pt.
 
-<figures/MultipolarNeuron.png, id=286, 2509.375pt x 1618.045pt>
+<figures/MultipolarNeuron.png, id=288, 2509.375pt x 1618.045pt>
 File: figures/MultipolarNeuron.png Graphic file (type png)
 
 <use figures/MultipolarNeuron.png>
@@ -1428,7 +1428,7 @@ Package epstopdf Info: Source file: <figures/activFunc.eps>
 erted-to.pdf figures/activFunc.eps>
 (epstopdf)             \includegraphics on input line 56.
 Package epstopdf Info: Output file is already uptodate.
-<figures/activFunc-eps-converted-to.pdf, id=294, 578.16pt x 433.62pt>
+<figures/activFunc-eps-converted-to.pdf, id=296, 578.16pt x 433.62pt>
 File: figures/activFunc-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/activFunc-eps-converted-to.pdf>
@@ -1450,7 +1450,7 @@ to.pdf figures/ann.eps>
 (epstopdf)             \includegraphics on input line 67.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/ann-eps-converted-to.pdf, id=324, 442.65375pt x 290.08376pt>
+<figures/ann-eps-converted-to.pdf, id=326, 442.65375pt x 290.08376pt>
 File: figures/ann-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/ann-eps-converted-to.pdf>
@@ -1464,37 +1464,45 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [9 <./figures/ann-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <figures/recneuron_unf.eps>
+(epstopdf)                    date: 2016-02-11 13:50:29
+(epstopdf)                    size: 114012 bytes
+(epstopdf)             Output file: <figures/recneuron_unf-eps-converted-to.pdf
+>
+(epstopdf)                    date: 2016-02-11 13:52:30
+(epstopdf)                    size: 9882 bytes
+(epstopdf)             Command: <repstopdf --outfile=figures/recneuron_unf-eps-
+converted-to.pdf figures/recneuron_unf.eps>
+(epstopdf)             \includegraphics on input line 104.
+Package epstopdf Info: Output file is already uptodate.
 
-LaTeX Warning: Reference `fig:recneuron' on page 10 undefined on input line 99.
+<figures/recneuron_unf-eps-converted-to.pdf, id=382, 292.09125pt x 164.615pt>
+File: figures/recneuron_unf-eps-converted-to.pdf Graphic file (type pdf)
 
+<use figures/recneuron_unf-eps-converted-to.pdf>
+Package pdftex.def Info: figures/recneuron_unf-eps-converted-to.pdf used on inp
+ut line 104.
+(pdftex.def)             Requested size: 384.1096pt x 216.4937pt.
 
-
-LaTeX Warning: Reference `fig:recneuron' on page 10 undefined on input line 103
-.
-
-
-Underfull \vbox (badness 5578) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [10]
 
 LaTeX Warning: Reference `eq:equationsLstm' on page 11 undefined on input line 
-113.
+119.
 
-<figures/lstmneuron.png, id=398, 913.16156pt x 409.53pt>
+[11 <./figures/recneuron_unf-eps-converted-to.pdf>]
+<figures/lstmneuron.png, id=426, 913.16156pt x 409.53pt>
 File: figures/lstmneuron.png Graphic file (type png)
 
 <use figures/lstmneuron.png>
-Package pdftex.def Info: figures/lstmneuron.png used on input line 117.
+Package pdftex.def Info: figures/lstmneuron.png used on input line 123.
 (pdftex.def)             Requested size: 384.1096pt x 172.26387pt.
-
+ [12 <./figures/lstmneuron.png>] [13]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [11]
-[12 <./figures/lstmneuron.png>]
-Underfull \vbox (badness 2012) has occurred while \output is active []
-
- [13]
-[14]) [15]
+ [14])
+[15]
 \openout2 = `stateArt.aux'.
 
  (./stateArt.tex [16
@@ -1544,7 +1552,7 @@ Overfull \vbox (10.35497pt too high) has occurred while \output is active []
 [25]
 LaTeX Font Info:    Font shape `TS1/ptm/bx/n' in size <10.95> not available
 (Font)              Font shape `TS1/ptm/b/n' tried instead on input line 92.
- <figures/zedboard.jpg, id=574, 1284.8pt x 1037.8775pt>
+ <figures/zedboard.jpg, id=591, 1284.8pt x 1037.8775pt>
 File: figures/zedboard.jpg Graphic file (type jpg)
 
 <use figures/zedboard.jpg>
@@ -1638,7 +1646,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 174.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 174.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 174.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 586FBDFF5ABDAF16D5C17703233213BF;2003.
+(rerunfilecheck)             Checksum: 4601FB28406B09DBE3581A074A75F294;2004.
 
 
 LaTeX Warning: There were undefined references.
@@ -1646,10 +1654,10 @@ LaTeX Warning: There were undefined references.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 174.
  ) 
 Here is how much of TeX's memory you used:
- 23699 strings out of 493105
- 435262 string characters out of 6137071
- 842992 words of memory out of 5000000
- 26331 multiletter control sequences out of 15000+600000
+ 23705 strings out of 493105
+ 435484 string characters out of 6137071
+ 843110 words of memory out of 5000000
+ 26335 multiletter control sequences out of 15000+600000
  86466 words of font info for 117 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,12n,87p,1346b,2020s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1662,16 +1670,17 @@ f-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist
 /amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
 ts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
 mr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pf
-b></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8
-a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on thesis.pdf (43 pages, 1840942 bytes).
+b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/tim
+es/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on thesis.pdf (43 pages, 1852195 bytes).
 PDF statistics:
- 910 PDF objects out of 1000 (max. 8388607)
- 826 compressed objects within 9 object streams
- 306 named destinations out of 1000 (max. 500000)
- 280 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 929 PDF objects out of 1000 (max. 8388607)
+ 843 compressed objects within 9 object streams
+ 307 named destinations out of 1000 (max. 500000)
+ 285 words of extra memory for PDF output out of 10000 (max. 10000000)
 
