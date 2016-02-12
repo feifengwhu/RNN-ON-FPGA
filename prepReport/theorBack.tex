@@ -113,7 +113,7 @@ Figure~\ref{fig:recurrneuron} suggests a possible structure for a neuron of a hi
 		\label{fig:recneuron_unf}
 	\end{subfigure}
 		
-    \caption[Representation of a Recurrent Neuron (Figure~\ref{fig:recneuron}) and a Recurrent Neuron unfolded through time (Figure~\ref{recneuron_unf})]{In Figure~\ref{fig:recneuron}, a recurrent neuron is depicted, where the output is fed back to the input, weighted by $\theta_h$. Figure~\ref{fig:recneuron_unf}, an unfolding through time of that same neuron is performed. The basic idea is that feeding the output back to the input is similar to feeding the output to the input of the neuron \emph{at a previous time step}: this way, we linearize the structure. Considering a training epoch of $T$ samples, corresponds to having $T$ unfolded neurons/layers}
+    \caption[Representation of a Recurrent Neuron (Figure~\ref{fig:recneuron}) and a Recurrent Neuron unfolded through time (Figure~\ref{fig:recneuron_unf})]{In Figure~\ref{fig:recneuron}, a recurrent neuron is depicted, where the output is fed back to the input, weighted by $\theta_h$. Figure~\ref{fig:recneuron_unf}, an unfolding through time of that same neuron is performed. The basic idea is that feeding the output back to the input is similar to feeding the output to the input of the neuron \emph{at a previous time step}: this way, we linearize the structure. Considering a training epoch of $T$ samples, corresponds to having $T$ unfolded neurons/layers}
 	\label{fig:recurrneuron}
 \end{figure}
 
@@ -127,7 +127,7 @@ To overcome the issue of failing to remember long-term dependencies, Hochreiter 
 Although originally formulated in 1997, its formulation has been incrementally updated in~\cite{Gers00} and~\cite{Gers2000}, and the most current version is the one in~\cite{Graves05}. One of the inital proposers of LSTM, Prof. Jürgen Schmidhüber, did a survey on the most common variations of the model last year~\cite{Greff15}, and this will the basis of this short theoretical presentation, as well as the work that will be developed in this thesis. 
 
 \subsubsection{Structure, Operation and Equations}\label{sec:struct_lstm}
-A single LSTM neuron is presented in Figure~\ref{fig:lstmneuron}. As we can see from the picture, we still have the recurrent connections from the regular RNNs, but now there are multiple entry points that control the flow of information through the network. Although omitted from the picture, all the gates are biased, as is suggested in Equations~\ref{eq:equationsLstm}. The main components, their role and relevance, are explained as follows
+A single LSTM neuron is presented in Figure~\ref{fig:lstmneuron}. As we can see from the picture, we still have the recurrent connections from the regular RNNs, but now there are multiple entry points that control the flow of information through the network. Although omitted from the picture, all the gates are biased, as is suggested in Equations~\ref{eq:equationsLSTM}. The main components, their role and relevance, are explained as follows
 
 \begin{figure}[H]
 	\centering
@@ -154,13 +154,13 @@ A single LSTM neuron is presented in Figure~\ref{fig:lstmneuron}. As we can see 
 
 After these small conceptual definitions, that allow us to grasp some intuition on the operation of a \textit{single} LSTM cell, I can present the overview of a \textit{layer} of LSTM neurons and their formal mathematical formulation, that will be needed both for the high-level model and the HDL description. The operation of each set of gates of the layer is given by the following set of equations
 
-\begin{align}\label{eq:equationsLSTM}
-    \mb{z}^{(t)} & = g(\mb{W}_z \mb{x}^{(t)} + \mb{R}_z \mb{y}^{(t-1)} + \mb{b}_z) \\
-    \mb{i}^{(t)} & = \sigma(\mb{W}_i \mb{x}^{(t)} + \mb{R}_i \mb{y}^{(t-1)} + \mb{p}_i \odot \mb{c}^{(t-1)} + \mb{b}_i) \\
-    \mb{f}^{(t)} & = \sigma(\mb{W}_f \mb{x}^{(t)} + \mb{R}_f \mb{y}^{(t-1)} + \mb{p}_f \odot \mb{c}^{(t-1)} + \mb{b}_f) \\
-    \mb{c}^{(t)} & = \mb{i}^{(t)} \odot \mb{z}^{(t)} + \mb{f}^{(t)} \odot \mb{c}^{(t-1)} \\
-    \mb{o}^{(t)} & = \sigma(\mb{W}_o \mb{x}^{(t)} + \mb{R}_o \mb{y}^{(t-1)} + \mb{p}_o \odot \mb{c}^{(t)} + \mb{b}_o) \\
-    \mb{c}^{(t)} & = \mb{o}^{(t)} \odot h(\mb{z}^{(t)}) 
+\begin{align}
+    \mb{z}^{(t)} & = g(\mb{W}_z \mb{x}^{(t)} + \mb{R}_z \mb{y}^{(t-1)} + \mb{b}_z) \notag\\
+    \mb{i}^{(t)} & = \sigma(\mb{W}_i \mb{x}^{(t)} + \mb{R}_i \mb{y}^{(t-1)} + \mb{p}_i \odot \mb{c}^{(t-1)} + \mb{b}_i) \notag\\
+    \mb{f}^{(t)} & = \sigma(\mb{W}_f \mb{x}^{(t)} + \mb{R}_f \mb{y}^{(t-1)} + \mb{p}_f \odot \mb{c}^{(t-1)} + \mb{b}_f) \notag\\
+    \mb{c}^{(t)} & = \mb{i}^{(t)} \odot \mb{z}^{(t)} + \mb{f}^{(t)} \odot \mb{c}^{(t-1)} \notag \\
+    \mb{o}^{(t)} & = \sigma(\mb{W}_o \mb{x}^{(t)} + \mb{R}_o \mb{y}^{(t-1)} + \mb{p}_o \odot \mb{c}^{(t)} + \mb{b}_o) \notag\\
+    \mb{c}^{(t)} & = \mb{o}^{(t)} \odot h(\mb{z}^{(t)}) \label{eq:equationsLSTM}
 \end{align}
 where $\odot$ is the Hadamard multiplication. The $i$-th element of the previous vectors in bold corresponds to the value of the gate of the $i$-th neuron of the layer, which is a very convenient and compact representation of the whole layer. Furthermore, if the layer has $N$ LSTM neurons and $M$ inputs (i.e. the size of the layer that precedes this), we see that the input weight matrices $\mb{W}_*$ and the  recurrent weight matrices $\mb{R}_*$ all have size $N \times M$, and that the bias weight matrices $\mb{b}_*$, the peephole weight matrices $\mb{p}_*$ and the matrices $\mb{z}^{(t)}$ through $\mb{c}^{(t)}$ have size $N \times 1$. Although useful for a high-level description in a programming language, the matrix representation  may not be suitable for a direct HDL port. In that case, in order to represent the operation of the $i$-\textit{single neuron}, all the above equations still hold, but instead of \textit{vectors} of outputs, we will have a single scalar output, and we only use the appropriate row in the weight matrices $\mb{W}_{*}$, $\mb{R}_{*}$ and the remaining.
 
@@ -183,7 +183,7 @@ According to the analysis performed in~\cite{Maeda05}, performing a two-term Tay
     \Delta w_i^{(t)} = s_i^{(t)} (\mb{s}^{(t)})^T \frac{\partial J(\mb{w}^{(t)})}{\partial \mb{w}} +
                         \frac{c s_i^{(t)}}{2} (\mb{s}^{(t)})^T \frac{\partial^2 J(\mb{w}^{(t)})}{\partial \mb{w}^2}  (\mb{s}^{(t)}) 
 \end{equation}
-If the random sign vector $\mb{s}^{(t)}$ is chosen carefully so that the expected value of the vector at the $i$-th position is zero, $E(s_i^{(t)})$, and the signs of two different components $i$ and $j$, at different time-steps, are independent (i.e. $E(s_i^{(t_1)}s_j^{(t_2)}) = \delta_{ij}\delta_{t_1 t_2}$, equation~\ref{eq:taylor} reduces to
+If the random sign vector $\mb{s}^{(t)}$ is chosen carefully so that the expected value of the vector at the $i$-th position is zero, $E(s_i^{(t)})$, and the signs of two different components $i$ and $j$, at different time-steps, are independent (i.e. $E(s_i^{(t_1)}s_j^{(t_2)}) = \delta_{ij}\delta_{t_1 t_2}$, where $\delta$ is the Kronecker fuction), taking the \emph{Expected Value} of equation~\ref{eq:taylor} yields 
 
 \begin{equation}\label{eq:spsa_gradProof}
     E(\Delta w_i^{(t)}) = \frac{\partial J(\mb{w}^{(t)})}{\partial w_i^{(t)}}
@@ -193,7 +193,7 @@ that is, the \emph{expected value} of the weight update approximates the gradien
 One last comment to be made concerning the update rule, is the hypothetical need for \textbf{limits} to the weight values, when the update rule exceeds $|w_{\text{max}}|$ (in that case, we set $w_i^{(t+1)} = \pm w_{\text{max}}$), which sometimes might be needed if the behaviour of the weight update is not appropriate~\cite{Maeda05}.
 
 \section{Proposed Solution}\label{sec:propSol}
-Given the previous discussion of how LSTM neurons work and their benefits when compared to other RNN architectures, this work aims to conceive and design an efficient dedicated FPGA implementation with on-chip learning that, surpasses the training/testing time of an equivalent CPU implementation in a general high-level language or of a framework (see Section~\re (see Section~\ref{sec:wp_sh}). 
+Given the previous discussion of how LSTM neurons work and their benefits when compared to other RNN architectures, this work aims to conceive and design an efficient dedicated FPGA implementation with on-chip learning that, surpasses the training/testing time of an equivalent CPU implementation in a general high-level language or of a framework (see Section~\ref{sec:wp_sh}). 
 
 As discussed in Chapter~\ref{chap:stateArt}, up to now there is only one FPGA implementation of LSTM cells~\cite{Chang15}, but there is no on-chip learning on the architecture (the weights are learned offline, and loaded in the FPGA before operation, and they are not changed while the FPGA system is operating), and my proposed work will implement an efficient LSTM implementation \emph{with} the ability to learn on-chip, which is an innovative and useful feature for the LSTM architecture on a dedicated hardware implementation. I will achieve that using the SPSA method described in~\ref{sec:training_lstm}, and inspired in the previous work of~\cite{Maeda05}.
 
