@@ -18,12 +18,12 @@
 \contentsline {section}{\numberline {3.2}Hardware Implementations of LSTM}{18}{section.3.2}
 \contentsline {section}{\numberline {3.3}Training Algorithms and Implementation}{19}{section.3.3}
 \contentsline {section}{\numberline {3.4}Final Overview}{20}{section.3.4}
-\contentsline {chapter}{\numberline {4}Work Plan}{21}{chapter.4}
-\contentsline {section}{\numberline {4.1}Approach and Main Tasks}{21}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}Task Description}{21}{subsection.4.1.1}
-\contentsline {subsection}{\numberline {4.1.2}Tentative Task Scheduling}{23}{subsection.4.1.2}
-\contentsline {section}{\numberline {4.2}Software and Hardware resources to be used}{26}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}Hardware Resources}{26}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}Software Resources}{26}{subsection.4.2.2}
-\contentsline {chapter}{\numberline {5}Early Work}{29}{chapter.5}
+\contentsline {chapter}{\numberline {4}Early Work}{21}{chapter.4}
+\contentsline {chapter}{\numberline {5}Work Plan}{25}{chapter.5}
+\contentsline {section}{\numberline {5.1}Approach and Main Tasks}{25}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Task Description}{25}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}Tentative Task Scheduling}{27}{subsection.5.1.2}
+\contentsline {section}{\numberline {5.2}Software and Hardware resources to be used}{30}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Hardware Resources}{30}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Software Resources}{30}{subsection.5.2.2}
 \contentsline {chapter}{References}{33}{section*.10}

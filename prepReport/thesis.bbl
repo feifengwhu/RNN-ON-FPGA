@@ -51,32 +51,24 @@ Sepp Hochreiter, Yoshua Bengio, Paolo Frasconi, and Jürgen Schmidhuber.
 Yoshua Bengio, Patrice Simard, and Paolo Frasconi.
 \newblock Learning long-term dependencies with gradient descent is difficult.
 \newblock {\em IEEE Transactions on Neural Networks}, 5(2):157 -- 166, 1994.
-\newblock Gradient based learning algorithms;Information latching;Input/output
-  sequences;Learning algorithms;Parametric dynamical system;Recurrent neural
-  network training;Temporal contingencies;.
 
 \bibitem{Gers00}
 F.A. Gers, J.~Schmidhuber, and F.~Cummins.
 \newblock Learning to forget: continual prediction with lstm.
 \newblock {\em Neural Computation}, 12(10):2451 -- 71, 2000.
-\newblock LSTM;learning algorithms;recurrent neural networks;LSTM
-  networks;continual input streams;forget gate;.
 
 \bibitem{Gers2000}
 F.A. Gers and J.~Schmidhuber.
 \newblock Recurrent nets that time and count.
-\newblock volume vol.3, pages 189 -- 94, Los Alamitos, CA, USA, 2000.
-\newblock recurrent neural networks;RNN;timing;counting;time
-  intervals;sequential tasks;motor control;rhythm detection;long short-term
-  memory;LSTM;peephole connections;internal cells;multiplicative gates;discrete
-  time steps;stable sequences;highly-nonlinear precisely-timed spike
-  sequences;.
+\newblock {\em Proceedings of the IEEE-INNS-ENNS International Joint Conference
+  on Neural Networks. IJCNN 2000. Neural Computing: New Challenges and
+  Perspectives for the New Millennium}, vol.3:189 -- 94, 2000.
 
 \bibitem{Spall98}
 J.C. Spall.
 \newblock Multivariate stochastic approximation using a simultaneous
   perturbation gradient approximation.
-\newblock {\em Automatic Control, IEEE Transactions on}, 37(3):332--341, Mar
+\newblock {\em IEEE Transactions on Automatic Control}, 37(3):332--341, Mar
   1992.
 
 \bibitem{Maeda05}
@@ -90,14 +82,13 @@ A.~Graves, M.~Liwicki, S.~Fernandez, R.~Bertolami, H.~Bunke, and
   J.~Schmidhuber.
 \newblock A novel connectionist system for unconstrained handwriting
   recognition.
-\newblock {\em Pattern Analysis and Machine Intelligence, IEEE Transactions
-  on}, 31(5):855--868, May 2009.
+\newblock {\em IEEE Transactions on Pattern Analysis and Machine Intelligence},
+  31(5):855--868, May 2009.
 
 \bibitem{ICDAR09}
 E.~Grosicki and H.~El~Abed.
 \newblock Icdar 2009 handwriting recognition competition.
-\newblock In {\em Document Analysis and Recognition, 2009. ICDAR '09. 10th
-  International Conference on}, pages 1398--1402, July 2009.
+\newblock pages 1398--1402, July 2009.
 
 \bibitem{Breuel13}
 Thomas~M. Breuel, Adnan Ul-Hasan, Mayce~Ali Al-Azawi, and Faisal Shafait.
@@ -110,16 +101,14 @@ Thomas~M. Breuel, Adnan Ul-Hasan, Mayce~Ali Al-Azawi, and Faisal Shafait.
 \bibitem{Graves13}
 A.~Graves, A.-R. Mohamed, and G.~Hinton.
 \newblock Speech recognition with deep recurrent neural networks.
-\newblock In {\em Acoustics, Speech and Signal Processing (ICASSP), 2013 IEEE
-  International Conference on}, pages 6645--6649, May 2013.
+\newblock In {\em 2013 IEEE International Conference on Acoustics, Speech and
+  Signal Processing (ICASSP)}, pages 6645--6649, May 2013.
 
 \bibitem{Sak14}
 Hasim Sak, Andrew~W. Senior, and Fran{\c{c}}oise Beaufays.
 \newblock Long short-term memory recurrent neural network architectures for
   large scale acoustic modeling.
-\newblock In {\em {INTERSPEECH} 2014, 15th Annual Conference of the
-  International Speech Communication Association, Singapore, September 14-18,
-  2014}, pages 338--342, 2014.
+\newblock pages 338--342, 2014.
 
 \bibitem{Graves13_2}
 Alex Graves.
@@ -150,20 +139,21 @@ B.~Lehner, G.~Widmer, and S.~Bock.
 \bibitem{Bock12}
 Sebastian Bock and Markus Schedl.
 \newblock Polyphonic piano note transcription with recurrent neural networks.
-\newblock pages 121 -- 124, Kyoto, Japan, 2012.
+\newblock {\em ICASSP, IEEE International Conference on Acoustics, Speech and
+  Signal Processing - Proceedings}, pages 121 -- 124, 2012.
 
 \bibitem{Coca13}
 Andres~E. Coca, Debora~C. Correa, and Liang Zhao.
 \newblock Computer-aided music composition with lstm neural network and chaotic
   inspiration.
-\newblock pages International Neural Network Society (INNS); IEEE Computational
-  Intelligence Society (IEEE--CIS) --, Dallas, TX, United states, 2013.
+\newblock Dallas, TX, United states, 2013.
 
 \bibitem{Eck02}
 D.~Eck and J.~Schmidhuber.
-\newblock Finding temporal structure in music: Blues improvisation with lstm
+\newblock Finding temporal structure in music: Blues improvisation with {LSTM}
   recurrent networks.
-\newblock volume 2002-January, pages 747 -- 756, Martigny, Switzerland, 2002.
+\newblock {\em Neural Networks for Signal Processing - Proceedings of the IEEE
+  Workshop}, 2002-January:747 -- 756, 2002.
 
 \bibitem{Vinyals14}
 Oriol Vinyals, Alexander Toshev, Samy Bengio, and Dumitru Erhan.
@@ -194,11 +184,11 @@ Yutaka Maeda, Hiroaki Hirano, and Yakichi Kanata.
 G.~Cauwenberghs.
 \newblock An analog vlsi recurrent neural network learning a continuous-time
   trajectory.
-\newblock {\em Neural Networks, IEEE Transactions on}, 7(2):346--361, Mar 1996.
+\newblock {\em IEEE Transactions on Neural Networks}, 7(2):346--361, Mar 1996.
 
 \bibitem{Figueiredo97}
 Y.~Maeda and Rui~J.P. de~Figueiredo.
 \newblock Learning rules for neuro-controller via simultaneous perturbation.
-\newblock {\em Neural Networks, IEEE Transactions on}, 8(5):1119--1130, 1997.
+\newblock {\em IEEE Transactions on Neural Networks}, 8(5):1119--1130, 1997.
 
 \end{thebibliography}

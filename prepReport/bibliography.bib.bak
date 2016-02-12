@@ -42,12 +42,10 @@
   Pages                    = {157 - 166},
   Volume                   = {5},
 
-  Abstract                 = {Recurrent neural networks can be used to map input sequences to output sequences, such as for recognition, production or prediction problems. However, practical difficulties have been reported in training recurrent neural networks to perform tasks in which the temporal contingencies present in the input/output sequences span long intervals. We show why gradient based learning algorithms face an increasingly difficult problem as the duration of the dependencies to be captured increases. These results expose a trade-off between efficient learning by gradient descent and latching on information for long periods. Based on an understanding of this problem, alternatives to standard gradient descent are considered.},
   Copyright                = {Compilation and indexing terms, Copyright 2015 Elsevier Inc.},
   File                     = {:tnn-94-gradient.pdf:PDF},
   ISSN                     = {10459227},
   Key                      = {Neural networks},
-  Language                 = {English},
   Url                      = {http://dx.doi.org/10.1109/72.279181}
 }
 
@@ -98,7 +96,7 @@
 @Article{Cauwen96,
   Title                    = {An analog VLSI recurrent neural network learning a continuous-time trajectory},
   Author                   = {Cauwenberghs, G.},
-  Journal                  = {Neural Networks, IEEE Transactions on},
+  Journal                  = {IEEE Transactions on Neural Networks},
   Year                     = {1996},
 
   Month                    = {Mar},
@@ -132,9 +130,7 @@
   Year                     = {2013},
 
   Address                  = {Dallas, TX, United states},
-  Pages                    = {International Neural Network Society (INNS); IEEE Computational Intelligence Society (IEEE-CIS) - },
 
-  Copyright                = {Compilation and indexing terms, Copyright 2016 Elsevier Inc.},
   Journal                  = {Proceedings of the International Joint Conference on Neural Networks},
   Key                      = {Neural networks},
   Url                      = {http://dx.doi.org/10.1109/IJCNN.2013.6706747}
@@ -161,7 +157,7 @@
 }
 
 @InProceedings{Eck02,
-  Title                    = {Finding temporal structure in music: Blues improvisation with LSTM recurrent networks},
+  Title                    = {Finding temporal structure in music: Blues improvisation with {LSTM} recurrent networks},
   Author                   = {Eck, D. and Schmidhuber, J.},
   Year                     = {2002},
 
@@ -169,7 +165,6 @@
   Pages                    = {747 - 756},
   Volume                   = {2002-January},
 
-  Copyright                = {Compilation and indexing terms, Copyright 2016 Elsevier Inc.},
   Journal                  = {Neural Networks for Signal Processing - Proceedings of the IEEE Workshop},
   Language                 = {English},
   Url                      = {http://dx.doi.org/10.1109/NNSP.2002.1030094}
@@ -223,7 +218,7 @@
 @Article{Bertolami09,
   Title                    = {A Novel Connectionist System for Unconstrained Handwriting Recognition},
   Author                   = {Graves, A. and Liwicki, M. and Fernandez, S. and Bertolami, R. and Bunke, H. and Schmidhuber, J.},
-  Journal                  = {Pattern Analysis and Machine Intelligence, IEEE Transactions on},
+  Journal                  = {IEEE Transactions on Pattern Analysis and Machine Intelligence},
   Year                     = {2009},
 
   Month                    = {May},
@@ -238,7 +233,7 @@
 @InProceedings{Graves13,
   Title                    = {Speech recognition with deep recurrent neural networks},
   Author                   = {Graves, A. and Mohamed, A.-R. and Hinton, G.},
-  Booktitle                = {Acoustics, Speech and Signal Processing (ICASSP), 2013 IEEE International Conference on},
+  Booktitle                = {2013 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)},
   Year                     = {2013},
   Month                    = {May},
   Pages                    = {6645-6649},
@@ -274,13 +269,13 @@
 @InProceedings{ICDAR09,
   Title                    = {ICDAR 2009 Handwriting Recognition Competition},
   Author                   = {Grosicki, E. and El Abed, H.},
-  Booktitle                = {Document Analysis and Recognition, 2009. ICDAR '09. 10th International Conference on},
   Year                     = {2009},
   Month                    = {July},
   Pages                    = {1398-1402},
 
   Doi                      = {10.1109/ICDAR.2009.184},
-  ISSN                     = {1520-5363}
+  ISSN                     = {1520-5363},
+  Journal                  = {ICDAR '09. 10th International Conference on Document Analysis and Recognition, 2009}
 }
 
 @Article{Hirokami05,
@@ -351,8 +346,6 @@
   Address                  = {Piscataway, NJ, USA},
   Pages                    = {21 - 5},
 
-  Copyright                = {Copyright 2016, The Institution of Engineering and Technology},
-  File                     = {:/home/josefonseca/Documents/thesis/research/lstmSinging.pdf:PDF},
   Journal                  = {2015 23rd European Signal Processing Conference (EUSIPCO). Proceedings},
   Language                 = {English},
   Url                      = {http://dx.doi.org/10.1109/EUSIPCO.2015.7362337}
@@ -361,7 +354,7 @@
 @Article{Figueiredo97,
   Title                    = {Learning rules for neuro-controller via simultaneous perturbation},
   Author                   = {Maeda, Y. and de Figueiredo, Rui J.P.},
-  Journal                  = {Neural Networks, IEEE Transactions on},
+  Journal                  = {IEEE Transactions on Neural Networks},
   Year                     = {1997},
   Number                   = {5},
   Pages                    = {1119-1130},
@@ -404,8 +397,6 @@
   Pages                    = {68 - 80},
   Volume                   = {9199},
 
-  Copyright                = {Compilation and indexing terms, Copyright 2016 Elsevier Inc.},
-  ISSN                     = {03029743},
   Journal                  = {Lecture Notes in Computer Science (including subseries Lecture Notes in Artificial Intelligence and Lecture Notes in Bioinformatics)},
   Language                 = {English}
 }
@@ -413,7 +404,7 @@
 @Article{Spall98,
   Title                    = {Multivariate stochastic approximation using a simultaneous perturbation gradient approximation},
   Author                   = {Spall, J.C.},
-  Journal                  = {Automatic Control, IEEE Transactions on},
+  Journal                  = {IEEE Transactions on Automatic Control},
   Year                     = {1992},
 
   Month                    = {Mar},
@@ -502,13 +493,10 @@
   Pages                    = {1550 - 60},
   Volume                   = { 78},
 
-  Abstract                 = {Basic backpropagation, which is a simple method now being widely used in areas like pattern recognition and fault diagnosis, is reviewed. The basic equations for backpropagation through time, and applications to areas like pattern recognition involving dynamic systems, systems identification, and control are discussed. Further extensions of this method, to deal with systems other than neural networks, systems involving simultaneous equations, or true recurrent networks, and other practical issues arising with the method are described. Pseudocode is provided to clarify the algorithms. The chain rule for ordered derivatives-the theorem which underlies backpropagation-is briefly discussed. The focus is on designing a simpler version of backpropagation which can be translated into computer code and applied directly by neutral network users.},
   Address                  = {USA},
   Copyright                = {Copyright 1991, IEE},
   File                     = {:Werbos.backprop.pdf:PDF},
   ISSN                     = {0018-9219},
-  Keywords                 = {identification;neural nets;pattern recognition;},
-  Language                 = {English},
   Url                      = {http://dx.doi.org/10.1109/5.58337}
 }
 

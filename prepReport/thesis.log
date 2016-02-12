@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.10.24)  12 FEB 2016 21:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.10.24)  12 FEB 2016 21:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1152,7 +1152,7 @@ Package hyperref Info: Option `colorlinks' set `true' on input line 497.
 \openout2 = `mymacros.aux'.
 
 (./mymacros.tex) (./thesis.aux (./abbrevs.aux) (./intro.aux) (./theorBack.aux)
-(./stateArt.aux) (./workPlan.aux) (./earlyWork.aux))
+(./stateArt.aux) (./earlyWork.aux) (./workPlan.aux))
 \openout1 = `thesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 92.
@@ -1545,43 +1545,10 @@ the Multiply-and-Accumulate units (MAC)
  []
 
 [19]) [20]
-\openout2 = `workPlan.aux'.
-
- (./workPlan.tex
-Chapter 4.
-[21
-
-
-
-] [22] [23]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [24
-
-]
-Overfull \vbox (10.35497pt too high) has occurred while \output is active []
-
-
-[25]
-LaTeX Font Info:    Font shape `TS1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `TS1/ptm/b/n' tried instead on input line 92.
- <figures/zedboard.jpg, id=610, 1284.8pt x 1037.8775pt>
-File: figures/zedboard.jpg Graphic file (type jpg)
-
-<use figures/zedboard.jpg>
-Package pdftex.def Info: figures/zedboard.jpg used on input line 96.
-(pdftex.def)             Requested size: 426.79135pt x 344.76529pt.
-) [26
-
-] [27 <./figures/zedboard.jpg>]
 \openout2 = `earlyWork.aux'.
 
- (./earlyWork.tex [28
-
-
-
-]
-Chapter 5.
+ (./earlyWork.tex
+Chapter 4.
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2014/09/06 1.5e listings language file
 )
@@ -1598,56 +1565,67 @@ LaTeX Font Info:    Font shape `T1/pcrs/m/n' will be
 (./LSTMlayer.py
 LaTeX Font Info:    Font shape `T1/pcrs/m/n' will be
 (Font)              scaled to size 5.69998pt on input line 1.
- [29]
+ [21
+
+
+
+]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [30]
+ [22]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [31]))
-[32] (./thesis.bbl
-Underfull \hbox (badness 4634) in paragraph at lines 66--74
-[]\T1/ptm/m/n/10.95 F.A. Gers and J. Schmid-hu-ber.  Re-cur-rent nets that time
- and count.  vol-
- []
+ [23]))
+[24]
+\openout2 = `workPlan.aux'.
+
+ (./workPlan.tex
+Chapter 5.
+[25
 
 
-Underfull \hbox (badness 2460) in paragraph at lines 66--74
-\T1/ptm/m/n/10.95 ume vol.3, pages 189 -- 94, Los Alami-tos, CA, USA, 2000.  re
--cur-rent neu-ral
- []
+
+] [26] [27]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [28
+
+]
+Overfull \vbox (10.35497pt too high) has occurred while \output is active []
 
 
-Underfull \hbox (badness 1137) in paragraph at lines 66--74
-\T1/ptm/m/n/10.95 net-works;RNN;timing;counting;time in-ter-vals;sequential tas
-ks;motor con-trol;rhythm de-
- []
+[29]
+LaTeX Font Info:    Font shape `TS1/ptm/bx/n' in size <10.95> not available
+(Font)              Font shape `TS1/ptm/b/n' tried instead on input line 92.
+ <figures/zedboard.jpg, id=800, 1284.8pt x 1037.8775pt>
+File: figures/zedboard.jpg Graphic file (type jpg)
+
+<use figures/zedboard.jpg>
+Package pdftex.def Info: figures/zedboard.jpg used on input line 96.
+(pdftex.def)             Requested size: 426.79135pt x 344.76529pt.
+) [30
+
+] [31 <./figures/zedboard.jpg>] [32
 
 
-Underfull \hbox (badness 3690) in paragraph at lines 66--74
-\T1/ptm/m/n/10.95 gates;discrete time steps;stable sequences;highly-nonlinear p
-recisely-timed spike se-
- []
-
-[33
-
-
+]
+(./thesis.bbl [33
 
 ] [34]) [35]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 174.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 174.
- (./thesis.aux (./abbrevs.aux) (./intro.aux) (./theorBack.aux)
-(./stateArt.aux) (./workPlan.aux) (./earlyWork.aux))
+ (./thesis.aux (./abbrevs.aux) (./intro.aux)
+(./theorBack.aux) (./stateArt.aux) (./earlyWork.aux) (./workPlan.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 174.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 174.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 4601FB28406B09DBE3581A074A75F294;2004.
+(rerunfilecheck)             Checksum: 954B1F9ACE22EC2223CDE062EFCFE34B;2004.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 174.
  ) 
 Here is how much of TeX's memory you used:
  23709 strings out of 493105
  435662 string characters out of 6137071
- 842078 words of memory out of 5000000
+ 839598 words of memory out of 5000000
  26341 multiletter control sequences out of 15000+600000
  86466 words of font info for 117 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1668,7 +1646,7 @@ ts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/tim
 es/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><
 /usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texl
 ive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on thesis.pdf (43 pages, 1852241 bytes).
+Output written on thesis.pdf (43 pages, 1851740 bytes).
 PDF statistics:
  947 PDF objects out of 1000 (max. 8388607)
  858 compressed objects within 9 object streams

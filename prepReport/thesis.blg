@@ -5,61 +5,60 @@ A level-1 auxiliary file: abbrevs.aux
 A level-1 auxiliary file: intro.aux
 A level-1 auxiliary file: theorBack.aux
 A level-1 auxiliary file: stateArt.aux
-A level-1 auxiliary file: workPlan.aux
 A level-1 auxiliary file: earlyWork.aux
+A level-1 auxiliary file: workPlan.aux
 The style file: unsrt.bst
 Database file #1: bibliography.bib
 A bad cross reference---entry "Sak14"
 refers to entry "DBLP:conf/interspeech/2014", which doesn't exist
 Warning--I didn't find a database entry for "DBLP:conf/interspeech/2014"
 Warning--empty journal in Yoshua01
-Warning--empty booktitle in Gers2000
+Warning--empty booktitle in ICDAR09
+Warning--empty journal in Sak14
 Warning--empty booktitle in Sustkever14
 Warning--can't use both volume and number fields in Sustkever14
 Warning--empty booktitle in Sonderby15
 Warning--empty booktitle in Lehner15
-Warning--empty booktitle in Bock12
 Warning--empty booktitle in Coca13
-Warning--empty booktitle in Eck02
 You've used 32 entries,
             1791 wiz_defined-function locations,
-            687 strings with 10754 characters,
-and the built_in function-call counts, 11504 in all, are:
-= -- 1185
+            682 strings with 10053 characters,
+and the built_in function-call counts, 8399 in all, are:
+= -- 766
 > -- 344
-< -- 17
+< -- 12
 + -- 127
 - -- 95
-* -- 669
-:= -- 1492
-add.period$ -- 101
+* -- 558
+:= -- 1273
+add.period$ -- 98
 call.type$ -- 32
 change.case$ -- 30
 chr.to.int$ -- 0
-cite$ -- 41
-duplicate$ -- 607
-empty$ -- 1019
+cite$ -- 40
+duplicate$ -- 392
+empty$ -- 789
 format.name$ -- 95
-if$ -- 2809
+if$ -- 1942
 int.to.chr$ -- 0
 int.to.str$ -- 32
 missing$ -- 32
-newline$ -- 167
+newline$ -- 164
 num.names$ -- 32
-pop$ -- 95
+pop$ -- 85
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 539
+skip$ -- 235
 stack$ -- 0
-substring$ -- 1110
-swap$ -- 333
-text.length$ -- 17
+substring$ -- 620
+swap$ -- 126
+text.length$ -- 12
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 9
-while$ -- 72
+warning$ -- 8
+while$ -- 68
 width$ -- 34
-write$ -- 368
+write$ -- 357
 (There was 1 error message)
