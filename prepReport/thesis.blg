@@ -23,16 +23,16 @@ Warning--empty booktitle in Coca13
 Warning--empty booktitle in Eck02
 You've used 32 entries,
             1791 wiz_defined-function locations,
-            688 strings with 11031 characters,
-and the built_in function-call counts, 11513 in all, are:
-= -- 1187
+            687 strings with 10754 characters,
+and the built_in function-call counts, 11504 in all, are:
+= -- 1185
 > -- 344
 < -- 17
 + -- 127
 - -- 95
 * -- 669
-:= -- 1494
-add.period$ -- 102
+:= -- 1492
+add.period$ -- 101
 call.type$ -- 32
 change.case$ -- 30
 chr.to.int$ -- 0
@@ -40,13 +40,13 @@ cite$ -- 41
 duplicate$ -- 607
 empty$ -- 1019
 format.name$ -- 95
-if$ -- 2811
+if$ -- 2809
 int.to.chr$ -- 0
 int.to.str$ -- 32
 missing$ -- 32
-newline$ -- 168
+newline$ -- 167
 num.names$ -- 32
-pop$ -- 94
+pop$ -- 95
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
@@ -61,5 +61,5 @@ type$ -- 0
 warning$ -- 9
 while$ -- 72
 width$ -- 34
-write$ -- 370
+write$ -- 368
 (There was 1 error message)

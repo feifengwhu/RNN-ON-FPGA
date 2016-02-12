@@ -84,10 +84,6 @@ Y.~Maeda and M.~Wakamura.
 \newblock Simultaneous perturbation learning rule for recurrent neural networks
   and its fpga implementation.
 \newblock {\em IEEE Transactions on Neural Networks}, 16(6):1664 -- 72, 2005.
-\newblock perturbation learning rule;recurrent neural network;FPGA;dynamic
-  information processing;feedforward neural network;recursive learning
-  scheme;correlation learning;analog learning;oscillatory solution;hardware
-  implementation;Hopfield neural network;field-programmable gate array;.
 
 \bibitem{Bertolami09}
 A.~Graves, M.~Liwicki, S.~Fernandez, R.~Bertolami, H.~Bunke, and
