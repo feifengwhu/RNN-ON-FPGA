@@ -24,11 +24,13 @@ def tanhPrime(output):
 
 class LSTMlayer :
 
-    def __init__(self, inputUnits, hiddenUnits, learnRate, T):
+    def __init__(self, inputUnits, hiddenUnits, outputUnits, learnRate, learnMethod='BPTT', wmax=5, T):
         # The Network Parameters, passed by the user
         self.inputUnits  = inputUnits
         self.hiddenUnits = hiddenUnits
         self.learnRate   = learnRate
+        self.learnMethod = learnMethod
+        self.wmax        = wmax
         self.T           = T
         self.t           = 0
 
@@ -74,28 +76,128 @@ class LSTMlayer :
         self.bo_update = np.zeros_like(self.bo)
         
         # State vars
-        self.y_prev = np.zeros((hiddenUnits,self.T))
-        self.x_prev = np.zeros((inputUnits,self.T))
-        self.o_prev = np.zeros((hiddenUnits,self.T))
-        self.f_prev = np.zeros((hiddenUnits,self.T))
-        self.c_prev = np.zeros((hiddenUnits,self.T))
-        self.z_prev = np.zeros((hiddenUnits,self.T))
-        self.i_prev = np.zeros((hiddenUnits,self.T))
+        if (self.learnMethod == 'BPTT')
+            self.y_prev = np.zeros((hiddenUnits,self.T))
+            self.x_prev = np.zeros((inputUnits,self.T))
+            self.o_prev = np.zeros((hiddenUnits,self.T))
+            self.f_prev = np.zeros((hiddenUnits,self.T))
+            self.c_prev = np.zeros((hiddenUnits,self.T))
+            self.z_prev = np.zeros((hiddenUnits,self.T))
+            self.i_prev = np.zeros((hiddenUnits,self.T))
+            
+            self.future_y = np.zeros_like(self.y_prev[:,1])
+            self.future_c = np.zeros_like(self.c_prev[:,1])
+            
+           
+            self.delta_y_list = np.zeros((hiddenUnits,self.T))
+            self.delta_o_list = np.zeros((hiddenUnits,self.T))
+            self.delta_c_list = np.zeros((hiddenUnits,self.T))
+            self.delta_f_list = np.zeros((hiddenUnits,self.T))
+            self.delta_i_list = np.zeros((hiddenUnits,self.T))
+            self.delta_z_list = np.zeros((hiddenUnits,self.T))
         
-        self.delta_y_list = np.zeros((hiddenUnits,self.T))
-        self.delta_o_list = np.zeros((hiddenUnits,self.T))
-        self.delta_c_list = np.zeros((hiddenUnits,self.T))
-        self.delta_f_list = np.zeros((hiddenUnits,self.T))
-        self.delta_i_list = np.zeros((hiddenUnits,self.T))
-        self.delta_z_list = np.zeros((hiddenUnits,self.T))
+            # Delta vectors for a previous layer
+            self.delta_x = np.zeros((inputUnits,self.T))
         
-        self.future_y = np.zeros_like(self.y_prev[:,1])
-        self.future_c = np.zeros_like(self.c_prev[:,1])
+       elif (self.learnMethod == 'SPSA')
+            # The LSTM variables 
+            self.y = np.zeros((hiddenUnits,1))
+            self.x = np.zeros((inputUnits,1))
+            self.o = np.zeros((hiddenUnits,1))
+            self.f = np.zeros((hiddenUnits,1))
+            self.c = np.zeros((hiddenUnits,1))
+            self.z = np.zeros((hiddenUnits,1))
+            self.i = np.zeros((hiddenUnits,1))
+            self.prev_y = np.zeros_like(self.y)
+            self.prev_c = np.zeros_like(self.c)
+            
+            # The MLP Variables and Weights
+            self.activOut = np.zeros((outputUnits,1)) 
+            self.outW = np.random.rand(outputUnits, hiddenUnits)
+            self.deltaO   = np.zeros((outputUnits,1))
+            self.deltaH   = np.zeros((hiddenUnits,1))
 
-        # Delta vectors for a previous layer
-        self.delta_x = np.zeros((inputUnits,self.T))
+            # The perturbation weights
+            self.Wz_p = np.random.random((hiddenUnits, inputUnits)) - 0.5
+            self.Wi_p = np.random.random((hiddenUnits, inputUnits)) - 0.5
+            self.Wf_p = np.random.random((hiddenUnits, inputUnits)) - 0.5
+            self.Wo_p = np.random.random((hiddenUnits, inputUnits)) - 0.5
+            
+            self.Rz_p = np.random.random((hiddenUnits, hiddenUnits)) - 0.5
+            self.Ri_p = np.random.random((hiddenUnits, hiddenUnits)) - 0.5
+            self.Rf_p = np.random.random((hiddenUnits, hiddenUnits)) - 0.5
+            self.Ro_p = np.random.random((hiddenUnits, hiddenUnits)) - 0.5
+            
+            self.pi_p = np.random.random((hiddenUnits)) - 0.5
+            self.pf_p = np.random.random((hiddenUnits)) - 0.5
+            self.po_p = np.random.random((hiddenUnits)) - 0.5
+            
+            self.bz_p = np.random.random((hiddenUnits)) - 0.5
+            self.bi_p = np.random.random((hiddenUnits)) - 0.5
+            self.bo_p = np.random.random((hiddenUnits)) - 0.5
+            self.bf_p = np.random.random((hiddenUnits)) - 0.5
+
+
     
-    def forwardPropagate(self, X):    
+    def forwardPropagate(self, X):
+        # The LSTM layers
+        self.z = np.tanh( np.dot(self.Wz,X) + np.dot(self.Rz,self.prev_y) + self.bz.T ) 
+        self.i = sigmoid( np.dot(self.Wi,X) + np.dot(self.Ri,self.prev_y) + np.multiply(self.pi,self.prev_c) + self.bi.T ) 
+        self.f = sigmoid( np.dot(self.Wf,X) + np.dot(self.Rf,self.prev_y) + np.multiply(self.pf,self.prev_c) + self.bf.T ) 
+        self.prev_c = np.multiply(self.z, self.i) + np.multiply(self.prev_c, self.f)
+        self.o = sigmoid( np.dot(self.Wo,X) + np.dot(self.Ro,self.prev_y) + np.multiply(self.po,self.prev_c) + self.bo.T )
+        self.prev_y = np.multiply(np.tanh(self.prev_c), self.o)
+
+        # The Perceptron Layer
+        self.activOut = np.dot(self.outW, self.prev_y)
+        
+        # The total layer output
+        return sigmoid(self.activOut)
+    
+    def forwardPropagate_SPSA(self, X):
+        # The LSTM layers
+        self.z = np.tanh( np.dot(self.Wz_p,X) + np.dot(self.Rz_p, self.prev_y) + self.bz_p.T ) 
+        self.i = sigmoid( np.dot(self.Wi_p,X) + np.dot(self.Ri_p, self.prev_y) + np.multiply(self.pi_p,self.prev_c) + self.bi_p.T ) 
+        self.f = sigmoid( np.dot(self.Wf_p,X) + np.dot(self.Rf_p,self.prev_y) + np.multiply(self.pf_p,self.prev_c) + self.bf_p.T ) 
+        self.prev_c = np.multiply(self.z, self.i) + np.multiply(self.prev_c, self.f)
+        self.o = sigmoid( np.dot(self.Wo_p,X) + np.dot(self.Ro_p,self.prev_y) + np.multiply(self.po_p, self.prev_c) + self.bo_p.T )
+        self.prev_y = np.multiply(np.tanh(self.prev_c), self.o)
+
+        # The Perceptron Layer
+        self.activOut = np.dot(self.outW, self.prev_y)
+        
+        # The total layer output
+        return sigmoid(self.activOut)
+
+    def trainNetwork_SPSA(self, X, target):
+        
+        # The first forward propagation, without weight perturbation 
+        forwardPropagate(self, X)
+
+        # Performing the weight perturbations
+        self.Wz_p = np.sign(np.random.random(np.size(Wz)) - 0.5)
+        self.Wi_p = np.sign(np.random.random(np.size(Wi)) - 0.5)
+        self.Wf_p = np.sign(np.random.random(np.size(Wf)) - 0.5)
+        self.Wo_p = np.sign(np.random.random(np.size(Wo)) - 0.5)
+        
+        self.Rz_p = np.sign(np.random.random(np.size(Rz)) - 0.5)
+        self.Ri_p = np.sign(np.random.random(np.size(Ri)) - 0.5)
+        self.Rf_p = np.sign(np.random.random(np.size(Rf)) - 0.5)
+        self.Ro_p = np.sign(np.random.random(np.size(Ro)) - 0.5)
+        
+        self.pi_p = np.sign(np.random.random(np.size(pi)) - 0.5)
+        self.pf_p = np.sign(np.random.random(np.size(pf)) - 0.5)
+        self.po_p = np.sign(np.random.random(np.size(po)) - 0.5)
+        
+        self.bz_p = np.sign(np.random.random(np.size(bi)) - 0.5)
+        ielf.bi_p = np.sign(np.random.random(np.size(bi)) - 0.5)
+        self.bo_p = np.sign(np.random.random(np.size(bo)) - 0.5)
+        self.bf_p = np.sign(np.random.random(np.size(bf)) - 0.5)
+       
+        # Forward Propagation, WITH weight perturbation
+        forwardPropagate_SPSA(self, X)
+
+    def forwardPropagate_BPTT(self, X):    
 
         # Note that in a list, accessing [-1] corresponds to the last element appended. so y_prev[-1] == y^(t-1)
         if (self.t != 0):                
@@ -124,9 +226,7 @@ class LSTMlayer :
             self.t += 1
             return self.y_prev[:,self.t-1]
         
-        
-        
-    def backPropagate_T(self, upperLayerDeltas):
+    def backPropagate_BPTT(self, upperLayerDeltas):
         # EVALUATING THE DELTAS
         for t in reversed(range(self.T)):
             if (t == self.T-1):
