@@ -24,7 +24,7 @@ def tanhPrime(output):
 
 class LSTMlayer :
 
-    def __init__(self, inputUnits, hiddenUnits, outputUnits, learnRate, learnMethod='BPTT', wmax=5, T):
+    def __init__(self, inputUnits, hiddenUnits, outputUnits, learnRate, learnMethod='BPTT', wmax, beta, T):
         # The Network Parameters, passed by the user
         self.inputUnits  = inputUnits
         self.hiddenUnits = hiddenUnits
@@ -171,31 +171,71 @@ class LSTMlayer :
 
     def trainNetwork_SPSA(self, X, target):
         
-        # The first forward propagation, without weight perturbation 
-        forwardPropagate(self, X)
+        # The first forward propagation, without weight perturbation. J is the cost function 
+        J = 0.5*(forwardPropagate(self, X) - target)**2
 
         # Performing the weight perturbations
-        self.Wz_p = np.sign(np.random.random(np.size(Wz)) - 0.5)
-        self.Wi_p = np.sign(np.random.random(np.size(Wi)) - 0.5)
-        self.Wf_p = np.sign(np.random.random(np.size(Wf)) - 0.5)
-        self.Wo_p = np.sign(np.random.random(np.size(Wo)) - 0.5)
+        self.Wz_update = beta*np.sign(np.random.random(np.size(Wz)) - 0.5)
+        self.Wi_update = beta*np.sign(np.random.random(np.size(Wi)) - 0.5)
+        self.Wf_update = beta*np.sign(np.random.random(np.size(Wf)) - 0.5)
+        self.Wo_update = beta*np.sign(np.random.random(np.size(Wo)) - 0.5)
+
+        self.Wz_p = self.Wz + self.Wz_update
+        self.Wi_p = self.Wi + self.Wi_update
+        self.Wf_p = self.Wf + self.Wf_update
+        self.Wo_p = self.Wo + self.Wo_update
+      
+        self.Rz_update = beta*np.sign(np.random.random(np.size(Rz)) - 0.5)
+        self.Ri_update = beta*np.sign(np.random.random(np.size(Ri)) - 0.5)
+        self.Rf_update = beta*np.sign(np.random.random(np.size(Rf)) - 0.5)
+        self.Ro_update = beta*np.sign(np.random.random(np.size(Ro)) - 0.5)
         
-        self.Rz_p = np.sign(np.random.random(np.size(Rz)) - 0.5)
-        self.Ri_p = np.sign(np.random.random(np.size(Ri)) - 0.5)
-        self.Rf_p = np.sign(np.random.random(np.size(Rf)) - 0.5)
-        self.Ro_p = np.sign(np.random.random(np.size(Ro)) - 0.5)
-        
-        self.pi_p = np.sign(np.random.random(np.size(pi)) - 0.5)
-        self.pf_p = np.sign(np.random.random(np.size(pf)) - 0.5)
-        self.po_p = np.sign(np.random.random(np.size(po)) - 0.5)
-        
-        self.bz_p = np.sign(np.random.random(np.size(bi)) - 0.5)
-        ielf.bi_p = np.sign(np.random.random(np.size(bi)) - 0.5)
-        self.bo_p = np.sign(np.random.random(np.size(bo)) - 0.5)
-        self.bf_p = np.sign(np.random.random(np.size(bf)) - 0.5)
+        self.Rz_p = self.Rz + self.Rz_update
+        self.Ri_p = self.Ri + self.Ri_update
+        self.Rf_p = self.Rf + self.Rf_update
+        self.Ro_p = self.Ro + self.Ro_update
+       
+        self.pi_update = beta*np.sign(np.random.random(np.size(pi)) - 0.5)
+        self.pf_update = beta*np.sign(np.random.random(np.size(pf)) - 0.5)
+        self.po_update = beta*np.sign(np.random.random(np.size(po)) - 0.5)
+
+        self.pi_p = self.pi + self.pi_update
+        self.pf_p = self.pf + self.pf_update
+        self.po_p = self.po + self.po_update
+
+        self.bz_update = beta*np.sign(np.random.random(np.size(bi)) - 0.5)
+        self.bi_update = beta*np.sign(np.random.random(np.size(bi)) - 0.5)
+        self.bo_update = beta*np.sign(np.random.random(np.size(bo)) - 0.5)
+        self.bf_update = beta*np.sign(np.random.random(np.size(bf)) - 0.5)
+
+        self.bz_p = self.bz + self.bz_update
+        self.bi_p = self.bi + self.bi_update
+        self.bo_p = self.bo + self.bo_update
+        self.bf_p = self.bf + self.bf_update
        
         # Forward Propagation, WITH weight perturbation
-        forwardPropagate_SPSA(self, X)
+        Jpert = 0.5*(forwardPropagate_SPSA(self, X) - target)**2
+
+        # Updating the weights
+        self.Wz = self.Wz - learnRate*np.divide(Jpert-J, self.Wz_update)
+        self.Wi = self.Wi - learnRate*np.divide(Jpert-J, self.Wi_update)
+        self.Wf = self.Wf - learnRate*np.divide(Jpert-J, self.Wf_update)
+        self.Wo = self.Wo - learnRate*np.divide(Jpert-J, self.Wo_update)
+        
+        self.Rz = self.Rz - learnRate*np.divide(Jpert-J, self.Rz_update)
+        self.Ri = self.Ri - learnRate*np.divide(Jpert-J, self.Ri_update)
+        self.Rf = self.Rf - learnRate*np.divide(Jpert-J, self.Rf_update)
+        self.Ro = self.Ro - learnRate*np.divide(Jpert-J, self.Ro_update)
+
+        self.pi = self.pi - learnRate*np.divide(Jpert-J, self.pi_update)
+        self.pf = self.pf - learnRate*np.divide(Jpert-J, self.pf_update)
+        self.po = self.po - learnRate*np.divide(Jpert-J, self.po_update)
+
+        self.bz = self.bz - learnRate*np.divide(Jpert-J, self.bz_update)
+        self.bi = self.bi - learnRate*np.divide(Jpert-J, self.bi_update)
+        self.bf = self.bf - learnRate*np.divide(Jpert-J, self.bf_update)
+        self.bo = self.bo - learnRate*np.divide(Jpert-J, self.bo_update)
+
 
     def forwardPropagate_BPTT(self, X):    
 
