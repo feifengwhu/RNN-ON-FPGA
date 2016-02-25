@@ -172,7 +172,8 @@ class LSTMlayer :
     def trainNetwork_SPSA(self, X, target):
         
         # The first forward propagation, without weight perturbation. J is the cost function 
-        J = 0.5*(forwardPropagate(self, X) - target)**2
+        returnVal = forwardPropagate(self, X)
+        J = 0.5*(returnVal - target)**2
 
         # Performing the weight perturbations
         self.Wz_update = self.beta*np.sign(np.random.random(np.size(Wz)) - 0.5)
@@ -236,6 +237,7 @@ class LSTMlayer :
         self.bf = self.bf - self.learnRate*np.divide(Jpert-J, self.bf_update)
         self.bo = self.bo - self.learnRate*np.divide(Jpert-J, self.bo_update)
 
+        return returnVal
 
     def forwardPropagate_BPTT(self, X):    
 
