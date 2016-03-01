@@ -22,14 +22,14 @@ def tanhPrime(output):
 
 # training dataset generation
 int2binary = {}
-binary_dim = 8 
+binary_dim = 32 
 
 largest_number = pow(2,binary_dim)
 
 # input variables
-alpha = 0.1
+alpha = 0.22
 input_dim = 2
-hidden_dim = 4 
+hidden_dim = 18 
 output_dim = 1
 
 # initialize neural network weights
@@ -37,8 +37,7 @@ synapse_1        = 2*np.random.random(hidden_dim) - 1
 synapse_1_update = 2*np.random.random(hidden_dim) - 1
 y_prev = np.zeros((hidden_dim,binary_dim))
 lstmLayer1 = LSTMlayer.LSTMlayer(input_dim, hidden_dim, alpha, binary_dim)
-lstmLayerOut = LSTMlayer.LSTMlayer(hidden_dim, output_dim, alpha+0.05, binary_dim)
-plt.axis([0, 30000, 0, 200000])
+plt.axis([0, 30000, 0, 1000000])
 plt.ion()
 plt.show()
 
@@ -46,7 +45,6 @@ total_error = 0
 prev_total_error = 0
 synapse_1_update = 0
 layer_2 = np.ndarray((1,1))
-layer_2_errors = np.ndarray((1, binary_dim))
 
 # training logic
 for j in range(100000):
@@ -67,6 +65,11 @@ for j in range(100000):
 
     overallError = 0
     
+    layer_2_deltas = np.zeros((hidden_dim,binary_dim))
+    layer_1_values = list()
+    layer_1_values.append(np.zeros(hidden_dim))
+
+
     # -------------- THE FORWARD PROPAGATION STEP -------------- #
     for position in range(binary_dim):
         
@@ -75,24 +78,39 @@ for j in range(100000):
         y = np.array([int(c[binary_dim - position - 1])]).T
 
         # Perform a forward propagation through the network
-        tempIntermediateLayer = lstmLayer1.forwardPropagate(X)
-        y_network   = lstmLayerOut.forwardPropagate(tempIntermediateLayer)
+        y_prev[:,position] = lstmLayer1.forwardPropagate(X)
         
+        # Output Layer (uses output from LSTM, i.e y_curr).
+        layer_2 = sigmoid(np.dot(y_prev[:,position], synapse_1))
+
         # did we miss?... if so, by how much?
-        layer_2_errors[:,position] = (y[0] - y_network)
+        layer_2_error = y[0] - layer_2
+        layer_2_deltas[:,position] = ((layer_2_error)*sigmoid_output_to_derivative(layer_2))
     
         # decode estimate so we can print it out
-        d.append(str(int(np.round(y_network))))
-        overallError += np.abs(y - np.round(y_network))
+        d.append(str(int(np.round(layer_2))))
+        overallError += np.abs(y - np.round(layer_2))
         total_error += overallError
         
     future_layer_1_delta = np.zeros(hidden_dim)
 
     # -------------- THE BACKPROPAGATION STEP -------------- #
     
+    # FOR THE OUTPUT LAYER
+    for position in range(binary_dim):
+
+        layer_1      = y_prev[:,-position-1]
+        # error at output layer
+        layer_2_delta = layer_2_deltas[:,-position-1]
+
+        # let's update all our weights so we can try again
+        synapse_1_update += layer_1 * layer_2_delta
+
+    synapse_1 += synapse_1_update * alpha
+    synapse_1_update *= 0
+  
     # FOR THE LSTM LAYER
-    delta_out_layer = lstmLayerOut.backPropagate_T(layer_2_errors)
-    lstmLayer1.backPropagate_T(delta_out_layer)
+    lstmLayer1.backPropagate_T(layer_2_deltas)
     
     # print out progress
     if(j % 200 == 0):

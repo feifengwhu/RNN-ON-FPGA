@@ -24,7 +24,7 @@ def tanhPrime(output):
 
 class LSTMlayer :
 
-    def __init__(self, inputUnits, hiddenUnits, outputUnits, learnRate, learnMethod, beta, T):
+    def __init__(self, inputUnits, hiddenUnits, outputUnits, learnRate, learnMethod, beta, wmax, T):
         # The Network Parameters, passed by the user
         self.inputUnits  = inputUnits
         self.hiddenUnits = hiddenUnits
@@ -33,6 +33,7 @@ class LSTMlayer :
         self.beta        = beta
         self.T           = T
         self.t           = 0
+        self.wmax        = wmax
 
         # Initializing the matrix weights
         #LSTM Block
@@ -138,7 +139,7 @@ class LSTMlayer :
             self.bf_p = np.random.random((hiddenUnits, 1)) - 0.5
     
     def forwardPropagate(self, X):
-        #he LM layers
+        #The LM layers
         self.z = np.tanh( np.dot(self.Wz,X) + np.dot(self.Rz,self.prev_y) + self.bz ) 
         self.i = sigmoid( np.dot(self.Wi,X) + np.dot(self.Ri,self.prev_y) + np.multiply(self.pi,self.prev_c) + self.bi ) 
         self.f = sigmoid( np.dot(self.Wf,X) + np.dot(self.Rf,self.prev_y) + np.multiply(self.pf,self.prev_c) + self.bf ) 
@@ -146,14 +147,14 @@ class LSTMlayer :
         self.o = sigmoid( np.dot(self.Wo,X) + np.dot(self.Ro,self.prev_y) + np.multiply(self.po,self.prev_c) + self.bo )
         self.prev_y = np.multiply(np.tanh(self.prev_c), self.o)
         
-        #he Perceptron Layer
+        #The Perceptron Layer
         self.activOut = np.dot(self.outW, self.prev_y)
        
-        #he total layer output
+        #The total layer output
         return sigmoid(self.activOut)
     
     def forwardPropagate_SPSA(self, X):
-        #he LM layers
+        #The LM layers
         self.z = np.tanh( np.dot(self.Wz_p,X) + np.dot(self.Rz_p, self.prev_y) + self.bz_p ) 
         self.i = sigmoid( np.dot(self.Wi_p,X) + np.dot(self.Ri_p, self.prev_y) + np.multiply(self.pi_p,self.prev_c) + self.bi_p ) 
         self.f = sigmoid( np.dot(self.Wf_p,X) + np.dot(self.Rf_p,self.prev_y) + np.multiply(self.pf_p,self.prev_c) + self.bf_p ) 
@@ -161,10 +162,10 @@ class LSTMlayer :
         self.o = sigmoid( np.dot(self.Wo_p,X) + np.dot(self.Ro_p,self.prev_y) + np.multiply(self.po_p, self.prev_c) + self.bo_p )
         self.prev_y = np.multiply(np.tanh(self.prev_c), self.o)
 
-        #he Perceptron Layer
+        #The Perceptron Layer
         self.activOut = np.dot(self.outW, self.prev_y)
         
-        #he total layer output
+        #The total layer output
         return sigmoid(self.activOut)
 
     def trainNetwork_SPSA(self, X, target):
@@ -215,25 +216,119 @@ class LSTMlayer :
         # Forward Propagation, WITH weight perturbation
         Jpert = 0.5*(self.forwardPropagate_SPSA(X) - target)**2
 
+		# The Cost Function evaluation for this perturbation
+        cost = np.sum(Jpert-J)
+		
         # Updating the weights
-        self.Wz = self.Wz - self.learnRate*np.divide(np.sum(Jpert-J), self.Wz_update)
-        self.Wi = self.Wi - self.learnRate*np.divide(np.sum(Jpert-J), self.Wi_update)
-        self.Wf = self.Wf - self.learnRate*np.divide(np.sum(Jpert-J), self.Wf_update)
-        self.Wo = self.Wo - self.learnRate*np.divide(np.sum(Jpert-J), self.Wo_update)
+        if (self.Wz - self.learnRate*np.divide(cost, self.Wz_update) > self.wmax) :
+            self.Wz = self.wmax
+        elif (self.Wz - self.learnRate*np.divide(cost, self.Wz_update) < self.wmax) :
+            self.Wz = 0-self.wmax
+        else :
+            self.Wz = self.Wz - self.learnRate*np.divide(cost, self.Wz_update)
+
+        if (self.Wi - self.learnRate*np.divide(cost, self.Wi_update) > self.wmax) :
+            self.Wi = self.wmax
+        elif (self.Wi - self.learnRate*np.divide(cost, self.Wi_update) < self.wmax) :
+            self.Wi = 0-self.wmax
+        else :
+            self.Wi = self.Wi - self.learnRate*np.divide(cost, self.Wi_update)
+		
+        if (self.Wf - self.learnRate*np.divide(cost, self.Wf_update) > self.wmax) :
+            self.Wf = self.wmax
+        elif (self.Wf - self.learnRate*np.divide(cost, self.Wf_update) < self.wmax) :
+            self.Wf = 0-self.wmax
+        else :
+            self.Wf = self.Wf - self.learnRate*np.divide(cost, self.Wf_update)
+
+        if (self.Wo - self.learnRate*np.divide(cost, self.Wo_update) > self.wmax) :
+            self.Wo = self.wmax
+        elif (self.Wo - self.learnRate*np.divide(cost, self.Wo_update) < self.wmax) :
+            self.Wo = 0-self.wmax
+        else :
+            self.Wo = self.Wo - self.learnRate*np.divide(cost, self.Wo_update)
+
+
+
+
+        if (self.Rz - self.learnRate*np.divide(cost, self.Rz_update) > self.wmax) :
+            self.Rz = self.wmax
+        elif (self.Rz - self.learnRate*np.divide(cost, self.Rz_update) < self.wmax) :
+            self.Rz = 0-self.wmax
+        else:
+            self.Rz = self.Rz - self.learnRate*np.divide(cost, self.Rz_update)
+
+        if (self.Ri - self.learnRate*np.divide(cost, self.Ri_update) > self.wmax) :
+            self.Ri = self.wmax
+        elif (self.Ri - self.learnRate*np.divide(cost, self.Ri_update) < self.wmax) :
+            self.Ri = 0-self.wmax
+        else:
+            self.Ri = self.Ri - self.learnRate*np.divide(cost, self.Ri_update)
+		
+        if (self.Rf - self.learnRate*np.divide(cost, self.Rf_update) > self.wmax) :
+            self.Rf = self.wmax
+        elif (self.Rf - self.learnRate*np.divide(cost, self.Rf_update) < self.wmax) :
+            self.Rf = 0-self.wmax
+        else:
+            self.Rf = self.Rf - self.learnRate*np.divide(cost, self.Rf_update)
         
-        self.Rz = self.Rz - self.learnRate*np.divide(np.sum(Jpert-J), self.Rz_update)
-        self.Ri = self.Ri - self.learnRate*np.divide(np.sum(Jpert-J), self.Ri_update)
-        self.Rf = self.Rf - self.learnRate*np.divide(np.sum(Jpert-J), self.Rf_update)
-        self.Ro = self.Ro - self.learnRate*np.divide(np.sum(Jpert-J), self.Ro_update)
+        if (self.Ro - self.learnRate*np.divide(cost, self.Ro_update) > self.wmax) :
+            self.Ro = self.wmax
+        elif (self.Ro - self.learnRate*np.divide(cost, self.Ro_update) < self.wmax) :
+            self.Ro = 0-self.wmax
+        else:
+            self.Ro = self.Ro - self.learnRate*np.divide(cost, self.Ro_update)
 
-        self.pi = self.pi - self.learnRate*np.divide(np.sum(Jpert-J), self.pi_update)
-        self.pf = self.pf - self.learnRate*np.divide(np.sum(Jpert-J), self.pf_update)
-        self.po = self.po - self.learnRate*np.divide(np.sum(Jpert-J), self.po_update)
+        if (self.pi - self.learnRate*np.divide(cost, self.pi_update) > self.wmax) :
+            self.pi = self.wmax
+        elif (self.pi - self.learnRate*np.divide(cost, self.pi_update) < self.wmax) :
+            self.pi = 0-self.wmax
+        else:
+            self.pi = self.pi - self.learnRate*np.divide(cost, self.pi_update)
+		
+        if (self.pf - self.learnRate*np.divide(cost, self.pf_update) > self.wmax) :
+            self.pf = self.wmax
+        elif (self.pf - self.learnRate*np.divide(cost, self.pf_update) < self.wmax) :
+            self.pf = 0-self.wmax
+        else:
+            self.pf = self.pf - self.learnRate*np.divide(cost, self.pf_update)
+        
+        if (self.po - self.learnRate*np.divide(cost, self.po_update) > self.wmax) :
+            self.po = self.wmax
+        elif (self.po - self.learnRate*np.divide(cost, self.po_update) < self.wmax) :
+            self.po = 0-self.wmax
+        else:
+            self.po = self.po - self.learnRate*np.divide(cost, self.po_update)
 
-        self.bz = self.bz - self.learnRate*np.divide(np.sum(Jpert-J), self.bz_update)
-        self.bi = self.bi - self.learnRate*np.divide(np.sum(Jpert-J), self.bi_update)
-        self.bf = self.bf - self.learnRate*np.divide(np.sum(Jpert-J), self.bf_update)
-        self.bo = self.bo - self.learnRate*np.divide(np.sum(Jpert-J), self.bo_update)
+        if (self.bz - self.learnRate*np.divide(cost, self.bz_update) > self.wmax) :
+            self.bz = self.wmax
+        elif (self.bz - self.learnRate*np.divide(cost, self.bz_update) < self.wmax) :
+            self.bz = 0-self.wmax
+        else:
+            self.bz = self.bz - self.learnRate*np.divide(cost, self.bz_update)
+        
+
+        if (self.bi - self.learnRate*np.divide(cost, self.bi_update) > self.wmax) :
+            self.bi = self.wmax
+        elif (self.bi - self.learnRate*np.divide(cost, self.bi_update) < self.wmax) :
+            self.bi = 0-self.wmax
+        else:
+            self.bi = self.bi - self.learnRate*np.divide(cost, self.bi_update)
+		
+        if (self.bf - self.learnRate*np.divide(cost, self.bf_update) > self.wmax) :
+            self.bf = self.wmax
+        elif (self.bf - self.learnRate*np.divide(cost, self.bf_update) < self.wmax) :
+            self.bf = 0-self.wmax
+        else:
+            self.bf = self.bf - self.learnRate*np.divide(cost, self.bf_update)
+        
+
+        if (self.bo - self.learnRate*np.divide(cost, self.bo_update) > self.wmax) :
+            self.bo = self.wmax
+        elif (self.bo - self.learnRate*np.divide(cost, self.bo_update) < self.wmax) :
+            self.bo = 0-self.wmax
+        else:
+            self.bo = self.bo - self.learnRate*np.divide(cost, self.bo_update)
 
         return returnVal
 

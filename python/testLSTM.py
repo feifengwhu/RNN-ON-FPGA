@@ -35,7 +35,7 @@ output_dim = 1
 
 # initialize neural network weights
 y_prev = np.zeros((hidden_dim,binary_dim))
-lstmLayer1 = LSTMlayer.LSTMlayer(input_dim, hidden_dim, output_dim, alpha, 'SPSA', pert, 1)
+lstmLayer1 = LSTMlayer.LSTMlayer(input_dim, hidden_dim, output_dim, alpha, 'SPSA', pert, 4, 1)
 plt.axis([0, 30000, 0, 1000000])
 plt.ion()
 plt.show()
