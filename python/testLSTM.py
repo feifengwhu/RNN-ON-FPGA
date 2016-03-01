@@ -27,16 +27,15 @@ binary_dim = 32
 largest_number = pow(2,binary_dim)
 
 # input variables
-alpha = 0.22
+pert = 0.015
+alpha = pert/4
 input_dim = 2
 hidden_dim = 18 
 output_dim = 1
 
 # initialize neural network weights
-synapse_1        = 2*np.random.random(hidden_dim) - 1
-synapse_1_update = 2*np.random.random(hidden_dim) - 1
 y_prev = np.zeros((hidden_dim,binary_dim))
-lstmLayer1 = LSTMlayer.LSTMlayer(input_dim, hidden_dim, alpha, binary_dim)
+lstmLayer1 = LSTMlayer.LSTMlayer(input_dim, hidden_dim, output_dim, alpha, 'SPSA', pert, 1)
 plt.axis([0, 30000, 0, 1000000])
 plt.ion()
 plt.show()
@@ -74,46 +73,19 @@ for j in range(100000):
     for position in range(binary_dim):
         
         # generate input and output
-        X = np.array([int(a[binary_dim - position - 1]), int(b[binary_dim - position - 1])]).T
+        X = np.array([[int(a[binary_dim - position - 1]), int(b[binary_dim - position - 1])]]).T
         y = np.array([int(c[binary_dim - position - 1])]).T
 
         # Perform a forward propagation through the network
-        y_prev[:,position] = lstmLayer1.forwardPropagate(X)
+        y_pred = lstmLayer1.trainNetwork_SPSA(X, y)
         
-        # Output Layer (uses output from LSTM, i.e y_curr).
-        layer_2 = sigmoid(np.dot(y_prev[:,position], synapse_1))
-
-        # did we miss?... if so, by how much?
-        layer_2_error = y[0] - layer_2
-        layer_2_deltas[:,position] = ((layer_2_error)*sigmoid_output_to_derivative(layer_2))
-    
         # decode estimate so we can print it out
-        d.append(str(int(np.round(layer_2))))
-        overallError += np.abs(y - np.round(layer_2))
+        d.append(str(int(np.round(y_pred))))
+        overallError += np.abs(y - np.round(y_pred))
         total_error += overallError
-        
-    future_layer_1_delta = np.zeros(hidden_dim)
-
-    # -------------- THE BACKPROPAGATION STEP -------------- #
-    
-    # FOR THE OUTPUT LAYER
-    for position in range(binary_dim):
-
-        layer_1      = y_prev[:,-position-1]
-        # error at output layer
-        layer_2_delta = layer_2_deltas[:,-position-1]
-
-        # let's update all our weights so we can try again
-        synapse_1_update += layer_1 * layer_2_delta
-
-    synapse_1 += synapse_1_update * alpha
-    synapse_1_update *= 0
-  
-    # FOR THE LSTM LAYER
-    lstmLayer1.backPropagate_T(layer_2_deltas)
     
     # print out progress
-    if(j % 200 == 0):
+    if(j % 500 == 0):
         res = str()
         for i in reversed(range(len(d))):
             res += str(d[i])
@@ -123,7 +95,7 @@ for j in range(100000):
         print("Pred:" + res)
         print("True:" + str(c))
         print("Iteration:" + str(j))
-        print(str(a_int) + " + " + str(b_int) + " = " + res )
+        #print(str(a_int) + " + " + str(b_int) + " = " + res )
         print("------------")
         plt.scatter(j, total_error, linestyle='-.')
         plt.draw()
