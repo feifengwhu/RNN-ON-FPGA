@@ -28,14 +28,15 @@ largest_number = pow(2,binary_dim)
 
 # input variables
 pert = 0.015
-alpha = pert/4
+alpha = 0.02
+wmax  = 2
 input_dim = 2
 hidden_dim = 18 
 output_dim = 1
 
 # initialize neural network weights
 y_prev = np.zeros((hidden_dim,binary_dim))
-lstmLayer1 = LSTMlayer.LSTMlayer(input_dim, hidden_dim, output_dim, alpha, 'SPSA', pert, 4, 1)
+lstmLayer1 = LSTMlayer.LSTMlayer(input_dim, hidden_dim, output_dim, alpha, 'SPSA', pert, wmax, 1)
 plt.axis([0, 30000, 0, 1000000])
 plt.ion()
 plt.show()
@@ -85,7 +86,7 @@ for j in range(100000):
         total_error += overallError
     
     # print out progress
-    if(j % 500 == 0):
+    if(j % 50 == 0):
         res = str()
         for i in reversed(range(len(d))):
             res += str(d[i])

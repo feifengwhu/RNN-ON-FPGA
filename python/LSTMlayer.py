@@ -220,116 +220,66 @@ class LSTMlayer :
         cost = np.sum(Jpert-J)
 		
         # Updating the weights
-        if (self.Wz - self.learnRate*np.divide(cost, self.Wz_update) > self.wmax) :
-            self.Wz = self.wmax
-        elif (self.Wz - self.learnRate*np.divide(cost, self.Wz_update) < self.wmax) :
-            self.Wz = 0-self.wmax
-        else :
-            self.Wz = self.Wz - self.learnRate*np.divide(cost, self.Wz_update)
-
-        if (self.Wi - self.learnRate*np.divide(cost, self.Wi_update) > self.wmax) :
-            self.Wi = self.wmax
-        elif (self.Wi - self.learnRate*np.divide(cost, self.Wi_update) < self.wmax) :
-            self.Wi = 0-self.wmax
-        else :
-            self.Wi = self.Wi - self.learnRate*np.divide(cost, self.Wi_update)
-		
-        if (self.Wf - self.learnRate*np.divide(cost, self.Wf_update) > self.wmax) :
-            self.Wf = self.wmax
-        elif (self.Wf - self.learnRate*np.divide(cost, self.Wf_update) < self.wmax) :
-            self.Wf = 0-self.wmax
-        else :
-            self.Wf = self.Wf - self.learnRate*np.divide(cost, self.Wf_update)
-
-        if (self.Wo - self.learnRate*np.divide(cost, self.Wo_update) > self.wmax) :
-            self.Wo = self.wmax
-        elif (self.Wo - self.learnRate*np.divide(cost, self.Wo_update) < self.wmax) :
-            self.Wo = 0-self.wmax
-        else :
-            self.Wo = self.Wo - self.learnRate*np.divide(cost, self.Wo_update)
-
-
-
-
-        if (self.Rz - self.learnRate*np.divide(cost, self.Rz_update) > self.wmax) :
-            self.Rz = self.wmax
-        elif (self.Rz - self.learnRate*np.divide(cost, self.Rz_update) < self.wmax) :
-            self.Rz = 0-self.wmax
-        else:
-            self.Rz = self.Rz - self.learnRate*np.divide(cost, self.Rz_update)
-
-        if (self.Ri - self.learnRate*np.divide(cost, self.Ri_update) > self.wmax) :
-            self.Ri = self.wmax
-        elif (self.Ri - self.learnRate*np.divide(cost, self.Ri_update) < self.wmax) :
-            self.Ri = 0-self.wmax
-        else:
-            self.Ri = self.Ri - self.learnRate*np.divide(cost, self.Ri_update)
-		
-        if (self.Rf - self.learnRate*np.divide(cost, self.Rf_update) > self.wmax) :
-            self.Rf = self.wmax
-        elif (self.Rf - self.learnRate*np.divide(cost, self.Rf_update) < self.wmax) :
-            self.Rf = 0-self.wmax
-        else:
-            self.Rf = self.Rf - self.learnRate*np.divide(cost, self.Rf_update)
+        self.Wz = self.Wz - self.learnRate*np.divide(cost, self.Wz_update)
+        self.Wz = np.where(self.Wz >  self.wmax,  self.wmax, self.Wz)
+        self.Wz = np.where(self.Wz < -self.wmax, -self.wmax, self.Wz)
         
-        if (self.Ro - self.learnRate*np.divide(cost, self.Ro_update) > self.wmax) :
-            self.Ro = self.wmax
-        elif (self.Ro - self.learnRate*np.divide(cost, self.Ro_update) < self.wmax) :
-            self.Ro = 0-self.wmax
-        else:
-            self.Ro = self.Ro - self.learnRate*np.divide(cost, self.Ro_update)
+        self.Wi = self.Wi - self.learnRate*np.divide(cost, self.Wi_update)
+        self.Wi = np.where(self.Wi >  self.wmax,  self.wmax, self.Wi)
+        self.Wi = np.where(self.Wi < -self.wmax, -self.wmax, self.Wi)
 
-        if (self.pi - self.learnRate*np.divide(cost, self.pi_update) > self.wmax) :
-            self.pi = self.wmax
-        elif (self.pi - self.learnRate*np.divide(cost, self.pi_update) < self.wmax) :
-            self.pi = 0-self.wmax
-        else:
-            self.pi = self.pi - self.learnRate*np.divide(cost, self.pi_update)
-		
-        if (self.pf - self.learnRate*np.divide(cost, self.pf_update) > self.wmax) :
-            self.pf = self.wmax
-        elif (self.pf - self.learnRate*np.divide(cost, self.pf_update) < self.wmax) :
-            self.pf = 0-self.wmax
-        else:
-            self.pf = self.pf - self.learnRate*np.divide(cost, self.pf_update)
+        self.Wf = self.Wf - self.learnRate*np.divide(cost, self.Wf_update)
+        self.Wf = np.where(self.Wf >  self.wmax,  self.wmax, self.Wf)
+        self.Wf = np.where(self.Wf < -self.wmax, -self.wmax, self.Wf)
         
-        if (self.po - self.learnRate*np.divide(cost, self.po_update) > self.wmax) :
-            self.po = self.wmax
-        elif (self.po - self.learnRate*np.divide(cost, self.po_update) < self.wmax) :
-            self.po = 0-self.wmax
-        else:
-            self.po = self.po - self.learnRate*np.divide(cost, self.po_update)
-
-        if (self.bz - self.learnRate*np.divide(cost, self.bz_update) > self.wmax) :
-            self.bz = self.wmax
-        elif (self.bz - self.learnRate*np.divide(cost, self.bz_update) < self.wmax) :
-            self.bz = 0-self.wmax
-        else:
-            self.bz = self.bz - self.learnRate*np.divide(cost, self.bz_update)
+        self.Wo = self.Wo - self.learnRate*np.divide(cost, self.Wo_update)
+        self.Wo = np.where(self.Wo >  self.wmax,  self.wmax, self.Wo)
+        self.Wo = np.where(self.Wo < -self.wmax, -self.wmax, self.Wo)
         
-
-        if (self.bi - self.learnRate*np.divide(cost, self.bi_update) > self.wmax) :
-            self.bi = self.wmax
-        elif (self.bi - self.learnRate*np.divide(cost, self.bi_update) < self.wmax) :
-            self.bi = 0-self.wmax
-        else:
-            self.bi = self.bi - self.learnRate*np.divide(cost, self.bi_update)
-		
-        if (self.bf - self.learnRate*np.divide(cost, self.bf_update) > self.wmax) :
-            self.bf = self.wmax
-        elif (self.bf - self.learnRate*np.divide(cost, self.bf_update) < self.wmax) :
-            self.bf = 0-self.wmax
-        else:
-            self.bf = self.bf - self.learnRate*np.divide(cost, self.bf_update)
+        self.Rz = self.Rz - self.learnRate*np.divide(cost, self.Rz_update)
+        self.Rz = np.where(self.Rz >  self.wmax,  self.wmax, self.Rz)
+        self.Rz = np.where(self.Rz < -self.wmax, -self.wmax, self.Rz)
         
+        self.Ri = self.Ri - self.learnRate*np.divide(cost, self.Ri_update)
+        self.Ri = np.where(self.Ri >  self.wmax,  self.wmax, self.Ri)
+        self.Ri = np.where(self.Ri < -self.wmax, -self.wmax, self.Ri)
 
-        if (self.bo - self.learnRate*np.divide(cost, self.bo_update) > self.wmax) :
-            self.bo = self.wmax
-        elif (self.bo - self.learnRate*np.divide(cost, self.bo_update) < self.wmax) :
-            self.bo = 0-self.wmax
-        else:
-            self.bo = self.bo - self.learnRate*np.divide(cost, self.bo_update)
+        self.Rf = self.Rf - self.learnRate*np.divide(cost, self.Rf_update)
+        self.Rf = np.where(self.Rf >  self.wmax,  self.wmax, self.Rf)
+        self.Rf = np.where(self.Rf < -self.wmax, -self.wmax, self.Rf)
+        
+        self.Ro = self.Ro - self.learnRate*np.divide(cost, self.Ro_update)
+        self.Ro = np.where(self.Ro >  self.wmax,  self.wmax, self.Ro)
+        self.Ro = np.where(self.Ro < -self.wmax, -self.wmax, self.Ro)
+        
+        self.pi = self.pi - self.learnRate*np.divide(cost, self.pi_update)
+        self.pi = np.where(self.pi >  self.wmax,  self.wmax, self.pi)
+        self.pi = np.where(self.pi < -self.wmax, -self.wmax, self.pi)
 
+        self.pf = self.pf - self.learnRate*np.divide(cost, self.pf_update)
+        self.pf = np.where(self.pf >  self.wmax,  self.wmax, self.pf)
+        self.pf = np.where(self.pf < -self.wmax, -self.wmax, self.pf)
+        
+        self.po = self.po - self.learnRate*np.divide(cost, self.po_update)
+        self.po = np.where(self.po >  self.wmax,  self.wmax, self.po)
+        self.po = np.where(self.po < -self.wmax, -self.wmax, self.po)
+    
+        self.bz = self.bz - self.learnRate*np.divide(cost, self.bz_update)
+        self.bz = np.where(self.bz >  self.wmax,  self.wmax, self.bz)
+        self.bz = np.where(self.bz < -self.wmax, -self.wmax, self.bz)
+        
+        self.bi = self.bi - self.learnRate*np.divide(cost, self.bi_update)
+        self.bi = np.where(self.bi >  self.wmax,  self.wmax, self.bi)
+        self.bi = np.where(self.bi < -self.wmax, -self.wmax, self.bi)
+
+        self.bf = self.bf - self.learnRate*np.divide(cost, self.bf_update)
+        self.bf = np.where(self.bf >  self.wmax,  self.wmax, self.bf)
+        self.bf = np.where(self.bf < -self.wmax, -self.wmax, self.bf)
+        
+        self.bo = self.bo - self.learnRate*np.divide(cost, self.bo_update)
+        self.bo = np.where(self.bo >  self.wmax,  self.wmax, self.bo)
+        self.bo = np.where(self.bo < -self.wmax, -self.wmax, self.bo)
+        
         return returnVal
 
     def forwardPropagate_BPTT(self, X):    
