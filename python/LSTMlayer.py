@@ -218,16 +218,18 @@ class LSTMlayer :
         self.outW_update = self.beta*np.sign(np.random.random(np.shape(self.outW)) - 0.5) 
         self.outW_p = self.outW + self.outW_update
 
-        # Forward Propagation, WITHOUT weight perturbation. J is the cost function 
-        self.forwardPropagate(X)
-        J = 0.5*(self.forwardPropagate(X)- target)**2
-        
-        # Forward Propagation, WITH weight perturbation
-        returnVal = self.forwardPropagate_SPSA(X)
-        Jpert = 0.5*(returnVal - target)**2
+        cost = 0
 
-        # The Cost Function evaluation for this perturbation
-        cost = (Jpert-J)
+        for t in range(self.T):
+            # Forward Propagation, WITHOUT weight perturbation. J is the cost function 
+            returnVal = self.forwardPropagate(X[t,:])
+            J = 0.5*(returnVal- target[t,:])**2
+            
+            # Forward Propagation, WITH weight perturbation
+            Jpert = 0.5*(self.forwardPropagate_SPSA(X[t,:]) - target[t,:])**2
+
+            # The Cost Function evaluation for this perturbation
+            cost += (Jpert-J)
 		
         # ****TRAINING**** The LSTM Layer 
         self.Wz = self.Wz - self.learnRate*np.divide(cost, self.Wz_update)
