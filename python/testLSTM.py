@@ -31,7 +31,7 @@ pert = 0.001
 alpha = pert*0.1
 wmax  = 4
 input_dim = 2
-hidden_dim = 10 
+hidden_dim = 10
 output_dim = 1
 
 # initialize neural network weights

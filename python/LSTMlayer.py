@@ -111,6 +111,8 @@ class LSTMlayer :
             self.i = np.zeros((hiddenUnits,1))
             self.prev_y = np.zeros((hiddenUnits,1))
             self.prev_c = np.zeros((hiddenUnits,1))
+            self.prev_y_p = np.zeros((hiddenUnits,1))
+            self.prev_c_p = np.zeros((hiddenUnits,1))
             
             # The MLP Variables and Weights
             self.activOut = np.random.random((outputUnits,1)) - 0.5 
@@ -158,25 +160,22 @@ class LSTMlayer :
     
     def forwardPropagate_SPSA(self, X):
         #The LM layers
-        self.z = np.tanh( np.dot(self.Wz_p,X) + np.dot(self.Rz_p, self.prev_y) + self.bz_p ) 
-        self.i = sigmoid( np.dot(self.Wi_p,X) + np.dot(self.Ri_p, self.prev_y) + np.multiply(self.pi_p,self.prev_c) + self.bi_p ) 
-        self.f = sigmoid( np.dot(self.Wf_p,X) + np.dot(self.Rf_p,self.prev_y) + np.multiply(self.pf_p,self.prev_c) + self.bf_p ) 
-        self.prev_c = np.multiply(self.z, self.i) + np.multiply(self.prev_c, self.f)
-        self.o = sigmoid( np.dot(self.Wo_p,X) + np.dot(self.Ro_p,self.prev_y) + np.multiply(self.po_p, self.prev_c) + self.bo_p )
-        self.prev_y = np.multiply(np.tanh(self.prev_c), self.o)
+        self.z = np.tanh( np.dot(self.Wz_p,X) + np.dot(self.Rz_p, self.prev_y_p) + self.bz_p ) 
+        self.i = sigmoid( np.dot(self.Wi_p,X) + np.dot(self.Ri_p, self.prev_y_p) + np.multiply(self.pi_p,self.prev_c_p) + self.bi_p ) 
+        self.f = sigmoid( np.dot(self.Wf_p,X) + np.dot(self.Rf_p,self.prev_y_p) + np.multiply(self.pf_p,self.prev_c_p) + self.bf_p ) 
+        self.prev_c_p = np.multiply(self.z, self.i) + np.multiply(self.prev_c_p, self.f)
+        self.o = sigmoid( np.dot(self.Wo_p,X) + np.dot(self.Ro_p,self.prev_y_p) + np.multiply(self.po_p, self.prev_c_p) + self.bo_p )
+        self.prev_y_p = np.multiply(np.tanh(self.prev_c_p), self.o)
 
         #The Perceptron Layer
-        self.activOut = np.dot(self.outW_p, self.prev_y)
+        self.activOut = np.dot(self.outW_p, self.prev_y_p)
         
         #The total layer output
         return sigmoid(self.activOut)
 
     def trainNetwork_SPSA(self, X, target):
         
-        # The first forward propagation, without weight perturbation. J is the cost function 
-        returnVal = self.forwardPropagate(X)
-        J = 0.5*(returnVal - target)**2
-        print("J: ", J)
+        
         # Performing the weight perturbations
         self.Wz_update = self.beta*np.sign(np.random.random(np.shape(self.Wz)) - 0.5)
         self.Wi_update = self.beta*np.sign(np.random.random(np.shape(self.Wi)) - 0.5)
@@ -219,11 +218,16 @@ class LSTMlayer :
         self.outW_update = self.beta*np.sign(np.random.random(np.shape(self.outW)) - 0.5) 
         self.outW_p = self.outW + self.outW_update
 
+        # Forward Propagation, WITHOUT weight perturbation. J is the cost function 
+        self.forwardPropagate(X)
+        J = 0.5*(self.forwardPropagate(X)- target)**2
+        
         # Forward Propagation, WITH weight perturbation
-        Jpert = 0.5*(self.forwardPropagate_SPSA(X) - target)**2
+        returnVal = self.forwardPropagate_SPSA(X)
+        Jpert = 0.5*(returnVal - target)**2
 
-		# The Cost Function evaluation for this perturbation
-        cost = np.sum(Jpert-J)
+        # The Cost Function evaluation for this perturbation
+        cost = (Jpert-J)
 		
         # ****TRAINING**** The LSTM Layer 
         self.Wz = self.Wz - self.learnRate*np.divide(cost, self.Wz_update)
