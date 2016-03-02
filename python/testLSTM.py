@@ -22,22 +22,22 @@ def tanhPrime(output):
 
 # training dataset generation
 int2binary = {}
-binary_dim = 32 
+binary_dim = 16 
 
 largest_number = pow(2,binary_dim)
 
 # input variables
-pert = 0.015
-alpha = 0.02
-wmax  = 2
+pert = 0.001
+alpha = pert*0.1
+wmax  = 4
 input_dim = 2
-hidden_dim = 18 
+hidden_dim = 10 
 output_dim = 1
 
 # initialize neural network weights
 y_prev = np.zeros((hidden_dim,binary_dim))
 lstmLayer1 = LSTMlayer.LSTMlayer(input_dim, hidden_dim, output_dim, alpha, 'SPSA', pert, wmax, 1)
-plt.axis([0, 30000, 0, 1000000])
+plt.axis([0, 30000, 0, 500000])
 plt.ion()
 plt.show()
 
@@ -51,7 +51,7 @@ for j in range(100000):
     
     # generate a simple addition problem (a + b = c)
     a_int = np.random.randint(largest_number/2) # int version
-    a = np.binary_repr(a_int, width=binary_dim)# binary encoding
+    a = np.binary_repr(a_int, width=binary_dim) # binary encoding
 
     b_int = np.random.randint(largest_number/2) # int version
     b = np.binary_repr(b_int, width=binary_dim) # binary encoding
@@ -64,11 +64,6 @@ for j in range(100000):
     d = list()
 
     overallError = 0
-    
-    layer_2_deltas = np.zeros((hidden_dim,binary_dim))
-    layer_1_values = list()
-    layer_1_values.append(np.zeros(hidden_dim))
-
 
     # -------------- THE FORWARD PROPAGATION STEP -------------- #
     for position in range(binary_dim):
@@ -86,7 +81,7 @@ for j in range(100000):
         total_error += overallError
     
     # print out progress
-    if(j % 50 == 0):
+    if(j % 200 == 0):
         res = str()
         for i in reversed(range(len(d))):
             res += str(d[i])

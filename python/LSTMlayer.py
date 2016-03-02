@@ -114,7 +114,7 @@ class LSTMlayer :
             
             # The MLP Variables and Weights
             self.activOut = np.random.random((outputUnits,1)) - 0.5 
-            self.outW = np.random.rand(outputUnits, hiddenUnits)
+            self.outW = np.random.random((outputUnits, hiddenUnits)) - 0.5
             self.deltaO   = np.random.random((outputUnits,1)) - 0.5
             self.deltaH   = np.random.random((hiddenUnits,1)) - 0.5
 
@@ -137,6 +137,9 @@ class LSTMlayer :
             self.bi_p = np.random.random((hiddenUnits, 1)) - 0.5
             self.bo_p = np.random.random((hiddenUnits, 1)) - 0.5
             self.bf_p = np.random.random((hiddenUnits, 1)) - 0.5
+            
+            self.outW_p = np.random.random((outputUnits, hiddenUnits)) - 0.5
+            self.outW_update = np.random.random((outputUnits, hiddenUnits)) - 0.5
     
     def forwardPropagate(self, X):
         #The LM layers
@@ -163,7 +166,7 @@ class LSTMlayer :
         self.prev_y = np.multiply(np.tanh(self.prev_c), self.o)
 
         #The Perceptron Layer
-        self.activOut = np.dot(self.outW, self.prev_y)
+        self.activOut = np.dot(self.outW_p, self.prev_y)
         
         #The total layer output
         return sigmoid(self.activOut)
@@ -173,7 +176,7 @@ class LSTMlayer :
         # The first forward propagation, without weight perturbation. J is the cost function 
         returnVal = self.forwardPropagate(X)
         J = 0.5*(returnVal - target)**2
-
+        print("J: ", J)
         # Performing the weight perturbations
         self.Wz_update = self.beta*np.sign(np.random.random(np.shape(self.Wz)) - 0.5)
         self.Wi_update = self.beta*np.sign(np.random.random(np.shape(self.Wi)) - 0.5)
@@ -212,14 +215,17 @@ class LSTMlayer :
         self.bi_p = self.bi + self.bi_update
         self.bo_p = self.bo + self.bo_update
         self.bf_p = self.bf + self.bf_update
-       
+      
+        self.outW_update = self.beta*np.sign(np.random.random(np.shape(self.outW)) - 0.5) 
+        self.outW_p = self.outW + self.outW_update
+
         # Forward Propagation, WITH weight perturbation
         Jpert = 0.5*(self.forwardPropagate_SPSA(X) - target)**2
 
 		# The Cost Function evaluation for this perturbation
         cost = np.sum(Jpert-J)
 		
-        # Updating the weights
+        # ****TRAINING**** The LSTM Layer 
         self.Wz = self.Wz - self.learnRate*np.divide(cost, self.Wz_update)
         self.Wz = np.where(self.Wz >  self.wmax,  self.wmax, self.Wz)
         self.Wz = np.where(self.Wz < -self.wmax, -self.wmax, self.Wz)
@@ -279,6 +285,11 @@ class LSTMlayer :
         self.bo = self.bo - self.learnRate*np.divide(cost, self.bo_update)
         self.bo = np.where(self.bo >  self.wmax,  self.wmax, self.bo)
         self.bo = np.where(self.bo < -self.wmax, -self.wmax, self.bo)
+
+        # ****TRAINING**** The Perceptron Layer 
+        self.outW = self.outW - self.learnRate*np.divide(cost, self.outW_update)
+        self.outW = np.where(self.outW >  self.wmax,  self.wmax, self.outW)
+        self.outW = np.where(self.outW < -self.wmax, -self.wmax, self.outW)
         
         return returnVal
 
