@@ -21,33 +21,28 @@ def tanhPrime(output):
     return (1-output**2)
 
 # training dataset generation
-int2binary = {}
-binary_dim = 16 
+binary_dim = 8 
 
 largest_number = pow(2,binary_dim)
 
 # input variables
-pert = 0.001
-alpha = pert*0.1
-wmax  = 4
+pert = 0.0001
+alpha = pert*10
+wmax  = 10
 input_dim = 2
-hidden_dim = 10
+hidden_dim = 5
 output_dim = 1
-
+maxIter    = 100000
 # initialize neural network weights
-y_prev = np.zeros((hidden_dim,binary_dim))
-lstmLayer1 = LSTMlayer.LSTMlayer(input_dim, hidden_dim, output_dim, alpha, 'SPSA', pert, wmax, 1)
-plt.axis([0, 30000, 0, 500000])
+lstmLayer1 = LSTMlayer.LSTMlayer(input_dim, hidden_dim, output_dim, alpha, 'SPSA', pert, wmax, binary_dim)
+plt.axis([0, maxIter, 0, 500000])
 plt.ion()
 plt.show()
 
 total_error = 0
-prev_total_error = 0
-synapse_1_update = 0
-layer_2 = np.ndarray((1,1))
 
 # training logic
-for j in range(100000):
+for j in range(maxIter):
     
     # generate a simple addition problem (a + b = c)
     a_int = np.random.randint(largest_number/2) # int version
@@ -60,11 +55,19 @@ for j in range(100000):
     c_int = a_int + b_int
     c = np.binary_repr(c_int, width=binary_dim) 
     
-    # where we'll store our best guess (binary encoded)
-    d = list()
-
     overallError = 0
 
+    # Build the input vector for this training epoch
+    X = np.array([ [int(a[i]) for i in range(binary_dim)], [int(b[i]) for i in range(binary_dim)] ])
+    y = np.array([ [int(c[i]) for i in range(binary_dim)] ])
+    
+    # Train the network for one epoch, and fetch the prediction output
+    y_pred = lstmLayer1.trainNetwork_SPSA(X, y)
+ 
+    # decode estimate so we can print it out
+    overallError += np.sum(np.abs(y - np.round(y_pred).T))
+    total_error += overallError
+    """
     # -------------- THE FORWARD PROPAGATION STEP -------------- #
     for position in range(binary_dim):
         
@@ -79,17 +82,19 @@ for j in range(100000):
         d.append(str(int(np.round(y_pred))))
         overallError += np.abs(y - np.round(y_pred))
         total_error += overallError
-    
+    """
     # print out progress
     if(j % 200 == 0):
+        d = [int(np.round(y_pred[i])) for i in range(len(y_pred))]
         res = str()
-        for i in reversed(range(len(d))):
+        for i in range(len(d)):
             res += str(d[i])
 
         print("Error:" + str(overallError))
         print("Error Increase:" + str(total_error))
         print("Pred:" + res)
         print("True:" + str(c))
+        #print(a, "+", b, "=", c)
         print("Iteration:" + str(j))
         #print(str(a_int) + " + " + str(b_int) + " = " + res )
         print("------------")
