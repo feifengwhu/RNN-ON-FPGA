@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import time
 import LSTMlayer
 
-np.random.seed(5)
+np.random.seed(int(time.time()%100))
 
 # compute sigmoid nonlinearity
 def sigmoid(x):
@@ -26,16 +26,16 @@ binary_dim = 8
 largest_number = pow(2,binary_dim)
 
 # input variables
-pert = 0.0001
-alpha = pert*10
-wmax  = 10
+pert = 0.0015
+alpha = 0.05
+wmax  = 7
 input_dim = 2
 hidden_dim = 5
 output_dim = 1
 maxIter    = 100000
 # initialize neural network weights
 lstmLayer1 = LSTMlayer.LSTMlayer(input_dim, hidden_dim, output_dim, alpha, 'SPSA', pert, wmax, binary_dim)
-plt.axis([0, maxIter, 0, 500000])
+plt.axis([0, maxIter, 0, 500000*4])
 plt.ion()
 plt.show()
 
@@ -56,7 +56,10 @@ for j in range(maxIter):
     c = np.binary_repr(c_int, width=binary_dim) 
     
     overallError = 0
+    
+    d = list()
 
+    """
     # Build the input vector for this training epoch
     X = np.array([ [int(a[i]) for i in range(binary_dim)], [int(b[i]) for i in range(binary_dim)] ])
     y = np.array([ [int(c[i]) for i in range(binary_dim)] ])
@@ -82,12 +85,12 @@ for j in range(maxIter):
         d.append(str(int(np.round(y_pred))))
         overallError += np.abs(y - np.round(y_pred))
         total_error += overallError
-    """
+        lstmLayer1.resetNetwork()
+
     # print out progress
     if(j % 200 == 0):
-        d = [int(np.round(y_pred[i])) for i in range(len(y_pred))]
         res = str()
-        for i in range(len(d)):
+        for i in reversed(range(len(d))):
             res += str(d[i])
 
         print("Error:" + str(overallError))
