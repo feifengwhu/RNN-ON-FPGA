@@ -7,7 +7,7 @@ import numpy as np
 import time
 
 # Defines the seed for random() as the current time in seconds
-np.random.seed(int(time.time()%100))
+np.random.seed(round(time.time()))
 
 # Evaluates the Sigmoid Function
 def sigmoid(x):
@@ -21,6 +21,10 @@ def sigmoidPrime(output):
 # Evaluates the derivative of the TanH Func, based on a previous np.tanh() call
 def tanhPrime(output):
     return (1-output**2)
+
+def relu(x):
+    return np.amax(np.concatenate((np.zeros_like(x), x), axis=1), axis=1, keepdims=True)
+
 
 class LSTMlayer :
 
@@ -37,24 +41,24 @@ class LSTMlayer :
 
         # Initializing the matrix weights
         #LSTM Block
-        self.Wz = np.random.random((hiddenUnits, inputUnits)) - 0.5
-        self.Wi = np.random.random((hiddenUnits, inputUnits)) - 0.5
-        self.Wf = np.random.random((hiddenUnits, inputUnits)) - 0.5
-        self.Wo = np.random.random((hiddenUnits, inputUnits)) - 0.5
+        self.Wz = np.random.random((hiddenUnits, inputUnits)) + 0.5 
+        self.Wi = np.random.random((hiddenUnits, inputUnits)) + 0.5
+        self.Wf = np.random.random((hiddenUnits, inputUnits)) + 0.5  
+        self.Wo = np.random.random((hiddenUnits, inputUnits)) + 0.5
         
-        self.Rz = np.random.random((hiddenUnits, hiddenUnits)) - 0.5
-        self.Ri = np.random.random((hiddenUnits, hiddenUnits)) - 0.5
-        self.Rf = np.random.random((hiddenUnits, hiddenUnits)) - 0.5
-        self.Ro = np.random.random((hiddenUnits, hiddenUnits)) - 0.5
+        self.Rz = np.random.random((hiddenUnits, hiddenUnits))+ 0.5
+        self.Ri = np.random.random((hiddenUnits, hiddenUnits))+ 0.5
+        self.Rf = np.random.random((hiddenUnits, hiddenUnits))+ 0.5
+        self.Ro = np.random.random((hiddenUnits, hiddenUnits))+ 0.5
         
-        self.pi = np.random.random((hiddenUnits, 1)) - 0.5
-        self.pf = np.random.random((hiddenUnits, 1)) - 0.5
-        self.po = np.random.random((hiddenUnits, 1)) - 0.5
+        self.pi = np.random.random((hiddenUnits, 1)) + 0.5
+        self.pf = np.random.random((hiddenUnits, 1)) + 0.5
+        self.po = np.random.random((hiddenUnits, 1)) + 0.5
         
-        self.bz = np.random.random((hiddenUnits, 1)) - 0.5
-        self.bi = np.random.random((hiddenUnits, 1)) - 0.5
-        self.bo = np.random.random((hiddenUnits, 1)) - 0.5
-        self.bf = np.random.random((hiddenUnits, 1)) - 0.5
+        self.bz = np.random.random((hiddenUnits, 1))+ 0.5
+        self.bi = np.random.random((hiddenUnits, 1))+ 0.5
+        self.bo = np.random.random((hiddenUnits, 1))+ 0.5
+        self.bf = np.random.random((hiddenUnits, 1))+ 0.5
         
         # Updates
         self.Wz_update = np.zeros_like(self.Wz)
@@ -102,23 +106,24 @@ class LSTMlayer :
         
         elif (self.learnMethod == 'SPSA'):
             # The LSTM variables 
-            self.y   = np.zeros((hiddenUnits,1))
-            self.y_p = np.zeros((hiddenUnits,1))
-            self.x   = np.zeros((inputUnits,1))
-            self.o   = np.zeros((hiddenUnits,1))
-            self.f   = np.zeros((hiddenUnits,1))
-            self.c   = np.zeros((hiddenUnits,1))
-            self.c_p = np.zeros((hiddenUnits,1))
-            self.z   = np.zeros((hiddenUnits,1))
-            self.i   = np.zeros((hiddenUnits,1))
+            self.y = np.zeros((hiddenUnits,1))
+            self.x = np.zeros((inputUnits,1))
+            self.o = np.zeros((hiddenUnits,1))
+            self.f = np.zeros((hiddenUnits,1))
+            self.c = np.zeros((hiddenUnits,1))
+            self.z = np.zeros((hiddenUnits,1))
+            self.i = np.zeros((hiddenUnits,1))
             self.prev_y = np.zeros((hiddenUnits,1))
             self.prev_c = np.zeros((hiddenUnits,1))
+            self.prev_y_p = np.zeros((hiddenUnits,1))
+            self.prev_c_p = np.zeros((hiddenUnits,1))
             
             # The MLP Variables and Weights
             self.activOut = np.random.random((outputUnits,1)) - 0.5 
-            self.outW     = np.random.random((outputUnits, hiddenUnits)) - 0.5
+            self.outW = np.random.random((outputUnits, hiddenUnits)) - 0.5
             self.deltaO   = np.random.random((outputUnits,1)) - 0.5
             self.deltaH   = np.random.random((hiddenUnits,1)) - 0.5
+            self.returnVal = np.zeros((self.T,1))
 
             # The perturbation weights
             self.Wz_p = np.random.random((hiddenUnits, inputUnits)) - 0.5
@@ -146,31 +151,30 @@ class LSTMlayer :
     def forwardPropagate(self, X):
         #The LM layers
         self.z = np.tanh( np.dot(self.Wz, X) + np.dot(self.Rz, self.prev_y) + self.bz) 
-        self.i = sigmoid( np.dot(self.Wi,X) + np.dot(self.Ri,self.prev_y) + np.multiply(self.pi,self.prev_c) + self.bi ) 
-        self.f = sigmoid( np.dot(self.Wf,X) + np.dot(self.Rf,self.prev_y) + np.multiply(self.pf,self.prev_c) + self.bf ) 
+        self.i = sigmoid( np.dot(self.Wi,X) + np.dot(self.Ri,self.prev_y) + self.bi ) 
+        self.f = sigmoid( np.dot(self.Wf,X) + np.dot(self.Rf,self.prev_y) + self.bf ) 
         self.c = np.multiply(self.z, self.i) + np.multiply(self.prev_c, self.f)
-        self.o = sigmoid( np.dot(self.Wo,X) + np.dot(self.Ro,self.prev_y) + np.multiply(self.po,self.c) + self.bo )
+        self.o = sigmoid( np.dot(self.Wo,X) + np.dot(self.Ro,self.prev_y) + self.bo )
         self.y = np.multiply(np.tanh(self.c), self.o)
-
+        
         #The Perceptron Layer
         self.activOut = np.dot(self.outW, self.y)
-
+        
         #The total layer output
         return sigmoid(self.activOut)
     
     def forwardPropagate_SPSA(self, X):
         #The LM layers
-        self.z   = np.tanh( np.dot(self.Wz_p,X) + np.dot(self.Rz_p, self.prev_y) + self.bz_p ) 
-        self.i   = sigmoid( np.dot(self.Wi_p,X) + np.dot(self.Ri_p, self.prev_y) + np.multiply(self.pi_p,self.prev_c) + self.bi_p ) 
-        self.f   = sigmoid( np.dot(self.Wf_p,X) + np.dot(self.Rf_p,self.prev_y) + np.multiply(self.pf_p,self.prev_c) + self.bf_p ) 
-        self.c_p = np.multiply(self.z, self.i)  + np.multiply(self.prev_c, self.f)
-        self.o   = sigmoid( np.dot(self.Wo_p,X) + np.dot(self.Ro_p,self.prev_y) + np.multiply(self.po_p, self.c_p) + self.bo_p )
+        self.z = np.tanh( np.dot(self.Wz_p,X) + np.dot(self.Rz_p, self.prev_y) + self.bz_p ) 
+        self.i = sigmoid( np.dot(self.Wi_p,X) + np.dot(self.Ri_p, self.prev_y) + self.bi_p ) 
+        self.f = sigmoid( np.dot(self.Wf_p,X) + np.dot(self.Rf_p,self.prev_y) + self.bf_p ) 
+        self.c_p = np.multiply(self.z, self.i) + np.multiply(self.prev_c, self.f)
+        self.o = sigmoid( np.dot(self.Wo_p,X) + np.dot(self.Ro_p,self.prev_y) + self.bo_p )
         self.y_p = np.multiply(np.tanh(self.c_p), self.o)
 
         #The Perceptron Layer
         self.activOut = np.dot(self.outW_p, self.y_p)
        
-        #Saves the new stable state
         self.prev_c = self.c
         self.prev_y = self.y
  
@@ -178,8 +182,9 @@ class LSTMlayer :
         return sigmoid(self.activOut)
 
     def resetNetwork(self):
-        self.prev_c = np.zeros_like(self.prev_c)
-        self.prev_y = np.zeros_like(self.prev_y)
+    
+        self.prev_c = np.zeros_like(self.c)
+        self.prev_y = np.zeros_like(self.y)
 
     def trainNetwork_SPSA(self, X, target):
         
@@ -194,7 +199,7 @@ class LSTMlayer :
         self.Wi_p = self.Wi + self.Wi_update
         self.Wf_p = self.Wf + self.Wf_update
         self.Wo_p = self.Wo + self.Wo_update
-      
+        #print("Wz: ", self.Wz, "update: ", self.Wz_update, "Wz_p:", self.Wz_p)      
         self.Rz_update = self.beta*np.sign(np.random.random(np.shape(self.Rz)) - 0.5)
         self.Ri_update = self.beta*np.sign(np.random.random(np.shape(self.Ri)) - 0.5)
         self.Rf_update = self.beta*np.sign(np.random.random(np.shape(self.Rf)) - 0.5)
@@ -204,7 +209,7 @@ class LSTMlayer :
         self.Ri_p = self.Ri + self.Ri_update
         self.Rf_p = self.Rf + self.Rf_update
         self.Ro_p = self.Ro + self.Ro_update
-       
+        """ 
         self.pi_update = self.beta*np.sign(np.random.random(np.shape(self.pi)) - 0.5)
         self.pf_update = self.beta*np.sign(np.random.random(np.shape(self.pf)) - 0.5)
         self.po_update = self.beta*np.sign(np.random.random(np.shape(self.po)) - 0.5)
@@ -212,7 +217,7 @@ class LSTMlayer :
         self.pi_p = self.pi + self.pi_update
         self.pf_p = self.pf + self.pf_update
         self.po_p = self.po + self.po_update
-
+        """
         self.bz_update = self.beta*np.sign(np.random.random(np.shape(self.bi)) - 0.5)
         self.bi_update = self.beta*np.sign(np.random.random(np.shape(self.bi)) - 0.5)
         self.bo_update = self.beta*np.sign(np.random.random(np.shape(self.bo)) - 0.5)
@@ -227,17 +232,17 @@ class LSTMlayer :
         self.outW_p = self.outW + self.outW_update
 
         # Forward Propagation, WITHOUT weight perturbation. J is the cost function 
-        inputVec = np.reshape(X, (2,-1))
-        returnVal = self.forwardPropagate(inputVec)
-        J = (returnVal - target)**2
+        self.returnVal = self.forwardPropagate(X)
+        J = (self.returnVal - target)**2
         
         # Forward Propagation, WITH weight perturbation
-        Jpert = (self.forwardPropagate_SPSA(inputVec) - target)**2
+        Jpert = (self.forwardPropagate_SPSA(X) - target)**2
 
         # The Cost Function evaluation for this perturbation
         cost = np.sum(Jpert-J)
 
         # ****TRAINING**** The LSTM Layer 
+        #print("Gradient Check: ", np.divide(cost, self.Wz_update))
         self.Wz = self.Wz - self.learnRate*np.divide(cost, self.Wz_update)
         self.Wz = np.where(self.Wz >  self.wmax,  self.wmax, self.Wz)
         self.Wz = np.where(self.Wz < -self.wmax, -self.wmax, self.Wz)
@@ -269,7 +274,7 @@ class LSTMlayer :
         self.Ro = self.Ro - self.learnRate*np.divide(cost, self.Ro_update)
         self.Ro = np.where(self.Ro >  self.wmax,  self.wmax, self.Ro)
         self.Ro = np.where(self.Ro < -self.wmax, -self.wmax, self.Ro)
-        
+        """ 
         self.pi = self.pi - self.learnRate*np.divide(cost, self.pi_update)
         self.pi = np.where(self.pi >  self.wmax,  self.wmax, self.pi)
         self.pi = np.where(self.pi < -self.wmax, -self.wmax, self.pi)
@@ -281,7 +286,7 @@ class LSTMlayer :
         self.po = self.po - self.learnRate*np.divide(cost, self.po_update)
         self.po = np.where(self.po >  self.wmax,  self.wmax, self.po)
         self.po = np.where(self.po < -self.wmax, -self.wmax, self.po)
-    
+        """
         self.bz = self.bz - self.learnRate*np.divide(cost, self.bz_update)
         self.bz = np.where(self.bz >  self.wmax,  self.wmax, self.bz)
         self.bz = np.where(self.bz < -self.wmax, -self.wmax, self.bz)
@@ -302,8 +307,8 @@ class LSTMlayer :
         self.outW = self.outW - self.learnRate*np.divide(cost, self.outW_update)
         self.outW = np.where(self.outW >  self.wmax,  self.wmax, self.outW)
         self.outW = np.where(self.outW < -self.wmax, -self.wmax, self.outW)
-        
-        return returnVal
+       
+        return self.returnVal
 
     def forwardPropagate_BPTT(self, X):    
 
