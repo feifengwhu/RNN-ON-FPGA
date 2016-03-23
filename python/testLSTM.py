@@ -106,8 +106,8 @@ for i in range(maxEpoch):
 
     if (epochError/testSamp  == 0):
         correct += 1
-        if(correct == 3):
-            print("Convergence Acheived in {0} epochs".format(i-3))
+        if(correct == 2):
+            print("Convergence Acheived in {0} epochs".format(i-2))
             break
     else:
         correct = 0 
@@ -116,7 +116,7 @@ for i in range(maxEpoch):
     #print("Average Error:", epochError/testSamp)
     #plt.scatter(i, epochError/testSamp, linestyle='-.')
     #plt.draw()
-    #epochError = 0
+    epochError = 0
 
 print("Epochs: {0}".format(i+1))
 wait = input("PRESS ENTER TO CONTINUE.")
