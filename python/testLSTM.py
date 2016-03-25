@@ -4,7 +4,7 @@ import time
 import sys
 import LSTMlayer
 
-np.random.seed(round(time.time()))
+np.random.seed(5)
 
 # compute sigmoid nonlinearity
 def sigmoid(x):
@@ -34,7 +34,7 @@ input_dim = 2
 hidden_dim = int(sys.argv[4])
 output_dim = 1
 maxEpoch   = 50 
-trainSamp  = 2000
+trainSamp  = 100
 testSamp   = 100
 
 # initialize neural network weights
@@ -113,7 +113,7 @@ for i in range(maxEpoch):
         correct = 0 
     
     
-    #print("Average Error:", epochError/testSamp)
+    print("Average Error:", epochError/testSamp)
     #plt.scatter(i, epochError/testSamp, linestyle='-.')
     #plt.draw()
     epochError = 0

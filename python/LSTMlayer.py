@@ -41,24 +41,24 @@ class LSTMlayer :
 
         # Initializing the matrix weights
         #LSTM Block
-        self.Wz = np.random.random((hiddenUnits, inputUnits)) + 0.5 
-        self.Wi = np.random.random((hiddenUnits, inputUnits)) + 0.5
-        self.Wf = np.random.random((hiddenUnits, inputUnits)) + 0.5  
-        self.Wo = np.random.random((hiddenUnits, inputUnits)) + 0.5
+        self.Wz = np.random.random((hiddenUnits, inputUnits)) - 0.5 
+        self.Wi = np.random.random((hiddenUnits, inputUnits)) - 0.5
+        self.Wf = np.random.random((hiddenUnits, inputUnits)) - 0.5  
+        self.Wo = np.random.random((hiddenUnits, inputUnits)) - 0.5
         
-        self.Rz = np.random.random((hiddenUnits, hiddenUnits))+ 0.5
-        self.Ri = np.random.random((hiddenUnits, hiddenUnits))+ 0.5
-        self.Rf = np.random.random((hiddenUnits, hiddenUnits))+ 0.5
-        self.Ro = np.random.random((hiddenUnits, hiddenUnits))+ 0.5
+        self.Rz = np.random.random((hiddenUnits, hiddenUnits))- 0.5
+        self.Ri = np.random.random((hiddenUnits, hiddenUnits))- 0.5
+        self.Rf = np.random.random((hiddenUnits, hiddenUnits))- 0.5
+        self.Ro = np.random.random((hiddenUnits, hiddenUnits))- 0.5
         
-        self.pi = np.random.random((hiddenUnits, 1)) + 0.5
-        self.pf = np.random.random((hiddenUnits, 1)) + 0.5
-        self.po = np.random.random((hiddenUnits, 1)) + 0.5
+        self.pi = np.random.random((hiddenUnits, 1))- 0.5
+        self.pf = np.random.random((hiddenUnits, 1))- 0.5
+        self.po = np.random.random((hiddenUnits, 1))- 0.5
         
-        self.bz = np.random.random((hiddenUnits, 1))+ 0.5
-        self.bi = np.random.random((hiddenUnits, 1))+ 0.5
-        self.bo = np.random.random((hiddenUnits, 1))+ 0.5
-        self.bf = np.random.random((hiddenUnits, 1))+ 0.5
+        self.bz = np.random.random((hiddenUnits, 1))-0.5
+        self.bi = np.random.random((hiddenUnits, 1))-0.5
+        self.bo = np.random.random((hiddenUnits, 1))-0.5
+        self.bf = np.random.random((hiddenUnits, 1))-0.5
         
         # Updates
         self.Wz_update = np.zeros_like(self.Wz)
@@ -239,75 +239,109 @@ class LSTMlayer :
         Jpert = (self.forwardPropagate_SPSA(X) - target)**2
 
         # The Cost Function evaluation for this perturbation
-        cost = np.sum(Jpert-J)
+        cost = float(np.sum(Jpert-J))
 
         # ****TRAINING**** The LSTM Layer 
         #print("Gradient Check: ", np.divide(cost, self.Wz_update))
-        self.Wz = self.Wz - self.learnRate*np.divide(cost, self.Wz_update)
-        self.Wz = np.where(self.Wz >  self.wmax,  self.wmax, self.Wz)
-        self.Wz = np.where(self.Wz < -self.wmax, -self.wmax, self.Wz)
-        
-        self.Wi = self.Wi - self.learnRate*np.divide(cost, self.Wi_update)
-        self.Wi = np.where(self.Wi >  self.wmax,  self.wmax, self.Wi)
-        self.Wi = np.where(self.Wi < -self.wmax, -self.wmax, self.Wi)
+        for i in range(self.Wz.shape[0]):
+            for j in range(self.Wz.shape[1]):
+                if (self.Wz.item(i,j) - self.learnRate*(cost/ self.Wz_update.item(i,j)) > self.wmax):
+                    self.Wz.itemset((i,j), self.wmax)
+                elif (self.Wz.item(i,j) - self.learnRate*(cost/ self.Wz_update.item(i,j)) < -self.wmax):  
+                    self.Wz.itemset((i,j), -self.wmax)
+                else :
+                    self.Wz.itemset((i,j), self.Wz.item(i,j) - self.learnRate*(cost/ self.Wz_update.item(i,j)))
 
-        self.Wf = self.Wf - self.learnRate*np.divide(cost, self.Wf_update)
-        self.Wf = np.where(self.Wf >  self.wmax,  self.wmax, self.Wf)
-        self.Wf = np.where(self.Wf < -self.wmax, -self.wmax, self.Wf)
-        
-        self.Wo = self.Wo - self.learnRate*np.divide(cost, self.Wo_update)
-        self.Wo = np.where(self.Wo >  self.wmax,  self.wmax, self.Wo)
-        self.Wo = np.where(self.Wo < -self.wmax, -self.wmax, self.Wo)
-        
-        self.Rz = self.Rz - self.learnRate*np.divide(cost, self.Rz_update)
-        self.Rz = np.where(self.Rz >  self.wmax,  self.wmax, self.Rz)
-        self.Rz = np.where(self.Rz < -self.wmax, -self.wmax, self.Rz)
-        
-        self.Ri = self.Ri - self.learnRate*np.divide(cost, self.Ri_update)
-        self.Ri = np.where(self.Ri >  self.wmax,  self.wmax, self.Ri)
-        self.Ri = np.where(self.Ri < -self.wmax, -self.wmax, self.Ri)
+                if (self.Wi.item(i,j) - self.learnRate*(cost/ self.Wi_update.item(i,j)) > self.wmax):
+                    self.Wi.itemset((i,j), self.wmax)
+                elif (self.Wi.item(i,j) - self.learnRate*(cost/ self.Wi_update.item(i,j)) < -self.wmax):  
+                    self.Wi.itemset((i,j), -self.wmax)
+                else :
+                    self.Wi.itemset((i,j), self.Wi.item(i,j) - self.learnRate*(cost/ self.Wi_update.item(i,j)))
 
-        self.Rf = self.Rf - self.learnRate*np.divide(cost, self.Rf_update)
-        self.Rf = np.where(self.Rf >  self.wmax,  self.wmax, self.Rf)
-        self.Rf = np.where(self.Rf < -self.wmax, -self.wmax, self.Rf)
-        
-        self.Ro = self.Ro - self.learnRate*np.divide(cost, self.Ro_update)
-        self.Ro = np.where(self.Ro >  self.wmax,  self.wmax, self.Ro)
-        self.Ro = np.where(self.Ro < -self.wmax, -self.wmax, self.Ro)
-        """ 
-        self.pi = self.pi - self.learnRate*np.divide(cost, self.pi_update)
-        self.pi = np.where(self.pi >  self.wmax,  self.wmax, self.pi)
-        self.pi = np.where(self.pi < -self.wmax, -self.wmax, self.pi)
+                if (self.Wf.item(i,j) - self.learnRate*(cost/ self.Wf_update.item(i,j)) > self.wmax):
+                    self.Wf.itemset((i,j), self.wmax)
+                elif (self.Wf.item(i,j) - self.learnRate*(cost/ self.Wf_update.item(i,j)) < -self.wmax):  
+                    self.Wf.itemset((i,j), -self.wmax)
+                else :
+                    self.Wf.itemset((i,j), self.Wf.item(i,j) - self.learnRate*(cost/ self.Wf_update.item(i,j)))
 
-        self.pf = self.pf - self.learnRate*np.divide(cost, self.pf_update)
-        self.pf = np.where(self.pf >  self.wmax,  self.wmax, self.pf)
-        self.pf = np.where(self.pf < -self.wmax, -self.wmax, self.pf)
-        
-        self.po = self.po - self.learnRate*np.divide(cost, self.po_update)
-        self.po = np.where(self.po >  self.wmax,  self.wmax, self.po)
-        self.po = np.where(self.po < -self.wmax, -self.wmax, self.po)
-        """
-        self.bz = self.bz - self.learnRate*np.divide(cost, self.bz_update)
-        self.bz = np.where(self.bz >  self.wmax,  self.wmax, self.bz)
-        self.bz = np.where(self.bz < -self.wmax, -self.wmax, self.bz)
-        
-        self.bi = self.bi - self.learnRate*np.divide(cost, self.bi_update)
-        self.bi = np.where(self.bi >  self.wmax,  self.wmax, self.bi)
-        self.bi = np.where(self.bi < -self.wmax, -self.wmax, self.bi)
+                if (self.Wo.item(i,j) - self.learnRate*(cost/ self.Wo_update.item(i,j)) > self.wmax):
+                    self.Wo.itemset((i,j), self.wmax)
+                elif (self.Wo.item(i,j) - self.learnRate*(cost/ self.Wo_update.item(i,j)) < -self.wmax):  
+                    self.Wo.itemset((i,j), -self.wmax)
+                else :
+                    self.Wo.itemset((i,j), self.Wo.item(i,j) - self.learnRate*(cost/ self.Wo_update.item(i,j)))
 
-        self.bf = self.bf - self.learnRate*np.divide(cost, self.bf_update)
-        self.bf = np.where(self.bf >  self.wmax,  self.wmax, self.bf)
-        self.bf = np.where(self.bf < -self.wmax, -self.wmax, self.bf)
-        
-        self.bo = self.bo - self.learnRate*np.divide(cost, self.bo_update)
-        self.bo = np.where(self.bo >  self.wmax,  self.wmax, self.bo)
-        self.bo = np.where(self.bo < -self.wmax, -self.wmax, self.bo)
+        for i in range(self.Rz.shape[0]):
+            for j in range(self.Rz.shape[1]):
+                if (self.Rz.item(i,j) - self.learnRate*(cost/ self.Rz_update.item(i,j)) > self.wmax):
+                    self.Rz.itemset((i,j), self.wmax)
+                elif (self.Rz.item(i,j) - self.learnRate*(cost/ self.Rz_update.item(i,j)) < -self.wmax):  
+                    self.Rz.itemset((i,j), -self.wmax)
+                else :
+                    self.Rz.itemset((i,j), self.Rz.item(i,j) - self.learnRate*(cost/ self.Rz_update.item(i,j)))
+
+                if (self.Ri.item(i,j) - self.learnRate*(cost/ self.Ri_update.item(i,j)) > self.wmax):
+                    self.Ri.itemset((i,j), self.wmax)
+                elif (self.Ri.item(i,j) - self.learnRate*(cost/ self.Ri_update.item(i,j)) < -self.wmax):  
+                    self.Ri.itemset((i,j), -self.wmax)
+                else :
+                    self.Ri.itemset((i,j), self.Ri.item(i,j) - self.learnRate*(cost/ self.Ri_update.item(i,j)))
+
+                if (self.Rf.item(i,j) - self.learnRate*(cost/ self.Rf_update.item(i,j)) > self.wmax):
+                    self.Rf.itemset((i,j), self.wmax)
+                elif (self.Rf.item(i,j) - self.learnRate*(cost/ self.Rf_update.item(i,j)) < -self.wmax):  
+                    self.Rf.itemset((i,j), -self.wmax)
+                else :
+                    self.Rf.itemset((i,j), self.Rf.item(i,j) - self.learnRate*(cost/ self.Rf_update.item(i,j)))
+
+                if (self.Ro.item(i,j) - self.learnRate*(cost/ self.Ro_update.item(i,j)) > self.wmax):
+                    self.Ro.itemset((i,j), self.wmax)
+                elif (self.Ro.item(i,j) - self.learnRate*(cost/ self.Ro_update.item(i,j)) < -self.wmax):  
+                    self.Ro.itemset((i,j), -self.wmax)
+                else :
+                    self.Ro.itemset((i,j), self.Ro.item(i,j) - self.learnRate*(cost/ self.Ro_update.item(i,j)))
+
+        for i in range(self.bz.shape[0]):
+            if (self.bz.item(i) - self.learnRate*(cost/ self.bz_update.item(i)) > self.wmax):
+                self.bz.itemset(i, self.wmax)
+            elif (self.bz.item(i) - self.learnRate*(cost/ self.bz_update.item(i)) < -self.wmax):  
+                self.bz.itemset(i, -self.wmax)
+            else :
+                self.bz.itemset(i,self.bz.item(i) - self.learnRate*(cost/ self.bz_update.item(i)))
+
+            if (self.bi.item(i) - self.learnRate*(cost/ self.bi_update.item(i)) > self.wmax):
+                self.bi.itemset(i, self.wmax)
+            elif (self.bi.item(i) - self.learnRate*(cost/ self.bi_update.item(i)) < -self.wmax):  
+                self.bi.itemset(i, -self.wmax)
+            else :
+                self.bi.itemset(i,self.bi.item(i) - self.learnRate*(cost/ self.bi_update.item(i)))
+
+            if (self.bf.item(i) - self.learnRate*(cost/ self.bf_update.item(i)) > self.wmax):
+                self.bf.itemset(i, self.wmax)
+            elif (self.bf.item(i) - self.learnRate*(cost/ self.bf_update.item(i)) < -self.wmax):  
+                self.bf.itemset(i, -self.wmax)
+            else :
+                self.bf.itemset(i,self.bf.item(i) - self.learnRate*(cost/ self.bf_update.item(i)))
+
+            if (self.bo.item(i) - self.learnRate*(cost/ self.bo_update.item(i)) > self.wmax):
+                self.bo.itemset(i, self.wmax)
+            elif (self.bo.item(i) - self.learnRate*(cost/ self.bo_update.item(i)) < -self.wmax):  
+                self.bo.itemset(i, -self.wmax)
+            else :
+                self.bo.itemset(i,self.bo.item(i) - self.learnRate*(cost/ self.bo_update.item(i)))
 
         # ****TRAINING**** The Perceptron Layer 
-        self.outW = self.outW - self.learnRate*np.divide(cost, self.outW_update)
-        self.outW = np.where(self.outW >  self.wmax,  self.wmax, self.outW)
-        self.outW = np.where(self.outW < -self.wmax, -self.wmax, self.outW)
-       
+        for i in range(self.outW.shape[0]):
+            for j in range(self.outW.shape[1]):
+                if (self.outW[i,j] - self.learnRate*np.divide(cost, self.outW_update[i,j]) > self.wmax) :
+                    self.outW[i,j] = self.wmax
+                elif (self.outW[i,j] - self.learnRate*np.divide(cost, self.outW_update[i,j]) < -self.wmax) :
+                    self.outW[i,j] = -self.wmax
+                else :
+                    self.outW[i,j] = self.outW[i,j] - self.learnRate*np.divide(cost, self.outW_update[i,j])
+                
         return self.returnVal
 
     def forwardPropagate_BPTT(self, X):    
