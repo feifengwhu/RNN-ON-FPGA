@@ -22,7 +22,7 @@ def tanhPrime(output):
     return (1-output**2)
 
 # training dataset generation
-binary_dim = 16 
+binary_dim = 32 
 largest_number = pow(2,binary_dim)
 
 # Simulation Parameters
@@ -34,7 +34,7 @@ input_dim = 2
 hidden_dim = int(sys.argv[4])
 output_dim = 1
 maxEpoch   = 50 
-trainSamp  = 100
+trainSamp  = 2000
 testSamp   = 100
 
 # initialize neural network weights
