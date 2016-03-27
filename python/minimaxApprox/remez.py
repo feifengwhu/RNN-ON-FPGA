@@ -1,23 +1,33 @@
+"""
+Remez Algorithm for minimax polynomial approximation of transcendental functions
+
+José Pedro Castro Fonseca, 2016
+
+University of Porto, Portugal
+
+"""
+
 import numpy as np
+import matplotlib.pyplot as plt
 from scipy.signal import argrelmax
 
 # The target approximation function
 def f(x):
-    return 1/(1+np.exp(-x))
+    return np.tanh(x)
 
 # Nber of iterations
-numIter = 5000
-
+numIter = 8
+ 
 # Approximation Interval
-b = 4
-a = 0
+b = 3
+a = 1
 
 # Fixed-point system precision
 prec = 2**(-10)
 t = np.arange(a, b, prec)
 
 # Polynomial Degree
-n = 3
+n = 2 
 
 # Initial set of points
 x = np.zeros((n+2,1))
@@ -44,13 +54,31 @@ for it in range(numIter):
     # Recompute the x point vector
     pol = np.poly1d(np.reshape(np.flipud(p[0:n+1]).T, (n+1)))
     diff = abs(pol(t) - f(t))
+
     extremaIndices = argrelmax(abs(diff), axis=0, mode='wrap')[0]
     if len(extremaIndices) < (n+2) : 
         extremaIndices = np.resize(extremaIndices, (1,n+2))
-        extremaIndices[0,n+1] = len(t)-1
+        if abs(diff[t[len(t)-1]]) > abs(diff[t[len(t)-2]]):
+            extremaIndices[0,n+1] = len(t)-1
+        else:
+            extremaIndices = np.roll(extremaIndices, 1)
+            extremaIndices[0,0] = 0
+    
     x = t[extremaIndices].T
-     
+    #Prints Progress
+    print("Error: ", max(abs(diff)))
+    
 
+print("*************************") 
+print("Coefficients: ", p[0:n+1].T)
+print("Error: ", max(abs(diff)))
+#print(extremaIndices)
+plt.figure(1)
+plt.plot(t, pol(t), t, f(t))
+
+plt.figure(2)
+plt.plot(t, diff)
+plt.show()
     
     
 
