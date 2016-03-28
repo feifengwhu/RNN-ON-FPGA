@@ -13,26 +13,26 @@ tan3 = np.array([[-0.00349517,  1.08538355, -0.31676793]])
 tan4 = np.array([[ 0.39878032,  0.46509003, -0.09013554]])
 
 # Converts the polynomial coefficients to the binary representation
-sig1bin = np.round(sig1*(2**10)).astype(int)
-sig2bin = np.round(sig2*(2**10)).astype(int)
-sig3bin = np.round(sig3*(2**10)).astype(int)
-sig4bin = np.round(sig4*(2**10)).astype(int)
+sig1bin = np.round(sig1*(2**11)).astype(int)
+sig2bin = np.round(sig2*(2**11)).astype(int)
+sig3bin = np.round(sig3*(2**11)).astype(int)
+sig4bin = np.round(sig4*(2**11)).astype(int)
 
-tan1bin = np.round(tan1*(2**10)).astype(int)
-tan2bin = np.round(tan2*(2**10)).astype(int)
-tan3bin = np.round(tan3*(2**10)).astype(int)
-tan4bin = np.round(tan4*(2**10)).astype(int)
+tan1bin = np.round(tan1*(2**11)).astype(int)
+tan2bin = np.round(tan2*(2**11)).astype(int)
+tan3bin = np.round(tan3*(2**11)).astype(int)
+tan4bin = np.round(tan4*(2**11)).astype(int)
 
 # Converts them back to float, but now with limited precision
-sig1 = sig1bin*(2**-10)
-sig2 = sig2bin*(2**-10)
-sig3 = sig3bin*(2**-10)
-sig4 = sig4bin*(2**-10)
+sig1 = sig1bin*(2**-11)
+sig2 = sig2bin*(2**-11)
+sig3 = sig3bin*(2**-11)
+sig4 = sig4bin*(2**-11)
 
-tan1 = tan1bin*(2**-10)
-tan2 = tan2bin*(2**-10)
-tan3 = tan3bin*(2**-10)
-tan4 = tan4bin*(2**-10)
+tan1 = tan1bin*(2**-11)
+tan2 = tan2bin*(2**-11)
+tan3 = tan3bin*(2**-11)
+tan4 = tan4bin*(2**-11)
 
 def sigmoidPoly(x):
     if (x <= -6) :
