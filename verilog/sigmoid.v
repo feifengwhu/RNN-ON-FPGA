@@ -8,18 +8,18 @@ module sigmoid  #(parameter QN = 6,
     parameter BITWIDTH = QN + QM + 1;
 
     // The polynomial coefficients. FORMAT: pn_ix, where n is the degree of the associated x term, and x is the corresponding interval 
-    reg signed [QN+QM:0] p2_i1 =       
-    reg signed [QN+QM:0] p1_i1 =       
-    reg signed [QN+QM:0] p0_i1 =       
-    reg signed [QN+QM:0] p2_i2 =       
-    reg signed [QN+QM:0] p1_i2 =       
-    reg signed [QN+QM:0] p0_i2 =       
-    reg signed [QN+QM:0] p2_i3 =       
-    reg signed [QN+QM:0] p1_i3 =       
-    reg signed [QN+QM:0] p0_i3 =       
-    reg signed [QN+QM:0] p2_i4 =       
-    reg signed [QN+QM:0] p1_i4 =       
-    reg signed [QN+QM:0] p0_i4 =       
+    reg signed [QN+QM:0] p2_i1 = 18'b000000000110100000;
+    reg signed [QN+QM:0] p1_i1 = 18'b000000000010010011;
+    reg signed [QN+QM:0] p0_i1 = 18'b000000000000001101;
+    reg signed [QN+QM:0] p2_i2 = 18'b000000010000000100;    
+    reg signed [QN+QM:0] p1_i2 = 18'b000000001000101110;
+    reg signed [QN+QM:0] p0_i2 = 18'b000000000001010011;
+    reg signed [QN+QM:0] p2_i3 = 18'b000000001111111100;
+    reg signed [QN+QM:0] p1_i3 = 18'b000000001000101110;
+    reg signed [QN+QM:0] p0_i3 = 18'b111111111110101101;
+    reg signed [QN+QM:0] p2_i4 = 18'b000000011001100000;
+    reg signed [QN+QM:0] p1_i4 = 18'b000000000010010011;
+    reg signed [QN+QM:0] p0_i4 = 18'b111111111111110011;
 
     reg signed [QN+QM:0] p2;
     reg signed [QN+QM:0] p1;
@@ -69,13 +69,13 @@ module sigmoid  #(parameter QN = 6,
 
     // The coefficient multiplier input Muxes
     always @(*) begin
-        if (state = 1'b0) begin
+        if (state == 1'b0) begin
             multiplierMux = p2;
-            addedMux = p1;
+            adderMux = p1;
         end
         else begin
             multiplierMux = result;
-            addedMux = p0;
+            adderMux = p0;
         end
     end
             
@@ -87,7 +87,7 @@ module sigmoid  #(parameter QN = 6,
 
     // The DSP Slices 
     always @(posedge clk) begin
-        count  <= count + 1'b1;
+        state  <= state + 1'b1;
         outputInt <= multiplierMux * operandPipe2;
         result <= outputInt + adderMux; 
     end        

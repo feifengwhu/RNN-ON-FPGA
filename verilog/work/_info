@@ -1,0 +1,50 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/josefonseca/Documents/thesis/verilog
+vsigmoid
+Z1 !s110 1459447614
+!i10b 1
+!s100 dN@f:iBB8FmNR9UN@TP?G3
+IVKE=OaeFI9i7V_7^b61YT3
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1459447613
+8sigmoid.v
+Fsigmoid.v
+L0 1
+Z3 OL;L;10.4c_5;61
+r1
+!s85 0
+31
+Z4 !s108 1459447614.000000
+Z5 !s107 tb_sigmoid.v|sigmoid.v|
+Z6 !s90 sigmoid.v|tb_sigmoid.v|
+!i113 0
+Z7 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+vtb_sigmoid
+R1
+!i10b 1
+!s100 e4N^4T@:?7QeRkGIU`HFK3
+Id]aY4cUneeMW`Eg398AM91
+R2
+R0
+w1459418605
+8tb_sigmoid.v
+Ftb_sigmoid.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 0
+R7
