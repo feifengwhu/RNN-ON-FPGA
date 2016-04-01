@@ -26,8 +26,8 @@ module tb_sigmoid();
 
     // Loads golden inputs/outputs to ROM
     initial begin
-        $readmemh("goldenIN.hex", ROM_input);
-        $readmemh("sigmoid_goldenOUT.hex", ROM_goldenOut);
+        $readmemb("goldenIN.hex", ROM_input);
+        $readmemb("sigmoid_goldenOUT.hex", ROM_goldenOut);
         fid_error_dump = $fopen("error_dump.txt", "w");
         fid = $fopen("myout.hex", "w");
     end
@@ -43,7 +43,7 @@ module tb_sigmoid();
     initial begin
         time_start = $realtime;
 
-        $display("Simulation started at %f", start_time);
+        $display("Simulation started at %f", time_start);
 
         // Initializing the clock and applying the initial reset
         clock = 0;
@@ -53,9 +53,15 @@ module tb_sigmoid();
 
         for(i=0; i < MAX_SAMPLES; i = i + 1) begin
             @(posedge clock);
+            @(posedge clock);
             operand <= ROM_input[i];
-            $display("Output: ", result);
+            
+            if (i % 1000 == 0) 
+                $display("Simulated %d samples\n", i);
+            
         end
+        
+        $stop;
     end
 endmodule
             

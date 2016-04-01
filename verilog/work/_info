@@ -7,44 +7,70 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-Z0 d/home/josefonseca/Documents/thesis/verilog
-vsigmoid
-Z1 !s110 1459447614
-!i10b 1
-!s100 dN@f:iBB8FmNR9UN@TP?G3
-IVKE=OaeFI9i7V_7^b61YT3
-Z2 VDg1SIo80bB@j0V0VzS_@n1
+Z0 d/home/jfonseca/thesis/verilog
+T_opt
+!s110 1459528267
+VA7jdoMF8X<9TO`G4X>mFn2
+Z1 04 10 4 work tb_sigmoid fast 0
+=1-d48564c0c748-56fea24b-44b64-148e
+Z2 o-quiet -auto_acc_if_foreign -work work
+n@_opt
+Z3 OL;O;10.4c_5;61
 R0
-w1459447613
+T_opt1
+!s110 1459530065
+VcUT8GKKI>W=O_E^FEnKNd0
+R1
+=1-d48564c0c748-56fea951-9b467-15b1
+o-quiet -auto_acc_if_foreign -work work +acc
+n@_opt1
+R3
+T_opt2
+!s110 1459521818
+VUni^[Rd:Zd?P39^hZ^AN`1
+04 7 4 work sigmoid fast 0
+=1-d48564c0c748-56fe891a-78f5f-1074
+R2
+n@_opt2
+R3
+R0
+vsigmoid
+Z4 !s110 1459530039
+!i10b 1
+!s100 3QE4nVfLJE70jfTTN6UWC1
+IXTNze4kmgDAFMhoO8oOM<3
+Z5 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1459530038
 8sigmoid.v
 Fsigmoid.v
 L0 1
-Z3 OL;L;10.4c_5;61
+Z6 OL;L;10.4c_5;61
 r1
 !s85 0
 31
-Z4 !s108 1459447614.000000
-Z5 !s107 tb_sigmoid.v|sigmoid.v|
-Z6 !s90 sigmoid.v|tb_sigmoid.v|
+Z7 !s108 1459530039.000000
+Z8 !s107 tb_sigmoid.v|sigmoid.v|
+Z9 !s90 sigmoid.v|tb_sigmoid.v|
 !i113 0
-Z7 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z10 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 vtb_sigmoid
-R1
+R4
 !i10b 1
-!s100 e4N^4T@:?7QeRkGIU`HFK3
-Id]aY4cUneeMW`Eg398AM91
-R2
+!s100 VQ<7F9iSN5AT91R==M17h3
+I>>8XD9>z<EDAgl0;YX[XZ1
+R5
 R0
-w1459418605
+w1459528812
 8tb_sigmoid.v
 Ftb_sigmoid.v
 L0 1
-R3
+R6
 r1
 !s85 0
 31
-R4
-R5
-R6
-!i113 0
 R7
+R8
+R9
+!i113 0
+R10

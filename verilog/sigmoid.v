@@ -60,36 +60,55 @@ module sigmoid  #(parameter QN = 6,
             p1 <= p1_i4;
             p0 <= p0_i4;
         end
-        else  begin
-            p2 <= 0;
-            p1 <= 0;
+        else begin
+            p2 <= 18'd0;
+            p1 <= 18'd0;
             p0 <= 18'd1;
         end
     end
 
     // The coefficient multiplier input Muxes
-    always @(*) begin
-        if (state == 1'b0) begin
-            multiplierMux = p2;
-            adderMux = p1;
+    always @(posedge clk) begin
+        if(reset == 1'b1) begin
+            multiplierMux <= 18'd0;
+            adderMux      <= 18'd0;
         end
         else begin
-            multiplierMux = result;
-            adderMux = p0;
+            if (state == 1'b0) begin
+                multiplierMux <= p2;
+                adderMux <= p1;
+            end
+            else begin
+                multiplierMux <= result;
+                adderMux <= p0;
+            end
         end
     end
             
     // The input operand pipeline
+    
     always @(posedge clk) begin
-        operandPipe1 <= operand;
-        operandPipe2 <= operandPipe1;
+        if (reset == 1'b1) begin
+            operandPipe1 <= 18'd0;
+        end
+        else begin
+            if (state == 1'b0)
+                operandPipe1 <= operand;
+        end
     end
-
+    
     // The DSP Slices 
     always @(posedge clk) begin
-        state  <= state + 1'b1;
-        outputInt <= multiplierMux * operandPipe2;
-        result <= outputInt + adderMux; 
+        if (reset == 1'b1) begin
+            state     <= 1'b0;
+            outputInt <= 37'b0;
+            result    <= 18'b0; 
+        end
+        else begin
+            state     <= state + 1'b1;
+            outputInt <= multiplierMux * operandPipe1;
+            result    <= (outputInt>>>(BITWIDTH-1)) + adderMux; 
+        end
     end        
 
 endmodule
