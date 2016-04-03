@@ -56,8 +56,7 @@ module tb_sigmoid();
             @(posedge clock);
             @(posedge clock);
             operand <= ROM_input[i];
-            #(HALF_CLOCK);
-            $fwrite(fid, "%d\n", result);
+            $fwrite(fid, "%05X\n", result);
             if (i % 1000 == 0) 
                 $display("Simulated %d samples\n", i);
             

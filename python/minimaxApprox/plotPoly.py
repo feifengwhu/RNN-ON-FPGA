@@ -88,15 +88,19 @@ def sigmoidPoly(x):
     if (x <= -6) :
         return 0
     elif (x > -6) and (x <= -3):
-        return np.dot(sig1, np.array([[1, x, x**2]]).T)
+        x = np.round((2**11)*x)
+        return np.dot(sig1bin, np.array([[2**11, x, np.round((x**2)/(2**11))]]).T)/(2**11)
     elif (x > -3) and (x <= 0):
-        return np.dot(sig2, np.array([[1, x, x**2]]).T)
+        x = np.round((2**11)*x)
+        return np.dot(sig2bin, np.array([[2**11, x, np.round((x**2)/(2**11))]]).T)/(2**11)
     elif (x > 0) and (x <= 3):
-        return np.dot(sig3, np.array([[1, x, x**2]]).T)
+        x = np.round((2**11)*x)
+        return np.dot(sig3bin, np.array([[2**11, x, np.round((x**2)/(2**11))]]).T)/(2**11)
     elif (x > 3) and (x <= 6):
-        return np.dot(sig4, np.array([[1, x, x**2]]).T)
+        x = np.round((2**11)*x)
+        return np.dot(sig4bin, np.array([[2**11, x, np.round((x**2)/(2**11))]]).T)/(2**11)
     else:
-        return 1
+        return (2**11)
 
 def tanhPoly(x):
     if (x <= -3) :
@@ -127,7 +131,7 @@ for i in range(len(t)):
 fin.close()
 
 # Generates the output vector    
-sigPoly  = np.array([sigmoidPoly(t[i]) for i in range(len(t))])
+sigPoly  = np.array([sigmoidPoly(t[i]) for i in range(len(t))])/(2**11)
 tanhPoly = np.array([tanhPoly(t[i]) for i in range(len(t))])
 
 # Writes to a file the golden input
