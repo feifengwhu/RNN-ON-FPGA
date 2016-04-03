@@ -3,7 +3,6 @@ import matplotlib.pyplot as plt
 
 # The fixed-point decimal precision
 
-
 # The original optimal coefficients
 sig1 = np.array([[ 0.20323428,  0.0717631,   0.00642858]])
 sig2 = np.array([[ 0.50195831,  0.27269294,  0.04059181]])
@@ -104,17 +103,21 @@ def sigmoidPoly(x):
 
 def tanhPoly(x):
     if (x <= -3) :
-        return -1
+        return -(2**11)
     elif (x > -3) and (x <= -1):
-        return np.dot(tan1, np.array([[1, x, x**2]]).T)
+        x = np.round((2**11)*x)
+        return np.dot(tan1bin, np.array([[2**11, x, np.round((x**2)/(2**11))]]).T)/(2**11)
     elif (x > -1) and (x <= 0):
-        return np.dot(tan2, np.array([[1, x, x**2]]).T)
+        x = np.round((2**11)*x)
+        return np.dot(tan2bin, np.array([[2**11, x, np.round((x**2)/(2**11))]]).T)/(2**11)
     elif (x > 0) and (x <= 1):
-        return np.dot(tan3, np.array([[1, x, x**2]]).T)
+        x = np.round((2**11)*x)
+        return np.dot(tan3bin, np.array([[2**11, x, np.round((x**2)/(2**11))]]).T)/(2**11)
     elif (x > 1) and (x <= 3):
-        return np.dot(tan4, np.array([[1, x, x**2]]).T)
+        x = np.round((2**11)*x)
+        return np.dot(tan4bin, np.array([[2**11, x, np.round((x**2)/(2**11))]]).T)/(2**11)
     else:
-        return 1
+        return (2**11)
 
 def sigmoid(x):
     return 1/(1+np.exp(-x))
@@ -132,7 +135,7 @@ fin.close()
 
 # Generates the output vector    
 sigPoly  = np.array([sigmoidPoly(t[i]) for i in range(len(t))])/(2**11)
-tanhPoly = np.array([tanhPoly(t[i]) for i in range(len(t))])
+tanhPoly = np.array([tanhPoly(t[i])    for i in range(len(t))])/(2**11)
 
 # Writes to a file the golden input
 fout = open('sigmoid_goldenOUT.hex', 'w')
@@ -142,6 +145,14 @@ for i in range(len(sigPoly)):
     else:
         fout.write('{0:018b}\n'.format(2**18+np.round(sigPoly[i]*(2**11)).astype(int)))
 fout.close()
+
+fout2 = open('tanh_goldenOUT.hex', 'w')
+for i in range(len(sigPoly)):
+    if (tanhPoly[i] >= 0) : 
+        fout2.write('{0:018b}\n'.format(np.round(tanhPoly[i]*(2**11)).astype(int)))
+    else:
+        fout2.write('{0:018b}\n'.format(2**18+np.round(tanhPoly[i]*(2**11)).astype(int)))
+fout2.close()
 
 diffSig = abs(sigPoly  - sigmoid(t))
 diffTan = abs(tanhPoly - np.tanh(t))
