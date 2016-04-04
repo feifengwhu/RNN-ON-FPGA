@@ -1,0 +1,15 @@
+Vivado Simulator 2015.4
+Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
+Running: /opt/Xilinx/Vivado/2015.4/bin/unwrapped/lnx64.o/xelab -wto 418e883df0ba4c649c8494ebfc1313d7 --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_tanh_behav xil_defaultlib.tb_tanh xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4100] "/home/jfonseca/thesis/verilog/tanh/tanh_synth/tanh_synth.sim/sim_1/behav/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/home/jfonseca/thesis/verilog/tanh/tanh_synth/tanh_synth.sim/sim_1/behav/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.tanh_default
+Compiling module xil_defaultlib.tb_tanh
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_tanh_behav

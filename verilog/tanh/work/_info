@@ -11,48 +11,57 @@ Z0 d/home/josefonseca/Documents/thesis/verilog/tanh
 T_opt
 !s110 1459722100
 VMLzX@6eb=ghYhLU>XNMTD1
-04 7 4 work tb_tanh fast 0
+Z1 04 7 4 work tb_tanh fast 0
 =1-d43d7e359f7e-57019774-14598-15de
 o-quiet -auto_acc_if_foreign -work work +acc
 n@_opt
-OL;O;10.4c_5;61
-vtanh
-Z1 !s110 1459721992
-!i10b 1
-!s100 l=eRQC57ocETclVb=eFeQ1
-I6bT=1g`nZ;XO9khEWG;Ke1
-Z2 VDg1SIo80bB@j0V0VzS_@n1
+Z2 OL;O;10.4c_5;61
 R0
-w1459721986
+T_opt1
+!s110 1459770530
+Vei[H5<8zjRM;WaC3Zl<4<1
+R1
+=1-d48564c0c748-570254a2-412ec-54a7
+o-quiet -auto_acc_if_foreign -work work
+n@_opt1
+R2
+vtanh
+Z3 !s110 1459770515
+!i10b 1
+!s100 IOXXJE>OW2b[ZX1`L7WPX0
+I0^e=H]?g@0lVVQXF>W]Ld2
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+Z5 d/home/jfonseca/thesis/verilog/tanh
+w1459770115
 8tanh.v
 Ftanh.v
 L0 1
-Z3 OL;L;10.4c_5;61
+Z6 OL;L;10.4c_5;61
 r1
 !s85 0
 31
-Z4 !s108 1459721992.000000
-Z5 !s107 tb_tanh.v|tanh.v|
-Z6 !s90 tanh.v|tb_tanh.v|
+Z7 !s108 1459770515.000000
+Z8 !s107 tb_tanh.v|tanh.v|
+Z9 !s90 tanh.v|tb_tanh.v|
 !i113 0
-Z7 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z10 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 vtb_tanh
-R1
+R3
 !i10b 1
-!s100 Od8KXV>jSzZ7mN5lAjo2I2
-I=iLh^i=JJH_7IVClL_`]]1
-R2
-R0
-w1459721978
+!s100 [Vl<M3A:60FQcS>aa<O5M2
+I:@zC_o5n@AH3lEnPN^>Jz0
+R4
+R5
+w1459770503
 8tb_tanh.v
 Ftb_tanh.v
 L0 1
-R3
+R6
 r1
 !s85 0
 31
-R4
-R5
-R6
-!i113 0
 R7
+R8
+R9
+!i113 0
+R10

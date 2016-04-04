@@ -1,0 +1,6 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/jfonseca/thesis/verilog/tanh/tanh_synth/tanh_synth.srcs/sources_1/imports/tanh/tanh.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tanh
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/jfonseca/thesis/verilog/tanh/tanh_synth/tanh_synth.srcs/sim_1/imports/tanh/tb_tanh.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_tanh
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/jfonseca/thesis/verilog/tanh/tanh_synth/tanh_synth.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl

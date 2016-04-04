@@ -52,12 +52,13 @@ module tb_tanh();
         #(FULL_CLOCK*2)
         reset = 0;
 
-        for(i=0; i < MAX_SAMPLES; i = i + 1) begin
+        operand <= ROM_input[0];
+        for(i=1; i < MAX_SAMPLES; i = i + 1) begin
             @(posedge clock);
             @(posedge clock);
             operand <= ROM_input[i];
             #(HALF_CLOCK);
-            $fwrite(fid, "%d\n", result);
+            $fwrite(fid, "%018b\n", result);
             if (i % 1000 == 0) 
                 $display("Simulated %d samples\n", i);
             

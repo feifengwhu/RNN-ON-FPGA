@@ -1,3 +1,6 @@
+# vsim -c -do "run -all" tb_tanh 
+# Start time: 12:48:50 on Apr 04,2016
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # //  Questa Sim-64
 # //  Version 10.4c_5 linux_x86_64 Nov 14 2015
 # //
@@ -13,19 +16,9 @@
 # //  FURTHERMORE, THIS INFORMATION IS PROHIBITED FROM DISCLOSURE UNDER
 # //  THE TRADE SECRETS ACT, 18 U.S.C. SECTION 1905.
 # //
-vsim -voptargs=+acc work.tb_tanh
-# vsim -voptargs="+acc" work.tb_tanh 
-# Start time: 23:21:39 on Apr 03,2016
-# ** Note: (vsim-3812) Design is being optimized...
 # Loading work.tb_tanh(fast)
-# Loading work.tanh(fast)
-add wave *
-add wave /tb_tanh/*
-add wave /tb_tanh/TANH01/*
-run -all
+# run -all
 # Simulation started at 0.000000
-# Simulated           0 samples
-# 
 # Simulated        1000 samples
 # 
 # Simulated        2000 samples
@@ -106,6 +99,9 @@ run -all
 # 
 # Simulated       40000 samples
 # 
-# ** Note: $stop    : tb_tanh.v(66)
-#    Time: 16384800 ns  Iteration: 0  Instance: /tb_tanh
-# Break in Module tb_tanh at tb_tanh.v line 66
+# ** Note: $stop    : tb_tanh.v(67)
+#    Time: 16384400 ns  Iteration: 0  Instance: /tb_tanh
+# Break at tb_tanh.v line 67
+# Stopped at tb_tanh.v line 67
+# End time: 12:48:51 on Apr 04,2016, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0

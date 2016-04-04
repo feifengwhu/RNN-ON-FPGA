@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_tanh_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="tb_tanh" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="4331fs"></ZoomEndTime>
+      <Cursor1Time time="999998000fs"></Cursor1Time>
+   </zoom_setting>
+   <WVObjectSize size="7" />
+   <wvobject db_ref_id="1" type="array" fp_name="/tb_tanh/TANH01/p2">
+      <obj_property name="ElementShortName">p2[17:0]</obj_property>
+      <obj_property name="ObjectShortName">p2[17:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/tb_tanh/TANH01/p1">
+      <obj_property name="ElementShortName">p1[17:0]</obj_property>
+      <obj_property name="ObjectShortName">p1[17:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/tb_tanh/TANH01/p0">
+      <obj_property name="ElementShortName">p0[17:0]</obj_property>
+      <obj_property name="ObjectShortName">p0[17:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/tb_tanh/TANH01/state">
+      <obj_property name="ElementShortName">state</obj_property>
+      <obj_property name="ObjectShortName">state</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/tb_tanh/TANH01/outputInt">
+      <obj_property name="ElementShortName">outputInt[36:0]</obj_property>
+      <obj_property name="ObjectShortName">outputInt[36:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/tb_tanh/TANH01/multiplierMux">
+      <obj_property name="ElementShortName">multiplierMux[17:0]</obj_property>
+      <obj_property name="ObjectShortName">multiplierMux[17:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/tb_tanh/TANH01/adderMux">
+      <obj_property name="ElementShortName">adderMux[17:0]</obj_property>
+      <obj_property name="ObjectShortName">adderMux[17:0]</obj_property>
+   </wvobject>
+</wave_config>

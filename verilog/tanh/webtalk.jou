@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Webtalk v2015.4 (64-bit)
+# SW Build 1412921 on Wed Nov 18 09:44:32 MST 2015
+# IP Build 1412160 on Tue Nov 17 13:47:24 MST 2015
+# Start of session at: Mon Apr  4 11:53:45 2016
+# Process ID: 17266
+# Current directory: /home/jfonseca/thesis/verilog/tanh
+# Command line: wbtcv -mode batch -source /home/jfonseca/thesis/verilog/tanh/tanh_synth/tanh_synth.hw/webtalk/labtool_webtalk.tcl -notrace
+# Log file: /home/jfonseca/thesis/verilog/tanh/webtalk.log
+# Journal file: /home/jfonseca/thesis/verilog/tanh/webtalk.jou
+#-----------------------------------------------------------
+source /home/jfonseca/thesis/verilog/tanh/tanh_synth/tanh_synth.hw/webtalk/labtool_webtalk.tcl -notrace

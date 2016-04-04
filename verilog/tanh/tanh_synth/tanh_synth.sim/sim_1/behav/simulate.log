@@ -1,0 +1,87 @@
+Vivado Simulator 2015.4
+Time resolution is 1 ps
+WARNING: File goldenIN.hex referenced on /home/jfonseca/thesis/verilog/tanh/tanh_synth/tanh_synth.srcs/sim_1/imports/tanh/tb_tanh.v at line 29 cannot be opened for reading. Please ensure that this file is available in the current working directory.
+WARNING: File tanh_goldenOUT.hex referenced on /home/jfonseca/thesis/verilog/tanh/tanh_synth/tanh_synth.srcs/sim_1/imports/tanh/tb_tanh.v at line 30 cannot be opened for reading. Please ensure that this file is available in the current working directory.
+Simulation started at 0.000000
+Simulated           0 samples
+
+Simulated        1000 samples
+
+Simulated        2000 samples
+
+Simulated        3000 samples
+
+Simulated        4000 samples
+
+Simulated        5000 samples
+
+Simulated        6000 samples
+
+Simulated        7000 samples
+
+Simulated        8000 samples
+
+Simulated        9000 samples
+
+Simulated       10000 samples
+
+Simulated       11000 samples
+
+Simulated       12000 samples
+
+Simulated       13000 samples
+
+Simulated       14000 samples
+
+Simulated       15000 samples
+
+Simulated       16000 samples
+
+Simulated       17000 samples
+
+Simulated       18000 samples
+
+Simulated       19000 samples
+
+Simulated       20000 samples
+
+Simulated       21000 samples
+
+Simulated       22000 samples
+
+Simulated       23000 samples
+
+Simulated       24000 samples
+
+Simulated       25000 samples
+
+Simulated       26000 samples
+
+Simulated       27000 samples
+
+Simulated       28000 samples
+
+Simulated       29000 samples
+
+Simulated       30000 samples
+
+Simulated       31000 samples
+
+Simulated       32000 samples
+
+Simulated       33000 samples
+
+Simulated       34000 samples
+
+Simulated       35000 samples
+
+Simulated       36000 samples
+
+Simulated       37000 samples
+
+Simulated       38000 samples
+
+Simulated       39000 samples
+
+Simulated       40000 samples
+
