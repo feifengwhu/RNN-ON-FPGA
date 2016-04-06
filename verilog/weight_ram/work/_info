@@ -7,45 +7,63 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-Z0 d/home/josefonseca/Documents/thesis/verilog/weight_ram
-vtb_sigmoid
-Z1 !s110 1459901806
-!i10b 1
-!s100 FATkZc;Z>f<`a]`ck3TSR3
-IE=Xea^EBY@22kDG=WKzzm2
-Z2 VDg1SIo80bB@j0V0VzS_@n1
+Z0 d/home/jfonseca/thesis/verilog/weight_ram
+T_opt
+!s110 1459939754
+VLEfSoEWi:WE29]^ZZ=mhD0
+Z1 04 12 4 work tb_weightRAM fast 0
+=1-d48564c0c748-5704e9aa-963cb-7776
+o-quiet -auto_acc_if_foreign -work work
+n@_opt
+Z2 OL;O;10.4c_5;61
+T_opt1
+!s110 1459938682
+Vj]6TBT>]oGSUn]L4K:?e[2
+R1
+=1-d48564c0c748-5704e57a-3293-7654
+o-quiet -auto_acc_if_foreign -work work +acc
+n@_opt1
+R2
 R0
-w1459901803
+vtb_weightRAM
+Z3 !s110 1459939753
+!i10b 1
+!s100 [1WU?cGm:co=g5]DgFJ0M1
+I0e84Z7TRV6CG4F3[3?oH61
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1459939747
 8tb_weightRAM.v
 Ftb_weightRAM.v
 L0 1
-Z3 OL;L;10.4c_5;61
+Z5 OL;L;10.4c_5;61
 r1
 !s85 0
 31
-Z4 !s108 1459901806.000000
-Z5 !s107 tb_weightRAM.v|weightRAM.v|
-Z6 !s90 weightRAM.v|tb_weightRAM.v|
+Z6 !s108 1459939753.000000
+Z7 !s107 tb_weightRAM.v|weightRAM.v|
+Z8 !s90 weightRAM.v|tb_weightRAM.v|
 !i113 0
-Z7 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z9 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+ntb_weight@r@a@m
 vweightRAM
-R1
+R3
 !i10b 1
-!s100 LVCi6S[USY`LLIK73R@9]2
-I25FBoGh7Gd1f=:zdW>hJn1
-R2
+!s100 U0`Z:Mze^QX6ZaDET9dS^0
+IcYf]O;V7?F`;I?T5JG1_90
+R4
 R0
-w1459901635
+w1459939607
 8weightRAM.v
 FweightRAM.v
 L0 1
-R3
+R5
 r1
 !s85 0
 31
-R4
-R5
 R6
-!i113 0
 R7
+R8
+!i113 0
+R9
 nweight@r@a@m

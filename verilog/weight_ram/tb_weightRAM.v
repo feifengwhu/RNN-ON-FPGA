@@ -1,4 +1,4 @@
-module tb_sigmoid();
+module tb_weightRAM();
     
     parameter BITWIDTH = 18;
     parameter NCOLS    = 16;
@@ -56,7 +56,7 @@ module tb_sigmoid();
             @(posedge clock);
             address <= address + 16'd1; 
             #(HALF_CLOCK);
-            $display("%d\n", result[0:18]);
+            $display("%d\n", result[17:0]);
         end
         
         $stop;
