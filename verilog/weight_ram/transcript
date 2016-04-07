@@ -1,7 +1,6 @@
 # vsim -c -do "run -all" tb_weightRAM 
-# Start time: 11:49:14 on Apr 06,2016
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# ** Warning: tb_weightRAM.v(36): (vopt-2241) Connection width does not match width of port 'rowOutput'. The port definition is at: weightRAM.v(9).
+# Start time: 12:04:37 on Apr 07,2016
+# ** Note: (vsim-8009) Loading existing optimized design _opt
 # //  Questa Sim-64
 # //  Version 10.4c_5 linux_x86_64 Nov 14 2015
 # //
@@ -56,5 +55,5 @@
 #    Time: 3600 ns  Iteration: 0  Instance: /tb_weightRAM
 # Break at tb_weightRAM.v line 62
 # Stopped at tb_weightRAM.v line 62
-# End time: 11:49:29 on Apr 06,2016, Elapsed time: 0:00:15
-# Errors: 0, Warnings: 1
+# End time: 12:30:12 on Apr 07,2016, Elapsed time: 0:25:35
+# Errors: 0, Warnings: 0

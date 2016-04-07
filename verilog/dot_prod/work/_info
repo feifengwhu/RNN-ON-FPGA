@@ -8,23 +8,82 @@ z2
 !i10f 100
 cModel Technology
 Z0 d/home/jfonseca/thesis/verilog/dot_prod
-vdot_prod
-!s110 1459957765
-!i10b 1
-!s100 banUTkHQk1cO<?:OQ=4kQ2
-Ief4e3CndV]K14HWQb9U4]0
-VDg1SIo80bB@j0V0VzS_@n1
+T_opt
+!s110 1460044264
+VWPz5LfE2g8QboVWj5ZNE32
+Z1 04 11 4 work tb_dot_prod fast 0
+=1-d48564c0c748-570681e7-e7222-186d
+o-quiet -auto_acc_if_foreign -work work
+n@_opt
+Z2 OL;O;10.4c_5;61
 R0
-w1459957764
+T_opt1
+!s110 1460045343
+VlSb9M^ziF?]_Dmaa3`Q5K0
+R1
+=1-d48564c0c748-5706861f-846da-1968
+o-quiet -auto_acc_if_foreign -work work +acc
+n@_opt1
+R2
+R0
+vdot_prod
+Z3 !s110 1460045389
+!i10b 1
+!s100 ?;G36KbjHIOD8_^OREO>f0
+IPb3D:>zQF<1aBNIzGL0ln2
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1460044629
 8dot_prod.v
 Fdot_prod.v
 L0 1
-OL;L;10.4c_5;61
+Z5 OL;L;10.4c_5;61
 r1
 !s85 0
 31
-!s108 1459957765.000000
-!s107 dot_prod.v|
-!s90 dot_prod.v|
+Z6 !s108 1460045389.000000
+Z7 !s107 tb_dot_prod.v|weightRAM.v|dot_prod.v|
+Z8 !s90 dot_prod.v|weightRAM.v|tb_dot_prod.v|
 !i113 0
-o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z9 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+vtb_dot_prod
+R3
+!i10b 1
+!s100 TL?`GdT4eT?=T4W1R8cK60
+I9`5XJ5j@j<7GBLiiB7h8I0
+R4
+R0
+w1460039198
+8tb_dot_prod.v
+Ftb_dot_prod.v
+L0 3
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 0
+R9
+vweightRAM
+R3
+!i10b 1
+!s100 8k68;D[V?fNoVd>UEEb3Q1
+I>lHk7Lm2^cEoMceT=14Ak0
+R4
+R0
+w1460045330
+8weightRAM.v
+FweightRAM.v
+L0 1
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 0
+R9
+nweight@r@a@m
