@@ -124,7 +124,9 @@ module dot_prod #(parameter NROW = 16,
                 end
             end
             else begin
+                for(i = 0; i < N_DSP48; i = i + 1) begin
                     outputVector <= (outputMAC_interm[i*MAC_BITWIDTH +: MAC_BITWIDTH] >>> QM);
+                end
             end
     end
 endmodule

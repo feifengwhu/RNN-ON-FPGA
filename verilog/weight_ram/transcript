@@ -1,6 +1,3 @@
-# vsim -c -do "run -all" tb_weightRAM 
-# Start time: 12:04:37 on Apr 07,2016
-# ** Note: (vsim-8009) Loading existing optimized design _opt
 # //  Questa Sim-64
 # //  Version 10.4c_5 linux_x86_64 Nov 14 2015
 # //
@@ -16,44 +13,112 @@
 # //  FURTHERMORE, THIS INFORMATION IS PROHIBITED FROM DISCLOSURE UNDER
 # //  THE TRADE SECRETS ACT, 18 U.S.C. SECTION 1905.
 # //
+vsim -voptargs=+acc work.tb_weightRAM
+# vsim -voptargs="+acc" work.tb_weightRAM 
+# Start time: 10:26:40 on Apr 11,2016
+# ** Error: (vsim-7) Failed to open  file "/home/josefonseca/Documents/thesis/verilog/weight_ram/work/@_opt1/_deps" in read mode.
+# No such file or directory. (errno = ENOENT)
+# ** Warning: (vsim-56) Problem with optimized design dependency file "/home/josefonseca/Documents/thesis/verilog/weight_ram/work/@_opt1/_deps" - file open failed.
+# No such file or directory. (errno = ENOENT)
+# ** Note: (vsim-3812) Design is being optimized...
 # Loading work.tb_weightRAM(fast)
-# run -all
+# Loading work.weightRAM(fast)
+# ** Warning: (vsim-3015) tb_weightRAM.v(36): [PCDPC] - Port size (288) does not match connection size (289) for port 'rowOutput'. The port definition is at: weightRAM.v(9).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_weightRAM/WRAM01 File: weightRAM.v
+do wave.do
+run -all
 # Simulation started at 0.000000
-#     16
+#      0
 # 
-#     17
+#      1
 # 
-#     18
+#      2
 # 
-#     19
+#      3
 # 
-#     20
+#      4
 # 
-#     21
+#      5
 # 
-#     22
+#      6
 # 
-#     23
+#      7
 # 
-#     24
+#      8
 # 
-#     25
+#      9
 # 
-#     26
+#     10
 # 
-#     27
+#     11
 # 
-#     28
+#     12
 # 
-#     29
+#     13
 # 
-#     30
+#     14
 # 
-#     31
+#     15
 # 
 # ** Note: $stop    : tb_weightRAM.v(62)
 #    Time: 3600 ns  Iteration: 0  Instance: /tb_weightRAM
-# Break at tb_weightRAM.v line 62
-# Stopped at tb_weightRAM.v line 62
-# End time: 12:30:12 on Apr 07,2016, Elapsed time: 0:25:35
-# Errors: 0, Warnings: 0
+# Break in Module tb_weightRAM at tb_weightRAM.v line 62
+add wave -position 0  .main_pane.wave.interior.cs.body.pw.wf.grid.row0,wave.data
+# Drop insertion failed: .main_pane.wave.interior.cs.body.pw.wf.grid.row0,wave.data
+# (vish-4014) No objects found matching '.main_pane.wave.interior.cs.body.pw.wf.grid.row0,wave.data'.
+add wave -position end  sim:/tb_weightRAM/clock
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf /home/josefonseca/Documents/thesis/verilog/weight_ram/wave.do
+vsim -voptargs=+acc work.tb_weightRAM
+# End time: 10:27:52 on Apr 11,2016, Elapsed time: 0:01:12
+# Errors: 3, Warnings: 2
+# vsim -voptargs="+acc" work.tb_weightRAM 
+# Start time: 10:27:52 on Apr 11,2016
+# ** Error: (vsim-7) Failed to open  file "/home/josefonseca/Documents/thesis/verilog/weight_ram/work/@_opt1/_deps" in read mode.
+# No such file or directory. (errno = ENOENT)
+# ** Warning: (vsim-56) Problem with optimized design dependency file "/home/josefonseca/Documents/thesis/verilog/weight_ram/work/@_opt1/_deps" - file open failed.
+# No such file or directory. (errno = ENOENT)
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# Loading work.tb_weightRAM(fast)
+# Loading work.weightRAM(fast)
+# ** Warning: (vsim-3015) tb_weightRAM.v(36): [PCDPC] - Port size (288) does not match connection size (289) for port 'rowOutput'. The port definition is at: weightRAM.v(9).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_weightRAM/WRAM01 File: weightRAM.v
+do wave.do
+run -all
+# Simulation started at 0.000000
+#      0
+# 
+#      1
+# 
+#      2
+# 
+#      3
+# 
+#      4
+# 
+#      5
+# 
+#      6
+# 
+#      7
+# 
+#      8
+# 
+#      9
+# 
+#     10
+# 
+#     11
+# 
+#     12
+# 
+#     13
+# 
+#     14
+# 
+#     15
+# 
+# ** Note: $stop    : tb_weightRAM.v(62)
+#    Time: 3600 ns  Iteration: 0  Instance: /tb_weightRAM
+# Break in Module tb_weightRAM at tb_weightRAM.v line 62
+# End time: 10:28:58 on Apr 11,2016, Elapsed time: 0:01:06
+# Errors: 1, Warnings: 2

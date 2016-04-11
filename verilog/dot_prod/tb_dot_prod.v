@@ -41,9 +41,9 @@ module tb_dot_prod();
 
     // Loads golden inputs/outputs to ROM
     initial begin
-        for(i = 0; i < NCOL; i = i + 1) begin
-            inputVecRAM <= {(LAYER_BITWIDTH-1)*{1'b0}, {1'b1}};
-        end        
+        //for(i = 0; i < NCOL; i = i + 1) begin
+            inputVec <=  18'b000000001000000000;
+       //end        
         /*
         $readmemb("goldenIN.hex", ROM_input);
         $readmemb("sigmoid_goldenOUT.hex", ROM_goldenOut);
@@ -73,7 +73,7 @@ module tb_dot_prod();
 
         for(i=0; i < 500; i = i + 1) begin
             @(posedge clock);
-            inputVec <= inputVecRAM[0 +: BITWIDTH];
+            //inputVec <= inputVecRAM[0 +: BITWIDTH];
             #(HALF_CLOCK);
             $display("OUTPUT %d\n", outputVec[17:0]);
 

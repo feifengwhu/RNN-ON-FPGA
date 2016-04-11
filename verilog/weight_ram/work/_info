@@ -16,54 +16,63 @@ Z1 04 12 4 work tb_weightRAM fast 0
 o-quiet -auto_acc_if_foreign -work work
 n@_opt
 Z2 OL;O;10.4c_5;61
+R0
 T_opt1
 !s110 1459938682
 Vj]6TBT>]oGSUn]L4K:?e[2
 R1
 =1-d48564c0c748-5704e57a-3293-7654
-o-quiet -auto_acc_if_foreign -work work +acc
+Z3 o-quiet -auto_acc_if_foreign -work work +acc
 n@_opt1
 R2
 R0
+T_opt2
+!s110 1460366801
+Vl<OZ=eW:zgOk1P2`QR2II1
+R1
+=1-d43d7e359f7e-570b6dd1-1b8c6-11b1
+R3
+n@_opt2
+R2
 vtb_weightRAM
-Z3 !s110 1459939753
+Z4 !s110 1460366675
 !i10b 1
-!s100 [1WU?cGm:co=g5]DgFJ0M1
-I0e84Z7TRV6CG4F3[3?oH61
-Z4 VDg1SIo80bB@j0V0VzS_@n1
-R0
-w1459939747
+!s100 0;BB6cI4keP>H0jL>kMWP0
+I3c2n3H`nd?Xec6]^Y765[3
+Z5 VDg1SIo80bB@j0V0VzS_@n1
+Z6 d/home/josefonseca/Documents/thesis/verilog/weight_ram
+w1460326977
 8tb_weightRAM.v
 Ftb_weightRAM.v
 L0 1
-Z5 OL;L;10.4c_5;61
+Z7 OL;L;10.4c_5;61
 r1
 !s85 0
 31
-Z6 !s108 1459939753.000000
-Z7 !s107 tb_weightRAM.v|weightRAM.v|
-Z8 !s90 weightRAM.v|tb_weightRAM.v|
+Z8 !s108 1460366674.000000
+Z9 !s107 tb_weightRAM.v|weightRAM.v|
+Z10 !s90 weightRAM.v|tb_weightRAM.v|
 !i113 0
-Z9 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z11 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 ntb_weight@r@a@m
 vweightRAM
-R3
-!i10b 1
-!s100 U0`Z:Mze^QX6ZaDET9dS^0
-IcYf]O;V7?F`;I?T5JG1_90
 R4
-R0
-w1459939607
+!i10b 1
+!s100 ID<QG7`C3KnoF;HQ]dXl^2
+Ii99RE;zAWl1Q]IfoSiKC52
+R5
+R6
+w1460366666
 8weightRAM.v
 FweightRAM.v
 L0 1
-R5
+R7
 r1
 !s85 0
 31
-R6
-R7
 R8
-!i113 0
 R9
+R10
+!i113 0
+R11
 nweight@r@a@m

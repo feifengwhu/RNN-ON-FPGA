@@ -21,7 +21,7 @@ module weightRAM #(parameter NROW = 16,
         end
     end
 
-    always @(posedge clk) begin
+    always @(negedge clk) begin
         for(i = 0; i < NROW; i = i + 1) begin
             rowOutput[i*BITWIDTH +: BITWIDTH] <= RAM_matrix[i][address];
         end

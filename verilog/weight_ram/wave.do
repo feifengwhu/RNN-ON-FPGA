@@ -1,5 +1,6 @@
 onerror {resume}
 quietly WaveActivateNextPane {} 0
+add wave -noupdate /tb_weightRAM/clock
 add wave -noupdate /tb_weightRAM/WRAM01/address
 add wave -noupdate /tb_weightRAM/WRAM01/rowOutput
 add wave -noupdate -expand /tb_weightRAM/WRAM01/RAM_matrix
