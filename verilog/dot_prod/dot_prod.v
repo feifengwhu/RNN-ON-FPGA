@@ -2,26 +2,34 @@ module dot_prod #(parameter NROW = 16,
                   parameter NCOL = 16,
                   parameter QN   = 6,
                   parameter QM   = 11,
-                  parameter BITWIDTH = QN + QM + 1,
-                  parameter MEMORY_BITWIDTH  = BITWIDTH*NROW,
-                  parameter DSP48_PER_ROW    = 2, 
-                  parameter N_DSP48          = NROW/DSP48_PER_ROW, 
-                  parameter ADDR_BITWIDTH = 4)
-                 (input signed      [MEMORY_BITWIDTH-1:0] weightRow, 
-                  input signed      [BITWIDTH-1:0]        inputVector, 
-                  input         clk,
-                  input         reset,
-                  output reg    dataReady,
-                  output reg        [ADDR_BITWIDTH-1:0]        colAddress,
-                  output reg signed [MEMORY_BITWIDTH-1:0]      outputVector);
+                  parameter DSP48_PER_ROW    = 2)
+                 (weightRow, 
+                  inputVector, 
+                  clk,
+                  reset,
+                  dataReady,
+                  colAddress,
+                  outputVector);
 
-    
-    parameter DSP48_INPUT_BITWIDTH = BITWIDTH*N_DSP48;
+    parameter BITWIDTH              = QN + QM + 1;
+	parameter ADDR_BITWIDTH         = $ln(NCOL)/$ln(2);
+    parameter LAYER_BITWIDTH        = BITWIDTH*NROW;
+    parameter N_DSP48               = NROW/DSP48_PER_ROW;
+    parameter DSP48_INPUT_BITWIDTH  = BITWIDTH*N_DSP48;
     parameter DSP48_OUTPUT_BITWIDTH = (2*BITWIDTH+1)*N_DSP48;
-    parameter MAC_BITWIDTH = (2*BITWIDTH+1);
-
+    parameter MAC_BITWIDTH          = (2*BITWIDTH+1);
+	parameter MUX_BITWIDTH          = $ln(DSP48_PER_ROW)/$ln(2);
+	
+	input signed      [LAYER_BITWIDTH-1:0] weightRow; 
+	input signed      [BITWIDTH-1:0]       inputVector; 
+	input         clk;
+	input         reset;
+	output reg    dataReady;
+	output reg          [ADDR_BITWIDTH-1:0]  colAddress;
+	output reg signed  [LAYER_BITWIDTH-1:0] outputVector;
+	
     // Internal register definition
-    reg rowMux;
+    reg [MUX_BITWIDTH-1:0] rowMux;
     reg signed [DSP48_INPUT_BITWIDTH -1:0] weightMAC;
     reg signed [DSP48_OUTPUT_BITWIDTH-1:0] outputMAC_interm;
     integer i;
@@ -30,7 +38,7 @@ module dot_prod #(parameter NROW = 16,
     reg [1:0] state;
     reg [1:0] NEXTstate;
     reg [ADDR_BITWIDTH-1:0] NEXTcolAddress;
-    reg NEXTrowMux;
+    reg [MUX_BITWIDTH-1:0] NEXTrowMux;
     parameter IDLE = 2'd0;
     parameter CALC = 2'd1;
     parameter END  = 2'd2;
@@ -116,7 +124,7 @@ module dot_prod #(parameter NROW = 16,
     // The output vector and adder
     always @(posedge clk) begin
         if (reset == 1'b1)
-            outputVector <= {MEMORY_BITWIDTH{1'b0}};
+            outputVector <= {LAYER_BITWIDTH{1'b0}};
         else
             if (dataReady == 1'b0) begin
                 for(i = 0; i < N_DSP48; i = i + 1) begin

@@ -1,13 +1,21 @@
 module weightRAM #(parameter NROW = 16,
                    parameter NCOL = 16,
-                   parameter BITWIDTH = 18,
-                   parameter OUTPUT_PORT_SIZE = BITWIDTH*NROW,
-                   parameter ADDR_BITWIDTH = 4)
-                  (input       [ADDR_BITWIDTH-1:0] address,
-                   input                       clk,
-                   input                       reset,
-                   output reg  [OUTPUT_PORT_SIZE-1:0]  rowOutput);
+                   parameter BITWIDTH = 18)
+                  (address,
+                   clk,
+                   reset,
+                   rowOutput);
    
+    // Dependent parameters
+    parameter OUTPUT_PORT_SIZE = BITWIDTH*NROW;
+    parameter ADDR_BITWIDTH = $ln(NCOL)/$ln(2);
+    
+    // The input/output definitions
+    input       [ADDR_BITWIDTH-1:0] address;
+    input                           clk;
+    input                           reset;
+    output reg  [OUTPUT_PORT_SIZE-1:0]  rowOutput;
+
     // The RAM registers
     reg [BITWIDTH-1:0] RAM_matrix [0:NROW-1] [0:NCOL-1];    
 

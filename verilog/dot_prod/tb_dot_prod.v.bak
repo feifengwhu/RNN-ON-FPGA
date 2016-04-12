@@ -4,10 +4,10 @@ module tb_dot_prod();
     
     // User defined parameters
     parameter NROW = 16;
-    parameter NCOL = 8;
+    parameter NCOL = 16;
     parameter QN   = 6;
     parameter QM   = 11;
-    parameter DSP48_PER_ROW    = 1; 
+    parameter DSP48_PER_ROW    = 2; 
     
     // Dependent Parameters
     parameter BITWIDTH = QN + QM + 1;
@@ -22,13 +22,13 @@ module tb_dot_prod();
     //reg  [BITWIDTH-1:0] ROM_goldenOut [0:MAX_SAMPLES-1];   
 
     // DUT Connecting wires/regs
-    wire [MEMORY_BITWIDTH-1:0]   weightMemOutput;
+    wire [LAYER_BITWIDTH-1:0]   weightMemOutput;
     wire [ADDR_BITWIDTH-1:0]     colAddress;
     wire [MEMORY_BITWIDTH-1:0]   outputVec;
     wire dataReady;
     reg clock;
     reg reset;
-    reg signed [MEMORY_BITWIDTH-1:0] inputVecRAM;
+    reg signed [LAYER_BITWIDTH-1:0] inputVecRAM;
     reg signed [BITWIDTH-1:0] inputVec;
 
     // File descriptors for the error/output dumps
@@ -56,7 +56,7 @@ module tb_dot_prod();
     
     // DUT Instantiation
     dot_prod   #(NROW,NCOL,QN,QM,DSP48_PER_ROW) DOTPROD  (weightMemOutput, inputVec, clock, reset, dataReady, colAddress, outputVec);  
-    weightRAM  #(NROW,NCOL,BITWIDTH)            WRAM     (colAddress, clock, reset, weightMemOutput);
+    weightRAM                                   WRAM     (colAddress, clock, reset, weightMemOutput);
     
     // Keeping track of the simulation time
     real time_start, time_end;
@@ -90,4 +90,5 @@ endmodule
             
     
         
+
 

@@ -15,7 +15,43 @@
 # //
 vsim -voptargs=+acc work.tb_dot_prod
 # vsim -voptargs="+acc" work.tb_dot_prod 
-# Start time: 10:29:46 on Apr 11,2016
+# Start time: 19:42:13 on Apr 12,2016
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Note: (vopt-143) Recognized 1 FSM in module "dot_prod(fast)".
+# Loading work.tb_dot_prod(fast)
+# Loading work.dot_prod(fast)
+# Loading work.weightRAM(fast)
+# ** Warning: (vsim-3015) tb_dot_prod.v(58): [PCDPC] - Port size (288) does not match connection size (144) for port 'weightRow'. The port definition is at: dot_prod.v(6).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dot_prod/DOTPROD File: dot_prod.v
+# ** Warning: (vsim-3015) tb_dot_prod.v(59): [PCDPC] - Port size (288) does not match connection size (144) for port 'rowOutput'. The port definition is at: weightRAM.v(7).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dot_prod/WRAM File: weightRAM.v
+vsim -voptargs=+acc work.tb_dot_prod
+# End time: 19:45:20 on Apr 12,2016, Elapsed time: 0:03:07
+# Errors: 0, Warnings: 2
+# vsim -voptargs="+acc" work.tb_dot_prod 
+# Start time: 19:45:20 on Apr 12,2016
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.tb_dot_prod(fast)
+# Loading work.dot_prod(fast)
+# Loading work.weightRAM(fast)
+# ** Warning: (vsim-3015) tb_dot_prod.v(58): [PCDPC] - Port size (288) does not match connection size (144) for port 'outputVector'. The port definition is at: dot_prod.v(12).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dot_prod/DOTPROD File: dot_prod.v
+vsim -voptargs=+acc work.tb_dot_prod
+# End time: 19:45:57 on Apr 12,2016, Elapsed time: 0:00:37
+# Errors: 0, Warnings: 1
+# vsim -voptargs="+acc" work.tb_dot_prod 
+# Start time: 19:45:57 on Apr 12,2016
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.tb_dot_prod(fast)
+# Loading work.dot_prod(fast)
+# Loading work.weightRAM(fast)
+# ** Warning: (vsim-3015) tb_dot_prod.v(58): [PCDPC] - Port size (288) does not match connection size (144) for port 'outputVector'. The port definition is at: dot_prod.v(12).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_dot_prod/DOTPROD File: dot_prod.v
+vsim -voptargs=+acc work.tb_dot_prod
+# End time: 19:52:50 on Apr 12,2016, Elapsed time: 0:06:53
+# Errors: 0, Warnings: 1
+# vsim -voptargs="+acc" work.tb_dot_prod 
+# Start time: 19:52:50 on Apr 12,2016
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # Loading work.tb_dot_prod(fast)
 # Loading work.dot_prod(fast)
@@ -29,1010 +65,3045 @@ run -all
 # 
 # OUTPUT      0
 # 
-# OUTPUT      1
+# OUTPUT   2048
 # 
-# OUTPUT      3
+# OUTPUT   6144
 # 
-# OUTPUT      6
+# OUTPUT  12288
 # 
-# OUTPUT     10
+# OUTPUT  20480
 # 
-# OUTPUT     15
+# OUTPUT  30720
 # 
-# OUTPUT     21
+# OUTPUT  43008
 # 
-# OUTPUT     28
+# OUTPUT  57344
 # 
-# OUTPUT     36
+# OUTPUT  57344
 # 
-# OUTPUT     45
+# OUTPUT  57344
 # 
-# OUTPUT     55
+# OUTPUT  57344
 # 
-# OUTPUT     66
+# OUTPUT  57344
 # 
-# OUTPUT     78
+# OUTPUT  57344
 # 
-# OUTPUT     91
+# OUTPUT  57344
 # 
-# OUTPUT    105
+# OUTPUT  57344
 # 
-# OUTPUT    120
+# OUTPUT  57344
 # 
-# OUTPUT    120
+# OUTPUT      0
 # 
-# OUTPUT    120
+# OUTPUT      0
 # 
-# OUTPUT    120
+# OUTPUT   2048
 # 
-# OUTPUT    120
+# OUTPUT   6144
 # 
-# OUTPUT    120
+# OUTPUT  12288
 # 
-# OUTPUT    120
+# OUTPUT  20480
 # 
-# OUTPUT    120
+# OUTPUT  30720
 # 
-# OUTPUT    120
+# OUTPUT  43008
 # 
-# OUTPUT    120
+# OUTPUT  57344
 # 
-# OUTPUT    120
+# OUTPUT  57344
 # 
-# OUTPUT    120
+# OUTPUT  57344
 # 
-# OUTPUT    120
+# OUTPUT  57344
 # 
-# OUTPUT    120
+# OUTPUT  57344
 # 
-# OUTPUT    120
+# OUTPUT  57344
 # 
-# OUTPUT    120
+# OUTPUT  57344
 # 
-# OUTPUT    120
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT      0
 # 
-# OUTPUT      x
+# OUTPUT      0
 # 
-# OUTPUT      x
+# OUTPUT   2048
 # 
-# OUTPUT      x
+# OUTPUT   6144
 # 
-# OUTPUT      x
+# OUTPUT  12288
 # 
-# OUTPUT      x
+# OUTPUT  20480
 # 
-# OUTPUT      x
+# OUTPUT  30720
 # 
-# OUTPUT      x
+# OUTPUT  43008
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT      0
 # 
-# OUTPUT      x
+# OUTPUT      0
 # 
-# OUTPUT      x
+# OUTPUT   2048
 # 
-# OUTPUT      x
+# OUTPUT   6144
 # 
-# OUTPUT      x
+# OUTPUT  12288
 # 
-# OUTPUT      x
+# OUTPUT  20480
 # 
-# OUTPUT      x
+# OUTPUT  30720
 # 
-# OUTPUT      x
+# OUTPUT  43008
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT      0
 # 
-# OUTPUT      x
+# OUTPUT      0
 # 
-# OUTPUT      x
+# OUTPUT   2048
 # 
-# OUTPUT      x
+# OUTPUT   6144
 # 
-# OUTPUT      x
+# OUTPUT  12288
 # 
-# OUTPUT      x
+# OUTPUT  20480
 # 
-# OUTPUT      x
+# OUTPUT  30720
 # 
-# OUTPUT      x
+# OUTPUT  43008
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT      0
 # 
-# OUTPUT      x
+# OUTPUT      0
 # 
-# OUTPUT      x
+# OUTPUT   2048
 # 
-# OUTPUT      x
+# OUTPUT   6144
 # 
-# OUTPUT      x
+# OUTPUT  12288
 # 
-# OUTPUT      x
+# OUTPUT  20480
 # 
-# OUTPUT      x
+# OUTPUT  30720
 # 
-# OUTPUT      x
+# OUTPUT  43008
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT      0
 # 
-# OUTPUT      x
+# OUTPUT      0
 # 
-# OUTPUT      x
+# OUTPUT   2048
 # 
-# OUTPUT      x
+# OUTPUT   6144
 # 
-# OUTPUT      x
+# OUTPUT  12288
 # 
-# OUTPUT      x
+# OUTPUT  20480
 # 
-# OUTPUT      x
+# OUTPUT  30720
 # 
-# OUTPUT      x
+# OUTPUT  43008
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT      0
 # 
-# OUTPUT      x
+# OUTPUT      0
 # 
-# OUTPUT      x
+# OUTPUT   2048
 # 
-# OUTPUT      x
+# OUTPUT   6144
 # 
-# OUTPUT      x
+# OUTPUT  12288
 # 
-# OUTPUT      x
+# OUTPUT  20480
 # 
-# OUTPUT      x
+# OUTPUT  30720
 # 
-# OUTPUT      x
+# OUTPUT  43008
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT      0
 # 
-# OUTPUT      x
+# OUTPUT      0
 # 
-# OUTPUT      x
+# OUTPUT   2048
 # 
-# OUTPUT      x
+# OUTPUT   6144
 # 
-# OUTPUT      x
+# OUTPUT  12288
 # 
-# OUTPUT      x
+# OUTPUT  20480
 # 
-# OUTPUT      x
+# OUTPUT  30720
 # 
-# OUTPUT      x
+# OUTPUT  43008
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT      0
 # 
-# OUTPUT      x
+# OUTPUT      0
 # 
-# OUTPUT      x
+# OUTPUT   2048
 # 
-# OUTPUT      x
+# OUTPUT   6144
 # 
-# OUTPUT      x
+# OUTPUT  12288
 # 
-# OUTPUT      x
+# OUTPUT  20480
 # 
-# OUTPUT      x
+# OUTPUT  30720
 # 
-# OUTPUT      x
+# OUTPUT  43008
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT      0
 # 
-# OUTPUT      x
+# OUTPUT      0
 # 
-# OUTPUT      x
+# OUTPUT   2048
 # 
-# OUTPUT      x
+# OUTPUT   6144
 # 
-# OUTPUT      x
+# OUTPUT  12288
 # 
-# OUTPUT      x
+# OUTPUT  20480
 # 
-# OUTPUT      x
+# OUTPUT  30720
 # 
-# OUTPUT      x
+# OUTPUT  43008
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT      0
 # 
-# OUTPUT      x
+# OUTPUT      0
 # 
-# OUTPUT      x
+# OUTPUT   2048
 # 
-# OUTPUT      x
+# OUTPUT   6144
 # 
-# OUTPUT      x
+# OUTPUT  12288
 # 
-# OUTPUT      x
+# OUTPUT  20480
 # 
-# OUTPUT      x
+# OUTPUT  30720
 # 
-# OUTPUT      x
+# OUTPUT  43008
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT      0
 # 
-# OUTPUT      x
+# OUTPUT      0
 # 
-# OUTPUT      x
+# OUTPUT   2048
 # 
-# OUTPUT      x
+# OUTPUT   6144
 # 
-# OUTPUT      x
+# OUTPUT  12288
 # 
-# OUTPUT      x
+# OUTPUT  20480
 # 
-# OUTPUT      x
+# OUTPUT  30720
 # 
-# OUTPUT      x
+# OUTPUT  43008
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT      0
 # 
-# OUTPUT      x
+# OUTPUT      0
 # 
-# OUTPUT      x
+# OUTPUT   2048
 # 
-# OUTPUT      x
+# OUTPUT   6144
 # 
-# OUTPUT      x
+# OUTPUT  12288
 # 
-# OUTPUT      x
+# OUTPUT  20480
 # 
-# OUTPUT      x
+# OUTPUT  30720
 # 
-# OUTPUT      x
+# OUTPUT  43008
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT      0
 # 
-# OUTPUT      x
+# OUTPUT      0
 # 
-# OUTPUT      x
+# OUTPUT   2048
 # 
-# OUTPUT      x
+# OUTPUT   6144
 # 
-# OUTPUT      x
+# OUTPUT  12288
 # 
-# OUTPUT      x
+# OUTPUT  20480
 # 
-# OUTPUT      x
+# OUTPUT  30720
 # 
-# OUTPUT      x
+# OUTPUT  43008
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT      0
 # 
-# OUTPUT      x
+# OUTPUT      0
 # 
-# OUTPUT      x
+# OUTPUT   2048
 # 
-# OUTPUT      x
+# OUTPUT   6144
 # 
-# OUTPUT      x
+# OUTPUT  12288
 # 
-# OUTPUT      x
+# OUTPUT  20480
 # 
-# OUTPUT      x
+# OUTPUT  30720
 # 
-# OUTPUT      x
+# OUTPUT  43008
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT      0
 # 
-# OUTPUT      x
+# OUTPUT      0
 # 
-# OUTPUT      x
+# OUTPUT   2048
 # 
-# OUTPUT      x
+# OUTPUT   6144
 # 
-# OUTPUT      x
+# OUTPUT  12288
 # 
-# OUTPUT      x
+# OUTPUT  20480
 # 
-# OUTPUT      x
+# OUTPUT  30720
 # 
-# OUTPUT      x
+# OUTPUT  43008
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT      0
 # 
-# OUTPUT      x
+# OUTPUT      0
 # 
-# OUTPUT      x
+# OUTPUT   2048
 # 
-# OUTPUT      x
+# OUTPUT   6144
 # 
-# OUTPUT      x
+# OUTPUT  12288
 # 
-# OUTPUT      x
+# OUTPUT  20480
 # 
-# OUTPUT      x
+# OUTPUT  30720
 # 
-# OUTPUT      x
+# OUTPUT  43008
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT      0
 # 
-# OUTPUT      x
+# OUTPUT      0
 # 
-# OUTPUT      x
+# OUTPUT   2048
 # 
-# OUTPUT      x
+# OUTPUT   6144
 # 
-# OUTPUT      x
+# OUTPUT  12288
 # 
-# OUTPUT      x
+# OUTPUT  20480
 # 
-# OUTPUT      x
+# OUTPUT  30720
 # 
-# OUTPUT      x
+# OUTPUT  43008
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT      0
 # 
-# OUTPUT      x
+# OUTPUT      0
 # 
-# OUTPUT      x
+# OUTPUT   2048
 # 
-# OUTPUT      x
+# OUTPUT   6144
 # 
-# OUTPUT      x
+# OUTPUT  12288
 # 
-# OUTPUT      x
+# OUTPUT  20480
 # 
-# OUTPUT      x
+# OUTPUT  30720
 # 
-# OUTPUT      x
+# OUTPUT  43008
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT      0
 # 
-# OUTPUT      x
+# OUTPUT      0
 # 
-# OUTPUT      x
+# OUTPUT   2048
 # 
-# OUTPUT      x
+# OUTPUT   6144
 # 
-# OUTPUT      x
+# OUTPUT  12288
 # 
-# OUTPUT      x
+# OUTPUT  20480
 # 
-# OUTPUT      x
+# OUTPUT  30720
 # 
-# OUTPUT      x
+# OUTPUT  43008
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT      0
 # 
-# OUTPUT      x
+# OUTPUT      0
 # 
-# OUTPUT      x
+# OUTPUT   2048
 # 
-# OUTPUT      x
+# OUTPUT   6144
 # 
-# OUTPUT      x
+# OUTPUT  12288
 # 
-# OUTPUT      x
+# OUTPUT  20480
 # 
-# OUTPUT      x
+# OUTPUT  30720
 # 
-# OUTPUT      x
+# OUTPUT  43008
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT      0
 # 
-# OUTPUT      x
+# OUTPUT      0
 # 
-# OUTPUT      x
+# OUTPUT   2048
 # 
-# OUTPUT      x
+# OUTPUT   6144
 # 
-# OUTPUT      x
+# OUTPUT  12288
 # 
-# OUTPUT      x
+# OUTPUT  20480
 # 
-# OUTPUT      x
+# OUTPUT  30720
 # 
-# OUTPUT      x
+# OUTPUT  43008
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT      0
 # 
-# OUTPUT      x
+# OUTPUT      0
 # 
-# OUTPUT      x
+# OUTPUT   2048
 # 
-# OUTPUT      x
+# OUTPUT   6144
 # 
-# OUTPUT      x
+# OUTPUT  12288
 # 
-# OUTPUT      x
+# OUTPUT  20480
 # 
-# OUTPUT      x
+# OUTPUT  30720
 # 
-# OUTPUT      x
+# OUTPUT  43008
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT      0
 # 
-# OUTPUT      x
+# OUTPUT      0
 # 
-# OUTPUT      x
+# OUTPUT   2048
 # 
-# OUTPUT      x
+# OUTPUT   6144
 # 
-# OUTPUT      x
+# OUTPUT  12288
 # 
-# OUTPUT      x
+# OUTPUT  20480
 # 
-# OUTPUT      x
+# OUTPUT  30720
 # 
-# OUTPUT      x
+# OUTPUT  43008
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT      0
 # 
-# OUTPUT      x
+# OUTPUT      0
 # 
-# OUTPUT      x
+# OUTPUT   2048
 # 
-# OUTPUT      x
+# OUTPUT   6144
 # 
-# OUTPUT      x
+# OUTPUT  12288
 # 
-# OUTPUT      x
+# OUTPUT  20480
 # 
-# OUTPUT      x
+# OUTPUT  30720
 # 
-# OUTPUT      x
+# OUTPUT  43008
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT      0
 # 
-# OUTPUT      x
+# OUTPUT      0
 # 
-# OUTPUT      x
+# OUTPUT   2048
 # 
-# OUTPUT      x
+# OUTPUT   6144
 # 
-# OUTPUT      x
+# OUTPUT  12288
 # 
-# OUTPUT      x
+# OUTPUT  20480
 # 
-# OUTPUT      x
+# OUTPUT  30720
 # 
-# OUTPUT      x
+# OUTPUT  43008
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT      0
 # 
-# OUTPUT      x
+# OUTPUT      0
 # 
-# OUTPUT      x
+# OUTPUT   2048
 # 
-# OUTPUT      x
+# OUTPUT   6144
 # 
-# OUTPUT      x
+# OUTPUT  12288
 # 
-# OUTPUT      x
+# OUTPUT  20480
 # 
-# OUTPUT      x
+# OUTPUT  30720
 # 
-# OUTPUT      x
+# OUTPUT  43008
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT      0
 # 
-# OUTPUT      x
+# OUTPUT      0
 # 
-# OUTPUT      x
+# OUTPUT   2048
 # 
-# OUTPUT      x
+# OUTPUT   6144
 # 
-# OUTPUT      x
+# OUTPUT  12288
 # 
-# OUTPUT      x
+# OUTPUT  20480
 # 
-# OUTPUT      x
+# OUTPUT  30720
 # 
-# OUTPUT      x
+# OUTPUT  43008
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT  57344
 # 
-# OUTPUT      x
+# OUTPUT      0
 # 
-# OUTPUT      x
+# OUTPUT      0
 # 
-# OUTPUT      x
+# OUTPUT   2048
 # 
-# OUTPUT      x
+# OUTPUT   6144
 # 
-# OUTPUT      x
+# OUTPUT  12288
 # 
-# OUTPUT      x
+# OUTPUT  20480
 # 
-# OUTPUT      x
+# OUTPUT  30720
 # 
-# ** Note: $stop    : tb_dot_prod.v(85)
+# ** Note: $stop    : tb_dot_prod.v(87)
 #    Time: 1003 ns  Iteration: 0  Instance: /tb_dot_prod
-# Break in Module tb_dot_prod at tb_dot_prod.v line 85
+# Break in Module tb_dot_prod at tb_dot_prod.v line 87
 vsim -voptargs=+acc work.tb_dot_prod
-# End time: 10:44:03 on Apr 11,2016, Elapsed time: 0:14:17
+# End time: 19:54:56 on Apr 12,2016, Elapsed time: 0:02:06
 # Errors: 0, Warnings: 0
 # vsim -voptargs="+acc" work.tb_dot_prod 
-# Start time: 10:44:03 on Apr 11,2016
+# Start time: 19:54:56 on Apr 12,2016
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Note: (vopt-143) Recognized 1 FSM in module "dot_prod(fast)".
+# Loading work.tb_dot_prod(fast)
+# Loading work.dot_prod(fast)
+# Loading work.weightRAM(fast)
+run -all
+# Simulation started at 0.000000
+# OUTPUT      0
+# 
+# Simulated           0 samples
+# 
+# OUTPUT      0
+# 
+# OUTPUT   2048
+# 
+# OUTPUT   6144
+# 
+# OUTPUT  12288
+# 
+# OUTPUT  20480
+# 
+# OUTPUT  30720
+# 
+# OUTPUT  43008
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT      0
+# 
+# OUTPUT      0
+# 
+# OUTPUT   2048
+# 
+# OUTPUT   6144
+# 
+# OUTPUT  12288
+# 
+# OUTPUT  20480
+# 
+# OUTPUT  30720
+# 
+# OUTPUT  43008
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT      0
+# 
+# OUTPUT      0
+# 
+# OUTPUT   2048
+# 
+# OUTPUT   6144
+# 
+# OUTPUT  12288
+# 
+# OUTPUT  20480
+# 
+# OUTPUT  30720
+# 
+# OUTPUT  43008
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT      0
+# 
+# OUTPUT      0
+# 
+# OUTPUT   2048
+# 
+# OUTPUT   6144
+# 
+# OUTPUT  12288
+# 
+# OUTPUT  20480
+# 
+# OUTPUT  30720
+# 
+# OUTPUT  43008
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT      0
+# 
+# OUTPUT      0
+# 
+# OUTPUT   2048
+# 
+# OUTPUT   6144
+# 
+# OUTPUT  12288
+# 
+# OUTPUT  20480
+# 
+# OUTPUT  30720
+# 
+# OUTPUT  43008
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT      0
+# 
+# OUTPUT      0
+# 
+# OUTPUT   2048
+# 
+# OUTPUT   6144
+# 
+# OUTPUT  12288
+# 
+# OUTPUT  20480
+# 
+# OUTPUT  30720
+# 
+# OUTPUT  43008
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT      0
+# 
+# OUTPUT      0
+# 
+# OUTPUT   2048
+# 
+# OUTPUT   6144
+# 
+# OUTPUT  12288
+# 
+# OUTPUT  20480
+# 
+# OUTPUT  30720
+# 
+# OUTPUT  43008
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT      0
+# 
+# OUTPUT      0
+# 
+# OUTPUT   2048
+# 
+# OUTPUT   6144
+# 
+# OUTPUT  12288
+# 
+# OUTPUT  20480
+# 
+# OUTPUT  30720
+# 
+# OUTPUT  43008
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT      0
+# 
+# OUTPUT      0
+# 
+# OUTPUT   2048
+# 
+# OUTPUT   6144
+# 
+# OUTPUT  12288
+# 
+# OUTPUT  20480
+# 
+# OUTPUT  30720
+# 
+# OUTPUT  43008
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT      0
+# 
+# OUTPUT      0
+# 
+# OUTPUT   2048
+# 
+# OUTPUT   6144
+# 
+# OUTPUT  12288
+# 
+# OUTPUT  20480
+# 
+# OUTPUT  30720
+# 
+# OUTPUT  43008
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT      0
+# 
+# OUTPUT      0
+# 
+# OUTPUT   2048
+# 
+# OUTPUT   6144
+# 
+# OUTPUT  12288
+# 
+# OUTPUT  20480
+# 
+# OUTPUT  30720
+# 
+# OUTPUT  43008
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT      0
+# 
+# OUTPUT      0
+# 
+# OUTPUT   2048
+# 
+# OUTPUT   6144
+# 
+# OUTPUT  12288
+# 
+# OUTPUT  20480
+# 
+# OUTPUT  30720
+# 
+# OUTPUT  43008
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT      0
+# 
+# OUTPUT      0
+# 
+# OUTPUT   2048
+# 
+# OUTPUT   6144
+# 
+# OUTPUT  12288
+# 
+# OUTPUT  20480
+# 
+# OUTPUT  30720
+# 
+# OUTPUT  43008
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT      0
+# 
+# OUTPUT      0
+# 
+# OUTPUT   2048
+# 
+# OUTPUT   6144
+# 
+# OUTPUT  12288
+# 
+# OUTPUT  20480
+# 
+# OUTPUT  30720
+# 
+# OUTPUT  43008
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT      0
+# 
+# OUTPUT      0
+# 
+# OUTPUT   2048
+# 
+# OUTPUT   6144
+# 
+# OUTPUT  12288
+# 
+# OUTPUT  20480
+# 
+# OUTPUT  30720
+# 
+# OUTPUT  43008
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT      0
+# 
+# OUTPUT      0
+# 
+# OUTPUT   2048
+# 
+# OUTPUT   6144
+# 
+# OUTPUT  12288
+# 
+# ** Note: $stop    : tb_dot_prod.v(87)
+#    Time: 1003 ns  Iteration: 0  Instance: /tb_dot_prod
+# Break in Module tb_dot_prod at tb_dot_prod.v line 87
+do wave.do
+vsim -voptargs=+acc work.tb_dot_prod
+# End time: 19:55:12 on Apr 12,2016, Elapsed time: 0:00:16
+# Errors: 0, Warnings: 0
+# vsim -voptargs="+acc" work.tb_dot_prod 
+# Start time: 19:55:12 on Apr 12,2016
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading work.tb_dot_prod(fast)
+# Loading work.dot_prod(fast)
+# Loading work.weightRAM(fast)
+do wave.do
+run -all
+# Simulation started at 0.000000
+# OUTPUT      0
+# 
+# Simulated           0 samples
+# 
+# OUTPUT      0
+# 
+# OUTPUT   2048
+# 
+# OUTPUT   6144
+# 
+# OUTPUT  12288
+# 
+# OUTPUT  20480
+# 
+# OUTPUT  30720
+# 
+# OUTPUT  43008
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT      0
+# 
+# OUTPUT      0
+# 
+# OUTPUT   2048
+# 
+# OUTPUT   6144
+# 
+# OUTPUT  12288
+# 
+# OUTPUT  20480
+# 
+# OUTPUT  30720
+# 
+# OUTPUT  43008
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT      0
+# 
+# OUTPUT      0
+# 
+# OUTPUT   2048
+# 
+# OUTPUT   6144
+# 
+# OUTPUT  12288
+# 
+# OUTPUT  20480
+# 
+# OUTPUT  30720
+# 
+# OUTPUT  43008
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT      0
+# 
+# OUTPUT      0
+# 
+# OUTPUT   2048
+# 
+# OUTPUT   6144
+# 
+# OUTPUT  12288
+# 
+# OUTPUT  20480
+# 
+# OUTPUT  30720
+# 
+# OUTPUT  43008
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT      0
+# 
+# OUTPUT      0
+# 
+# OUTPUT   2048
+# 
+# OUTPUT   6144
+# 
+# OUTPUT  12288
+# 
+# OUTPUT  20480
+# 
+# OUTPUT  30720
+# 
+# OUTPUT  43008
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT      0
+# 
+# OUTPUT      0
+# 
+# OUTPUT   2048
+# 
+# OUTPUT   6144
+# 
+# OUTPUT  12288
+# 
+# OUTPUT  20480
+# 
+# OUTPUT  30720
+# 
+# OUTPUT  43008
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT      0
+# 
+# OUTPUT      0
+# 
+# OUTPUT   2048
+# 
+# OUTPUT   6144
+# 
+# OUTPUT  12288
+# 
+# OUTPUT  20480
+# 
+# OUTPUT  30720
+# 
+# OUTPUT  43008
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT      0
+# 
+# OUTPUT      0
+# 
+# OUTPUT   2048
+# 
+# OUTPUT   6144
+# 
+# OUTPUT  12288
+# 
+# OUTPUT  20480
+# 
+# OUTPUT  30720
+# 
+# OUTPUT  43008
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT      0
+# 
+# OUTPUT      0
+# 
+# OUTPUT   2048
+# 
+# OUTPUT   6144
+# 
+# OUTPUT  12288
+# 
+# OUTPUT  20480
+# 
+# OUTPUT  30720
+# 
+# OUTPUT  43008
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT      0
+# 
+# OUTPUT      0
+# 
+# OUTPUT   2048
+# 
+# OUTPUT   6144
+# 
+# OUTPUT  12288
+# 
+# OUTPUT  20480
+# 
+# OUTPUT  30720
+# 
+# OUTPUT  43008
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT      0
+# 
+# OUTPUT      0
+# 
+# OUTPUT   2048
+# 
+# OUTPUT   6144
+# 
+# OUTPUT  12288
+# 
+# OUTPUT  20480
+# 
+# OUTPUT  30720
+# 
+# OUTPUT  43008
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT      0
+# 
+# OUTPUT      0
+# 
+# OUTPUT   2048
+# 
+# OUTPUT   6144
+# 
+# OUTPUT  12288
+# 
+# OUTPUT  20480
+# 
+# OUTPUT  30720
+# 
+# OUTPUT  43008
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT      0
+# 
+# OUTPUT      0
+# 
+# OUTPUT   2048
+# 
+# OUTPUT   6144
+# 
+# OUTPUT  12288
+# 
+# OUTPUT  20480
+# 
+# OUTPUT  30720
+# 
+# OUTPUT  43008
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT      0
+# 
+# OUTPUT      0
+# 
+# OUTPUT   2048
+# 
+# OUTPUT   6144
+# 
+# OUTPUT  12288
+# 
+# OUTPUT  20480
+# 
+# OUTPUT  30720
+# 
+# OUTPUT  43008
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT      0
+# 
+# OUTPUT      0
+# 
+# OUTPUT   2048
+# 
+# OUTPUT   6144
+# 
+# OUTPUT  12288
+# 
+# OUTPUT  20480
+# 
+# OUTPUT  30720
+# 
+# OUTPUT  43008
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT  57344
+# 
+# OUTPUT      0
+# 
+# OUTPUT      0
+# 
+# OUTPUT   2048
+# 
+# OUTPUT   6144
+# 
+# OUTPUT  12288
+# 
+# ** Note: $stop    : tb_dot_prod.v(87)
+#    Time: 1003 ns  Iteration: 0  Instance: /tb_dot_prod
+# Break in Module tb_dot_prod at tb_dot_prod.v line 87
+vsim -voptargs=+acc work.tb_dot_prod
+# End time: 19:56:39 on Apr 12,2016, Elapsed time: 0:01:27
+# Errors: 0, Warnings: 0
+# vsim -voptargs="+acc" work.tb_dot_prod 
+# Start time: 19:56:39 on Apr 12,2016
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # ** Note: (vopt-143) Recognized 1 FSM in module "dot_prod(fast)".
 # Loading work.tb_dot_prod(fast)
@@ -1047,5070 +3118,1002 @@ run -all
 # 
 # OUTPUT      0
 # 
-# OUTPUT      1
+# OUTPUT   2048
 # 
-# OUTPUT      3
+# OUTPUT   6144
 # 
-# OUTPUT      6
+# OUTPUT  12288
 # 
-# OUTPUT     10
+# OUTPUT  20480
 # 
-# OUTPUT     15
+# OUTPUT  30720
 # 
-# OUTPUT     21
+# OUTPUT  43008
 # 
-# OUTPUT     28
+# OUTPUT  57344
 # 
-# OUTPUT     36
+# OUTPUT      x
 # 
-# OUTPUT     45
+# OUTPUT      x
 # 
-# OUTPUT     55
+# OUTPUT      x
 # 
-# OUTPUT     66
+# OUTPUT      x
 # 
-# OUTPUT     78
+# OUTPUT      x
 # 
-# OUTPUT     91
+# OUTPUT      x
 # 
-# OUTPUT    105
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT      0
+# OUTPUT      x
 # 
-# OUTPUT      0
+# OUTPUT      x
 # 
-# OUTPUT      1
+# OUTPUT      x
 # 
-# OUTPUT      3
+# OUTPUT      x
 # 
-# OUTPUT      6
+# OUTPUT      x
 # 
-# OUTPUT     10
+# OUTPUT      x
 # 
-# OUTPUT     15
+# OUTPUT      x
 # 
-# OUTPUT     21
+# OUTPUT      x
 # 
-# OUTPUT     28
+# OUTPUT      x
 # 
-# OUTPUT     36
+# OUTPUT      x
 # 
-# OUTPUT     45
+# OUTPUT      x
 # 
-# OUTPUT     55
+# OUTPUT      x
 # 
-# OUTPUT     66
+# OUTPUT      x
 # 
-# OUTPUT     78
+# OUTPUT      x
 # 
-# OUTPUT     91
+# OUTPUT      x
 # 
-# OUTPUT    105
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT      0
+# OUTPUT      x
 # 
-# OUTPUT      0
+# OUTPUT      x
 # 
-# OUTPUT      1
+# OUTPUT      x
 # 
-# OUTPUT      3
+# OUTPUT      x
 # 
-# OUTPUT      6
+# OUTPUT      x
 # 
-# OUTPUT     10
+# OUTPUT      x
 # 
-# OUTPUT     15
+# OUTPUT      x
 # 
-# OUTPUT     21
+# OUTPUT      x
 # 
-# OUTPUT     28
+# OUTPUT      x
 # 
-# OUTPUT     36
+# OUTPUT      x
 # 
-# OUTPUT     45
+# OUTPUT      x
 # 
-# OUTPUT     55
+# OUTPUT      x
 # 
-# OUTPUT     66
+# OUTPUT      x
 # 
-# OUTPUT     78
+# OUTPUT      x
 # 
-# OUTPUT     91
+# OUTPUT      x
 # 
-# OUTPUT    105
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT      0
+# OUTPUT      x
 # 
-# OUTPUT      0
+# OUTPUT      x
 # 
-# OUTPUT      1
+# OUTPUT      x
 # 
-# OUTPUT      3
+# OUTPUT      x
 # 
-# OUTPUT      6
+# OUTPUT      x
 # 
-# OUTPUT     10
+# OUTPUT      x
 # 
-# OUTPUT     15
+# OUTPUT      x
 # 
-# OUTPUT     21
+# OUTPUT      x
 # 
-# OUTPUT     28
+# OUTPUT      x
 # 
-# OUTPUT     36
+# OUTPUT      x
 # 
-# OUTPUT     45
+# OUTPUT      x
 # 
-# OUTPUT     55
+# OUTPUT      x
 # 
-# OUTPUT     66
+# OUTPUT      x
 # 
-# OUTPUT     78
+# OUTPUT      x
 # 
-# OUTPUT     91
+# OUTPUT      x
 # 
-# OUTPUT    105
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT      0
+# OUTPUT      x
 # 
-# OUTPUT      0
+# OUTPUT      x
 # 
-# OUTPUT      1
+# OUTPUT      x
 # 
-# OUTPUT      3
+# OUTPUT      x
 # 
-# OUTPUT      6
+# OUTPUT      x
 # 
-# OUTPUT     10
+# OUTPUT      x
 # 
-# OUTPUT     15
+# OUTPUT      x
 # 
-# OUTPUT     21
+# OUTPUT      x
 # 
-# OUTPUT     28
+# OUTPUT      x
 # 
-# OUTPUT     36
+# OUTPUT      x
 # 
-# OUTPUT     45
+# OUTPUT      x
 # 
-# OUTPUT     55
+# OUTPUT      x
 # 
-# OUTPUT     66
+# OUTPUT      x
 # 
-# OUTPUT     78
+# OUTPUT      x
 # 
-# OUTPUT     91
+# OUTPUT      x
 # 
-# OUTPUT    105
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT      0
+# OUTPUT      x
 # 
-# OUTPUT      0
+# OUTPUT      x
 # 
-# OUTPUT      1
+# OUTPUT      x
 # 
-# OUTPUT      3
+# OUTPUT      x
 # 
-# OUTPUT      6
+# OUTPUT      x
 # 
-# OUTPUT     10
+# OUTPUT      x
 # 
-# OUTPUT     15
+# OUTPUT      x
 # 
-# OUTPUT     21
+# OUTPUT      x
 # 
-# OUTPUT     28
+# OUTPUT      x
 # 
-# OUTPUT     36
+# OUTPUT      x
 # 
-# OUTPUT     45
+# OUTPUT      x
 # 
-# OUTPUT     55
+# OUTPUT      x
 # 
-# OUTPUT     66
+# OUTPUT      x
 # 
-# OUTPUT     78
+# OUTPUT      x
 # 
-# OUTPUT     91
+# OUTPUT      x
 # 
-# OUTPUT    105
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT      0
+# OUTPUT      x
 # 
-# OUTPUT      0
+# OUTPUT      x
 # 
-# OUTPUT      1
+# OUTPUT      x
 # 
-# OUTPUT      3
+# OUTPUT      x
 # 
-# OUTPUT      6
+# OUTPUT      x
 # 
-# OUTPUT     10
+# OUTPUT      x
 # 
-# OUTPUT     15
+# OUTPUT      x
 # 
-# OUTPUT     21
+# OUTPUT      x
 # 
-# OUTPUT     28
+# OUTPUT      x
 # 
-# OUTPUT     36
+# OUTPUT      x
 # 
-# OUTPUT     45
+# OUTPUT      x
 # 
-# OUTPUT     55
+# OUTPUT      x
 # 
-# OUTPUT     66
+# OUTPUT      x
 # 
-# OUTPUT     78
+# OUTPUT      x
 # 
-# OUTPUT     91
+# OUTPUT      x
 # 
-# OUTPUT    105
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT      0
+# OUTPUT      x
 # 
-# OUTPUT      0
+# OUTPUT      x
 # 
-# OUTPUT      1
+# OUTPUT      x
 # 
-# OUTPUT      3
+# OUTPUT      x
 # 
-# OUTPUT      6
+# OUTPUT      x
 # 
-# OUTPUT     10
+# OUTPUT      x
 # 
-# OUTPUT     15
+# OUTPUT      x
 # 
-# OUTPUT     21
+# OUTPUT      x
 # 
-# OUTPUT     28
+# OUTPUT      x
 # 
-# OUTPUT     36
+# OUTPUT      x
 # 
-# OUTPUT     45
+# OUTPUT      x
 # 
-# OUTPUT     55
+# OUTPUT      x
 # 
-# OUTPUT     66
+# OUTPUT      x
 # 
-# OUTPUT     78
+# OUTPUT      x
 # 
-# OUTPUT     91
+# OUTPUT      x
 # 
-# OUTPUT    105
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT      0
+# OUTPUT      x
 # 
-# OUTPUT      0
+# OUTPUT      x
 # 
-# OUTPUT      1
+# OUTPUT      x
 # 
-# OUTPUT      3
+# OUTPUT      x
 # 
-# OUTPUT      6
+# OUTPUT      x
 # 
-# OUTPUT     10
+# OUTPUT      x
 # 
-# OUTPUT     15
+# OUTPUT      x
 # 
-# OUTPUT     21
+# OUTPUT      x
 # 
-# OUTPUT     28
+# OUTPUT      x
 # 
-# OUTPUT     36
+# OUTPUT      x
 # 
-# OUTPUT     45
+# OUTPUT      x
 # 
-# OUTPUT     55
+# OUTPUT      x
 # 
-# OUTPUT     66
+# OUTPUT      x
 # 
-# OUTPUT     78
+# OUTPUT      x
 # 
-# OUTPUT     91
+# OUTPUT      x
 # 
-# OUTPUT    105
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT      0
+# OUTPUT      x
 # 
-# OUTPUT      0
+# OUTPUT      x
 # 
-# OUTPUT      1
+# OUTPUT      x
 # 
-# OUTPUT      3
+# OUTPUT      x
 # 
-# OUTPUT      6
+# OUTPUT      x
 # 
-# OUTPUT     10
+# OUTPUT      x
 # 
-# OUTPUT     15
+# OUTPUT      x
 # 
-# OUTPUT     21
+# OUTPUT      x
 # 
-# OUTPUT     28
+# OUTPUT      x
 # 
-# OUTPUT     36
+# OUTPUT      x
 # 
-# OUTPUT     45
+# OUTPUT      x
 # 
-# OUTPUT     55
+# OUTPUT      x
 # 
-# OUTPUT     66
+# OUTPUT      x
 # 
-# OUTPUT     78
+# OUTPUT      x
 # 
-# OUTPUT     91
+# OUTPUT      x
 # 
-# OUTPUT    105
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT      0
+# OUTPUT      x
 # 
-# OUTPUT      0
+# OUTPUT      x
 # 
-# OUTPUT      1
+# OUTPUT      x
 # 
-# OUTPUT      3
+# OUTPUT      x
 # 
-# OUTPUT      6
+# OUTPUT      x
 # 
-# OUTPUT     10
+# OUTPUT      x
 # 
-# OUTPUT     15
+# OUTPUT      x
 # 
-# OUTPUT     21
+# OUTPUT      x
 # 
-# OUTPUT     28
+# OUTPUT      x
 # 
-# OUTPUT     36
+# OUTPUT      x
 # 
-# OUTPUT     45
+# OUTPUT      x
 # 
-# OUTPUT     55
+# OUTPUT      x
 # 
-# OUTPUT     66
+# OUTPUT      x
 # 
-# OUTPUT     78
+# OUTPUT      x
 # 
-# OUTPUT     91
+# OUTPUT      x
 # 
-# OUTPUT    105
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT      0
+# OUTPUT      x
 # 
-# OUTPUT      0
+# OUTPUT      x
 # 
-# OUTPUT      1
+# OUTPUT      x
 # 
-# OUTPUT      3
+# OUTPUT      x
 # 
-# OUTPUT      6
+# OUTPUT      x
 # 
-# OUTPUT     10
+# OUTPUT      x
 # 
-# OUTPUT     15
+# OUTPUT      x
 # 
-# OUTPUT     21
+# OUTPUT      x
 # 
-# OUTPUT     28
+# OUTPUT      x
 # 
-# OUTPUT     36
+# OUTPUT      x
 # 
-# OUTPUT     45
+# OUTPUT      x
 # 
-# OUTPUT     55
+# OUTPUT      x
 # 
-# OUTPUT     66
+# OUTPUT      x
 # 
-# OUTPUT     78
+# OUTPUT      x
 # 
-# OUTPUT     91
+# OUTPUT      x
 # 
-# OUTPUT    105
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT      0
+# OUTPUT      x
 # 
-# OUTPUT      0
+# OUTPUT      x
 # 
-# OUTPUT      1
+# OUTPUT      x
 # 
-# OUTPUT      3
+# OUTPUT      x
 # 
-# OUTPUT      6
+# OUTPUT      x
 # 
-# OUTPUT     10
+# OUTPUT      x
 # 
-# OUTPUT     15
+# OUTPUT      x
 # 
-# OUTPUT     21
+# OUTPUT      x
 # 
-# OUTPUT     28
+# OUTPUT      x
 # 
-# OUTPUT     36
+# OUTPUT      x
 # 
-# OUTPUT     45
+# OUTPUT      x
 # 
-# OUTPUT     55
+# OUTPUT      x
 # 
-# OUTPUT     66
+# OUTPUT      x
 # 
-# OUTPUT     78
+# OUTPUT      x
 # 
-# OUTPUT     91
+# OUTPUT      x
 # 
-# OUTPUT    105
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT      0
+# OUTPUT      x
 # 
-# OUTPUT      0
+# OUTPUT      x
 # 
-# OUTPUT      1
+# OUTPUT      x
 # 
-# OUTPUT      3
+# OUTPUT      x
 # 
-# OUTPUT      6
+# OUTPUT      x
 # 
-# OUTPUT     10
+# OUTPUT      x
 # 
-# OUTPUT     15
+# OUTPUT      x
 # 
-# OUTPUT     21
+# OUTPUT      x
 # 
-# OUTPUT     28
+# OUTPUT      x
 # 
-# OUTPUT     36
+# OUTPUT      x
 # 
-# OUTPUT     45
+# OUTPUT      x
 # 
-# OUTPUT     55
+# OUTPUT      x
 # 
-# OUTPUT     66
+# OUTPUT      x
 # 
-# OUTPUT     78
+# OUTPUT      x
 # 
-# OUTPUT     91
+# OUTPUT      x
 # 
-# OUTPUT    105
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT      0
+# OUTPUT      x
 # 
-# OUTPUT      0
+# OUTPUT      x
 # 
-# OUTPUT      1
+# OUTPUT      x
 # 
-# OUTPUT      3
+# OUTPUT      x
 # 
-# OUTPUT      6
+# OUTPUT      x
 # 
-# OUTPUT     10
+# OUTPUT      x
 # 
-# OUTPUT     15
+# OUTPUT      x
 # 
-# OUTPUT     21
+# OUTPUT      x
 # 
-# OUTPUT     28
+# OUTPUT      x
 # 
-# OUTPUT     36
+# OUTPUT      x
 # 
-# OUTPUT     45
+# OUTPUT      x
 # 
-# OUTPUT     55
+# OUTPUT      x
 # 
-# OUTPUT     66
+# OUTPUT      x
 # 
-# OUTPUT     78
+# OUTPUT      x
 # 
-# OUTPUT     91
+# OUTPUT      x
 # 
-# OUTPUT    105
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT    120
+# OUTPUT      x
 # 
-# OUTPUT      0
+# OUTPUT      x
 # 
-# OUTPUT      0
+# OUTPUT      x
 # 
-# OUTPUT      1
+# OUTPUT      x
 # 
-# OUTPUT      3
+# OUTPUT      x
 # 
-# OUTPUT      6
+# OUTPUT      x
 # 
-# ** Note: $stop    : tb_dot_prod.v(85)
+# ** Note: $stop    : tb_dot_prod.v(87)
 #    Time: 1003 ns  Iteration: 0  Instance: /tb_dot_prod
-# Break in Module tb_dot_prod at tb_dot_prod.v line 85
-vsim -voptargs=+acc work.tb_dot_prod
-# End time: 11:06:35 on Apr 11,2016, Elapsed time: 0:22:32
-# Errors: 0, Warnings: 0
-# vsim -voptargs="+acc" work.tb_dot_prod 
-# Start time: 11:06:35 on Apr 11,2016
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading work.tb_dot_prod(fast)
-# Loading work.dot_prod(fast)
-# Loading work.weightRAM(fast)
-do wave.do
-run -all
-# Simulation started at 0.000000
-# OUTPUT      0
-# 
-# Simulated           0 samples
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# ** Note: $stop    : tb_dot_prod.v(85)
-#    Time: 1003 ns  Iteration: 0  Instance: /tb_dot_prod
-# Break in Module tb_dot_prod at tb_dot_prod.v line 85
-vsim -voptargs=+acc work.tb_dot_prod
-# End time: 11:09:42 on Apr 11,2016, Elapsed time: 0:03:07
-# Errors: 0, Warnings: 0
-# vsim -voptargs="+acc" work.tb_dot_prod 
-# Start time: 11:09:42 on Apr 11,2016
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading work.tb_dot_prod(fast)
-# Loading work.dot_prod(fast)
-# Loading work.weightRAM(fast)
-do wave.do
-run -all
-# Simulation started at 0.000000
-# OUTPUT      0
-# 
-# Simulated           0 samples
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# ** Note: $stop    : tb_dot_prod.v(85)
-#    Time: 1003 ns  Iteration: 0  Instance: /tb_dot_prod
-# Break in Module tb_dot_prod at tb_dot_prod.v line 85
-vsim -voptargs=+acc work.tb_dot_prod
-# End time: 11:10:51 on Apr 11,2016, Elapsed time: 0:01:09
-# Errors: 0, Warnings: 0
-# vsim -voptargs="+acc" work.tb_dot_prod 
-# Start time: 11:10:51 on Apr 11,2016
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading work.tb_dot_prod(fast)
-# Loading work.dot_prod(fast)
-# Loading work.weightRAM(fast)
-do wave.do
-run -all
-# Simulation started at 0.000000
-# OUTPUT      0
-# 
-# Simulated           0 samples
-# 
-# OUTPUT      0
-# 
-# OUTPUT   2048
-# 
-# OUTPUT   6144
-# 
-# OUTPUT  12288
-# 
-# OUTPUT  20480
-# 
-# OUTPUT  30720
-# 
-# OUTPUT  43008
-# 
-# OUTPUT  57344
-# 
-# OUTPUT  73728
-# 
-# OUTPUT  92160
-# 
-# OUTPUT 112640
-# 
-# OUTPUT 135168
-# 
-# OUTPUT 159744
-# 
-# OUTPUT 186368
-# 
-# OUTPUT 215040
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT   2048
-# 
-# OUTPUT   6144
-# 
-# OUTPUT  12288
-# 
-# OUTPUT  20480
-# 
-# OUTPUT  30720
-# 
-# OUTPUT  43008
-# 
-# OUTPUT  57344
-# 
-# OUTPUT  73728
-# 
-# OUTPUT  92160
-# 
-# OUTPUT 112640
-# 
-# OUTPUT 135168
-# 
-# OUTPUT 159744
-# 
-# OUTPUT 186368
-# 
-# OUTPUT 215040
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT   2048
-# 
-# OUTPUT   6144
-# 
-# OUTPUT  12288
-# 
-# OUTPUT  20480
-# 
-# OUTPUT  30720
-# 
-# OUTPUT  43008
-# 
-# OUTPUT  57344
-# 
-# OUTPUT  73728
-# 
-# OUTPUT  92160
-# 
-# OUTPUT 112640
-# 
-# OUTPUT 135168
-# 
-# OUTPUT 159744
-# 
-# OUTPUT 186368
-# 
-# OUTPUT 215040
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT   2048
-# 
-# OUTPUT   6144
-# 
-# OUTPUT  12288
-# 
-# OUTPUT  20480
-# 
-# OUTPUT  30720
-# 
-# OUTPUT  43008
-# 
-# OUTPUT  57344
-# 
-# OUTPUT  73728
-# 
-# OUTPUT  92160
-# 
-# OUTPUT 112640
-# 
-# OUTPUT 135168
-# 
-# OUTPUT 159744
-# 
-# OUTPUT 186368
-# 
-# OUTPUT 215040
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT   2048
-# 
-# OUTPUT   6144
-# 
-# OUTPUT  12288
-# 
-# OUTPUT  20480
-# 
-# OUTPUT  30720
-# 
-# OUTPUT  43008
-# 
-# OUTPUT  57344
-# 
-# OUTPUT  73728
-# 
-# OUTPUT  92160
-# 
-# OUTPUT 112640
-# 
-# OUTPUT 135168
-# 
-# OUTPUT 159744
-# 
-# OUTPUT 186368
-# 
-# OUTPUT 215040
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT   2048
-# 
-# OUTPUT   6144
-# 
-# OUTPUT  12288
-# 
-# OUTPUT  20480
-# 
-# OUTPUT  30720
-# 
-# OUTPUT  43008
-# 
-# OUTPUT  57344
-# 
-# OUTPUT  73728
-# 
-# OUTPUT  92160
-# 
-# OUTPUT 112640
-# 
-# OUTPUT 135168
-# 
-# OUTPUT 159744
-# 
-# OUTPUT 186368
-# 
-# OUTPUT 215040
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT   2048
-# 
-# OUTPUT   6144
-# 
-# OUTPUT  12288
-# 
-# OUTPUT  20480
-# 
-# OUTPUT  30720
-# 
-# OUTPUT  43008
-# 
-# OUTPUT  57344
-# 
-# OUTPUT  73728
-# 
-# OUTPUT  92160
-# 
-# OUTPUT 112640
-# 
-# OUTPUT 135168
-# 
-# OUTPUT 159744
-# 
-# OUTPUT 186368
-# 
-# OUTPUT 215040
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT   2048
-# 
-# OUTPUT   6144
-# 
-# OUTPUT  12288
-# 
-# OUTPUT  20480
-# 
-# OUTPUT  30720
-# 
-# OUTPUT  43008
-# 
-# OUTPUT  57344
-# 
-# OUTPUT  73728
-# 
-# OUTPUT  92160
-# 
-# OUTPUT 112640
-# 
-# OUTPUT 135168
-# 
-# OUTPUT 159744
-# 
-# OUTPUT 186368
-# 
-# OUTPUT 215040
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT   2048
-# 
-# OUTPUT   6144
-# 
-# OUTPUT  12288
-# 
-# OUTPUT  20480
-# 
-# OUTPUT  30720
-# 
-# OUTPUT  43008
-# 
-# OUTPUT  57344
-# 
-# OUTPUT  73728
-# 
-# OUTPUT  92160
-# 
-# OUTPUT 112640
-# 
-# OUTPUT 135168
-# 
-# OUTPUT 159744
-# 
-# OUTPUT 186368
-# 
-# OUTPUT 215040
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT   2048
-# 
-# OUTPUT   6144
-# 
-# OUTPUT  12288
-# 
-# OUTPUT  20480
-# 
-# OUTPUT  30720
-# 
-# OUTPUT  43008
-# 
-# OUTPUT  57344
-# 
-# OUTPUT  73728
-# 
-# OUTPUT  92160
-# 
-# OUTPUT 112640
-# 
-# OUTPUT 135168
-# 
-# OUTPUT 159744
-# 
-# OUTPUT 186368
-# 
-# OUTPUT 215040
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT   2048
-# 
-# OUTPUT   6144
-# 
-# OUTPUT  12288
-# 
-# OUTPUT  20480
-# 
-# OUTPUT  30720
-# 
-# OUTPUT  43008
-# 
-# OUTPUT  57344
-# 
-# OUTPUT  73728
-# 
-# OUTPUT  92160
-# 
-# OUTPUT 112640
-# 
-# OUTPUT 135168
-# 
-# OUTPUT 159744
-# 
-# OUTPUT 186368
-# 
-# OUTPUT 215040
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT   2048
-# 
-# OUTPUT   6144
-# 
-# OUTPUT  12288
-# 
-# OUTPUT  20480
-# 
-# OUTPUT  30720
-# 
-# OUTPUT  43008
-# 
-# OUTPUT  57344
-# 
-# OUTPUT  73728
-# 
-# OUTPUT  92160
-# 
-# OUTPUT 112640
-# 
-# OUTPUT 135168
-# 
-# OUTPUT 159744
-# 
-# OUTPUT 186368
-# 
-# OUTPUT 215040
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT   2048
-# 
-# OUTPUT   6144
-# 
-# OUTPUT  12288
-# 
-# OUTPUT  20480
-# 
-# OUTPUT  30720
-# 
-# OUTPUT  43008
-# 
-# OUTPUT  57344
-# 
-# OUTPUT  73728
-# 
-# OUTPUT  92160
-# 
-# OUTPUT 112640
-# 
-# OUTPUT 135168
-# 
-# OUTPUT 159744
-# 
-# OUTPUT 186368
-# 
-# OUTPUT 215040
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT   2048
-# 
-# OUTPUT   6144
-# 
-# OUTPUT  12288
-# 
-# OUTPUT  20480
-# 
-# OUTPUT  30720
-# 
-# OUTPUT  43008
-# 
-# OUTPUT  57344
-# 
-# OUTPUT  73728
-# 
-# OUTPUT  92160
-# 
-# OUTPUT 112640
-# 
-# OUTPUT 135168
-# 
-# OUTPUT 159744
-# 
-# OUTPUT 186368
-# 
-# OUTPUT 215040
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT   2048
-# 
-# OUTPUT   6144
-# 
-# OUTPUT  12288
-# 
-# OUTPUT  20480
-# 
-# OUTPUT  30720
-# 
-# OUTPUT  43008
-# 
-# OUTPUT  57344
-# 
-# OUTPUT  73728
-# 
-# OUTPUT  92160
-# 
-# OUTPUT 112640
-# 
-# OUTPUT 135168
-# 
-# OUTPUT 159744
-# 
-# OUTPUT 186368
-# 
-# OUTPUT 215040
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT 245760
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT   2048
-# 
-# OUTPUT   6144
-# 
-# OUTPUT  12288
-# 
-# ** Note: $stop    : tb_dot_prod.v(85)
-#    Time: 1003 ns  Iteration: 0  Instance: /tb_dot_prod
-# Break in Module tb_dot_prod at tb_dot_prod.v line 85
-vsim -voptargs=+acc work.tb_dot_prod
-# End time: 11:20:20 on Apr 11,2016, Elapsed time: 0:09:29
-# Errors: 0, Warnings: 0
-# vsim -voptargs="+acc" work.tb_dot_prod 
-# Start time: 11:20:20 on Apr 11,2016
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading work.tb_dot_prod(fast)
-# Loading work.dot_prod(fast)
-# Loading work.weightRAM(fast)
-do wave.do
-run -all
-# Simulation started at 0.000000
-# OUTPUT      0
-# 
-# Simulated           0 samples
-# 
-# OUTPUT      0
-# 
-# OUTPUT    512
-# 
-# OUTPUT   1536
-# 
-# OUTPUT   3072
-# 
-# OUTPUT   5120
-# 
-# OUTPUT   7680
-# 
-# OUTPUT  10752
-# 
-# OUTPUT  14336
-# 
-# OUTPUT  18432
-# 
-# OUTPUT  23040
-# 
-# OUTPUT  28160
-# 
-# OUTPUT  33792
-# 
-# OUTPUT  39936
-# 
-# OUTPUT  46592
-# 
-# OUTPUT  53760
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT    512
-# 
-# OUTPUT   1536
-# 
-# OUTPUT   3072
-# 
-# OUTPUT   5120
-# 
-# OUTPUT   7680
-# 
-# OUTPUT  10752
-# 
-# OUTPUT  14336
-# 
-# OUTPUT  18432
-# 
-# OUTPUT  23040
-# 
-# OUTPUT  28160
-# 
-# OUTPUT  33792
-# 
-# OUTPUT  39936
-# 
-# OUTPUT  46592
-# 
-# OUTPUT  53760
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT    512
-# 
-# OUTPUT   1536
-# 
-# OUTPUT   3072
-# 
-# OUTPUT   5120
-# 
-# OUTPUT   7680
-# 
-# OUTPUT  10752
-# 
-# OUTPUT  14336
-# 
-# OUTPUT  18432
-# 
-# OUTPUT  23040
-# 
-# OUTPUT  28160
-# 
-# OUTPUT  33792
-# 
-# OUTPUT  39936
-# 
-# OUTPUT  46592
-# 
-# OUTPUT  53760
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT    512
-# 
-# OUTPUT   1536
-# 
-# OUTPUT   3072
-# 
-# OUTPUT   5120
-# 
-# OUTPUT   7680
-# 
-# OUTPUT  10752
-# 
-# OUTPUT  14336
-# 
-# OUTPUT  18432
-# 
-# OUTPUT  23040
-# 
-# OUTPUT  28160
-# 
-# OUTPUT  33792
-# 
-# OUTPUT  39936
-# 
-# OUTPUT  46592
-# 
-# OUTPUT  53760
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT    512
-# 
-# OUTPUT   1536
-# 
-# OUTPUT   3072
-# 
-# OUTPUT   5120
-# 
-# OUTPUT   7680
-# 
-# OUTPUT  10752
-# 
-# OUTPUT  14336
-# 
-# OUTPUT  18432
-# 
-# OUTPUT  23040
-# 
-# OUTPUT  28160
-# 
-# OUTPUT  33792
-# 
-# OUTPUT  39936
-# 
-# OUTPUT  46592
-# 
-# OUTPUT  53760
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT    512
-# 
-# OUTPUT   1536
-# 
-# OUTPUT   3072
-# 
-# OUTPUT   5120
-# 
-# OUTPUT   7680
-# 
-# OUTPUT  10752
-# 
-# OUTPUT  14336
-# 
-# OUTPUT  18432
-# 
-# OUTPUT  23040
-# 
-# OUTPUT  28160
-# 
-# OUTPUT  33792
-# 
-# OUTPUT  39936
-# 
-# OUTPUT  46592
-# 
-# OUTPUT  53760
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT    512
-# 
-# OUTPUT   1536
-# 
-# OUTPUT   3072
-# 
-# OUTPUT   5120
-# 
-# OUTPUT   7680
-# 
-# OUTPUT  10752
-# 
-# OUTPUT  14336
-# 
-# OUTPUT  18432
-# 
-# OUTPUT  23040
-# 
-# OUTPUT  28160
-# 
-# OUTPUT  33792
-# 
-# OUTPUT  39936
-# 
-# OUTPUT  46592
-# 
-# OUTPUT  53760
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT    512
-# 
-# OUTPUT   1536
-# 
-# OUTPUT   3072
-# 
-# OUTPUT   5120
-# 
-# OUTPUT   7680
-# 
-# OUTPUT  10752
-# 
-# OUTPUT  14336
-# 
-# OUTPUT  18432
-# 
-# OUTPUT  23040
-# 
-# OUTPUT  28160
-# 
-# OUTPUT  33792
-# 
-# OUTPUT  39936
-# 
-# OUTPUT  46592
-# 
-# OUTPUT  53760
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT    512
-# 
-# OUTPUT   1536
-# 
-# OUTPUT   3072
-# 
-# OUTPUT   5120
-# 
-# OUTPUT   7680
-# 
-# OUTPUT  10752
-# 
-# OUTPUT  14336
-# 
-# OUTPUT  18432
-# 
-# OUTPUT  23040
-# 
-# OUTPUT  28160
-# 
-# OUTPUT  33792
-# 
-# OUTPUT  39936
-# 
-# OUTPUT  46592
-# 
-# OUTPUT  53760
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT    512
-# 
-# OUTPUT   1536
-# 
-# OUTPUT   3072
-# 
-# OUTPUT   5120
-# 
-# OUTPUT   7680
-# 
-# OUTPUT  10752
-# 
-# OUTPUT  14336
-# 
-# OUTPUT  18432
-# 
-# OUTPUT  23040
-# 
-# OUTPUT  28160
-# 
-# OUTPUT  33792
-# 
-# OUTPUT  39936
-# 
-# OUTPUT  46592
-# 
-# OUTPUT  53760
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT    512
-# 
-# OUTPUT   1536
-# 
-# OUTPUT   3072
-# 
-# OUTPUT   5120
-# 
-# OUTPUT   7680
-# 
-# OUTPUT  10752
-# 
-# OUTPUT  14336
-# 
-# OUTPUT  18432
-# 
-# OUTPUT  23040
-# 
-# OUTPUT  28160
-# 
-# OUTPUT  33792
-# 
-# OUTPUT  39936
-# 
-# OUTPUT  46592
-# 
-# OUTPUT  53760
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT    512
-# 
-# OUTPUT   1536
-# 
-# OUTPUT   3072
-# 
-# OUTPUT   5120
-# 
-# OUTPUT   7680
-# 
-# OUTPUT  10752
-# 
-# OUTPUT  14336
-# 
-# OUTPUT  18432
-# 
-# OUTPUT  23040
-# 
-# OUTPUT  28160
-# 
-# OUTPUT  33792
-# 
-# OUTPUT  39936
-# 
-# OUTPUT  46592
-# 
-# OUTPUT  53760
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT    512
-# 
-# OUTPUT   1536
-# 
-# OUTPUT   3072
-# 
-# OUTPUT   5120
-# 
-# OUTPUT   7680
-# 
-# OUTPUT  10752
-# 
-# OUTPUT  14336
-# 
-# OUTPUT  18432
-# 
-# OUTPUT  23040
-# 
-# OUTPUT  28160
-# 
-# OUTPUT  33792
-# 
-# OUTPUT  39936
-# 
-# OUTPUT  46592
-# 
-# OUTPUT  53760
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT    512
-# 
-# OUTPUT   1536
-# 
-# OUTPUT   3072
-# 
-# OUTPUT   5120
-# 
-# OUTPUT   7680
-# 
-# OUTPUT  10752
-# 
-# OUTPUT  14336
-# 
-# OUTPUT  18432
-# 
-# OUTPUT  23040
-# 
-# OUTPUT  28160
-# 
-# OUTPUT  33792
-# 
-# OUTPUT  39936
-# 
-# OUTPUT  46592
-# 
-# OUTPUT  53760
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT    512
-# 
-# OUTPUT   1536
-# 
-# OUTPUT   3072
-# 
-# OUTPUT   5120
-# 
-# OUTPUT   7680
-# 
-# OUTPUT  10752
-# 
-# OUTPUT  14336
-# 
-# OUTPUT  18432
-# 
-# OUTPUT  23040
-# 
-# OUTPUT  28160
-# 
-# OUTPUT  33792
-# 
-# OUTPUT  39936
-# 
-# OUTPUT  46592
-# 
-# OUTPUT  53760
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT  61440
-# 
-# OUTPUT      0
-# 
-# OUTPUT      0
-# 
-# OUTPUT    512
-# 
-# OUTPUT   1536
-# 
-# OUTPUT   3072
-# 
-# ** Note: $stop    : tb_dot_prod.v(85)
-#    Time: 1003 ns  Iteration: 0  Instance: /tb_dot_prod
-# Break in Module tb_dot_prod at tb_dot_prod.v line 85
+# Break in Module tb_dot_prod at tb_dot_prod.v line 87
