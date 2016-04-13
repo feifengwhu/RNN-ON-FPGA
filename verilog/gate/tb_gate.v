@@ -2,18 +2,17 @@
 
 module tb_dot_prod();
     
-    // User defined parameters
-    parameter NROW = 16;
-    parameter NCOL = 8;
-    parameter QN   = 6;
-    parameter QM   = 11;
-    parameter DSP48_PER_ROW    = 1; 
+	parameter INPUT_SZ  = 8;
+	parameter HIDDEN_SZ = 16;
+	parameter QN = 6;
+    parameter QM = 11;
+	parameter DSP48_PER_ROW = 2;
     
     // Dependent Parameters
     parameter BITWIDTH = QN + QM + 1;
-    parameter MEMORY_BITWIDTH  = BITWIDTH*NROW;
+    parameter MEMORY_BITWIDTH = BITWIDTH*NROW;
     parameter LAYER_BITWIDTH  = BITWIDTH*NCOL;  
-	parameter ADDR_BITWIDTH         = $ln(NCOL)/$ln(2);
+	parameter ADDR_BITWIDTH   = $ln(INPUT_SZ)/$ln(2);
     parameter HALF_CLOCK = 1;
     parameter FULL_CLOCK = 2*HALF_CLOCK;
 

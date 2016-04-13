@@ -10,7 +10,7 @@ module dot_prod #(parameter NROW = 16,
                   dataReady,
                   colAddress,
                   outputVector);
-
+ 
     parameter BITWIDTH              = QN + QM + 1;
 	parameter ADDR_BITWIDTH         = $ln(NCOL)/$ln(2);
     parameter LAYER_BITWIDTH        = BITWIDTH*NROW;
@@ -84,6 +84,7 @@ module dot_prod #(parameter NROW = 16,
             CALC :
             begin
                 dataReady = 1'b0;
+
                 NEXTcolAddress = colAddress + 1; 
                 if(colAddress == NCOL - 1)
                     NEXTrowMux = rowMux + 1;
