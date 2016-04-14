@@ -28,7 +28,6 @@ module gate     #(parameter INPUT_SZ  = 8,
 	parameter SUM_X      = 3'd2;
 	parameter CALC_Y     = 3'd3;
 	parameter SUM_Y      = 3'd4;
-	parameter END        = 3'd5;
 	
 	// Input/Output definition
 	input signed        [BITWIDTH-1:0]  inputVec;
@@ -130,9 +129,6 @@ module gate     #(parameter INPUT_SZ  = 8,
 			end
 			
 			SUM_Y :
-				NEXTstate = END;
-			
-			END : 
 				NEXTstate = IDLE;
 				
 			default:
@@ -171,13 +167,6 @@ module gate     #(parameter INPUT_SZ  = 8,
 			end
 			
 			SUM_Y :
-			begin
-				enable_dotprodX = 1'b0;
-				enable_dotprodY = 1'b0;
-				dataReady_gate  = 1'b0;
-			end
-			
-			END :
 			begin
 				enable_dotprodX = 1'b0;
 				enable_dotprodY = 1'b0;

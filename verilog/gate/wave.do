@@ -8,6 +8,7 @@ add wave -noupdate /tb_dot_prod/weightMem_Y
 add wave -noupdate /tb_dot_prod/dataReady_gate
 add wave -noupdate /tb_dot_prod/clock
 add wave -noupdate /tb_dot_prod/reset
+add wave -noupdate /tb_dot_prod/beginCalc
 add wave -noupdate /tb_dot_prod/GATE/state
 add wave -noupdate /tb_dot_prod/GATE/NEXTstate
 add wave -noupdate /tb_dot_prod/GATE/adder_X

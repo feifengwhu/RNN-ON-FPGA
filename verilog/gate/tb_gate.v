@@ -95,10 +95,12 @@ module tb_dot_prod();
 		
         for(i=0; i < 500; i = i + 1) begin
             @(posedge dataReady_gate);
-            #(HALF_CLOCK);
-            $display("OUTPUT %d\n", gateOutput[17:0]);
+            #(FULL_CLOCK);
+            beginCalc = 1;
+			#(FULL_CLOCK);
+			beginCalc = 0;
 
-            if (i % 100 == 0) 
+            if (i % 50 == 0) 
                 $display("Simulated %d samples\n", i);
             
         end

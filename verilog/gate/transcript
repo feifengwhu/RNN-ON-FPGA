@@ -414,3 +414,118 @@ run -all
 # 
 # Simulated           0 samples
 # 
+vsim -voptargs=+acc work.tb_dot_prod
+# End time: 17:06:03 on Apr 14,2016, Elapsed time: 1:03:49
+# Errors: 0, Warnings: 0
+# vsim -voptargs="+acc" work.tb_dot_prod 
+# Start time: 17:06:03 on Apr 14,2016
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Note: (vopt-143) Recognized 1 FSM in module "gate(fast)".
+# Loading work.tb_dot_prod(fast)
+# Loading work.gate(fast)
+# Loading work.dot_prod(fast)
+# Loading work.dot_prod(fast__1)
+# Loading work.weightRAM(fast)
+# Loading work.weightRAM(fast__1)
+do wave.do
+run -all
+# Simulation started at 0.000000
+# OUTPUT 151553
+# 
+# Simulated           0 samples
+# 
+vsim -voptargs=+acc work.tb_dot_prod
+# End time: 17:10:53 on Apr 14,2016, Elapsed time: 0:04:50
+# Errors: 0, Warnings: 0
+# vsim -voptargs="+acc" work.tb_dot_prod 
+# Start time: 17:10:53 on Apr 14,2016
+# ** Note: (vsim-8009) Loading existing optimized design _opt1
+# Loading work.tb_dot_prod(fast)
+# Loading work.gate(fast)
+# Loading work.dot_prod(fast)
+# Loading work.dot_prod(fast__1)
+# Loading work.weightRAM(fast)
+# Loading work.weightRAM(fast__1)
+do wave.do
+run -all
+# Simulation started at 0.000000
+# OUTPUT 151553
+# 
+# Simulated           0 samples
+# 
+vsim -voptargs=+acc work.tb_dot_prod
+# End time: 17:18:22 on Apr 14,2016, Elapsed time: 0:07:29
+# Errors: 0, Warnings: 0
+# vsim -voptargs="+acc" work.tb_dot_prod 
+# Start time: 17:18:22 on Apr 14,2016
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.tb_dot_prod(fast)
+# Loading work.gate(fast)
+# Loading work.dot_prod(fast)
+# Loading work.dot_prod(fast__1)
+# Loading work.weightRAM(fast)
+# Loading work.weightRAM(fast__1)
+do wave.do
+run -all
+# Simulation started at 0.000000
+# Simulated           0 samples
+# 
+add wave -position insertpoint  \
+sim:/tb_dot_prod/beginCalc
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf /home/josefonseca/thesis/verilog/gate/wave.do
+vsim -voptargs=+acc work.tb_dot_prod
+# End time: 17:19:25 on Apr 14,2016, Elapsed time: 0:01:03
+# Errors: 0, Warnings: 0
+# vsim -voptargs="+acc" work.tb_dot_prod 
+# Start time: 17:19:25 on Apr 14,2016
+# ** Note: (vsim-8009) Loading existing optimized design _opt1
+# Loading work.tb_dot_prod(fast)
+# Loading work.gate(fast)
+# Loading work.dot_prod(fast)
+# Loading work.dot_prod(fast__1)
+# Loading work.weightRAM(fast)
+# Loading work.weightRAM(fast__1)
+do wave.do
+run -all
+# Simulation started at 0.000000
+# Simulated           0 samples
+# 
+vsim -voptargs=+acc work.tb_dot_prod
+# End time: 17:27:26 on Apr 14,2016, Elapsed time: 0:08:01
+# Errors: 0, Warnings: 0
+# vsim -voptargs="+acc" work.tb_dot_prod 
+# Start time: 17:27:26 on Apr 14,2016
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.tb_dot_prod(fast)
+# Loading work.gate(fast)
+# Loading work.dot_prod(fast)
+# Loading work.dot_prod(fast__1)
+# Loading work.weightRAM(fast)
+# Loading work.weightRAM(fast__1)
+do wave.do
+run -all
+# Simulation started at 0.000000
+# Simulated           0 samples
+# 
+# Simulated          50 samples
+# 
+# Simulated         100 samples
+# 
+# Simulated         150 samples
+# 
+# Simulated         200 samples
+# 
+# Simulated         250 samples
+# 
+# Simulated         300 samples
+# 
+# Simulated         350 samples
+# 
+# Simulated         400 samples
+# 
+# Simulated         450 samples
+# 
+# ** Note: $stop    : tb_gate.v(108)
+#    Time: 36006 ns  Iteration: 0  Instance: /tb_dot_prod
+# Break in Module tb_dot_prod at tb_gate.v line 108
+do wave.do
