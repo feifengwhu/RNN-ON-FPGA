@@ -17,9 +17,10 @@ module gate     #(parameter INPUT_SZ  = 8,
                   gateOutput);
    
 	// Dependent Parameters
-    parameter BITWIDTH = QN + QM + 1;
-    parameter LAYER_BITWIDTH = BITWIDTH*HIDDEN_SZ;
-	parameter ADDR_BITWIDTH  = $ln(INPUT_SZ)/$ln(2);
+    parameter BITWIDTH         = QN + QM + 1;
+    parameter LAYER_BITWIDTH   = BITWIDTH*HIDDEN_SZ;
+	parameter ADDR_BITWIDTH_X  = $ln(INPUT_SZ)/$ln(2);
+	parameter ADDR_BITWIDTH    = $ln(HIDDEN_SZ)/$ln(2);
 	
 	// State tags
 	parameter IDLE       = 3'd0;
@@ -38,40 +39,52 @@ module gate     #(parameter INPUT_SZ  = 8,
 	input signed                        beginCalc;
 	input                               clock;
 	input                               reset;
-	output reg     [ADDR_BITWIDTH-1:0]  colAddress_X;
-	output reg     [ADDR_BITWIDTH-1:0]  colAddress_Y;
-	output reg	    					dataReady_gate;
-	output reg    [LAYER_BITWIDTH-1:0]  gateOutput;
+	output wire        [ADDR_BITWIDTH_X-1:0] 	colAddress_X;
+	output wire        [ADDR_BITWIDTH-1:0]  colAddress_Y;
+	output reg	    					    dataReady_gate;
+	output reg signed [LAYER_BITWIDTH-1:0]  gateOutput;
 	
 	// Internal Registers
-	reg signed [LAYER_BITWIDTH-1:0] outputVec_X;
-	reg signed [LAYER_BITWIDTH-1:0] outputVec_Y;
+	wire signed [LAYER_BITWIDTH-1:0] outputVec_X;
+	wire signed [LAYER_BITWIDTH-1:0] outputVec_Y;
 	reg signed [LAYER_BITWIDTH-1:0] adder_X;
 	wire dataReady_X;
 	wire dataReady_Y;
+	wire reset_dotProd_X;
+	wire reset_dotProd_Y;
 	reg [2:0] state;
 	reg [2:0] NEXTstate;
 	integer i;
-	
-	// DUT Instantiation
-    dot_prod  #(HIDDEN_SZ,INPUT_SZ,QN,QM,DSP48_PER_ROW)  DOTPROD_X (weightMem_X, inputVec, clock, reset, dataReady_X, colAddress_X, outputVec_X);  
-    dot_prod  #(HIDDEN_SZ,HIDDEN_SZ,QN,QM,DSP48_PER_ROW) DOTPROD_Y (weightMem_Y, prevLayerOut, clock, reset, dataReady_Y, colAddress_Y, outputVec_Y);
-    
+
     // Control signals 
     reg enable_dotprodX;
 	reg enable_dotprodY;
-	reg enable_sumX;
-	reg enable_sumY;
+	
+	// Logical OR between the enable signals and the global reset
+	assign reset_dotProd_X = reset || !enable_dotprodX;
+	assign reset_dotProd_Y = reset || !enable_dotprodY;
+	
+	// DUT Instantiation
+    dot_prod  #(HIDDEN_SZ,INPUT_SZ,QN,QM,DSP48_PER_ROW)  DOTPROD_X (weightMem_X, inputVec, clock, reset_dotProd_X, dataReady_X, colAddress_X, outputVec_X);  
+    dot_prod  #(HIDDEN_SZ,HIDDEN_SZ,QN,QM,DSP48_PER_ROW) DOTPROD_Y (weightMem_Y, prevLayerOut, clock, reset_dotProd_Y, dataReady_Y, colAddress_Y, outputVec_Y);
+    
+
+	
+	// Resets the gate registers
+	always @(posedge reset) begin
+		gateOutput <= {LAYER_BITWIDTH{1'b0}};
+		adder_X    <= {LAYER_BITWIDTH{1'b0}};
+	end
 	
     // The bias and X sum unit
-    always @(posedge enable_sumX) begin
+    always @(posedge dataReady_X) begin
 		for (i = 0; i < HIDDEN_SZ; i = i + 1) begin
 			adder_X[i*BITWIDTH +: BITWIDTH] <= outputVec_X[i*BITWIDTH +: BITWIDTH] + biasVec[i*BITWIDTH +: BITWIDTH];
 		end
 	end
     
     // The X and Y sum unit
-    always @(posedge enable_sumY) begin
+    always @(posedge dataReady_Y) begin
 		for (i = 0; i < HIDDEN_SZ; i = i + 1) begin
 			gateOutput[i*BITWIDTH +: BITWIDTH] <= adder_X[i*BITWIDTH +: BITWIDTH] + outputVec_Y[i*BITWIDTH +: BITWIDTH];
 		end
@@ -133,8 +146,6 @@ module gate     #(parameter INPUT_SZ  = 8,
 			begin
 				enable_dotprodX = 1'b0;
 				enable_dotprodY = 1'b0;
-				enable_sumX     = 1'b0;
-				enable_sumY     = 1'b0;
 				dataReady_gate  = 1'b0;
 			end
 			
@@ -142,17 +153,13 @@ module gate     #(parameter INPUT_SZ  = 8,
 			begin
 				enable_dotprodX = 1'b1;
 				enable_dotprodY = 1'b1;
-				enable_sumX     = 1'b0;
-				enable_sumY     = 1'b0;
 				dataReady_gate  = 1'b0;
 			end
 			
 			SUM_X :
 			begin
-				enable_dotprodX = 1'b1;
+				enable_dotprodX = 1'b0;
 				enable_dotprodY = 1'b1;
-				enable_sumX     = 1'b1;
-				enable_sumY     = 1'b0;
 				dataReady_gate  = 1'b0;
 			end
 			
@@ -160,17 +167,13 @@ module gate     #(parameter INPUT_SZ  = 8,
 			begin
 				enable_dotprodX = 1'b0;
 				enable_dotprodY = 1'b1;
-				enable_sumX     = 1'b0;
-				enable_sumY     = 1'b0;
 				dataReady_gate  = 1'b0;
 			end
 			
 			SUM_Y :
 			begin
 				enable_dotprodX = 1'b0;
-				enable_dotprodY = 1'b1;
-				enable_sumX     = 1'b0;
-				enable_sumY     = 1'b1;
+				enable_dotprodY = 1'b0;
 				dataReady_gate  = 1'b0;
 			end
 			
@@ -178,8 +181,6 @@ module gate     #(parameter INPUT_SZ  = 8,
 			begin
 				enable_dotprodX = 1'b0;
 				enable_dotprodY = 1'b0;
-				enable_sumX     = 1'b0;
-				enable_sumY     = 1'b0;
 				dataReady_gate  = 1'b1;
 			end
 		endcase
