@@ -4,19 +4,26 @@ def real_to_Qnm(real, n, m):
     if(real >= 0):
         return int(np.round(real*(2**m)).astype(int))
     else:
-        return int(2**18 + np.round(real*(2**m)).astype(int))
+        return int(2**(n+m+1) + np.round(real*(2**m)).astype(int))
 def Qnm_to_real(real, n, m):
+    real = int(real) & int(2**(n+m+1)-1)
     if(real >= 2**(n+m)):
         return (real-2**(n+m+1))/(2**m)
     else:
         return real/(2**m)
 
-NUM_MATRICES = 2
+def sign_ext(value, newSize, oldSize):
+    if(value >= 2**(oldSize-1)):
+        return value + 2**(newSize) - 2**(oldSize)
+    else: 
+        return value
+
+NUM_MATRICES = 1000
 NROW         = 16
 NCOL         = 8
-QN           = 6
+QN           = 9
 QM           = 11
-WMAX         = 7
+WMAX         = 11
 fin_W  = open('goldenIn_W.bin', 'w')
 fin_x  = open('goldenIn_x.bin', 'w')
 fout   = open('goldenOut.bin' , 'w')
@@ -40,11 +47,17 @@ for n in range(NUM_MATRICES) :
         fin_W.write("\n")
 
     y  = np.dot(W,x)    
-    yq = np.dot(Wq,xq)
+    yq = np.zeros_like(y)
+
+    for i in range(NROW):
+        for j in range(NCOL):
+            yq[i,0] += (int(sign_ext(Wq[i,j], 2*(QN+QM)+1,QN+QM+1) * sign_ext(xq[j,0], 2*(QN+QM)+1,QN+QM+1)/(2**QM)) & int(2**(QN+QM+1)-1))
+
+    #yq = np.dot(Wq,xq)
     yrec = np.zeros_like(yq)
  
     for i in range(NROW):
-        yq[i,0]   = int(yq[i,0]/(2**11)) & int(0x3ffff)
+        #yq[i,0]   = int(yq[i,0]/(2**11)) & int(0x3ffff)
         yrec[i,0] = Qnm_to_real(yq[i,0],QN,QM)
         fout.write("{0:018b} ".format(int(yq[i,0])))
     
