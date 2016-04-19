@@ -18,12 +18,12 @@ def sign_ext(value, newSize, oldSize):
     else: 
         return value
 
-NUM_MATRICES = 1000
+NUM_MATRICES = 1
 NROW         = 16
 NCOL         = 8
-QN           = 9
+QN           = 6
 QM           = 11
-WMAX         = 11
+WMAX         = 7
 fin_W  = open('goldenIn_W.bin', 'w')
 fin_x  = open('goldenIn_x.bin', 'w')
 fout   = open('goldenOut.bin' , 'w')
@@ -39,12 +39,12 @@ for n in range(NUM_MATRICES) :
 
     for i in range(NCOL):
         xq[i,0] = real_to_Qnm(x[i,0],QN,QM)
+        fin_x.write("{0:018b}\n".format(int(xq[i,0])))
 
     for i in range(NROW) :
         for j in range(NCOL) :
             Wq[i,j] = real_to_Qnm(W[i,j],QN,QM)
-            fin_W.write("{0:018b} ".format(int(Wq[i,j])))
-        fin_W.write("\n")
+            fin_W.write("{0:018b}\n".format(int(Wq[i,j])))
 
     y  = np.dot(W,x)    
     yq = np.zeros_like(y)
@@ -59,7 +59,7 @@ for n in range(NUM_MATRICES) :
     for i in range(NROW):
         #yq[i,0]   = int(yq[i,0]/(2**11)) & int(0x3ffff)
         yrec[i,0] = Qnm_to_real(yq[i,0],QN,QM)
-        fout.write("{0:018b} ".format(int(yq[i,0])))
+        fout.write("{0:018b}\n".format(int(yq[i,0]) & int(2**(QN+QM+1)-1)))
     
     fout.write("\n")
     quantError += sum(y-yrec)

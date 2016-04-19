@@ -12,8 +12,10 @@ add wave -noupdate /tb_dot_prod/DOTPROD/inputVector
 add wave -noupdate /tb_dot_prod/DOTPROD/weightRow
 add wave -noupdate /tb_dot_prod/DOTPROD/outputMAC_interm
 add wave -noupdate /tb_dot_prod/DOTPROD/outputVector
+add wave -noupdate /tb_dot_prod/WRAM/RAM_matrix
+add wave -noupdate /tb_dot_prod/CURRcolAddress
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {70524 ps} 0}
+WaveRestoreCursors {{Cursor 1} {6841 ps} 0}
 quietly wave cursor active 1
 configure wave -namecolwidth 475
 configure wave -valuecolwidth 100
@@ -29,4 +31,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits ps
 update
-WaveRestoreZoom {956671 ps} {1005439 ps}
+WaveRestoreZoom {0 ps} {29523 ps}
