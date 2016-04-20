@@ -18,7 +18,7 @@ def sign_ext(value, newSize, oldSize):
     else: 
         return value
 
-NUM_MATRICES = 1
+NUM_MATRICES = 5
 NROW         = 16
 NCOL         = 8
 QN           = 6
@@ -62,7 +62,6 @@ for n in range(NUM_MATRICES) :
         #fout.write("{0:018b}\n".format(int(yq[i,0]) & int(2**(QN+QM+1)-1)))
         fout.write("{0:018b}\n".format(real_to_Qnm(y[i,0],QN,QM)))
     
-    fout.write("\n")
     quantError += sum(y-yrec)
 
 print("Quantizaion Error: ", quantError/(NUM_MATRICES*NROW))
