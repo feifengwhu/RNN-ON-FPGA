@@ -20,7 +20,7 @@ module tb_dot_prod();
 
     // The golden inputs/outputs ROM
     reg  [BITWIDTH-1:0] ROM_input     [0:NCOL-1];   
-    reg  [BITWIDTH-1:0] ROM_goldenOut [0:MAX_SAMPLES-1];   
+    reg  [BITWIDTH-1:0] ROM_goldenOut [0:NROW-1];   
 
     // DUT Connecting wires/regs
     wire [MEMORY_BITWIDTH-1:0]   weightMemOutput;
@@ -34,7 +34,7 @@ module tb_dot_prod();
 
     // File descriptors for the error/output dumps
     integer fid, fid_error_dump;
-    integer i;
+    integer i, j;
     
     // Clock generation
     always begin
@@ -59,13 +59,17 @@ module tb_dot_prod();
     dot_prod   #(NROW,NCOL,QN,QM,DSP48_PER_ROW) DOTPROD  (weightMemOutput, inputVec, clock, reset, dataReady, colAddress, outputVec);  
     weightRAM  #(NROW,NCOL,BITWIDTH)            WRAM     (colAddress, clock, reset, weightMemOutput);
     
-    always @(posedge clock) begin
-        inputVec <= ROM_input[colAddress];
+    always @(negedge clock) begin
+        if (reset == 1'b1)
+            inputVec = {BITWIDTH{1'b0}};
+        else
+            inputVec = ROM_input[colAddress];
     end
 
     // Keeping track of the simulation time
-    real time_start, time_end;
-
+    real time_start, time_end; 
+    real quantError=0;
+    
     // Running the simulation
     initial begin
         time_start = $realtime;
@@ -80,14 +84,23 @@ module tb_dot_prod();
 
         for(i=0; i < MAX_SAMPLES; i = i + 1) begin
             @(posedge dataReady);
+            
             #(HALF_CLOCK);
-            $display("OUTPUT %b  ---- REAL %b\n", outputVec[17:0], ROM_goldenOut[0]);
+            
+            for(j=0; j < NROW ; j = j + 1) begin
+                //$display("OUTPUT %b  ---- REAL %b\n", outputVec[j*BITWIDTH+:BITWIDTH], ROM_goldenOut[j]);
+                //$fwrite(fid, "0x%X\n", outputVec[j*BITWIDTH+:BITWIDTH]);
+                quantError = quantError + (ROM_goldenOut[j] - outputVec[j*BITWIDTH+:BITWIDTH])/(2.0**QM);
+                $display("Error: %b\n", ROM_goldenOut[j] ^ outputVec[j*BITWIDTH+:BITWIDTH]);
+            end
 
             if (i % 1000 == 0) 
                 $display("Simulated %d samples\n", i);
             
         end
-        
+       
+        $display("Average Quantization Error: %f", quantError/(MAX_SAMPLES*NROW));
+ 
         $stop;
     end
 endmodule

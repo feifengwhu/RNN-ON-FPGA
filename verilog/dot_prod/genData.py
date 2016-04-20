@@ -23,7 +23,7 @@ NROW         = 16
 NCOL         = 8
 QN           = 6
 QM           = 11
-WMAX         = 7
+WMAX         = 5
 fin_W  = open('goldenIn_W.bin', 'w')
 fin_x  = open('goldenIn_x.bin', 'w')
 fout   = open('goldenOut.bin' , 'w')
@@ -59,7 +59,8 @@ for n in range(NUM_MATRICES) :
     for i in range(NROW):
         #yq[i,0]   = int(yq[i,0]/(2**11)) & int(0x3ffff)
         yrec[i,0] = Qnm_to_real(yq[i,0],QN,QM)
-        fout.write("{0:018b}\n".format(int(yq[i,0]) & int(2**(QN+QM+1)-1)))
+        #fout.write("{0:018b}\n".format(int(yq[i,0]) & int(2**(QN+QM+1)-1)))
+        fout.write("{0:018b}\n".format(real_to_Qnm(y[i,0],QN,QM)))
     
     fout.write("\n")
     quantError += sum(y-yrec)

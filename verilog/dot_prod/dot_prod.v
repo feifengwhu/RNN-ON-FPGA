@@ -117,7 +117,7 @@ module dot_prod #(parameter NROW = 16,
             outputMAC_interm = {DSP48_OUTPUT_BITWIDTH{1'b0}};
         else
             for(i = 0; i < N_DSP48; i = i + 1) begin
-                outputMAC_interm[i*MAC_BITWIDTH +: MAC_BITWIDTH] = weightMAC[i*BITWIDTH +: BITWIDTH] * inputVector;
+                outputMAC_interm[i*MAC_BITWIDTH +: MAC_BITWIDTH] = {{(QM+QN){weightMAC[(i+1)*BITWIDTH-1]}}, weightMAC[i*BITWIDTH +: BITWIDTH]} * {{(QM+QM){inputVector[BITWIDTH-1]}}, inputVector};
             end
     end
     
