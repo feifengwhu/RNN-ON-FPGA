@@ -16,7 +16,7 @@ module tb_dot_prod();
 	parameter ADDR_BITWIDTH     = $ln(NCOL)/$ln(2);
     parameter HALF_CLOCK        = 1;
     parameter FULL_CLOCK        = 2*HALF_CLOCK;
-    parameter MAX_SAMPLES       = 5;
+    parameter MAX_SAMPLES       = 50;
 
     // The golden inputs/outputs ROM
     reg  [BITWIDTH-1:0] ROM_input     [0:MAX_SAMPLES-1] [0:NCOL-1];   
@@ -38,7 +38,7 @@ module tb_dot_prod();
 
     // File descriptors for the error/output dumps
     integer fid, fid_error_dump;
-    integer i=0, j, k=0, l;
+    integer i=0, j=0, k=0, l=0;
     
     // Clock generation
     always begin
@@ -55,8 +55,8 @@ module tb_dot_prod();
         $readmemb("goldenIn_x.bin", ROM_input);
         $readmemb("goldenIn_W.bin", ROM_weights);
         $readmemb("goldenOut.bin", ROM_goldenOut);
-        fid_error_dump = $fopen("error_dump.txt", "w");
-        fid = $fopen("myout.hex", "w");
+        //fid_error_dump = $fopen("error_dump.txt", "w");
+        //fid = $fopen("myout.hex", "w");
         
     end
     
@@ -106,12 +106,12 @@ module tb_dot_prod();
             #(HALF_CLOCK);
             
             for(j=0; j < NROW ; j = j + 1) begin
-                $display("OUTPUT %b  ---- REAL %b\n", outputVec[j*BITWIDTH+:BITWIDTH], ROM_goldenOut[i][j]);
+                $display("OUTP %b\nREAL %b\n", outputVec[j*BITWIDTH+:BITWIDTH], ROM_goldenOut[i][j]);
                 //$fwrite(fid, "0x%X\n", outputVec[j*BITWIDTH+:BITWIDTH]);
-                quantError = quantError + (ROM_goldenOut[i][j] - outputVec[j*BITWIDTH+:BITWIDTH])/(2.0**QM);
-                //$display("Error: %b\n", ROM_goldenOut[i][j] ^ outputVec[j*BITWIDTH+:BITWIDTH]);
+                quantError = quantError + (ROM_goldenOut[i][j] ^ outputVec[j*BITWIDTH+:BITWIDTH])/(2.0**QM);
+                //$display("Error: %b\n", ROM_goldenOut[i][j][j*BITWIDTH+:BITWIDTH] ^ outputVec[j*BITWIDTH+:BITWIDTH]);
             end
-    
+ 
             @(posedge clock);
             
             reset   <= 1;
@@ -120,14 +120,14 @@ module tb_dot_prod();
             for(k = 0; k < NCOL; k = k + 1) begin
                 colAddressWrite <= k;
                 for(l = 0; l < NROW; l = l + 1) begin
-                    weightMemInput[l*BITWIDTH+:BITWIDTH] <= ROM_weights[i][l][k];
+                    weightMemInput[l*BITWIDTH+:BITWIDTH] <= ROM_weights[i+1][l][k];
                 end
                 @(posedge clock);
             end
             reset <= 0;
             writeEn <= 0;
             
-            if (i % 1000 == 0) 
+            if (i % 50 == 0) 
                 $display("Simulated %d samples\n", i);
             
         end

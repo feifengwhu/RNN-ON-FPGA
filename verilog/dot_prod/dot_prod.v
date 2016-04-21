@@ -39,6 +39,7 @@ module dot_prod #(parameter NROW = 16,
     reg [1:0] NEXTstate;
     reg [ADDR_BITWIDTH-1:0] NEXTcolAddress;
     reg [MUX_BITWIDTH-1:0] NEXTrowMux;
+    reg outputEn;
     parameter IDLE = 2'd0;
     parameter CALC = 2'd1;
     parameter END  = 2'd2;
@@ -77,33 +78,41 @@ module dot_prod #(parameter NROW = 16,
         case(state)
             IDLE : 
             begin
-                dataReady = 1'b0;
+                dataReady      = 1'b0;
                 NEXTcolAddress = {ADDR_BITWIDTH{1'b0}};      
                 NEXTrowMux     = 1'b0;      
+                outputEn       = 1'b0;
             end
             CALC :
             begin
-                dataReady = 1'b0;
+                dataReady      = 1'b0;
                 NEXTcolAddress = colAddress + 1; 
                 if(colAddress == NCOL - 1)
                     NEXTrowMux = rowMux + 1;
                 else
                     NEXTrowMux = rowMux;
+                outputEn       = 1'b1;
             end
             END :
             begin
-                dataReady = 1'b1;
+                dataReady      = 1'b1;
                 NEXTcolAddress = {ADDR_BITWIDTH{1'b0}};      
                 NEXTrowMux     = 1'b0;      
+                outputEn       = 1'b1;
             end
             default:
-                dataReady = 1'b0;
+            begin
+                dataReady      = 1'b0;
+                NEXTcolAddress = {ADDR_BITWIDTH{1'b0}};      
+                NEXTrowMux     = 1'b0;      
+                outputEn       = 1'b0;
+            end
         endcase   
     end
 
     // The MAC multiplexer that selects the appropriate weight row for the MAC
     always @(*) begin
-        if (reset == 1'b1) 
+        if (reset == 1'b1 | outputEn == 1'b0) 
             weightMAC = {DSP48_INPUT_BITWIDTH{1'b0}};
         else
             for(i = 0; i < N_DSP48; i = i + 1) begin
@@ -112,18 +121,18 @@ module dot_prod #(parameter NROW = 16,
     end
     
     // The DSP Slices
-    always @(*) begin 
-        if (reset == 1'b1)
+    always @(posedge clk) begin 
+        if (reset == 1'b1 | outputEn == 1'b0)
             outputMAC_interm = {DSP48_OUTPUT_BITWIDTH{1'b0}};
         else
             for(i = 0; i < N_DSP48; i = i + 1) begin
-                outputMAC_interm[i*MAC_BITWIDTH +: MAC_BITWIDTH] = {{(QM+QN){weightMAC[(i+1)*BITWIDTH-1]}}, weightMAC[i*BITWIDTH +: BITWIDTH]} * {{(QM+QM){inputVector[BITWIDTH-1]}}, inputVector};
+                outputMAC_interm[i*MAC_BITWIDTH +: MAC_BITWIDTH] = {{(QM+QN+1){weightMAC[(i+1)*BITWIDTH-1]}}, weightMAC[i*BITWIDTH +: BITWIDTH]} * {{(QM+QM+1){inputVector[BITWIDTH-1]}}, inputVector};
             end
     end
     
     // The output vector and adder
     always @(posedge clk) begin
-        if (reset == 1'b1)
+        if (reset == 1'b1 | outputEn == 1'b0)
             outputVector <= {LAYER_BITWIDTH{1'b0}};
         else
             if (dataReady == 1'b0) begin

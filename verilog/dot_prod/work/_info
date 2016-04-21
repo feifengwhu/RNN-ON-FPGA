@@ -27,30 +27,40 @@ n@_opt1
 R3
 R0
 T_opt2
-!s110 1461246697
-V[5XSnl^1DlT>=ZJYTa@A^1
+!s110 1461256406
+VmW9^K<Ol^4cfdUVP:f4`:0
 R1
-=1-d43d7e359f7e-5718dae9-305c2-113c
+=1-d43d7e359f7e-571900d6-9aa30-1eb0
 R2
 n@_opt2
 R3
 R0
 T_opt3
-!s110 1461246713
-VCCe`ZDT:;[j=4NW9iFJlX2
+!s110 1461254995
+Vc0^0fGmA[<`:CBFNcVFgJ2
 R1
-=1-d43d7e359f7e-5718daf9-362c8-1146
+=1-d43d7e359f7e-5718fb53-57c86-1b99
 R4
 n@_opt3
 R3
+R0
+T_opt4
+!s110 1461256075
+VaU83UOP=^z<Mi?SR]RUAC2
+R1
+=1-d43d7e359f7e-5718ff8b-36323-1d5d
+R2
+n@_opt4
+R3
+R0
 vdot_prod
-Z5 !s110 1461246694
+Z5 !s110 1461256412
 !i10b 1
-!s100 63^fYLV5fbdI:A`D3^>0W0
-IX_dge6m:=af?4g>eFLXWT2
+!s100 AHbZ0gRJJCRMTh36n4TjQ1
+IR1Z7l>XS<fCa`bH:=60b@2
 Z6 VDg1SIo80bB@j0V0VzS_@n1
 R0
-w1461149214
+w1461252104
 8dot_prod.v
 Fdot_prod.v
 L0 1
@@ -58,7 +68,7 @@ Z7 OL;L;10.4c_5;61
 r1
 !s85 0
 31
-Z8 !s108 1461246694.000000
+Z8 !s108 1461256412.000000
 Z9 !s107 weightRAM.v|tb_dot_prod.v|dot_prod.v|
 Z10 !s90 dot_prod.v|tb_dot_prod.v|weightRAM.v|
 !i113 0
@@ -66,11 +76,11 @@ Z11 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 vtb_dot_prod
 R5
 !i10b 1
-!s100 0Q^_8=3?@m6HmmhOhJHLb2
-I[jZHN1?EkPTe<?4YA_?<U1
+!s100 =XMoi0j`9OEI?Z;eKz_kG3
+IbeReDmjzZc3SDAGZQX3A73
 R6
 R0
-w1461246692
+w1461256402
 8tb_dot_prod.v
 Ftb_dot_prod.v
 L0 3
