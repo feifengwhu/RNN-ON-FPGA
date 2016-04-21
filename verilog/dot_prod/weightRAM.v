@@ -11,14 +11,14 @@ module weightRAM #(parameter NROW = 16,
    
     // Dependent parameters
     parameter OUTPUT_PORT_SIZE = BITWIDTH*NROW;
-    parameter ADDR_BITWIDTH = $ln(NCOL)/$ln(2);
+    parameter ADDR_BITWIDTH    = $ln(NCOL)/$ln(2);
     
     // The input/output definitions
-    input       [ADDR_BITWIDTH-1:0] addressIn;
-    input       [ADDR_BITWIDTH-1:0] addressOut;
-    input                           clk;
-    input                           reset;
-    input                           writeEn;
+    input       [ADDR_BITWIDTH-1:0]     addressIn;
+    input       [ADDR_BITWIDTH-1:0]     addressOut;
+    input                               clk;
+    input                               reset;
+    input                               writeEn;
     output reg  [OUTPUT_PORT_SIZE-1:0]  rowOut;
     input       [OUTPUT_PORT_SIZE-1:0]  rowIn;
 

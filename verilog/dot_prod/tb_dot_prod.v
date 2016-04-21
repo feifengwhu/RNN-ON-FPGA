@@ -26,7 +26,7 @@ module tb_dot_prod();
     // DUT Connecting wires/regs
     wire [MEMORY_BITWIDTH-1:0]   weightMemOutput;
     wire [ADDR_BITWIDTH-1:0]     colAddressRead;
-    reg  [ADDR_BITWIDTH-1:0]     colAddressWrite;
+    reg  [ADDR_BITWIDTH-1:0]     colAddressWrite = {ADDR_BITWIDTH{1'b0}};
     reg  [MEMORY_BITWIDTH-1:0]   weightMemInput;
     reg                          writeEn;
     wire [MEMORY_BITWIDTH-1:0]   outputVec;
@@ -87,7 +87,8 @@ module tb_dot_prod();
         clock   = 1;
         reset   = 0;
         
-        #(FULL_CLOCK);
+        @(posedge clock);
+        //#(FULL_CLOCK);
             reset   = 1;
             writeEn = 1;
             for(k = 0; k < NCOL; k = k + 1) begin
@@ -111,8 +112,8 @@ module tb_dot_prod();
                 //$display("Error: %b\n", ROM_goldenOut[i][j] ^ outputVec[j*BITWIDTH+:BITWIDTH]);
             end
     
-            #(HALF_CLOCK);            
-
+            @(posedge clock);
+            
             reset   <= 1;
             writeEn <= 1;
 
