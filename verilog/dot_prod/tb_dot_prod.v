@@ -3,8 +3,8 @@
 module tb_dot_prod();
     
     // User defined parameters
-    parameter NROW = 16;
-    parameter NCOL = 8;
+    parameter NROW = 32;
+    parameter NCOL = 2;
     parameter QN   = 6;
     parameter QM   = 11;
     parameter DSP48_PER_ROW    = 4; 
@@ -16,7 +16,7 @@ module tb_dot_prod();
 	parameter ADDR_BITWIDTH     = $ln(NCOL)/$ln(2);
     parameter HALF_CLOCK        = 1;
     parameter FULL_CLOCK        = 2*HALF_CLOCK;
-    parameter MAX_SAMPLES       = 50;
+    parameter MAX_SAMPLES       = 5;
 
     // The golden inputs/outputs ROM
     reg  [BITWIDTH-1:0] ROM_input     [0:MAX_SAMPLES-1] [0:NCOL-1];   
@@ -106,10 +106,10 @@ module tb_dot_prod();
             #(HALF_CLOCK);
             
             for(j=0; j < NROW ; j = j + 1) begin
-                $display("OUTP %b\nREAL %b\n", outputVec[j*BITWIDTH+:BITWIDTH], ROM_goldenOut[i][j]);
-                //$fwrite(fid, "0x%X\n", outputVec[j*BITWIDTH+:BITWIDTH]);
+                $display("OUTP %b\nREAL %b", outputVec[j*BITWIDTH+:BITWIDTH], ROM_goldenOut[i][j]);
+                //$fwrite(fid, "0x%X", outputVec[j*BITWIDTH+:BITWIDTH]);
                 quantError = quantError + (ROM_goldenOut[i][j] ^ outputVec[j*BITWIDTH+:BITWIDTH])/(2.0**QM);
-                //$display("Error: %b\n", ROM_goldenOut[i][j][j*BITWIDTH+:BITWIDTH] ^ outputVec[j*BITWIDTH+:BITWIDTH]);
+                //$display("Error: %b",(ROM_goldenOut[i][j] ^ outputVec[j*BITWIDTH+:BITWIDTH]) & ({ {(QN+1){1'b1}}, {(QM){1'b0}} }));
             end
  
             @(posedge clock);

@@ -18,12 +18,12 @@ def sign_ext(value, newSize, oldSize):
     else: 
         return value
 
-NUM_MATRICES = 500
-NROW         = 16
-NCOL         = 8
+NUM_MATRICES = 100
+NROW         = 32
+NCOL         = 2
 QN           = 6
 QM           = 11
-WMAX         = 5
+WMAX         = 7
 fin_W  = open('goldenIn_W.bin', 'w')
 fin_x  = open('goldenIn_x.bin', 'w')
 fout   = open('goldenOut.bin' , 'w')
