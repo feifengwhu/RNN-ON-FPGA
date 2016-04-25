@@ -1,3 +1,6 @@
+# vsim -c -do "run -all" tb_gate 
+# Start time: 19:17:50 on Apr 25,2016
+# ** Note: (vsim-3812) Design is being optimized...
 # //  Questa Sim-64
 # //  Version 10.4c_5 linux_x86_64 Nov 14 2015
 # //
@@ -13,519 +16,189 @@
 # //  FURTHERMORE, THIS INFORMATION IS PROHIBITED FROM DISCLOSURE UNDER
 # //  THE TRADE SECRETS ACT, 18 U.S.C. SECTION 1905.
 # //
-vsim -voptargs=+acc work.tb_dot_prod
-# vsim -voptargs="+acc" work.tb_dot_prod 
-# Start time: 10:24:35 on Apr 14,2016
-# ** Note: (vsim-3812) Design is being optimized...
-# ** Note: (vopt-143) Recognized 1 FSM in module "dot_prod(fast)".
-# ** Note: (vopt-143) Recognized 1 FSM in module "dot_prod(fast__1)".
-# ** Note: (vopt-143) Recognized 1 FSM in module "gate(fast)".
-# Loading work.tb_dot_prod(fast)
-# Loading work.gate(fast)
-# Loading work.dot_prod(fast)
-# Loading work.dot_prod(fast__1)
-# Loading work.weightRAM(fast)
-# ** Warning: (vsim-3015) tb_gate.v(67): [PCDPC] - Port size (18) does not match connection size (288) for port 'inputVec'. The port definition is at: gate.v(6).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_dot_prod/GATE File: gate.v
-# ** Warning: (vsim-3015) tb_gate.v(67): [PCDPC] - Port size (18) does not match connection size (288) for port 'prevLayerOut'. The port definition is at: gate.v(7).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_dot_prod/GATE File: gate.v
-# ** Warning: (vsim-3015) gate.v(58): [PCDPC] - Port size (4) does not match connection size (3) for port 'colAddress'. The port definition is at: dot_prod.v(11).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_dot_prod/GATE/DOTPROD_Y File: dot_prod.v
-vsim -voptargs=+acc work.tb_dot_prod
-# End time: 10:38:01 on Apr 14,2016, Elapsed time: 0:13:26
-# Errors: 0, Warnings: 3
-# vsim -voptargs="+acc" work.tb_dot_prod 
-# Start time: 10:38:01 on Apr 14,2016
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# ** Note: (vopt-143) Recognized 1 FSM in module "gate(fast)".
-# Loading work.tb_dot_prod(fast)
-# Loading work.gate(fast)
-# Loading work.dot_prod(fast)
-# Loading work.dot_prod(fast__1)
-# Loading work.weightRAM(fast)
-# ** Warning: (vsim-3015) tb_gate.v(67): [PCDPC] - Port size (18) does not match connection size (288) for port 'inputVec'. The port definition is at: gate.v(6).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_dot_prod/GATE File: gate.v
-# ** Warning: (vsim-3015) tb_gate.v(67): [PCDPC] - Port size (18) does not match connection size (288) for port 'prevLayerOut'. The port definition is at: gate.v(7).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_dot_prod/GATE File: gate.v
-# ** Warning: (vsim-3015) tb_gate.v(67): [PCDPC] - Port size (4) does not match connection size (3) for port 'colAddress_Y'. The port definition is at: gate.v(15).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_dot_prod/GATE File: gate.v
-vsim -voptargs=+acc work.tb_dot_prod
-# End time: 10:39:14 on Apr 14,2016, Elapsed time: 0:01:13
-# Errors: 0, Warnings: 3
-# vsim -voptargs="+acc" work.tb_dot_prod 
-# Start time: 10:39:14 on Apr 14,2016
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading work.tb_dot_prod(fast)
-# Loading work.gate(fast)
-# Loading work.dot_prod(fast)
-# Loading work.dot_prod(fast__1)
-# Loading work.weightRAM(fast)
-# ** Warning: (vsim-3015) tb_gate.v(68): [PCDPC] - Port size (18) does not match connection size (288) for port 'inputVec'. The port definition is at: gate.v(6).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_dot_prod/GATE File: gate.v
-# ** Warning: (vsim-3015) tb_gate.v(68): [PCDPC] - Port size (18) does not match connection size (288) for port 'prevLayerOut'. The port definition is at: gate.v(7).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_dot_prod/GATE File: gate.v
-# ** Warning: (vsim-3015) tb_gate.v(68): [PCDPC] - Port size (4) does not match connection size (3) for port 'colAddress_Y'. The port definition is at: gate.v(15).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_dot_prod/GATE File: gate.v
-vsim -voptargs=+acc work.tb_dot_prod
-# End time: 10:43:31 on Apr 14,2016, Elapsed time: 0:04:17
-# Errors: 0, Warnings: 3
-# vsim -voptargs="+acc" work.tb_dot_prod 
-# Start time: 10:43:31 on Apr 14,2016
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading work.tb_dot_prod(fast)
-# Loading work.gate(fast)
-# Loading work.dot_prod(fast)
-# Loading work.dot_prod(fast__1)
-# Loading work.weightRAM(fast)
-# ** Warning: (vsim-3015) tb_gate.v(68): [PCDPC] - Port size (18) does not match connection size (288) for port 'inputVec'. The port definition is at: gate.v(6).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_dot_prod/GATE File: gate.v
-# ** Warning: (vsim-3015) tb_gate.v(68): [PCDPC] - Port size (18) does not match connection size (288) for port 'prevLayerOut'. The port definition is at: gate.v(7).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_dot_prod/GATE File: gate.v
-# ** Warning: (vsim-3015) tb_gate.v(68): [PCDPC] - Port size (3) does not match connection size (4) for port 'colAddress_X'. The port definition is at: gate.v(14).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_dot_prod/GATE File: gate.v
-# ** Warning: (vsim-3015) tb_gate.v(68): [PCDPC] - Port size (4) does not match connection size (3) for port 'colAddress_Y'. The port definition is at: gate.v(15).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_dot_prod/GATE File: gate.v
-# ** Warning: (vsim-3015) tb_gate.v(70): [PCDPC] - Port size (3) does not match connection size (4) for port 'address'. The port definition is at: weightRAM.v(4).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_dot_prod/WRAM_X File: weightRAM.v
-vsim -voptargs=+acc work.tb_dot_prod
-# End time: 10:48:04 on Apr 14,2016, Elapsed time: 0:04:33
-# Errors: 0, Warnings: 5
-# vsim -voptargs="+acc" work.tb_dot_prod 
-# Start time: 10:48:04 on Apr 14,2016
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading work.tb_dot_prod(fast)
+# Loading work.tb_gate(fast)
 # Loading work.gate(fast)
 # Loading work.dot_prod(fast)
 # Loading work.dot_prod(fast__1)
 # Loading work.weightRAM(fast)
 # Loading work.weightRAM(fast__1)
-# ** Warning: (vsim-3015) tb_gate.v(68): [PCDPC] - Port size (18) does not match connection size (288) for port 'inputVec'. The port definition is at: gate.v(6).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_dot_prod/GATE File: gate.v
-# ** Warning: (vsim-3015) tb_gate.v(68): [PCDPC] - Port size (18) does not match connection size (288) for port 'prevLayerOut'. The port definition is at: gate.v(7).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_dot_prod/GATE File: gate.v
-# ** Warning: (vsim-3015) tb_gate.v(68): [PCDPC] - Port size (3) does not match connection size (4) for port 'colAddress_X'. The port definition is at: gate.v(14).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_dot_prod/GATE File: gate.v
-# ** Warning: (vsim-3015) tb_gate.v(68): [PCDPC] - Port size (4) does not match connection size (3) for port 'colAddress_Y'. The port definition is at: gate.v(15).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_dot_prod/GATE File: gate.v
-# ** Warning: (vsim-3015) tb_gate.v(70): [PCDPC] - Port size (3) does not match connection size (4) for port 'address'. The port definition is at: weightRAM.v(4).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_dot_prod/WRAM_X File: weightRAM.v
-# ** Warning: (vsim-3015) tb_gate.v(71): [PCDPC] - Port size (4) does not match connection size (3) for port 'address'. The port definition is at: weightRAM.v(4).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_dot_prod/WRAM_Y File: weightRAM.v
-vsim -voptargs=+acc work.tb_dot_prod
-# End time: 10:49:04 on Apr 14,2016, Elapsed time: 0:01:00
-# Errors: 0, Warnings: 6
-# vsim -voptargs="+acc" work.tb_dot_prod 
-# Start time: 10:49:04 on Apr 14,2016
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading work.tb_dot_prod(fast)
-# Loading work.gate(fast)
-# Loading work.dot_prod(fast)
-# Loading work.dot_prod(fast__1)
-# Loading work.weightRAM(fast)
-# Loading work.weightRAM(fast__1)
-# ** Warning: (vsim-3015) tb_gate.v(68): [PCDPC] - Port size (18) does not match connection size (288) for port 'inputVec'. The port definition is at: gate.v(6).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_dot_prod/GATE File: gate.v
-# ** Warning: (vsim-3015) tb_gate.v(68): [PCDPC] - Port size (18) does not match connection size (288) for port 'prevLayerOut'. The port definition is at: gate.v(7).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_dot_prod/GATE File: gate.v
-vsim -voptargs=+acc work.tb_dot_prod
-# End time: 11:31:30 on Apr 14,2016, Elapsed time: 0:42:26
-# Errors: 0, Warnings: 2
-# vsim -voptargs="+acc" work.tb_dot_prod 
-# Start time: 11:31:30 on Apr 14,2016
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading work.tb_dot_prod(fast)
-# Loading work.gate(fast)
-# Loading work.dot_prod(fast)
-# Loading work.dot_prod(fast__1)
-# Loading work.weightRAM(fast)
-# Loading work.weightRAM(fast__1)
-# ** Warning: (vsim-3015) tb_gate.v(75): [PCDPC] - Port size (18) does not match connection size (144) for port 'inputVec'. The port definition is at: gate.v(6).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_dot_prod/GATE File: gate.v
-vsim -voptargs=+acc work.tb_dot_prod
-# End time: 11:32:53 on Apr 14,2016, Elapsed time: 0:01:23
-# Errors: 0, Warnings: 1
-# vsim -voptargs="+acc" work.tb_dot_prod 
-# Start time: 11:32:53 on Apr 14,2016
-# ** Note: (vsim-8009) Loading existing optimized design _opt1
-# Loading work.tb_dot_prod(fast)
-# Loading work.gate(fast)
-# Loading work.dot_prod(fast)
-# Loading work.dot_prod(fast__1)
-# Loading work.weightRAM(fast)
-# Loading work.weightRAM(fast__1)
-# ** Warning: (vsim-3015) tb_gate.v(75): [PCDPC] - Port size (18) does not match connection size (144) for port 'inputVec'. The port definition is at: gate.v(6).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_dot_prod/GATE File: gate.v
-vsim -voptargs=+acc work.tb_dot_prod
-# End time: 11:39:45 on Apr 14,2016, Elapsed time: 0:06:52
-# Errors: 0, Warnings: 1
-# vsim -voptargs="+acc" work.tb_dot_prod 
-# Start time: 11:39:45 on Apr 14,2016
-# ** Note: (vsim-8009) Loading existing optimized design _opt1
-# Loading work.tb_dot_prod(fast)
-# Loading work.gate(fast)
-# Loading work.dot_prod(fast)
-# Loading work.dot_prod(fast__1)
-# Loading work.weightRAM(fast)
-# Loading work.weightRAM(fast__1)
-# ** Warning: (vsim-3015) tb_gate.v(75): [PCDPC] - Port size (18) does not match connection size (144) for port 'inputVec'. The port definition is at: gate.v(6).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_dot_prod/GATE File: gate.v
-vsim -voptargs=+acc work.tb_dot_prod
-# End time: 11:40:26 on Apr 14,2016, Elapsed time: 0:00:41
-# Errors: 0, Warnings: 1
-# vsim -voptargs="+acc" work.tb_dot_prod 
-# Start time: 11:40:26 on Apr 14,2016
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# ** Error: (vopt-3373) tb_gate.v(75): Range of part-select [0:17] into 'ROM_input' [143:0] is reversed.
-# ** Error: (vopt-2064) Compiler back-end code generation process terminated with code 2.
-# Error loading design
-# End time: 11:40:26 on Apr 14,2016, Elapsed time: 0:00:00
-# Errors: 2, Warnings: 0
-vsim -voptargs=+acc work.tb_dot_prod
-# vsim -voptargs="+acc" work.tb_dot_prod 
-# Start time: 11:41:22 on Apr 14,2016
-# ** Note: (vsim-3812) Design is being optimized...
-# ** Note: (vopt-143) Recognized 1 FSM in module "dot_prod(fast)".
-# ** Note: (vopt-143) Recognized 1 FSM in module "dot_prod(fast__1)".
-# ** Note: (vopt-143) Recognized 1 FSM in module "gate(fast)".
-# Loading work.tb_dot_prod(fast)
-# Loading work.gate(fast)
-# Loading work.dot_prod(fast)
-# Loading work.dot_prod(fast__1)
-# Loading work.weightRAM(fast)
-# Loading work.weightRAM(fast__1)
-add wave -position insertpoint  \
-sim:/tb_dot_prod/ROM_input \
-sim:/tb_dot_prod/colAddress_X \
-sim:/tb_dot_prod/colAddress_Y \
-sim:/tb_dot_prod/weightMem_X \
-sim:/tb_dot_prod/weightMem_Y \
-sim:/tb_dot_prod/gateOutput \
-sim:/tb_dot_prod/dataReady_gate \
-sim:/tb_dot_prod/clock \
-sim:/tb_dot_prod/reset
-write format wave -window .main_pane.wave.interior.cs.body.pw.wf /home/josefonseca/thesis/verilog/gate/wave.do
-run -all
+# run -all
 # Simulation started at 0.000000
-do wave.do
-do wave.do
-vsim -voptargs=+acc work.tb_dot_prod
-# End time: 14:55:15 on Apr 14,2016, Elapsed time: 3:13:53
-# Errors: 0, Warnings: 0
-# vsim -voptargs="+acc" work.tb_dot_prod 
-# Start time: 14:55:15 on Apr 14,2016
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading work.tb_dot_prod(fast)
-# Loading work.gate(fast)
-# Loading work.dot_prod(fast)
-# Loading work.dot_prod(fast__1)
-# Loading work.weightRAM(fast)
-# Loading work.weightRAM(fast__1)
-do wave.do
-run -all
-# Simulation started at 0.000000
-# OUTPUT      x
-# 
+# OUTP xxxxxxxxxxxxxxxxxx
+# REAL 000000001001001100
+# OUTP xxxxxxxxxxxxxxxxxx
+# REAL 000001011101000000
+# OUTP xxxxxxxxxxxxxxxxxx
+# REAL 111110101111000000
+# OUTP xxxxxxxxxxxxxxxxxx
+# REAL 111111010001110110
+# OUTP xxxxxxxxxxxxxxxxxx
+# REAL 000001000100010101
+# OUTP xxxxxxxxxxxxxxxxxx
+# REAL 111110100000111100
+# OUTP xxxxxxxxxxxxxxxxxx
+# REAL 111111011110111010
+# OUTP xxxxxxxxxxxxxxxxxx
+# REAL 000000011010011101
+# OUTP xxxxxxxxxxxxxxxxxx
+# REAL 000000111001011001
+# OUTP xxxxxxxxxxxxxxxxxx
+# REAL 000001100101001000
+# OUTP xxxxxxxxxxxxxxxxxx
+# REAL 111110110111010000
+# OUTP xxxxxxxxxxxxxxxxxx
+# REAL 111111101111011011
+# OUTP xxxxxxxxxxxxxxxxxx
+# REAL 111110101111001011
+# OUTP xxxxxxxxxxxxxxxxxx
+# REAL 000001100100111111
+# OUTP xxxxxxxxxxxxxxxxxx
+# REAL 111111100111011100
+# OUTP xxxxxxxxxxxxxxxxxx
+# REAL 000000101111101100
 # Simulated           0 samples
 # 
-add wave -position insertpoint  \
-sim:/tb_dot_prod/GATE/state \
-sim:/tb_dot_prod/GATE/NEXTstate
-write format wave -window .main_pane.wave.interior.cs.body.pw.wf /home/josefonseca/thesis/verilog/gate/wave.do
-vsim -voptargs=+acc work.tb_dot_prod
-# End time: 14:58:10 on Apr 14,2016, Elapsed time: 0:02:55
-# Errors: 0, Warnings: 0
-# vsim -voptargs="+acc" work.tb_dot_prod 
-# Start time: 14:58:10 on Apr 14,2016
-# ** Note: (vsim-8009) Loading existing optimized design _opt1
-# Loading work.tb_dot_prod(fast)
-# Loading work.gate(fast)
-# Loading work.dot_prod(fast)
-# Loading work.dot_prod(fast__1)
-# Loading work.weightRAM(fast)
-# Loading work.weightRAM(fast__1)
-do wave.do
-run -all
-# Simulation started at 0.000000
-# OUTPUT      x
+# OUTP xxxxxxxxxxxxxxxxxx
+# REAL 000001000000100011
+# OUTP xxxxxxxxxxxxxxxxxx
+# REAL 111111000000011100
+# OUTP xxxxxxxxxxxxxxxxxx
+# REAL 111111000000101110
+# OUTP xxxxxxxxxxxxxxxxxx
+# REAL 000000101111001001
+# OUTP xxxxxxxxxxxxxxxxxx
+# REAL 000000010101111010
+# OUTP xxxxxxxxxxxxxxxxxx
+# REAL 111110101101111110
+# OUTP xxxxxxxxxxxxxxxxxx
+# REAL 000000110011101100
+# OUTP xxxxxxxxxxxxxxxxxx
+# REAL 000000111010000100
+# OUTP xxxxxxxxxxxxxxxxxx
+# REAL 000000010101100100
+# OUTP xxxxxxxxxxxxxxxxxx
+# REAL 000000010100111010
+# OUTP xxxxxxxxxxxxxxxxxx
+# REAL 111111110111001011
+# OUTP xxxxxxxxxxxxxxxxxx
+# REAL 000000000100110101
+# OUTP xxxxxxxxxxxxxxxxxx
+# REAL 111111111110010101
+# OUTP xxxxxxxxxxxxxxxxxx
+# REAL 111110011001010110
+# OUTP xxxxxxxxxxxxxxxxxx
+# REAL 111110111010001110
+# OUTP xxxxxxxxxxxxxxxxxx
+# REAL 000001100011000000
+# Simulated           1 samples
 # 
-# Simulated           0 samples
+# OUTP xxxxxxxxxxxxxxxxxx
+# REAL 000001000111100010
+# OUTP xxxxxxxxxxxxxxxxxx
+# REAL 000000100011100100
+# OUTP xxxxxxxxxxxxxxxxxx
+# REAL 000001001001011010
+# OUTP xxxxxxxxxxxxxxxxxx
+# REAL 111111110100000111
+# OUTP xxxxxxxxxxxxxxxxxx
+# REAL 000001100011011001
+# OUTP xxxxxxxxxxxxxxxxxx
+# REAL 111111100101010100
+# OUTP xxxxxxxxxxxxxxxxxx
+# REAL 111111001011100010
+# OUTP xxxxxxxxxxxxxxxxxx
+# REAL 000001011000110111
+# OUTP xxxxxxxxxxxxxxxxxx
+# REAL 111110110111000010
+# OUTP xxxxxxxxxxxxxxxxxx
+# REAL 000000110011111011
+# OUTP xxxxxxxxxxxxxxxxxx
+# REAL 000001001101110001
+# OUTP xxxxxxxxxxxxxxxxxx
+# REAL 000001010010001100
+# OUTP xxxxxxxxxxxxxxxxxx
+# REAL 000001001110000110
+# OUTP xxxxxxxxxxxxxxxxxx
+# REAL 000000101111111110
+# OUTP xxxxxxxxxxxxxxxxxx
+# REAL 000001010001000001
+# OUTP xxxxxxxxxxxxxxxxxx
+# REAL 111110100010110001
+# Simulated           2 samples
 # 
-add wave -position insertpoint  \
-sim:/tb_dot_prod/GATE/enable_dotprodX \
-sim:/tb_dot_prod/GATE/enable_dotprodY \
-sim:/tb_dot_prod/GATE/enable_sumX \
-sim:/tb_dot_prod/GATE/enable_sumY
-add wave -position insertpoint  \
-sim:/tb_dot_prod/GATE/gateOutput \
-sim:/tb_dot_prod/GATE/adder_X
-vsim -voptargs=+acc work.tb_dot_prod
-# End time: 15:17:56 on Apr 14,2016, Elapsed time: 0:19:46
-# Errors: 0, Warnings: 0
-# vsim -voptargs="+acc" work.tb_dot_prod 
-# Start time: 15:17:56 on Apr 14,2016
-# ** Note: (vsim-8009) Loading existing optimized design _opt1
-# Loading work.tb_dot_prod(fast)
-# Loading work.gate(fast)
-# Loading work.dot_prod(fast)
-# Loading work.dot_prod(fast__1)
-# Loading work.weightRAM(fast)
-# Loading work.weightRAM(fast__1)
-do wave.do
-add wave -position insertpoint  \
-sim:/tb_dot_prod/GATE/adder_X \
-sim:/tb_dot_prod/GATE/dataReady_X \
-sim:/tb_dot_prod/GATE/dataReady_Y \
-sim:/tb_dot_prod/GATE/enable_dotprodX \
-sim:/tb_dot_prod/GATE/enable_dotprodY \
-sim:/tb_dot_prod/GATE/enable_sumX \
-sim:/tb_dot_prod/GATE/enable_sumY
-write format wave -window .main_pane.wave.interior.cs.body.pw.wf /home/josefonseca/thesis/verilog/gate/wave.do
-vsim -voptargs=+acc work.tb_dot_prod
-# End time: 15:19:06 on Apr 14,2016, Elapsed time: 0:01:10
-# Errors: 0, Warnings: 0
-# vsim -voptargs="+acc" work.tb_dot_prod 
-# Start time: 15:19:06 on Apr 14,2016
-# ** Note: (vsim-8009) Loading existing optimized design _opt1
-# Loading work.tb_dot_prod(fast)
-# Loading work.gate(fast)
-# Loading work.dot_prod(fast)
-# Loading work.dot_prod(fast__1)
-# Loading work.weightRAM(fast)
-# Loading work.weightRAM(fast__1)
-do wave.do
-run -all
-# Simulation started at 0.000000
-# OUTPUT      x
+# OUTP xxxxxxxxxxxxxxxxxx
+# REAL 000001000101110000
+# OUTP xxxxxxxxxxxxxxxxxx
+# REAL 111110011001100111
+# OUTP xxxxxxxxxxxxxxxxxx
+# REAL 111111000010110000
+# OUTP xxxxxxxxxxxxxxxxxx
+# REAL 111111000001011110
+# OUTP xxxxxxxxxxxxxxxxxx
+# REAL 111110101111110101
+# OUTP xxxxxxxxxxxxxxxxxx
+# REAL 000000100110010010
+# OUTP xxxxxxxxxxxxxxxxxx
+# REAL 000000011011011000
+# OUTP xxxxxxxxxxxxxxxxxx
+# REAL 000000000100000111
+# OUTP xxxxxxxxxxxxxxxxxx
+# REAL 111110100111011110
+# OUTP xxxxxxxxxxxxxxxxxx
+# REAL 111110011010100001
+# OUTP xxxxxxxxxxxxxxxxxx
+# REAL 111111100011000000
+# OUTP xxxxxxxxxxxxxxxxxx
+# REAL 111110101000001111
+# OUTP xxxxxxxxxxxxxxxxxx
+# REAL 000000010010011110
+# OUTP xxxxxxxxxxxxxxxxxx
+# REAL 000000100010101001
+# OUTP xxxxxxxxxxxxxxxxxx
+# REAL 111111000001101110
+# OUTP xxxxxxxxxxxxxxxxxx
+# REAL 000000000010110100
+# Simulated           3 samples
 # 
-# Simulated           0 samples
+# OUTP xxxxxxxxxxxxxxxxxx
+# REAL 111110011001000000
+# OUTP xxxxxxxxxxxxxxxxxx
+# REAL 000000000011110110
+# OUTP xxxxxxxxxxxxxxxxxx
+# REAL 111111110010010101
+# OUTP xxxxxxxxxxxxxxxxxx
+# REAL 111111101000000001
+# OUTP xxxxxxxxxxxxxxxxxx
+# REAL 000001001111111100
+# OUTP xxxxxxxxxxxxxxxxxx
+# REAL 000000100000011101
+# OUTP xxxxxxxxxxxxxxxxxx
+# REAL 000000110100001100
+# OUTP xxxxxxxxxxxxxxxxxx
+# REAL 000000100111000111
+# OUTP xxxxxxxxxxxxxxxxxx
+# REAL 000001011110111110
+# OUTP xxxxxxxxxxxxxxxxxx
+# REAL 111111001000111000
+# OUTP xxxxxxxxxxxxxxxxxx
+# REAL 000000001010111000
+# OUTP xxxxxxxxxxxxxxxxxx
+# REAL 111110101011101001
+# OUTP xxxxxxxxxxxxxxxxxx
+# REAL 111111111100110001
+# OUTP xxxxxxxxxxxxxxxxxx
+# REAL 111110100100100110
+# OUTP xxxxxxxxxxxxxxxxxx
+# REAL 111110101011101010
+# OUTP xxxxxxxxxxxxxxxxxx
+# REAL 111110011001110000
+# Simulated           4 samples
 # 
-vsim -voptargs=+acc work.tb_dot_prod
-# End time: 15:34:16 on Apr 14,2016, Elapsed time: 0:15:10
-# Errors: 0, Warnings: 0
-# vsim -voptargs="+acc" work.tb_dot_prod 
-# Start time: 15:34:16 on Apr 14,2016
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# ** Note: (vopt-143) Recognized 1 FSM in module "gate(fast)".
-# Loading work.tb_dot_prod(fast)
-# Loading work.gate(fast)
-# Loading work.dot_prod(fast)
-# Loading work.dot_prod(fast__1)
-# Loading work.weightRAM(fast)
-# Loading work.weightRAM(fast__1)
-do wave.do
-run -all
-# Simulation started at 0.000000
-# OUTPUT      x
-# 
-# Simulated           0 samples
-# 
-write format wave -window .main_pane.wave.interior.cs.body.pw.wf /home/josefonseca/thesis/verilog/gate/wave.do
-write format wave -window .main_pane.wave.interior.cs.body.pw.wf /home/josefonseca/thesis/verilog/gate/wave.do
-vsim -voptargs=+acc work.tb_dot_prod
-# End time: 15:50:18 on Apr 14,2016, Elapsed time: 0:16:02
-# Errors: 0, Warnings: 0
-# vsim -voptargs="+acc" work.tb_dot_prod 
-# Start time: 15:50:18 on Apr 14,2016
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# ** Note: (vopt-143) Recognized 1 FSM in module "gate(fast)".
-# Loading work.tb_dot_prod(fast)
-# Loading work.gate(fast)
-# Loading work.dot_prod(fast)
-# Loading work.dot_prod(fast__1)
-# Loading work.weightRAM(fast)
-# Loading work.weightRAM(fast__1)
-do wave.do
-run -all~
-# Unknown option: all~
-# ** Error: (vsim-4005) Invalid argument '-all~'.
-# Usage: run [<timesteps> [<time_units>]] | -all | -continue | -next | -step | -over | -out | -init | -final
-run -all
-# Simulation started at 0.000000
-vsim -voptargs=+acc work.tb_dot_prod
-# End time: 15:51:32 on Apr 14,2016, Elapsed time: 0:01:14
+# Average Quantization Error: 0.000000
+# ** Note: $stop    : tb_gate.v(194)
+#    Time: 556 ns  Iteration: 0  Instance: /tb_gate
+# Break at tb_gate.v line 194
+# Stopped at tb_gate.v line 194
+# invalid command name ":q"
+# End time: 19:18:09 on Apr 25,2016, Elapsed time: 0:00:19
 # Errors: 1, Warnings: 0
-# vsim -voptargs="+acc" work.tb_dot_prod 
-# Start time: 15:51:32 on Apr 14,2016
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# ** Note: (vopt-143) Recognized 1 FSM in module "gate(fast)".
-# Loading work.tb_dot_prod(fast)
-# Loading work.gate(fast)
-# Loading work.dot_prod(fast)
-# Loading work.dot_prod(fast__1)
-# Loading work.weightRAM(fast)
-# Loading work.weightRAM(fast__1)
-do wave.do
-run -all
-# Simulation started at 0.000000
-# OUTPUT      1
-# 
-# Simulated           0 samples
-# 
-add wave -position insertpoint  \
-sim:/tb_dot_prod/GATE/outputVec_X \
-sim:/tb_dot_prod/GATE/outputVec_Y
-add wave -position insertpoint  \
-sim:/tb_dot_prod/GATE/outputVec_X \
-sim:/tb_dot_prod/GATE/outputVec_Y
-view -new wave
-# .main_pane.wave1.interior.cs.body.pw.wf
-add wave -position insertpoint  \
-sim:/tb_dot_prod/GATE/outputVec_X \
-sim:/tb_dot_prod/GATE/outputVec_Y
-write format wave -window .main_pane.wave.interior.cs.body.pw.wf /home/josefonseca/thesis/verilog/gate/wave.do
-vsim -voptargs=+acc work.tb_dot_prod
-# End time: 15:57:34 on Apr 14,2016, Elapsed time: 0:06:02
-# Errors: 0, Warnings: 0
-# vsim -voptargs="+acc" work.tb_dot_prod 
-# Start time: 15:57:34 on Apr 14,2016
-# ** Note: (vsim-8009) Loading existing optimized design _opt1
-# Loading work.tb_dot_prod(fast)
-# Loading work.gate(fast)
-# Loading work.dot_prod(fast)
-# Loading work.dot_prod(fast__1)
-# Loading work.weightRAM(fast)
-# Loading work.weightRAM(fast__1)
-do wave.do
-run -all
-# Simulation started at 0.000000
-# OUTPUT      1
-# 
-# Simulated           0 samples
-# 
-write format wave -window .main_pane.wave.interior.cs.body.pw.wf /home/josefonseca/thesis/verilog/gate/wave.do
-write format wave -window .main_pane.wave.interior.cs.body.pw.wf /home/josefonseca/thesis/verilog/gate/wave.do
-vsim -voptargs=+acc work.tb_dot_prod
-# End time: 16:02:14 on Apr 14,2016, Elapsed time: 0:04:40
-# Errors: 0, Warnings: 0
-# vsim -voptargs="+acc" work.tb_dot_prod 
-# Start time: 16:02:14 on Apr 14,2016
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# ** Note: (vopt-143) Recognized 1 FSM in module "gate(fast)".
-# Loading work.tb_dot_prod(fast)
-# Loading work.gate(fast)
-# Loading work.dot_prod(fast)
-# Loading work.dot_prod(fast__1)
-# Loading work.weightRAM(fast)
-# Loading work.weightRAM(fast__1)
-do wave.do
-run -all
-# Simulation started at 0.000000
-# OUTPUT 151553
-# 
-# Simulated           0 samples
-# 
-vsim -voptargs=+acc work.tb_dot_prod
-# End time: 17:06:03 on Apr 14,2016, Elapsed time: 1:03:49
-# Errors: 0, Warnings: 0
-# vsim -voptargs="+acc" work.tb_dot_prod 
-# Start time: 17:06:03 on Apr 14,2016
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# ** Note: (vopt-143) Recognized 1 FSM in module "gate(fast)".
-# Loading work.tb_dot_prod(fast)
-# Loading work.gate(fast)
-# Loading work.dot_prod(fast)
-# Loading work.dot_prod(fast__1)
-# Loading work.weightRAM(fast)
-# Loading work.weightRAM(fast__1)
-do wave.do
-run -all
-# Simulation started at 0.000000
-# OUTPUT 151553
-# 
-# Simulated           0 samples
-# 
-vsim -voptargs=+acc work.tb_dot_prod
-# End time: 17:10:53 on Apr 14,2016, Elapsed time: 0:04:50
-# Errors: 0, Warnings: 0
-# vsim -voptargs="+acc" work.tb_dot_prod 
-# Start time: 17:10:53 on Apr 14,2016
-# ** Note: (vsim-8009) Loading existing optimized design _opt1
-# Loading work.tb_dot_prod(fast)
-# Loading work.gate(fast)
-# Loading work.dot_prod(fast)
-# Loading work.dot_prod(fast__1)
-# Loading work.weightRAM(fast)
-# Loading work.weightRAM(fast__1)
-do wave.do
-run -all
-# Simulation started at 0.000000
-# OUTPUT 151553
-# 
-# Simulated           0 samples
-# 
-vsim -voptargs=+acc work.tb_dot_prod
-# End time: 17:18:22 on Apr 14,2016, Elapsed time: 0:07:29
-# Errors: 0, Warnings: 0
-# vsim -voptargs="+acc" work.tb_dot_prod 
-# Start time: 17:18:22 on Apr 14,2016
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading work.tb_dot_prod(fast)
-# Loading work.gate(fast)
-# Loading work.dot_prod(fast)
-# Loading work.dot_prod(fast__1)
-# Loading work.weightRAM(fast)
-# Loading work.weightRAM(fast__1)
-do wave.do
-run -all
-# Simulation started at 0.000000
-# Simulated           0 samples
-# 
-add wave -position insertpoint  \
-sim:/tb_dot_prod/beginCalc
-write format wave -window .main_pane.wave.interior.cs.body.pw.wf /home/josefonseca/thesis/verilog/gate/wave.do
-vsim -voptargs=+acc work.tb_dot_prod
-# End time: 17:19:25 on Apr 14,2016, Elapsed time: 0:01:03
-# Errors: 0, Warnings: 0
-# vsim -voptargs="+acc" work.tb_dot_prod 
-# Start time: 17:19:25 on Apr 14,2016
-# ** Note: (vsim-8009) Loading existing optimized design _opt1
-# Loading work.tb_dot_prod(fast)
-# Loading work.gate(fast)
-# Loading work.dot_prod(fast)
-# Loading work.dot_prod(fast__1)
-# Loading work.weightRAM(fast)
-# Loading work.weightRAM(fast__1)
-do wave.do
-run -all
-# Simulation started at 0.000000
-# Simulated           0 samples
-# 
-vsim -voptargs=+acc work.tb_dot_prod
-# End time: 17:27:26 on Apr 14,2016, Elapsed time: 0:08:01
-# Errors: 0, Warnings: 0
-# vsim -voptargs="+acc" work.tb_dot_prod 
-# Start time: 17:27:26 on Apr 14,2016
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading work.tb_dot_prod(fast)
-# Loading work.gate(fast)
-# Loading work.dot_prod(fast)
-# Loading work.dot_prod(fast__1)
-# Loading work.weightRAM(fast)
-# Loading work.weightRAM(fast__1)
-do wave.do
-run -all
-# Simulation started at 0.000000
-# Simulated           0 samples
-# 
-# Simulated          50 samples
-# 
-# Simulated         100 samples
-# 
-# Simulated         150 samples
-# 
-# Simulated         200 samples
-# 
-# Simulated         250 samples
-# 
-# Simulated         300 samples
-# 
-# Simulated         350 samples
-# 
-# Simulated         400 samples
-# 
-# Simulated         450 samples
-# 
-# ** Note: $stop    : tb_gate.v(108)
-#    Time: 36006 ns  Iteration: 0  Instance: /tb_dot_prod
-# Break in Module tb_dot_prod at tb_gate.v line 108
-do wave.do

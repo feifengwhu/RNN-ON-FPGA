@@ -25,84 +25,102 @@ R1
 R2
 n@_opt1
 R3
-vdot_prod
-Z4 !s110 1460651233
-!i10b 1
-!s100 ;:^z_T:Vf6M^NM2RO;lE01
-IaQ0bl;nF09PC_QdfkQ;Un2
-Z5 VDg1SIo80bB@j0V0VzS_@n1
 R0
-w1460567799
+T_opt2
+!s110 1461608102
+VXJ0:eDV:HXIDahXAH5nR33
+Z4 04 7 4 work tb_gate fast 0
+=1-d43d7e359f7e-571e5ea6-dc539-14ea
+R2
+n@_opt2
+R3
+R0
+T_opt3
+!s110 1461608270
+VgEGS8Qc6BWM<h_4^g4WTB3
+R4
+=1-d43d7e359f7e-571e5f4e-77600-1518
+o-quiet -auto_acc_if_foreign -work work
+n@_opt3
+R3
+vdot_prod
+Z5 !s110 1461608265
+!i10b 1
+!s100 AHbZ0gRJJCRMTh36n4TjQ1
+IR1Z7l>XS<fCa`bH:=60b@2
+Z6 VDg1SIo80bB@j0V0VzS_@n1
+Z7 d/home/josefonseca/Documents/thesis/verilog/gate
+w1461427756
 8dot_prod.v
 Fdot_prod.v
 L0 1
-Z6 OL;L;10.4c_5;61
+Z8 OL;L;10.4c_5;61
 r1
 !s85 0
 31
-Z7 !s108 1460651233.000000
-Z8 !s107 weightRAM.v|tb_gate.v|gate.v|dot_prod.v|
-Z9 !s90 dot_prod.v|gate.v|tb_gate.v|weightRAM.v|
+Z9 !s108 1461608265.000000
+Z10 !s107 weightRAM.v|tb_gate.v|gate.v|dot_prod.v|
+Z11 !s90 dot_prod.v|gate.v|tb_gate.v|weightRAM.v|
 !i113 0
-Z10 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z12 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 vgate
-R4
+R5
 !i10b 1
 !s100 d?TC9W4iB?GH7zaG6[DD81
 Iz^`bXPhIV7cR<b]ijjTz]3
-R5
-R0
-w1460649935
+R6
+R7
+w1461600755
 8gate.v
 Fgate.v
 L0 1
-R6
+R8
 r1
 !s85 0
 31
-R7
-R8
 R9
-!i113 0
 R10
-vtb_dot_prod
-R4
-!i10b 1
-!s100 ;8Q2]mCnGoY:]cEeH^gk31
-IBmie@2XD4^BN0U1DBJzdC1
+R11
+!i113 0
+R12
+vtb_gate
 R5
-R0
-w1460651229
+!i10b 1
+!s100 ;I>=UlB^lMA^V]4K8MASQ3
+ITFKlb<hMc10ImWL==1I]b0
+R6
+R7
+w1461608261
 8tb_gate.v
 Ftb_gate.v
 L0 3
-R6
+R8
 r1
 !s85 0
 31
-R7
-R8
 R9
-!i113 0
 R10
+R11
+!i113 0
+R12
 vweightRAM
-R4
+!s110 1461608266
 !i10b 1
-!s100 dRX:9[h5H<G0CfT;o1e6_3
-I@a>e_eV;1^ATlTib5L8Wj2
-R5
-R0
-w1460560572
+!s100 7e_nj7b33]HONM?PKkLZ=0
+I[kY`7RMk^of=RF7M9jF9c1
+R6
+R7
+w1461427764
 8weightRAM.v
 FweightRAM.v
 L0 1
-R6
+R8
 r1
 !s85 0
 31
-R7
-R8
 R9
-!i113 0
 R10
+R11
+!i113 0
+R12
 nweight@r@a@m
