@@ -15,10 +15,19 @@ add wave -noupdate /tb_gate/reset
 add wave -noupdate /tb_gate/beginCalc
 add wave -noupdate /tb_gate/writeEn_X
 add wave -noupdate /tb_gate/writeEn_Y
+add wave -noupdate /tb_gate/ROM_input
+add wave -noupdate /tb_gate/ROM_goldenOut
+add wave -noupdate /tb_gate/ROM_prevOut
+add wave -noupdate /tb_gate/ROM_bias
+add wave -noupdate /tb_gate/ROM_weights_X
+add wave -noupdate /tb_gate/ROM_weights_Y
+add wave -noupdate /tb_gate/inputVec
+add wave -noupdate /tb_gate/prevOutVec
+add wave -noupdate /tb_gate/biasVec
 TreeUpdate [SetDefaultTree]
 WaveRestoreCursors {{Cursor 1} {0 ps} 0}
 quietly wave cursor active 0
-configure wave -namecolwidth 150
+configure wave -namecolwidth 246
 configure wave -valuecolwidth 63
 configure wave -justifyvalue left
 configure wave -signalnamewidth 0
@@ -32,4 +41,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits ns
 update
-WaveRestoreZoom {0 ps} {14830 ps}
+WaveRestoreZoom {0 ps} {55892 ps}

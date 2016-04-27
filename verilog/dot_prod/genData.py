@@ -20,7 +20,7 @@ def sign_ext(value, newSize, oldSize):
 
 NUM_MATRICES = 100
 NROW         = 32
-NCOL         = 2
+NCOL         = 4
 QN           = 6
 QM           = 11
 WMAX         = 7

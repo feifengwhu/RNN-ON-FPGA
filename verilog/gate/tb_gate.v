@@ -50,7 +50,7 @@ module tb_gate();
     // File descriptors for the error/output dumps
     integer fid, fid_error_dump;
     integer i=0,j=0,k=0,l=0;
-    real    quantError;
+    real    quantError=0;
     
     // Clock generation
     always begin
@@ -113,28 +113,29 @@ module tb_gate();
         writeEn_Y = 0;
         clock   = 1;
         reset   = 0;
-        
+        beginCalc = 0;
+    
         @(posedge clock);
 
         reset     <= 1;
-        writeEn_X <= 1;
         writeEn_Y <= 1;
+        writeEn_X <= 1;
 
         for(k = 0; k < HIDDEN_SZ; k = k + 1) begin
-            if (k < INPUT_SZ) begin
-                colAddressWrite_X <= k;
-                colAddressWrite_Y <= k;
+            if(k < INPUT_SZ) begin
+                colAddressWrite_Y = k;
+                colAddressWrite_X = k;
             end
             else begin
-                writeEn_X <= 0; 
-                colAddressWrite_Y <= k;
+                colAddressWrite_Y = k;
+                writeEn_X <= 0;
             end
 
-            biasVec[l*BITWIDTH+:BITWIDTH] <= ROM_bias[i+1][k];
+            biasVec[k*BITWIDTH+:BITWIDTH] <= ROM_bias[i][k];
 
             for(l = 0; l < HIDDEN_SZ; l = l + 1) begin
-                weightMemInput_X[l*BITWIDTH+:BITWIDTH] <= ROM_weights_X[i+1][l][k];
-                weightMemInput_Y[l*BITWIDTH+:BITWIDTH] <= ROM_weights_Y[i+1][l][k];
+                weightMemInput_Y[l*BITWIDTH+:BITWIDTH] <= ROM_weights_Y[i][l][k];
+                weightMemInput_X[l*BITWIDTH+:BITWIDTH] <= ROM_weights_X[i][l][k];
             end
             @(posedge clock);
         end
@@ -158,23 +159,25 @@ module tb_gate();
             end
  
             @(posedge clock);
-            
             reset     <= 1;
-            writeEn_X <= 1;
             writeEn_Y <= 1;
+            writeEn_X <= 1;
 
             for(k = 0; k < HIDDEN_SZ; k = k + 1) begin
-                if (k < INPUT_SZ) begin
-                    colAddressWrite_X <= k;
-                    colAddressWrite_Y <= k;
+                if(k < INPUT_SZ) begin
+                    colAddressWrite_Y = k;
+                    colAddressWrite_X = k;
                 end
                 else begin
-                    writeEn_X <= 0; 
-                    colAddressWrite_Y <= k;
+                    colAddressWrite_Y = k;
+                    writeEn_X <= 0;
                 end
+
+                biasVec[k*BITWIDTH+:BITWIDTH] <= ROM_bias[i+1][k];
+
                 for(l = 0; l < HIDDEN_SZ; l = l + 1) begin
-                    weightMemInput_X[l*BITWIDTH+:BITWIDTH] <= ROM_weights_X[i+1][l][k];
                     weightMemInput_Y[l*BITWIDTH+:BITWIDTH] <= ROM_weights_Y[i+1][l][k];
+                    weightMemInput_X[l*BITWIDTH+:BITWIDTH] <= ROM_weights_X[i+1][l][k];
                 end
                 @(posedge clock);
             end

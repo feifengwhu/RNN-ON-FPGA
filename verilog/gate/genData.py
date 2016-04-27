@@ -41,9 +41,9 @@ for n in range(NUM_MATRICES) :
     Wxq = np.zeros_like(Wx)
     Wy  = (np.random.random( (NROW, NROW) )-0.5)*WMAX
     Wyq = np.zeros_like(Wy)
-    x   = np.round(np.random.random( (NCOL, 1) )-0.5)
+    x   = np.round(np.random.random( (NCOL, 1) ))
     xq  = np.zeros_like(x)
-    y   = np.round((np.random.random( (NROW, 1) ))-0.5)
+    y   = np.round((np.random.random( (NROW, 1) )))
     yq  = np.zeros_like(y)
     b   = (np.random.random( (NROW, 1) )-0.5)*WMAX
     bq  = np.zeros_like(b)
@@ -57,11 +57,12 @@ for n in range(NUM_MATRICES) :
         yq[i,0] = real_to_Qnm(y[i,0],QN,QM)
         fin_b.write("{0:018b}\n".format(int(bq[i,0])))
         fin_y.write("{0:018b}\n".format(int(yq[i,0])))
+        for j in range(NROW) :
+            Wyq[i,j] = real_to_Qnm(Wy[i,j],QN,QM)
+            fin_Wy.write("{0:018b}\n".format(int(Wyq[i,j])))
         for j in range(NCOL) :
             Wxq[i,j] = real_to_Qnm(Wx[i,j],QN,QM)
-            Wyq[i,j] = real_to_Qnm(Wy[i,j],QN,QM)
             fin_Wx.write("{0:018b}\n".format(int(Wxq[i,j])))
-            fin_Wy.write("{0:018b}\n".format(int(Wyq[i,j])))
 
     out  = np.dot(Wx,x) + np.dot(Wy,y) + b    
     outq = np.zeros_like(out)

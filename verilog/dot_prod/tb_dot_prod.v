@@ -4,10 +4,10 @@ module tb_dot_prod();
     
     // User defined parameters
     parameter NROW = 32;
-    parameter NCOL = 2;
+    parameter NCOL = 4;
     parameter QN   = 6;
     parameter QM   = 11;
-    parameter DSP48_PER_ROW    = 4; 
+    parameter DSP48_PER_ROW    = 2; 
     
     // Dependent Parameters
     parameter BITWIDTH          = QN + QM + 1;
