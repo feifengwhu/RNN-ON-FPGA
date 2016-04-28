@@ -2,8 +2,8 @@
 
 module tb_gate();
     
-	parameter INPUT_SZ  = 2;
-	parameter HIDDEN_SZ = 16;
+	parameter INPUT_SZ  = 4;
+	parameter HIDDEN_SZ = 32;
 	parameter QN = 6;
     parameter QM = 11;
 	parameter DSP48_PER_ROW = 2;
@@ -16,7 +16,7 @@ module tb_gate();
 	parameter ADDR_BITWIDTH_X  = $ln(INPUT_SZ)/$ln(2);
     parameter HALF_CLOCK       = 1;
     parameter FULL_CLOCK       = 2*HALF_CLOCK;
-    parameter MAX_SAMPLES      = 5;
+    parameter MAX_SAMPLES      = 1000;
 
     // DUT Connecting wires/regs
 	reg    [ADDR_BITWIDTH_X-1:0] colAddressWrite_X;
@@ -73,10 +73,10 @@ module tb_gate();
         end
         */
 
-        $readmemb("goldenIn_x.bin",           ROM_input);
-        $readmemb("goldenIn_y.bin",           ROM_prevOut);
-        $readmemb("goldenOut.bin",          ROM_goldenOut);
-        $readmemb("goldenIn_b.bin",      ROM_bias);
+        $readmemb("goldenIn_x.bin",  ROM_input);
+        $readmemb("goldenIn_y.bin",  ROM_prevOut);
+        $readmemb("goldenOut.bin",   ROM_goldenOut);
+        $readmemb("goldenIn_b.bin",  ROM_bias);
         $readmemb("goldenIn_Wx.bin", ROM_weights_X);
         $readmemb("goldenIn_Wy.bin", ROM_weights_Y);
         
@@ -93,12 +93,12 @@ module tb_gate();
 
     always @(negedge clock) begin
         if( reset == 1'b1) begin
-            inputVec   = {BITWIDTH{1'b0}};
-            prevOutVec = {BITWIDTH{1'b0}};
+            inputVec   <= {BITWIDTH{1'b0}};
+            prevOutVec <= {BITWIDTH{1'b0}};
         end
         else begin
-            inputVec   = ROM_input [i][colAddressRead_X];
-            prevOutVec = ROM_prevOut[i][colAddressRead_Y];
+            inputVec   <= ROM_input  [i][colAddressRead_X];
+            prevOutVec <= ROM_prevOut[i][colAddressRead_Y];
         end
     end
 
@@ -152,7 +152,7 @@ module tb_gate();
             #(HALF_CLOCK);
             
             for(j=0; j < HIDDEN_SZ; j = j + 1) begin
-                $display("OUTP %b\nREAL %b", gateOutput[j*BITWIDTH+:BITWIDTH], ROM_goldenOut[i][j]);
+                //$display("OUTP %b\nREAL %b", gateOutput[j*BITWIDTH+:BITWIDTH], ROM_goldenOut[i][j]);
                 //$fwrite(fid, "0x%X", outputVec[j*BITWIDTH+:BITWIDTH]);
                 quantError = quantError + (ROM_goldenOut[i][j] ^ gateOutput[j*BITWIDTH+:BITWIDTH])/(2.0**QM);
                 //$display("Error: %b",(ROM_goldenOut[i][j] ^ outputVec[j*BITWIDTH+:BITWIDTH]) & ({ {(QN+1){1'b1}}, {(QM){1'b0}} }));
@@ -188,7 +188,7 @@ module tb_gate();
             #(FULL_CLOCK);  
             beginCalc = 0; 
 
-            $display("Simulated %d samples\n", i);
+            //$display("Simulated %d samples\n", i);
             
         end
        

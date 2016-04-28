@@ -112,7 +112,7 @@ module dot_prod #(parameter NROW = 16,
 
     // The MAC multiplexer that selects the appropriate weight row for the MAC
     always @(*) begin
-        if (reset == 1'b1 | outputEn == 1'b0) 
+        if (reset == 1'b1) 
             weightMAC = {DSP48_INPUT_BITWIDTH{1'b0}};
         else
             for(i = 0; i < N_DSP48; i = i + 1) begin
@@ -120,15 +120,15 @@ module dot_prod #(parameter NROW = 16,
             end
     end
     
-    // The DSP Slices
-    always @(posedge clk) begin 
-        if (reset == 1'b1 | outputEn == 1'b0)
-            outputMAC_interm = {DSP48_OUTPUT_BITWIDTH{1'b0}};
+    // The DSP Slices 
+    /*always @(posedge clk) begin 
+        if (reset == 1'b1)
+            outputMAC_interm <= {DSP48_OUTPUT_BITWIDTH{1'b0}};
         else
             for(i = 0; i < N_DSP48; i = i + 1) begin
-                outputMAC_interm[i*MAC_BITWIDTH +: MAC_BITWIDTH] = {{(QM+QN+1){weightMAC[(i+1)*BITWIDTH-1]}}, weightMAC[i*BITWIDTH +: BITWIDTH]} * {{(QM+QM+1){inputVector[BITWIDTH-1]}}, inputVector};
+                outputMAC_interm[i*MAC_BITWIDTH +: MAC_BITWIDTH] <= {{(QM+QN+1){weightMAC[(i+1)*BITWIDTH-1]}}, weightMAC[i*BITWIDTH +: BITWIDTH]} * {{(QM+QM+1){inputVector[BITWIDTH-1]}}, inputVector};
             end
-    end
+    end*/
     
     // The output vector and adder
     always @(posedge clk) begin
@@ -137,12 +137,13 @@ module dot_prod #(parameter NROW = 16,
         else
             if (dataReady == 1'b0) begin
                 for(i = 0; i < N_DSP48; i = i + 1) begin
-                    outputVector[(i*DSP48_PER_ROW+rowMux)*BITWIDTH +: BITWIDTH] <= outputVector[(i*DSP48_PER_ROW+rowMux)*BITWIDTH +: BITWIDTH] + (outputMAC_interm[i*MAC_BITWIDTH +: MAC_BITWIDTH] >>> QM);
+                    outputVector[(i*DSP48_PER_ROW+rowMux)*BITWIDTH +: BITWIDTH] <= outputVector[(i*DSP48_PER_ROW+rowMux)*BITWIDTH +: BITWIDTH] + ({{(QM+QN+1){weightMAC[(i+1)*BITWIDTH-1]}}, weightMAC[i*BITWIDTH +: BITWIDTH]} * {{(QM+QM+1){inputVector[BITWIDTH-1]}}, inputVector} >>> QM);
+                    //(outputMAC_interm[i*MAC_BITWIDTH +: MAC_BITWIDTH] >>> QM);
                 end
             end
             else begin
                 for(i = 0; i < N_DSP48; i = i + 1) begin
-                    outputVector <= (outputMAC_interm[i*MAC_BITWIDTH +: MAC_BITWIDTH] >>> QM);
+                    outputVector[(i*DSP48_PER_ROW+rowMux)*BITWIDTH +: BITWIDTH]<= (outputMAC_interm[i*MAC_BITWIDTH +: MAC_BITWIDTH] >>> QM);
                 end
             end
     end

@@ -7,7 +7,7 @@ module tb_dot_prod();
     parameter NCOL = 4;
     parameter QN   = 6;
     parameter QM   = 11;
-    parameter DSP48_PER_ROW    = 2; 
+    parameter DSP48_PER_ROW    = 4; 
     
     // Dependent Parameters
     parameter BITWIDTH          = QN + QM + 1;
@@ -16,7 +16,7 @@ module tb_dot_prod();
 	parameter ADDR_BITWIDTH     = $ln(NCOL)/$ln(2);
     parameter HALF_CLOCK        = 1;
     parameter FULL_CLOCK        = 2*HALF_CLOCK;
-    parameter MAX_SAMPLES       = 5;
+    parameter MAX_SAMPLES       = 50;
 
     // The golden inputs/outputs ROM
     reg  [BITWIDTH-1:0] ROM_input     [0:MAX_SAMPLES-1] [0:NCOL-1];   
@@ -127,8 +127,7 @@ module tb_dot_prod();
             reset <= 0;
             writeEn <= 0;
             
-            if (i % 50 == 0) 
-                $display("Simulated %d samples\n", i);
+            $display("Simulated %d samples\n", i);
             
         end
        

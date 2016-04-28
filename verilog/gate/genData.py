@@ -2,9 +2,9 @@ import numpy as np
 
 def real_to_Qnm(real, n, m):
     if(real >= 0):
-        return int(np.round(real*(2**m)).astype(int))
+        return int(np.round(real*(2**m)).astype(int)) & int(2**(n+m+1)-1)
     else:
-        return int(2**(n+m+1) + np.round(real*(2**m)).astype(int))
+        return int(2**(n+m+1) + np.round(real*(2**m)).astype(int)) & int(2**(n+m+1)-1)
 def Qnm_to_real(real, n, m):
     real = int(real) & int(2**(n+m+1)-1)
     if(real >= 2**(n+m)):
@@ -18,9 +18,9 @@ def sign_ext(value, newSize, oldSize):
     else: 
         return value
 
-NUM_MATRICES = 5
-NROW         = 16
-NCOL         = 2
+NUM_MATRICES = 1000
+NROW         = 32
+NCOL         = 4
 QN           = 6
 QM           = 11
 WMAX         = 7
@@ -41,9 +41,9 @@ for n in range(NUM_MATRICES) :
     Wxq = np.zeros_like(Wx)
     Wy  = (np.random.random( (NROW, NROW) )-0.5)*WMAX
     Wyq = np.zeros_like(Wy)
-    x   = np.round(np.random.random( (NCOL, 1) ))
+    x   = (np.random.random( (NCOL, 1) )-0.5 )*WMAX
     xq  = np.zeros_like(x)
-    y   = np.round((np.random.random( (NROW, 1) )))
+    y   = ((np.random.random( (NROW, 1) ))-0.5)*WMAX
     yq  = np.zeros_like(y)
     b   = (np.random.random( (NROW, 1) )-0.5)*WMAX
     bq  = np.zeros_like(b)
@@ -87,4 +87,7 @@ for n in range(NUM_MATRICES) :
 print("Quantizaion Error: ", quantError/(NUM_MATRICES*NROW))
 fin_Wx.close()
 fin_Wy.close()
+fin_x.close()
+fin_b.close()
+fin_y.close()
 fout.close()

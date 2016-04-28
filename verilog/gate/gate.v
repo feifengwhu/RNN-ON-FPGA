@@ -46,7 +46,7 @@ module gate     #(parameter INPUT_SZ  = 8,
 	// Internal Registers
 	wire signed [LAYER_BITWIDTH-1:0] outputVec_X;
 	wire signed [LAYER_BITWIDTH-1:0] outputVec_Y;
-	reg signed [LAYER_BITWIDTH-1:0] adder_X;
+	reg signed  [LAYER_BITWIDTH-1:0] adder_X;
 	wire dataReady_X;
 	wire dataReady_Y;
 	wire reset_dotProd_X;
@@ -154,7 +154,7 @@ module gate     #(parameter INPUT_SZ  = 8,
 			
 			SUM_X :
 			begin
-				enable_dotprodX = 1'b0;
+				enable_dotprodX = 1'b1;
 				enable_dotprodY = 1'b1;
 				dataReady_gate  = 1'b0;
 			end
@@ -169,7 +169,7 @@ module gate     #(parameter INPUT_SZ  = 8,
 			SUM_Y :
 			begin
 				enable_dotprodX = 1'b0;
-				enable_dotprodY = 1'b0;
+				enable_dotprodY = 1'b1;
 				dataReady_gate  = 1'b1;
 			end
 		endcase
