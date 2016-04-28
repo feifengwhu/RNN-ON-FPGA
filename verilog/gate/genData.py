@@ -21,8 +21,8 @@ def sign_ext(value, newSize, oldSize):
 NUM_MATRICES = 1000
 NROW         = 32
 NCOL         = 4
-QN           = 6
-QM           = 11
+QN           = 7
+QM           = 10
 WMAX         = 7
 fin_Wx  = open('goldenIn_Wx.bin', 'w')
 fin_Wy  = open('goldenIn_Wy.bin', 'w')
@@ -69,8 +69,8 @@ for n in range(NUM_MATRICES) :
 
     for i in range(NROW):
         for j in range(NCOL):
-            outq[i,0] += (int(sign_ext(Wxq[i,j], 2*(QN+QM)+1,QN+QM+1) * sign_ext(xq[j,0], 2*(QN+QM)+1,QN+QM+1)/(2**QM)) & int(2**(QN+QM+1)-1))
-            outq[i,0] += (int(sign_ext(Wyq[i,j], 2*(QN+QM)+1,QN+QM+1) * sign_ext(yq[j,0], 2*(QN+QM)+1,QN+QM+1)/(2**QM)) & int(2**(QN+QM+1)-1))
+            outq[i,0] += (int(sign_ext(Wxq[i,j], 2*(QN+QM+1)+1,QN+QM+1) * sign_ext(xq[j,0], 2*(QN+QM+1)+1,QN+QM+1)/(2**QM)) & int(2**(QN+QM+1)-1))
+            outq[i,0] += (int(sign_ext(Wyq[i,j], 2*(QN+QM+1)+1,QN+QM+1) * sign_ext(yq[j,0], 2*(QN+QM+1)+1,QN+QM+1)/(2**QM)) & int(2**(QN+QM+1)-1))
             outq[i,0] += bq[i,0]
 
     #yq = np.dot(Wq,xq)
@@ -85,6 +85,7 @@ for n in range(NUM_MATRICES) :
     quantError += sum(out-outrec)
 
 print("Quantizaion Error: ", quantError/(NUM_MATRICES*NROW))
+
 fin_Wx.close()
 fin_Wy.close()
 fin_x.close()

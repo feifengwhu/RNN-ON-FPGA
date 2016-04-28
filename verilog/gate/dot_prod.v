@@ -137,7 +137,7 @@ module dot_prod #(parameter NROW = 16,
         else
             if (dataReady == 1'b0) begin
                 for(i = 0; i < N_DSP48; i = i + 1) begin
-                    outputVector[(i*DSP48_PER_ROW+rowMux)*BITWIDTH +: BITWIDTH] <= outputVector[(i*DSP48_PER_ROW+rowMux)*BITWIDTH +: BITWIDTH] + ({{(QM+QN+1){weightMAC[(i+1)*BITWIDTH-1]}}, weightMAC[i*BITWIDTH +: BITWIDTH]} * {{(QM+QM+1){inputVector[BITWIDTH-1]}}, inputVector} >>> QM);
+                    outputVector[(i*DSP48_PER_ROW+rowMux)*BITWIDTH +: BITWIDTH] <= outputVector[(i*DSP48_PER_ROW+rowMux)*BITWIDTH +: BITWIDTH] + ({{(QM+QN+2){weightMAC[(i+1)*BITWIDTH-1]}}, weightMAC[i*BITWIDTH +: BITWIDTH]} * {{(QM+QM+2){inputVector[BITWIDTH-1]}}, inputVector} >>> QM);
                     //(outputMAC_interm[i*MAC_BITWIDTH +: MAC_BITWIDTH] >>> QM);
                 end
             end

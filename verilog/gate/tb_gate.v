@@ -4,8 +4,8 @@ module tb_gate();
     
 	parameter INPUT_SZ  = 4;
 	parameter HIDDEN_SZ = 32;
-	parameter QN = 6;
-    parameter QM = 11;
+	parameter QN = 7;
+    parameter QM = 10;
 	parameter DSP48_PER_ROW = 2;
     
     // Dependent Parameters
@@ -152,9 +152,9 @@ module tb_gate();
             #(HALF_CLOCK);
             
             for(j=0; j < HIDDEN_SZ; j = j + 1) begin
-                //$display("OUTP %b\nREAL %b", gateOutput[j*BITWIDTH+:BITWIDTH], ROM_goldenOut[i][j]);
+                $display("OUTP %b\nREAL %b", gateOutput[j*BITWIDTH+:BITWIDTH], ROM_goldenOut[i][j]);
                 //$fwrite(fid, "0x%X", outputVec[j*BITWIDTH+:BITWIDTH]);
-                quantError = quantError + (ROM_goldenOut[i][j] ^ gateOutput[j*BITWIDTH+:BITWIDTH])/(2.0**QM);
+                quantError = quantError + (ROM_goldenOut[i][j] - gateOutput[j*BITWIDTH+:BITWIDTH])/(2.0**QM);
                 //$display("Error: %b",(ROM_goldenOut[i][j] ^ outputVec[j*BITWIDTH+:BITWIDTH]) & ({ {(QN+1){1'b1}}, {(QM){1'b0}} }));
             end
  
