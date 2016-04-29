@@ -12,13 +12,13 @@ module dot_prod #(parameter NROW = 16,
                   outputVector);
 
     parameter BITWIDTH              = QN + QM + 1;
-	parameter ADDR_BITWIDTH         = $ln(NCOL)/$ln(2);
+	parameter ADDR_BITWIDTH         = log2(NCOL);
     parameter LAYER_BITWIDTH        = BITWIDTH*NROW;
     parameter N_DSP48               = NROW/DSP48_PER_ROW;
     parameter DSP48_INPUT_BITWIDTH  = BITWIDTH*N_DSP48;
     parameter DSP48_OUTPUT_BITWIDTH = (2*BITWIDTH+1)*N_DSP48;
     parameter MAC_BITWIDTH          = (2*BITWIDTH+1);
-	parameter MUX_BITWIDTH          = $ln(DSP48_PER_ROW)/$ln(2);
+	parameter MUX_BITWIDTH          = log2(DSP48_PER_ROW);
 	
 	input signed      [LAYER_BITWIDTH-1:0] weightRow; 
 	input signed      [BITWIDTH-1:0]       inputVector; 
@@ -31,7 +31,6 @@ module dot_prod #(parameter NROW = 16,
     // Internal register definition
     reg [MUX_BITWIDTH-1:0] rowMux;
     reg signed [DSP48_INPUT_BITWIDTH -1:0] weightMAC;
-    reg signed [DSP48_OUTPUT_BITWIDTH-1:0] outputMAC_interm;
     integer i;
 
     // FSM Registers
@@ -49,7 +48,7 @@ module dot_prod #(parameter NROW = 16,
         if( reset == 1'b1) begin 
             state <= 2'd0;
             colAddress <= {ADDR_BITWIDTH{1'b0}};
-            rowMux     <=  1'b0;
+            rowMux     <= {MUX_BITWIDTH{1'b0}};
         end
         else begin
             state      <= NEXTstate;
@@ -66,6 +65,8 @@ module dot_prod #(parameter NROW = 16,
             CALC :
                 if (colAddress == NCOL-1 && rowMux == DSP48_PER_ROW-1)
                     NEXTstate = END;
+                else
+                    NEXTstate = CALC;
             END :
                 NEXTstate = CALC;
             default:
@@ -80,7 +81,7 @@ module dot_prod #(parameter NROW = 16,
             begin
                 dataReady      = 1'b0;
                 NEXTcolAddress = {ADDR_BITWIDTH{1'b0}};      
-                NEXTrowMux     = 1'b0;      
+                NEXTrowMux     = {MUX_BITWIDTH{1'b0}};     
                 outputEn       = 1'b0;
             end
             CALC :
@@ -97,14 +98,14 @@ module dot_prod #(parameter NROW = 16,
             begin
                 dataReady      = 1'b1;
                 NEXTcolAddress = {ADDR_BITWIDTH{1'b0}};      
-                NEXTrowMux     = 1'b0;      
+                NEXTrowMux     = {MUX_BITWIDTH{1'b0}};      
                 outputEn       = 1'b1;
             end
             default:
             begin
                 dataReady      = 1'b0;
                 NEXTcolAddress = {ADDR_BITWIDTH{1'b0}};      
-                NEXTrowMux     = 1'b0;      
+                NEXTrowMux     = {MUX_BITWIDTH{1'b0}};      
                 outputEn       = 1'b0;
             end
         endcase   
@@ -143,8 +144,22 @@ module dot_prod #(parameter NROW = 16,
             end
             else begin
                 for(i = 0; i < N_DSP48; i = i + 1) begin
-                    outputVector[(i*DSP48_PER_ROW+rowMux)*BITWIDTH +: BITWIDTH]<= (outputMAC_interm[i*MAC_BITWIDTH +: MAC_BITWIDTH] >>> QM);
+                    outputVector[(i*DSP48_PER_ROW+rowMux)*BITWIDTH +: BITWIDTH]<= ({{(QM+QN+2){weightMAC[(i+1)*BITWIDTH-1]}}, weightMAC[i*BITWIDTH +: BITWIDTH]} * {{(QM+QM+2){inputVector[BITWIDTH-1]}}, inputVector} >>> QM);
                 end
             end
     end
+    
+function integer log2;
+	input [31:0] argument;
+	integer i;
+	begin
+		 log2 = -1;
+		 i = argument;  
+		 while( i > 0 ) begin
+			log2 = log2 + 1;
+			i = i >> 1;
+		 end
+	end
+endfunction
+    
 endmodule

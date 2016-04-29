@@ -22,7 +22,7 @@ T_opt1
 V[K3WEG2SnfN[o>9nha@5L3
 R1
 =1-d43d7e359f7e-5721556a-d0d39-3426
-o-quiet -auto_acc_if_foreign -work work +acc
+Z4 o-quiet -auto_acc_if_foreign -work work +acc
 n@_opt1
 R3
 R0
@@ -36,112 +36,120 @@ n@_opt2
 R3
 R0
 T_opt3
-!s110 1461837807
-Vh]C]JaPJfo><HOV:`07^O1
+!s110 1461952854
+VGi1O5e9f0F=SR1OD4F^<X2
 R1
-=1-d48564c0c748-5721dfef-39856-7bf9
+=1-d48564c0c748-5723a156-187da-3f4a
 R2
 n@_opt3
 R3
+T_opt4
+!s110 1461950139
+VZR=9;zd[IfA99R5gJc?<j3
+04 4 4 work gate fast 0
+=1-d48564c0c748-572396bb-7f1b7-3791
+R4
+n@_opt4
+R3
 R0
 vdot_prod
-Z4 !s110 1461838075
+Z5 !s110 1461952853
 !i10b 1
-!s100 :XhW@W>jzC:2X?LHccPzn2
-IoHbIV2KlT3gi;FeDDCo2L1
-Z5 VDg1SIo80bB@j0V0VzS_@n1
-Z6 d/home/jfonseca/thesis/verilog/gate
-w1461838004
+!s100 kLX@k6B4@TYdZPShL]^HT0
+I533zImhV=60o@jXzI1>8j2
+Z6 VDg1SIo80bB@j0V0VzS_@n1
+Z7 d/home/jfonseca/thesis/verilog/gate
+w1461952813
 8dot_prod.v
 Fdot_prod.v
 L0 1
-Z7 OL;L;10.4c_5;61
+Z8 OL;L;10.4c_5;61
 r1
 !s85 0
 31
-Z8 !s108 1461838075.000000
-Z9 !s107 weightRAM.v|test.v|tb_gate.v|gate.v|dot_prod.v|
-Z10 !s90 dot_prod.v|gate.v|tb_gate.v|test.v|weightRAM.v|
+Z9 !s108 1461952853.000000
+Z10 !s107 weightRAM.v|test.v|tb_gate.v|gate.v|dot_prod.v|
+Z11 !s90 dot_prod.v|gate.v|tb_gate.v|test.v|weightRAM.v|
 !i113 0
-Z11 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z12 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 vgate
-R4
-!i10b 1
-!s100 Q3_iK[jPoSK;bMe`4AW4A3
-If?;f>J9F9XIc17jdWVSc00
 R5
+!i10b 1
+!s100 zGN[NZ;;14AQejdDnlDK>2
+IQEK@h7EUI==cG:hR1_<C<0
 R6
-Z12 w1461836342
+R7
+w1461952542
 8gate.v
 Fgate.v
 L0 1
-R7
+R8
 r1
 !s85 0
 31
-R8
 R9
 R10
-!i113 0
 R11
+!i113 0
+R12
 vtb_gate
-R4
-!i10b 1
-!s100 2DK65^9GegUIDBOA?]RRd1
-IQQ1l>[1lP3aMlKE@NGz;Y3
 R5
+!i10b 1
+!s100 k=9Bf^LL55HXU7ADb_VP23
+IzRgI1aiAg^9L1<K=Ij_`E3
 R6
-w1461837557
+R7
+w1461952849
 8tb_gate.v
 Ftb_gate.v
 L0 3
-R7
+R8
 r1
 !s85 0
 31
-R8
 R9
 R10
-!i113 0
 R11
+!i113 0
+R12
 vtest
-R4
+R5
 !i10b 1
 !s100 1HZ`g0h9Sme?378S=NBOU1
 IU_`Fc`n:fW@[;EH[hP?a82
-R5
 R6
-R12
+R7
+w1461836342
 8test.v
 Ftest.v
 L0 1
-R7
+R8
 r1
 !s85 0
 31
-R8
 R9
 R10
-!i113 0
 R11
-vweightRAM
-R4
-!i10b 1
-!s100 7e_nj7b33]HONM?PKkLZ=0
-I[kY`7RMk^of=RF7M9jF9c1
-R5
-R6
+!i113 0
 R12
+vweightRAM
+R5
+!i10b 1
+!s100 _edC1BENjcPn9;jc3a>jZ2
+I9PIdb:eX_FJ?DB6HlA8F02
+R6
+R7
+w1461952138
 8weightRAM.v
 FweightRAM.v
 L0 1
-R7
+R8
 r1
 !s85 0
 31
-R8
 R9
 R10
-!i113 0
 R11
+!i113 0
+R12
 nweight@r@a@m

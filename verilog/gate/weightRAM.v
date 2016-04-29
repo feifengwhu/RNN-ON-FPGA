@@ -11,7 +11,7 @@ module weightRAM #(parameter NROW = 16,
    
     // Dependent parameters
     parameter OUTPUT_PORT_SIZE = BITWIDTH*NROW;
-    parameter ADDR_BITWIDTH    = $ln(NCOL)/$ln(2);
+    parameter ADDR_BITWIDTH    = log2(NCOL);
     
     // The input/output definitions
     input       [ADDR_BITWIDTH-1:0]     addressIn;
@@ -51,4 +51,16 @@ module weightRAM #(parameter NROW = 16,
         end
     end
 
+function integer log2;
+    input [31:0] argument;
+    integer i;
+    begin
+         log2 = -1;
+         i = argument;  
+         while( i > 0 ) begin
+            log2 = log2 + 1;
+            i = i >> 1;
+         end
+    end
+endfunction
 endmodule

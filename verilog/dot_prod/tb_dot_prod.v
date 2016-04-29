@@ -13,10 +13,10 @@ module tb_dot_prod();
     parameter BITWIDTH          = QN + QM + 1;
     parameter MEMORY_BITWIDTH   = BITWIDTH*NROW;
     parameter LAYER_BITWIDTH    = BITWIDTH*NCOL;  
-	parameter ADDR_BITWIDTH     = $ln(NCOL)/$ln(2);
+	parameter ADDR_BITWIDTH     = log2(NCOL);
     parameter HALF_CLOCK        = 1;
     parameter FULL_CLOCK        = 2*HALF_CLOCK;
-    parameter MAX_SAMPLES       = 50;
+    parameter MAX_SAMPLES       = 1;
 
     // The golden inputs/outputs ROM
     reg  [BITWIDTH-1:0] ROM_input     [0:MAX_SAMPLES-1] [0:NCOL-1];   
@@ -100,6 +100,7 @@ module tb_dot_prod();
             end
             reset = 0;
             writeEn = 0;
+
         for(i=0; i < MAX_SAMPLES; i = i + 1) begin
             @(posedge dataReady);
             
@@ -135,6 +136,20 @@ module tb_dot_prod();
  
         $stop;
     end
+
+function integer log2;
+	input [31:0] argument;
+	integer i;
+	begin
+		 log2 = -1;
+		 i = argument;  
+		 while( i > 0 ) begin
+			log2 = log2 + 1;
+			i = i >> 1;
+		 end
+	end
+endfunction
+
 endmodule
             
     

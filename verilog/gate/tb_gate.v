@@ -4,8 +4,8 @@ module tb_gate();
     
 	parameter INPUT_SZ  = 4;
 	parameter HIDDEN_SZ = 32;
-	parameter QN = 7;
-    parameter QM = 10;
+	parameter QN = 6;
+    parameter QM = 11;
 	parameter DSP48_PER_ROW = 2;
     
     // Dependent Parameters
@@ -16,7 +16,7 @@ module tb_gate();
 	parameter ADDR_BITWIDTH_X  = $ln(INPUT_SZ)/$ln(2);
     parameter HALF_CLOCK       = 1;
     parameter FULL_CLOCK       = 2*HALF_CLOCK;
-    parameter MAX_SAMPLES      = 1000;
+    parameter MAX_SAMPLES      = 100;
 
     // DUT Connecting wires/regs
 	reg    [ADDR_BITWIDTH_X-1:0] colAddressWrite_X;

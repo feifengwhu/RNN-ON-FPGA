@@ -1,0 +1,408 @@
+/*
+
+Vivado v2015.4 (64-bit)
+SW Build 1412921 on Wed Nov 18 09:44:32 MST 2015
+Process ID: 15377
+
+Current time: 	4/29/16 6:52:59 PM WEST
+Time zone: 	Western European Time (Europe/Lisbon)
+
+OS: CentOS release 6.4 (Final)
+Version: 2.6.32-358.2.1.el6.x86_64
+Architecture: amd64
+Available processors (cores): 4
+
+DISPLAY: :0.0
+Screen size: 1680x1050
+Screen resolution (DPI): 95
+Available screens: 1
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	1.8.0_45 64-bit
+Java home: 	/opt/Xilinx/Vivado/2015.4/tps/lnx64/jre
+
+User name: 	jfonseca
+User home directory: /home/jfonseca
+User working directory: /home/jfonseca/thesis/verilog/gate
+User country: 	US
+User language: 	en
+User locale: 	en_US
+
+Vivado preferences path: /home/jfonseca/.Xilinx/Vivado/2015.4/vivado.ini
+Vivado layouts directory: /home/jfonseca/.Xilinx/Vivado/2015.4/layouts
+
+GUI allocated memory:	136 MB
+GUI max memory:		3,052 MB
+Engine allocated memory: 4,826 MB
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// [GUI Memory]: 45 MB (+44271kb) [00:00:08]
+// [Engine Memory]: 4,826 MB (+4909066kb) [00:00:08]
+// HMemoryUtils.trashcanNow. Engine heap size: 4,826 MB. GUI used memory: 30 MB. Current time: 4/29/16 6:53:01 PM WEST
+selectButton(PAResourceEtoH.GettingStartedView_CREATE_NEW_PROJECT, "Create New Project"); // l:JideButton (JPanel:JComponent, cq:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_NEW_PROJECT
+// [GUI Memory]: 51 MB (+3878kb) [00:00:18]
+// [GUI Memory]: 62 MB (+8970kb) [00:00:18]
+// [GUI Memory]: 74 MB (+9331kb) [00:00:19]
+// h:g (cq:JFrame): New Project: addNotify
+selectButton("NEXT", "Next >"); // JButton:AbstractButton (ButtonPanel:JPanel, h:g)
+setText(PAResourceOtoP.ProjectNameChooser_PROJECT_NAME, "gate_synth"); // ao:JTextField (JPanel:JComponent, h:g)
+selectButton("NEXT", "Next >"); // JButton:AbstractButton (ButtonPanel:JPanel, h:g)
+selectButton("NEXT", "Next >"); // JButton:AbstractButton (ButtonPanel:JPanel, h:g)
+selectButton(PAResourceQtoS.SrcChooserPanel_ADD_HDL_AND_NETLIST_FILES_TO_YOUR_PROJECT, "Add Files"); // a:JButton (H:JPanel, h:g)
+// Elapsed time: 11 seconds
+String[] filenames31467 = {"/home/jfonseca/thesis/verilog/gate/dot_prod.v", "/home/jfonseca/thesis/verilog/gate/gate.v", "/home/jfonseca/thesis/verilog/gate/weightRAM.v"};
+setFileChooser(filenames31467);
+selectButton("NEXT", "Next >"); // JButton:AbstractButton (ButtonPanel:JPanel, h:g)
+selectButton("NEXT", "Next >"); // JButton:AbstractButton (ButtonPanel:JPanel, h:g)
+selectButton("NEXT", "Next >"); // JButton:AbstractButton (ButtonPanel:JPanel, h:g)
+selectButton(PAResourceOtoP.PartChooser_BOARDS, "Boards"); // l:s (JPanel:JComponent, h:g): TRUE
+// HMemoryUtils.trashcanNow. Engine heap size: 4,905 MB. GUI used memory: 30 MB. Current time: 4/29/16 6:53:41 PM WEST
+selectComboBox(PAResourceOtoP.PartChooser_BOARD_DISPLAY_NAME_CHOOSER, "ZedBoard Zynq Evaluation and Development Kit", 9); // q:M (JPanel:JComponent, h:g)
+selectTable(PAResourceOtoP.PartChooser_BOARDS, "ZedBoard Zynq Evaluation and Development Kit ; em.avnet.com ; d ; xc7z020clg484-1 ; 484 ; 1.3 ; 140 ; 220 ; 106400 ; 0 ; 0 ; 200 ; 53200 ; 4 ; 0 ; 85 ; 0 ; 85 ; C ; 1.05 ; 0.95 ; 0.95 ; 0 ; 0 ; 0 ; 0 ; 0", 0, "em.avnet.com", 1); // N:v (JViewport:JComponent, h:g)
+selectButton("NEXT", "Next >"); // JButton:AbstractButton (ButtonPanel:JPanel, h:g)
+// bF:g (h:g):  Create Project : addNotify
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_ADD
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_NEW
+// Tcl Message: create_project gate_synth /home/jfonseca/thesis/verilog/gate/gate_synth -part xc7z020clg484-1 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified 
+// TclEventType: PROJECT_NEW
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2015.4/data/ip'. 
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: create_project: Time (s): cpu = 00:00:11 ; elapsed = 00:00:08 . Memory (MB): peak = 5844.305 ; gain = 23.789 ; free physical = 731 ; free virtual = 6471 
+// TclEventType: BOARD_MODIFIED
+// Tcl Message: set_property board_part em.avnet.com:zed:part0:1.3 [current_project] 
+// TclEventType: PROJECT_CHANGE
+// Tcl Message: set_property simulator_language Verilog [current_project] 
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: add_files -norecurse {/home/jfonseca/thesis/verilog/gate/gate.v /home/jfonseca/thesis/verilog/gate/dot_prod.v /home/jfonseca/thesis/verilog/gate/weightRAM.v} 
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: import_files -force -norecurse 
+// Tcl Message: INFO: [filemgmt 20-348] Importing the appropriate files for fileset: 'sources_1' 
+// Elapsed time: 10 seconds
+selectButton("FINISH", "Finish"); // JButton:AbstractButton (ButtonPanel:JPanel, h:g)
+// 'g' command handler elapsed time: 49 seconds
+dismissDialog("Create Project"); // bF:g (h:g)
+dismissDialog("New Project"); // h:g (cq:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// Tcl Message: update_compile_order -fileset sources_1 
+// Tcl Message: update_compile_order -fileset sources_1 
+// Tcl Message: update_compile_order -fileset sim_1 
+// PAPropertyPanels.initPanels (gate.v) elapsed time: 0.7s
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, gate (gate.v)]", 1, true); // y:k (I:JPanel, cq:JFrame) - Node
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// Tcl Message: update_compile_order -fileset sources_1 
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, gate (gate.v)]", 1); // y:k (I:JPanel, cq:JFrame)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 17, false); // w:Y (v:I, cq:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+// bF:g (cq:JFrame):  Starting Design Runs : addNotify
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: RUN_LAUNCH
+// Tcl Message: launch_runs synth_1 
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Fri Apr 29 18:54:01 2016] Launched synth_1... Run output will be captured here: /home/jfonseca/thesis/verilog/gate/gate_synth/gate_synth.runs/synth_1/runme.log 
+dismissDialog("Starting Design Runs"); // bF:g (cq:JFrame)
+// HMemoryUtils.trashcanNow. Engine heap size: 4,954 MB. GUI used memory: 37 MB. Current time: 4/29/16 6:54:06 PM WEST
+// TclEventType: RUN_COMPLETED
+// Elapsed time: 48 seconds
+selectButton(PAResourceQtoS.RunGadget_SHOW_WARNING_AND_ERROR_MESSAGES_IN_MESSAGES, "26 warnings"); // i:l (JPanel:JComponent, cq:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_MESSAGE_WINDOW
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-689] width (4) of port connection 'colAddress' does not match port width (3) of module 'dot_prod' [/home/jfonseca/thesis/verilog/gate/gate_synth/gate_synth.srcs/sources_1/imports/gate/gate.v:67]. ]", 2, true); // ag:k (JViewport:JComponent, cq:JFrame) - Node
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;/home/jfonseca/thesis/verilog/gate/gate_synth/gate_synth.srcs/sources_1/imports/gate/gate.v;-;;-;16;-;line;-;67;-;;-;16;-;"); // ag:k (JViewport:JComponent, cq:JFrame)
+selectCodeEditor("gate.v", 116, 401); // bl:J (JPanel:JComponent, cq:JFrame)
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 44 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 17, false); // w:Y (v:I, cq:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+// bF:g (cq:JFrame):  Resetting Runs : addNotify
+selectButton("PAResourceQtoS.RunRun_TASK_HAS_ALREADY_COMPLETED_AND_UP_TO_DATE_OK", "OK"); // JButton:AbstractButton (JPanel:JComponent, T:JDialog)
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+// bF:g (cq:JFrame):  Starting Design Runs : addNotify
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs synth_1 
+// Tcl Message: [Fri Apr 29 18:55:53 2016] Launched synth_1... Run output will be captured here: /home/jfonseca/thesis/verilog/gate/gate_synth/gate_synth.runs/synth_1/runme.log 
+// 'm' command handler elapsed time: 3 seconds
+dismissDialog("Starting Design Runs"); // bF:g (cq:JFrame)
+// Elapsed time: 24 seconds
+selectCodeEditor("gate.v", 123, 385); // bl:J (JPanel:JComponent, cq:JFrame)
+selectCodeEditor("gate.v", 123, 400); // bl:J (JPanel:JComponent, cq:JFrame)
+selectButton(PAResourceQtoS.StateMonitor_CANCEL, "Cancel"); // a:JButton (r:JPanel, cq:JFrame)
+selectButton("PAResourceQtoS.StateMonitor_YOU_ABOUT_TO_CANCEL_YOUR_RUNNING_Cancel", "Cancel"); // JButton:AbstractButton (JPanel:JComponent, T:JDialog)
+selectButton(PAResourceQtoS.StateMonitor_CANCEL, "Cancel"); // a:JButton (r:JPanel, cq:JFrame)
+// bF:g (cq:JFrame):  Resetting Runs : addNotify
+selectButton("PAResourceQtoS.StateMonitor_YOU_ABOUT_TO_CANCEL_YOUR_RUNNING_Delete Files", "Delete Files"); // JButton:AbstractButton (JPanel:JComponent, T:JDialog)
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+dismissDialog("Resetting Runs"); // bF:g (cq:JFrame)
+selectCodeEditor("gate.v", 125, 397); // bl:J (JPanel:JComponent, cq:JFrame)
+// [GUI Memory]: 81 MB (+3391kb) [00:03:39]
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 17, false); // w:Y (v:I, cq:JFrame)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 17, false); // w:Y (v:I, cq:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+// bF:g (cq:JFrame):  Resetting Runs : addNotify
+// bF:g (cq:JFrame):  Starting Design Runs : addNotify
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs synth_1 
+// Tcl Message: [Fri Apr 29 18:56:32 2016] Launched synth_1... Run output will be captured here: /home/jfonseca/thesis/verilog/gate/gate_synth/gate_synth.runs/synth_1/runme.log 
+dismissDialog("Starting Design Runs"); // bF:g (cq:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Project Summary", 0); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cq:JFrame)
+// TclEventType: RUN_COMPLETED
+// Elapsed time: 43 seconds
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/jfonseca/thesis/verilog/gate/gate_synth/gate_synth.srcs/sources_1/imports/gate/dot_prod.v:14]. ]", 1, true); // ag:k (JViewport:JComponent, cq:JFrame) - Node
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "gate.v", 1); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cq:JFrame)
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // D:b
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, gate (gate.v), DOTPROD_X - dot_prod (dot_prod.v)]", 2, false); // y:k (I:JPanel, cq:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, gate (gate.v), DOTPROD_X - dot_prod (dot_prod.v)]", 2, false, false, false, false, false, true); // y:k (I:JPanel, cq:JFrame) - Double Click
+selectCodeEditor("dot_prod.v", 97, 233); // bl:J (JPanel:JComponent, cq:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 11 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "dot_prod.v", 0); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cq:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// [GUI Memory]: 87 MB (+2438kb) [00:04:56]
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 17, false); // w:Y (v:I, cq:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+// bF:g (cq:JFrame):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+// bF:g (cq:JFrame):  Starting Design Runs : addNotify
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs synth_1 
+// Tcl Message: [Fri Apr 29 18:57:46 2016] Launched synth_1... Run output will be captured here: /home/jfonseca/thesis/verilog/gate/gate_synth/gate_synth.runs/synth_1/runme.log 
+dismissDialog("Starting Design Runs"); // bF:g (cq:JFrame)
+// TclEventType: RUN_COMPLETED
+// Elapsed time: 34 seconds
+selectTab(PAResourceOtoP.ProjectSummaryUtilizationPanel_PROJECT_SUMMARY_UTILIZATION_PANEL_TABBED, PAResourceOtoP.ProjectSummaryUtilizationPanel_TABLE, "Table", 1); // g:g (f:JPanel, cq:JFrame)
+selectTable(PAResourceOtoP.ProjectSummaryUtilizationPanel_PROJECT_SUMMARY_UTILIZATION_TABLE, "DSP ; 48 ; 220 ; 21.818182", 2, "48", 1); // v:SortableTable (JPanel:JComponent, cq:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Project Summary", 1); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cq:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// Elapsed time: 13 seconds
+selectCodeEditor("dot_prod.v", 553, 269); // bl:J (JPanel:JComponent, cq:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectCodeEditor("dot_prod.v", 49, 321); // bl:J (JPanel:JComponent, cq:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// Elapsed time: 20 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, gate (gate.v)]", 1, true); // y:k (I:JPanel, cq:JFrame) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, gate (gate.v)]", 1, true, false, false, false, false, true); // y:k (I:JPanel, cq:JFrame) - Double Click - Node
+// Elapsed time: 24 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "gate.v", 0); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cq:JFrame)
+selectTable(PAResourceOtoP.ProjectSummaryUtilizationPanel_PROJECT_SUMMARY_UTILIZATION_TABLE, "IO ; 1199 ; 200 ; 599.5", 3, "1199", 1); // v:SortableTable (JPanel:JComponent, cq:JFrame)
+selectTable(PAResourceOtoP.ProjectSummaryUtilizationPanel_PROJECT_SUMMARY_UTILIZATION_TABLE, "DSP ; 48 ; 220 ; 21.818182", 2, "220", 2); // v:SortableTable (JPanel:JComponent, cq:JFrame)
+selectTable(PAResourceOtoP.ProjectSummaryUtilizationPanel_PROJECT_SUMMARY_UTILIZATION_TABLE, "IO ; 1199 ; 200 ; 599.5", 3, "1199", 1); // v:SortableTable (JPanel:JComponent, cq:JFrame)
+selectTable(PAResourceOtoP.ProjectSummaryUtilizationPanel_PROJECT_SUMMARY_UTILIZATION_TABLE, "DSP ; 48 ; 220 ; 21.818182", 2, "48", 1); // v:SortableTable (JPanel:JComponent, cq:JFrame)
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 86 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Project Summary", 1); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cq:JFrame)
+selectCodeEditor("dot_prod.v", 465, 171); // bl:J (JPanel:JComponent, cq:JFrame)
+selectCodeEditor("dot_prod.v", 607, 172); // bl:J (JPanel:JComponent, cq:JFrame)
+selectCodeEditor("dot_prod.v", 175, 261); // bl:J (JPanel:JComponent, cq:JFrame)
+selectCodeEditor("dot_prod.v", 280, 258); // bl:J (JPanel:JComponent, cq:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// Elapsed time: 13 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 17, false); // w:Y (v:I, cq:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+// bF:g (cq:JFrame):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+// bF:g (cq:JFrame):  Starting Design Runs : addNotify
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs synth_1 
+// Tcl Message: [Fri Apr 29 19:01:35 2016] Launched synth_1... Run output will be captured here: /home/jfonseca/thesis/verilog/gate/gate_synth/gate_synth.runs/synth_1/runme.log 
+dismissDialog("Starting Design Runs"); // bF:g (cq:JFrame)
+// Elapsed time: 29 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "dot_prod.v", 0); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cq:JFrame)
+// TclEventType: RUN_COMPLETED
+selectTab(PAResourceOtoP.ProjectSummaryUtilizationPanel_PROJECT_SUMMARY_UTILIZATION_PANEL_TABBED, PAResourceOtoP.ProjectSummaryUtilizationPanel_TABLE, "Table", 1); // g:g (f:JPanel, cq:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Project Summary", 1); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cq:JFrame)
+// Elapsed time: 20 seconds
+selectCodeEditor("dot_prod.v", 630, 170); // bl:J (JPanel:JComponent, cq:JFrame)
+selectCodeEditor("dot_prod.v", 637, 170); // bl:J (JPanel:JComponent, cq:JFrame)
+selectCodeEditor("dot_prod.v", 632, 172); // bl:J (JPanel:JComponent, cq:JFrame)
+selectCodeEditor("dot_prod.v", 315, 259); // bl:J (JPanel:JComponent, cq:JFrame)
+selectCodeEditor("dot_prod.v", 578, 264); // bl:J (JPanel:JComponent, cq:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 17, false); // w:Y (v:I, cq:JFrame)
+// [GUI Memory]: 93 MB (+1946kb) [00:10:20]
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+// bF:g (cq:JFrame):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+// bF:g (cq:JFrame):  Starting Design Runs : addNotify
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs synth_1 
+// Tcl Message: [Fri Apr 29 19:03:08 2016] Launched synth_1... Run output will be captured here: /home/jfonseca/thesis/verilog/gate/gate_synth/gate_synth.runs/synth_1/runme.log 
+dismissDialog("Starting Design Runs"); // bF:g (cq:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "dot_prod.v", 0); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cq:JFrame)
+// TclEventType: RUN_COMPLETED
+// Elapsed time: 33 seconds
+selectTab(PAResourceOtoP.ProjectSummaryUtilizationPanel_PROJECT_SUMMARY_UTILIZATION_PANEL_TABBED, PAResourceOtoP.ProjectSummaryUtilizationPanel_TABLE, "Table", 1); // g:g (f:JPanel, cq:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Project Summary", 1); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cq:JFrame)
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+selectCodeEditor("dot_prod.v", 160, 262); // bl:J (JPanel:JComponent, cq:JFrame)
+selectCodeEditor("dot_prod.v", 604, 172); // bl:J (JPanel:JComponent, cq:JFrame)
+selectCodeEditor("dot_prod.v", 585, 170); // bl:J (JPanel:JComponent, cq:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "dot_prod.v", 0); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cq:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 17, false); // w:Y (v:I, cq:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+// bF:g (cq:JFrame):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+// bF:g (cq:JFrame):  Starting Design Runs : addNotify
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs synth_1 
+// Tcl Message: [Fri Apr 29 19:04:12 2016] Launched synth_1... Run output will be captured here: /home/jfonseca/thesis/verilog/gate/gate_synth/gate_synth.runs/synth_1/runme.log 
+dismissDialog("Starting Design Runs"); // bF:g (cq:JFrame)
+// TclEventType: RUN_COMPLETED
+// HMemoryUtils.trashcanNow. Engine heap size: 4,969 MB. GUI used memory: 40 MB. Current time: 4/29/16 7:04:56 PM WEST
+// Elapsed time: 44 seconds
+selectTab(PAResourceOtoP.ProjectSummaryUtilizationPanel_PROJECT_SUMMARY_UTILIZATION_PANEL_TABBED, PAResourceOtoP.ProjectSummaryUtilizationPanel_TABLE, "Table", 1); // g:g (f:JPanel, cq:JFrame)
+// Elapsed time: 13 seconds
+selectButton(PAResourceAtoD.BoardGadget_URL, "http://www.zedboard.org"); // i:l (JPanel:JComponent, cq:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Project Summary", 1); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cq:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "dot_prod.v", 1); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cq:JFrame)
+selectCodeEditor("dot_prod.v", 334, 363); // bl:J (JPanel:JComponent, cq:JFrame)
+selectCodeEditor("dot_prod.v", 573, 274); // bl:J (JPanel:JComponent, cq:JFrame)
+selectCodeEditor("dot_prod.v", 579, 254); // bl:J (JPanel:JComponent, cq:JFrame)
+selectCodeEditor("dot_prod.v", 814, 263); // bl:J (JPanel:JComponent, cq:JFrame)
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// HMemoryUtils.trashcanNow. Engine heap size: 4,969 MB. GUI used memory: 39 MB. Current time: 4/29/16 7:34:56 PM WEST
+// HMemoryUtils.trashcanNow. Engine heap size: 4,969 MB. GUI used memory: 89 MB. Current time: 4/29/16 8:04:56 PM WEST

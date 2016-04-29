@@ -18,7 +18,7 @@ def sign_ext(value, newSize, oldSize):
     else: 
         return value
 
-NUM_MATRICES = 2000
+NUM_MATRICES = 1
 NROW         = 32
 NCOL         = 4
 QN           = 6

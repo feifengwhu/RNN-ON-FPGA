@@ -18,10 +18,10 @@ n@_opt
 Z3 OL;O;10.4c_5;61
 R0
 T_opt1
-!s110 1461178528
-Va0lmG]nlWa25gV:9Wmokc2
+!s110 1461952015
+VI3RKhmfUjE_5SRmJ;g[VP2
 R1
-=1-d43d7e359f7e-5717d0a0-b3ec5-1393
+=1-d48564c0c748-57239e0f-12c65-3b65
 o-quiet -auto_acc_if_foreign -work work +acc
 n@_opt1
 R3
@@ -45,10 +45,10 @@ n@_opt3
 R3
 R0
 T_opt4
-Z4 !s110 1461838222
-V6AckE6W@QJT@0ETliJGN>2
+!s110 1461952055
+Vk`]cVKfOZhVk8BHnOm0hY3
 R1
-=1-d48564c0c748-5721e18e-d0ca1-7c84
+=1-d48564c0c748-57239e37-14944-3b91
 R2
 n@_opt4
 R3
@@ -62,13 +62,13 @@ n@_opt5
 R3
 R0
 vdot_prod
-R4
+Z4 !s110 1461952052
 !i10b 1
-!s100 :XhW@W>jzC:2X?LHccPzn2
-IoHbIV2KlT3gi;FeDDCo2L1
+!s100 @Xz`k4UWnh;c9K4[BWP0a3
+I;23JS6BL^oCmFLjO:=bG60
 Z5 VDg1SIo80bB@j0V0VzS_@n1
 Z6 d/home/jfonseca/thesis/verilog/dot_prod
-w1461838155
+w1461951974
 8dot_prod.v
 Fdot_prod.v
 L0 1
@@ -76,19 +76,19 @@ Z7 OL;L;10.4c_5;61
 r1
 !s85 0
 31
-Z8 !s108 1461838222.000000
-Z9 !s107 weightRAM.v|tb_dot_prod.v|dot_prod.v|
-Z10 !s90 dot_prod.v|tb_dot_prod.v|weightRAM.v|
+Z8 !s108 1461952052.000000
+Z9 !s107 weightRAM.v|test.v|tb_dot_prod.v|dot_prod.v|
+Z10 !s90 dot_prod.v|tb_dot_prod.v|test.v|weightRAM.v|
 !i113 0
 Z11 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 vtb_dot_prod
 R4
 !i10b 1
-!s100 K:@C^=0U^`L7`1WfL9[X71
-IzFSTQS`4^VJ:zn=W<]lP73
+!s100 >nUcU=4LdgSSfeUeRzZe63
+If><`d6>oIFe==S>XHg9B:1
 R5
 R6
-w1461838214
+w1461951970
 8tb_dot_prod.v
 Ftb_dot_prod.v
 L0 3
@@ -101,14 +101,34 @@ R9
 R10
 !i113 0
 R11
+vtest
+R4
+!i10b 1
+!s100 jI:CUCA4h]D;^C8m=I`<o2
+IEH3R6Vmnen^LQ4VNQ2nWW3
+R5
+R6
+w1461951935
+8test.v
+Ftest.v
+L0 1
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 0
+R11
 vweightRAM
 R4
 !i10b 1
-!s100 7e_nj7b33]HONM?PKkLZ=0
-I[kY`7RMk^of=RF7M9jF9c1
+!s100 _edC1BENjcPn9;jc3a>jZ2
+I9PIdb:eX_FJ?DB6HlA8F02
 R5
 R6
-w1461836342
+w1461952048
 8weightRAM.v
 FweightRAM.v
 L0 1

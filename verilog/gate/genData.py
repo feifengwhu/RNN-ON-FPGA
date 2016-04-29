@@ -18,11 +18,11 @@ def sign_ext(value, newSize, oldSize):
     else: 
         return value
 
-NUM_MATRICES = 1000
+NUM_MATRICES = 100
 NROW         = 32
 NCOL         = 4
-QN           = 7
-QM           = 10
+QN           = 6
+QM           = 11
 WMAX         = 7
 fin_Wx  = open('goldenIn_Wx.bin', 'w')
 fin_Wy  = open('goldenIn_Wy.bin', 'w')
