@@ -6,4 +6,4 @@
 # Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
 #
 
-vivado -log gate.vds -m64 -mode batch -messageDb vivado.pb -notrace -source gate.tcl
+vivado -log weightRAM.vds -m64 -mode batch -messageDb vivado.pb -notrace -source weightRAM.tcl

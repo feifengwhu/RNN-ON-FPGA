@@ -3,11 +3,11 @@
 module tb_dot_prod();
     
     // User defined parameters
-    parameter NROW = 32;
+    parameter NROW = 16;
     parameter NCOL = 4;
     parameter QN   = 6;
     parameter QM   = 11;
-    parameter DSP48_PER_ROW    = 4; 
+    parameter DSP48_PER_ROW    = 2; 
     
     // Dependent Parameters
     parameter BITWIDTH          = QN + QM + 1;
@@ -16,7 +16,7 @@ module tb_dot_prod();
 	parameter ADDR_BITWIDTH     = log2(NCOL);
     parameter HALF_CLOCK        = 1;
     parameter FULL_CLOCK        = 2*HALF_CLOCK;
-    parameter MAX_SAMPLES       = 1;
+    parameter MAX_SAMPLES       = 100;
 
     // The golden inputs/outputs ROM
     reg  [BITWIDTH-1:0] ROM_input     [0:MAX_SAMPLES-1] [0:NCOL-1];   

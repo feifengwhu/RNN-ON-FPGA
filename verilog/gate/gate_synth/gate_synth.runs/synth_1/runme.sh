@@ -20,7 +20,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='/home/jfonseca/thesis/verilog/gate/gate_synth/gate_synth.runs/synth_1'
+HD_PWD='/home/josefonseca/Documents/thesis/verilog/gate/gate_synth/gate_synth.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
@@ -36,4 +36,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log gate.vds -m64 -mode batch -messageDb vivado.pb -notrace -source gate.tcl
+EAStep vivado -log weightRAM.vds -m64 -mode batch -messageDb vivado.pb -notrace -source weightRAM.tcl

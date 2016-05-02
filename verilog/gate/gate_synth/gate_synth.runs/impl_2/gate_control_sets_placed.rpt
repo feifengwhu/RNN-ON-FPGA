@@ -1,0 +1,62 @@
+Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2015.4 (lin64) Build 1412921 Wed Nov 18 09:44:32 MST 2015
+| Date         : Sat Apr 30 14:57:45 2016
+| Host         : desktop4480 running 64-bit Ubuntu 14.04.4 LTS
+| Command      : report_control_sets -verbose -file gate_control_sets_placed.rpt
+| Design       : gate
+| Device       : xc7z020
+------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Flip-Flop Distribution
+3. Detailed Control Set Information
+
+1. Summary
+----------
+
++-------------------------------------------------------------------+-------+
+|                               Status                              | Count |
++-------------------------------------------------------------------+-------+
+| Number of unique control sets                                     |     9 |
+| Minimum Number of register sites lost to control set restrictions |     8 |
++-------------------------------------------------------------------+-------+
+
+
+2. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |               3 |            1 |
+| No           | No                    | Yes                    |             576 |          160 |
+| No           | Yes                   | No                     |              13 |            4 |
+| Yes          | No                    | No                     |               0 |            0 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |             576 |          219 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+3. Detailed Control Set Information
+-----------------------------------
+
++------------------------+----------------------------------------+----------------------------------------+------------------+----------------+
+|      Clock Signal      |              Enable Signal             |            Set/Reset Signal            | Slice Load Count | Bel Load Count |
++------------------------+----------------------------------------+----------------------------------------+------------------+----------------+
+|  clock                 |                                        |                                        |                1 |              3 |
+|  clock                 |                                        | DOTPROD_X/reset_dotProd_X              |                2 |              6 |
+|  clock                 |                                        | DOTPROD_Y/reset_dotProd_Y              |                2 |              7 |
+|  clock                 | DOTPROD_X/outputVector[269]_i_1__0_n_0 | DOTPROD_X/outputVector[287]_i_1__0_n_0 |               53 |            144 |
+|  clock                 | DOTPROD_X/rowMux                       | DOTPROD_X/outputVector[287]_i_1__0_n_0 |               56 |            144 |
+|  clock                 | DOTPROD_Y/outputVector[269]_i_1_n_0    | DOTPROD_Y/outputVector[287]_i_1_n_0    |               53 |            144 |
+|  clock                 | DOTPROD_Y/rowMux                       | DOTPROD_Y/outputVector[287]_i_1_n_0    |               57 |            144 |
+|  DOTPROD_X/CLK         |                                        | reset                                  |               80 |            288 |
+|  DOTPROD_Y/dataReady_Y |                                        | reset                                  |               80 |            288 |
++------------------------+----------------------------------------+----------------------------------------+------------------+----------------+
+
+

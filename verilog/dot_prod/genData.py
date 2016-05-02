@@ -18,8 +18,8 @@ def sign_ext(value, newSize, oldSize):
     else: 
         return value
 
-NUM_MATRICES = 1
-NROW         = 32
+NUM_MATRICES = 100
+NROW         = 16
 NCOL         = 4
 QN           = 6
 QM           = 11
@@ -66,4 +66,5 @@ for n in range(NUM_MATRICES) :
 
 print("Quantizaion Error: ", quantError/(NUM_MATRICES*NROW))
 fin_W.close()
+fin_x.close()
 fout.close()

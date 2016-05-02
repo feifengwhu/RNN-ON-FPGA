@@ -9,23 +9,22 @@ z2
 cModel Technology
 Z0 d/home/josefonseca/Documents/thesis/verilog/gate
 T_opt
-!s110 1461802758
-V39N768C>P2^KUeQlD<h2:2
+!s110 1462195418
+VLF^XfnjGAofhoKC:Q6cU62
 Z1 04 7 4 work tb_gate fast 0
-=1-d43d7e359f7e-57215706-1482-3584
+=1-d43d7e359f7e-572754da-701a-2bd7
 Z2 o-quiet -auto_acc_if_foreign -work work
 n@_opt
 Z3 OL;O;10.4c_5;61
 R0
 T_opt1
-!s110 1461802346
-V[K3WEG2SnfN[o>9nha@5L3
+!s110 1462195445
+VZ:UE6Vl7_ZRC`h7B2C07]1
 R1
-=1-d43d7e359f7e-5721556a-d0d39-3426
+=1-d43d7e359f7e-572754f5-ad3e5-2e00
 Z4 o-quiet -auto_acc_if_foreign -work work +acc
 n@_opt1
 R3
-R0
 T_opt2
 !s110 1461791430
 V4GNiRJ=D2U59W[QlE@_bP2
@@ -43,6 +42,7 @@ R1
 R2
 n@_opt3
 R3
+R0
 T_opt4
 !s110 1461950139
 VZR=9;zd[IfA99R5gJc?<j3
@@ -53,103 +53,103 @@ n@_opt4
 R3
 R0
 vdot_prod
-Z5 !s110 1461952853
+Z5 !s110 1462195425
 !i10b 1
-!s100 kLX@k6B4@TYdZPShL]^HT0
-I533zImhV=60o@jXzI1>8j2
+!s100 1BVJPMjDA86]4G>fcab3[2
+Io950Ez[PIAf7NiB8<?MT33
 Z6 VDg1SIo80bB@j0V0VzS_@n1
-Z7 d/home/jfonseca/thesis/verilog/gate
-w1461952813
+R0
+w1462195407
 8dot_prod.v
 Fdot_prod.v
 L0 1
-Z8 OL;L;10.4c_5;61
+Z7 OL;L;10.4c_5;61
 r1
 !s85 0
 31
-Z9 !s108 1461952853.000000
-Z10 !s107 weightRAM.v|test.v|tb_gate.v|gate.v|dot_prod.v|
-Z11 !s90 dot_prod.v|gate.v|tb_gate.v|test.v|weightRAM.v|
+Z8 !s108 1462195425.000000
+Z9 !s107 weightRAM.v|tb_gate.v|gate.v|dot_prod.v|
+Z10 !s90 dot_prod.v|gate.v|tb_gate.v|weightRAM.v|
 !i113 0
-Z12 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z11 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 vgate
 R5
 !i10b 1
 !s100 zGN[NZ;;14AQejdDnlDK>2
 IQEK@h7EUI==cG:hR1_<C<0
 R6
-R7
-w1461952542
+R0
+Z12 w1462015380
 8gate.v
 Fgate.v
 L0 1
-R8
+R7
 r1
 !s85 0
 31
+R8
 R9
 R10
-R11
 !i113 0
-R12
+R11
 vtb_gate
 R5
 !i10b 1
 !s100 k=9Bf^LL55HXU7ADb_VP23
 IzRgI1aiAg^9L1<K=Ij_`E3
 R6
-R7
-w1461952849
+R0
+R12
 8tb_gate.v
 Ftb_gate.v
 L0 3
-R8
+R7
 r1
 !s85 0
 31
+R8
 R9
 R10
-R11
 !i113 0
-R12
+R11
 vtest
-R5
+!s110 1461952853
 !i10b 1
 !s100 1HZ`g0h9Sme?378S=NBOU1
 IU_`Fc`n:fW@[;EH[hP?a82
 R6
-R7
+d/home/jfonseca/thesis/verilog/gate
 w1461836342
 8test.v
 Ftest.v
 L0 1
-R8
+R7
 r1
 !s85 0
 31
-R9
-R10
-R11
+!s108 1461952853.000000
+!s107 weightRAM.v|test.v|tb_gate.v|gate.v|dot_prod.v|
+!s90 dot_prod.v|gate.v|tb_gate.v|test.v|weightRAM.v|
 !i113 0
-R12
+R11
 vweightRAM
 R5
 !i10b 1
-!s100 _edC1BENjcPn9;jc3a>jZ2
-I9PIdb:eX_FJ?DB6HlA8F02
+!s100 MRBIQz;Y3S>5[TlP:BFJc0
+IF8bSWAe1z;^oa9EfAf8IF1
 R6
-R7
-w1461952138
+R0
+w1462022780
 8weightRAM.v
 FweightRAM.v
 L0 1
-R8
+R7
 r1
 !s85 0
 31
+R8
 R9
 R10
-R11
 !i113 0
-R12
+R11
 nweight@r@a@m

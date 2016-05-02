@@ -2,7 +2,7 @@ module dot_prod #(parameter NROW = 16,
                   parameter NCOL = 16,
                   parameter QN   = 6,
                   parameter QM   = 11,
-                  parameter DSP48_PER_ROW    = 2)
+                  parameter DSP48_PER_ROW    = 4)
                  (weightRow, 
                   inputVector, 
                   clk,
@@ -16,8 +16,8 @@ module dot_prod #(parameter NROW = 16,
     parameter LAYER_BITWIDTH        = BITWIDTH*NROW;
     parameter N_DSP48               = NROW/DSP48_PER_ROW;
     parameter DSP48_INPUT_BITWIDTH  = BITWIDTH*N_DSP48;
-    parameter DSP48_OUTPUT_BITWIDTH = (2*BITWIDTH+1)*N_DSP48;
-    parameter MAC_BITWIDTH          = (2*BITWIDTH+1);
+    parameter DSP48_OUTPUT_BITWIDTH = (2*BITWIDTH)*N_DSP48;
+    parameter MAC_BITWIDTH          = (2*BITWIDTH);
 	parameter MUX_BITWIDTH          = log2(DSP48_PER_ROW);
 	
 	input signed      [LAYER_BITWIDTH-1:0] weightRow; 
@@ -30,7 +30,8 @@ module dot_prod #(parameter NROW = 16,
 	
     // Internal register definition
     reg [MUX_BITWIDTH-1:0] rowMux;
-    reg signed [DSP48_INPUT_BITWIDTH -1:0] weightMAC;
+    reg signed [DSP48_INPUT_BITWIDTH -1:0]  weightMAC;
+    reg signed [DSP48_OUTPUT_BITWIDTH -1:0] outputMAC;
     integer i;
 
     // FSM Registers
@@ -43,7 +44,43 @@ module dot_prod #(parameter NROW = 16,
     parameter CALC = 2'd1;
     parameter END  = 2'd2;
 
-    // The control signal FSM
+    // The MAC multiplexer that selects the appropriate weight row for the MAC
+    always @(*) begin
+        if (reset == 1'b1) 
+            weightMAC = {DSP48_INPUT_BITWIDTH{1'b0}};
+        else
+            for(i = 0; i < N_DSP48; i = i + 1) begin
+                weightMAC[i*BITWIDTH +: BITWIDTH] = weightRow[(i*DSP48_PER_ROW+rowMux)*BITWIDTH +: BITWIDTH];    
+            end
+    end
+    
+	always @(*) begin
+		 if (reset == 1'b1)
+            outputMAC = {DSP48_OUTPUT_BITWIDTH{1'b0}};
+        else
+			for (i=0; i < N_DSP48; i = i + 1) begin
+				outputMAC[i*MAC_BITWIDTH +: MAC_BITWIDTH] = $signed(weightMAC[i*BITWIDTH +: BITWIDTH]) * $signed(inputVector);
+			end	
+    end
+    
+    // The output vector and adder
+    always @(posedge clk) begin
+        if (reset == 1'b1 | outputEn == 1'b0)
+            outputVector <= {LAYER_BITWIDTH{1'b0}};
+        else
+            if (dataReady == 1'b0) begin
+                for(i = 0; i < N_DSP48; i = i + 1) begin
+                    outputVector[(i*DSP48_PER_ROW+rowMux)*BITWIDTH +: BITWIDTH] <= outputVector[(i*DSP48_PER_ROW+rowMux)*BITWIDTH +: BITWIDTH] + (outputMAC[i*MAC_BITWIDTH +: MAC_BITWIDTH] >>> QM);
+                end
+            end
+            else begin
+                for(i = 0; i < N_DSP48; i = i + 1) begin
+                    outputVector[(i*DSP48_PER_ROW+rowMux)*BITWIDTH +: BITWIDTH] <= (outputMAC[(i*DSP48_PER_ROW+rowMux)*MAC_BITWIDTH +: MAC_BITWIDTH] >>> QM);
+                end
+            end
+    end
+
+// The control signal FSM
     always @(posedge clk) begin
         if( reset == 1'b1) begin 
             state <= 2'd0;
@@ -111,53 +148,16 @@ module dot_prod #(parameter NROW = 16,
         endcase   
     end
 
-    // The MAC multiplexer that selects the appropriate weight row for the MAC
-    always @(*) begin
-        if (reset == 1'b1) 
-            weightMAC = {DSP48_INPUT_BITWIDTH{1'b0}};
-        else
-            for(i = 0; i < N_DSP48; i = i + 1) begin
-                weightMAC[i*BITWIDTH +: BITWIDTH] = weightRow[(i*DSP48_PER_ROW+rowMux)*BITWIDTH +: BITWIDTH];    
-            end
-    end
-    
-    // The DSP Slices 
-    /*always @(posedge clk) begin 
-        if (reset == 1'b1)
-            outputMAC_interm <= {DSP48_OUTPUT_BITWIDTH{1'b0}};
-        else
-            for(i = 0; i < N_DSP48; i = i + 1) begin
-                outputMAC_interm[i*MAC_BITWIDTH +: MAC_BITWIDTH] <= {{(QM+QN+1){weightMAC[(i+1)*BITWIDTH-1]}}, weightMAC[i*BITWIDTH +: BITWIDTH]} * {{(QM+QM+1){inputVector[BITWIDTH-1]}}, inputVector};
-            end
-    end*/
-    
-    // The output vector and adder
-    always @(posedge clk) begin
-        if (reset == 1'b1 | outputEn == 1'b0)
-            outputVector <= {LAYER_BITWIDTH{1'b0}};
-        else
-            if (dataReady == 1'b0) begin
-                for(i = 0; i < N_DSP48; i = i + 1) begin
-                    outputVector[(i*DSP48_PER_ROW+rowMux)*BITWIDTH +: BITWIDTH] <= outputVector[(i*DSP48_PER_ROW+rowMux)*BITWIDTH +: BITWIDTH] + ({{(QM+QN+2){weightMAC[(i+1)*BITWIDTH-1]}}, weightMAC[i*BITWIDTH +: BITWIDTH]} * {{(QM+QM+2){inputVector[BITWIDTH-1]}}, inputVector} >>> QM);
-                    //(outputMAC_interm[i*MAC_BITWIDTH +: MAC_BITWIDTH] >>> QM);
-                end
-            end
-            else begin
-                for(i = 0; i < N_DSP48; i = i + 1) begin
-                    outputVector[(i*DSP48_PER_ROW+rowMux)*BITWIDTH +: BITWIDTH]<= ({{(QM+QN+2){weightMAC[(i+1)*BITWIDTH-1]}}, weightMAC[i*BITWIDTH +: BITWIDTH]} * {{(QM+QM+2){inputVector[BITWIDTH-1]}}, inputVector} >>> QM);
-                end
-            end
-    end
     
 function integer log2;
 	input [31:0] argument;
-	integer i;
+	integer k;
 	begin
 		 log2 = -1;
-		 i = argument;  
-		 while( i > 0 ) begin
+		 k = argument;  
+		 while( k > 0 ) begin
 			log2 = log2 + 1;
-			i = i >> 1;
+			k = k >> 1;
 		 end
 	end
 endfunction

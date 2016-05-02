@@ -16,8 +16,8 @@ module dot_prod #(parameter NROW = 16,
     parameter LAYER_BITWIDTH        = BITWIDTH*NROW;
     parameter N_DSP48               = NROW/DSP48_PER_ROW;
     parameter DSP48_INPUT_BITWIDTH  = BITWIDTH*N_DSP48;
-    parameter DSP48_OUTPUT_BITWIDTH = (2*BITWIDTH+1)*N_DSP48;
-    parameter MAC_BITWIDTH          = (2*BITWIDTH+1);
+    parameter DSP48_OUTPUT_BITWIDTH = (2*BITWIDTH)*N_DSP48;
+    parameter MAC_BITWIDTH          = (2*BITWIDTH);
 	parameter MUX_BITWIDTH          = log2(DSP48_PER_ROW);
 	
 	input signed      [LAYER_BITWIDTH-1:0] weightRow; 
@@ -30,7 +30,8 @@ module dot_prod #(parameter NROW = 16,
 	
     // Internal register definition
     reg [MUX_BITWIDTH-1:0] rowMux;
-    reg signed [DSP48_INPUT_BITWIDTH -1:0] weightMAC;
+    reg signed [DSP48_INPUT_BITWIDTH -1:0]  weightMAC;
+    reg signed [DSP48_OUTPUT_BITWIDTH -1:0] outputMAC;
     integer i;
 
     // FSM Registers
@@ -121,30 +122,28 @@ module dot_prod #(parameter NROW = 16,
             end
     end
     
-    // The DSP Slices 
-    /*always @(posedge clk) begin 
-        if (reset == 1'b1)
-            outputMAC_interm <= {DSP48_OUTPUT_BITWIDTH{1'b0}};
+	always @(*) begin
+		 if (reset == 1'b1 | outputEn == 1'b0)
+            outputMAC <= {DSP48_OUTPUT_BITWIDTH{1'b0}};
         else
-            for(i = 0; i < N_DSP48; i = i + 1) begin
-                outputMAC_interm[i*MAC_BITWIDTH +: MAC_BITWIDTH] <= {{(QM+QN+1){weightMAC[(i+1)*BITWIDTH-1]}}, weightMAC[i*BITWIDTH +: BITWIDTH]} * {{(QM+QM+1){inputVector[BITWIDTH-1]}}, inputVector};
-            end
-    end*/
+			for (i=0; i < N_DSP48; i = i + 1) begin
+				outputMAC[(i*DSP48_PER_ROW+rowMux)*MAC_BITWIDTH +: MAC_BITWIDTH] <= weightMAC[i*BITWIDTH +: BITWIDTH] * inputVector;
+			end	
+    end
     
     // The output vector and adder
     always @(posedge clk) begin
         if (reset == 1'b1 | outputEn == 1'b0)
-            outputVector <= {LAYER_BITWIDTH{1'b0}};
+            outputVector = {LAYER_BITWIDTH{1'b0}};
         else
             if (dataReady == 1'b0) begin
                 for(i = 0; i < N_DSP48; i = i + 1) begin
-                    outputVector[(i*DSP48_PER_ROW+rowMux)*BITWIDTH +: BITWIDTH] <= outputVector[(i*DSP48_PER_ROW+rowMux)*BITWIDTH +: BITWIDTH] + ({{(QM+QN+1){weightMAC[(i+1)*BITWIDTH-1]}}, weightMAC[i*BITWIDTH +: BITWIDTH]} * {{(QM+QM+1){inputVector[BITWIDTH-1]}}, inputVector} >>> QM);
-                    //(outputMAC_interm[i*MAC_BITWIDTH +: MAC_BITWIDTH] >>> QM);
+                    outputVector[(i*DSP48_PER_ROW+rowMux)*BITWIDTH +: BITWIDTH] = outputVector[(i*DSP48_PER_ROW+rowMux)*BITWIDTH +: BITWIDTH] + (outputMAC[(i*DSP48_PER_ROW+rowMux)*MAC_BITWIDTH +: MAC_BITWIDTH] >>> QM);
                 end
             end
             else begin
                 for(i = 0; i < N_DSP48; i = i + 1) begin
-                    outputVector[(i*DSP48_PER_ROW+rowMux)*BITWIDTH +: BITWIDTH]<= ({{(QM+QN+1){weightMAC[(i+1)*BITWIDTH-1]}}, weightMAC[i*BITWIDTH +: BITWIDTH]} * {{(QM+QM+1){inputVector[BITWIDTH-1]}}, inputVector} >>> QM);
+                    outputVector[(i*DSP48_PER_ROW+rowMux)*BITWIDTH +: BITWIDTH] = (outputMAC[(i*DSP48_PER_ROW+rowMux)*MAC_BITWIDTH +: MAC_BITWIDTH] >>> QM);
                 end
             end
     end

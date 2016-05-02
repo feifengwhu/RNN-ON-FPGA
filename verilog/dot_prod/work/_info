@@ -9,29 +9,28 @@ z2
 cModel Technology
 Z0 d/home/josefonseca/Documents/thesis/verilog/dot_prod
 T_opt
-!s110 1461165378
-V<W4EH2IQJTaOb=MJ?6I@=2
+!s110 1462207246
+V6GHKn8NHWZ6BCbDU>gJ]X0
 Z1 04 11 4 work tb_dot_prod fast 0
-=1-d43d7e359f7e-57179d42-e73ed-145b
+=1-d43d7e359f7e-5727830e-77dd6-2062
 Z2 o-quiet -auto_acc_if_foreign -work work
 n@_opt
 Z3 OL;O;10.4c_5;61
-R0
 T_opt1
 !s110 1461952015
 VI3RKhmfUjE_5SRmJ;g[VP2
 R1
 =1-d48564c0c748-57239e0f-12c65-3b65
-o-quiet -auto_acc_if_foreign -work work +acc
+Z4 o-quiet -auto_acc_if_foreign -work work +acc
 n@_opt1
 R3
 R0
 T_opt2
-!s110 1461422134
-VIZc9lD4iiA;[UW6=99IP@1
+!s110 1462207144
+VR;MZekd;VShXi@1e2?<nh0
 R1
-=1-d43d7e359f7e-571b8836-2f90c-fce
-R2
+=1-d43d7e359f7e-572782a8-ca1f3-1951
+R4
 n@_opt2
 R3
 R0
@@ -52,6 +51,7 @@ R1
 R2
 n@_opt4
 R3
+R0
 T_opt5
 !s110 1461800514
 VVm<e17Y9Mj7`SE8]H68bF0
@@ -62,13 +62,13 @@ n@_opt5
 R3
 R0
 vdot_prod
-Z4 !s110 1461952052
+Z5 !s110 1462207245
 !i10b 1
-!s100 @Xz`k4UWnh;c9K4[BWP0a3
-I;23JS6BL^oCmFLjO:=bG60
-Z5 VDg1SIo80bB@j0V0VzS_@n1
-Z6 d/home/jfonseca/thesis/verilog/dot_prod
-w1461951974
+!s100 C9hMjHKGZB@o@4M9FMjPL1
+I]?M6YU?gJc^zBE8ieQSbn0
+Z6 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1462207125
 8dot_prod.v
 Fdot_prod.v
 L0 1
@@ -76,19 +76,19 @@ Z7 OL;L;10.4c_5;61
 r1
 !s85 0
 31
-Z8 !s108 1461952052.000000
+Z8 !s108 1462207245.000000
 Z9 !s107 weightRAM.v|test.v|tb_dot_prod.v|dot_prod.v|
 Z10 !s90 dot_prod.v|tb_dot_prod.v|test.v|weightRAM.v|
 !i113 0
 Z11 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 vtb_dot_prod
-R4
-!i10b 1
-!s100 >nUcU=4LdgSSfeUeRzZe63
-If><`d6>oIFe==S>XHg9B:1
 R5
+!i10b 1
+!s100 32HZlQ1A2hf`Y;8i0ZQ7A0
+I?GNLS>QK:B`lRFCF@PK431
 R6
-w1461951970
+R0
+w1462207231
 8tb_dot_prod.v
 Ftb_dot_prod.v
 L0 3
@@ -102,13 +102,13 @@ R10
 !i113 0
 R11
 vtest
-R4
+R5
 !i10b 1
 !s100 jI:CUCA4h]D;^C8m=I`<o2
 IEH3R6Vmnen^LQ4VNQ2nWW3
-R5
 R6
-w1461951935
+R0
+Z12 w1462015380
 8test.v
 Ftest.v
 L0 1
@@ -122,13 +122,13 @@ R10
 !i113 0
 R11
 vweightRAM
-R4
+R5
 !i10b 1
 !s100 _edC1BENjcPn9;jc3a>jZ2
 I9PIdb:eX_FJ?DB6HlA8F02
-R5
 R6
-w1461952048
+R0
+R12
 8weightRAM.v
 FweightRAM.v
 L0 1

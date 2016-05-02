@@ -2,23 +2,28 @@
 # Vivado v2015.4 (64-bit)
 # SW Build 1412921 on Wed Nov 18 09:44:32 MST 2015
 # IP Build 1412160 on Tue Nov 17 13:47:24 MST 2015
-# Start of session at: Fri Apr 29 18:52:33 2016
-# Process ID: 15377
-# Current directory: /home/jfonseca/thesis/verilog/gate
+# Start of session at: Sat Apr 30 12:31:03 2016
+# Process ID: 3973
+# Current directory: /home/josefonseca/Documents/thesis/verilog/gate
 # Command line: vivado
-# Log file: /home/jfonseca/thesis/verilog/gate/vivado.log
-# Journal file: /home/jfonseca/thesis/verilog/gate/vivado.jou
+# Log file: /home/josefonseca/Documents/thesis/verilog/gate/vivado.log
+# Journal file: /home/josefonseca/Documents/thesis/verilog/gate/vivado.jou
 #-----------------------------------------------------------
 start_gui
-create_project gate_synth /home/jfonseca/thesis/verilog/gate/gate_synth -part xc7z020clg484-1
-set_property board_part em.avnet.com:zed:part0:1.3 [current_project]
+create_project gate_synth /home/josefonseca/Documents/thesis/verilog/gate/gate_synth -part xc7z020clg484-1
+set_property board_part xilinx.com:zc702:part0:1.2 [current_project]
 set_property simulator_language Verilog [current_project]
-add_files -norecurse {/home/jfonseca/thesis/verilog/gate/gate.v /home/jfonseca/thesis/verilog/gate/dot_prod.v /home/jfonseca/thesis/verilog/gate/weightRAM.v}
-import_files -force -norecurse
+add_files -norecurse {/home/josefonseca/Documents/thesis/verilog/gate/weightRAM.v /home/josefonseca/Documents/thesis/verilog/gate/gate.v /home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v}
 update_compile_order -fileset sources_1
 update_compile_order -fileset sources_1
 update_compile_order -fileset sim_1
 update_compile_order -fileset sources_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top weightRAM [current_fileset]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sources_1
 launch_runs synth_1
 wait_on_run synth_1
 reset_run synth_1
@@ -36,6 +41,19 @@ wait_on_run synth_1
 reset_run synth_1
 launch_runs synth_1
 wait_on_run synth_1
-reset_run synth_1
-launch_runs synth_1
-wait_on_run synth_1
+create_run synth_2 -flow {Vivado Synthesis 2015} -strategy {Vivado Synthesis Defaults}
+current_run [get_runs synth_2]
+set_property -name {STEPS.SYNTH_DESIGN.ARGS.MORE OPTIONS} -value {-mode out_of_context} -objects [get_runs synth_2]
+launch_runs synth_2
+wait_on_run synth_2
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top gate [current_fileset]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sources_1
+reset_run synth_2
+launch_runs impl_2
+wait_on_run impl_2
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1

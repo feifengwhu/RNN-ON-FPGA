@@ -2,11 +2,11 @@
 # Vivado v2015.4 (64-bit)
 # SW Build 1412921 on Wed Nov 18 09:44:32 MST 2015
 # IP Build 1412160 on Tue Nov 17 13:47:24 MST 2015
-# Start of session at: Fri Apr 29 19:04:12 2016
-# Process ID: 16620
-# Current directory: /home/jfonseca/thesis/verilog/gate/gate_synth/gate_synth.runs/synth_1
-# Command line: vivado -log gate.vds -mode batch -messageDb vivado.pb -notrace -source gate.tcl
-# Log file: /home/jfonseca/thesis/verilog/gate/gate_synth/gate_synth.runs/synth_1/gate.vds
-# Journal file: /home/jfonseca/thesis/verilog/gate/gate_synth/gate_synth.runs/synth_1/vivado.jou
+# Start of session at: Sat Apr 30 14:26:27 2016
+# Process ID: 6349
+# Current directory: /home/josefonseca/Documents/thesis/verilog/gate/gate_synth/gate_synth.runs/synth_1
+# Command line: vivado -log weightRAM.vds -mode batch -messageDb vivado.pb -notrace -source weightRAM.tcl
+# Log file: /home/josefonseca/Documents/thesis/verilog/gate/gate_synth/gate_synth.runs/synth_1/weightRAM.vds
+# Journal file: /home/josefonseca/Documents/thesis/verilog/gate/gate_synth/gate_synth.runs/synth_1/vivado.jou
 #-----------------------------------------------------------
-source gate.tcl -notrace
+source weightRAM.tcl -notrace

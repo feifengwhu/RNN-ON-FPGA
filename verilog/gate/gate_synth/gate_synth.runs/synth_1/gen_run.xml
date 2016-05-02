@@ -1,41 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z020clg484-1" LaunchTime="1461953051">
-  <File Type="VDS-TIMING-PB" Name="gate_timing_summary_synth.pb"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="gate_timing_summary_synth.rpt"/>
-  <File Type="RDS-DCP" Name="gate.dcp"/>
-  <File Type="RDS-UTIL-PB" Name="gate_utilization_synth.pb"/>
-  <File Type="RDS-UTIL" Name="gate_utilization_synth.rpt"/>
-  <File Type="RDS-PROPCONSTRS" Name="gate_drc_synth.rpt"/>
-  <File Type="RDS-RDS" Name="gate.vds"/>
-  <File Type="PA-TCL" Name="gate.tcl"/>
+<GenRun Id="synth_1" LaunchPart="xc7z020clg484-1" LaunchTime="1462022786">
+  <File Type="VDS-TIMING-PB" Name="weightRAM_timing_summary_synth.pb"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="weightRAM_timing_summary_synth.rpt"/>
+  <File Type="RDS-DCP" Name="weightRAM.dcp"/>
+  <File Type="RDS-UTIL-PB" Name="weightRAM_utilization_synth.pb"/>
+  <File Type="RDS-UTIL" Name="weightRAM_utilization_synth.rpt"/>
+  <File Type="RDS-PROPCONSTRS" Name="weightRAM_drc_synth.rpt"/>
+  <File Type="RDS-RDS" Name="weightRAM.vds"/>
+  <File Type="PA-TCL" Name="weightRAM.tcl"/>
   <File Type="RUN-STRAT" Name="$PDATADIR/runs/synth_1/synth_1.psg"/>
   <File Type="RUN-SRCS" Name="$PDATADIR/runs/synth_1/sources.xml"/>
   <File Type="RUN-CONSTRS" Name="$PDATADIR/runs/synth_1/constrs_in.xml"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
-    <File Path="$PSRCDIR/sources_1/imports/gate/dot_prod.v">
+    <File Path="$PPRDIR/../weightRAM.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../dot_prod.v"/>
-        <Attr Name="ImportTime" Val="1461952130"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/gate/gate.v">
-      <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../gate.v"/>
-        <Attr Name="ImportTime" Val="1461949819"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/imports/gate/weightRAM.v">
+    <File Path="$PPRDIR/../dot_prod.v">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="ImportPath" Val="$PPRDIR/../weightRAM.v"/>
-        <Attr Name="ImportTime" Val="1461952138"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../gate.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -43,8 +38,7 @@
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="gate"/>
-      <Option Name="TopAutoSet" Val="TRUE"/>
+      <Option Name="TopModule" Val="weightRAM"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
