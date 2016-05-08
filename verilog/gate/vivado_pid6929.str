@@ -1,0 +1,125 @@
+/*
+
+Vivado v2015.4 (64-bit)
+SW Build 1412921 on Wed Nov 18 09:44:32 MST 2015
+Process ID: 6929
+
+Current time: 	5/7/16 7:25:21 PM WEST
+Time zone: 	Western European Time (Europe/Lisbon)
+
+OS: NAME="Ubuntu"
+Version: 3.16.0-70-generic
+Architecture: amd64
+Available processors (cores): 8
+
+DISPLAY: :0.0
+Screen size: 3200x1080
+Screen resolution (DPI): 95
+Available screens: 2
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	1.8.0_45 64-bit
+Java home: 	/opt/Xilinx/Vivado/2015.4/tps/lnx64/jre
+
+User name: 	josefonseca
+User home directory: /home/josefonseca
+User working directory: /home/josefonseca/Documents/thesis/verilog/gate
+User country: 	US
+User language: 	en
+User locale: 	en_US
+
+Vivado preferences path: /home/josefonseca/.Xilinx/Vivado/2015.4/vivado.ini
+Vivado layouts directory: /home/josefonseca/.Xilinx/Vivado/2015.4/layouts
+
+GUI allocated memory:	185 MB
+GUI max memory:		3,052 MB
+Engine allocated memory: 4,848 MB
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// [GUI Memory]: 23 MB (+21127kb) [00:00:05]
+// [Engine Memory]: 4,846 MB (+4930243kb) [00:00:05]
+selectButton(PAResourceEtoH.GettingStartedView_CREATE_NEW_PROJECT, "Create New Project"); // l:JideButton (JPanel:JComponent, cq:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_NEW_PROJECT
+// [GUI Memory]: 32 MB (+8892kb) [00:00:09]
+// [GUI Memory]: 37 MB (+3539kb) [00:00:10]
+// [GUI Memory]: 43 MB (+3819kb) [00:00:10]
+// [GUI Memory]: 55 MB (+10276kb) [00:00:10]
+// [GUI Memory]: 66 MB (+8698kb) [00:00:10]
+// h:g (cq:JFrame): New Project: addNotify
+// HMemoryUtils.trashcanNow. Engine heap size: 4,919 MB. GUI used memory: 22 MB. Current time: 5/7/16 7:25:24 PM WEST
+selectButton("NEXT", "Next >"); // JButton:AbstractButton (ButtonPanel:JPanel, h:g)
+selectButton("NEXT", "Next >"); // JButton:AbstractButton (ButtonPanel:JPanel, h:g)
+selectButton("NEXT", "Next >"); // JButton:AbstractButton (ButtonPanel:JPanel, h:g)
+selectButton(PAResourceQtoS.SrcChooserPanel_ADD_HDL_AND_NETLIST_FILES_TO_YOUR_PROJECT, "Add Files"); // a:JButton (H:JPanel, h:g)
+setFileChooser("/home/josefonseca/Documents/thesis/verilog/gate/gate.v");
+selectButton("BACK", "< Back"); // JButton:AbstractButton (ButtonPanel:JPanel, h:g)
+selectButton("NEXT", "Next >"); // JButton:AbstractButton (ButtonPanel:JPanel, h:g)
+selectButton(PAResourceQtoS.SrcChooserPanel_ADD_HDL_AND_NETLIST_FILES_TO_YOUR_PROJECT, "Add Files"); // a:JButton (H:JPanel, h:g)
+String[] filenames31467 = {"/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v", "/home/josefonseca/Documents/thesis/verilog/gate/weightRAM.v"};
+setFileChooser(filenames31467);
+selectButton("NEXT", "Next >"); // JButton:AbstractButton (ButtonPanel:JPanel, h:g)
+selectButton("NEXT", "Next >"); // JButton:AbstractButton (ButtonPanel:JPanel, h:g)
+selectButton("NEXT", "Next >"); // JButton:AbstractButton (ButtonPanel:JPanel, h:g)
+selectButton(PAResourceOtoP.PartChooser_BOARDS, "Boards"); // l:s (JPanel:JComponent, h:g): TRUE
+selectTable(PAResourceOtoP.PartChooser_BOARDS, "ZYNQ-7 ZC702 Evaluation Board ; xilinx.com ; 1.0 ; xc7z020clg484-1 ; 484 ; 1.2 ; 140 ; 220 ; 106400 ; 0 ; 0 ; 200 ; 53200 ; 4 ; 0 ; 85 ; 0 ; 85 ; C ; 1.05 ; 0.95 ; 0.95 ; 0 ; 0 ; 0 ; 0 ; 0", 7, "ZYNQ-7 ZC702 Evaluation Board", 0); // N:v (JViewport:JComponent, h:g)
+selectButton("NEXT", "Next >"); // JButton:AbstractButton (ButtonPanel:JPanel, h:g)
+// bF:g (h:g):  Create Project : addNotify
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_ADD
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_NEW
+// Tcl Message: create_project project_1 /home/josefonseca/Documents/thesis/verilog/gate/project_1 -part xc7z020clg484-1 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified 
+// TclEventType: PROJECT_NEW
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2015.4/data/ip'. 
+// HMemoryUtils.trashcanNow. Engine heap size: 4,960 MB. GUI used memory: 29 MB. Current time: 5/7/16 7:25:54 PM WEST
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// TclEventType: BOARD_MODIFIED
+// Tcl Message: set_property board_part xilinx.com:zc702:part0:1.2 [current_project] 
+// TclEventType: PROJECT_CHANGE
+// Tcl Message: set_property simulator_language Verilog [current_project] 
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: add_files -norecurse {/home/josefonseca/Documents/thesis/verilog/gate/weightRAM.v /home/josefonseca/Documents/thesis/verilog/gate/gate.v /home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v} 
+selectButton("FINISH", "Finish"); // JButton:AbstractButton (ButtonPanel:JPanel, h:g)
+// 'g' command handler elapsed time: 32 seconds
+dismissDialog("Create Project"); // bF:g (h:g)
+dismissDialog("New Project"); // h:g (cq:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// Tcl Message: update_compile_order -fileset sources_1 
+// Tcl Message: update_compile_order -fileset sources_1 
+// Tcl Message: update_compile_order -fileset sim_1 
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// Tcl Message: update_compile_order -fileset sources_1 
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, gate (gate.v)]", 1); // y:k (I:JPanel, cq:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, gate (gate.v)]", 1, true); // y:k (I:JPanel, cq:JFrame) - Node
+// [GUI Memory]: 74 MB (+5677kb) [00:00:48]
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 17, false); // w:Y (v:I, cq:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+// bF:g (cq:JFrame):  Starting Design Runs : addNotify
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: RUN_LAUNCH
+// Tcl Message: launch_runs synth_1 
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Sat May  7 19:26:03 2016] Launched synth_1... Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/gate/project_1/project_1.runs/synth_1/runme.log 
+dismissDialog("Starting Design Runs"); // bF:g (cq:JFrame)
+// [GUI Memory]: 78 MB (+301kb) [00:01:49]

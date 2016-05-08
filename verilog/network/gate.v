@@ -1,8 +1,8 @@
 module gate     #(parameter INPUT_SZ  = 8,
-				  parameter HIDDEN_SZ = 16,
+				  parameter HIDDEN_SZ = 64,
 				  parameter QN = 6,
                   parameter QM = 11,
-				  parameter DSP48_PER_ROW = 2)
+				  parameter DSP48_PER_ROW = 8)
                  (inputVec,
                   prevLayerOut,
                   weightMem_X,
@@ -19,8 +19,8 @@ module gate     #(parameter INPUT_SZ  = 8,
 	// Dependent Parameters
     parameter BITWIDTH         = QN + QM + 1;
     parameter LAYER_BITWIDTH   = BITWIDTH*HIDDEN_SZ;
-	parameter ADDR_BITWIDTH_X  = $ln(INPUT_SZ)/$ln(2);
-	parameter ADDR_BITWIDTH    = $ln(HIDDEN_SZ)/$ln(2);
+	parameter ADDR_BITWIDTH_X  = log2(INPUT_SZ);
+	parameter ADDR_BITWIDTH    = log2(HIDDEN_SZ);
 	
 	// State tags
 	parameter IDLE       = 3'd0;
@@ -66,27 +66,29 @@ module gate     #(parameter INPUT_SZ  = 8,
 	// DUT Instantiation
     dot_prod  #(HIDDEN_SZ,INPUT_SZ,QN,QM,DSP48_PER_ROW)  DOTPROD_X (weightMem_X, inputVec, clock, reset_dotProd_X, dataReady_X, colAddress_X, outputVec_X);  
     dot_prod  #(HIDDEN_SZ,HIDDEN_SZ,QN,QM,DSP48_PER_ROW) DOTPROD_Y (weightMem_Y, prevLayerOut, clock, reset_dotProd_Y, dataReady_Y, colAddress_Y, outputVec_Y);
-    
-
-	
-	// Resets the gate registers
-	always @(posedge reset) begin
-		gateOutput <= {LAYER_BITWIDTH{1'b0}};
-		adder_X    <= {LAYER_BITWIDTH{1'b0}};
-	end
 	
     // The bias and X sum unit
-    always @(posedge dataReady_X) begin
-		for (i = 0; i < HIDDEN_SZ; i = i + 1) begin
-			adder_X[i*BITWIDTH +: BITWIDTH] <= outputVec_X[i*BITWIDTH +: BITWIDTH] + biasVec[i*BITWIDTH +: BITWIDTH];
-		end
+    always @(negedge dataReady_X or posedge reset) begin
+        if (reset == 1'b1) begin
+            adder_X    <= {LAYER_BITWIDTH{1'b0}};
+        end
+        else begin        
+            for (i = 0; i < HIDDEN_SZ; i = i + 1) begin
+                adder_X[i*BITWIDTH +: BITWIDTH] <= outputVec_X[i*BITWIDTH +: BITWIDTH] + biasVec[i*BITWIDTH +: BITWIDTH];
+            end
+        end
 	end
     
     // The X and Y sum unit
-    always @(posedge dataReady_Y) begin
-		for (i = 0; i < HIDDEN_SZ; i = i + 1) begin
-			gateOutput[i*BITWIDTH +: BITWIDTH] <= adder_X[i*BITWIDTH +: BITWIDTH] + outputVec_Y[i*BITWIDTH +: BITWIDTH];
-		end
+    always @(negedge dataReady_Y or posedge reset) begin
+        if (reset == 1'b1) begin
+            gateOutput <= {LAYER_BITWIDTH{1'b0}};
+        end
+        else begin
+            for (i = 0; i < HIDDEN_SZ; i = i + 1) begin
+                gateOutput[i*BITWIDTH +: BITWIDTH] <= adder_X[i*BITWIDTH +: BITWIDTH] + outputVec_Y[i*BITWIDTH +: BITWIDTH];
+            end
+        end
 	end
     
     // The FSM that controls the gate
@@ -172,7 +174,27 @@ module gate     #(parameter INPUT_SZ  = 8,
 				enable_dotprodY = 1'b1;
 				dataReady_gate  = 1'b1;
 			end
+            
+            default :
+			begin
+				enable_dotprodX = 1'b0;
+				enable_dotprodY = 1'b1;
+				dataReady_gate  = 1'b1;
+			end
 		endcase
 	end
+	
+function integer log2;
+    input [31:0] argument;
+    integer i;
+    begin
+         log2 = -1;
+         i = argument;  
+         while( i > 0 ) begin
+            log2 = log2 + 1;
+            i = i >> 1;
+         end
+    end
+endfunction
 		
 endmodule

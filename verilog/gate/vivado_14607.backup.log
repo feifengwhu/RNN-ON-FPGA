@@ -1,0 +1,46 @@
+#-----------------------------------------------------------
+# Vivado v2015.4 (64-bit)
+# SW Build 1412921 on Wed Nov 18 09:44:32 MST 2015
+# IP Build 1412160 on Tue Nov 17 13:47:24 MST 2015
+# Start of session at: Wed May  4 20:40:54 2016
+# Process ID: 14607
+# Current directory: /home/josefonseca/Documents/thesis/verilog/gate
+# Command line: vivado
+# Log file: /home/josefonseca/Documents/thesis/verilog/gate/vivado.log
+# Journal file: /home/josefonseca/Documents/thesis/verilog/gate/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /home/josefonseca/Documents/thesis/verilog/gate/gate_synth/gate_synth.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2015.4/data/ip'.
+open_project: Time (s): cpu = 00:00:12 ; elapsed = 00:00:08 . Memory (MB): peak = 5822.789 ; gain = 141.914 ; free physical = 3240 ; free virtual = 8866
+reset_run synth_2
+launch_runs synth_2
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v" into library work [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/gate/gate.v" into library work [/home/josefonseca/Documents/thesis/verilog/gate/gate.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/gate/weightRAM.v" into library work [/home/josefonseca/Documents/thesis/verilog/gate/weightRAM.v:1]
+[Wed May  4 20:42:49 2016] Launched synth_2...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/gate/gate_synth/gate_synth.runs/synth_2/runme.log
+set_property top weightRAM [current_fileset]
+update_compile_order -fileset sources_1
+reset_run synth_2
+launch_runs synth_2
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v" into library work [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/gate/gate.v" into library work [/home/josefonseca/Documents/thesis/verilog/gate/gate.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/gate/weightRAM.v" into library work [/home/josefonseca/Documents/thesis/verilog/gate/weightRAM.v:1]
+[Wed May  4 20:46:19 2016] Launched synth_2...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/gate/gate_synth/gate_synth.runs/synth_2/runme.log
+set_property top gate [current_fileset]
+update_compile_order -fileset sources_1
+reset_run synth_2
+launch_runs synth_2
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v" into library work [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/gate/gate.v" into library work [/home/josefonseca/Documents/thesis/verilog/gate/gate.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/gate/weightRAM.v" into library work [/home/josefonseca/Documents/thesis/verilog/gate/weightRAM.v:1]
+[Wed May  4 20:47:13 2016] Launched synth_2...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/gate/gate_synth/gate_synth.runs/synth_2/runme.log
+exit
+INFO: [Common 17-206] Exiting Vivado at Wed May  4 20:50:29 2016...

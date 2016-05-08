@@ -11,6 +11,7 @@ add wave -noupdate /tb_dot_prod/DOTPROD/weightMAC
 add wave -noupdate /tb_dot_prod/DOTPROD/inputVector
 add wave -noupdate /tb_dot_prod/DOTPROD/weightRow
 add wave -noupdate /tb_dot_prod/DOTPROD/outputMAC
+add wave -noupdate /tb_dot_prod/DOTPROD/outputMAC_sum
 add wave -noupdate /tb_dot_prod/DOTPROD/outputVector
 add wave -noupdate /tb_dot_prod/WRAM/RAM_matrix
 add wave -noupdate /tb_dot_prod/ROM_weights

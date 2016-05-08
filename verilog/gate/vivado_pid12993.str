@@ -1,0 +1,96 @@
+/*
+
+Vivado v2015.4 (64-bit)
+SW Build 1412921 on Wed Nov 18 09:44:32 MST 2015
+Process ID: 12993
+
+Current time: 	5/6/16 5:37:06 PM WEST
+Time zone: 	Western European Time (Europe/Lisbon)
+
+OS: NAME="Ubuntu"
+Version: 3.16.0-70-generic
+Architecture: amd64
+Available processors (cores): 8
+
+DISPLAY: :0
+Screen size: 3200x1080
+Screen resolution (DPI): 95
+Available screens: 2
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	1.8.0_45 64-bit
+Java home: 	/opt/Xilinx/Vivado/2015.4/tps/lnx64/jre
+
+User name: 	josefonseca
+User home directory: /home/josefonseca
+User working directory: /home/josefonseca/Documents/thesis/verilog/gate
+User country: 	US
+User language: 	en
+User locale: 	en_US
+
+Vivado preferences path: /home/josefonseca/.Xilinx/Vivado/2015.4/vivado.ini
+Vivado layouts directory: /home/josefonseca/.Xilinx/Vivado/2015.4/layouts
+
+GUI allocated memory:	194 MB
+GUI max memory:		3,052 MB
+Engine allocated memory: 4,852 MB
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// [GUI Memory]: 24 MB (+22797kb) [00:00:07]
+// [Engine Memory]: 4,845 MB (+4928907kb) [00:00:07]
+selectList(PAResourceEtoH.GettingStartedView_RECENT_PROJECTS, "/home/josefonseca/Documents/thesis/verilog/gate/gate_synth/gate_synth.xpr", 0); // q:v (JViewport:JComponent, cq:JFrame)
+// bF:g (cq:JFrame):  Open Project : addNotify
+// Opening Vivado Project: /home/josefonseca/Documents/thesis/verilog/gate/gate_synth/gate_synth.xpr. Version: Vivado v2015.4 
+// Tcl Message: open_project /home/josefonseca/Documents/thesis/verilog/gate/gate_synth/gate_synth.xpr 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_NEW
+// Tcl Message: open_project /home/josefonseca/Documents/thesis/verilog/gate/gate_synth/gate_synth.xpr 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified 
+// HMemoryUtils.trashcanNow. Engine heap size: 4,902 MB. GUI used memory: 21 MB. Current time: 5/6/16 5:37:08 PM WEST
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 38 MB (+13644kb) [00:00:11]
+// [GUI Memory]: 47 MB (+7398kb) [00:00:11]
+// [GUI Memory]: 57 MB (+7309kb) [00:00:11]
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2015.4/data/ip'. 
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// [GUI Memory]: 62 MB (+2970kb) [00:00:13]
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Project name: gate_synth; location: /home/josefonseca/Documents/thesis/verilog/gate/gate_synth; part: xc7z020clg484-1
+// Tcl Message: open_project: Time (s): cpu = 00:00:08 ; elapsed = 00:00:05 . Memory (MB): peak = 5800.379 ; gain = 118.059 ; free physical = 4860 ; free virtual = 9948 
+dismissDialog("Open Project"); // bF:g (cq:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// [GUI Memory]: 66 MB (+467kb) [00:01:04]
+// Elapsed time: 557 seconds
+selectButton(PAResourceQtoS.StateMonitor_CANCEL, "Cancel"); // a:JButton (r:JPanel, cq:JFrame)
+// bF:g (cq:JFrame):  Resetting Runs : addNotify
+selectButton("PAResourceQtoS.StateMonitor_YOU_ABOUT_TO_CANCEL_YOUR_RUNNING_Delete Files", "Delete Files"); // JButton:AbstractButton (JPanel:JComponent, T:JDialog)
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// Tcl Message: reset_run synth_2 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+dismissDialog("Resetting Runs"); // bF:g (cq:JFrame)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 17, false); // w:Y (v:I, cq:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+// bF:g (cq:JFrame):  Starting Design Runs : addNotify
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: RUN_LAUNCH
+// Tcl Message: launch_runs synth_2 
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Fri May  6 17:46:33 2016] Launched synth_2... Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/gate/gate_synth/gate_synth.runs/synth_2/runme.log 
+dismissDialog("Starting Design Runs"); // bF:g (cq:JFrame)

@@ -1,0 +1,16 @@
+#-----------------------------------------------------------
+# Vivado v2015.4 (64-bit)
+# SW Build 1412921 on Wed Nov 18 09:44:32 MST 2015
+# IP Build 1412160 on Tue Nov 17 13:47:24 MST 2015
+# Start of session at: Thu May  5 19:26:44 2016
+# Process ID: 20026
+# Current directory: /home/josefonseca/Documents/thesis/verilog/gate
+# Command line: vivado
+# Log file: /home/josefonseca/Documents/thesis/verilog/gate/vivado.log
+# Journal file: /home/josefonseca/Documents/thesis/verilog/gate/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /home/josefonseca/Documents/thesis/verilog/gate/gate_synth/gate_synth.xpr
+reset_run synth_2
+launch_runs synth_2
+wait_on_run synth_2

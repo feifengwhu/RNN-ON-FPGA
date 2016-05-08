@@ -1,0 +1,134 @@
+xilinx rtfpga
+INFO: [Synth 8-4471] merging register 'rowMux_reg[2:0]' into 'rowMux_reg[2:0]' [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:107]
+INFO: [Synth 8-4471] merging register 'rowMux_reg[2:0]' into 'rowMux_reg[2:0]' [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:107]
+INFO: [Synth 8-4471] merging register 'rowMux_reg[2:0]' into 'rowMux_reg[2:0]' [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:107]
+INFO: [Synth 8-4471] merging register 'rowMux_reg[2:0]' into 'rowMux_reg[2:0]' [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:107]
+INFO: [Synth 8-4471] merging register 'rowMux_reg[2:0]' into 'rowMux_reg[2:0]' [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:107]
+INFO: [Synth 8-4471] merging register 'rowMux_reg[2:0]' into 'rowMux_reg[2:0]' [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:107]
+INFO: [Synth 8-4471] merging register 'rowMux_reg[2:0]' into 'rowMux_reg[2:0]' [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:107]
+INFO: [Synth 8-4471] merging register 'rowMux_reg[2:0]' into 'rowMux_reg[2:0]' [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:107]
+DSP Report: Generating DSP outputMAC1, operation Mode is: C+A*B.
+DSP Report: operator outputMAC1 is absorbed into DSP outputMAC1.
+DSP Report: operator outputMAC2 is absorbed into DSP outputMAC1.
+DSP Report: Generating DSP outputMAC8, operation Mode is: C+A*B.
+DSP Report: operator outputMAC8 is absorbed into DSP outputMAC8.
+DSP Report: operator outputMAC9 is absorbed into DSP outputMAC8.
+DSP Report: Generating DSP outputMAC7, operation Mode is: C+A*B.
+DSP Report: operator outputMAC7 is absorbed into DSP outputMAC7.
+DSP Report: operator outputMAC8 is absorbed into DSP outputMAC7.
+DSP Report: Generating DSP outputMAC6, operation Mode is: C+A*B.
+DSP Report: operator outputMAC6 is absorbed into DSP outputMAC6.
+DSP Report: operator outputMAC7 is absorbed into DSP outputMAC6.
+DSP Report: Generating DSP outputMAC5, operation Mode is: C+A*B.
+DSP Report: operator outputMAC5 is absorbed into DSP outputMAC5.
+DSP Report: operator outputMAC6 is absorbed into DSP outputMAC5.
+DSP Report: Generating DSP outputMAC2, operation Mode is: C+A*B.
+DSP Report: operator outputMAC2 is absorbed into DSP outputMAC2.
+DSP Report: operator outputMAC3 is absorbed into DSP outputMAC2.
+DSP Report: Generating DSP outputMAC4, operation Mode is: C+A*B.
+DSP Report: operator outputMAC4 is absorbed into DSP outputMAC4.
+DSP Report: operator outputMAC5 is absorbed into DSP outputMAC4.
+DSP Report: Generating DSP outputMAC3, operation Mode is: C+A*B.
+DSP Report: operator outputMAC3 is absorbed into DSP outputMAC3.
+DSP Report: operator outputMAC4 is absorbed into DSP outputMAC3.
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port P[12] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port P[11] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port P[10] driven by constant 1
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port P[9] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port O1[11] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port O2[11] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port O2[10] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port O2[9] driven by constant 1
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2083] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2082] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2081] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2080] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2079] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2078] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2077] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2076] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2075] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2074] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2073] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2072] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2071] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2070] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2069] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2068] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2067] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2066] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2065] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2064] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2063] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2062] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2061] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2060] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2059] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2058] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2057] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2056] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2055] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2054] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2053] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2052] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2051] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2050] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2049] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2048] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2047] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2046] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2045] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2044] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2043] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2042] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2041] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2040] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2039] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2038] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2037] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2036] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2035] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2034] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2033] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2032] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2031] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2030] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2029] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2028] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2027] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2026] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2025] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2024] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2023] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2022] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2021] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2020] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2019] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2018] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2017] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2016] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2015] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2014] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2013] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2012] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2011] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2010] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2009] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2008] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2007] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2006] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2005] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2004] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2003] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2002] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2001] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2000] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[1999] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[1998] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[1997] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[1996] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[1995] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[1994] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[1993] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[1992] driven by constant 0
+INFO: [Common 17-14] Message 'Synth 8-3917' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.

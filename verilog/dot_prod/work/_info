@@ -9,13 +9,14 @@ z2
 cModel Technology
 Z0 d/home/josefonseca/Documents/thesis/verilog/dot_prod
 T_opt
-!s110 1462207246
-V6GHKn8NHWZ6BCbDU>gJ]X0
+!s110 1462314325
+VGBae[j5H9TVnU]f^aJP:e0
 Z1 04 11 4 work tb_dot_prod fast 0
-=1-d43d7e359f7e-5727830e-77dd6-2062
+=1-d43d7e359f7e-57292555-2ef85-222d
 Z2 o-quiet -auto_acc_if_foreign -work work
 n@_opt
 Z3 OL;O;10.4c_5;61
+R0
 T_opt1
 !s110 1461952015
 VI3RKhmfUjE_5SRmJ;g[VP2
@@ -26,19 +27,19 @@ n@_opt1
 R3
 R0
 T_opt2
-!s110 1462207144
-VR;MZekd;VShXi@1e2?<nh0
+!s110 1462471830
+ViV2TcaAanafNLg=Sf@UK@3
 R1
-=1-d43d7e359f7e-572782a8-ca1f3-1951
+=1-d43d7e359f7e-572b8c95-eb0d8-6ce
 R4
 n@_opt2
 R3
 R0
 T_opt3
-!s110 1461802159
-VT?7?:oUV@kLfmh76EQD6c2
+!s110 1462551121
+V^0NVa5Ph0iaP9SoikaIWk3
 R1
-=1-d43d7e359f7e-572154af-b70c5-33cb
+=1-d43d7e359f7e-572cc251-5fd72-6c51
 R2
 n@_opt3
 R3
@@ -62,13 +63,13 @@ n@_opt5
 R3
 R0
 vdot_prod
-Z5 !s110 1462207245
+Z5 !s110 1462551124
 !i10b 1
-!s100 C9hMjHKGZB@o@4M9FMjPL1
-I]?M6YU?gJc^zBE8ieQSbn0
+!s100 oHCm7P2f5b6C>Z[d<Nj_S2
+IHNPaG32oGPknzB[=7<`6M1
 Z6 VDg1SIo80bB@j0V0VzS_@n1
 R0
-w1462207125
+w1462551117
 8dot_prod.v
 Fdot_prod.v
 L0 1
@@ -76,7 +77,7 @@ Z7 OL;L;10.4c_5;61
 r1
 !s85 0
 31
-Z8 !s108 1462207245.000000
+Z8 !s108 1462551124.000000
 Z9 !s107 weightRAM.v|test.v|tb_dot_prod.v|dot_prod.v|
 Z10 !s90 dot_prod.v|tb_dot_prod.v|test.v|weightRAM.v|
 !i113 0
@@ -84,11 +85,11 @@ Z11 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 vtb_dot_prod
 R5
 !i10b 1
-!s100 32HZlQ1A2hf`Y;8i0ZQ7A0
-I?GNLS>QK:B`lRFCF@PK431
+!s100 `<kFQ>BVeeRC?NK;h<WTT3
+IgUB2C:d^4;?e^0:MhjW4G2
 R6
 R0
-w1462207231
+w1462472576
 8tb_dot_prod.v
 Ftb_dot_prod.v
 L0 3

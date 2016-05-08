@@ -1,0 +1,143 @@
+/*
+
+Vivado v2015.4 (64-bit)
+SW Build 1412921 on Wed Nov 18 09:44:32 MST 2015
+Process ID: 27959
+
+Current time: 	5/6/16 5:15:16 PM WEST
+Time zone: 	Western European Time (Europe/Lisbon)
+
+OS: NAME="Ubuntu"
+Version: 3.16.0-70-generic
+Architecture: amd64
+Available processors (cores): 8
+
+DISPLAY: :0
+Screen size: 3200x1080
+Screen resolution (DPI): 95
+Available screens: 2
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	1.8.0_45 64-bit
+Java home: 	/opt/Xilinx/Vivado/2015.4/tps/lnx64/jre
+
+User name: 	josefonseca
+User home directory: /home/josefonseca
+User working directory: /home/josefonseca/Documents/thesis/verilog/gate
+User country: 	US
+User language: 	en
+User locale: 	en_US
+
+Vivado preferences path: /home/josefonseca/.Xilinx/Vivado/2015.4/vivado.ini
+Vivado layouts directory: /home/josefonseca/.Xilinx/Vivado/2015.4/layouts
+
+GUI allocated memory:	178 MB
+GUI max memory:		3,052 MB
+Engine allocated memory: 4,850 MB
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// [GUI Memory]: 25 MB (+23431kb) [00:00:05]
+// [Engine Memory]: 4,850 MB (+4934355kb) [00:00:05]
+// HMemoryUtils.trashcanNow. Engine heap size: 4,855 MB. GUI used memory: 20 MB. Current time: 5/6/16 5:15:18 PM WEST
+selectList(PAResourceEtoH.GettingStartedView_RECENT_PROJECTS, "/home/josefonseca/Documents/thesis/verilog/gate/gate_synth/gate_synth.xpr", 1); // q:v (JViewport:JComponent, cq:JFrame)
+// Opening Vivado Project: /home/josefonseca/Documents/thesis/verilog/gate/gate_synth/gate_synth.xpr. Version: Vivado v2015.4 
+// bF:g (cq:JFrame):  Open Project : addNotify
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_NEW
+// Tcl Message: open_project /home/josefonseca/Documents/thesis/verilog/gate/gate_synth/gate_synth.xpr 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified 
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 48 MB (+22888kb) [00:00:13]
+// [GUI Memory]: 57 MB (+7114kb) [00:00:13]
+// [GUI Memory]: 60 MB (+524kb) [00:00:14]
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2015.4/data/ip'. 
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Project name: gate_synth; location: /home/josefonseca/Documents/thesis/verilog/gate/gate_synth; part: xc7z020clg484-1
+dismissDialog("Open Project"); // bF:g (cq:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// [GUI Memory]: 65 MB (+1291kb) [00:00:43]
+// Elapsed time: 29 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, gate (gate.v)]", 1, true); // y:k (I:JPanel, cq:JFrame) - Node
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, gate (gate.v)]", 1); // y:k (I:JPanel, cq:JFrame)
+// [GUI Memory]: 75 MB (+7060kb) [00:00:45]
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 17, false); // w:Y (v:I, cq:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+// bF:g (cq:JFrame):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_2 
+// bF:g (cq:JFrame):  Starting Design Runs : addNotify
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs synth_2 
+// Tcl Message: [Fri May  6 17:16:00 2016] Launched synth_2... Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/gate/gate_synth/gate_synth.runs/synth_2/runme.log 
+dismissDialog("Starting Design Runs"); // bF:g (cq:JFrame)
+// TclEventType: RUN_COMPLETED
+// [GUI Memory]: 79 MB (+128kb) [00:01:53]
+// X:G (cq:JFrame): Synthesis Completed: addNotify
+// Elapsed time: 85 seconds
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a:JButton (JPanel:JComponent, X:G)
+dismissDialog("Synthesis Completed"); // X:G (cq:JFrame)
+selectTab(PAResourceOtoP.ProjectSummaryUtilizationPanel_PROJECT_SUMMARY_UTILIZATION_PANEL_TABBED, PAResourceOtoP.ProjectSummaryUtilizationPanel_TABLE, "Table", 1); // g:g (f:JPanel, cq:JFrame)
+selectButton(PAResourceQtoS.RunGadget_SHOW_WARNING_AND_ERROR_MESSAGES_IN_MESSAGES, "120 warnings"); // i:l (JPanel:JComponent, cq:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_MESSAGE_WINDOW
+// [GUI Memory]: 83 MB (+63kb) [00:02:28]
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, gate (gate.v)]", 1, true); // y:k (I:JPanel, cq:JFrame) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, gate (gate.v)]", 1, true, false, false, false, false, true); // y:k (I:JPanel, cq:JFrame) - Double Click - Node
+// [GUI Memory]: 89 MB (+2169kb) [00:02:28]
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Project Summary", 0); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cq:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "gate.v", 1); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cq:JFrame)
+// [GUI Memory]: 94 MB (+344kb) [00:02:35]
+// Elapsed time: 17 seconds
+selectCodeEditor("gate.v", 315, 66); // bl:J (JPanel:JComponent, cq:JFrame)
+selectCodeEditor("gate.v", 317, 70); // bl:J (JPanel:JComponent, cq:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectCodeEditor("gate.v", 296, 23); // bl:J (JPanel:JComponent, cq:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// Elapsed time: 10 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 17, false); // w:Y (v:I, cq:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+// bF:g (cq:JFrame):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_2 
+// bF:g (cq:JFrame):  Starting Design Runs : addNotify
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs synth_2 
+// Tcl Message: [Fri May  6 17:18:23 2016] Launched synth_2... Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/gate/gate_synth/gate_synth.runs/synth_2/runme.log 
+dismissDialog("Starting Design Runs"); // bF:g (cq:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Project Summary", 0); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cq:JFrame)

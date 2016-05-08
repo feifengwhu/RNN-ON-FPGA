@@ -16,7 +16,7 @@ module tb_gate();
 	parameter ADDR_BITWIDTH_X  = $ln(INPUT_SZ)/$ln(2);
     parameter HALF_CLOCK       = 1;
     parameter FULL_CLOCK       = 2*HALF_CLOCK;
-    parameter MAX_SAMPLES      = 100;
+    parameter MAX_SAMPLES      = 50;
 
     // DUT Connecting wires/regs
 	reg    [ADDR_BITWIDTH_X-1:0] colAddressWrite_X;
@@ -154,7 +154,7 @@ module tb_gate();
             for(j=0; j < HIDDEN_SZ; j = j + 1) begin
                 $display("OUTP %b\nREAL %b", gateOutput[j*BITWIDTH+:BITWIDTH], ROM_goldenOut[i][j]);
                 //$fwrite(fid, "0x%X", outputVec[j*BITWIDTH+:BITWIDTH]);
-                quantError = quantError + (ROM_goldenOut[i][j] - gateOutput[j*BITWIDTH+:BITWIDTH])/(2.0**QM);
+                quantError = quantError + ($signed(ROM_goldenOut[i][j]) - $signed(gateOutput[j*BITWIDTH+:BITWIDTH]) )/(2.0**QM);
                 //$display("Error: %b",(ROM_goldenOut[i][j] ^ outputVec[j*BITWIDTH+:BITWIDTH]) & ({ {(QN+1){1'b1}}, {(QM){1'b0}} }));
             end
  

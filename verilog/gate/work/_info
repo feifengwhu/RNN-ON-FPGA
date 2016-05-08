@@ -9,22 +9,22 @@ z2
 cModel Technology
 Z0 d/home/josefonseca/Documents/thesis/verilog/gate
 T_opt
-!s110 1462195418
-VLF^XfnjGAofhoKC:Q6cU62
+!s110 1462645453
+V_S83<K3ihF>ChEYOh0o=51
 Z1 04 7 4 work tb_gate fast 0
-=1-d43d7e359f7e-572754da-701a-2bd7
+=1-d43d7e359f7e-572e32cd-22ad4-1804
 Z2 o-quiet -auto_acc_if_foreign -work work
 n@_opt
 Z3 OL;O;10.4c_5;61
-R0
 T_opt1
-!s110 1462195445
-VZ:UE6Vl7_ZRC`h7B2C07]1
+!s110 1462390540
+Vk3a282jWf<C^mQ[eN>VQ=2
 R1
-=1-d43d7e359f7e-572754f5-ad3e5-2e00
+=1-d43d7e359f7e-572a4f0c-2b7c3-2322
 Z4 o-quiet -auto_acc_if_foreign -work work +acc
 n@_opt1
 R3
+R0
 T_opt2
 !s110 1461791430
 V4GNiRJ=D2U59W[QlE@_bP2
@@ -53,13 +53,13 @@ n@_opt4
 R3
 R0
 vdot_prod
-Z5 !s110 1462195425
+Z5 !s110 1462645451
 !i10b 1
-!s100 1BVJPMjDA86]4G>fcab3[2
-Io950Ez[PIAf7NiB8<?MT33
+!s100 oHCm7P2f5b6C>Z[d<Nj_S2
+IHNPaG32oGPknzB[=7<`6M1
 Z6 VDg1SIo80bB@j0V0VzS_@n1
 R0
-w1462195407
+w1462551163
 8dot_prod.v
 Fdot_prod.v
 L0 1
@@ -67,7 +67,7 @@ Z7 OL;L;10.4c_5;61
 r1
 !s85 0
 31
-Z8 !s108 1462195425.000000
+Z8 !s108 1462645451.000000
 Z9 !s107 weightRAM.v|tb_gate.v|gate.v|dot_prod.v|
 Z10 !s90 dot_prod.v|gate.v|tb_gate.v|weightRAM.v|
 !i113 0
@@ -75,11 +75,11 @@ Z11 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 vgate
 R5
 !i10b 1
-!s100 zGN[NZ;;14AQejdDnlDK>2
-IQEK@h7EUI==cG:hR1_<C<0
+!s100 ;Rcno4gAW<?oQ3=0hGD2]2
+IMfSmXg7zX;]H_OB1jKJ]_2
 R6
 R0
-Z12 w1462015380
+w1462551501
 8gate.v
 Fgate.v
 L0 1
@@ -95,11 +95,11 @@ R11
 vtb_gate
 R5
 !i10b 1
-!s100 k=9Bf^LL55HXU7ADb_VP23
-IzRgI1aiAg^9L1<K=Ij_`E3
+!s100 OFI1F661EEUC3nE=T3lY;1
+IQQ:d>Zj>BR7im?N>PlneL2
 R6
 R0
-R12
+w1462390821
 8tb_gate.v
 Ftb_gate.v
 L0 3

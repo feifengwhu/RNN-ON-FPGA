@@ -791,3 +791,15 @@ selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Project
 selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "dot_prod.v", 1); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cq:JFrame)
 selectButton(PAResourceAtoD.AbstractFileView_RELOAD, "Reload"); // i:l (JPanel:JComponent, cq:JFrame)
 selectButton(PAResourceAtoD.AbstractFileView_RELOAD, "Reload"); // i:l
+// HMemoryUtils.trashcanNow. Engine heap size: 5,003 MB. GUI used memory: 39 MB. Current time: 5/2/16 5:55:18 PM WEST
+// HMemoryUtils.trashcanNow. Engine heap size: 5,003 MB. GUI used memory: 39 MB. Current time: 5/3/16 10:59:39 AM WEST
+// HMemoryUtils.trashcanNow. Engine heap size: 5,003 MB. GUI used memory: 37 MB. Current time: 5/3/16 11:29:39 AM WEST
+// HMemoryUtils.trashcanNow. Engine heap size: 5,003 MB. GUI used memory: 38 MB. Current time: 5/3/16 11:59:39 AM WEST
+// HMemoryUtils.trashcanNow. Engine heap size: 5,003 MB. GUI used memory: 38 MB. Current time: 5/3/16 12:29:39 PM WEST
+// HMemoryUtils.trashcanNow. Engine heap size: 5,003 MB. GUI used memory: 38 MB. Current time: 5/3/16 12:59:39 PM WEST
+// HMemoryUtils.trashcanNow. Engine heap size: 5,003 MB. GUI used memory: 38 MB. Current time: 5/3/16 1:29:39 PM WEST
+// HMemoryUtils.trashcanNow. Engine heap size: 5,003 MB. GUI used memory: 37 MB. Current time: 5/3/16 9:58:28 PM WEST
+// HMemoryUtils.trashcanNow. Engine heap size: 5,003 MB. GUI used memory: 38 MB. Current time: 5/3/16 10:28:29 PM WEST
+// HMemoryUtils.trashcanNow. Engine heap size: 5,003 MB. GUI used memory: 37 MB. Current time: 5/3/16 10:58:30 PM WEST
+// HMemoryUtils.trashcanNow. Engine heap size: 5,003 MB. GUI used memory: 38 MB. Current time: 5/3/16 11:28:30 PM WEST
+// HMemoryUtils.trashcanNow. Engine heap size: 5,003 MB. GUI used memory: 37 MB. Current time: 5/4/16 3:27:57 PM WEST

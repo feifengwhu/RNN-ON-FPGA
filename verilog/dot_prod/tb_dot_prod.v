@@ -7,7 +7,7 @@ module tb_dot_prod();
     parameter NCOL = 4;
     parameter QN   = 6;
     parameter QM   = 11;
-    parameter DSP48_PER_ROW    = 2; 
+    parameter DSP48_PER_ROW    = 4; 
     
     // Dependent Parameters
     parameter BITWIDTH          = QN + QM + 1;
@@ -109,7 +109,7 @@ module tb_dot_prod();
             for(j=0; j < NROW ; j = j + 1) begin
                 $display("OUTP %b\nREAL %b", outputVec[j*BITWIDTH+:BITWIDTH], ROM_goldenOut[i][j]);
                 //$fwrite(fid, "0x%X", outputVec[j*BITWIDTH+:BITWIDTH]);
-                quantError = quantError + (ROM_goldenOut[i][j] ^ outputVec[j*BITWIDTH+:BITWIDTH])/(2.0**QM);
+                quantError = quantError + ($signed(ROM_goldenOut[i][j]) - $signed(outputVec[j*BITWIDTH+:BITWIDTH]) )/(2.0**QM);
                 //$display("Error: %b",(ROM_goldenOut[i][j] ^ outputVec[j*BITWIDTH+:BITWIDTH]) & ({ {(QN+1){1'b1}}, {(QM){1'b0}} }));
             end
  

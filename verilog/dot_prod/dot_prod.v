@@ -16,8 +16,8 @@ module dot_prod #(parameter NROW = 16,
     parameter LAYER_BITWIDTH        = BITWIDTH*NROW;
     parameter N_DSP48               = NROW/DSP48_PER_ROW;
     parameter DSP48_INPUT_BITWIDTH  = BITWIDTH*N_DSP48;
-    parameter DSP48_OUTPUT_BITWIDTH = (2*BITWIDTH)*N_DSP48;
-    parameter MAC_BITWIDTH          = (2*BITWIDTH);
+    parameter DSP48_OUTPUT_BITWIDTH = (2*BITWIDTH+1)*NROW;
+    parameter MAC_BITWIDTH          = (2*BITWIDTH+1);
 	parameter MUX_BITWIDTH          = log2(DSP48_PER_ROW);
 	
 	input signed      [LAYER_BITWIDTH-1:0] weightRow; 
@@ -27,11 +27,13 @@ module dot_prod #(parameter NROW = 16,
 	output reg    dataReady;
 	output reg          [ADDR_BITWIDTH-1:0]  colAddress;
 	output reg signed  [LAYER_BITWIDTH-1:0] outputVector;
+	reg signed  [LAYER_BITWIDTH-1:0] outputVectorTEMP;
 	
     // Internal register definition
     reg [MUX_BITWIDTH-1:0] rowMux;
     reg signed [DSP48_INPUT_BITWIDTH -1:0]  weightMAC;
     reg signed [DSP48_OUTPUT_BITWIDTH -1:0] outputMAC;
+    reg signed [DSP48_OUTPUT_BITWIDTH -1:0] outputMAC_sum;
     integer i;
 
     // FSM Registers
@@ -40,6 +42,7 @@ module dot_prod #(parameter NROW = 16,
     reg [ADDR_BITWIDTH-1:0] NEXTcolAddress;
     reg [MUX_BITWIDTH-1:0] NEXTrowMux;
     reg outputEn;
+    reg clearMAC;
     parameter IDLE = 2'd0;
     parameter CALC = 2'd1;
     parameter END  = 2'd2;
@@ -54,30 +57,46 @@ module dot_prod #(parameter NROW = 16,
             end
     end
     
-	always @(*) begin
-		 if (reset == 1'b1)
-            outputMAC = {DSP48_OUTPUT_BITWIDTH{1'b0}};
-        else
+    always @(posedge clk) begin
+		if(dataReady == 1'b0) begin
 			for (i=0; i < N_DSP48; i = i + 1) begin
-				outputMAC[i*MAC_BITWIDTH +: MAC_BITWIDTH] = $signed(weightMAC[i*BITWIDTH +: BITWIDTH]) * $signed(inputVector);
-			end	
+				outputMAC_sum[(i*DSP48_PER_ROW+rowMux)*MAC_BITWIDTH +: MAC_BITWIDTH] = $signed(outputMAC[(i*DSP48_PER_ROW+rowMux)*MAC_BITWIDTH +: MAC_BITWIDTH]);
+			end
+		end
+		else begin
+		
+		    for (i=0; i < N_DSP48; i = i + 1) begin 
+			     outputMAC_sum[(i*DSP48_PER_ROW+rowMux)*MAC_BITWIDTH +: MAC_BITWIDTH] = {MAC_BITWIDTH{1'b0}};
+			end
+		
+		end
+	end
+    
+	always @(posedge clk) begin
+		if (reset == 1'b1)
+            outputMAC <= {DSP48_OUTPUT_BITWIDTH{1'b0}};
+        else
+			if(outputEn == 1'b1) begin
+				for (i=0; i < N_DSP48; i = i + 1) begin
+					outputMAC[(i*DSP48_PER_ROW+rowMux)*MAC_BITWIDTH +: MAC_BITWIDTH] <= $signed(outputMAC_sum[(i*DSP48_PER_ROW+rowMux)*MAC_BITWIDTH +: MAC_BITWIDTH]) + ($signed(weightMAC[i*BITWIDTH +: BITWIDTH]) * $signed(inputVector));
+				end	
+			end
+			else
+			     outputMAC <= outputMAC;
+			
     end
     
+    
     // The output vector and adder
-    always @(posedge clk) begin
-        if (reset == 1'b1 | outputEn == 1'b0)
-            outputVector <= {LAYER_BITWIDTH{1'b0}};
-        else
-            if (dataReady == 1'b0) begin
-                for(i = 0; i < N_DSP48; i = i + 1) begin
-                    outputVector[(i*DSP48_PER_ROW+rowMux)*BITWIDTH +: BITWIDTH] <= outputVector[(i*DSP48_PER_ROW+rowMux)*BITWIDTH +: BITWIDTH] + (outputMAC[i*MAC_BITWIDTH +: MAC_BITWIDTH] >>> QM);
-                end
-            end
-            else begin
-                for(i = 0; i < N_DSP48; i = i + 1) begin
-                    outputVector[(i*DSP48_PER_ROW+rowMux)*BITWIDTH +: BITWIDTH] <= (outputMAC[(i*DSP48_PER_ROW+rowMux)*MAC_BITWIDTH +: MAC_BITWIDTH] >>> QM);
-                end
-            end
+    always @(posedge dataReady or posedge reset) begin
+		if (reset == 1'b1) begin
+			outputVector <= {LAYER_BITWIDTH{1'b0}};
+		end
+		else begin
+			for(i = 0; i < NROW; i = i + 1) begin
+				outputVector[i*BITWIDTH +: BITWIDTH] <= ($signed(outputMAC[i*MAC_BITWIDTH +: MAC_BITWIDTH]) >>> QM);
+			end
+		end
     end
 
 // The control signal FSM
@@ -120,30 +139,40 @@ module dot_prod #(parameter NROW = 16,
                 NEXTcolAddress = {ADDR_BITWIDTH{1'b0}};      
                 NEXTrowMux     = {MUX_BITWIDTH{1'b0}};     
                 outputEn       = 1'b0;
+                clearMAC       = 1'b1;
             end
+            
             CALC :
             begin
                 dataReady      = 1'b0;
                 NEXTcolAddress = colAddress + 1; 
-                if(colAddress == NCOL - 1)
+                if(colAddress == NCOL - 1) begin
                     NEXTrowMux = rowMux + 1;
-                else
+                    clearMAC   = 1'b1;
+                end
+                else begin
                     NEXTrowMux = rowMux;
+                    clearMAC   = 1'b0;
+                end
                 outputEn       = 1'b1;
             end
+           
             END :
             begin
                 dataReady      = 1'b1;
                 NEXTcolAddress = {ADDR_BITWIDTH{1'b0}};      
                 NEXTrowMux     = {MUX_BITWIDTH{1'b0}};      
                 outputEn       = 1'b1;
+                clearMAC       = 1'b0;
             end
+            
             default:
             begin
                 dataReady      = 1'b0;
                 NEXTcolAddress = {ADDR_BITWIDTH{1'b0}};      
                 NEXTrowMux     = {MUX_BITWIDTH{1'b0}};      
                 outputEn       = 1'b0;
+                clearMAC       = 1'b1;
             end
         endcase   
     end
