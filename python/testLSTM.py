@@ -4,7 +4,7 @@ import time
 import sys
 import LSTMlayer
 
-np.random.seed(5)
+np.random.seed(int(time.time())%100)
 
 # compute sigmoid nonlinearity
 def sigmoid(x):
@@ -22,20 +22,20 @@ def tanhPrime(output):
     return (1-output**2)
 
 # training dataset generation
-binary_dim = 32 
+binary_dim = 16 
 largest_number = pow(2,binary_dim)
 
 # Simulation Parameters
-pert = float(sys.argv[1])
-alpha = float(sys.argv[2])
-wmax  = float(sys.argv[3])
+pert  = 2**-9#float(sys.argv[1])
+alpha = 2**-4#float(sys.argv[2])
+wmax  = 7#float(sys.argv[3])
 samplesPerEpoch = 500
 input_dim = 2
-hidden_dim = int(sys.argv[4])
+hidden_dim = 8#int(sys.argv[4])
 output_dim = 1
 maxEpoch   = 50 
-trainSamp  = 2000
-testSamp   = 100
+trainSamp  = 500
+testSamp   = 50
 
 # initialize neural network weights
 lstmLayer1 = LSTMlayer.LSTMlayer(input_dim, hidden_dim, output_dim, alpha, 'SPSA', pert, wmax, binary_dim)

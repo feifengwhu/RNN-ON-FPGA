@@ -1,6 +1,6 @@
-module network  #(parameter INPUT_SZ  =  2,
-                  parameter HIDDEN_SZ = 16,
-                  parameter NUM_OUTPUT_SYMBOLS = 2,
+module network  #(parameter INPUT_SZ   =  2,
+                  parameter HIDDEN_SZ  = 16,
+                  parameter OUTPUT_SZ  =  1,//NUM_OUTPUT_SYMBOLS = 2,
                   parameter QN        =  6,
                   parameter QM        = 11,
                   parameter DSP48_PER_ROW_G = 2,
@@ -19,7 +19,7 @@ module network  #(parameter INPUT_SZ  =  2,
     parameter LAYER_BITWIDTH     = BITWIDTH*HIDDEN_SZ;
     parameter MULT_BITWIDTH      = (2*BITWIDTH+1);
     parameter ELEMWISE_BITWIDTH  = MULT_BITWIDTH*HIDDEN_SZ;
-    parameter OUTPUT_BITWIDTH    = log2(NUM_OUTPUT_SYMBOLS);
+    parameter OUTPUT_BITWIDTH    = OUTPUT_SZ * BITWIDTH; //log2(NUM_OUTPUT_SYMBOLS);
 	parameter ADDR_BITWIDTH      = log2(HIDDEN_SZ);
 	parameter ADDR_BITWIDTH_X    = log2(INPUT_SZ);
 	parameter MUX_BITWIDTH		  = log2(DSP48_PER_ROW_M);  

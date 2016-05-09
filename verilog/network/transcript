@@ -1,0 +1,34 @@
+# vsim -c -do "run -all" test 
+# Start time: 17:05:22 on May 09,2016
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# //  Questa Sim-64
+# //  Version 10.4c_5 linux_x86_64 Nov 14 2015
+# //
+# //  Copyright 1991-2015 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //  THIS DOCUMENT CONTAINS TRADE SECRETS AND COMMERCIAL OR FINANCIAL
+# //  INFORMATION THAT ARE PRIVILEGED, CONFIDENTIAL, AND EXEMPT FROM
+# //  DISCLOSURE UNDER THE FREEDOM OF INFORMATION ACT, 5 U.S.C. SECTION 552.
+# //  FURTHERMORE, THIS INFORMATION IS PROHIBITED FROM DISCLOSURE UNDER
+# //  THE TRADE SECRETS ACT, 18 U.S.C. SECTION 1905.
+# //
+# Loading work.test(fast)
+# ** Warning: (vsim-PLI-3691) test.v(8): Expected a system task, not a system function '$fscanf'.
+#    Time: 0 ns  Iteration: 0  Instance: /test File: test.v
+# run -all
+# Content: 0000
+# Content: 0001
+# Content: 0010
+# Content: 0011
+# Content: 0100
+# Content: 0101
+# Content: 0110
+# Content: 0111
+# Content: 1000
+# Content: 1001
+# End time: 17:12:12 on May 09,2016, Elapsed time: 0:06:50
+# Errors: 0, Warnings: 1
