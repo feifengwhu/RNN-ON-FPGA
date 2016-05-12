@@ -2,9 +2,10 @@ import numpy as np
 import matplotlib.pyplot as plt
 import time
 import sys
+import pickle
 import LSTMlayer
 
-np.random.seed(int(time.time())%100)
+np.random.seed(round(time.time()))
 
 # compute sigmoid nonlinearity
 def sigmoid(x):
@@ -22,20 +23,20 @@ def tanhPrime(output):
     return (1-output**2)
 
 # training dataset generation
-binary_dim = 16 
+binary_dim = 8 
 largest_number = pow(2,binary_dim)
 
 # Simulation Parameters
-pert  = 2**-9#float(sys.argv[1])
-alpha = 2**-4#float(sys.argv[2])
-wmax  = 7#float(sys.argv[3])
+pert  = float(sys.argv[1])
+alpha = float(sys.argv[2])
+wmax  = float(sys.argv[3])
 samplesPerEpoch = 500
-input_dim = 2
-hidden_dim = 8#int(sys.argv[4])
+input_dim  = 2
+hidden_dim = int(sys.argv[4])
 output_dim = 1
-maxEpoch   = 50 
-trainSamp  = 500
-testSamp   = 50
+maxEpoch   = 100 
+trainSamp  = 5000
+testSamp   = 100
 
 # initialize neural network weights
 lstmLayer1 = LSTMlayer.LSTMlayer(input_dim, hidden_dim, output_dim, alpha, 'SPSA', pert, wmax, binary_dim)
@@ -74,7 +75,7 @@ for i in range(maxEpoch):
             y_pred = lstmLayer1.trainNetwork_SPSA(X, y)
 
         lstmLayer1.resetNetwork()    
-    
+
     for j in range(testSamp):
         # generate a simple addition problem (a + b = c)
         a_int = np.random.randint(largest_number/2) # int version
@@ -117,6 +118,12 @@ for i in range(maxEpoch):
     #plt.scatter(i, epochError/testSamp, linestyle='-.')
     #plt.draw()
     epochError = 0
+
+with open('objs.pickle', 'wb') as f:
+    pickle.dump([lstmLayer1.Wz, lstmLayer1.Wi, lstmLayer1.Wf, lstmLayer1.Wo, lstmLayer1.Rz, lstmLayer1.Ri, lstmLayer1.Rf, lstmLayer1.Ro, lstmLayer1.bz, lstmLayer1.bi, lstmLayer1.bf, lstmLayer1.bo,], f)
+
+with open('layer.pickle', 'wb') as f:
+    pickle.dump(lstmLayer1, f)
 
 print("Epochs: {0}".format(i+1))
 wait = input("PRESS ENTER TO CONTINUE.")

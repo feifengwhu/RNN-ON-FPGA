@@ -136,7 +136,6 @@ module network  #(parameter INPUT_SZ   =  2,
     weightRAM  #(HIDDEN_SZ, HIDDEN_SZ, BITWIDTH)  WRAM_O_Y (colAddressWrite_wOY, colAddressRead_wOY, writeEn_wOY, clock, reset, wOY_in, wOY_out);
 
     genvar i;
-    
     generate 
         for (i = 0; i < HIDDEN_SZ; i = i + 1) begin
             sigmoid #(QN,QM) sigmoid_i (elemWise_op2[i*BITWIDTH +: BITWIDTH], clock, reset, elemWise_mult2[i*BITWIDTH +: BITWIDTH]);
@@ -148,6 +147,18 @@ module network  #(parameter INPUT_SZ   =  2,
             tanh #(QN,QM) tanh_i (elemWise_op1[i*BITWIDTH +: BITWIDTH], clock, reset, tanh_result[i*BITWIDTH +: BITWIDTH]);
         end 
     endgenerate 
+
+	// Slicing the input and previous output vectors
+	always @(negedge clock) begin
+        if( reset == 1'b1) begin
+            inputVecSample   <= {BITWIDTH{1'b0}};
+            prevOutVecSample <= {BITWIDTH{1'b0}};
+        end
+        else begin
+            inputVecSample   <= inputVec[colAddressRead_wZX*BITWIDTH +: BITWIDTH];
+            prevOutVecSample <= prevLayerOut[colAddressRead_wZY*BITWIDTH +: BITWIDTH];
+        end
+    end
 
     // Selecting the source for the elementwise multiplication first operand
     always @(*) begin
@@ -242,7 +253,7 @@ module network  #(parameter INPUT_SZ   =  2,
     // The FSM that controls the gate
     always @(posedge clock) begin
 		if (reset == 1'b1) begin
-			state <= 3'd0;
+			state <= IDLE;
 		end
 		else begin
 			state <= NEXTstate;
@@ -280,7 +291,7 @@ module network  #(parameter INPUT_SZ   =  2,
 			
 			ELEM_PROD_A:
 			begin
-
+				NEXTstate = NON_LIN_1B;
 			end
 			
 			NON_LIN_1B:		
@@ -295,7 +306,7 @@ module network  #(parameter INPUT_SZ   =  2,
 			
 			ELEM_PROD_B:
 			begin
-
+				NEXTstate = NON_LIN_1C;
 			end
 			
 			NON_LIN_1C:		
@@ -310,7 +321,7 @@ module network  #(parameter INPUT_SZ   =  2,
 			
 			ELEM_PROD_C:
 			begin
-
+				NEXTstate = END;
 			end
 			
 			END :
@@ -334,6 +345,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				z_ready          = 1'b0;
 				f_ready          = 1'b0;
 				y_ready          = 1'b0;
+				dataoutReady     = 1'b0;
 			end
 			
 			GATE_CALC:
@@ -345,6 +357,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				z_ready          = 1'b0;
 				f_ready          = 1'b0;
 				y_ready          = 1'b0;
+				dataoutReady     = 1'b0;
 			end
 			
 			NON_LIN_1A:		
@@ -356,6 +369,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				z_ready          = 1'b0;
 				f_ready          = 1'b0;
 				y_ready          = 1'b0;
+				dataoutReady     = 1'b0;
 			end
 			
 			NON_LIN_2A:		
@@ -367,6 +381,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				z_ready          = 1'b0;
 				f_ready          = 1'b0;
 				y_ready          = 1'b0;
+				dataoutReady     = 1'b0;
 			end
 			
 			ELEM_PROD_A:
@@ -378,6 +393,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				z_ready          = 1'b0;
 				f_ready          = 1'b0;
 				y_ready          = 1'b0;
+				dataoutReady     = 1'b0;
 			end
 			
 			NON_LIN_1B:		
@@ -389,6 +405,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				z_ready          = 1'b1;
 				f_ready          = 1'b0;
 				y_ready          = 1'b0;
+				dataoutReady     = 1'b0;
 			end
 			
 			NON_LIN_2B:		
@@ -400,6 +417,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				z_ready          = 1'b0;
 				f_ready          = 1'b0;
 				y_ready          = 1'b0;
+				dataoutReady     = 1'b0;
 			end
 			
 			ELEM_PROD_B:
@@ -411,6 +429,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				z_ready          = 1'b0;
 				f_ready          = 1'b0;
 				y_ready          = 1'b0;
+				dataoutReady     = 1'b0;
 			end
 			
 			NON_LIN_1C:		
@@ -422,6 +441,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				z_ready          = 1'b0;
 				f_ready          = 1'b1;
 				y_ready          = 1'b0;
+				dataoutReady     = 1'b0;
 			end
 			
 			NON_LIN_2C:		
@@ -433,6 +453,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				z_ready          = 1'b0;
 				f_ready          = 1'b0;
 				y_ready          = 1'b0;
+				dataoutReady     = 1'b0;
 			end
 			
 			ELEM_PROD_C:
@@ -444,6 +465,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				z_ready          = 1'b0;
 				f_ready          = 1'b0;
 				y_ready          = 1'b0;
+				dataoutReady     = 1'b0;
 			end
 			
 			END :
@@ -455,6 +477,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				z_ready          = 1'b0;
 				f_ready          = 1'b0;
 				y_ready          = 1'b1;
+				dataoutReady     = 1'b1;
 			end
 				
 			default:
@@ -466,6 +489,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				z_ready          = 1'b0;
 				f_ready          = 1'b0;
 				y_ready          = 1'b0;
+				dataoutReady     = 1'b0;
 			end
 				
 		endcase

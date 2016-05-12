@@ -1,7 +1,7 @@
 Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2015.4 (lin64) Build 1412921 Wed Nov 18 09:44:32 MST 2015
-| Date         : Fri May  6 16:49:15 2016
+| Date         : Sun May  8 23:50:39 2016
 | Host         : desktop4480 running 64-bit Ubuntu 14.04.4 LTS
 | Command      : report_utilization -file dot_prod_utilization_synth.rpt -pb dot_prod_utilization_synth.pb
 | Design       : dot_prod

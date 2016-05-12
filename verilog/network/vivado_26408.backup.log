@@ -1,0 +1,832 @@
+#-----------------------------------------------------------
+# Vivado v2015.4 (64-bit)
+# SW Build 1412921 on Wed Nov 18 09:44:32 MST 2015
+# IP Build 1412160 on Tue Nov 17 13:47:24 MST 2015
+# Start of session at: Sun May  8 23:17:07 2016
+# Process ID: 26408
+# Current directory: /home/josefonseca/Documents/thesis/verilog/network
+# Command line: vivado
+# Log file: /home/josefonseca/Documents/thesis/verilog/network/vivado.log
+# Journal file: /home/josefonseca/Documents/thesis/verilog/network/vivado.jou
+#-----------------------------------------------------------
+start_gui
+create_project project_1 /home/josefonseca/Documents/thesis/verilog/network/project_1 -part xc7z020clg484-1
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2015.4/data/ip'.
+set_property board_part xilinx.com:zc702:part0:1.2 [current_project]
+set_property simulator_language Verilog [current_project]
+add_files -norecurse {/home/josefonseca/Documents/thesis/verilog/network/network.v /home/josefonseca/Documents/thesis/verilog/network/weightRAM.v /home/josefonseca/Documents/thesis/verilog/network/sigmoid.v /home/josefonseca/Documents/thesis/verilog/network/gate.v /home/josefonseca/Documents/thesis/verilog/network/tanh.v /home/josefonseca/Documents/thesis/verilog/network/dot_prod.v}
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+launch_runs synth_1
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/gate.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/gate.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/network.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/network.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/sigmoid.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/sigmoid.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/tanh.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/tanh.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/weightRAM.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/weightRAM.v:1]
+[Sun May  8 23:18:19 2016] Launched synth_1...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/network/project_1/project_1.runs/synth_1/runme.log
+reset_run synth_1
+launch_runs synth_1
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/gate.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/gate.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/network.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/network.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/sigmoid.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/sigmoid.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/tanh.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/tanh.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/weightRAM.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/weightRAM.v:1]
+[Sun May  8 23:21:01 2016] Launched synth_1...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/network/project_1/project_1.runs/synth_1/runme.log
+synth_design -rtl -name rtl_1
+Command: synth_design -rtl -name rtl_1
+Starting synth_design
+Using part: xc7z020clg484-1
+Top: network
+WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v:14]
+WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v:15]
+WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v:16]
+WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v:17]
+WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v:18]
+WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v:19]
+WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v:20]
+WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v:21]
+WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v:46]
+WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v:47]
+WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v:48]
+WARNING: [Synth 8-2507] parameter declaration becomes local in weightRAM with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/weightRAM.v:13]
+WARNING: [Synth 8-2507] parameter declaration becomes local in weightRAM with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/weightRAM.v:14]
+WARNING: [Synth 8-2507] parameter declaration becomes local in sigmoid with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/sigmoid.v:8]
+WARNING: [Synth 8-2507] parameter declaration becomes local in gate with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/gate.v:20]
+WARNING: [Synth 8-2507] parameter declaration becomes local in gate with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/gate.v:21]
+WARNING: [Synth 8-2507] parameter declaration becomes local in gate with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/gate.v:22]
+WARNING: [Synth 8-2507] parameter declaration becomes local in gate with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/gate.v:23]
+WARNING: [Synth 8-2507] parameter declaration becomes local in gate with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/gate.v:26]
+WARNING: [Synth 8-2507] parameter declaration becomes local in gate with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/gate.v:27]
+WARNING: [Synth 8-2507] parameter declaration becomes local in gate with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/gate.v:28]
+WARNING: [Synth 8-2507] parameter declaration becomes local in gate with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/gate.v:29]
+WARNING: [Synth 8-2507] parameter declaration becomes local in gate with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/gate.v:30]
+WARNING: [Synth 8-2507] parameter declaration becomes local in tanh with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/tanh.v:8]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:17]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:18]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:19]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:20]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:21]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:22]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:23]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:24]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:25]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:26]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:223]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:224]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:225]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:226]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:227]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:228]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:229]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:230]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:231]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:232]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:233]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:234]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:01:12 ; elapsed = 00:21:39 . Memory (MB): peak = 5888.020 ; gain = 5042.406 ; free physical = 3796 ; free virtual = 8967
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'network' [/home/josefonseca/Documents/thesis/verilog/network/network.v:1]
+	Parameter INPUT_SZ bound to: 2 - type: integer 
+	Parameter HIDDEN_SZ bound to: 16 - type: integer 
+	Parameter NUM_OUTPUT_SYMBOLS bound to: 2 - type: integer 
+	Parameter QN bound to: 6 - type: integer 
+	Parameter QM bound to: 11 - type: integer 
+	Parameter DSP48_PER_ROW_G bound to: 2 - type: integer 
+	Parameter DSP48_PER_ROW_M bound to: 2 - type: integer 
+	Parameter BITWIDTH bound to: 18 - type: integer 
+	Parameter INPUT_BITWIDTH bound to: 36 - type: integer 
+	Parameter LAYER_BITWIDTH bound to: 288 - type: integer 
+	Parameter MULT_BITWIDTH bound to: 37 - type: integer 
+	Parameter ELEMWISE_BITWIDTH bound to: 592 - type: integer 
+	Parameter OUTPUT_BITWIDTH bound to: 1 - type: integer 
+	Parameter ADDR_BITWIDTH bound to: 4 - type: integer 
+	Parameter ADDR_BITWIDTH_X bound to: 1 - type: integer 
+	Parameter MUX_BITWIDTH bound to: 1 - type: integer 
+	Parameter N_DSP48 bound to: 8 - type: integer 
+	Parameter IDLE bound to: 4'b0000 
+	Parameter GATE_CALC bound to: 4'b0001 
+	Parameter NON_LIN_1A bound to: 4'b0010 
+	Parameter NON_LIN_2A bound to: 4'b0011 
+	Parameter ELEM_PROD_A bound to: 4'b0100 
+	Parameter NON_LIN_1B bound to: 4'b0101 
+	Parameter NON_LIN_2B bound to: 4'b0110 
+	Parameter ELEM_PROD_B bound to: 4'b0111 
+	Parameter NON_LIN_1C bound to: 4'b1000 
+	Parameter NON_LIN_2C bound to: 4'b1001 
+	Parameter ELEM_PROD_C bound to: 4'b1010 
+	Parameter END bound to: 4'b1011 
+INFO: [Synth 8-638] synthesizing module 'sigmoid' [/home/josefonseca/Documents/thesis/verilog/network/sigmoid.v:1]
+	Parameter QN bound to: 6 - type: integer 
+	Parameter QM bound to: 11 - type: integer 
+	Parameter BITWIDTH bound to: 18 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'sigmoid' (1#1) [/home/josefonseca/Documents/thesis/verilog/network/sigmoid.v:1]
+INFO: [Synth 8-638] synthesizing module 'tanh' [/home/josefonseca/Documents/thesis/verilog/network/tanh.v:1]
+	Parameter QN bound to: 6 - type: integer 
+	Parameter QM bound to: 11 - type: integer 
+	Parameter BITWIDTH bound to: 18 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'tanh' (2#1) [/home/josefonseca/Documents/thesis/verilog/network/tanh.v:1]
+INFO: [Synth 8-638] synthesizing module 'gate' [/home/josefonseca/Documents/thesis/verilog/network/gate.v:1]
+	Parameter INPUT_SZ bound to: 2 - type: integer 
+	Parameter HIDDEN_SZ bound to: 16 - type: integer 
+	Parameter QN bound to: 6 - type: integer 
+	Parameter QM bound to: 11 - type: integer 
+	Parameter DSP48_PER_ROW bound to: 2 - type: integer 
+	Parameter BITWIDTH bound to: 18 - type: integer 
+	Parameter LAYER_BITWIDTH bound to: 288 - type: integer 
+	Parameter ADDR_BITWIDTH_X bound to: 1 - type: integer 
+	Parameter ADDR_BITWIDTH bound to: 4 - type: integer 
+	Parameter IDLE bound to: 3'b000 
+	Parameter CALC_XandY bound to: 3'b001 
+	Parameter SUM_X bound to: 3'b010 
+	Parameter CALC_Y bound to: 3'b011 
+	Parameter SUM_Y bound to: 3'b100 
+INFO: [Synth 8-638] synthesizing module 'dot_prod' [/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v:1]
+	Parameter NROW bound to: 16 - type: integer 
+	Parameter NCOL bound to: 2 - type: integer 
+	Parameter QN bound to: 6 - type: integer 
+	Parameter QM bound to: 11 - type: integer 
+	Parameter DSP48_PER_ROW bound to: 2 - type: integer 
+	Parameter BITWIDTH bound to: 18 - type: integer 
+	Parameter ADDR_BITWIDTH bound to: 1 - type: integer 
+	Parameter LAYER_BITWIDTH bound to: 288 - type: integer 
+	Parameter N_DSP48 bound to: 8 - type: integer 
+	Parameter DSP48_INPUT_BITWIDTH bound to: 144 - type: integer 
+	Parameter DSP48_OUTPUT_BITWIDTH bound to: 592 - type: integer 
+	Parameter MAC_BITWIDTH bound to: 37 - type: integer 
+	Parameter MUX_BITWIDTH bound to: 1 - type: integer 
+	Parameter IDLE bound to: 2'b00 
+	Parameter CALC bound to: 2'b01 
+	Parameter END bound to: 2'b10 
+INFO: [Synth 8-256] done synthesizing module 'dot_prod' (3#1) [/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v:1]
+INFO: [Synth 8-638] synthesizing module 'dot_prod__parameterized0' [/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v:1]
+	Parameter NROW bound to: 16 - type: integer 
+	Parameter NCOL bound to: 16 - type: integer 
+	Parameter QN bound to: 6 - type: integer 
+	Parameter QM bound to: 11 - type: integer 
+	Parameter DSP48_PER_ROW bound to: 2 - type: integer 
+	Parameter BITWIDTH bound to: 18 - type: integer 
+	Parameter ADDR_BITWIDTH bound to: 4 - type: integer 
+	Parameter LAYER_BITWIDTH bound to: 288 - type: integer 
+	Parameter N_DSP48 bound to: 8 - type: integer 
+	Parameter DSP48_INPUT_BITWIDTH bound to: 144 - type: integer 
+	Parameter DSP48_OUTPUT_BITWIDTH bound to: 592 - type: integer 
+	Parameter MAC_BITWIDTH bound to: 37 - type: integer 
+	Parameter MUX_BITWIDTH bound to: 1 - type: integer 
+	Parameter IDLE bound to: 2'b00 
+	Parameter CALC bound to: 2'b01 
+	Parameter END bound to: 2'b10 
+INFO: [Synth 8-256] done synthesizing module 'dot_prod__parameterized0' (3#1) [/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v:1]
+INFO: [Synth 8-256] done synthesizing module 'gate' (4#1) [/home/josefonseca/Documents/thesis/verilog/network/gate.v:1]
+INFO: [Synth 8-638] synthesizing module 'weightRAM' [/home/josefonseca/Documents/thesis/verilog/network/weightRAM.v:1]
+	Parameter NROW bound to: 16 - type: integer 
+	Parameter NCOL bound to: 2 - type: integer 
+	Parameter BITWIDTH bound to: 18 - type: integer 
+	Parameter OUTPUT_PORT_SIZE bound to: 288 - type: integer 
+	Parameter ADDR_BITWIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-5534] Detected attribute (* ram_style = "block" *) [/home/josefonseca/Documents/thesis/verilog/network/weightRAM.v:26]
+INFO: [Synth 8-256] done synthesizing module 'weightRAM' (5#1) [/home/josefonseca/Documents/thesis/verilog/network/weightRAM.v:1]
+INFO: [Synth 8-638] synthesizing module 'weightRAM__parameterized0' [/home/josefonseca/Documents/thesis/verilog/network/weightRAM.v:1]
+	Parameter NROW bound to: 16 - type: integer 
+	Parameter NCOL bound to: 16 - type: integer 
+	Parameter BITWIDTH bound to: 18 - type: integer 
+	Parameter OUTPUT_PORT_SIZE bound to: 288 - type: integer 
+	Parameter ADDR_BITWIDTH bound to: 4 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'weightRAM__parameterized0' (5#1) [/home/josefonseca/Documents/thesis/verilog/network/weightRAM.v:1]
+INFO: [Synth 8-638] synthesizing module 'weightRAM__parameterized1' [/home/josefonseca/Documents/thesis/verilog/network/weightRAM.v:1]
+	Parameter NROW bound to: 16 - type: integer 
+	Parameter NCOL bound to: 16 - type: integer 
+	Parameter BITWIDTH bound to: 18 - type: integer 
+	Parameter OUTPUT_PORT_SIZE bound to: 288 - type: integer 
+	Parameter ADDR_BITWIDTH bound to: 4 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'weightRAM__parameterized1' (5#1) [/home/josefonseca/Documents/thesis/verilog/network/weightRAM.v:1]
+INFO: [Synth 8-638] synthesizing module 'weightRAM__parameterized2' [/home/josefonseca/Documents/thesis/verilog/network/weightRAM.v:1]
+	Parameter NROW bound to: 16 - type: integer 
+	Parameter NCOL bound to: 16 - type: integer 
+	Parameter BITWIDTH bound to: 18 - type: integer 
+	Parameter OUTPUT_PORT_SIZE bound to: 288 - type: integer 
+	Parameter ADDR_BITWIDTH bound to: 4 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'weightRAM__parameterized2' (5#1) [/home/josefonseca/Documents/thesis/verilog/network/weightRAM.v:1]
+INFO: [Synth 8-638] synthesizing module 'weightRAM__parameterized3' [/home/josefonseca/Documents/thesis/verilog/network/weightRAM.v:1]
+	Parameter NROW bound to: 16 - type: integer 
+	Parameter NCOL bound to: 16 - type: integer 
+	Parameter BITWIDTH bound to: 18 - type: integer 
+	Parameter OUTPUT_PORT_SIZE bound to: 288 - type: integer 
+	Parameter ADDR_BITWIDTH bound to: 4 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'weightRAM__parameterized3' (5#1) [/home/josefonseca/Documents/thesis/verilog/network/weightRAM.v:1]
+WARNING: [Synth 8-3848] Net dataoutReady in module/entity network does not have driver. [/home/josefonseca/Documents/thesis/verilog/network/network.v:34]
+WARNING: [Synth 8-3848] Net outputVec in module/entity network does not have driver. [/home/josefonseca/Documents/thesis/verilog/network/network.v:35]
+WARNING: [Synth 8-3848] Net colAddressWrite_wZX in module/entity network does not have driver. [/home/josefonseca/Documents/thesis/verilog/network/network.v:39]
+WARNING: [Synth 8-3848] Net colAddressWrite_wZY in module/entity network does not have driver. [/home/josefonseca/Documents/thesis/verilog/network/network.v:40]
+WARNING: [Synth 8-3848] Net colAddressWrite_wIX in module/entity network does not have driver. [/home/josefonseca/Documents/thesis/verilog/network/network.v:43]
+WARNING: [Synth 8-3848] Net colAddressWrite_wIY in module/entity network does not have driver. [/home/josefonseca/Documents/thesis/verilog/network/network.v:44]
+WARNING: [Synth 8-3848] Net colAddressWrite_wFX in module/entity network does not have driver. [/home/josefonseca/Documents/thesis/verilog/network/network.v:47]
+WARNING: [Synth 8-3848] Net colAddressWrite_wFY in module/entity network does not have driver. [/home/josefonseca/Documents/thesis/verilog/network/network.v:48]
+WARNING: [Synth 8-3848] Net colAddressWrite_wOX in module/entity network does not have driver. [/home/josefonseca/Documents/thesis/verilog/network/network.v:51]
+WARNING: [Synth 8-3848] Net colAddressWrite_wOY in module/entity network does not have driver. [/home/josefonseca/Documents/thesis/verilog/network/network.v:52]
+WARNING: [Synth 8-3848] Net wZX_in in module/entity network does not have driver. [/home/josefonseca/Documents/thesis/verilog/network/network.v:55]
+WARNING: [Synth 8-3848] Net wZY_in in module/entity network does not have driver. [/home/josefonseca/Documents/thesis/verilog/network/network.v:57]
+WARNING: [Synth 8-3848] Net wIX_in in module/entity network does not have driver. [/home/josefonseca/Documents/thesis/verilog/network/network.v:59]
+WARNING: [Synth 8-3848] Net wIY_in in module/entity network does not have driver. [/home/josefonseca/Documents/thesis/verilog/network/network.v:61]
+WARNING: [Synth 8-3848] Net wFX_in in module/entity network does not have driver. [/home/josefonseca/Documents/thesis/verilog/network/network.v:63]
+WARNING: [Synth 8-3848] Net wFY_in in module/entity network does not have driver. [/home/josefonseca/Documents/thesis/verilog/network/network.v:65]
+WARNING: [Synth 8-3848] Net wOX_in in module/entity network does not have driver. [/home/josefonseca/Documents/thesis/verilog/network/network.v:67]
+WARNING: [Synth 8-3848] Net wOY_in in module/entity network does not have driver. [/home/josefonseca/Documents/thesis/verilog/network/network.v:69]
+WARNING: [Synth 8-3848] Net writeEn_wZX in module/entity network does not have driver. [/home/josefonseca/Documents/thesis/verilog/network/network.v:80]
+WARNING: [Synth 8-3848] Net writeEn_wZY in module/entity network does not have driver. [/home/josefonseca/Documents/thesis/verilog/network/network.v:81]
+WARNING: [Synth 8-3848] Net writeEn_wIX in module/entity network does not have driver. [/home/josefonseca/Documents/thesis/verilog/network/network.v:82]
+WARNING: [Synth 8-3848] Net writeEn_wIY in module/entity network does not have driver. [/home/josefonseca/Documents/thesis/verilog/network/network.v:83]
+WARNING: [Synth 8-3848] Net writeEn_wFX in module/entity network does not have driver. [/home/josefonseca/Documents/thesis/verilog/network/network.v:84]
+WARNING: [Synth 8-3848] Net writeEn_wFY in module/entity network does not have driver. [/home/josefonseca/Documents/thesis/verilog/network/network.v:85]
+WARNING: [Synth 8-3848] Net writeEn_wOX in module/entity network does not have driver. [/home/josefonseca/Documents/thesis/verilog/network/network.v:86]
+WARNING: [Synth 8-3848] Net writeEn_wOY in module/entity network does not have driver. [/home/josefonseca/Documents/thesis/verilog/network/network.v:87]
+WARNING: [Synth 8-3848] Net inputVecSample in module/entity network does not have driver. [/home/josefonseca/Documents/thesis/verilog/network/network.v:92]
+WARNING: [Synth 8-3848] Net prevOutVecSample in module/entity network does not have driver. [/home/josefonseca/Documents/thesis/verilog/network/network.v:93]
+WARNING: [Synth 8-3848] Net bZ in module/entity network does not have driver. [/home/josefonseca/Documents/thesis/verilog/network/network.v:94]
+WARNING: [Synth 8-3848] Net bI in module/entity network does not have driver. [/home/josefonseca/Documents/thesis/verilog/network/network.v:95]
+WARNING: [Synth 8-3848] Net bF in module/entity network does not have driver. [/home/josefonseca/Documents/thesis/verilog/network/network.v:96]
+WARNING: [Synth 8-3848] Net bO in module/entity network does not have driver. [/home/josefonseca/Documents/thesis/verilog/network/network.v:97]
+WARNING: [Synth 8-3848] Net rowMux in module/entity network does not have driver. [/home/josefonseca/Documents/thesis/verilog/network/network.v:106]
+INFO: [Synth 8-256] done synthesizing module 'network' (6#1) [/home/josefonseca/Documents/thesis/verilog/network/network.v:1]
+WARNING: [Synth 8-3331] design network has unconnected port dataoutReady
+WARNING: [Synth 8-3331] design network has unconnected port outputVec[0]
+WARNING: [Synth 8-3331] design network has unconnected port inputVec[35]
+WARNING: [Synth 8-3331] design network has unconnected port inputVec[34]
+WARNING: [Synth 8-3331] design network has unconnected port inputVec[33]
+WARNING: [Synth 8-3331] design network has unconnected port inputVec[32]
+WARNING: [Synth 8-3331] design network has unconnected port inputVec[31]
+WARNING: [Synth 8-3331] design network has unconnected port inputVec[30]
+WARNING: [Synth 8-3331] design network has unconnected port inputVec[29]
+WARNING: [Synth 8-3331] design network has unconnected port inputVec[28]
+WARNING: [Synth 8-3331] design network has unconnected port inputVec[27]
+WARNING: [Synth 8-3331] design network has unconnected port inputVec[26]
+WARNING: [Synth 8-3331] design network has unconnected port inputVec[25]
+WARNING: [Synth 8-3331] design network has unconnected port inputVec[24]
+WARNING: [Synth 8-3331] design network has unconnected port inputVec[23]
+WARNING: [Synth 8-3331] design network has unconnected port inputVec[22]
+WARNING: [Synth 8-3331] design network has unconnected port inputVec[21]
+WARNING: [Synth 8-3331] design network has unconnected port inputVec[20]
+WARNING: [Synth 8-3331] design network has unconnected port inputVec[19]
+WARNING: [Synth 8-3331] design network has unconnected port inputVec[18]
+WARNING: [Synth 8-3331] design network has unconnected port inputVec[17]
+WARNING: [Synth 8-3331] design network has unconnected port inputVec[16]
+WARNING: [Synth 8-3331] design network has unconnected port inputVec[15]
+WARNING: [Synth 8-3331] design network has unconnected port inputVec[14]
+WARNING: [Synth 8-3331] design network has unconnected port inputVec[13]
+WARNING: [Synth 8-3331] design network has unconnected port inputVec[12]
+WARNING: [Synth 8-3331] design network has unconnected port inputVec[11]
+WARNING: [Synth 8-3331] design network has unconnected port inputVec[10]
+WARNING: [Synth 8-3331] design network has unconnected port inputVec[9]
+WARNING: [Synth 8-3331] design network has unconnected port inputVec[8]
+WARNING: [Synth 8-3331] design network has unconnected port inputVec[7]
+WARNING: [Synth 8-3331] design network has unconnected port inputVec[6]
+WARNING: [Synth 8-3331] design network has unconnected port inputVec[5]
+WARNING: [Synth 8-3331] design network has unconnected port inputVec[4]
+WARNING: [Synth 8-3331] design network has unconnected port inputVec[3]
+WARNING: [Synth 8-3331] design network has unconnected port inputVec[2]
+WARNING: [Synth 8-3331] design network has unconnected port inputVec[1]
+WARNING: [Synth 8-3331] design network has unconnected port inputVec[0]
+WARNING: [Synth 8-3331] design network has unconnected port trainingFlag
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:01:13 ; elapsed = 00:21:40 . Memory (MB): peak = 5949.277 ; gain = 5103.664 ; free physical = 3737 ; free virtual = 8909
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:inputVec[17] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:inputVec[16] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:inputVec[15] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:inputVec[14] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:inputVec[13] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:inputVec[12] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:inputVec[11] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:inputVec[10] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:inputVec[9] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:inputVec[8] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:inputVec[7] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:inputVec[6] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:inputVec[5] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:inputVec[4] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:inputVec[3] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:inputVec[2] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:inputVec[1] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:inputVec[0] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:prevLayerOut[17] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:prevLayerOut[16] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:prevLayerOut[15] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:prevLayerOut[14] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:prevLayerOut[13] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:prevLayerOut[12] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:prevLayerOut[11] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:prevLayerOut[10] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:prevLayerOut[9] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:prevLayerOut[8] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:prevLayerOut[7] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:prevLayerOut[6] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:prevLayerOut[5] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:prevLayerOut[4] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:prevLayerOut[3] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:prevLayerOut[2] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:prevLayerOut[1] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:prevLayerOut[0] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[287] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[286] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[285] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[284] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[283] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[282] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[281] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[280] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[279] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[278] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[277] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[276] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[275] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[274] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[273] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[272] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[271] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[270] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[269] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[268] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[267] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[266] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[265] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[264] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[263] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[262] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[261] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[260] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[259] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[258] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[257] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[256] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[255] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[254] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[253] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[252] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[251] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[250] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[249] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[248] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[247] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[246] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[245] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[244] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[243] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[242] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[241] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[240] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[239] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[238] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[237] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[236] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[235] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[234] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[233] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[232] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[231] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[230] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[229] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[228] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[227] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[226] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[225] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[224] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+INFO: [Common 17-14] Message 'Synth 8-3295' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:01:14 ; elapsed = 00:21:40 . Memory (MB): peak = 5949.277 ; gain = 5103.664 ; free physical = 3736 ; free virtual = 8908
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z020clg484-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+RTL Elaboration Complete:  : Time (s): cpu = 00:01:32 ; elapsed = 00:21:51 . Memory (MB): peak = 6507.289 ; gain = 5661.676 ; free physical = 3247 ; free virtual = 8428
+28 Infos, 218 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:22 ; elapsed = 00:00:15 . Memory (MB): peak = 6507.289 ; gain = 637.266 ; free physical = 3247 ; free virtual = 8428
+set_property -name {STEPS.SYNTH_DESIGN.ARGS.MORE OPTIONS} -value {-mode out_of_context} -objects [get_runs synth_1]
+reset_run synth_1
+launch_runs synth_1
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/gate.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/gate.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/network.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/network.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/sigmoid.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/sigmoid.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/tanh.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/tanh.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/weightRAM.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/weightRAM.v:1]
+[Sun May  8 23:45:19 2016] Launched synth_1...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/network/project_1/project_1.runs/synth_1/runme.log
+close_design
+open_run synth_1 -name synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7z020clg484-1
+INFO: [Project 1-479] Netlist was created with Vivado 2015.4
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+close_design
+synth_design -rtl -name rtl_1
+Command: synth_design -rtl -name rtl_1
+Starting synth_design
+Using part: xc7z020clg484-1
+Top: network
+WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v:14]
+WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v:15]
+WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v:16]
+WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v:17]
+WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v:18]
+WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v:19]
+WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v:20]
+WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v:21]
+WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v:46]
+WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v:47]
+WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v:48]
+WARNING: [Synth 8-2507] parameter declaration becomes local in weightRAM with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/weightRAM.v:13]
+WARNING: [Synth 8-2507] parameter declaration becomes local in weightRAM with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/weightRAM.v:14]
+WARNING: [Synth 8-2507] parameter declaration becomes local in sigmoid with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/sigmoid.v:8]
+WARNING: [Synth 8-2507] parameter declaration becomes local in gate with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/gate.v:20]
+WARNING: [Synth 8-2507] parameter declaration becomes local in gate with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/gate.v:21]
+WARNING: [Synth 8-2507] parameter declaration becomes local in gate with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/gate.v:22]
+WARNING: [Synth 8-2507] parameter declaration becomes local in gate with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/gate.v:23]
+WARNING: [Synth 8-2507] parameter declaration becomes local in gate with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/gate.v:26]
+WARNING: [Synth 8-2507] parameter declaration becomes local in gate with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/gate.v:27]
+WARNING: [Synth 8-2507] parameter declaration becomes local in gate with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/gate.v:28]
+WARNING: [Synth 8-2507] parameter declaration becomes local in gate with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/gate.v:29]
+WARNING: [Synth 8-2507] parameter declaration becomes local in gate with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/gate.v:30]
+WARNING: [Synth 8-2507] parameter declaration becomes local in tanh with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/tanh.v:8]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:17]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:18]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:19]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:20]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:21]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:22]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:23]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:24]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:25]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:26]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:223]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:224]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:225]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:226]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:227]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:228]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:229]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:230]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:231]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:232]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:233]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:234]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:02:39 ; elapsed = 00:30:56 . Memory (MB): peak = 6651.672 ; gain = 5806.059 ; free physical = 3353 ; free virtual = 8567
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'network' [/home/josefonseca/Documents/thesis/verilog/network/network.v:1]
+	Parameter INPUT_SZ bound to: 2 - type: integer 
+	Parameter HIDDEN_SZ bound to: 16 - type: integer 
+	Parameter NUM_OUTPUT_SYMBOLS bound to: 2 - type: integer 
+	Parameter QN bound to: 6 - type: integer 
+	Parameter QM bound to: 11 - type: integer 
+	Parameter DSP48_PER_ROW_G bound to: 2 - type: integer 
+	Parameter DSP48_PER_ROW_M bound to: 2 - type: integer 
+	Parameter BITWIDTH bound to: 18 - type: integer 
+	Parameter INPUT_BITWIDTH bound to: 36 - type: integer 
+	Parameter LAYER_BITWIDTH bound to: 288 - type: integer 
+	Parameter MULT_BITWIDTH bound to: 37 - type: integer 
+	Parameter ELEMWISE_BITWIDTH bound to: 592 - type: integer 
+	Parameter OUTPUT_BITWIDTH bound to: 1 - type: integer 
+	Parameter ADDR_BITWIDTH bound to: 4 - type: integer 
+	Parameter ADDR_BITWIDTH_X bound to: 1 - type: integer 
+	Parameter MUX_BITWIDTH bound to: 1 - type: integer 
+	Parameter N_DSP48 bound to: 8 - type: integer 
+	Parameter IDLE bound to: 4'b0000 
+	Parameter GATE_CALC bound to: 4'b0001 
+	Parameter NON_LIN_1A bound to: 4'b0010 
+	Parameter NON_LIN_2A bound to: 4'b0011 
+	Parameter ELEM_PROD_A bound to: 4'b0100 
+	Parameter NON_LIN_1B bound to: 4'b0101 
+	Parameter NON_LIN_2B bound to: 4'b0110 
+	Parameter ELEM_PROD_B bound to: 4'b0111 
+	Parameter NON_LIN_1C bound to: 4'b1000 
+	Parameter NON_LIN_2C bound to: 4'b1001 
+	Parameter ELEM_PROD_C bound to: 4'b1010 
+	Parameter END bound to: 4'b1011 
+INFO: [Synth 8-638] synthesizing module 'sigmoid' [/home/josefonseca/Documents/thesis/verilog/network/sigmoid.v:1]
+	Parameter QN bound to: 6 - type: integer 
+	Parameter QM bound to: 11 - type: integer 
+	Parameter BITWIDTH bound to: 18 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'sigmoid' (1#1) [/home/josefonseca/Documents/thesis/verilog/network/sigmoid.v:1]
+INFO: [Synth 8-638] synthesizing module 'tanh' [/home/josefonseca/Documents/thesis/verilog/network/tanh.v:1]
+	Parameter QN bound to: 6 - type: integer 
+	Parameter QM bound to: 11 - type: integer 
+	Parameter BITWIDTH bound to: 18 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'tanh' (2#1) [/home/josefonseca/Documents/thesis/verilog/network/tanh.v:1]
+INFO: [Synth 8-638] synthesizing module 'gate' [/home/josefonseca/Documents/thesis/verilog/network/gate.v:1]
+	Parameter INPUT_SZ bound to: 2 - type: integer 
+	Parameter HIDDEN_SZ bound to: 16 - type: integer 
+	Parameter QN bound to: 6 - type: integer 
+	Parameter QM bound to: 11 - type: integer 
+	Parameter DSP48_PER_ROW bound to: 2 - type: integer 
+	Parameter BITWIDTH bound to: 18 - type: integer 
+	Parameter LAYER_BITWIDTH bound to: 288 - type: integer 
+	Parameter ADDR_BITWIDTH_X bound to: 1 - type: integer 
+	Parameter ADDR_BITWIDTH bound to: 4 - type: integer 
+	Parameter IDLE bound to: 3'b000 
+	Parameter CALC_XandY bound to: 3'b001 
+	Parameter SUM_X bound to: 3'b010 
+	Parameter CALC_Y bound to: 3'b011 
+	Parameter SUM_Y bound to: 3'b100 
+INFO: [Synth 8-638] synthesizing module 'dot_prod' [/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v:1]
+	Parameter NROW bound to: 16 - type: integer 
+	Parameter NCOL bound to: 2 - type: integer 
+	Parameter QN bound to: 6 - type: integer 
+	Parameter QM bound to: 11 - type: integer 
+	Parameter DSP48_PER_ROW bound to: 2 - type: integer 
+	Parameter BITWIDTH bound to: 18 - type: integer 
+	Parameter ADDR_BITWIDTH bound to: 1 - type: integer 
+	Parameter LAYER_BITWIDTH bound to: 288 - type: integer 
+	Parameter N_DSP48 bound to: 8 - type: integer 
+	Parameter DSP48_INPUT_BITWIDTH bound to: 144 - type: integer 
+	Parameter DSP48_OUTPUT_BITWIDTH bound to: 592 - type: integer 
+	Parameter MAC_BITWIDTH bound to: 37 - type: integer 
+	Parameter MUX_BITWIDTH bound to: 1 - type: integer 
+	Parameter IDLE bound to: 2'b00 
+	Parameter CALC bound to: 2'b01 
+	Parameter END bound to: 2'b10 
+INFO: [Synth 8-256] done synthesizing module 'dot_prod' (3#1) [/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v:1]
+INFO: [Synth 8-638] synthesizing module 'dot_prod__parameterized0' [/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v:1]
+	Parameter NROW bound to: 16 - type: integer 
+	Parameter NCOL bound to: 16 - type: integer 
+	Parameter QN bound to: 6 - type: integer 
+	Parameter QM bound to: 11 - type: integer 
+	Parameter DSP48_PER_ROW bound to: 2 - type: integer 
+	Parameter BITWIDTH bound to: 18 - type: integer 
+	Parameter ADDR_BITWIDTH bound to: 4 - type: integer 
+	Parameter LAYER_BITWIDTH bound to: 288 - type: integer 
+	Parameter N_DSP48 bound to: 8 - type: integer 
+	Parameter DSP48_INPUT_BITWIDTH bound to: 144 - type: integer 
+	Parameter DSP48_OUTPUT_BITWIDTH bound to: 592 - type: integer 
+	Parameter MAC_BITWIDTH bound to: 37 - type: integer 
+	Parameter MUX_BITWIDTH bound to: 1 - type: integer 
+	Parameter IDLE bound to: 2'b00 
+	Parameter CALC bound to: 2'b01 
+	Parameter END bound to: 2'b10 
+INFO: [Synth 8-256] done synthesizing module 'dot_prod__parameterized0' (3#1) [/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v:1]
+INFO: [Synth 8-256] done synthesizing module 'gate' (4#1) [/home/josefonseca/Documents/thesis/verilog/network/gate.v:1]
+INFO: [Synth 8-638] synthesizing module 'weightRAM' [/home/josefonseca/Documents/thesis/verilog/network/weightRAM.v:1]
+	Parameter NROW bound to: 16 - type: integer 
+	Parameter NCOL bound to: 2 - type: integer 
+	Parameter BITWIDTH bound to: 18 - type: integer 
+	Parameter OUTPUT_PORT_SIZE bound to: 288 - type: integer 
+	Parameter ADDR_BITWIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-5534] Detected attribute (* ram_style = "block" *) [/home/josefonseca/Documents/thesis/verilog/network/weightRAM.v:26]
+INFO: [Synth 8-256] done synthesizing module 'weightRAM' (5#1) [/home/josefonseca/Documents/thesis/verilog/network/weightRAM.v:1]
+INFO: [Synth 8-638] synthesizing module 'weightRAM__parameterized0' [/home/josefonseca/Documents/thesis/verilog/network/weightRAM.v:1]
+	Parameter NROW bound to: 16 - type: integer 
+	Parameter NCOL bound to: 16 - type: integer 
+	Parameter BITWIDTH bound to: 18 - type: integer 
+	Parameter OUTPUT_PORT_SIZE bound to: 288 - type: integer 
+	Parameter ADDR_BITWIDTH bound to: 4 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'weightRAM__parameterized0' (5#1) [/home/josefonseca/Documents/thesis/verilog/network/weightRAM.v:1]
+INFO: [Synth 8-638] synthesizing module 'weightRAM__parameterized1' [/home/josefonseca/Documents/thesis/verilog/network/weightRAM.v:1]
+	Parameter NROW bound to: 16 - type: integer 
+	Parameter NCOL bound to: 16 - type: integer 
+	Parameter BITWIDTH bound to: 18 - type: integer 
+	Parameter OUTPUT_PORT_SIZE bound to: 288 - type: integer 
+	Parameter ADDR_BITWIDTH bound to: 4 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'weightRAM__parameterized1' (5#1) [/home/josefonseca/Documents/thesis/verilog/network/weightRAM.v:1]
+INFO: [Synth 8-638] synthesizing module 'weightRAM__parameterized2' [/home/josefonseca/Documents/thesis/verilog/network/weightRAM.v:1]
+	Parameter NROW bound to: 16 - type: integer 
+	Parameter NCOL bound to: 16 - type: integer 
+	Parameter BITWIDTH bound to: 18 - type: integer 
+	Parameter OUTPUT_PORT_SIZE bound to: 288 - type: integer 
+	Parameter ADDR_BITWIDTH bound to: 4 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'weightRAM__parameterized2' (5#1) [/home/josefonseca/Documents/thesis/verilog/network/weightRAM.v:1]
+INFO: [Synth 8-638] synthesizing module 'weightRAM__parameterized3' [/home/josefonseca/Documents/thesis/verilog/network/weightRAM.v:1]
+	Parameter NROW bound to: 16 - type: integer 
+	Parameter NCOL bound to: 16 - type: integer 
+	Parameter BITWIDTH bound to: 18 - type: integer 
+	Parameter OUTPUT_PORT_SIZE bound to: 288 - type: integer 
+	Parameter ADDR_BITWIDTH bound to: 4 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'weightRAM__parameterized3' (5#1) [/home/josefonseca/Documents/thesis/verilog/network/weightRAM.v:1]
+WARNING: [Synth 8-3848] Net dataoutReady in module/entity network does not have driver. [/home/josefonseca/Documents/thesis/verilog/network/network.v:34]
+WARNING: [Synth 8-3848] Net outputVec in module/entity network does not have driver. [/home/josefonseca/Documents/thesis/verilog/network/network.v:35]
+WARNING: [Synth 8-3848] Net colAddressWrite_wZX in module/entity network does not have driver. [/home/josefonseca/Documents/thesis/verilog/network/network.v:39]
+WARNING: [Synth 8-3848] Net colAddressWrite_wZY in module/entity network does not have driver. [/home/josefonseca/Documents/thesis/verilog/network/network.v:40]
+WARNING: [Synth 8-3848] Net colAddressWrite_wIX in module/entity network does not have driver. [/home/josefonseca/Documents/thesis/verilog/network/network.v:43]
+WARNING: [Synth 8-3848] Net colAddressWrite_wIY in module/entity network does not have driver. [/home/josefonseca/Documents/thesis/verilog/network/network.v:44]
+WARNING: [Synth 8-3848] Net colAddressWrite_wFX in module/entity network does not have driver. [/home/josefonseca/Documents/thesis/verilog/network/network.v:47]
+WARNING: [Synth 8-3848] Net colAddressWrite_wFY in module/entity network does not have driver. [/home/josefonseca/Documents/thesis/verilog/network/network.v:48]
+WARNING: [Synth 8-3848] Net colAddressWrite_wOX in module/entity network does not have driver. [/home/josefonseca/Documents/thesis/verilog/network/network.v:51]
+WARNING: [Synth 8-3848] Net colAddressWrite_wOY in module/entity network does not have driver. [/home/josefonseca/Documents/thesis/verilog/network/network.v:52]
+WARNING: [Synth 8-3848] Net wZX_in in module/entity network does not have driver. [/home/josefonseca/Documents/thesis/verilog/network/network.v:55]
+WARNING: [Synth 8-3848] Net wZY_in in module/entity network does not have driver. [/home/josefonseca/Documents/thesis/verilog/network/network.v:57]
+WARNING: [Synth 8-3848] Net wIX_in in module/entity network does not have driver. [/home/josefonseca/Documents/thesis/verilog/network/network.v:59]
+WARNING: [Synth 8-3848] Net wIY_in in module/entity network does not have driver. [/home/josefonseca/Documents/thesis/verilog/network/network.v:61]
+WARNING: [Synth 8-3848] Net wFX_in in module/entity network does not have driver. [/home/josefonseca/Documents/thesis/verilog/network/network.v:63]
+WARNING: [Synth 8-3848] Net wFY_in in module/entity network does not have driver. [/home/josefonseca/Documents/thesis/verilog/network/network.v:65]
+WARNING: [Synth 8-3848] Net wOX_in in module/entity network does not have driver. [/home/josefonseca/Documents/thesis/verilog/network/network.v:67]
+WARNING: [Synth 8-3848] Net wOY_in in module/entity network does not have driver. [/home/josefonseca/Documents/thesis/verilog/network/network.v:69]
+WARNING: [Synth 8-3848] Net writeEn_wZX in module/entity network does not have driver. [/home/josefonseca/Documents/thesis/verilog/network/network.v:80]
+WARNING: [Synth 8-3848] Net writeEn_wZY in module/entity network does not have driver. [/home/josefonseca/Documents/thesis/verilog/network/network.v:81]
+WARNING: [Synth 8-3848] Net writeEn_wIX in module/entity network does not have driver. [/home/josefonseca/Documents/thesis/verilog/network/network.v:82]
+WARNING: [Synth 8-3848] Net writeEn_wIY in module/entity network does not have driver. [/home/josefonseca/Documents/thesis/verilog/network/network.v:83]
+WARNING: [Synth 8-3848] Net writeEn_wFX in module/entity network does not have driver. [/home/josefonseca/Documents/thesis/verilog/network/network.v:84]
+WARNING: [Synth 8-3848] Net writeEn_wFY in module/entity network does not have driver. [/home/josefonseca/Documents/thesis/verilog/network/network.v:85]
+WARNING: [Synth 8-3848] Net writeEn_wOX in module/entity network does not have driver. [/home/josefonseca/Documents/thesis/verilog/network/network.v:86]
+WARNING: [Synth 8-3848] Net writeEn_wOY in module/entity network does not have driver. [/home/josefonseca/Documents/thesis/verilog/network/network.v:87]
+WARNING: [Synth 8-3848] Net inputVecSample in module/entity network does not have driver. [/home/josefonseca/Documents/thesis/verilog/network/network.v:92]
+WARNING: [Synth 8-3848] Net prevOutVecSample in module/entity network does not have driver. [/home/josefonseca/Documents/thesis/verilog/network/network.v:93]
+WARNING: [Synth 8-3848] Net bZ in module/entity network does not have driver. [/home/josefonseca/Documents/thesis/verilog/network/network.v:94]
+WARNING: [Synth 8-3848] Net bI in module/entity network does not have driver. [/home/josefonseca/Documents/thesis/verilog/network/network.v:95]
+WARNING: [Synth 8-3848] Net bF in module/entity network does not have driver. [/home/josefonseca/Documents/thesis/verilog/network/network.v:96]
+WARNING: [Synth 8-3848] Net bO in module/entity network does not have driver. [/home/josefonseca/Documents/thesis/verilog/network/network.v:97]
+WARNING: [Synth 8-3848] Net rowMux in module/entity network does not have driver. [/home/josefonseca/Documents/thesis/verilog/network/network.v:106]
+INFO: [Synth 8-256] done synthesizing module 'network' (6#1) [/home/josefonseca/Documents/thesis/verilog/network/network.v:1]
+WARNING: [Synth 8-3331] design network has unconnected port dataoutReady
+WARNING: [Synth 8-3331] design network has unconnected port outputVec[0]
+WARNING: [Synth 8-3331] design network has unconnected port inputVec[35]
+WARNING: [Synth 8-3331] design network has unconnected port inputVec[34]
+WARNING: [Synth 8-3331] design network has unconnected port inputVec[33]
+WARNING: [Synth 8-3331] design network has unconnected port inputVec[32]
+WARNING: [Synth 8-3331] design network has unconnected port inputVec[31]
+WARNING: [Synth 8-3331] design network has unconnected port inputVec[30]
+WARNING: [Synth 8-3331] design network has unconnected port inputVec[29]
+WARNING: [Synth 8-3331] design network has unconnected port inputVec[28]
+WARNING: [Synth 8-3331] design network has unconnected port inputVec[27]
+WARNING: [Synth 8-3331] design network has unconnected port inputVec[26]
+WARNING: [Synth 8-3331] design network has unconnected port inputVec[25]
+WARNING: [Synth 8-3331] design network has unconnected port inputVec[24]
+WARNING: [Synth 8-3331] design network has unconnected port inputVec[23]
+WARNING: [Synth 8-3331] design network has unconnected port inputVec[22]
+WARNING: [Synth 8-3331] design network has unconnected port inputVec[21]
+WARNING: [Synth 8-3331] design network has unconnected port inputVec[20]
+WARNING: [Synth 8-3331] design network has unconnected port inputVec[19]
+WARNING: [Synth 8-3331] design network has unconnected port inputVec[18]
+WARNING: [Synth 8-3331] design network has unconnected port inputVec[17]
+WARNING: [Synth 8-3331] design network has unconnected port inputVec[16]
+WARNING: [Synth 8-3331] design network has unconnected port inputVec[15]
+WARNING: [Synth 8-3331] design network has unconnected port inputVec[14]
+WARNING: [Synth 8-3331] design network has unconnected port inputVec[13]
+WARNING: [Synth 8-3331] design network has unconnected port inputVec[12]
+WARNING: [Synth 8-3331] design network has unconnected port inputVec[11]
+WARNING: [Synth 8-3331] design network has unconnected port inputVec[10]
+WARNING: [Synth 8-3331] design network has unconnected port inputVec[9]
+WARNING: [Synth 8-3331] design network has unconnected port inputVec[8]
+WARNING: [Synth 8-3331] design network has unconnected port inputVec[7]
+WARNING: [Synth 8-3331] design network has unconnected port inputVec[6]
+WARNING: [Synth 8-3331] design network has unconnected port inputVec[5]
+WARNING: [Synth 8-3331] design network has unconnected port inputVec[4]
+WARNING: [Synth 8-3331] design network has unconnected port inputVec[3]
+WARNING: [Synth 8-3331] design network has unconnected port inputVec[2]
+WARNING: [Synth 8-3331] design network has unconnected port inputVec[1]
+WARNING: [Synth 8-3331] design network has unconnected port inputVec[0]
+WARNING: [Synth 8-3331] design network has unconnected port trainingFlag
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:02:40 ; elapsed = 00:30:57 . Memory (MB): peak = 6651.672 ; gain = 5806.059 ; free physical = 3349 ; free virtual = 8563
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:inputVec[17] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:inputVec[16] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:inputVec[15] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:inputVec[14] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:inputVec[13] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:inputVec[12] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:inputVec[11] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:inputVec[10] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:inputVec[9] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:inputVec[8] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:inputVec[7] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:inputVec[6] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:inputVec[5] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:inputVec[4] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:inputVec[3] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:inputVec[2] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:inputVec[1] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:inputVec[0] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:prevLayerOut[17] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:prevLayerOut[16] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:prevLayerOut[15] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:prevLayerOut[14] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:prevLayerOut[13] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:prevLayerOut[12] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:prevLayerOut[11] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:prevLayerOut[10] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:prevLayerOut[9] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:prevLayerOut[8] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:prevLayerOut[7] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:prevLayerOut[6] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:prevLayerOut[5] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:prevLayerOut[4] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:prevLayerOut[3] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:prevLayerOut[2] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:prevLayerOut[1] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:prevLayerOut[0] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[287] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[286] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[285] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[284] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[283] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[282] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[281] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[280] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[279] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[278] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[277] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[276] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[275] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[274] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[273] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[272] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[271] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[270] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[269] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[268] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[267] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[266] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[265] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[264] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[263] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[262] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[261] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[260] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[259] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[258] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[257] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[256] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[255] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[254] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[253] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[252] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[251] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[250] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[249] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[248] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[247] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[246] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[245] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[244] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[243] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[242] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[241] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[240] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[239] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[238] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[237] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[236] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[235] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[234] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[233] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[232] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[231] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[230] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[229] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[228] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[227] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[226] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[225] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:weightMem_X[224] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:118]
+INFO: [Common 17-14] Message 'Synth 8-3295' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:02:40 ; elapsed = 00:30:58 . Memory (MB): peak = 6651.672 ; gain = 5806.059 ; free physical = 3348 ; free virtual = 8562
+---------------------------------------------------------------------------------
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+RTL Elaboration Complete:  : Time (s): cpu = 00:02:51 ; elapsed = 00:31:04 . Memory (MB): peak = 6707.699 ; gain = 5862.086 ; free physical = 3346 ; free virtual = 8560
+27 Infos, 218 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:15 ; elapsed = 00:00:11 . Memory (MB): peak = 6707.699 ; gain = 56.027 ; free physical = 3346 ; free virtual = 8560
+exit
+INFO: [Common 17-206] Exiting Vivado at Sun May  8 23:48:56 2016...

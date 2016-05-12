@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2015.4 (64-bit)
+# SW Build 1412921 on Wed Nov 18 09:44:32 MST 2015
+# IP Build 1412160 on Tue Nov 17 13:47:24 MST 2015
+# Start of session at: Sun May  8 23:45:19 2016
+# Process ID: 26886
+# Current directory: /home/josefonseca/Documents/thesis/verilog/network/project_1/project_1.runs/synth_1
+# Command line: vivado -log network.vds -mode batch -messageDb vivado.pb -notrace -source network.tcl
+# Log file: /home/josefonseca/Documents/thesis/verilog/network/project_1/project_1.runs/synth_1/network.vds
+# Journal file: /home/josefonseca/Documents/thesis/verilog/network/project_1/project_1.runs/synth_1/vivado.jou
+#-----------------------------------------------------------
+source network.tcl -notrace

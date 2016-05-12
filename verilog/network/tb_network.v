@@ -24,28 +24,13 @@ module tb_network();
 	reg clock;
 	reg reset;
     reg                       newSample;
-    reg    			          dataReady;
-    reg [INPUT_BITWIDTH-1:0]  inputVec;
-    reg [OUTPUT_BITWIDTH-1:0] oututVec;
-    
-    // The golden inputs/outputs ROM
-    reg  [BITWIDTH-1:0] ROM_input;
-    reg  [BITWIDTH-1:0] ROM_goldenOut;
-    reg  [BITWIDTH-1:0] ROM_weights_Wz [0:HIDDEN_SZ-1] [0:INPUT_SZ-1];
-    reg  [BITWIDTH-1:0] ROM_weights_Rz [0:HIDDEN_SZ-1] [0:HIDDEN_SZ-1];
-	reg  [BITWIDTH-1:0] ROM_weights_Wi [0:HIDDEN_SZ-1] [0:INPUT_SZ-1];
-    reg  [BITWIDTH-1:0] ROM_weights_Ri [0:HIDDEN_SZ-1] [0:HIDDEN_SZ-1];
-    reg  [BITWIDTH-1:0] ROM_weights_Wf [0:HIDDEN_SZ-1] [0:INPUT_SZ-1];
-    reg  [BITWIDTH-1:0] ROM_weights_Rf [0:HIDDEN_SZ-1] [0:HIDDEN_SZ-1];
-    reg  [BITWIDTH-1:0] ROM_weights_Wo [0:HIDDEN_SZ-1] [0:INPUT_SZ-1];
-    reg  [BITWIDTH-1:0] ROM_weights_Ro [0:HIDDEN_SZ-1] [0:HIDDEN_SZ-1];
-    reg  [BITWIDTH-1:0] ROM_weights_bz [0:HIDDEN_SZ-1];
-    reg  [BITWIDTH-1:0] ROM_weights_bi [0:HIDDEN_SZ-1];
-    reg  [BITWIDTH-1:0] ROM_weights_bf [0:HIDDEN_SZ-1];
-    reg  [BITWIDTH-1:0] ROM_weights_bo [0:HIDDEN_SZ-1];
+    wire   			          dataReady;
+    reg  [INPUT_BITWIDTH-1:0]  inputVec;
+    wire [OUTPUT_BITWIDTH-1:0] outputVec;
     
     // File descriptors for the error/output dumps
-    integer fid, fid_error_dump;
+    integer fid, fid_error_dump, retVal;
+    integer fid_Wz, fid_Wi, fid_Wf, fid_Wo, fid_Rz, fid_Ri, fid_Rf, fid_Ro, fid_bz, fid_bi, fid_bf, fid_bo;
     integer i=0,j=0,k=0,l=0;
     real    quantError=0;
     
@@ -53,22 +38,6 @@ module tb_network();
     always begin
         #(HALF_CLOCK) clock = ~clock;
         #(HALF_CLOCK) clock = ~clock;
-    end
-
-    // Loads golden inputs/outputs to ROM
-    initial begin
-        $readmemb("weights_Wz.bin", ROM_weights_Wz);
-        $readmemb("weights_Rz.bin", ROM_weights_Rz);
-        $readmemb("weights_Wi.bin", ROM_weights_Wi);
-        $readmemb("weights_Ri.bin", ROM_weights_Ri);
-        $readmemb("weights_Wf.bin", ROM_weights_Wf);
-        $readmemb("weights_Rf.bin", ROM_weights_Rf);
-        $readmemb("weights_Wo.bin", ROM_weights_Wo);
-        $readmemb("weights_Ro.bin", ROM_weights_Ro);
-        $readmemb("weights_bz.bin", ROM_weights_bz);
-        $readmemb("weights_bi.bin", ROM_weights_bi);
-        $readmemb("weights_bf.bin", ROM_weights_bf);
-        $readmemb("weights_bo.bin", ROM_weights_bo); 
     end
     
     // DUT Instantiation
@@ -78,27 +47,89 @@ module tb_network();
     // Keeping track of the simulation time
     real time_start, time_end;
 
-    always @(negedge clock) begin
-        if( reset == 1'b1) begin
-            inputVec   <= {INPUT_BITWIDTH{1'b0}};
-        end
-        else begin
-            inputVec   <= ROM_input[i];
-        end
-    end
-
+	initial begin
+		fid_Wz = $fopen("goldenIn_Wz.bin", "r");
+		fid_Wi = $fopen("goldenIn_Wi.bin", "r");
+		fid_Wf = $fopen("goldenIn_Wf.bin", "r");
+		fid_Wo = $fopen("goldenIn_Wo.bin", "r");
+		fid_Rz = $fopen("goldenIn_Rz.bin", "r");
+		fid_Ri = $fopen("goldenIn_Ri.bin", "r");
+		fid_Rf = $fopen("goldenIn_Rf.bin", "r");
+		fid_Ro = $fopen("goldenIn_Ro.bin", "r");
+		fid_bz = $fopen("goldenIn_bz.bin", "r");
+		fid_bi = $fopen("goldenIn_bi.bin", "r");
+		fid_bf = $fopen("goldenIn_bf.bin", "r");
+		fid_bo = $fopen("goldenIn_bo.bin", "r");
+	end
+	
     // Running the simulation
     initial begin
         time_start = $realtime;
-
+		clock = 0;
+		newSample = 0;
+		
 		// Applying the initial reset
 		reset     = 1'b1;
 		#(2*FULL_CLOCK);
 		reset     = 1'b0;
 
-		// Loading the weight memory
-		
-		// -------------------------
+		// -------------------------------- Loading the weight memory ------------------------------- //
+		for(i = 0; i < INPUT_SZ; i = i + 1) begin
+            for(j = 0; j < HIDDEN_SZ; j = j + 1) begin
+                retVal = $fscanf(fid_Wz, "%b\n", LSTM_LAYER.WRAM_Z_X.RAM_matrix[i][j*BITWIDTH +: BITWIDTH]);
+            end
+        end
+        
+        for(i = 0; i < HIDDEN_SZ; i = i + 1) begin
+            for(j = 0; j < HIDDEN_SZ; j = j + 1) begin
+                retVal = $fscanf(fid_Rz, "%b\n", LSTM_LAYER.WRAM_Z_Y.RAM_matrix[i][j*BITWIDTH +: BITWIDTH]);
+            end
+        end
+        
+        for(i = 0; i < INPUT_SZ; i = i + 1) begin
+            for(j = 0; j < HIDDEN_SZ; j = j + 1) begin
+                retVal = $fscanf(fid_Wi, "%b\n", LSTM_LAYER.WRAM_I_X.RAM_matrix[i][j*BITWIDTH +: BITWIDTH]);
+            end
+        end
+        
+        for(i = 0; i < HIDDEN_SZ; i = i + 1) begin
+            for(j = 0; j < HIDDEN_SZ; j = j + 1) begin
+                retVal = $fscanf(fid_Ri, "%b\n", LSTM_LAYER.WRAM_I_Y.RAM_matrix[i][j*BITWIDTH +: BITWIDTH]);
+            end
+        end
+        
+        for(i = 0; i < INPUT_SZ; i = i + 1) begin
+            for(j = 0; j < HIDDEN_SZ; j = j + 1) begin
+                retVal = $fscanf(fid_Wf, "%b\n", LSTM_LAYER.WRAM_F_X.RAM_matrix[i][j*BITWIDTH +: BITWIDTH]);
+            end
+        end
+        
+        for(i = 0; i < HIDDEN_SZ; i = i + 1) begin
+            for(j = 0; j < HIDDEN_SZ; j = j + 1) begin
+                retVal = $fscanf(fid_Rf, "%b\n", LSTM_LAYER.WRAM_F_Y.RAM_matrix[i][j*BITWIDTH +: BITWIDTH]);
+            end
+        end
+        
+        for(i = 0; i < INPUT_SZ; i = i + 1) begin
+            for(j = 0; j < HIDDEN_SZ; j = j + 1) begin
+                retVal = $fscanf(fid_Wo, "%b\n", LSTM_LAYER.WRAM_O_X.RAM_matrix[i][j*BITWIDTH +: BITWIDTH]);
+            end
+        end
+        
+        for(i = 0; i < HIDDEN_SZ; i = i + 1) begin
+            for(j = 0; j < HIDDEN_SZ; j = j + 1) begin
+                retVal = $fscanf(fid_Ro, "%b\n", LSTM_LAYER.WRAM_O_Y.RAM_matrix[i][j*BITWIDTH +: BITWIDTH]);
+            end
+        end
+        
+        for(i = 0; i < HIDDEN_SZ; i = i + 1) begin
+			retVal = $fscanf(fid_bz, "%b\n", LSTM_LAYER.bZ[i*BITWIDTH +: BITWIDTH]);
+			retVal = $fscanf(fid_bi, "%b\n", LSTM_LAYER.bI[i*BITWIDTH +: BITWIDTH]);
+			retVal = $fscanf(fid_bf, "%b\n", LSTM_LAYER.bF[i*BITWIDTH +: BITWIDTH]);
+			retVal = $fscanf(fid_bo, "%b\n", LSTM_LAYER.bO[i*BITWIDTH +: BITWIDTH]);
+        end
+        
+		// ----------------------------------------------------------------------------------------- //
 
         $display("Simulation started at %f", time_start);
 
@@ -107,8 +138,9 @@ module tb_network();
 			// ---------- Applying a new input signal ---------- //
 			
 			@(posedge clock);
-			$fscanf(fid_in,  "%b\n", inputVec);
-			$fscanf(fid_out, "%b\n", ROM_goldenOut);
+			inputVec <= {18'b000000100000000000, 18'd0};
+			//$fscanf(fid_in,  "%b\n", inputVec);
+			//$fscanf(fid_out, "%b\n", ROM_goldenOut);
 			
             newSample = 1'b1;
             #(FULL_CLOCK);
@@ -120,7 +152,7 @@ module tb_network();
             @(posedge dataReady);
             
             #(HALF_CLOCK);
-            $display("OUTP %b\nREAL %b", outputVec, ROM_goldenOut);
+            $display("OUTP %b", outputVec);
             
         end
        
@@ -141,9 +173,7 @@ function integer log2;
          end
     end
 endfunction
-endmodule
 
-    
 endmodule
             
     
