@@ -9,33 +9,33 @@ z2
 cModel Technology
 Z0 d/home/josefonseca/Documents/thesis/verilog/network
 T_opt
-!s110 1462809922
-VZ`f<l?ELRj:2njJA9YWPM3
+!s110 1463071289
+V3^MB4JngFzUQ6iZ>Uf^`43
 04 4 4 work test fast 0
-=1-d48564c0c748-5730b542-64323-2590
+=1-d43d7e359f7e-5734b239-d8b79-1648
 Z1 o-quiet -auto_acc_if_foreign -work work
 n@_opt
 Z2 OL;O;10.4c_5;61
 R0
 T_opt1
-!s110 1463054951
-VTiLcFUh;Klg5`F^;YT^DF2
+!s110 1463092626
+V7z@;<N@kJF0nEgX7?iK`j1
 Z3 04 10 4 work tb_network fast 0
-=1-d43d7e359f7e-57347267-50a54-3f2b
+=1-d43d7e359f7e-57350592-726f2-239a
 R1
 n@_opt1
 R2
-R0
 T_opt2
-!s110 1463054962
-VmUg=?CZ=<IR[0aRSf>j<G0
+!s110 1463092498
+Vf3Le?nKLjPKF65k9MJ:g00
 R3
-=1-d43d7e359f7e-57347272-11d8b-3f35
+=1-d43d7e359f7e-57350512-31115-237d
 o-quiet -auto_acc_if_foreign -work work +acc
 n@_opt2
 R2
+R0
 vdot_prod
-Z4 !s110 1463054948
+Z4 !s110 1463092624
 !i10b 1
 !s100 oHCm7P2f5b6C>Z[d<Nj_S2
 IHNPaG32oGPknzB[=7<`6M1
@@ -49,7 +49,7 @@ Z6 OL;L;10.4c_5;61
 r1
 !s85 0
 31
-Z7 !s108 1463054948.000000
+Z7 !s108 1463092624.000000
 Z8 !s107 weightRAM.v|test.v|tb_network.v|tanh.v|sigmoid.v|network.v|gate.v|dot_prod.v|
 Z9 !s90 dot_prod.v|gate.v|network.v|sigmoid.v|tanh.v|tb_network.v|test.v|weightRAM.v|
 !i113 0
@@ -77,11 +77,11 @@ R10
 vnetwork
 R4
 !i10b 1
-!s100 kmhX31P@_?WGgXldV^cGE1
-IFREeA3;GU9WGhIaEQ@P_[1
+!s100 aDWEoA9?:QiI1dHFmeeF^0
+INIYAa4QEV`B`O4Q`RbLg03
 R5
 R0
-w1463054944
+w1463092620
 8network.v
 Fnetwork.v
 L0 1
@@ -157,11 +157,11 @@ R10
 vtb_network
 R4
 !i10b 1
-!s100 S^3][l3PhE8iCB<EXA;e53
-Ij5HR8Umj?6X3Xzi;K40`I1
+!s100 lBbkPI7E70WGkN>9YI^?Y2
+IYk`R:=n?N2M:XTSP8@@RO2
 R5
 R0
-w1463051799
+w1463088753
 8tb_network.v
 Ftb_network.v
 L0 3
@@ -177,11 +177,11 @@ R10
 vtest
 R4
 !i10b 1
-!s100 <WbT9idUhNBPl5j`h_MF^2
-I2T0<DMNE8g?;PRYLP;]T63
+!s100 IG<7Kg4`kEVVo@SdSQL:d3
+Iok3TR]_WK:=S4?<ODfZji3
 R5
 R0
-w1462965968
+w1463071286
 8test.v
 Ftest.v
 L0 1

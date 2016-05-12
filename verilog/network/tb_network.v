@@ -8,7 +8,7 @@ module tb_network();
 	parameter QN = 6;
     parameter QM = 11;
 	parameter DSP48_PER_ROW_G = 2;
-	parameter DSP48_PER_ROW_M = 2;
+	parameter DSP48_PER_ROW_M = 4;
     
     // Dependent Parameters
     parameter BITWIDTH         = QN + QM + 1;
@@ -19,7 +19,7 @@ module tb_network();
 	parameter ADDR_BITWIDTH_X  = $ln(INPUT_SZ)/$ln(2);
     parameter HALF_CLOCK       = 1;
     parameter FULL_CLOCK       = 2*HALF_CLOCK;
-    parameter MAX_SAMPLES      = 1;
+    parameter MAX_SAMPLES      = 10;
 
 	reg clock;
 	reg reset;
@@ -27,7 +27,8 @@ module tb_network();
     wire   			          dataReady;
     reg  [INPUT_BITWIDTH-1:0]  inputVec;
     wire [OUTPUT_BITWIDTH-1:0] outputVec;
-    
+    reg [OUTPUT_BITWIDTH-1:0] test;
+    reg   [BITWIDTH-1:0] temp;
     // File descriptors for the error/output dumps
     integer fid, fid_error_dump, retVal;
     integer fid_Wz, fid_Wi, fid_Wf, fid_Wo, fid_Rz, fid_Ri, fid_Rf, fid_Ro, fid_bz, fid_bi, fid_bf, fid_bo;
@@ -60,19 +61,7 @@ module tb_network();
 		fid_bi = $fopen("goldenIn_bi.bin", "r");
 		fid_bf = $fopen("goldenIn_bf.bin", "r");
 		fid_bo = $fopen("goldenIn_bo.bin", "r");
-	end
-	
-    // Running the simulation
-    initial begin
-        time_start = $realtime;
-		clock = 0;
-		newSample = 0;
 		
-		// Applying the initial reset
-		reset     = 1'b1;
-		#(2*FULL_CLOCK);
-		reset     = 1'b0;
-
 		// -------------------------------- Loading the weight memory ------------------------------- //
 		for(i = 0; i < INPUT_SZ; i = i + 1) begin
             for(j = 0; j < HIDDEN_SZ; j = j + 1) begin
@@ -123,11 +112,33 @@ module tb_network();
         end
         
         for(i = 0; i < HIDDEN_SZ; i = i + 1) begin
-			retVal = $fscanf(fid_bz, "%b\n", LSTM_LAYER.bZ[i*BITWIDTH +: BITWIDTH]);
-			retVal = $fscanf(fid_bi, "%b\n", LSTM_LAYER.bI[i*BITWIDTH +: BITWIDTH]);
-			retVal = $fscanf(fid_bf, "%b\n", LSTM_LAYER.bF[i*BITWIDTH +: BITWIDTH]);
-			retVal = $fscanf(fid_bo, "%b\n", LSTM_LAYER.bO[i*BITWIDTH +: BITWIDTH]);
+			retVal = $fscanf(fid_bz, "%18b\n",temp);
+			LSTM_LAYER.bZ[i*BITWIDTH +: BITWIDTH] = temp;
+			
+			retVal = $fscanf(fid_bi, "%18b\n",temp);
+			LSTM_LAYER.bI[i*BITWIDTH +: BITWIDTH] = temp;
+			
+			retVal = $fscanf(fid_bf, "%18b\n",temp);
+			LSTM_LAYER.bF[i*BITWIDTH +: BITWIDTH] = temp;
+			
+			retVal = $fscanf(fid_bo, "%18b\n",temp);
+			LSTM_LAYER.bO[i*BITWIDTH +: BITWIDTH] = temp;
         end
+		
+	end
+	
+    // Running the simulation
+    initial begin
+        time_start = $realtime;
+		clock = 0;
+		newSample = 0;
+		
+		// Applying the initial reset
+		reset     = 1'b1;
+		#(2*FULL_CLOCK);
+		reset     = 1'b0;
+
+		
         
 		// ----------------------------------------------------------------------------------------- //
 
@@ -138,7 +149,7 @@ module tb_network();
 			// ---------- Applying a new input signal ---------- //
 			
 			@(posedge clock);
-			inputVec <= {18'b000000100000000000, 18'd0};
+			inputVec <= {18'b000000100000000000, 18'b000000100000000000};
 			//$fscanf(fid_in,  "%b\n", inputVec);
 			//$fscanf(fid_out, "%b\n", ROM_goldenOut);
 			
