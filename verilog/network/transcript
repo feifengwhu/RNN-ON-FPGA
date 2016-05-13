@@ -1,6 +1,6 @@
 # vsim -c -do "run -all" tb_network 
-# Start time: 23:37:06 on May 12,2016
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Start time: 00:41:29 on May 14,2016
+# ** Note: (vsim-8009) Loading existing optimized design _opt3
 # //  Questa Sim-64
 # //  Version 10.4c_5 linux_x86_64 Nov 14 2015
 # //
@@ -19,19 +19,81 @@
 # Loading work.tb_network(fast)
 # run -all
 # Simulation started at 0.000000
-# OUTP 000000000000000000
-# OUTP 111111111111111001
-# OUTP 000000000000000000
-# OUTP 111111111111111001
-# OUTP 000000000000000000
-# OUTP 111111111111111001
-# OUTP 000000000000000000
-# OUTP 111111111111111001
-# OUTP 000000000000000000
-# OUTP 111111111111111001
-# ** Note: $stop    : tb_network.v(172)
-#    Time: 624 ns  Iteration: 0  Instance: /tb_network
-# Break at tb_network.v line 172
-# Stopped at tb_network.v line 172
-# End time: 23:37:16 on May 12,2016, Elapsed time: 0:00:10
+# Input Sample 0
+# Neuron[0]: 000000000000000000
+# Neuron[1]: 000000000000000000
+# Neuron[2]: 000000000000000000
+# Neuron[3]: 000000000000000000
+# Neuron[4]: 000000000000000000
+# Neuron[5]: 000000000000000000
+# Neuron[6]: 000000000000000000
+# Neuron[7]: 000000000000000000
+# Input Sample 1
+# Neuron[0]: 111111111111111101
+# Neuron[1]: 111111111111111111
+# Neuron[2]: 111111111111011101
+# Neuron[3]: 111111101011110000
+# Neuron[4]: 111111111111111001
+# Neuron[5]: 000000000000000000
+# Neuron[6]: 000000000000000000
+# Neuron[7]: 000000000000000000
+# Input Sample 2
+# Neuron[0]: 000000000000001000
+# Neuron[1]: 000000000000000000
+# Neuron[2]: 111111111111101011
+# Neuron[3]: 111111101001010100
+# Neuron[4]: 111111111111111001
+# Neuron[5]: 000000000000000000
+# Neuron[6]: 000000000000000000
+# Neuron[7]: 000000000000000000
+# Input Sample 3
+# Neuron[0]: 000000000000010110
+# Neuron[1]: 000000000000000000
+# Neuron[2]: 111111111111101010
+# Neuron[3]: 111111101001000111
+# Neuron[4]: 111111111111111001
+# Neuron[5]: 000000000000000000
+# Neuron[6]: 000000000000000000
+# Neuron[7]: 000000000000000000
+# Input Sample 4
+# Neuron[0]: 000000000000100110
+# Neuron[1]: 000000000000000000
+# Neuron[2]: 111111111111101010
+# Neuron[3]: 111111101001000011
+# Neuron[4]: 111111111111111001
+# Neuron[5]: 000000000000000000
+# Neuron[6]: 000000000000000000
+# Neuron[7]: 000000000000000000
+# Input Sample 5
+# Neuron[0]: 000000000000110100
+# Neuron[1]: 000000000000000000
+# Neuron[2]: 111111111111101100
+# Neuron[3]: 111111101001000011
+# Neuron[4]: 111111111111111001
+# Neuron[5]: 000000000000000000
+# Neuron[6]: 000000000000000000
+# Neuron[7]: 000000000000000000
+# Input Sample 6
+# Neuron[0]: 000000000001000100
+# Neuron[1]: 000000000000000000
+# Neuron[2]: 111111111111101011
+# Neuron[3]: 111111101001000001
+# Neuron[4]: 111111111111111001
+# Neuron[5]: 000000000000000000
+# Neuron[6]: 000000000000000000
+# Neuron[7]: 000000000000000000
+# Input Sample 7
+# Neuron[0]: 000000000001010100
+# Neuron[1]: 000000000000000000
+# Neuron[2]: 111111111111101011
+# Neuron[3]: 111111101000111110
+# Neuron[4]: 111111111111111001
+# Neuron[5]: 000000000000000000
+# Neuron[6]: 000000000000000000
+# Neuron[7]: 000000000000000000
+# ** Note: $stop    : tb_network.v(175)
+#    Time: 500 ns  Iteration: 0  Instance: /tb_network
+# Break at tb_network.v line 175
+# Stopped at tb_network.v line 175
+# End time: 00:41:30 on May 14,2016, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0

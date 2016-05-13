@@ -32,7 +32,7 @@ module network  #(parameter INPUT_SZ   =  2,
     input                            reset;
     input                            newSample;
     output reg                       dataoutReady;
-    output reg [OUTPUT_BITWIDTH-1:0] outputVec;
+    output reg [LAYER_BITWIDTH-1:0] outputVec;
             
 
     // Connecting wires and auxiliary registers
@@ -110,8 +110,15 @@ module network  #(parameter INPUT_SZ   =  2,
     reg signed  [LAYER_BITWIDTH-1:0] elemWise_mult1;
     wire signed  [LAYER_BITWIDTH-1:0] elemWise_mult2;
     wire signed  [LAYER_BITWIDTH-1:0] tanh_result;
+    wire reset_sigm;
+    wire reset_tanh;
+    reg  sigmoidEnable;
+    reg  tanhEnable;
     
-    // FSM associated registers
+    
+    // The enable signals for the sigmoid/tanh evaluations
+	assign reset_sigm = reset || !sigmoidEnable;
+	assign reset_tanh = reset || !tanhEnable;
 
     integer j;
 
@@ -139,13 +146,13 @@ module network  #(parameter INPUT_SZ   =  2,
     genvar i;
     generate 
         for (i = 0; i < HIDDEN_SZ; i = i + 1) begin
-            sigmoid #(QN,QM) sigmoid_i (elemWise_op2[i*BITWIDTH +: BITWIDTH], clock, reset, elemWise_mult2[i*BITWIDTH +: BITWIDTH]);
+            sigmoid #(QN,QM) sigmoid_i (elemWise_op2[i*BITWIDTH +: BITWIDTH], clock, reset_sigm, elemWise_mult2[i*BITWIDTH +: BITWIDTH]);
         end 
     endgenerate 
 
     generate 
         for (i = 0; i < HIDDEN_SZ; i = i + 1) begin
-            tanh #(QN,QM) tanh_i (elemWise_op1[i*BITWIDTH +: BITWIDTH], clock, reset, tanh_result[i*BITWIDTH +: BITWIDTH]);
+            tanh #(QN,QM) tanh_i (elemWise_op1[i*BITWIDTH +: BITWIDTH], clock, reset_tanh, tanh_result[i*BITWIDTH +: BITWIDTH]);
         end 
     endgenerate 
 
@@ -157,7 +164,7 @@ module network  #(parameter INPUT_SZ   =  2,
         end
         else begin
             inputVecSample   <= inputVec[colAddressRead_wZX*BITWIDTH +: BITWIDTH];
-            prevOutVecSample <= {18'b000000100000000000, 18'b000000100000000000};//prevLayerOut[colAddressRead_wZY*BITWIDTH +: BITWIDTH];
+            prevOutVecSample <= prevLayerOut[colAddressRead_wZY*BITWIDTH +: BITWIDTH];//{18'b000000100000000000, 18'b000000100000000000};
         end
     end
 
@@ -263,9 +270,7 @@ module network  #(parameter INPUT_SZ   =  2,
     // The FSM registers
     reg [3:0] state;
     reg [3:0] NEXTstate;
-    reg       sigmoidEnable;
-    reg       tanhEnable;
-    
+
     // The FSM that controls the gate
     always @(posedge clock) begin
 		if (reset == 1'b1) begin

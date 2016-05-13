@@ -19,14 +19,14 @@ module tb_network();
 	parameter ADDR_BITWIDTH_X  = $ln(INPUT_SZ)/$ln(2);
     parameter HALF_CLOCK       = 1;
     parameter FULL_CLOCK       = 2*HALF_CLOCK;
-    parameter MAX_SAMPLES      = 10;
+    parameter MAX_SAMPLES      = 8;
 
 	reg clock;
 	reg reset;
     reg                       newSample;
     wire   			          dataReady;
     reg  [INPUT_BITWIDTH-1:0]  inputVec;
-    wire [OUTPUT_BITWIDTH-1:0] outputVec;
+    wire [LAYER_BITWIDTH-1:0] outputVec;
     reg [OUTPUT_BITWIDTH-1:0] test;
     reg   [BITWIDTH-1:0] temp;
     // File descriptors for the error/output dumps
@@ -61,6 +61,7 @@ module tb_network();
 		fid_bi = $fopen("goldenIn_bi.bin", "r");
 		fid_bf = $fopen("goldenIn_bf.bin", "r");
 		fid_bo = $fopen("goldenIn_bo.bin", "r");
+		fid    = $fopen("output.bin", "w");
 		
 		// -------------------------------- Loading the weight memory ------------------------------- //
 		for(i = 0; i < INPUT_SZ; i = i + 1) begin
@@ -145,11 +146,11 @@ module tb_network();
         $display("Simulation started at %f", time_start);
 
         for(i=0; i < MAX_SAMPLES; i = i + 1) begin
-			
+			$display("Input Sample %0d", i);
 			// ---------- Applying a new input signal ---------- //
 			
 			@(posedge clock);
-			inputVec <= {18'b000000100000000000, 18'b000000100000000000};
+			inputVec <= {18'b000000000000000000, 18'b000000100000000000};
 			//$fscanf(fid_in,  "%b\n", inputVec);
 			//$fscanf(fid_out, "%b\n", ROM_goldenOut);
 			
@@ -163,8 +164,10 @@ module tb_network();
             @(posedge dataReady);
             
             #(HALF_CLOCK);
-            $display("OUTP %b", outputVec);
-            
+            for(j = 0; j < HIDDEN_SZ; j = j + 1) begin
+				$display("Neuron[%0d]: %b", j, outputVec[j*BITWIDTH +: BITWIDTH]);
+				$fwrite(fid, "%d\n", outputVec[j*BITWIDTH +: BITWIDTH]);
+			end
         end
        
         //$display("Average Quantization Error: %f", quantError/(MAX_SAMPLES*HIDDEN_SZ));

@@ -9,33 +9,43 @@ z2
 cModel Technology
 Z0 d/home/josefonseca/Documents/thesis/verilog/network
 T_opt
-!s110 1463071289
-V3^MB4JngFzUQ6iZ>Uf^`43
-04 4 4 work test fast 0
-=1-d43d7e359f7e-5734b239-d8b79-1648
-Z1 o-quiet -auto_acc_if_foreign -work work
+!s110 1463159207
+V=JQgDXUjURk=JGXL8mP4N1
+Z1 04 10 4 work tb_network fast 0
+=1-d43d7e359f7e-573609a7-7b8f1-128e
+Z2 o-quiet -auto_acc_if_foreign -work work
 n@_opt
-Z2 OL;O;10.4c_5;61
+Z3 OL;O;10.4c_5;61
 R0
 T_opt1
-!s110 1463092626
-V7z@;<N@kJF0nEgX7?iK`j1
-Z3 04 10 4 work tb_network fast 0
-=1-d43d7e359f7e-57350592-726f2-239a
+!s110 1463093020
+VE3>c@NB=iVHGUF_SZN:8R2
 R1
-n@_opt1
+=1-d43d7e359f7e-5735071c-1f06a-2422
 R2
-T_opt2
-!s110 1463092498
-Vf3Le?nKLjPKF65k9MJ:g00
+n@_opt1
 R3
-=1-d43d7e359f7e-57350512-31115-237d
+R0
+T_opt2
+!s110 1463178726
+VBLMPlQQQ1>f5]ocOldLNC0
+R1
+=1-d43d7e359f7e-573655e6-bf369-11f6
 o-quiet -auto_acc_if_foreign -work work +acc
 n@_opt2
+R3
+R0
+T_opt3
+!s110 1463180547
+VR51lOF@?g9Fl07^aETL>Z3
+R1
+=1-d43d7e359f7e-57365d03-e2d7-1336
 R2
+n@_opt3
+R3
 R0
 vdot_prod
-Z4 !s110 1463092624
+Z4 !s110 1463182889
 !i10b 1
 !s100 oHCm7P2f5b6C>Z[d<Nj_S2
 IHNPaG32oGPknzB[=7<`6M1
@@ -49,7 +59,7 @@ Z6 OL;L;10.4c_5;61
 r1
 !s85 0
 31
-Z7 !s108 1463092624.000000
+Z7 !s108 1463182889.000000
 Z8 !s107 weightRAM.v|test.v|tb_network.v|tanh.v|sigmoid.v|network.v|gate.v|dot_prod.v|
 Z9 !s90 dot_prod.v|gate.v|network.v|sigmoid.v|tanh.v|tb_network.v|test.v|weightRAM.v|
 !i113 0
@@ -77,11 +87,11 @@ R10
 vnetwork
 R4
 !i10b 1
-!s100 aDWEoA9?:QiI1dHFmeeF^0
-INIYAa4QEV`B`O4Q`RbLg03
+!s100 jDW:EG8>C>ESBXdf2<>M22
+I4EgeS6H:bSYRa2cf>XYNS2
 R5
 R0
-w1463092620
+w1463178823
 8network.v
 Fnetwork.v
 L0 1
@@ -157,11 +167,11 @@ R10
 vtb_network
 R4
 !i10b 1
-!s100 lBbkPI7E70WGkN>9YI^?Y2
-IYk`R:=n?N2M:XTSP8@@RO2
+!s100 9RZRgWbblnf=a23N1:]QD3
+IPRc`d3X3XLY2@i8;g6_4D0
 R5
 R0
-w1463088753
+w1463180542
 8tb_network.v
 Ftb_network.v
 L0 3
@@ -177,11 +187,11 @@ R10
 vtest
 R4
 !i10b 1
-!s100 IG<7Kg4`kEVVo@SdSQL:d3
-Iok3TR]_WK:=S4?<ODfZji3
+!s100 I09BMGlI[FMnR]2fIQNN83
+IJW^Dok9W=;mWZBeFm:f3`0
 R5
 R0
-w1463071286
+w1463161888
 8test.v
 Ftest.v
 L0 1
