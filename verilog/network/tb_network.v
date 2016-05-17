@@ -31,7 +31,7 @@ module tb_network();
     reg   [BITWIDTH-1:0] temp;
     // File descriptors for the error/output dumps
     integer fid, fid_error_dump, retVal;
-    integer fid_Wz, fid_Wi, fid_Wf, fid_Wo, fid_Rz, fid_Ri, fid_Rf, fid_Ro, fid_bz, fid_bi, fid_bf, fid_bo;
+    integer fid_x, fid_Wz, fid_Wi, fid_Wf, fid_Wo, fid_Rz, fid_Ri, fid_Rf, fid_Ro, fid_bz, fid_bi, fid_bf, fid_bo;
     integer i=0,j=0,k=0,l=0;
     real    quantError=0;
     
@@ -49,6 +49,7 @@ module tb_network();
     real time_start, time_end;
 
 	initial begin
+		fid_x = $fopen("goldenIn_x.bin", "r");
 		fid_Wz = $fopen("goldenIn_Wz.bin", "r");
 		fid_Wi = $fopen("goldenIn_Wi.bin", "r");
 		fid_Wf = $fopen("goldenIn_Wf.bin", "r");
@@ -150,9 +151,12 @@ module tb_network();
 			// ---------- Applying a new input signal ---------- //
 			
 			@(posedge clock);
-			inputVec <= {18'b000000000000000000, 18'b000000100000000000};
-			//$fscanf(fid_in,  "%b\n", inputVec);
+			retVal = $fscanf(fid_x,  "%b\n", temp);
+			inputVec[17:0]  = temp;
+			retVal = $fscanf(fid_x,  "%b\n", temp);
+			inputVec[35:18] = temp;
 			//$fscanf(fid_out, "%b\n", ROM_goldenOut);
+			//$display("Read: %b and %b", inputVec[17:0], inputVec[35:18]);
 			
             newSample = 1'b1;
             #(FULL_CLOCK);
@@ -164,10 +168,12 @@ module tb_network();
             @(posedge dataReady);
             
             #(HALF_CLOCK);
+            
             for(j = 0; j < HIDDEN_SZ; j = j + 1) begin
 				$display("Neuron[%0d]: %b", j, outputVec[j*BITWIDTH +: BITWIDTH]);
 				$fwrite(fid, "%d\n", outputVec[j*BITWIDTH +: BITWIDTH]);
 			end
+			
         end
        
         //$display("Average Quantization Error: %f", quantError/(MAX_SAMPLES*HIDDEN_SZ));

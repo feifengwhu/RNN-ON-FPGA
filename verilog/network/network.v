@@ -205,7 +205,7 @@ module network  #(parameter INPUT_SZ   =  2,
     always @(posedge clock) begin
 		if(z_ready)
 			for(j=0; j < HIDDEN_SZ; j = j + 1) begin
-				ZI_prod[j*BITWIDTH +: BITWIDTH] <= elemWiseMult_out[j*MULT_BITWIDTH +: MULT_BITWIDTH];
+				ZI_prod[j*BITWIDTH +: BITWIDTH] <= elemWiseMult_out[j*MULT_BITWIDTH +: MULT_BITWIDTH] >>> QM;
 			end
 		else if (reset)
 			ZI_prod <= {LAYER_BITWIDTH{1'b0}};
@@ -216,7 +216,7 @@ module network  #(parameter INPUT_SZ   =  2,
     always @(posedge clock) begin
 		if(f_ready)
 			for(j=0; j < HIDDEN_SZ; j = j + 1) begin
-				CF_prod[j*BITWIDTH +: BITWIDTH] <= elemWiseMult_out[j*MULT_BITWIDTH +: MULT_BITWIDTH];
+				CF_prod[j*BITWIDTH +: BITWIDTH] <= elemWiseMult_out[j*MULT_BITWIDTH +: MULT_BITWIDTH] >>> QM;
 			end
 		else if (reset)
 			CF_prod <= {LAYER_BITWIDTH{1'b0}};
@@ -226,7 +226,7 @@ module network  #(parameter INPUT_SZ   =  2,
     always @(posedge clock) begin
 		if(y_ready)
 			for(j=0; j < HIDDEN_SZ; j = j + 1) begin
-				prevLayerOut[j*BITWIDTH +: BITWIDTH] <= elemWiseMult_out[j*MULT_BITWIDTH +: MULT_BITWIDTH];
+				prevLayerOut[j*BITWIDTH +: BITWIDTH] <= elemWiseMult_out[j*MULT_BITWIDTH +: MULT_BITWIDTH] >>> QM;
 			end
 		else if (reset)
 			prevLayerOut <= {LAYER_BITWIDTH{1'b0}};
@@ -241,8 +241,8 @@ module network  #(parameter INPUT_SZ   =  2,
     // The elementwise multiplication DSP slices
     always @(posedge clock) begin
         for(j=0; j < HIDDEN_SZ; j = j + 1) begin
-            elemWiseMult_out[j*MULT_BITWIDTH +: MULT_BITWIDTH] <= (($signed(elemWise_mult2[j*BITWIDTH +: BITWIDTH]) * 
-																							 $signed(elemWise_mult1[j*BITWIDTH +: BITWIDTH])) >>> QM);
+            elemWiseMult_out[j*MULT_BITWIDTH +: MULT_BITWIDTH] <= ($signed(elemWise_mult2[j*BITWIDTH +: BITWIDTH]) * 
+																							 $signed(elemWise_mult1[j*BITWIDTH +: BITWIDTH]));
         end
     end
 

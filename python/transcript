@@ -1,0 +1,8 @@
+# vsim -c -do "run -all" test 
+# Start time: 22:05:20 on May 17,2016
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Error: (vopt-13130) Failed to find design unit work.test.
+# Optimization failed
+# Error loading design
+# End time: 22:05:20 on May 17,2016, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0

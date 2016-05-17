@@ -16,15 +16,15 @@ Z1 04 7 4 work tb_gate fast 0
 Z2 o-quiet -auto_acc_if_foreign -work work
 n@_opt
 Z3 OL;O;10.4c_5;61
+R0
 T_opt1
-!s110 1462390540
-Vk3a282jWf<C^mQ[eN>VQ=2
+!s110 1463508367
+VR=faX:dWkZd5>j]o>fM1H1
 R1
-=1-d43d7e359f7e-572a4f0c-2b7c3-2322
+=1-d43d7e359f7e-573b5d8e-de149-2642
 Z4 o-quiet -auto_acc_if_foreign -work work +acc
 n@_opt1
 R3
-R0
 T_opt2
 !s110 1461791430
 V4GNiRJ=D2U59W[QlE@_bP2
@@ -53,7 +53,7 @@ n@_opt4
 R3
 R0
 vdot_prod
-Z5 !s110 1462645451
+Z5 !s110 1463507875
 !i10b 1
 !s100 oHCm7P2f5b6C>Z[d<Nj_S2
 IHNPaG32oGPknzB[=7<`6M1
@@ -67,7 +67,7 @@ Z7 OL;L;10.4c_5;61
 r1
 !s85 0
 31
-Z8 !s108 1462645451.000000
+Z8 !s108 1463507875.000000
 Z9 !s107 weightRAM.v|tb_gate.v|gate.v|dot_prod.v|
 Z10 !s90 dot_prod.v|gate.v|tb_gate.v|weightRAM.v|
 !i113 0

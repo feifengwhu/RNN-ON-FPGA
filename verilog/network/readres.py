@@ -44,6 +44,7 @@ for position in range(binary_dim):
 	f_in.write("{0:018b}\n".format(real_to_Qnm(X[0,0], QN, QM))) 
 	f_in.write("{0:018b}\n".format(real_to_Qnm(X[1,0], QN, QM))) 
 
+f_in.close()
 
 # Compiles and runs the Verilog simulation
 os.system("vlog *.v")
@@ -60,6 +61,8 @@ layer = pickle.load(f_pkl);
 layerOut = np.zeros((8,1));
 fout = open("output.bin", "r");
 
+layer.resetNetwork()
+
 for i in range(numBits):
 	for j in range(hiddenSz):
 		line = fout.readline();
@@ -68,7 +71,7 @@ for i in range(numBits):
 	# HDL Network output
 	prev = np.round(sigmoid(np.dot(layer.outW, layerOut)));
 
-	print("Prevision: ", prev, " Expected Output: ", np.round(layer.forwardPropagate(prevX[numBits-i-1])))
+	print("Prevision: ", prev, " Expected Output: ", np.round(layer.forwardPropagate(prevX[i])))
 	layer.prev_c = layer.c
 	layer.prev_y = layer.y
 layer.resetNetwork()
