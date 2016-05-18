@@ -101,7 +101,7 @@ module network  #(parameter INPUT_SZ   =  2,
     reg [1:0] muxStageSelector;
     reg signed  [LAYER_BITWIDTH-1:0] ZI_prod;
     reg signed  [LAYER_BITWIDTH-1:0] CF_prod;
-    wire signed [LAYER_BITWIDTH-1:0] layer_C;
+    reg signed [LAYER_BITWIDTH-1:0] layer_C;
     reg signed  [LAYER_BITWIDTH-1:0] prev_C;
     reg signed  [MUX_BITWIDTH-1:0] rowMux;
     reg signed  [MUX_BITWIDTH-1:0] NEXTrowMux;
@@ -233,7 +233,11 @@ module network  #(parameter INPUT_SZ   =  2,
     end
 
     // The C signal --- The memory element
-    assign layer_C = ZI_prod + CF_prod;
+    always @(posedge clock) begin
+        for(j=0; j < HIDDEN_SZ; j = j + 1) begin
+            layer_C[j*BITWIDTH +: BITWIDTH] <= ZI_prod[j*BITWIDTH +: BITWIDTH] +  CF_prod[j*BITWIDTH +: BITWIDTH];
+        end
+    end
     always @(posedge newSample) begin
         prev_C <= layer_C;
     end

@@ -19,7 +19,7 @@ module tb_network();
 	parameter ADDR_BITWIDTH_X  = $ln(INPUT_SZ)/$ln(2);
     parameter HALF_CLOCK       = 1;
     parameter FULL_CLOCK       = 2*HALF_CLOCK;
-    parameter MAX_SAMPLES      = 8;
+    parameter MAX_SAMPLES      = 9;
 
 	reg clock;
 	reg reset;
@@ -170,7 +170,7 @@ module tb_network();
             #(HALF_CLOCK);
             
             for(j = 0; j < HIDDEN_SZ; j = j + 1) begin
-				$display("Neuron[%0d]: %b", j, outputVec[j*BITWIDTH +: BITWIDTH]);
+				//$display("Neuron[%0d]: %b", j, outputVec[j*BITWIDTH +: BITWIDTH]);
 				$fwrite(fid, "%d\n", outputVec[j*BITWIDTH +: BITWIDTH]);
 			end
 			

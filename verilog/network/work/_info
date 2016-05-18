@@ -34,17 +34,18 @@ R1
 o-quiet -auto_acc_if_foreign -work work +acc
 n@_opt2
 R3
+R0
 T_opt3
-!s110 1463527202
-VRWUePh_SA6:e_:[=e6Pkj2
+!s110 1463529908
+V]0g7Mlc@9POY9B6>2RfFe0
 R1
-=1-d43d7e359f7e-573ba722-8061b-39f5
+=1-d43d7e359f7e-573bb1b4-608e7-3d99
 R2
 n@_opt3
 R3
 R0
 vdot_prod
-Z4 !s110 1463527201
+Z4 !s110 1463530055
 !i10b 1
 !s100 oHCm7P2f5b6C>Z[d<Nj_S2
 IHNPaG32oGPknzB[=7<`6M1
@@ -58,7 +59,7 @@ Z6 OL;L;10.4c_5;61
 r1
 !s85 0
 31
-Z7 !s108 1463527201.000000
+Z7 !s108 1463530055.000000
 Z8 !s107 weightRAM.v|test.v|tb_network.v|tanh.v|sigmoid.v|network.v|gate.v|dot_prod.v|
 Z9 !s90 dot_prod.v|gate.v|network.v|sigmoid.v|tanh.v|tb_network.v|test.v|weightRAM.v|
 !i113 0
@@ -86,11 +87,11 @@ R10
 vnetwork
 R4
 !i10b 1
-!s100 76Eif9^ELKo;a9Ql6Nd4:0
-IG1eFS12C?3QNDnQo`E]E:1
+!s100 :[i8o[l;=O3f<m=o7SYaQ2
+Il^@JJ9<iG`o?NHD6^XF@f2
 R5
 R0
-w1463527189
+w1463529467
 8network.v
 Fnetwork.v
 L0 1
@@ -166,11 +167,11 @@ R10
 vtb_network
 R4
 !i10b 1
-!s100 [i4M>:6VBTI@?>4bO?YnT1
-IdJDQRV5MPYD]HPUShJ_H53
+!s100 nCkGW9A0KBh@L[ofh0cnn0
+I9lBMVR3;BnihGlobXha_U0
 R5
 R0
-w1463519481
+w1463529898
 8tb_network.v
 Ftb_network.v
 L0 3
