@@ -50,9 +50,6 @@ f_in.close()
 os.system("vlog *.v")
 os.system("vsim -c -do \"run -all\" tb_network")
 
-
-
-
 # Loads the pickled layer
 f_pkl = open("layer.pickle", "rb")
 layer = pickle.load(f_pkl);
@@ -62,6 +59,11 @@ layerOut = np.zeros((8,1));
 fout = open("output.bin", "r");
 
 layer.resetNetwork()
+
+"""
+for j in range(hiddenSz):
+		line = fout.readline()
+"""
 
 for i in range(numBits):
 	for j in range(hiddenSz):
@@ -75,3 +77,4 @@ for i in range(numBits):
 	layer.prev_c = layer.c
 	layer.prev_y = layer.y
 layer.resetNetwork()
+

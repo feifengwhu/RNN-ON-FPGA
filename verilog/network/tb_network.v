@@ -25,7 +25,7 @@ module tb_network();
 	reg reset;
     reg                       newSample;
     wire   			          dataReady;
-    reg  [INPUT_BITWIDTH-1:0]  inputVec;
+    reg  [INPUT_BITWIDTH-1:0] inputVec;
     wire [LAYER_BITWIDTH-1:0] outputVec;
     reg [OUTPUT_BITWIDTH-1:0] test;
     reg   [BITWIDTH-1:0] temp;
@@ -167,7 +167,7 @@ module tb_network();
             // Waiting for the result
             @(posedge dataReady);
             
-            #(HALF_CLOCK);
+            #(3*HALF_CLOCK);
             
             for(j = 0; j < HIDDEN_SZ; j = j + 1) begin
 				//$display("Neuron[%0d]: %b", j, outputVec[j*BITWIDTH +: BITWIDTH]);

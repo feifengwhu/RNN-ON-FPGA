@@ -1,6 +1,6 @@
 # vsim -c -do "run -all" tb_network 
-# Start time: 01:07:36 on May 18,2016
-# ** Note: (vsim-8009) Loading existing optimized design _opt3
+# Start time: 17:16:25 on May 18,2016
+# ** Note: (vsim-8009) Loading existing optimized design _opt5
 # //  Questa Sim-64
 # //  Version 10.4c_5 linux_x86_64 Nov 14 2015
 # //
@@ -29,8 +29,8 @@
 # Input Sample 7
 # Input Sample 8
 # ** Note: $stop    : tb_network.v(181)
-#    Time: 562 ns  Iteration: 0  Instance: /tb_network
+#    Time: 580 ns  Iteration: 0  Instance: /tb_network
 # Break at tb_network.v line 181
 # Stopped at tb_network.v line 181
-# End time: 01:07:37 on May 18,2016, Elapsed time: 0:00:01
+# End time: 17:16:27 on May 18,2016, Elapsed time: 0:00:02
 # Errors: 0, Warnings: 0
