@@ -17,7 +17,7 @@ module network  #(parameter INPUT_SZ   =  2,
     parameter BITWIDTH           = QN + QM + 1;
     parameter INPUT_BITWIDTH     = BITWIDTH*INPUT_SZ;
     parameter LAYER_BITWIDTH     = BITWIDTH*HIDDEN_SZ;
-    parameter MULT_BITWIDTH      = (2*BITWIDTH+1);
+    parameter MULT_BITWIDTH      = (2*BITWIDTH+2);
     parameter ELEMWISE_BITWIDTH  = MULT_BITWIDTH*HIDDEN_SZ;
     parameter OUTPUT_BITWIDTH    = OUTPUT_SZ * BITWIDTH; //log2(NUM_OUTPUT_SYMBOLS);
 	parameter ADDR_BITWIDTH      = log2(HIDDEN_SZ);
@@ -172,23 +172,23 @@ module network  #(parameter INPUT_SZ   =  2,
     always @(*) begin
         case (muxStageSelector) 
             2'd0 : begin
-                elemWise_op1 <= gate_Z;
-                elemWise_op2 <= gate_I;
+                elemWise_op1 = gate_Z;
+                elemWise_op2 = gate_I;
             end
         
             2'd1 : begin
-                elemWise_op1 <= 18'b0;
-                elemWise_op2 <= gate_F;
+                elemWise_op1 = 18'b0;
+                elemWise_op2 = gate_F;
             end
 
             2'd2 : begin
-                elemWise_op1 <= layer_C;
-                elemWise_op2 <= gate_O;
+                elemWise_op1 = layer_C;
+                elemWise_op2 = gate_O;
             end
             
             default : begin
-				elemWise_op1 <= gate_Z;
-                elemWise_op2 <= gate_I;
+				elemWise_op1 = gate_Z;
+                elemWise_op2 = gate_I;
             end
         endcase
     end
@@ -201,43 +201,47 @@ module network  #(parameter INPUT_SZ   =  2,
             elemWise_mult1 = tanh_result;
     end  
     
-    // Partial Non-liearity/Elementwise Block Result --- z signal TIMES i signal
     always @(posedge clock) begin
-		if(z_ready)
-			for(j=0; j < HIDDEN_SZ; j = j + 1) begin
-				ZI_prod[j*BITWIDTH +: BITWIDTH] <= elemWiseMult_out[j*MULT_BITWIDTH +: MULT_BITWIDTH] >>> QM;
-			end
-		else if (reset)
+		if(reset) begin
 			ZI_prod <= {LAYER_BITWIDTH{1'b0}};
-				
+			CF_prod <= {LAYER_BITWIDTH{1'b0}};
+			prevLayerOut <= {LAYER_BITWIDTH{1'b0}};
+		end
+	end
+			
+    
+    // Partial Non-liearity/Elementwise Block Result --- z signal TIMES i signal
+    always @(posedge z_ready) begin
+		for(j=0; j < HIDDEN_SZ; j = j + 1) begin
+			ZI_prod[j*BITWIDTH +: BITWIDTH] <= elemWiseMult_out[j*MULT_BITWIDTH +: MULT_BITWIDTH] >>> QM;
+		end
     end
 
     // Partial Non-liearity/Elementwise Block Result --- c signal TIMES f signal
-    always @(posedge clock) begin
-		if(f_ready)
-			for(j=0; j < HIDDEN_SZ; j = j + 1) begin
-				CF_prod[j*BITWIDTH +: BITWIDTH] <= elemWiseMult_out[j*MULT_BITWIDTH +: MULT_BITWIDTH] >>> QM;
-			end
-		else if (reset)
-			CF_prod <= {LAYER_BITWIDTH{1'b0}};
+    always @(posedge f_ready) begin
+		for(j=0; j < HIDDEN_SZ; j = j + 1) begin
+			CF_prod[j*BITWIDTH +: BITWIDTH] <= elemWiseMult_out[j*MULT_BITWIDTH +: MULT_BITWIDTH] >>> QM;
+		end
     end
      
     // Saving the current layer output (that serves as input to the gate modules)
-    always @(posedge clock) begin
-		if(y_ready)
-			for(j=0; j < HIDDEN_SZ; j = j + 1) begin
-				prevLayerOut[j*BITWIDTH +: BITWIDTH] <= elemWiseMult_out[j*MULT_BITWIDTH +: MULT_BITWIDTH] >>> QM;
-			end
-		else if (reset)
-			prevLayerOut <= {LAYER_BITWIDTH{1'b0}};
+    always @(posedge y_ready) begin
+		for(j=0; j < HIDDEN_SZ; j = j + 1) begin
+			prevLayerOut[j*BITWIDTH +: BITWIDTH] <= elemWiseMult_out[j*MULT_BITWIDTH +: MULT_BITWIDTH] >>> QM;
+		end
     end
 
     // The C signal --- The memory element
-    always @(posedge clock) begin
+    always @(*) begin
         for(j=0; j < HIDDEN_SZ; j = j + 1) begin
-            layer_C[j*BITWIDTH +: BITWIDTH] <= ZI_prod[j*BITWIDTH +: BITWIDTH] +  CF_prod[j*BITWIDTH +: BITWIDTH];
+            layer_C[j*BITWIDTH +: BITWIDTH] = ZI_prod[j*BITWIDTH +: BITWIDTH] +  CF_prod[j*BITWIDTH +: BITWIDTH];
         end
     end
+    
+    always @(posedge reset) begin
+		prev_C <= {LAYER_BITWIDTH{1'b0}};
+	end
+	
     always @(posedge newSample) begin
         prev_C <= layer_C;
     end
@@ -521,7 +525,7 @@ module network  #(parameter INPUT_SZ   =  2,
 			END :
 			begin
 				beginCalc        = 1'b0;
-				muxStageSelector = 2'd0;
+				muxStageSelector = 2'd2;
 				sigmoidEnable    = 1'b0;
 				tanhEnable       = 1'b0;
 				z_ready          = 1'b0;

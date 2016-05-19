@@ -9,28 +9,17 @@ add wave -noupdate /tb_network/inputVec
 add wave -noupdate /tb_network/outputVec
 add wave -noupdate /tb_network/LSTM_LAYER/inputVecSample
 add wave -noupdate /tb_network/LSTM_LAYER/prevOutVecSample
-add wave -noupdate /tb_network/LSTM_LAYER/WRAM_Z_X/RAM_matrix
-add wave -noupdate /tb_network/LSTM_LAYER/WRAM_Z_Y/RAM_matrix
-add wave -noupdate /tb_network/LSTM_LAYER/WRAM_I_X/RAM_matrix
-add wave -noupdate /tb_network/LSTM_LAYER/WRAM_I_Y/RAM_matrix
-add wave -noupdate /tb_network/LSTM_LAYER/WRAM_F_X/RAM_matrix
-add wave -noupdate /tb_network/LSTM_LAYER/WRAM_F_Y/RAM_matrix
-add wave -noupdate /tb_network/LSTM_LAYER/WRAM_O_X/RAM_matrix
-add wave -noupdate /tb_network/LSTM_LAYER/WRAM_O_Y/RAM_matrix
 add wave -noupdate /tb_network/LSTM_LAYER/colAddressRead_wZX
 add wave -noupdate /tb_network/LSTM_LAYER/colAddressRead_wZY
 add wave -noupdate /tb_network/LSTM_LAYER/state
 add wave -noupdate /tb_network/LSTM_LAYER/NEXTstate
 add wave -noupdate /tb_network/LSTM_LAYER/sigmoidEnable
 add wave -noupdate /tb_network/LSTM_LAYER/tanhEnable
-add wave -noupdate /tb_network/LSTM_LAYER/bZ
-add wave -noupdate /tb_network/LSTM_LAYER/bI
-add wave -noupdate /tb_network/LSTM_LAYER/bF
-add wave -noupdate /tb_network/LSTM_LAYER/bO
 add wave -noupdate /tb_network/LSTM_LAYER/ZI_prod
 add wave -noupdate /tb_network/LSTM_LAYER/CF_prod
 add wave -noupdate /tb_network/LSTM_LAYER/layer_C
 add wave -noupdate /tb_network/LSTM_LAYER/prev_C
+add wave -noupdate /tb_network/LSTM_LAYER/prevLayerOut
 add wave -noupdate /tb_network/LSTM_LAYER/elemWise_op1
 add wave -noupdate /tb_network/LSTM_LAYER/elemWise_op2
 add wave -noupdate /tb_network/LSTM_LAYER/elemWise_mult1
@@ -47,7 +36,7 @@ add wave -noupdate /tb_network/LSTM_LAYER/z_ready
 add wave -noupdate /tb_network/LSTM_LAYER/f_ready
 add wave -noupdate /tb_network/LSTM_LAYER/y_ready
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {54279 ps} 0}
+WaveRestoreCursors {{Cursor 1} {8000 ps} 0}
 quietly wave cursor active 1
 configure wave -namecolwidth 450
 configure wave -valuecolwidth 100

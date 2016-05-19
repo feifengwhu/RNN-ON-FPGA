@@ -23,13 +23,13 @@ largest_number = pow(2,binary_dim)
 hiddenSz = 8
 QN = 6
 QM = 11
-numTrain = 1000
+numTrain = 100000
 prevX = list()
 outputGolden  = list()
 outputVerilog = list()
 outputPython  = list()
 wrongBits = 0
-f_in = open("goldenIn_x.bin", "w")
+f_in  = open("goldenIn_x.bin", "w")
 
 
  
@@ -47,6 +47,7 @@ for i in range(numTrain):
 	
 	for position in range(binary_dim):
 		X  = np.array([[int(a[binary_dim - position - 1]), int(b[binary_dim - position - 1])]]).T
+		y  = np.array([int(c[binary_dim - position - 1])]).T
 		prevX.append(X)
 		f_in.write("{0:018b}\n".format(real_to_Qnm(X[0,0], QN, QM))) 
 		f_in.write("{0:018b}\n".format(real_to_Qnm(X[1,0], QN, QM))) 
@@ -75,7 +76,7 @@ for n in range(numTrain):
 	for i in range(numBits):
 		for j in range(hiddenSz):
 			line = fout.readline();
-			layerOut[j,0] = Qnm_to_real(int(line), 6,11);
+			layerOut[j,0] = Qnm_to_real(int(line), QN,QM);
 		
 		# HDL Network output
 		temp = layer.forwardPropagate(prevX[i+numBits*n])
@@ -100,4 +101,4 @@ for n in range(numTrain):
 
 	layer.resetNetwork()
 	
-print("Num wrong bits: ", wrongBits)
+print("% wrong bits: ", 100*wrongBits/(numTrain*numBits))

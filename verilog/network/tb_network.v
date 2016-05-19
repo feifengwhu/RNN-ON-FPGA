@@ -20,7 +20,7 @@ module tb_network();
     parameter HALF_CLOCK       = 1;
     parameter FULL_CLOCK       = 2*HALF_CLOCK;
     parameter MAX_SAMPLES      = 8;
-    parameter TRAIN_SAMPLES    = 1000;
+    parameter TRAIN_SAMPLES    = 100000;
 
 	reg clock;
 	reg reset;
@@ -152,7 +152,7 @@ module tb_network();
 			#(2*FULL_CLOCK);
 			reset     = 1'b0;
 			
-			if(k % 50 == 0) begin
+			if(k % 100 == 0) begin
 				$display("Input Sample %d", k);
 			end
 			
@@ -177,7 +177,7 @@ module tb_network();
 				// Waiting for the result
 				@(posedge dataReady);
 				
-				#(3*HALF_CLOCK);
+				#(2*FULL_CLOCK);
 				
 				for(j = 0; j < HIDDEN_SZ; j = j + 1) begin
 					//$display("Neuron[%0d]: %b", j, outputVec[j*BITWIDTH +: BITWIDTH]);
