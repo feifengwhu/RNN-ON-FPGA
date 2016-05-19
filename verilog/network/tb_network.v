@@ -19,7 +19,8 @@ module tb_network();
 	parameter ADDR_BITWIDTH_X  = $ln(INPUT_SZ)/$ln(2);
     parameter HALF_CLOCK       = 1;
     parameter FULL_CLOCK       = 2*HALF_CLOCK;
-    parameter MAX_SAMPLES      = 9;
+    parameter MAX_SAMPLES      = 8;
+    parameter TRAIN_SAMPLES    = 1000;
 
 	reg clock;
 	reg reset;
@@ -140,42 +141,51 @@ module tb_network();
 		#(2*FULL_CLOCK);
 		reset     = 1'b0;
 
-		
-        
 		// ----------------------------------------------------------------------------------------- //
 
         $display("Simulation started at %f", time_start);
 
-        for(i=0; i < MAX_SAMPLES; i = i + 1) begin
-			$display("Input Sample %0d", i);
-			// ---------- Applying a new input signal ---------- //
+		for(k=0; k < TRAIN_SAMPLES; k = k + 1) begin
 			
-			@(posedge clock);
-			retVal = $fscanf(fid_x,  "%b\n", temp);
-			inputVec[17:0]  = temp;
-			retVal = $fscanf(fid_x,  "%b\n", temp);
-			inputVec[35:18] = temp;
-			//$fscanf(fid_out, "%b\n", ROM_goldenOut);
-			//$display("Read: %b and %b", inputVec[17:0], inputVec[35:18]);
+			// Applying the initial reset
+			reset     = 1'b1;
+			#(2*FULL_CLOCK);
+			reset     = 1'b0;
 			
-            newSample = 1'b1;
-            #(FULL_CLOCK);
-            newSample = 1'b0;
-            
-            // ------------------------------------------------- //
-            
-            // Waiting for the result
-            @(posedge dataReady);
-            
-            #(3*HALF_CLOCK);
-            
-            for(j = 0; j < HIDDEN_SZ; j = j + 1) begin
-				//$display("Neuron[%0d]: %b", j, outputVec[j*BITWIDTH +: BITWIDTH]);
-				$fwrite(fid, "%d\n", outputVec[j*BITWIDTH +: BITWIDTH]);
+			if(k % 50 == 0) begin
+				$display("Input Sample %d", k);
 			end
 			
-        end
-       
+			for(i=0; i < MAX_SAMPLES; i = i + 1) begin
+				
+				// ---------- Applying a new input signal ---------- //
+				
+				@(posedge clock);
+				retVal = $fscanf(fid_x,  "%b\n", temp);
+				inputVec[17:0]  = temp;
+				retVal = $fscanf(fid_x,  "%b\n", temp);
+				inputVec[35:18] = temp;
+				//$fscanf(fid_out, "%b\n", ROM_goldenOut);
+				//$display("Read: %b and %b", inputVec[17:0], inputVec[35:18]);
+				
+				newSample = 1'b1;
+				#(FULL_CLOCK);
+				newSample = 1'b0;
+				
+				// ------------------------------------------------- //
+				
+				// Waiting for the result
+				@(posedge dataReady);
+				
+				#(3*HALF_CLOCK);
+				
+				for(j = 0; j < HIDDEN_SZ; j = j + 1) begin
+					//$display("Neuron[%0d]: %b", j, outputVec[j*BITWIDTH +: BITWIDTH]);
+					$fwrite(fid, "%d\n", outputVec[j*BITWIDTH +: BITWIDTH]);
+				end
+				
+			end
+       end
         //$display("Average Quantization Error: %f", quantError/(MAX_SAMPLES*HIDDEN_SZ));
  
         $stop; 

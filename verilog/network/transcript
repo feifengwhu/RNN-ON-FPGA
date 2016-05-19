@@ -1,6 +1,3 @@
-# vsim -c -do "run -all" tb_network 
-# Start time: 17:16:25 on May 18,2016
-# ** Note: (vsim-8009) Loading existing optimized design _opt5
 # //  Questa Sim-64
 # //  Version 10.4c_5 linux_x86_64 Nov 14 2015
 # //
@@ -16,21 +13,46 @@
 # //  FURTHERMORE, THIS INFORMATION IS PROHIBITED FROM DISCLOSURE UNDER
 # //  THE TRADE SECRETS ACT, 18 U.S.C. SECTION 1905.
 # //
+vsim -voptargs=+acc work.tb_network
+# vsim -voptargs="+acc" work.tb_network 
+# Start time: 16:31:59 on May 19,2016
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Note: (vopt-143) Recognized 1 FSM in module "network(fast)".
+# ** Note: (vopt-143) Recognized 1 FSM in module "dot_prod(fast)".
+# ** Note: (vopt-143) Recognized 1 FSM in module "dot_prod(fast__1)".
+# ** Note: (vopt-143) Recognized 1 FSM in module "gate(fast)".
 # Loading work.tb_network(fast)
-# run -all
+# Loading work.network(fast)
+# Loading work.gate(fast)
+# Loading work.dot_prod(fast)
+# Loading work.dot_prod(fast__1)
+# Loading work.weightRAM(fast)
+# Loading work.weightRAM(fast__1)
+# Loading work.sigmoid(fast)
+# Loading work.tanh(fast)
+do wave.do
+run -all
 # Simulation started at 0.000000
-# Input Sample 0
-# Input Sample 1
-# Input Sample 2
-# Input Sample 3
-# Input Sample 4
-# Input Sample 5
-# Input Sample 6
-# Input Sample 7
-# Input Sample 8
-# ** Note: $stop    : tb_network.v(181)
-#    Time: 580 ns  Iteration: 0  Instance: /tb_network
-# Break at tb_network.v line 181
-# Stopped at tb_network.v line 181
-# End time: 17:16:27 on May 18,2016, Elapsed time: 0:00:02
-# Errors: 0, Warnings: 0
+# Input Sample           0
+# Input Sample          50
+# Input Sample         100
+# Input Sample         150
+# Input Sample         200
+# Input Sample         250
+# Input Sample         300
+# Input Sample         350
+# Input Sample         400
+# Input Sample         450
+# Input Sample         500
+# Input Sample         550
+# Input Sample         600
+# Input Sample         650
+# Input Sample         700
+# Input Sample         750
+# Input Sample         800
+# Input Sample         850
+# Input Sample         900
+# Input Sample         950
+# ** Note: $stop    : tb_network.v(191)
+#    Time: 516004 ns  Iteration: 0  Instance: /tb_network
+# Break in Module tb_network at tb_network.v line 191

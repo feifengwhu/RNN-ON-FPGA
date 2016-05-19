@@ -23,26 +23,33 @@ largest_number = pow(2,binary_dim)
 hiddenSz = 8
 QN = 6
 QM = 11
-numTrain = 100
+numTrain = 1000
 prevX = list()
+outputGolden  = list()
+outputVerilog = list()
+outputPython  = list()
+wrongBits = 0
 f_in = open("goldenIn_x.bin", "w")
 
 
-# Generates the golden input and output
-a_int = np.random.randint(largest_number/2) # int version
-a = np.binary_repr(a_int, width=binary_dim) # binary encoding
+ 
 
-b_int = np.random.randint(largest_number/2) # int version
-b = np.binary_repr(b_int, width=binary_dim) # binary encoding
+for i in range(numTrain):
+	# Generates the golden input and output
+	a_int = np.random.randint(largest_number/2) # int version
+	a = np.binary_repr(a_int, width=binary_dim) # binary encoding
 
-c_int = a_int + b_int
-c = np.binary_repr(c_int, width=binary_dim) 
+	b_int = np.random.randint(largest_number/2) # int version
+	b = np.binary_repr(b_int, width=binary_dim) # binary encoding
 
-for position in range(binary_dim):
-	X  = np.array([[int(a[binary_dim - position - 1]), int(b[binary_dim - position - 1])]]).T
-	prevX.append(X)
-	f_in.write("{0:018b}\n".format(real_to_Qnm(X[0,0], QN, QM))) 
-	f_in.write("{0:018b}\n".format(real_to_Qnm(X[1,0], QN, QM))) 
+	c_int = a_int + b_int
+	c = np.binary_repr(c_int, width=binary_dim)
+	
+	for position in range(binary_dim):
+		X  = np.array([[int(a[binary_dim - position - 1]), int(b[binary_dim - position - 1])]]).T
+		prevX.append(X)
+		f_in.write("{0:018b}\n".format(real_to_Qnm(X[0,0], QN, QM))) 
+		f_in.write("{0:018b}\n".format(real_to_Qnm(X[1,0], QN, QM))) 
 
 f_in.close()
 
@@ -64,17 +71,33 @@ layer.resetNetwork()
 for j in range(hiddenSz):
 		line = fout.readline()
 """
-
-for i in range(numBits):
-	for j in range(hiddenSz):
-		line = fout.readline();
-		layerOut[j,0] = Qnm_to_real(int(line), 6,11);
+for n in range(numTrain):
+	for i in range(numBits):
+		for j in range(hiddenSz):
+			line = fout.readline();
+			layerOut[j,0] = Qnm_to_real(int(line), 6,11);
+		
+		# HDL Network output
+		temp = layer.forwardPropagate(prevX[i+numBits*n])
+		outputVerilog.append(int(np.round(sigmoid(np.dot(layer.outW, layerOut)))));
+		outputPython.append(int(np.round(temp)));
 	
-	# HDL Network output
-	prev = np.round(sigmoid(np.dot(layer.outW, layerOut)));
+		if(outputVerilog[i] ^ outputPython[i]) :
+			print("Error: ", outputVerilog, " --> ", outputPython)
+			print(sigmoid(np.dot(layer.outW, layerOut)), " --> ", temp)
+			wrongBits += 1
+		
+		layer.prev_c = layer.c
+		layer.prev_y = layer.y
+	
+	outputVerilog.reverse()
+	outputPython.reverse()
+	
+	#print("Sample %d", n)
+	#print(outputVerilog, "\n", outputPython);
+	outputVerilog = list()
+	outputPython = list()
 
-	print("Prevision: ", prev, " Expected Output: ", np.round(layer.forwardPropagate(prevX[i])))
-	layer.prev_c = layer.c
-	layer.prev_y = layer.y
-layer.resetNetwork()
-
+	layer.resetNetwork()
+	
+print("Num wrong bits: ", wrongBits)
