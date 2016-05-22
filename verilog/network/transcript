@@ -120,16 +120,11 @@
 # Input Sample        9800
 # Input Sample        9900
 # Input Sample       10000
-# Input Sample       10100
-# Input Sample       10200
-# Input Sample       10300
-# Input Sample       10400
-# Input Sample       10500
-# Input Sample       10600
-# Input Sample       10700
-# Input Sample       10800
-# Input Sample       10900
-# Input Sample       11000
+# Input Sample # End time: 20:01:01 on May 20,2016, Elapsed time: 20:57:50
+# Errors: 0, Warnings: 0
+# ** Warning: (vsim-31) Unable to unlink file "/home/josefonseca/Documents/thesis/verilog/network/work/_opt6__lock".
+# No such file or directory. (errno = ENOENT)
+ 11000
 # Input Sample       11100
 # Input Sample       11200
 # Input Sample       11300
