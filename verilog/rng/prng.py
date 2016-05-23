@@ -1,5 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
+from copy import deepcopy
 
 # System parameters
 LFSR_size = 43
@@ -10,14 +11,16 @@ out_size = 32
 NUM_ITER = 1000
 
 # Initializing the Shift Register
-shiftReg = np.random.randint(2, size=LFSR_size)
+shiftReg = np.random.randint(2, size=LFSR_size)#np.array([1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0])#
 prevLFSR = np.zeros((NUM_ITER, shiftReg.size))
 
 # Initializing the Cellular Automata
-celAut = np.random.randint(2, size=CA_size)
+celAut = np.random.randint(2, size=CA_size)#np.array([0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0])#
+"""
 for i in range(CA_size):
 	celAut[i] = 0
 celAut[17] = 1
+""""
 nextCA = np.random.randint(2, size=CA_size)
 prevCA = np.zeros((NUM_ITER, celAut.size))
 
@@ -28,6 +31,7 @@ prevPRNGout = np.zeros((NUM_ITER, 32))
 
 for t in range(NUM_ITER):
 	# Iterating the Shift Register
+	if(t == 0): print(celAut)
 	prevLFSR[t] = shiftReg
 	feedback    = (shiftReg[0] + shiftReg[19] + shiftReg[40] + shiftReg[42]) % 2
 	shiftReg    = np.roll(shiftReg, 1)
@@ -50,10 +54,13 @@ for t in range(NUM_ITER):
 			# Rull 30 for the remaining cell sites
 			nextCA[k] = (celAut[k-1] + celAut[k+1]) % 2
 
-	celAut = nextCA		
-
+	celAut = deepcopy(nextCA)		
+	extractedCA = deepcopy(celAut[0:32])
+	extractedSR = deepcopy(shiftReg[0:32])
+	np.random.shuffle(extractedCA)
+	np.random.shuffle(extractedSR)
 	# Iterating the combined PRNG
-	prevPRNGout[t] = celAut[0:32] ^ shiftReg[0:32] 
+	prevPRNGout[t] = extractedSR  ^ extractedCA 
 
 # Count the ones test
 LFSR_ones = 0

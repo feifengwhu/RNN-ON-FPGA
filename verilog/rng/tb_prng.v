@@ -2,11 +2,11 @@ module tb_prng();
 
 	parameter LFSR_size = 43;
 	parameter OUT_size  = 32;
-	parameter NUM_ITER  = 1000;
+	parameter NUM_ITER  = 2000;
 	parameter FULL_CLOCK = 2;
 	parameter HALF_CLOCK = FULL_CLOCK/2;
 	
-	integer i, fid;
+	integer i, fid, fid_SR, fid_CA;
 	
 	reg clock;
 	reg reset;
@@ -27,8 +27,10 @@ module tb_prng();
 		reset = 0;
 		enablePRNG     = 0;
 		fetchNewSample = 0;
-		initSeed = {{$random}, {$random}};
+		initSeed = {$random($realtime), $random($realtime)};//{{18{1'b0}}, {1'b1}, {18{1'b0}}};
 		fid = $fopen("output.hex", "w");
+		fid_SR = $fopen("output_SR.hex", "w");
+		fid_CA = $fopen("output_CA.hex", "w");
 		
 		// Applying the initial reset
 		reset = 1;
@@ -50,9 +52,9 @@ module tb_prng();
 		for( i = 0; i < NUM_ITER; i = i + 1) begin
 			fetchNewSample = 1;
 			#(FULL_CLOCK);
-			fetchNewSample = 0;
-			#(FULL_CLOCK);
 			$fwrite(fid, "%b\n", randomArray);
+			$fwrite(fid_SR, "%b\n", RandomGen.shiftReg);
+			$fwrite(fid_CA, "%b\n", RandomGen.celAut);
 		end
 		
 		enablePRNG = 0;

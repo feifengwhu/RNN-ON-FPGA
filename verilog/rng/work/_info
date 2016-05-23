@@ -9,59 +9,68 @@ z2
 cModel Technology
 Z0 d/home/josefonseca/Desktop/rng
 T_opt
-!s110 1463909816
-Vcg50;aBmA643bk3Dhl@bE2
+!s110 1464004130
+V;f9EzVbBF>?d?Y0n`SZJ31
 Z1 04 7 4 work tb_prng fast 0
-=1-d43d7e359f7e-57417db8-7a30f-1342
+=1-d48564c0c748-5742ee22-62cf1-3c4e
 o-quiet -auto_acc_if_foreign -work work +acc
 n@_opt
 Z2 OL;O;10.4c_5;61
+R0
 T_opt1
-!s110 1463909766
-VSNS=P^I30@a2@K7mg4D=O0
+!s110 1464016911
+V0j^hKXf`=gb>czcW_<QND0
 R1
-=1-d43d7e359f7e-57417d86-187bb-1336
-o-quiet -auto_acc_if_foreign -work work
+=1-d48564c0c748-5743200e-f3a3a-4116
+Z3 o-quiet -auto_acc_if_foreign -work work
 n@_opt1
+R2
+T_opt2
+!s110 1463999447
+V5G8nEHI[W@gm`7g<=k:aJ1
+04 4 4 work prng fast 0
+=1-d48564c0c748-5742dbd6-9a630-3942
+R3
+n@_opt2
 R2
 R0
 vprng
-Z3 !s110 1463909763
+Z4 !s110 1464016909
 !i10b 1
-!s100 Rc4Z445SM>CBI8G<l9dh=0
-IfEMH04AG[IUXo64Vj7cJj1
-Z4 VDg1SIo80bB@j0V0VzS_@n1
-R0
-w1463908237
+!s100 dePj_k5mAjb::3M60HzJA3
+IMQ:c]c=g0GMa8YZOT0Fh83
+Z5 VDg1SIo80bB@j0V0VzS_@n1
+Z6 d/home/jfonseca/thesis/verilog/rng
+w1464016128
 8prng.v
 Fprng.v
 L0 1
-Z5 OL;L;10.4c_5;61
+Z7 OL;L;10.4c_5;61
 r1
 !s85 0
 31
-Z6 !s108 1463909763.000000
-Z7 !s107 tb_prng.v|prng.v|
-Z8 !s90 prng.v|tb_prng.v|
+Z8 !s108 1464016908.000000
+Z9 !s107 tb_prng.v|prng.v|
+Z10 !s90 prng.v|tb_prng.v|
 !i113 0
-Z9 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z11 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 vtb_prng
-R3
-!i10b 1
-!s100 MJTG;TnQBef8_MG@SCnQ_2
-IgZ4LM;RKdkgbRQ?E9MV5=1
 R4
-R0
-w1463909761
+!i10b 1
+!s100 K=32KghE[3<ZX;ef>_dEA2
+IGOb=Ozm0W^6Pm;92URVF@0
+R5
+R6
+w1464016897
 8tb_prng.v
 Ftb_prng.v
 L0 1
-R5
+R7
 r1
 !s85 0
 31
-R6
-R7
 R8
-!i113 0
 R9
+R10
+!i113 0
+R11
