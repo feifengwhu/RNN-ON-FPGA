@@ -61,6 +61,8 @@ module network  #(parameter INPUT_SZ   =  2,
     wire   [ADDR_BITWIDTH-1:0]   colAddressRead_wOY;
     reg    [ADDR_BITWIDTH_X-1:0] colAddressTRAIN_X;
     reg    [ADDR_BITWIDTH-1:0]   colAddressTRAIN_Y;
+    reg    [ADDR_BITWIDTH_X-1:0] PREVcolAddressTRAIN_X;
+    reg    [ADDR_BITWIDTH-1:0]   PREVcolAddressTRAIN_Y;
     reg    [ADDR_BITWIDTH_X-1:0] NEXTcolAddressTRAIN_X;
     reg    [ADDR_BITWIDTH-1:0]   NEXTcolAddressTRAIN_Y;
     reg    [LAYER_BITWIDTH-1:0]  wZX_in;
@@ -79,6 +81,14 @@ module network  #(parameter INPUT_SZ   =  2,
     wire   [LAYER_BITWIDTH-1:0]  wOX_out;
     reg    [LAYER_BITWIDTH-1:0]  wOY_in;
     wire   [LAYER_BITWIDTH-1:0]  wOY_out;
+    reg    [LAYER_BITWIDTH-1:0]  wZX_out_gate;
+    reg    [LAYER_BITWIDTH-1:0]  wZY_out_gate;
+    reg    [LAYER_BITWIDTH-1:0]  wIX_out_gate;
+    reg    [LAYER_BITWIDTH-1:0]  wIY_out_gate;
+    reg    [LAYER_BITWIDTH-1:0]  wFX_out_gate;
+    reg    [LAYER_BITWIDTH-1:0]  wFY_out_gate;
+    reg    [LAYER_BITWIDTH-1:0]  wOX_out_gate;
+    reg    [LAYER_BITWIDTH-1:0]  wOY_out_gate;
     wire   [HIDDEN_SZ-1:0]  sign_wZX;
     wire   [HIDDEN_SZ-1:0]  sign_wZY;
     wire   [HIDDEN_SZ-1:0]  sign_wIX;
@@ -124,16 +134,32 @@ module network  #(parameter INPUT_SZ   =  2,
     reg [1:0] muxStageSelector;
     reg signed  [LAYER_BITWIDTH-1:0] ZI_prod;
     reg signed  [LAYER_BITWIDTH-1:0] CF_prod;
-    reg signed [LAYER_BITWIDTH-1:0] layer_C;
+    reg signed  [LAYER_BITWIDTH-1:0] layer_C;
     reg signed  [LAYER_BITWIDTH-1:0] prev_C;
     reg signed  [LAYER_BITWIDTH-1:0] SS_layer_C;
+    reg signed  [LAYER_BITWIDTH-1:0] delta_wZX;
+    reg signed  [LAYER_BITWIDTH-1:0] delta_wZY;
+    reg signed  [LAYER_BITWIDTH-1:0] delta_wIX;
+    reg signed  [LAYER_BITWIDTH-1:0] delta_wIY;
+    reg signed  [LAYER_BITWIDTH-1:0] delta_wFX;
+    reg signed  [LAYER_BITWIDTH-1:0] delta_wFY;
+    reg signed  [LAYER_BITWIDTH-1:0] delta_wOX;
+    reg signed  [LAYER_BITWIDTH-1:0] delta_wOY;
+    reg signed  [LAYER_BITWIDTH-1:0] update_wZX;
+    reg signed  [LAYER_BITWIDTH-1:0] update_wZY;
+    reg signed  [LAYER_BITWIDTH-1:0] update_wIX;
+    reg signed  [LAYER_BITWIDTH-1:0] update_wIY;
+    reg signed  [LAYER_BITWIDTH-1:0] update_wFX;
+    reg signed  [LAYER_BITWIDTH-1:0] update_wFY;
+    reg signed  [LAYER_BITWIDTH-1:0] update_wOX;
+    reg signed  [LAYER_BITWIDTH-1:0] update_wOY;
     reg signed  [MUX_BITWIDTH-1:0] rowMux;
     reg signed  [MUX_BITWIDTH-1:0] NEXTrowMux;
     reg signed  [LAYER_BITWIDTH-1:0] elemWise_op1;
     reg signed  [LAYER_BITWIDTH-1:0] elemWise_op2;
     reg signed  [LAYER_BITWIDTH-1:0] elemWise_mult1;
-    wire signed  [LAYER_BITWIDTH-1:0] elemWise_mult2;
-    wire signed  [LAYER_BITWIDTH-1:0] tanh_result;
+    wire signed [LAYER_BITWIDTH-1:0] elemWise_mult2;
+    wire signed [LAYER_BITWIDTH-1:0] tanh_result;
     wire reset_sigm;
     wire reset_tanh;
     reg  sigmoidEnable;
@@ -141,7 +167,8 @@ module network  #(parameter INPUT_SZ   =  2,
     reg  savePrevC;
     reg  pertWeights;
     reg  weightUpdate;
-    reg  genRandNum;
+    reg  genRandNum_X;
+    reg  genRandNum_Y;
     reg  writeWeightUpdate_X;
     reg  writeWeightUpdate_Y;
     reg  saveSS_layerC;
@@ -154,25 +181,25 @@ module network  #(parameter INPUT_SZ   =  2,
     integer j;
 
     // Module Instatiation
-    gate #(INPUT_SZ, HIDDEN_SZ, QN, QM, DSP48_PER_ROW_G) GATE_Z (inputVecSample, prevOutVecSample, wZX_out, wZY_out, bZ, beginCalc,
+    gate #(INPUT_SZ, HIDDEN_SZ, QN, QM, DSP48_PER_ROW_G) GATE_Z (inputVecSample, prevOutVecSample, wZX_out_gate, wZY_out_gate, bZ, beginCalc,
                                                              clock, reset, colAddressRead_wZX, colAddressRead_wZY, gateReady_Z, gate_Z);
-    weightRAM  #(HIDDEN_SZ,  INPUT_SZ, BITWIDTH)  WRAM_Z_X (colAddressWrite_wZX, colAddressRead_wZX, writeEn_wZX, clock, reset, wZX_in, wZX_out);
-    weightRAM  #(HIDDEN_SZ, HIDDEN_SZ, BITWIDTH)  WRAM_Z_Y (colAddressWrite_wZY, colAddressRead_wZY, writeEn_wZY, clock, reset, wZY_in, wZY_out);
+    weightRAM  #(HIDDEN_SZ,  INPUT_SZ, BITWIDTH)  WRAM_Z_X (PREVcolAddressTRAIN_X, colAddressRead_X, writeWeightUpdate_X, clock, reset, wZX_in, wZX_out);
+    weightRAM  #(HIDDEN_SZ, HIDDEN_SZ, BITWIDTH)  WRAM_Z_Y (PREVcolAddressTRAIN_Y, colAddressRead_Y, writeWeightUpdate_Y, clock, reset, wZY_in, wZY_out);
  
-    gate #(INPUT_SZ, HIDDEN_SZ, QN, QM, DSP48_PER_ROW_G) GATE_I (inputVecSample, prevOutVecSample, wIX_out, wIY_out, bI, beginCalc,
+    gate #(INPUT_SZ, HIDDEN_SZ, QN, QM, DSP48_PER_ROW_G) GATE_I (inputVecSample, prevOutVecSample, wIX_out_gate, wIY_out_gate, bI, beginCalc,
                                                              clock, reset, colAddressRead_wIX, colAddressRead_wIY, gateReady_I, gate_I);
-    weightRAM  #(HIDDEN_SZ,  INPUT_SZ, BITWIDTH)  WRAM_I_X (colAddressWrite_wIX, colAddressRead_wIX, writeEn_wIX, clock, reset, wIX_in, wIX_out);
-    weightRAM  #(HIDDEN_SZ, HIDDEN_SZ, BITWIDTH)  WRAM_I_Y (colAddressWrite_wIY, colAddressRead_wIY, writeEn_wIY, clock, reset, wIY_in, wIY_out);
+    weightRAM  #(HIDDEN_SZ,  INPUT_SZ, BITWIDTH)  WRAM_I_X (PREVcolAddressTRAIN_X, colAddressRead_X, writeWeightUpdate_X, clock, reset, wIX_in, wIX_out);
+    weightRAM  #(HIDDEN_SZ, HIDDEN_SZ, BITWIDTH)  WRAM_I_Y (PREVcolAddressTRAIN_Y, colAddressRead_Y, writeWeightUpdate_Y, clock, reset, wIY_in, wIY_out);
 
-    gate #(INPUT_SZ, HIDDEN_SZ, QN, QM, DSP48_PER_ROW_G) GATE_F (inputVecSample, prevOutVecSample, wFX_out, wFY_out, bF, beginCalc,
+    gate #(INPUT_SZ, HIDDEN_SZ, QN, QM, DSP48_PER_ROW_G) GATE_F (inputVecSample, prevOutVecSample, wFX_out_gate, wFY_out_gate, bF, beginCalc,
                                                              clock, reset, colAddressRead_wFX, colAddressRead_wFY, gateReady_F, gate_F);
-    weightRAM  #(HIDDEN_SZ,  INPUT_SZ, BITWIDTH)  WRAM_F_X (colAddressWrite_wFX, colAddressRead_wFX, writeEn_wFX, clock, reset, wFX_in, wFX_out);
-    weightRAM  #(HIDDEN_SZ, HIDDEN_SZ, BITWIDTH)  WRAM_F_Y (colAddressWrite_wFY, colAddressRead_wFY, writeEn_wFY, clock, reset, wFY_in, wFY_out);
+    weightRAM  #(HIDDEN_SZ,  INPUT_SZ, BITWIDTH)  WRAM_F_X (PREVcolAddressTRAIN_X, colAddressRead_X, writeWeightUpdate_X, clock, reset, wFX_in, wFX_out);
+    weightRAM  #(HIDDEN_SZ, HIDDEN_SZ, BITWIDTH)  WRAM_F_Y (PREVcolAddressTRAIN_Y, colAddressRead_Y, writeWeightUpdate_Y, clock, reset, wFY_in, wFY_out);
 
-    gate #(INPUT_SZ, HIDDEN_SZ, QN, QM, DSP48_PER_ROW_G) GATE_O (inputVecSample, prevOutVecSample, wOX_out, wOY_out, bO, beginCalc,
+    gate #(INPUT_SZ, HIDDEN_SZ, QN, QM, DSP48_PER_ROW_G) GATE_O (inputVecSample, prevOutVecSample, wOX_out_gate, wOY_out_gate, bO, beginCalc,
                                                              clock, reset, colAddressRead_wOX, colAddressRead_wOY, gateReady_O, gate_O);
-    weightRAM  #(HIDDEN_SZ,  INPUT_SZ, BITWIDTH)  WRAM_O_X (colAddressWrite_wOX, colAddressRead_wOX, writeEn_wOX, clock, reset, wOX_in, wOX_out);
-    weightRAM  #(HIDDEN_SZ, HIDDEN_SZ, BITWIDTH)  WRAM_O_Y (colAddressWrite_wOY, colAddressRead_wOY, writeEn_wOY, clock, reset, wOY_in, wOY_out);
+    weightRAM  #(HIDDEN_SZ,  INPUT_SZ, BITWIDTH)  WRAM_O_X (PREVcolAddressTRAIN_X, colAddressRead_X, writeWeightUpdate_X, clock, reset, wOX_in, wOX_out);
+    weightRAM  #(HIDDEN_SZ, HIDDEN_SZ, BITWIDTH)  WRAM_O_Y (PREVcolAddressTRAIN_Y, colAddressRead_Y, writeWeightUpdate_Y, clock, reset, wOY_in, wOY_out);
 
 	// The non-linearity modules
     genvar i;
@@ -189,15 +216,15 @@ module network  #(parameter INPUT_SZ   =  2,
     endgenerate 
 
 	// The sign matrix for the perturbations
-	weightRAM  #(HIDDEN_SZ,  INPUT_SZ, 1)  PRAM_Z_X (colAddressWrite_wZX, colAddressRead_wZX, writeEn_wZX, clock, reset, randGenOutput[0 +: RAND_GEN_BITWIDTH]                , sign_wZX);
-    weightRAM  #(HIDDEN_SZ, HIDDEN_SZ, 1)  PRAM_Z_Y (colAddressWrite_wZY, colAddressRead_wZY, writeEn_wZY, clock, reset, randGenOutput[RAND_GEN_BITWIDTH +:RAND_GEN_BITWIDTH] , sign_wZY);
-	weightRAM  #(HIDDEN_SZ,  INPUT_SZ, 1)  PRAM_I_X (colAddressWrite_wZX, colAddressRead_wZX, writeEn_wZX, clock, reset, randGenOutput[2*RAND_GEN_BITWIDTH+:RAND_GEN_BITWIDTH], sign_wIX);
-    weightRAM  #(HIDDEN_SZ, HIDDEN_SZ, 1)  PRAM_I_Y (colAddressWrite_wZY, colAddressRead_wZY, writeEn_wZY, clock, reset, randGenOutput[3*RAND_GEN_BITWIDTH+:RAND_GEN_BITWIDTH], sign_wIY);
-	weightRAM  #(HIDDEN_SZ,  INPUT_SZ, 1)  PRAM_F_X (colAddressWrite_wZX, colAddressRead_wZX, writeEn_wZX, clock, reset, randGenOutput[4*RAND_GEN_BITWIDTH+:RAND_GEN_BITWIDTH], sign_wFX);
-    weightRAM  #(HIDDEN_SZ, HIDDEN_SZ, 1)  PRAM_F_Y (colAddressWrite_wZY, colAddressRead_wZY, writeEn_wZY, clock, reset, randGenOutput[5*RAND_GEN_BITWIDTH+:RAND_GEN_BITWIDTH], sign_wFY);
-	weightRAM  #(HIDDEN_SZ,  INPUT_SZ, 1)  PRAM_O_X (colAddressWrite_wZX, colAddressRead_wZX, writeEn_wZX, clock, reset, randGenOutput[6*RAND_GEN_BITWIDTH+:RAND_GEN_BITWIDTH], sign_wOX);
-    weightRAM  #(HIDDEN_SZ, HIDDEN_SZ, 1)  PRAM_O_Y (colAddressWrite_wZY, colAddressRead_wZY, writeEn_wZY, clock, reset, randGenOutput[7*RAND_GEN_BITWIDTH+:RAND_GEN_BITWIDTH], sign_wOY);
-
+	weightRAM  #(HIDDEN_SZ,  INPUT_SZ, 1)  PRAM_Z_X (colAddressRead_wZX, colAddressTRAIN_X, genRandNum_X, clock, reset, randGenOutput[0 +: RAND_GEN_BITWIDTH]                , sign_wZX);
+    weightRAM  #(HIDDEN_SZ, HIDDEN_SZ, 1)  PRAM_Z_Y (colAddressRead_wZY, colAddressTRAIN_Y, genRandNum_Y, clock, reset, randGenOutput[RAND_GEN_BITWIDTH +:RAND_GEN_BITWIDTH] , sign_wZY);
+	weightRAM  #(HIDDEN_SZ,  INPUT_SZ, 1)  PRAM_I_X (colAddressRead_wIX, colAddressTRAIN_X, genRandNum_X, clock, reset, randGenOutput[2*RAND_GEN_BITWIDTH+:RAND_GEN_BITWIDTH], sign_wIX);
+    weightRAM  #(HIDDEN_SZ, HIDDEN_SZ, 1)  PRAM_I_Y (colAddressRead_wIY, colAddressTRAIN_Y, genRandNum_Y, clock, reset, randGenOutput[3*RAND_GEN_BITWIDTH+:RAND_GEN_BITWIDTH], sign_wIY);
+	weightRAM  #(HIDDEN_SZ,  INPUT_SZ, 1)  PRAM_F_X (colAddressRead_wFX, colAddressTRAIN_X, genRandNum_X, clock, reset, randGenOutput[4*RAND_GEN_BITWIDTH+:RAND_GEN_BITWIDTH], sign_wFX);
+    weightRAM  #(HIDDEN_SZ, HIDDEN_SZ, 1)  PRAM_F_Y (colAddressRead_wFY, colAddressTRAIN_Y, genRandNum_Y, clock, reset, randGenOutput[5*RAND_GEN_BITWIDTH+:RAND_GEN_BITWIDTH], sign_wFY);
+	weightRAM  #(HIDDEN_SZ,  INPUT_SZ, 1)  PRAM_O_X (colAddressRead_wOX, colAddressTRAIN_X, genRandNum_X, clock, reset, randGenOutput[6*RAND_GEN_BITWIDTH+:RAND_GEN_BITWIDTH], sign_wOX);
+    weightRAM  #(HIDDEN_SZ, HIDDEN_SZ, 1)  PRAM_O_Y (colAddressRead_wOY, colAddressTRAIN_Y, genRandNum_Y, clock, reset, randGenOutput[7*RAND_GEN_BITWIDTH+:RAND_GEN_BITWIDTH], sign_wOY);
+	
 	// The Pseudo-random Number Generators
 	genvar i;
 	generate
@@ -210,15 +237,138 @@ module network  #(parameter INPUT_SZ   =  2,
 			for (i = 0; i < N_PRNG; i = i + 1) begin
 				prng PRNG_i (initSeed, clock, reset, genRandNum, genRandNum, randGenOutput[i*RAND_GEN_BITWIDTH+:RAND_GEN_BITWIDTH]);
 			end 
+		end
     endgenerate 
 
-
+	// Evaluating the positive and negative versions of the perturbation constant
+	always @(*) begin
+		posBeta   = (1 >> pertRate);
+		minusBeta = (~(1 >> pertRate)) + 1;
+	end
+	
 	// The perturbation sign multiplexer
 	always @(*) begin
-		beta = pertRate
+		for(i = 0; i < HIDDEN_SZ; i = i + 1) begin
+			if(sign_wZX[i] == 1)
+				delta_wZX[i*BITWIDTH +: BITWIDTH] = posBeta;
+			else
+				delta_wZX[i*BITWIDTH +: BITWIDTH] = minusBeta;
+			
+			if(sign_wZY[i] == 1)
+				delta_wZY[i*BITWIDTH +: BITWIDTH] = posBeta;
+			else
+				delta_wZY[i*BITWIDTH +: BITWIDTH] = minusBeta;
+				
+			if(sign_wIX[i] == 1)
+				delta_wIX[i*BITWIDTH +: BITWIDTH] = posBeta;
+			else
+				delta_wIX[i*BITWIDTH +: BITWIDTH] = minusBeta;
+			
+			if(sign_wIY[i] == 1)
+				delta_wIY[i*BITWIDTH +: BITWIDTH] = posBeta;
+			else
+				delta_wIY[i*BITWIDTH +: BITWIDTH] = minusBeta;
+			
+			if(sign_wFX[i] == 1)
+				delta_wFX[i*BITWIDTH +: BITWIDTH] = posBeta;
+			else
+				delta_wFX[i*BITWIDTH +: BITWIDTH] = minusBeta;
+			
+			if(sign_wOX[i] == 1)
+				delta_wOX[i*BITWIDTH +: BITWIDTH] = posBeta;
+			else
+				delta_wOX[i*BITWIDTH +: BITWIDTH] = minusBeta;	
+			
+			if(sign_wOY[i] == 1)
+				delta_wOY[i*BITWIDTH +: BITWIDTH] = posBeta;
+			else
+				delta_wOY[i*BITWIDTH +: BITWIDTH] = minusBeta;	
+		end
+	end
 	
 	always @(*) begin
-
+		if(pertWeights) begin
+			wZX_out_gate = wZX_out + delta_wZX;
+			wZX_out_gate = wZY_out + delta_wZY; 
+			wZX_out_gate = wIX_out + delta_wIX;
+			wZX_out_gate = wIY_out + delta_wIY;
+			wZX_out_gate = wFX_out + delta_wFX;
+			wZX_out_gate = wFY_out + delta_wFY;
+			wZX_out_gate = wOX_out + delta_wOX;
+			wZX_out_gate = wOY_out + delta_wOY;
+		end
+		else begin
+			wZX_out_gate = wZX_out;
+			wZX_out_gate = wZY_out;
+			wZX_out_gate = wIX_out;
+			wZX_out_gate = wIY_out;
+			wZX_out_gate = wFX_out;
+			wZX_out_gate = wFY_out;
+			wZX_out_gate = wOX_out;
+			wZX_out_gate = wOY_out;
+		end
+	end
+	
+	always @(*) begin
+		for(i = 0; i < HIDDEN_SZ; i = i + 1) begin
+			if(sign_wZX[i] == 1)
+				update_wZX[i*BITWIDTH +: BITWIDTH] = wZX_out[i*BITWIDTH +: BITWIDTH];
+			else
+				update_wZX[i*BITWIDTH +: BITWIDTH] = (~(wZX_out[i*BITWIDTH +: BITWIDTH])) + 1;
+			
+			if(sign_wZY[i] == 1)
+				update_wZY[i*BITWIDTH +: BITWIDTH] = wZY_out[i*BITWIDTH +: BITWIDTH];
+			else
+				update_wZY[i*BITWIDTH +: BITWIDTH] = (~(wZY_out[i*BITWIDTH +: BITWIDTH])) + 1;
+				
+			if(sign_wIX[i] == 1)
+				update_wIX[i*BITWIDTH +: BITWIDTH] = wIX_out[i*BITWIDTH +: BITWIDTH];
+			else
+				update_wIX[i*BITWIDTH +: BITWIDTH] = (~(wIX_out[i*BITWIDTH +: BITWIDTH])) + 1;;
+			
+			if(sign_wIY[i] == 1)
+				update_wIY[i*BITWIDTH +: BITWIDTH] = wIY_out[i*BITWIDTH +: BITWIDTH];
+			else
+				update_wIY[i*BITWIDTH +: BITWIDTH] = (~(wIY_out[i*BITWIDTH +: BITWIDTH])) + 1;;
+			
+			if(sign_wFX[i] == 1)
+				update_wFX[i*BITWIDTH +: BITWIDTH] = wFX_out[i*BITWIDTH +: BITWIDTH];
+			else
+				update_wFX[i*BITWIDTH +: BITWIDTH] = (~(wFX_out[i*BITWIDTH +: BITWIDTH])) + 1;;
+			
+			if(sign_wFY[i] == 1)
+				update_wFY[i*BITWIDTH +: BITWIDTH] = wFY_out[i*BITWIDTH +: BITWIDTH];
+			else
+				update_wFY[i*BITWIDTH +: BITWIDTH] = (~(wFY_out[i*BITWIDTH +: BITWIDTH])) + 1;;
+			
+			if(sign_wOX[i] == 1)
+				update_wOX[i*BITWIDTH +: BITWIDTH] = wOX_out[i*BITWIDTH +: BITWIDTH];
+			else
+				update_wOX[i*BITWIDTH +: BITWIDTH] = (~(wOX_out[i*BITWIDTH +: BITWIDTH])) + 1;	
+			
+			if(sign_wOY[i] == 1)
+				update_wOY[i*BITWIDTH +: BITWIDTH] = wOY_out[i*BITWIDTH +: BITWIDTH];
+			else
+				update_wOY[i*BITWIDTH +: BITWIDTH] = (~(wOY_out[i*BITWIDTH +: BITWIDTH])) + 1;	
+		end
+	end
+	
+	always @(*) begin
+		if(weightUpdate) begin
+			colAddressRead_X = colAddressTRAIN_X;
+			colAddressRead_Y = colAddressTRAIN_Y;
+		end
+		else begin
+			colAddressRead_X = colAddressRead_wZX;
+			colAddressRead_Y = colAddressRead_wZY;
+		end
+	end
+	
+	always @(posedge clock) begin
+		PREVcolAddressTRAIN_X <= colAddressRead_X;
+		PREVcolAddressTRAIN_Y <= colAddressRead_Y;
+	end
+	
 	// Slicing the input and previous output vectors
 	always @(negedge clock) begin
         if( reset == 1'b1) begin

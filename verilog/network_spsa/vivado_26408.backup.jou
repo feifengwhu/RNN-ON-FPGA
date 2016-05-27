@@ -1,0 +1,33 @@
+#-----------------------------------------------------------
+# Vivado v2015.4 (64-bit)
+# SW Build 1412921 on Wed Nov 18 09:44:32 MST 2015
+# IP Build 1412160 on Tue Nov 17 13:47:24 MST 2015
+# Start of session at: Sun May  8 23:17:07 2016
+# Process ID: 26408
+# Current directory: /home/josefonseca/Documents/thesis/verilog/network
+# Command line: vivado
+# Log file: /home/josefonseca/Documents/thesis/verilog/network/vivado.log
+# Journal file: /home/josefonseca/Documents/thesis/verilog/network/vivado.jou
+#-----------------------------------------------------------
+start_gui
+create_project project_1 /home/josefonseca/Documents/thesis/verilog/network/project_1 -part xc7z020clg484-1
+set_property board_part xilinx.com:zc702:part0:1.2 [current_project]
+set_property simulator_language Verilog [current_project]
+add_files -norecurse {/home/josefonseca/Documents/thesis/verilog/network/network.v /home/josefonseca/Documents/thesis/verilog/network/weightRAM.v /home/josefonseca/Documents/thesis/verilog/network/sigmoid.v /home/josefonseca/Documents/thesis/verilog/network/gate.v /home/josefonseca/Documents/thesis/verilog/network/tanh.v /home/josefonseca/Documents/thesis/verilog/network/dot_prod.v}
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+launch_runs synth_1
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1
+wait_on_run synth_1
+synth_design -rtl -name rtl_1
+set_property -name {STEPS.SYNTH_DESIGN.ARGS.MORE OPTIONS} -value {-mode out_of_context} -objects [get_runs synth_1]
+reset_run synth_1
+launch_runs synth_1
+wait_on_run synth_1
+close_design
+open_run synth_1 -name synth_1
+close_design
+synth_design -rtl -name rtl_1

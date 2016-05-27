@@ -16,8 +16,8 @@ def Qnm_to_real(real, n, m):
 INPUT_SZ  = 2
 HIDDEN_SZ = 8
 OUPUT_SZ  = 1
-QN = 5
-QM = 12
+QN = 6
+QM = 11
 
 
 with open('objs.pickle', 'rb') as f:

@@ -1,0 +1,37 @@
+# vsim -c -do "run -all" tb_network 
+# Start time: 14:44:37 on May 20,2016
+# ** Note: (vsim-8009) Loading existing optimized design _opt7
+# //  Questa Sim-64
+# //  Version 10.4c_5 linux_x86_64 Nov 14 2015
+# //
+# //  Copyright 1991-2015 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //  THIS DOCUMENT CONTAINS TRADE SECRETS AND COMMERCIAL OR FINANCIAL
+# //  INFORMATION THAT ARE PRIVILEGED, CONFIDENTIAL, AND EXEMPT FROM
+# //  DISCLOSURE UNDER THE FREEDOM OF INFORMATION ACT, 5 U.S.C. SECTION 552.
+# //  FURTHERMORE, THIS INFORMATION IS PROHIBITED FROM DISCLOSURE UNDER
+# //  THE TRADE SECRETS ACT, 18 U.S.C. SECTION 1905.
+# //
+# Loading work.tb_network(fast)
+# run -all
+# Simulation started at 0.000000
+# Input Sample           0
+# Input Sample         100
+# Input Sample         200
+# Input Sample         300
+# Input Sample         400
+# Input Sample         500
+# Input Sample         600
+# Input Sample         700
+# Input Sample         800
+# Input Sample         900
+# ** Note: $stop    : tb_network.v(191)
+#    Time: 516005 ns  Iteration: 0  Instance: /tb_network
+# Break at tb_network.v line 191
+# Stopped at tb_network.v line 191
+# End time: 14:44:41 on May 20,2016, Elapsed time: 0:00:04
+# Errors: 0, Warnings: 0

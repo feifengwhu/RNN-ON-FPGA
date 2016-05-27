@@ -1,0 +1,100 @@
+/*
+
+Vivado v2015.4 (64-bit)
+SW Build 1412921 on Wed Nov 18 09:44:32 MST 2015
+Process ID: 4860
+
+Current time: 	5/8/16 11:53:17 PM WEST
+Time zone: 	Western European Time (Europe/Lisbon)
+
+OS: NAME="Ubuntu"
+Version: 3.16.0-70-generic
+Architecture: amd64
+Available processors (cores): 8
+
+DISPLAY: :0.0
+Screen size: 3200x1080
+Screen resolution (DPI): 95
+Available screens: 2
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	1.8.0_45 64-bit
+Java home: 	/opt/Xilinx/Vivado/2015.4/tps/lnx64/jre
+
+User name: 	josefonseca
+User home directory: /home/josefonseca
+User working directory: /home/josefonseca/Documents/thesis/verilog/network
+User country: 	US
+User language: 	en
+User locale: 	en_US
+
+Vivado preferences path: /home/josefonseca/.Xilinx/Vivado/2015.4/vivado.ini
+Vivado layouts directory: /home/josefonseca/.Xilinx/Vivado/2015.4/layouts
+
+GUI allocated memory:	192 MB
+GUI max memory:		3,052 MB
+Engine allocated memory: 4,847 MB
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// [GUI Memory]: 24 MB (+22749kb) [00:00:05]
+// [Engine Memory]: 4,845 MB (+4928731kb) [00:00:05]
+// HMemoryUtils.trashcanNow. Engine heap size: 4,852 MB. GUI used memory: 20 MB. Current time: 5/8/16 11:53:19 PM WEST
+// [GUI Memory]: 40 MB (+15889kb) [00:00:15]
+selectList(PAResourceEtoH.GettingStartedView_RECENT_PROJECTS, "/home/josefonseca/Documents/thesis/verilog/network/project_1/project_1.xpr", 1); // q:v (JViewport:JComponent, cq:JFrame)
+// bF:g (cq:JFrame):  Open Project : addNotify
+// Opening Vivado Project: /home/josefonseca/Documents/thesis/verilog/network/project_1/project_1.xpr. Version: Vivado v2015.4 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_NEW
+// Tcl Message: open_project /home/josefonseca/Documents/thesis/verilog/network/project_1/project_1.xpr 
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 61 MB (+19312kb) [00:00:17]
+// [GUI Memory]: 67 MB (+2685kb) [00:00:17]
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: open_project /home/josefonseca/Documents/thesis/verilog/network/project_1/project_1.xpr 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2015.4/data/ip'. 
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Project name: project_1; location: /home/josefonseca/Documents/thesis/verilog/network/project_1; part: xc7z020clg484-1
+dismissDialog("Open Project"); // bF:g (cq:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectTab((HResource) null, (HResource) null, "Reports", 3); // FrameContainer:JideTabbedPane (ContainerContainer:JideSplitPane, cq:JFrame)
+// [GUI Memory]: 72 MB (+2192kb) [00:00:26]
+selectTreeTable(PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE, "Utilization Report ; Sun May 08 23:46:49 WEST 2016 ; 6761 ; ", 2, "Utilization Report", 0, false); // z:aw (JViewport:JComponent, cq:JFrame)
+expandTreeTable(PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE, "Utilization Report ; Sun May 08 23:46:49 WEST 2016 ; 6761 ; ", 2); // z:aw (JViewport:JComponent, cq:JFrame)
+selectTreeTable(PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE, "Utilization Report ; Sun May 08 23:46:49 WEST 2016 ; 6761 ; ", 2, "Utilization Report", 0, false, false, false, false, false, true); // z:aw (JViewport:JComponent, cq:JFrame) - Double Click
+// Elapsed time: 11 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Project Summary", 0); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cq:JFrame)
+// [GUI Memory]: 77 MB (+1386kb) [00:00:41]
+// Elapsed time: 58 seconds
+selectMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // U:JideMenu (CommandMenuBar:CommandBar, cq:JFrame)
+selectMenu(PAResourceItoN.MainMenuMgr_REPORT, "Report"); // aa:JMenu (JPopupMenu:JComponent, Popup:JWindow)
+selectMenu(RDIResourceCommand.RDICommands_CUSTOM_COMMANDS, "Customize Commands"); // aa:JMenu (JPopupMenu:JComponent, Popup:JWindow)
+selectMenu(RDIResourceCommand.RDICommands_CUSTOM_COMMANDS, "Customize Commands"); // aa:JMenu (JPopupMenu:JComponent, Popup:JWindow)
+dismissMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // U:JideMenu (CommandMenuBar:CommandBar, cq:JFrame)
+selectTab((HResource) null, (HResource) null, "Tcl Console", 0); // FrameContainer:JideTabbedPane (ContainerContainer:JideSplitPane, cq:JFrame)
+// Elapsed time: 20 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "report_utilization -hierarchical -cells dot_prof", true); // ap:ao (R:ak, cq:JFrame)
+// Tcl Command: 'report_utilization -hierarchical -cells dot_prof'
+// Tcl Message: report_utilization -hierarchical -cells dot_prof 
+// Tcl Message: ERROR: [Common 17-53] User Exception: No open design. Please open an elaborated, synthesized or implemented design before executing this command. 
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "report_utilization -hierarchical -cells dot_prod", true); // ap:ao (R:ak, cq:JFrame)
+// Tcl Command: 'report_utilization -hierarchical -cells dot_prod'
+// Tcl Message: report_utilization -hierarchical -cells dot_prod 
+// Tcl Message: ERROR: [Common 17-53] User Exception: No open design. Please open an elaborated, synthesized or implemented design before executing this command. 
+selectTab(PAResourceOtoP.ProjectSummaryUtilizationPanel_PROJECT_SUMMARY_UTILIZATION_PANEL_TABBED, PAResourceOtoP.ProjectSummaryUtilizationPanel_TABLE, "Table", 1); // g:g (f:JPanel, cq:JFrame)
+// [GUI Memory]: 83 MB (+1809kb) [00:02:44]
+// Elapsed time: 17 seconds
+selectTab((HResource) null, (HResource) null, "Messages", 1); // FrameContainer:JideTabbedPane (ContainerContainer:JideSplitPane, cq:JFrame)
+selectTab((HResource) null, (HResource) null, "Reports", 3); // FrameContainer:JideTabbedPane (ContainerContainer:JideSplitPane, cq:JFrame)
+// [GUI Memory]: 87 MB (+406kb) [00:03:41]
