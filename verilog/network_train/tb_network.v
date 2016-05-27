@@ -20,7 +20,7 @@ module tb_network();
     parameter HALF_CLOCK       = 1;
     parameter FULL_CLOCK       = 2*HALF_CLOCK;
     parameter MAX_SAMPLES      = 8;
-    parameter TRAIN_SAMPLES    = 100000;
+	parameter TRAIN_SAMPLES    = 1000;
 
 	reg clock;
 	reg reset;
