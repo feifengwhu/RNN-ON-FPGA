@@ -22,7 +22,10 @@ QM = 11
 
 with open('objs.pickle', 'rb') as f:
     Wz, Wi, Wf, Wo, Rz, Ri, Rf, Ro, bz, bi, bf, bo = pickle.load(f)
-    
+
+with open('layer.pickle', 'rb') as f:
+	layer = pickle.load(f)
+
 fin_Wz  = open('goldenIn_Wz.bin', 'w')
 for j in range(INPUT_SZ) :
 	for i in range(HIDDEN_SZ) :
@@ -91,3 +94,7 @@ for i in range(HIDDEN_SZ) :
 	fin_bo.write("{0:018b}\n".format(int(real_to_Qnm(bo[i,0],QN,QM))))
 fin_bo.close()
 
+fin_outW = open('goldenIn_outW.bin', "w")
+for i in range(HIDDEN_SZ) :
+	fin_outW.write("{0:018b}\n".format(int(real_to_Qnm(layer.outW[0,i],QN,QM))))
+fin_outW.close()

@@ -44,7 +44,7 @@ module tb_network();
     
     // DUT Instantiation
     network              #(INPUT_SZ, HIDDEN_SZ, OUTPUT_SZ, QN, QM, DSP48_PER_ROW_G, DSP48_PER_ROW_M) 
-			LSTM_LAYER    (inputVec, 1'b0, clock, reset, newSample, dataReady, outputVec);
+			LSTM_LAYER    (inputVec, 1'b1, 43'b0, 11'd3, 11'd3, clock, reset, 1'b0, 18'd0, newSample, dataReady, outputVec);
     
     // Keeping track of the simulation time
     real time_start, time_end;
@@ -176,6 +176,7 @@ module tb_network();
 				
 				// Waiting for the result
 				@(posedge dataReady);
+				//@(posedge dataReady);
 				
 				#(2*FULL_CLOCK);
 				

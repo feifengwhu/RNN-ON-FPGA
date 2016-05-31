@@ -7,11 +7,13 @@ module network  #(parameter INPUT_SZ   =  2,
                   parameter DSP48_PER_ROW_M = 2)
                  (inputVec,
                   trainingFlag,
-                  seedPRNG,
+                  initSeed,
                   pertRate,
 				  learnRate,
                   clock,
                   reset,
+				  newCostFunc,
+                  costFunc,
                   newSample,
                   dataoutReady,
                   outputVec);
@@ -33,10 +35,13 @@ module network  #(parameter INPUT_SZ   =  2,
     // Input/Output definitions
     input [INPUT_BITWIDTH-1:0]       inputVec;
     input                            trainingFlag;
+    input [42:0]					  initSeed;
     input [QM-1:0]					  pertRate;  // The absolute value of the exponent. Only supports (negative) powers of two
     input [QM-1:0]					  learnRate; // The absolute value of the exponent. Only supports (negative) powers of two
     input                            clock;
     input                            reset;
+    input 							  newCostFunc;
+    input [OUTPUT_BITWIDTH-1:0]      costFunc;
     input                            newSample;
     output reg                      dataoutReady;
     output reg [LAYER_BITWIDTH-1:0] outputVec;
@@ -61,6 +66,8 @@ module network  #(parameter INPUT_SZ   =  2,
     wire   [ADDR_BITWIDTH-1:0]   colAddressRead_wOY;
     reg    [ADDR_BITWIDTH_X-1:0] colAddressTRAIN_X;
     reg    [ADDR_BITWIDTH-1:0]   colAddressTRAIN_Y;
+    reg    [ADDR_BITWIDTH_X-1:0] colAddressRead_X;
+    reg    [ADDR_BITWIDTH-1:0]   colAddressRead_Y;
     reg    [ADDR_BITWIDTH_X-1:0] PREVcolAddressTRAIN_X;
     reg    [ADDR_BITWIDTH-1:0]   PREVcolAddressTRAIN_Y;
     reg    [ADDR_BITWIDTH_X-1:0] NEXTcolAddressTRAIN_X;
@@ -89,6 +96,14 @@ module network  #(parameter INPUT_SZ   =  2,
     reg    [LAYER_BITWIDTH-1:0]  wFY_out_gate;
     reg    [LAYER_BITWIDTH-1:0]  wOX_out_gate;
     reg    [LAYER_BITWIDTH-1:0]  wOY_out_gate;
+    reg    [LAYER_BITWIDTH-1:0]  PREVwZX_out;
+    reg    [LAYER_BITWIDTH-1:0]  PREVwZY_out;
+    reg    [LAYER_BITWIDTH-1:0]  PREVwIX_out;
+    reg    [LAYER_BITWIDTH-1:0]  PREVwIY_out;
+    reg    [LAYER_BITWIDTH-1:0]  PREVwFX_out;
+    reg    [LAYER_BITWIDTH-1:0]  PREVwFY_out;
+    reg    [LAYER_BITWIDTH-1:0]  PREVwOX_out;
+    reg    [LAYER_BITWIDTH-1:0]  PREVwOY_out;
     wire   [HIDDEN_SZ-1:0]  sign_wZX;
     wire   [HIDDEN_SZ-1:0]  sign_wZY;
     wire   [HIDDEN_SZ-1:0]  sign_wIX;
@@ -137,22 +152,7 @@ module network  #(parameter INPUT_SZ   =  2,
     reg signed  [LAYER_BITWIDTH-1:0] layer_C;
     reg signed  [LAYER_BITWIDTH-1:0] prev_C;
     reg signed  [LAYER_BITWIDTH-1:0] SS_layer_C;
-    reg signed  [LAYER_BITWIDTH-1:0] delta_wZX;
-    reg signed  [LAYER_BITWIDTH-1:0] delta_wZY;
-    reg signed  [LAYER_BITWIDTH-1:0] delta_wIX;
-    reg signed  [LAYER_BITWIDTH-1:0] delta_wIY;
-    reg signed  [LAYER_BITWIDTH-1:0] delta_wFX;
-    reg signed  [LAYER_BITWIDTH-1:0] delta_wFY;
-    reg signed  [LAYER_BITWIDTH-1:0] delta_wOX;
-    reg signed  [LAYER_BITWIDTH-1:0] delta_wOY;
-    reg signed  [LAYER_BITWIDTH-1:0] update_wZX;
-    reg signed  [LAYER_BITWIDTH-1:0] update_wZY;
-    reg signed  [LAYER_BITWIDTH-1:0] update_wIX;
-    reg signed  [LAYER_BITWIDTH-1:0] update_wIY;
-    reg signed  [LAYER_BITWIDTH-1:0] update_wFX;
-    reg signed  [LAYER_BITWIDTH-1:0] update_wFY;
-    reg signed  [LAYER_BITWIDTH-1:0] update_wOX;
-    reg signed  [LAYER_BITWIDTH-1:0] update_wOY;
+
     reg signed  [MUX_BITWIDTH-1:0] rowMux;
     reg signed  [MUX_BITWIDTH-1:0] NEXTrowMux;
     reg signed  [LAYER_BITWIDTH-1:0] elemWise_op1;
@@ -160,6 +160,10 @@ module network  #(parameter INPUT_SZ   =  2,
     reg signed  [LAYER_BITWIDTH-1:0] elemWise_mult1;
     wire signed [LAYER_BITWIDTH-1:0] elemWise_mult2;
     wire signed [LAYER_BITWIDTH-1:0] tanh_result;
+    reg signed [BITWIDTH-1:0] posBeta;
+    reg signed [BITWIDTH-1:0] minusBeta;
+    reg signed [BITWIDTH-1:0] deltaCost;
+    wire [RAND_GEN_BITWIDTH*N_PRNG-1 : 0] randGenOutput;
     wire reset_sigm;
     wire reset_tanh;
     reg  sigmoidEnable;
@@ -215,142 +219,134 @@ module network  #(parameter INPUT_SZ   =  2,
         end 
     endgenerate 
 
-	// The sign matrix for the perturbations
-	weightRAM  #(HIDDEN_SZ,  INPUT_SZ, 1)  PRAM_Z_X (colAddressRead_wZX, colAddressTRAIN_X, genRandNum_X, clock, reset, randGenOutput[0 +: RAND_GEN_BITWIDTH]                , sign_wZX);
-    weightRAM  #(HIDDEN_SZ, HIDDEN_SZ, 1)  PRAM_Z_Y (colAddressRead_wZY, colAddressTRAIN_Y, genRandNum_Y, clock, reset, randGenOutput[RAND_GEN_BITWIDTH +:RAND_GEN_BITWIDTH] , sign_wZY);
-	weightRAM  #(HIDDEN_SZ,  INPUT_SZ, 1)  PRAM_I_X (colAddressRead_wIX, colAddressTRAIN_X, genRandNum_X, clock, reset, randGenOutput[2*RAND_GEN_BITWIDTH+:RAND_GEN_BITWIDTH], sign_wIX);
-    weightRAM  #(HIDDEN_SZ, HIDDEN_SZ, 1)  PRAM_I_Y (colAddressRead_wIY, colAddressTRAIN_Y, genRandNum_Y, clock, reset, randGenOutput[3*RAND_GEN_BITWIDTH+:RAND_GEN_BITWIDTH], sign_wIY);
-	weightRAM  #(HIDDEN_SZ,  INPUT_SZ, 1)  PRAM_F_X (colAddressRead_wFX, colAddressTRAIN_X, genRandNum_X, clock, reset, randGenOutput[4*RAND_GEN_BITWIDTH+:RAND_GEN_BITWIDTH], sign_wFX);
-    weightRAM  #(HIDDEN_SZ, HIDDEN_SZ, 1)  PRAM_F_Y (colAddressRead_wFY, colAddressTRAIN_Y, genRandNum_Y, clock, reset, randGenOutput[5*RAND_GEN_BITWIDTH+:RAND_GEN_BITWIDTH], sign_wFY);
-	weightRAM  #(HIDDEN_SZ,  INPUT_SZ, 1)  PRAM_O_X (colAddressRead_wOX, colAddressTRAIN_X, genRandNum_X, clock, reset, randGenOutput[6*RAND_GEN_BITWIDTH+:RAND_GEN_BITWIDTH], sign_wOX);
-    weightRAM  #(HIDDEN_SZ, HIDDEN_SZ, 1)  PRAM_O_Y (colAddressRead_wOY, colAddressTRAIN_Y, genRandNum_Y, clock, reset, randGenOutput[7*RAND_GEN_BITWIDTH+:RAND_GEN_BITWIDTH], sign_wOY);
-	
 	// The Pseudo-random Number Generators
-	genvar i;
+	genvar k;
 	generate
-		if(HIDDEN_SZ == 2 || HIDDEN_SZ == 4) begin
-			reg [RAND_GEN_BITWIDTH-1:0] randGenOutput;
-			prng PRNG (initSeed, clock, reset, genRandNum, genRandNum, randGenOutput);
-		end
-		else begin
-			reg [RAND_GEN_BITWIDTH*N_PRNG-1 : 0] randGenOutput;
-			for (i = 0; i < N_PRNG; i = i + 1) begin
-				prng PRNG_i (initSeed, clock, reset, genRandNum, genRandNum, randGenOutput[i*RAND_GEN_BITWIDTH+:RAND_GEN_BITWIDTH]);
-			end 
-		end
-    endgenerate 
+		for (k = 0; k < N_PRNG; k = k + 1) begin
+			prng PRNG_k (initSeed, clock, reset, genRandNum, genRandNum, randGenOutput[k*RAND_GEN_BITWIDTH+:RAND_GEN_BITWIDTH]);
+		end 
+    endgenerate
+
+	// The sign matrix for the perturbations
+	weightRAM  #(HIDDEN_SZ,  INPUT_SZ, 1)  PRAM_Z_X (colAddressRead_wZX, colAddressTRAIN_X, genRandNum_X, clock, reset, randGenOutput[0 +: HIDDEN_SZ]        , sign_wZX);
+    weightRAM  #(HIDDEN_SZ, HIDDEN_SZ, 1)  PRAM_Z_Y (colAddressRead_wZY, colAddressTRAIN_Y, genRandNum_Y, clock, reset, randGenOutput[HIDDEN_SZ +:HIDDEN_SZ] , sign_wZY);
+	weightRAM  #(HIDDEN_SZ,  INPUT_SZ, 1)  PRAM_I_X (colAddressRead_wIX, colAddressTRAIN_X, genRandNum_X, clock, reset, randGenOutput[2*HIDDEN_SZ+:HIDDEN_SZ], sign_wIX);
+    weightRAM  #(HIDDEN_SZ, HIDDEN_SZ, 1)  PRAM_I_Y (colAddressRead_wIY, colAddressTRAIN_Y, genRandNum_Y, clock, reset, randGenOutput[3*HIDDEN_SZ+:HIDDEN_SZ], sign_wIY);
+	weightRAM  #(HIDDEN_SZ,  INPUT_SZ, 1)  PRAM_F_X (colAddressRead_wFX, colAddressTRAIN_X, genRandNum_X, clock, reset, randGenOutput[4*HIDDEN_SZ+:HIDDEN_SZ], sign_wFX);
+    weightRAM  #(HIDDEN_SZ, HIDDEN_SZ, 1)  PRAM_F_Y (colAddressRead_wFY, colAddressTRAIN_Y, genRandNum_Y, clock, reset, randGenOutput[5*HIDDEN_SZ+:HIDDEN_SZ], sign_wFY);
+	weightRAM  #(HIDDEN_SZ,  INPUT_SZ, 1)  PRAM_O_X (colAddressRead_wOX, colAddressTRAIN_X, genRandNum_X, clock, reset, randGenOutput[6*HIDDEN_SZ+:HIDDEN_SZ], sign_wOX);
+    weightRAM  #(HIDDEN_SZ, HIDDEN_SZ, 1)  PRAM_O_Y (colAddressRead_wOY, colAddressTRAIN_Y, genRandNum_Y, clock, reset, randGenOutput[7*HIDDEN_SZ+:HIDDEN_SZ], sign_wOY); 
 
 	// Evaluating the positive and negative versions of the perturbation constant
 	always @(*) begin
-		posBeta   = (1 >> pertRate);
-		minusBeta = (~(1 >> pertRate)) + 1;
+		posBeta   = (1 << pertRate);
+		minusBeta = (~(1 << pertRate)) + 1;
 	end
 	
-	// The perturbation sign multiplexer
-	always @(*) begin
-		for(i = 0; i < HIDDEN_SZ; i = i + 1) begin
-			if(sign_wZX[i] == 1)
-				delta_wZX[i*BITWIDTH +: BITWIDTH] = posBeta;
-			else
-				delta_wZX[i*BITWIDTH +: BITWIDTH] = minusBeta;
-			
-			if(sign_wZY[i] == 1)
-				delta_wZY[i*BITWIDTH +: BITWIDTH] = posBeta;
-			else
-				delta_wZY[i*BITWIDTH +: BITWIDTH] = minusBeta;
-				
-			if(sign_wIX[i] == 1)
-				delta_wIX[i*BITWIDTH +: BITWIDTH] = posBeta;
-			else
-				delta_wIX[i*BITWIDTH +: BITWIDTH] = minusBeta;
-			
-			if(sign_wIY[i] == 1)
-				delta_wIY[i*BITWIDTH +: BITWIDTH] = posBeta;
-			else
-				delta_wIY[i*BITWIDTH +: BITWIDTH] = minusBeta;
-			
-			if(sign_wFX[i] == 1)
-				delta_wFX[i*BITWIDTH +: BITWIDTH] = posBeta;
-			else
-				delta_wFX[i*BITWIDTH +: BITWIDTH] = minusBeta;
-			
-			if(sign_wOX[i] == 1)
-				delta_wOX[i*BITWIDTH +: BITWIDTH] = posBeta;
-			else
-				delta_wOX[i*BITWIDTH +: BITWIDTH] = minusBeta;	
-			
-			if(sign_wOY[i] == 1)
-				delta_wOY[i*BITWIDTH +: BITWIDTH] = posBeta;
-			else
-				delta_wOY[i*BITWIDTH +: BITWIDTH] = minusBeta;	
-		end
-	end
-	
+	// Chooses to perturbate the weights going to the Gate, or not.
 	always @(*) begin
 		if(pertWeights) begin
-			wZX_out_gate = wZX_out + delta_wZX;
-			wZX_out_gate = wZY_out + delta_wZY; 
-			wZX_out_gate = wIX_out + delta_wIX;
-			wZX_out_gate = wIY_out + delta_wIY;
-			wZX_out_gate = wFX_out + delta_wFX;
-			wZX_out_gate = wFY_out + delta_wFY;
-			wZX_out_gate = wOX_out + delta_wOX;
-			wZX_out_gate = wOY_out + delta_wOY;
+			for(j = 0; j < HIDDEN_SZ; j = j + 1) begin
+				if(sign_wZX[j] == 1)
+					wZX_out_gate[j*BITWIDTH +: BITWIDTH] = wZX_out[j*BITWIDTH +: BITWIDTH] + posBeta;
+				else
+					wZX_out_gate[j*BITWIDTH +: BITWIDTH] = wZX_out[j*BITWIDTH +: BITWIDTH] + minusBeta;
+				if(sign_wZY[j] == 1)
+					wZY_out_gate[j*BITWIDTH +: BITWIDTH] = wZY_out[j*BITWIDTH +: BITWIDTH] + posBeta;
+				else
+					wZY_out_gate[j*BITWIDTH +: BITWIDTH] = wZY_out[j*BITWIDTH +: BITWIDTH] + minusBeta;
+					
+				if(sign_wIX[j] == 1)
+					wIX_out_gate[j*BITWIDTH +: BITWIDTH] = wIX_out[j*BITWIDTH +: BITWIDTH] + posBeta;
+				else
+					wIX_out_gate[j*BITWIDTH +: BITWIDTH] = wIX_out[j*BITWIDTH +: BITWIDTH] + minusBeta;
+				if(sign_wIY[j] == 1)
+					wIY_out_gate[j*BITWIDTH +: BITWIDTH] = wIY_out[j*BITWIDTH +: BITWIDTH] + posBeta;
+				else
+					wIY_out_gate[j*BITWIDTH +: BITWIDTH] = wIY_out[j*BITWIDTH +: BITWIDTH] + minusBeta;
+				
+				if(sign_wFX[j] == 1)
+					wFX_out_gate[j*BITWIDTH +: BITWIDTH] = wFX_out[j*BITWIDTH +: BITWIDTH] + posBeta;
+				else
+					wFX_out_gate[j*BITWIDTH +: BITWIDTH] = wFX_out[j*BITWIDTH +: BITWIDTH] + minusBeta;
+				if(sign_wFY[j] == 1)
+					wFY_out_gate[j*BITWIDTH +: BITWIDTH] = wFY_out[j*BITWIDTH +: BITWIDTH] + posBeta;
+				else
+					wFY_out_gate[j*BITWIDTH +: BITWIDTH] = wFY_out[j*BITWIDTH +: BITWIDTH] + minusBeta;
+				
+				if(sign_wOX[j] == 1)
+					wOX_out_gate[j*BITWIDTH +: BITWIDTH] = wOX_out[j*BITWIDTH +: BITWIDTH] + posBeta;
+				else
+					wOX_out_gate[j*BITWIDTH +: BITWIDTH] = wOX_out[j*BITWIDTH +: BITWIDTH] + minusBeta;	
+				if(sign_wOY[j] == 1)
+					wOY_out_gate[j*BITWIDTH +: BITWIDTH] = wOY_out[j*BITWIDTH +: BITWIDTH] + posBeta;
+				else
+					wOY_out_gate[j*BITWIDTH +: BITWIDTH] = wOY_out[j*BITWIDTH +: BITWIDTH] + minusBeta;	
+			end
 		end
 		else begin
 			wZX_out_gate = wZX_out;
-			wZX_out_gate = wZY_out;
-			wZX_out_gate = wIX_out;
-			wZX_out_gate = wIY_out;
-			wZX_out_gate = wFX_out;
-			wZX_out_gate = wFY_out;
-			wZX_out_gate = wOX_out;
-			wZX_out_gate = wOY_out;
+			wZY_out_gate = wZY_out;
+			wIX_out_gate = wIX_out;
+			wIY_out_gate = wIY_out;
+			wFX_out_gate = wFX_out;
+			wFY_out_gate = wFY_out;
+			wOX_out_gate = wOX_out;
+			wOY_out_gate = wOY_out;
 		end
 	end
 	
+	// Evaluates the update to be applied for each training cycle
 	always @(*) begin
-		for(i = 0; i < HIDDEN_SZ; i = i + 1) begin
-			if(sign_wZX[i] == 1)
-				update_wZX[i*BITWIDTH +: BITWIDTH] = wZX_out[i*BITWIDTH +: BITWIDTH];
+		for(j = 0; j < HIDDEN_SZ; j = j + 1) begin
+			if(sign_wZX[j] == 1)
+				wZX_in[j*BITWIDTH +: BITWIDTH] = PREVwZX_out[j*BITWIDTH +: BITWIDTH] + (deltaCost >> (learnRate - pertRate));
 			else
-				update_wZX[i*BITWIDTH +: BITWIDTH] = (~(wZX_out[i*BITWIDTH +: BITWIDTH])) + 1;
-			
-			if(sign_wZY[i] == 1)
-				update_wZY[i*BITWIDTH +: BITWIDTH] = wZY_out[i*BITWIDTH +: BITWIDTH];
+				wZX_in[j*BITWIDTH +: BITWIDTH] = PREVwZX_out[j*BITWIDTH +: BITWIDTH] - (deltaCost >> (learnRate - pertRate));
+			if(sign_wZY[j] == 1)
+				wZY_in[j*BITWIDTH +: BITWIDTH] = PREVwZY_out[j*BITWIDTH +: BITWIDTH] + (deltaCost >> (learnRate - pertRate));
 			else
-				update_wZY[i*BITWIDTH +: BITWIDTH] = (~(wZY_out[i*BITWIDTH +: BITWIDTH])) + 1;
+				wZY_in[j*BITWIDTH +: BITWIDTH] = PREVwZY_out[j*BITWIDTH +: BITWIDTH] - (deltaCost >> (learnRate - pertRate));
 				
-			if(sign_wIX[i] == 1)
-				update_wIX[i*BITWIDTH +: BITWIDTH] = wIX_out[i*BITWIDTH +: BITWIDTH];
+			if(sign_wIX[j] == 1)
+				wIX_in[j*BITWIDTH +: BITWIDTH] = PREVwIX_out[j*BITWIDTH +: BITWIDTH] + (deltaCost >> (learnRate - pertRate));
 			else
-				update_wIX[i*BITWIDTH +: BITWIDTH] = (~(wIX_out[i*BITWIDTH +: BITWIDTH])) + 1;;
+				wIX_in[j*BITWIDTH +: BITWIDTH] = PREVwIX_out[j*BITWIDTH +: BITWIDTH] - (deltaCost >> (learnRate - pertRate));
+			if(sign_wIY[j] == 1)
+				wIY_in[j*BITWIDTH +: BITWIDTH] = PREVwIY_out[j*BITWIDTH +: BITWIDTH] + (deltaCost >> (learnRate - pertRate));
+			else
+				wIY_in[j*BITWIDTH +: BITWIDTH] = PREVwIY_out[j*BITWIDTH +: BITWIDTH] - (deltaCost >> (learnRate - pertRate));
 			
-			if(sign_wIY[i] == 1)
-				update_wIY[i*BITWIDTH +: BITWIDTH] = wIY_out[i*BITWIDTH +: BITWIDTH];
+			if(sign_wFX[j] == 1)
+				wFX_in[j*BITWIDTH +: BITWIDTH] = PREVwFX_out[j*BITWIDTH +: BITWIDTH] + (deltaCost >> (learnRate - pertRate));
 			else
-				update_wIY[i*BITWIDTH +: BITWIDTH] = (~(wIY_out[i*BITWIDTH +: BITWIDTH])) + 1;;
+				wFX_in[j*BITWIDTH +: BITWIDTH] = PREVwFX_out[j*BITWIDTH +: BITWIDTH] - (deltaCost >> (learnRate - pertRate));
+			if(sign_wFY[j] == 1)
+				wFY_in[j*BITWIDTH +: BITWIDTH] = PREVwFY_out[j*BITWIDTH +: BITWIDTH] + (deltaCost >> (learnRate - pertRate));
+			else
+				wFY_in[j*BITWIDTH +: BITWIDTH] = PREVwFY_out[j*BITWIDTH +: BITWIDTH] - (deltaCost >> (learnRate - pertRate));
 			
-			if(sign_wFX[i] == 1)
-				update_wFX[i*BITWIDTH +: BITWIDTH] = wFX_out[i*BITWIDTH +: BITWIDTH];
+			if(sign_wOX[j] == 1)
+				wOX_in[j*BITWIDTH +: BITWIDTH] = PREVwOX_out[j*BITWIDTH +: BITWIDTH] + (deltaCost >> (learnRate - pertRate));
 			else
-				update_wFX[i*BITWIDTH +: BITWIDTH] = (~(wFX_out[i*BITWIDTH +: BITWIDTH])) + 1;;
-			
-			if(sign_wFY[i] == 1)
-				update_wFY[i*BITWIDTH +: BITWIDTH] = wFY_out[i*BITWIDTH +: BITWIDTH];
+				wOX_in[j*BITWIDTH +: BITWIDTH] = PREVwOX_out[j*BITWIDTH +: BITWIDTH] - (deltaCost >> (learnRate - pertRate));	
+			if(sign_wOY[j] == 1)
+				wOY_in[j*BITWIDTH +: BITWIDTH] = PREVwOY_out[j*BITWIDTH +: BITWIDTH] + (deltaCost >> (learnRate - pertRate));
 			else
-				update_wFY[i*BITWIDTH +: BITWIDTH] = (~(wFY_out[i*BITWIDTH +: BITWIDTH])) + 1;;
-			
-			if(sign_wOX[i] == 1)
-				update_wOX[i*BITWIDTH +: BITWIDTH] = wOX_out[i*BITWIDTH +: BITWIDTH];
-			else
-				update_wOX[i*BITWIDTH +: BITWIDTH] = (~(wOX_out[i*BITWIDTH +: BITWIDTH])) + 1;	
-			
-			if(sign_wOY[i] == 1)
-				update_wOY[i*BITWIDTH +: BITWIDTH] = wOY_out[i*BITWIDTH +: BITWIDTH];
-			else
-				update_wOY[i*BITWIDTH +: BITWIDTH] = (~(wOY_out[i*BITWIDTH +: BITWIDTH])) + 1;	
+				wOY_in[j*BITWIDTH +: BITWIDTH] = PREVwOY_out[j*BITWIDTH +: BITWIDTH] - (deltaCost >> (learnRate - pertRate));	
 		end
+	end
+	
+	// One cycle delay for the weight RAM update
+	always @(posedge clock) begin
+		PREVwZX_out <= wZX_out;
+		PREVwZY_out <= wZY_out;
+		PREVwIX_out <= wIX_out;
+		PREVwIY_out <= wIY_out;
+		PREVwFX_out <= wFX_out;
+		PREVwFY_out <= wFY_out;
+		PREVwOX_out <= wOX_out;
+		PREVwOY_out <= wOY_out;
 	end
 	
 	always @(*) begin
@@ -453,6 +449,7 @@ module network  #(parameter INPUT_SZ   =  2,
     
     always @(posedge reset) begin
 		prev_C <= {LAYER_BITWIDTH{1'b0}};
+		SS_layer_C <= {LAYER_BITWIDTH{1'b0}};
 	end
 	
     always @(posedge saveSS_layerC) begin
@@ -460,7 +457,10 @@ module network  #(parameter INPUT_SZ   =  2,
     end
     
     always @(posedge newSample) begin
-		prev_C <= SS_layer_C;
+		if(trainingFlag == 1) 
+			prev_C <= SS_layer_C;
+		else
+			prev_C <= layer_C;
 	end
     
     // The elementwise multiplication DSP slices
@@ -473,6 +473,14 @@ module network  #(parameter INPUT_SZ   =  2,
 
 	always @(*) begin
 		outputVec = prevLayerOut;
+	end
+
+	// Keeping track of the Cost Function variables
+	always @(posedge clock) begin
+		if(newCostFunc) 
+			deltaCost <= costFunc - deltaCost;
+		else if(newSample)
+			deltaCost <= {BITWIDTH{1'b0}};
 	end
 
     // --------------------- FINITE STATE MACHINE --------------------- //
@@ -515,7 +523,7 @@ module network  #(parameter INPUT_SZ   =  2,
 		if (reset == 1'b1) begin
 			state  <= IDLE;
 			colAddressTRAIN_X <= {ADDR_BITWIDTH_X{1'b0}};
-			colAddressTRAIN_Y <= {ADDR_BITWIDTH_Y{1'b0}};
+			colAddressTRAIN_Y <= {ADDR_BITWIDTH{1'b0}};
 		end
 		else begin
 			state  <= NEXTstate;
@@ -669,12 +677,15 @@ module network  #(parameter INPUT_SZ   =  2,
 			
 			TRAIN_END:
 			begin
-				NEXTstate = WEIGHT_UPDATE;
+				if(newCostFunc)
+					NEXTstate = WEIGHT_UPDATE_X;
+				else
+					NEXTstate = TRAIN_END; // Waits for the evaluation of the Cost Function with perturbed weights
 			end
 			
 			WEIGHT_UPDATE_X:
 			begin
-				if(colAddressFSM_X == (NCOL-1))
+				if(colAddressTRAIN_X == (INPUT_SZ-1))
 					NEXTstate = WEIGHT_UPDATE_Y;
 				else
 					NEXTstate = WEIGHT_UPDATE_X;
@@ -682,7 +693,7 @@ module network  #(parameter INPUT_SZ   =  2,
 			
 			WEIGHT_UPDATE_Y:
 			begin
-				if(colAddressFSM_Y == (NCOL-1))
+				if(colAddressTRAIN_Y == (HIDDEN_SZ-1))
 					NEXTstate = IDLE;
 				else
 					NEXTstate = WEIGHT_UPDATE_Y;
@@ -709,12 +720,13 @@ module network  #(parameter INPUT_SZ   =  2,
 				y_ready          = 1'b0;
 				dataoutReady     = 1'b0;
 				NEXTcolAddressTRAIN_X = {ADDR_BITWIDTH_X{1'b0}};
-				NEXTcolAddressTRAIN_Y = {ADDR_BITWIDTH_Y{1'b0}};
+				NEXTcolAddressTRAIN_Y = {ADDR_BITWIDTH{1'b0}};
 				weightUpdate = 1'b0;
 				writeWeightUpdate_X = 1'b0;
 				writeWeightUpdate_Y = 1'b0;
 				saveSS_layerC = 1'b0;
-				genRandNum  = 1'b0;
+				genRandNum_X  = 1'b0;
+				genRandNum_Y  = 1'b0;
 			end
 			
 			GATE_CALC_INIT:
@@ -728,12 +740,13 @@ module network  #(parameter INPUT_SZ   =  2,
 				y_ready          = 1'b0;
 				dataoutReady     = 1'b0;
 				NEXTcolAddressTRAIN_X = {ADDR_BITWIDTH_X{1'b0}};
-				NEXTcolAddressTRAIN_Y = {ADDR_BITWIDTH_Y{1'b0}};
+				NEXTcolAddressTRAIN_Y = {ADDR_BITWIDTH{1'b0}};
 				weightUpdate = 1'b0;
 				writeWeightUpdate_X = 1'b0;
 				writeWeightUpdate_Y = 1'b0;
 				saveSS_layerC = 1'b0;
-				genRandNum  = 1'b1;
+				genRandNum_X  = 1'b0;
+				genRandNum_Y  = 1'b0;
 			end
 			
 			GATE_CALC:
@@ -747,12 +760,13 @@ module network  #(parameter INPUT_SZ   =  2,
 				y_ready          = 1'b0;
 				dataoutReady     = 1'b0;
 				NEXTcolAddressTRAIN_X = {ADDR_BITWIDTH_X{1'b0}};
-				NEXTcolAddressTRAIN_Y = {ADDR_BITWIDTH_Y{1'b0}};
+				NEXTcolAddressTRAIN_Y = {ADDR_BITWIDTH{1'b0}};
 				weightUpdate = 1'b0;
 				writeWeightUpdate_X = 1'b0;
 				writeWeightUpdate_Y = 1'b0;
 				saveSS_layerC = 1'b0;
-				genRandNum = 1'b1;
+				genRandNum_X  = 1'b1;
+				genRandNum_Y  = 1'b1;
 			end
 			
 			NON_LIN_1A:		
@@ -766,12 +780,13 @@ module network  #(parameter INPUT_SZ   =  2,
 				y_ready          = 1'b0;
 				dataoutReady     = 1'b0;
 				NEXTcolAddressTRAIN_X = {ADDR_BITWIDTH_X{1'b0}};
-				NEXTcolAddressTRAIN_Y = {ADDR_BITWIDTH_Y{1'b0}};
+				NEXTcolAddressTRAIN_Y = {ADDR_BITWIDTH{1'b0}};
 				weightUpdate = 1'b0;
 				writeWeightUpdate_X = 1'b0;
 				writeWeightUpdate_Y = 1'b0;
 				saveSS_layerC = 1'b0;
-				genRandNum  = 1'b0
+				genRandNum_X  = 1'b0;
+				genRandNum_Y  = 1'b0;
 			end
 			
 			NON_LIN_2A:		
@@ -785,12 +800,13 @@ module network  #(parameter INPUT_SZ   =  2,
 				y_ready          = 1'b0;
 				dataoutReady     = 1'b0;
 				NEXTcolAddressTRAIN_X = {ADDR_BITWIDTH_X{1'b0}};
-				NEXTcolAddressTRAIN_Y = {ADDR_BITWIDTH_Y{1'b0}};
+				NEXTcolAddressTRAIN_Y = {ADDR_BITWIDTH{1'b0}};
 				weightUpdate = 1'b0;
 				writeWeightUpdate_X = 1'b0;
 				writeWeightUpdate_Y = 1'b0;
 				saveSS_layerC = 1'b0;
-				genRandNum  = 1'b0
+				genRandNum_X  = 1'b0;
+				genRandNum_Y  = 1'b0;
 			end
 			
 			ELEM_PROD_A:
@@ -804,12 +820,13 @@ module network  #(parameter INPUT_SZ   =  2,
 				y_ready          = 1'b0;
 				dataoutReady     = 1'b0;
 				NEXTcolAddressTRAIN_X = {ADDR_BITWIDTH_X{1'b0}};
-				NEXTcolAddressTRAIN_Y = {ADDR_BITWIDTH_Y{1'b0}};
+				NEXTcolAddressTRAIN_Y = {ADDR_BITWIDTH{1'b0}};
 				weightUpdate = 1'b0;
 				writeWeightUpdate_X = 1'b0;
 				writeWeightUpdate_Y = 1'b0;
 				saveSS_layerC = 1'b0;
-				genRandNum  = 1'b0
+				genRandNum_X  = 1'b0;
+				genRandNum_Y  = 1'b0;
 			end
 			
 			NON_LIN_1B:		
@@ -823,12 +840,13 @@ module network  #(parameter INPUT_SZ   =  2,
 				y_ready          = 1'b0;
 				dataoutReady     = 1'b0;
 				NEXTcolAddressTRAIN_X = {ADDR_BITWIDTH_X{1'b0}};
-				NEXTcolAddressTRAIN_Y = {ADDR_BITWIDTH_Y{1'b0}};
+				NEXTcolAddressTRAIN_Y = {ADDR_BITWIDTH{1'b0}};
 				weightUpdate = 1'b0;
 				writeWeightUpdate_X = 1'b0;
 				writeWeightUpdate_Y = 1'b0;
 				saveSS_layerC = 1'b0;
-				genRandNum  = 1'b0
+				genRandNum_X  = 1'b0;
+				genRandNum_Y  = 1'b0;
 			end
 			
 			NON_LIN_2B:		
@@ -842,12 +860,13 @@ module network  #(parameter INPUT_SZ   =  2,
 				y_ready          = 1'b0;
 				dataoutReady     = 1'b0;
 				NEXTcolAddressTRAIN_X = {ADDR_BITWIDTH_X{1'b0}};
-				NEXTcolAddressTRAIN_Y = {ADDR_BITWIDTH_Y{1'b0}};
+				NEXTcolAddressTRAIN_Y = {ADDR_BITWIDTH{1'b0}};
 				weightUpdate = 1'b0;
 				writeWeightUpdate_X = 1'b0;
 				writeWeightUpdate_Y = 1'b0;
 				saveSS_layerC = 1'b0;
-				genRandNum  = 1'b0
+				genRandNum_X  = 1'b0;
+				genRandNum_Y  = 1'b0;
 			end
 			
 			ELEM_PROD_B:
@@ -861,12 +880,13 @@ module network  #(parameter INPUT_SZ   =  2,
 				y_ready          = 1'b0;
 				dataoutReady     = 1'b0;
 				NEXTcolAddressTRAIN_X = {ADDR_BITWIDTH_X{1'b0}};
-				NEXTcolAddressTRAIN_Y = {ADDR_BITWIDTH_Y{1'b0}};
+				NEXTcolAddressTRAIN_Y = {ADDR_BITWIDTH{1'b0}};
 				weightUpdate = 1'b0;
 				writeWeightUpdate_X = 1'b0;
 				writeWeightUpdate_Y = 1'b0;
 				saveSS_layerC = 1'b0;
-				genRandNum  = 1'b0
+				genRandNum_X  = 1'b0;
+				genRandNum_Y  = 1'b0;
 			end
 			
 			NON_LIN_1C:		
@@ -880,12 +900,13 @@ module network  #(parameter INPUT_SZ   =  2,
 				y_ready          = 1'b0;
 				dataoutReady     = 1'b0;
 				NEXTcolAddressTRAIN_X = {ADDR_BITWIDTH_X{1'b0}};
-				NEXTcolAddressTRAIN_Y = {ADDR_BITWIDTH_Y{1'b0}};
+				NEXTcolAddressTRAIN_Y = {ADDR_BITWIDTH{1'b0}};
 				weightUpdate = 1'b0;
 				writeWeightUpdate_X = 1'b0;
 				writeWeightUpdate_Y = 1'b0;
 				saveSS_layerC = 1'b0;
-				genRandNum  = 1'b0
+				genRandNum_X  = 1'b0;
+				genRandNum_Y  = 1'b0;
 			end
 			
 			NON_LIN_2C:		
@@ -899,12 +920,13 @@ module network  #(parameter INPUT_SZ   =  2,
 				y_ready          = 1'b0;
 				dataoutReady     = 1'b0;
 				NEXTcolAddressTRAIN_X = {ADDR_BITWIDTH_X{1'b0}};
-				NEXTcolAddressTRAIN_Y = {ADDR_BITWIDTH_Y{1'b0}};
+				NEXTcolAddressTRAIN_Y = {ADDR_BITWIDTH{1'b0}};
 				weightUpdate = 1'b0;
 				writeWeightUpdate_X = 1'b0;
 				writeWeightUpdate_Y = 1'b0;
 				saveSS_layerC = 1'b0;
-				genRandNum  = 1'b0
+				genRandNum_X  = 1'b0;
+				genRandNum_Y  = 1'b0;
 			end
 			
 			ELEM_PROD_C:
@@ -918,12 +940,13 @@ module network  #(parameter INPUT_SZ   =  2,
 				y_ready          = 1'b0;
 				dataoutReady     = 1'b0;
 				NEXTcolAddressTRAIN_X = {ADDR_BITWIDTH_X{1'b0}};
-				NEXTcolAddressTRAIN_Y = {ADDR_BITWIDTH_Y{1'b0}};
+				NEXTcolAddressTRAIN_Y = {ADDR_BITWIDTH{1'b0}};
 				weightUpdate = 1'b0;
 				writeWeightUpdate_X = 1'b0;
 				writeWeightUpdate_Y = 1'b0;
 				saveSS_layerC = 1'b0;
-				genRandNum  = 1'b0
+				genRandNum_X  = 1'b0;
+				genRandNum_Y  = 1'b0;
 			end
 			
 			END :
@@ -937,12 +960,16 @@ module network  #(parameter INPUT_SZ   =  2,
 				y_ready          = 1'b1;
 				dataoutReady     = 1'b1;
 				NEXTcolAddressTRAIN_X = {ADDR_BITWIDTH_X{1'b0}};
-				NEXTcolAddressTRAIN_Y = {ADDR_BITWIDTH_Y{1'b0}};
+				NEXTcolAddressTRAIN_Y = {ADDR_BITWIDTH{1'b0}};
 				weightUpdate = 1'b0;
 				writeWeightUpdate_X = 1'b0;
 				writeWeightUpdate_Y = 1'b0;
-				saveSS_layerC = 1'b1;
-				genRandNum  = 1'b0
+				if(trainingFlag == 1) 
+					saveSS_layerC = 1'b1;
+				else
+					saveSS_layerC = 1'b0;
+				genRandNum_X  = 1'b0;
+				genRandNum_Y  = 1'b0;
 			end
 				
 			TRAIN_GATE_CALC_INIT:
@@ -956,12 +983,13 @@ module network  #(parameter INPUT_SZ   =  2,
 				y_ready          = 1'b0;
 				dataoutReady     = 1'b0;
 				NEXTcolAddressTRAIN_X = {ADDR_BITWIDTH_X{1'b0}};
-				NEXTcolAddressTRAIN_Y = {ADDR_BITWIDTH_Y{1'b0}};
+				NEXTcolAddressTRAIN_Y = {ADDR_BITWIDTH{1'b0}};
 				weightUpdate = 1'b0;
 				writeWeightUpdate_X = 1'b0;
 				writeWeightUpdate_Y = 1'b0;
 				saveSS_layerC = 1'b0;
-				genRandNum  = 1'b0
+				genRandNum_X  = 1'b0;
+				genRandNum_Y  = 1'b0;
 			end
 			
 			TRAIN_GATE_CALC:
@@ -975,12 +1003,13 @@ module network  #(parameter INPUT_SZ   =  2,
 				y_ready          = 1'b0;
 				dataoutReady     = 1'b0;
 				NEXTcolAddressTRAIN_X = {ADDR_BITWIDTH_X{1'b0}};
-				NEXTcolAddressTRAIN_Y = {ADDR_BITWIDTH_Y{1'b0}};
+				NEXTcolAddressTRAIN_Y = {ADDR_BITWIDTH{1'b0}};
 				weightUpdate = 1'b0;
 				writeWeightUpdate_X = 1'b0;
 				writeWeightUpdate_Y = 1'b0;
 				saveSS_layerC = 1'b0;
-				genRandNum  = 1'b0
+				genRandNum_X  = 1'b0;
+				genRandNum_Y  = 1'b0;
 			end
 			
 			TRAIN_NON_LIN_1A:		
@@ -994,12 +1023,13 @@ module network  #(parameter INPUT_SZ   =  2,
 				y_ready          = 1'b0;
 				dataoutReady     = 1'b0;
 				NEXTcolAddressTRAIN_X = {ADDR_BITWIDTH_X{1'b0}};
-				NEXTcolAddressTRAIN_Y = {ADDR_BITWIDTH_Y{1'b0}};
+				NEXTcolAddressTRAIN_Y = {ADDR_BITWIDTH{1'b0}};
 				weightUpdate = 1'b0;
 				writeWeightUpdate_X = 1'b0;
 				writeWeightUpdate_Y = 1'b0;
 				saveSS_layerC = 1'b0;
-				genRandNum  = 1'b0
+				genRandNum_X  = 1'b0;
+				genRandNum_Y  = 1'b0;
 			end
 			
 			TRAIN_NON_LIN_2A:		
@@ -1013,12 +1043,13 @@ module network  #(parameter INPUT_SZ   =  2,
 				y_ready          = 1'b0;
 				dataoutReady     = 1'b0;
 				NEXTcolAddressTRAIN_X = {ADDR_BITWIDTH_X{1'b0}};
-				NEXTcolAddressTRAIN_Y = {ADDR_BITWIDTH_Y{1'b0}};
+				NEXTcolAddressTRAIN_Y = {ADDR_BITWIDTH{1'b0}};
 				weightUpdate = 1'b0;
 				writeWeightUpdate_X = 1'b0;
 				writeWeightUpdate_Y = 1'b0;
 				saveSS_layerC = 1'b0;
-				genRandNum  = 1'b0
+				genRandNum_X  = 1'b0;
+				genRandNum_Y  = 1'b0;
 			end
 			
 			TRAIN_ELEM_PROD_A:
@@ -1032,12 +1063,13 @@ module network  #(parameter INPUT_SZ   =  2,
 				y_ready          = 1'b0;
 				dataoutReady     = 1'b0;
 				NEXTcolAddressTRAIN_X = {ADDR_BITWIDTH_X{1'b0}};
-				NEXTcolAddressTRAIN_Y = {ADDR_BITWIDTH_Y{1'b0}};
+				NEXTcolAddressTRAIN_Y = {ADDR_BITWIDTH{1'b0}};
 				weightUpdate = 1'b0;
 				writeWeightUpdate_X = 1'b0;
 				writeWeightUpdate_Y = 1'b0;
 				saveSS_layerC = 1'b0;
-				genRandNum  = 1'b0
+				genRandNum_X  = 1'b0;
+				genRandNum_Y  = 1'b0;
 			end
 			
 			TRAIN_NON_LIN_1B:		
@@ -1051,12 +1083,13 @@ module network  #(parameter INPUT_SZ   =  2,
 				y_ready          = 1'b0;
 				dataoutReady     = 1'b0;
 				NEXTcolAddressTRAIN_X = {ADDR_BITWIDTH_X{1'b0}};
-				NEXTcolAddressTRAIN_Y = {ADDR_BITWIDTH_Y{1'b0}};
+				NEXTcolAddressTRAIN_Y = {ADDR_BITWIDTH{1'b0}};
 				weightUpdate = 1'b0;
 				writeWeightUpdate_X = 1'b0;
 				writeWeightUpdate_Y = 1'b0;
 				saveSS_layerC = 1'b0;
-				genRandNum  = 1'b0
+				genRandNum_X  = 1'b0;
+				genRandNum_Y  = 1'b0;
 			end
 			
 			TRAIN_NON_LIN_2B:		
@@ -1070,12 +1103,13 @@ module network  #(parameter INPUT_SZ   =  2,
 				y_ready          = 1'b0;
 				dataoutReady     = 1'b0;
 				NEXTcolAddressTRAIN_X = {ADDR_BITWIDTH_X{1'b0}};
-				NEXTcolAddressTRAIN_Y = {ADDR_BITWIDTH_Y{1'b0}};
+				NEXTcolAddressTRAIN_Y = {ADDR_BITWIDTH{1'b0}};
 				weightUpdate = 1'b0;
 				writeWeightUpdate_X = 1'b0;
 				writeWeightUpdate_Y = 1'b0;
 				saveSS_layerC = 1'b0;
-				genRandNum  = 1'b0
+				genRandNum_X  = 1'b0;
+				genRandNum_Y  = 1'b0;
 			end
 			
 			TRAIN_ELEM_PROD_B:
@@ -1089,12 +1123,13 @@ module network  #(parameter INPUT_SZ   =  2,
 				y_ready          = 1'b0;
 				dataoutReady     = 1'b0;
 				NEXTcolAddressTRAIN_X = {ADDR_BITWIDTH_X{1'b0}};
-				NEXTcolAddressTRAIN_Y = {ADDR_BITWIDTH_Y{1'b0}};
+				NEXTcolAddressTRAIN_Y = {ADDR_BITWIDTH{1'b0}};
 				weightUpdate = 1'b0;
 				writeWeightUpdate_X = 1'b0;
 				writeWeightUpdate_Y = 1'b0;
 				saveSS_layerC = 1'b0;
-				genRandNum  = 1'b0
+				genRandNum_X  = 1'b0;
+				genRandNum_Y  = 1'b0;
 			end
 			
 			TRAIN_NON_LIN_1C:		
@@ -1108,12 +1143,13 @@ module network  #(parameter INPUT_SZ   =  2,
 				y_ready          = 1'b0;
 				dataoutReady     = 1'b0;
 				NEXTcolAddressTRAIN_X = {ADDR_BITWIDTH_X{1'b0}};
-				NEXTcolAddressTRAIN_Y = {ADDR_BITWIDTH_Y{1'b0}};
+				NEXTcolAddressTRAIN_Y = {ADDR_BITWIDTH{1'b0}};
 				weightUpdate = 1'b0;
 				writeWeightUpdate_X = 1'b0;
 				writeWeightUpdate_Y = 1'b0;
 				saveSS_layerC = 1'b0;
-				genRandNum  = 1'b0
+				genRandNum_X  = 1'b0;
+				genRandNum_Y  = 1'b0;
 			end
 			
 			TRAIN_NON_LIN_2C:		
@@ -1127,12 +1163,13 @@ module network  #(parameter INPUT_SZ   =  2,
 				y_ready          = 1'b0;
 				dataoutReady     = 1'b0;
 				NEXTcolAddressTRAIN_X = {ADDR_BITWIDTH_X{1'b0}};
-				NEXTcolAddressTRAIN_Y = {ADDR_BITWIDTH_Y{1'b0}};
+				NEXTcolAddressTRAIN_Y = {ADDR_BITWIDTH{1'b0}};
 				weightUpdate = 1'b0;
 				writeWeightUpdate_X = 1'b0;
 				writeWeightUpdate_Y = 1'b0;
 				saveSS_layerC = 1'b0;
-				genRandNum  = 1'b0
+				genRandNum_X  = 1'b0;
+				genRandNum_Y  = 1'b0;
 			end
 			
 			TRAIN_ELEM_PROD_C:
@@ -1146,12 +1183,13 @@ module network  #(parameter INPUT_SZ   =  2,
 				y_ready          = 1'b0;
 				dataoutReady     = 1'b0;
 				NEXTcolAddressTRAIN_X = {ADDR_BITWIDTH_X{1'b0}};
-				NEXTcolAddressTRAIN_Y = {ADDR_BITWIDTH_Y{1'b0}};
+				NEXTcolAddressTRAIN_Y = {ADDR_BITWIDTH{1'b0}};
 				weightUpdate = 1'b0;
 				writeWeightUpdate_X = 1'b0;
 				writeWeightUpdate_Y = 1'b0;
 				saveSS_layerC = 1'b0;
-				genRandNum  = 1'b0
+				genRandNum_X  = 1'b0;
+				genRandNum_Y  = 1'b0;
 			end
 			
 			TRAIN_END :
@@ -1165,34 +1203,53 @@ module network  #(parameter INPUT_SZ   =  2,
 				y_ready          = 1'b1;
 				dataoutReady     = 1'b0;		
 				NEXTcolAddressTRAIN_X = {ADDR_BITWIDTH_X{1'b0}};
-				NEXTcolAddressTRAIN_Y = {ADDR_BITWIDTH_Y{1'b0}};
+				NEXTcolAddressTRAIN_Y = {ADDR_BITWIDTH{1'b0}};
 				weightUpdate = 1'b0;
 				writeWeightUpdate_X = 1'b0;
 				writeWeightUpdate_Y = 1'b0;
 				saveSS_layerC = 1'b0;
-				genRandNum  = 1'b0
+				genRandNum_X  = 1'b0;
+				genRandNum_Y  = 1'b0;
 			end
 			
 			WEIGHT_UPDATE_X:
 			begin
+				beginCalc        = 1'b0;
+				muxStageSelector = 2'd0;
+				sigmoidEnable    = 1'b0;
+				tanhEnable       = 1'b0;
+				z_ready          = 1'b0;
+				f_ready          = 1'b0;
+				y_ready          = 1'b0;
+				dataoutReady     = 1'b0;	
 				NEXTcolAddressTRAIN_X = colAddressTRAIN_X + 1;
 				NEXTcolAddressTRAIN_Y = colAddressTRAIN_Y + 1;
 				weightUpdate = 1'b1;
 				writeWeightUpdate_X = 1'b1;
 				writeWeightUpdate_Y = 1'b1;
 				saveSS_layerC = 1'b0;
-				genRandNum  = 1'b0
+				genRandNum_X  = 1'b0;
+				genRandNum_Y  = 1'b0;
 			end
 			
 			WEIGHT_UPDATE_Y:
 			begin
+				beginCalc        = 1'b0;
+				muxStageSelector = 2'd0;
+				sigmoidEnable    = 1'b0;
+				tanhEnable       = 1'b0;
+				z_ready          = 1'b0;
+				f_ready          = 1'b0;
+				y_ready          = 1'b0;
+				dataoutReady     = 1'b0;	
 				NEXTcolAddressTRAIN_X = {ADDR_BITWIDTH_X{1'b0}};
 				NEXTcolAddressTRAIN_Y = colAddressTRAIN_Y + 1;
 				weightUpdate = 1'b1;
 				writeWeightUpdate_X = 1'b0;
 				writeWeightUpdate_Y = 1'b1;
 				saveSS_layerC = 1'b0;
-				genRandNum  = 1'b0
+				genRandNum_X  = 1'b0;
+				genRandNum_Y  = 1'b0;
 			end
 			
 			default:
@@ -1206,12 +1263,13 @@ module network  #(parameter INPUT_SZ   =  2,
 				y_ready          = 1'b0;
 				dataoutReady     = 1'b0;
 				NEXTcolAddressTRAIN_X = {ADDR_BITWIDTH_X{1'b0}};
-				NEXTcolAddressTRAIN_Y = {ADDR_BITWIDTH_Y{1'b0}};
+				NEXTcolAddressTRAIN_Y = {ADDR_BITWIDTH{1'b0}};
 				weightUpdate = 1'b0;
 				writeWeightUpdate_X = 1'b0;
 				writeWeightUpdate_Y = 1'b0;
 				saveSS_layerC = 1'b0;
-				genRandNum  = 1'b0
+				genRandNum_X  = 1'b0;
+				genRandNum_Y  = 1'b0;
 			end
 				
 		endcase
