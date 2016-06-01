@@ -15,12 +15,13 @@ module tb_network();
     parameter INPUT_BITWIDTH   = BITWIDTH*INPUT_SZ;
     parameter OUTPUT_BITWIDTH  = BITWIDTH*OUTPUT_SZ;
     parameter LAYER_BITWIDTH   = BITWIDTH*HIDDEN_SZ;
+    parameter MAC_BITWIDTH          = (2*BITWIDTH+1);
 	parameter ADDR_BITWIDTH    = $ln(HIDDEN_SZ)/$ln(2);
 	parameter ADDR_BITWIDTH_X  = $ln(INPUT_SZ)/$ln(2);
     parameter HALF_CLOCK       = 1;
     parameter FULL_CLOCK       = 2*HALF_CLOCK;
     parameter MAX_SAMPLES      = 8;
-    parameter TRAIN_SAMPLES    = 1000;
+    parameter TRAIN_SAMPLES    = 6000;
 
 	reg clock;
 	reg reset;
@@ -29,10 +30,17 @@ module tb_network();
     reg  [INPUT_BITWIDTH-1:0] inputVec;
     wire [LAYER_BITWIDTH-1:0] outputVec;
     reg [OUTPUT_BITWIDTH-1:0] test;
+    reg  [LAYER_BITWIDTH-1:0] Wperceptron;
+	wire  [ADDR_BITWIDTH-1:0] colAddrP;
+    wire  [BITWIDTH-1:0] networkOutput;
     reg   [BITWIDTH-1:0] temp;
+    wire                  resetP;
+    wire                  dataReadyP;
+    reg	 enPerceptron;
+    
     // File descriptors for the error/output dumps
     integer fid, fid_error_dump, retVal;
-    integer fid_x, fid_Wz, fid_Wi, fid_Wf, fid_Wo, fid_Rz, fid_Ri, fid_Rf, fid_Ro, fid_bz, fid_bi, fid_bf, fid_bo;
+    integer fid_x, fid_Wz, fid_Wi, fid_Wf, fid_Wo, fid_Rz, fid_Ri, fid_Rf, fid_Ro, fid_bz, fid_bi, fid_bf, fid_bo, fid_outW;
     integer i=0,j=0,k=0,l=0;
     real    quantError=0;
     
@@ -42,10 +50,13 @@ module tb_network();
         #(HALF_CLOCK) clock = ~clock;
     end
     
+    assign resetP = reset || !enPerceptron;
+    
     // DUT Instantiation
     network              #(INPUT_SZ, HIDDEN_SZ, OUTPUT_SZ, QN, QM, DSP48_PER_ROW_G, DSP48_PER_ROW_M) 
 			LSTM_LAYER    (inputVec, 1'b0, clock, reset, newSample, dataReady, outputVec);
-    
+    array_prod #(HIDDEN_SZ, QN, QM)  PERCEPTRON  (Wperceptron, outputVec, clock, resetP, dataReadyP, networkOutput);
+
     // Keeping track of the simulation time
     real time_start, time_end;
 
@@ -63,6 +74,7 @@ module tb_network();
 		fid_bi = $fopen("goldenIn_bi.bin", "r");
 		fid_bf = $fopen("goldenIn_bf.bin", "r");
 		fid_bo = $fopen("goldenIn_bo.bin", "r");
+		fid_outW = $fopen("goldenIn_outW.bin", "r");
 		fid    = $fopen("output.bin", "w");
 		
 		// -------------------------------- Loading the weight memory ------------------------------- //
@@ -126,6 +138,9 @@ module tb_network();
 			
 			retVal = $fscanf(fid_bo, "%18b\n",temp);
 			LSTM_LAYER.bO[i*BITWIDTH +: BITWIDTH] = temp;
+			
+			retVal = $fscanf(fid_outW, "%18b\n",temp);
+			Wperceptron[i*BITWIDTH +: BITWIDTH] = temp;
         end
 		
 	end
@@ -135,6 +150,7 @@ module tb_network();
         time_start = $realtime;
 		clock = 0;
 		newSample = 0;
+		enPerceptron = 0;
 		
 		// Applying the initial reset
 		reset     = 1'b1;
@@ -165,8 +181,7 @@ module tb_network();
 				inputVec[17:0]  = temp;
 				retVal = $fscanf(fid_x,  "%b\n", temp);
 				inputVec[35:18] = temp;
-				//$fscanf(fid_out, "%b\n", ROM_goldenOut);
-				//$display("Read: %b and %b", inputVec[17:0], inputVec[35:18]);
+
 				
 				newSample = 1'b1;
 				#(FULL_CLOCK);
@@ -177,13 +192,14 @@ module tb_network();
 				// Waiting for the result
 				@(posedge dataReady);
 				
-				#(2*FULL_CLOCK);
+				#(FULL_CLOCK);
+				enPerceptron = 1;
 				
-				for(j = 0; j < HIDDEN_SZ; j = j + 1) begin
-					//$display("Neuron[%0d]: %b", j, outputVec[j*BITWIDTH +: BITWIDTH]);
-					$fwrite(fid, "%d\n", outputVec[j*BITWIDTH +: BITWIDTH]);
-				end
-				
+				@(posedge dataReadyP);
+				#(FULL_CLOCK);
+				$fwrite(fid, "%d\n", networkOutput);
+				enPerceptron = 0;
+
 			end
        end
         //$display("Average Quantization Error: %f", quantError/(MAX_SAMPLES*HIDDEN_SZ));

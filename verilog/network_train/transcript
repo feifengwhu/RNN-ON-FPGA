@@ -1,8 +1,6 @@
-# vsim -c -do "run -all" tb_network 
-# Start time: 14:34:42 on May 29,2016
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# ** Warning: network.v(226): (vopt-2958) Implicit wire 'genRandNum' does not have any driver.
-# ** Warning: network.v(226): (vopt-2958) Implicit wire 'genRandNum' does not have any driver.
+# vsim -c -novopt -do "run -all" tb_network 
+# Start time: 14:24:36 on Jun 01,2016
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
 # //  Questa Sim-64
 # //  Version 10.4c_5 linux_x86_64 Nov 14 2015
 # //
@@ -18,7 +16,24 @@
 # //  FURTHERMORE, THIS INFORMATION IS PROHIBITED FROM DISCLOSURE UNDER
 # //  THE TRADE SECRETS ACT, 18 U.S.C. SECTION 1905.
 # //
-# Loading work.tb_network(fast)
+# Refreshing /home/josefonseca/Documents/thesis/verilog/network_train/work.tb_network
+# Loading work.tb_network
+# Refreshing /home/josefonseca/Documents/thesis/verilog/network_train/work.network
+# Loading work.network
+# Refreshing /home/josefonseca/Documents/thesis/verilog/network_train/work.gate
+# Loading work.gate
+# Refreshing /home/josefonseca/Documents/thesis/verilog/network_train/work.dot_prod
+# Loading work.dot_prod
+# Refreshing /home/josefonseca/Documents/thesis/verilog/network_train/work.weightRAM
+# Loading work.weightRAM
+# Refreshing /home/josefonseca/Documents/thesis/verilog/network_train/work.array_prod
+# Loading work.array_prod
+# Refreshing /home/josefonseca/Documents/thesis/verilog/network_train/work.sigmoid
+# Loading work.sigmoid
+# Refreshing /home/josefonseca/Documents/thesis/verilog/network_train/work.tanh
+# Loading work.tanh
+# Refreshing /home/josefonseca/Documents/thesis/verilog/network_train/work.prng
+# Loading work.prng
 # run -all
 # Simulation started at 0.000000
 # Input Sample           0
@@ -31,9 +46,99 @@
 # Input Sample         700
 # Input Sample         800
 # Input Sample         900
-# ** Note: $stop    : tb_network.v(192)
-#    Time: 488005 ns  Iteration: 0  Instance: /tb_network
-# Break at tb_network.v line 192
-# Stopped at tb_network.v line 192
-# End time: 14:34:48 on May 29,2016, Elapsed time: 0:00:06
-# Errors: 0, Warnings: 2
+# Input Sample        1000
+# Input Sample        1100
+# Input Sample        1200
+# Input Sample        1300
+# Input Sample        1400
+# Input Sample        1500
+# Input Sample        1600
+# Input Sample        1700
+# Input Sample        1800
+# Input Sample        1900
+# Input Sample        2000
+# Input Sample        2100
+# Input Sample        2200
+# Input Sample        2300
+# Input Sample        2400
+# Input Sample        2500
+# Input Sample        2600
+# Input Sample        2700
+# Input Sample        2800
+# Input Sample        2900
+# Input Sample        3000
+# Input Sample        3100
+# Input Sample        3200
+# Input Sample        3300
+# Input Sample        3400
+# Input Sample        3500
+# Input Sample        3600
+# Input Sample        3700
+# Input Sample        3800
+# Input Sample        3900
+# Input Sample        4000
+# Input Sample        4100
+# Input Sample        4200
+# Input Sample        4300
+# Input Sample        4400
+# Input Sample        4500
+# Input Sample        4600
+# Input Sample        4700
+# Input Sample        4800
+# Input Sample        4900
+# Input Sample        5000
+# Input Sample        5100
+# Input Sample        5200
+# Input Sample        5300
+# Input Sample        5400
+# Input Sample        5500
+# Input Sample        5600
+# Input Sample        5700
+# Input Sample        5800
+# Input Sample        5900
+# Input Sample        6000
+# Input Sample        6100
+# Input Sample        6200
+# Input Sample        6300
+# Input Sample        6400
+# Input Sample        6500
+# Input Sample        6600
+# Input Sample        6700
+# Input Sample        6800
+# Input Sample        6900
+# Input Sample        7000
+# Input Sample        7100
+# Input Sample        7200
+# Input Sample        7300
+# Input Sample        7400
+# Input Sample        7500
+# Input Sample        7600
+# Input Sample        7700
+# Input Sample        7800
+# Input Sample        7900
+# Input Sample        8000
+# Input Sample        8100
+# Input Sample        8200
+# Input Sample        8300
+# Input Sample        8400
+# Input Sample        8500
+# Input Sample        8600
+# Input Sample        8700
+# Input Sample        8800
+# Input Sample        8900
+# Input Sample        9000
+# Input Sample        9100
+# Input Sample        9200
+# Input Sample        9300
+# Input Sample        9400
+# Input Sample        9500
+# Input Sample        9600
+# Input Sample        9700
+# Input Sample        9800
+# Input Sample        9900
+# ** Note: $stop    : tb_network.v(205)
+#    Time: 5480007 ns  Iteration: 0  Instance: /tb_network
+# Break in Module tb_network at tb_network.v line 205
+# Stopped at tb_network.v line 205
+# End time: 14:26:56 on Jun 01,2016, Elapsed time: 0:02:20
+# Errors: 0, Warnings: 1
