@@ -16,6 +16,7 @@ module network  #(parameter INPUT_SZ   =  2,
                   costFunc,
                   newSample,
                   dataoutReady,
+                  trainingReady,
                   outputVec);
 
     // Dependent parameters
@@ -45,24 +46,17 @@ module network  #(parameter INPUT_SZ   =  2,
     input [OUTPUT_BITWIDTH-1:0]      costFunc;
     input                            newSample;
     output reg                      dataoutReady;
+    output reg                      trainingReady;
     output reg [LAYER_BITWIDTH-1:0] outputVec;
             
 
     // Connecting wires and auxiliary registers
-    reg    [ADDR_BITWIDTH_X-1:0] colAddressWrite_wZX;
-    reg    [ADDR_BITWIDTH-1:0]   colAddressWrite_wZY;
     wire   [ADDR_BITWIDTH_X-1:0] colAddressRead_wZX;
     wire   [ADDR_BITWIDTH-1:0]   colAddressRead_wZY;
-    reg    [ADDR_BITWIDTH_X-1:0] colAddressWrite_wIX;
-    reg    [ADDR_BITWIDTH-1:0]   colAddressWrite_wIY;
     wire   [ADDR_BITWIDTH_X-1:0] colAddressRead_wIX;
     wire   [ADDR_BITWIDTH-1:0]   colAddressRead_wIY;
-    reg    [ADDR_BITWIDTH_X-1:0] colAddressWrite_wFX;
-    reg    [ADDR_BITWIDTH-1:0]   colAddressWrite_wFY;
     wire   [ADDR_BITWIDTH_X-1:0] colAddressRead_wFX;
     wire   [ADDR_BITWIDTH-1:0]   colAddressRead_wFY;
-    reg    [ADDR_BITWIDTH_X-1:0] colAddressWrite_wOX;
-    reg    [ADDR_BITWIDTH-1:0]   colAddressWrite_wOY;
     wire   [ADDR_BITWIDTH_X-1:0] colAddressRead_wOX;
     wire   [ADDR_BITWIDTH-1:0]   colAddressRead_wOY;
     reg    [ADDR_BITWIDTH_X-1:0] colAddressTRAIN_X;
@@ -127,14 +121,6 @@ module network  #(parameter INPUT_SZ   =  2,
     wire                         gateReady_F;
     wire                         gateReady_O;
     reg                          beginCalc;
-    reg                          writeEn_wZX;
-    reg                          writeEn_wZY;
-    reg                          writeEn_wIX;
-    reg                          writeEn_wIY;
-    reg                          writeEn_wFX;
-    reg                          writeEn_wFY;
-    reg                          writeEn_wOX;
-    reg                          writeEn_wOY;
     reg                          z_ready;
     reg                          f_ready;
     reg                          y_ready;
@@ -231,16 +217,17 @@ module network  #(parameter INPUT_SZ   =  2,
     endgenerate 
 
 	// The Pseudo-random Number Generators
-	genvar k;
+	prng PRNG_1 (initSeed, clock, reset, genRandNum_Y, genRandNum_Y, randGenOutput[0+:RAND_GEN_BITWIDTH]);
+	prng PRNG_2 (initSeed, clock, reset, genRandNum_Y, genRandNum_Y, randGenOutput[RAND_GEN_BITWIDTH+:RAND_GEN_BITWIDTH]);
+	
+	/*
+	________________________THIS IS NOT WORKING, DON'T KNOW WHY???___________________________________
 	generate
-		for (k = 0; k < N_PRNG; k = k + 1) begin
-			prng PRNG_k (initSeed, clock, reset, genRandNum, genRandNum, randGenOutput[k*RAND_GEN_BITWIDTH+:RAND_GEN_BITWIDTH]);
-		end 
-		for (k = 0; k < N_PRNG_BIAS; k = k + 1) begin
-			prng PRNG_bias_k (initSeed, clock, reset, genRandNum, genRandNum, randGenOutput_bias[k*RAND_GEN_BITWIDTH+:RAND_GEN_BITWIDTH]);
+		for (i = 0; i < N_PRNG; i = i + 1) begin
+			prng PRNG_i (initSeed, clock, reset, genRandNum, genRandNum, randGenOutput[i*RAND_GEN_BITWIDTH+:RAND_GEN_BITWIDTH]);
 		end 
     endgenerate
-
+	*/
 	// The sign matrix for the perturbations
 	weightRAM  #(HIDDEN_SZ,  INPUT_SZ, 1)  PRAM_Z_X (colAddressRead_wZX, colAddressTRAIN_X, genRandNum_X, clock, reset, randGenOutput[0 +: HIDDEN_SZ]        , sign_wZX);
     weightRAM  #(HIDDEN_SZ, HIDDEN_SZ, 1)  PRAM_Z_Y (colAddressRead_wZY, colAddressTRAIN_Y, genRandNum_Y, clock, reset, randGenOutput[HIDDEN_SZ +:HIDDEN_SZ] , sign_wZY);
@@ -534,11 +521,12 @@ module network  #(parameter INPUT_SZ   =  2,
 	end
 
 	// Keeping track of the Cost Function variables
-	always @(posedge clock) begin
-		if(newCostFunc) 
-			deltaCost <= costFunc - deltaCost;
-		else if(newSample)
-			deltaCost <= {BITWIDTH{1'b0}};
+	always @(posedge newCostFunc) begin
+		deltaCost <= costFunc - deltaCost;
+	end
+	
+	always @(posedge newSample) begin
+		deltaCost <= {LAYER_BITWIDTH{1'b0}};
 	end
 
     // --------------------- FINITE STATE MACHINE --------------------- //
@@ -674,63 +662,63 @@ module network  #(parameter INPUT_SZ   =  2,
 			
 			TRAIN_GATE_CALC_INIT:
 			begin
-				NEXTstate = GATE_CALC;
+				NEXTstate = TRAIN_GATE_CALC;
 			end
 			
 			TRAIN_GATE_CALC:
 			begin
 				if (gateReady_Z == 1'b1 || gateReady_I == 1'b1 || gateReady_F == 1'b1 || gateReady_O == 1'b1) begin
-					NEXTstate = NON_LIN_1A;
+					NEXTstate = TRAIN_NON_LIN_1A;
 				end
 				else begin
-					NEXTstate = GATE_CALC;
+					NEXTstate = TRAIN_GATE_CALC;
 				end
 			end
 			
 			
 			TRAIN_NON_LIN_1A:		
 			begin
-				NEXTstate = NON_LIN_2A;
+				NEXTstate = TRAIN_NON_LIN_2A;
 			end
 			
 			TRAIN_NON_LIN_2A:		
 			begin
-				NEXTstate = ELEM_PROD_A;
+				NEXTstate = TRAIN_ELEM_PROD_A;
 			end	
 			
 			TRAIN_ELEM_PROD_A:
 			begin
-					NEXTstate  = NON_LIN_1B;
+					NEXTstate  = TRAIN_NON_LIN_1B;
 			end
 			
 			TRAIN_NON_LIN_1B:		
 			begin
-				NEXTstate = NON_LIN_2B;
+				NEXTstate = TRAIN_NON_LIN_2B;
 			end
 			
 			TRAIN_NON_LIN_2B:		
 			begin
-				NEXTstate = ELEM_PROD_B;
+				NEXTstate = TRAIN_ELEM_PROD_B;
 			end	
 			
 			TRAIN_ELEM_PROD_B:
 			begin
-					NEXTstate  = NON_LIN_1C;
+					NEXTstate  = TRAIN_NON_LIN_1C;
 			end
 			
 			TRAIN_NON_LIN_1C:		
 			begin
-				NEXTstate = NON_LIN_2C;
+				NEXTstate = TRAIN_NON_LIN_2C;
 			end
 			
 			TRAIN_NON_LIN_2C:		
 			begin
-				NEXTstate = ELEM_PROD_C;
+				NEXTstate = TRAIN_ELEM_PROD_C;
 			end	
 			
 			TRAIN_ELEM_PROD_C:
 			begin
-				NEXTstate = END;
+				NEXTstate = TRAIN_END;
 			end
 			
 			TRAIN_END:
@@ -785,6 +773,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				saveSS_layerC = 1'b0;
 				genRandNum_X  = 1'b0;
 				genRandNum_Y  = 1'b0;
+				trainingReady = 1'b1;
 			end
 			
 			GATE_CALC_INIT:
@@ -805,6 +794,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				saveSS_layerC = 1'b0;
 				genRandNum_X  = 1'b0;
 				genRandNum_Y  = 1'b0;
+				trainingReady = 1'b0;
 			end
 			
 			GATE_CALC:
@@ -825,6 +815,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				saveSS_layerC = 1'b0;
 				genRandNum_X  = 1'b1;
 				genRandNum_Y  = 1'b1;
+				trainingReady = 1'b0;
 			end
 			
 			NON_LIN_1A:		
@@ -845,6 +836,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				saveSS_layerC = 1'b0;
 				genRandNum_X  = 1'b0;
 				genRandNum_Y  = 1'b0;
+				trainingReady = 1'b0;
 			end
 			
 			NON_LIN_2A:		
@@ -865,6 +857,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				saveSS_layerC = 1'b0;
 				genRandNum_X  = 1'b0;
 				genRandNum_Y  = 1'b0;
+				trainingReady = 1'b0;
 			end
 			
 			ELEM_PROD_A:
@@ -885,6 +878,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				saveSS_layerC = 1'b0;
 				genRandNum_X  = 1'b0;
 				genRandNum_Y  = 1'b0;
+				trainingReady = 1'b0;
 			end
 			
 			NON_LIN_1B:		
@@ -905,6 +899,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				saveSS_layerC = 1'b0;
 				genRandNum_X  = 1'b0;
 				genRandNum_Y  = 1'b0;
+				trainingReady = 1'b0;
 			end
 			
 			NON_LIN_2B:		
@@ -925,6 +920,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				saveSS_layerC = 1'b0;
 				genRandNum_X  = 1'b0;
 				genRandNum_Y  = 1'b0;
+				trainingReady = 1'b0;
 			end
 			
 			ELEM_PROD_B:
@@ -945,6 +941,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				saveSS_layerC = 1'b0;
 				genRandNum_X  = 1'b0;
 				genRandNum_Y  = 1'b0;
+				trainingReady = 1'b0;
 			end
 			
 			NON_LIN_1C:		
@@ -965,6 +962,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				saveSS_layerC = 1'b0;
 				genRandNum_X  = 1'b0;
 				genRandNum_Y  = 1'b0;
+				trainingReady = 1'b0;
 			end
 			
 			NON_LIN_2C:		
@@ -985,6 +983,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				saveSS_layerC = 1'b0;
 				genRandNum_X  = 1'b0;
 				genRandNum_Y  = 1'b0;
+				trainingReady = 1'b0;
 			end
 			
 			ELEM_PROD_C:
@@ -1005,6 +1004,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				saveSS_layerC = 1'b0;
 				genRandNum_X  = 1'b0;
 				genRandNum_Y  = 1'b0;
+				trainingReady = 1'b0;
 			end
 			
 			END :
@@ -1028,6 +1028,7 @@ module network  #(parameter INPUT_SZ   =  2,
 					saveSS_layerC = 1'b0;
 				genRandNum_X  = 1'b0;
 				genRandNum_Y  = 1'b0;
+				trainingReady = 1'b0;
 			end
 				
 			TRAIN_GATE_CALC_INIT:
@@ -1048,6 +1049,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				saveSS_layerC = 1'b0;
 				genRandNum_X  = 1'b0;
 				genRandNum_Y  = 1'b0;
+				trainingReady = 1'b0;
 			end
 			
 			TRAIN_GATE_CALC:
@@ -1068,6 +1070,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				saveSS_layerC = 1'b0;
 				genRandNum_X  = 1'b0;
 				genRandNum_Y  = 1'b0;
+				trainingReady = 1'b0;
 			end
 			
 			TRAIN_NON_LIN_1A:		
@@ -1088,6 +1091,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				saveSS_layerC = 1'b0;
 				genRandNum_X  = 1'b0;
 				genRandNum_Y  = 1'b0;
+				trainingReady = 1'b0;
 			end
 			
 			TRAIN_NON_LIN_2A:		
@@ -1108,6 +1112,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				saveSS_layerC = 1'b0;
 				genRandNum_X  = 1'b0;
 				genRandNum_Y  = 1'b0;
+				trainingReady = 1'b0;
 			end
 			
 			TRAIN_ELEM_PROD_A:
@@ -1128,6 +1133,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				saveSS_layerC = 1'b0;
 				genRandNum_X  = 1'b0;
 				genRandNum_Y  = 1'b0;
+				trainingReady = 1'b0;
 			end
 			
 			TRAIN_NON_LIN_1B:		
@@ -1148,6 +1154,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				saveSS_layerC = 1'b0;
 				genRandNum_X  = 1'b0;
 				genRandNum_Y  = 1'b0;
+				trainingReady = 1'b0;
 			end
 			
 			TRAIN_NON_LIN_2B:		
@@ -1168,6 +1175,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				saveSS_layerC = 1'b0;
 				genRandNum_X  = 1'b0;
 				genRandNum_Y  = 1'b0;
+				trainingReady = 1'b0;
 			end
 			
 			TRAIN_ELEM_PROD_B:
@@ -1188,6 +1196,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				saveSS_layerC = 1'b0;
 				genRandNum_X  = 1'b0;
 				genRandNum_Y  = 1'b0;
+				trainingReady = 1'b0;
 			end
 			
 			TRAIN_NON_LIN_1C:		
@@ -1208,6 +1217,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				saveSS_layerC = 1'b0;
 				genRandNum_X  = 1'b0;
 				genRandNum_Y  = 1'b0;
+				trainingReady = 1'b0;
 			end
 			
 			TRAIN_NON_LIN_2C:		
@@ -1228,6 +1238,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				saveSS_layerC = 1'b0;
 				genRandNum_X  = 1'b0;
 				genRandNum_Y  = 1'b0;
+				trainingReady = 1'b0;
 			end
 			
 			TRAIN_ELEM_PROD_C:
@@ -1248,6 +1259,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				saveSS_layerC = 1'b0;
 				genRandNum_X  = 1'b0;
 				genRandNum_Y  = 1'b0;
+				trainingReady = 1'b0;
 			end
 			
 			TRAIN_END :
@@ -1259,7 +1271,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				z_ready          = 1'b0;
 				f_ready          = 1'b0;
 				y_ready          = 1'b1;
-				dataoutReady     = 1'b0;		
+				dataoutReady     = 1'b1;		
 				NEXTcolAddressTRAIN_X = {ADDR_BITWIDTH_X{1'b0}};
 				NEXTcolAddressTRAIN_Y = {ADDR_BITWIDTH{1'b0}};
 				weightUpdate = 1'b0;
@@ -1268,6 +1280,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				saveSS_layerC = 1'b0;
 				genRandNum_X  = 1'b0;
 				genRandNum_Y  = 1'b0;
+				trainingReady = 1'b0;
 			end
 			
 			WEIGHT_UPDATE_X:
@@ -1288,6 +1301,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				saveSS_layerC = 1'b0;
 				genRandNum_X  = 1'b0;
 				genRandNum_Y  = 1'b0;
+				trainingReady = 1'b0;
 			end
 			
 			WEIGHT_UPDATE_Y:
@@ -1308,6 +1322,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				saveSS_layerC = 1'b0;
 				genRandNum_X  = 1'b0;
 				genRandNum_Y  = 1'b0;
+				trainingReady = 1'b0;
 			end
 			
 			default:
@@ -1328,6 +1343,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				saveSS_layerC = 1'b0;
 				genRandNum_X  = 1'b0;
 				genRandNum_Y  = 1'b0;
+				trainingReady = 1'b0;
 			end
 				
 		endcase

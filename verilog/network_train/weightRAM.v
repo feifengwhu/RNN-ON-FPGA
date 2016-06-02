@@ -42,12 +42,20 @@ module weightRAM #(parameter NROW = 16,
         if(writeEn == 1'b1) begin
             RAM_matrix[addressIn] <= rowIn;
         end
-        else begin
-            if(reset == 1'b1) 
-                rowOut <= {OUTPUT_PORT_SIZE{1'b0}};
-            else
-                rowOut <= RAM_matrix[addressOut];
-        end
+        /*
+        else if(reset == 1'b1) begin
+			for(i=0; i < NCOL; i=i+1) begin
+				RAM_matrix[i] <= {OUTPUT_PORT_SIZE{1'b0}};
+			end
+		end
+		*/
+    end
+     
+    always @(negedge clk) begin
+		if(reset == 1'b1) 
+			rowOut <= {OUTPUT_PORT_SIZE{1'b0}};
+		else
+			rowOut <= RAM_matrix[addressOut];
     end
 
 function integer log2;

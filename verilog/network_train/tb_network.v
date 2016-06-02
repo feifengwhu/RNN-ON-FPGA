@@ -35,9 +35,11 @@ module tb_network();
     wire  [BITWIDTH-1:0]       networkOutput;
     wire                       resetP;
     wire                       dataReadyP;
+    wire                       trainingReady;
     reg	 enPerceptron;
     reg  modelOutput;
     reg [BITWIDTH-1:0] costFunc;
+    reg [2*BITWIDTH-1:0] costFuncIntermediate;
     reg newCostFunc;
     
     // File descriptors for the error/output dumps
@@ -56,16 +58,17 @@ module tb_network();
  
     // DUT Instantiation
     network              #(INPUT_SZ, HIDDEN_SZ, OUTPUT_SZ, QN, QM, DSP48_PER_ROW_G, DSP48_PER_ROW_M) 
-			LSTM_LAYER    (inputVec, 1'b0, 43'd0, 11'd0, 11'd0, clock, reset, 1'b0, 18'd0, newSample, dataReady, outputVec);
+			LSTM_LAYER    (inputVec, 1'b1, 43'd3711, 11'd9, 11'd4, clock, reset, newCostFunc, costFunc, newSample, dataReady, trainingReady, outputVec);
 			
     array_prod #(HIDDEN_SZ, QN, QM)  PERCEPTRON  (Wperceptron, outputVec, clock, resetP, dataReadyP, networkOutput);
    
    
-   /*
+   
     always @(*) begin
-        costFunc = (networkOutput - modelOutput)**2;
+        costFuncIntermediate = (networkOutput - (modelOutput<<<QM))**2;
+        costFunc = costFuncIntermediate>>>QM;
     end
-	*/
+	
     // Keeping track of the simulation time
     real time_start, time_end;
 
@@ -212,7 +215,23 @@ module tb_network();
 					//$display("%d --> %b", roundOut, modelOutput);
 					//$display("ERROR!\n");
 				end
-				 
+				newCostFunc = 1;
+				#(FULL_CLOCK);
+				newCostFunc = 0;
+				
+				// If we are training, wait for the perturbed FP, and uncomment this
+				@(posedge dataReady);
+				#(FULL_CLOCK);
+				enPerceptron = 1;
+				
+				@(posedge dataReadyP);
+				roundOut = sigmoid(networkOutput);
+				enPerceptron = 0;
+				newCostFunc = 1;
+				#(FULL_CLOCK);
+				newCostFunc = 0;
+				
+				@(posedge trainingReady);
 				//$display("%d --> %b", roundOut, modelOutput);
 				//$fwrite(fid, "%d\n", networkOutput);
 				
