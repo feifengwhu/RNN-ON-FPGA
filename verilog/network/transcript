@@ -1,5 +1,5 @@
 # vsim -c -novopt -do "run -all" tb_network 
-# Start time: 11:39:08 on Jun 01,2016
+# Start time: 14:21:53 on Jun 02,2016
 # ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
 # //  Questa Sim-64
 # //  Version 10.4c_5 linux_x86_64 Nov 14 2015
@@ -44,59 +44,9 @@
 # Input Sample         700
 # Input Sample         800
 # Input Sample         900
-# Input Sample        1000
-# Input Sample        1100
-# Input Sample        1200
-# Input Sample        1300
-# Input Sample        1400
-# Input Sample        1500
-# Input Sample        1600
-# Input Sample        1700
-# Input Sample        1800
-# Input Sample        1900
-# Input Sample        2000
-# Input Sample        2100
-# Input Sample        2200
-# Input Sample        2300
-# Input Sample        2400
-# Input Sample        2500
-# Input Sample        2600
-# Input Sample        2700
-# Input Sample        2800
-# Input Sample        2900
-# Input Sample        3000
-# Input Sample        3100
-# Input Sample        3200
-# Input Sample        3300
-# Input Sample        3400
-# Input Sample        3500
-# Input Sample        3600
-# Input Sample        3700
-# Input Sample        3800
-# Input Sample        3900
-# Input Sample        4000
-# Input Sample        4100
-# Input Sample        4200
-# Input Sample        4300
-# Input Sample        4400
-# Input Sample        4500
-# Input Sample        4600
-# Input Sample        4700
-# Input Sample        4800
-# Input Sample        4900
-# Input Sample        5000
-# Input Sample        5100
-# Input Sample        5200
-# Input Sample        5300
-# Input Sample        5400
-# Input Sample        5500
-# Input Sample        5600
-# Input Sample        5700
-# Input Sample        5800
-# Input Sample        5900
-# ** Note: $stop    : tb_network.v(207)
-#    Time: 3288005 ns  Iteration: 0  Instance: /tb_network
-# Break in Module tb_network at tb_network.v line 207
-# Stopped at tb_network.v line 207
-# End time: 11:40:52 on Jun 01,2016, Elapsed time: 0:01:44
+# ** Note: $stop    : tb_network.v(211)
+#    Time: 548005 ns  Iteration: 0  Instance: /tb_network
+# Break in Module tb_network at tb_network.v line 211
+# Stopped at tb_network.v line 211
+# End time: 14:22:08 on Jun 02,2016, Elapsed time: 0:00:15
 # Errors: 0, Warnings: 1

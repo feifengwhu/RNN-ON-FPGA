@@ -30,6 +30,7 @@ module network  #(parameter INPUT_SZ   =  2,
 	parameter MUX_BITWIDTH		  = log2(DSP48_PER_ROW_M);  
 	parameter N_DSP48            = HIDDEN_SZ/DSP48_PER_ROW_M; 
 	parameter N_PRNG             = HIDDEN_SZ/4;
+	parameter N_PRNG_BIAS        = HIDDEN_SZ/8;
 	parameter RAND_GEN_BITWIDTH  = 32;
 	
     // Input/Output definitions
@@ -112,6 +113,11 @@ module network  #(parameter INPUT_SZ   =  2,
     wire   [HIDDEN_SZ-1:0]  sign_wFY;
     wire   [HIDDEN_SZ-1:0]  sign_wOX;
     wire   [HIDDEN_SZ-1:0]  sign_wOY;
+    reg    [HIDDEN_SZ-1:0]  sign_bZ;
+    reg    [HIDDEN_SZ-1:0]  sign_bI;
+    reg    [HIDDEN_SZ-1:0]  sign_bF;
+    reg    [HIDDEN_SZ-1:0]  sign_bO;
+    
     wire   [LAYER_BITWIDTH-1:0]  gate_Z;
     wire   [LAYER_BITWIDTH-1:0]  gate_I;
     wire   [LAYER_BITWIDTH-1:0]  gate_F;
@@ -139,10 +145,14 @@ module network  #(parameter INPUT_SZ   =  2,
     reg signed [LAYER_BITWIDTH-1:0] bI;
     reg signed [LAYER_BITWIDTH-1:0] bF;
     reg signed [LAYER_BITWIDTH-1:0] bO;
-    reg signed [HIDDEN_SZ-1:0] bZ_pertSign;
-    reg signed [HIDDEN_SZ-1:0] bI_pertSign;
-    reg signed [HIDDEN_SZ-1:0] bF_pertSign;
-    reg signed [HIDDEN_SZ-1:0] bO_pertSign;
+    reg signed [LAYER_BITWIDTH-1:0] PREVbZ;
+    reg signed [LAYER_BITWIDTH-1:0] PREVbI;
+    reg signed [LAYER_BITWIDTH-1:0] PREVbF;
+    reg signed [LAYER_BITWIDTH-1:0] PREVbO;
+    reg signed [LAYER_BITWIDTH-1:0] bZ_out_gate;
+    reg signed [LAYER_BITWIDTH-1:0] bI_out_gate;
+    reg signed [LAYER_BITWIDTH-1:0] bF_out_gate;
+    reg signed [LAYER_BITWIDTH-1:0] bO_out_gate;
     reg signed [ELEMWISE_BITWIDTH-1:0] elemWiseMult_out;
 
     // Internal datapath registers
@@ -163,7 +173,8 @@ module network  #(parameter INPUT_SZ   =  2,
     reg signed [BITWIDTH-1:0] posBeta;
     reg signed [BITWIDTH-1:0] minusBeta;
     reg signed [BITWIDTH-1:0] deltaCost;
-    wire [RAND_GEN_BITWIDTH*N_PRNG-1 : 0] randGenOutput;
+    wire [RAND_GEN_BITWIDTH*N_PRNG-1 : 0]      randGenOutput;
+    wire [RAND_GEN_BITWIDTH*N_PRNG_BIAS-1 : 0] randGenOutput_bias;
     wire reset_sigm;
     wire reset_tanh;
     reg  sigmoidEnable;
@@ -225,6 +236,9 @@ module network  #(parameter INPUT_SZ   =  2,
 		for (k = 0; k < N_PRNG; k = k + 1) begin
 			prng PRNG_k (initSeed, clock, reset, genRandNum, genRandNum, randGenOutput[k*RAND_GEN_BITWIDTH+:RAND_GEN_BITWIDTH]);
 		end 
+		for (k = 0; k < N_PRNG_BIAS; k = k + 1) begin
+			prng PRNG_bias_k (initSeed, clock, reset, genRandNum, genRandNum, randGenOutput_bias[k*RAND_GEN_BITWIDTH+:RAND_GEN_BITWIDTH]);
+		end 
     endgenerate
 
 	// The sign matrix for the perturbations
@@ -235,7 +249,7 @@ module network  #(parameter INPUT_SZ   =  2,
 	weightRAM  #(HIDDEN_SZ,  INPUT_SZ, 1)  PRAM_F_X (colAddressRead_wFX, colAddressTRAIN_X, genRandNum_X, clock, reset, randGenOutput[4*HIDDEN_SZ+:HIDDEN_SZ], sign_wFX);
     weightRAM  #(HIDDEN_SZ, HIDDEN_SZ, 1)  PRAM_F_Y (colAddressRead_wFY, colAddressTRAIN_Y, genRandNum_Y, clock, reset, randGenOutput[5*HIDDEN_SZ+:HIDDEN_SZ], sign_wFY);
 	weightRAM  #(HIDDEN_SZ,  INPUT_SZ, 1)  PRAM_O_X (colAddressRead_wOX, colAddressTRAIN_X, genRandNum_X, clock, reset, randGenOutput[6*HIDDEN_SZ+:HIDDEN_SZ], sign_wOX);
-    weightRAM  #(HIDDEN_SZ, HIDDEN_SZ, 1)  PRAM_O_Y (colAddressRead_wOY, colAddressTRAIN_Y, genRandNum_Y, clock, reset, randGenOutput[7*HIDDEN_SZ+:HIDDEN_SZ], sign_wOY); 
+    weightRAM  #(HIDDEN_SZ, HIDDEN_SZ, 1)  PRAM_O_Y (colAddressRead_wOY, colAddressTRAIN_Y, genRandNum_Y, clock, reset, randGenOutput[7*HIDDEN_SZ+:HIDDEN_SZ], sign_wOY);  
 
 	// Evaluating the positive and negative versions of the perturbation constant
 	always @(*) begin
@@ -282,6 +296,23 @@ module network  #(parameter INPUT_SZ   =  2,
 					wOY_out_gate[j*BITWIDTH +: BITWIDTH] = wOY_out[j*BITWIDTH +: BITWIDTH] + posBeta;
 				else
 					wOY_out_gate[j*BITWIDTH +: BITWIDTH] = wOY_out[j*BITWIDTH +: BITWIDTH] + minusBeta;	
+					
+				if(sign_bZ[j] == 1)
+					bZ_out_gate[j*BITWIDTH +: BITWIDTH] = bZ[j*BITWIDTH +: BITWIDTH] + posBeta;
+				else
+					bZ_out_gate[j*BITWIDTH +: BITWIDTH] = bZ[j*BITWIDTH +: BITWIDTH] + minusBeta;	
+				if(sign_bI[j] == 1)
+					bI_out_gate[j*BITWIDTH +: BITWIDTH] = bI[j*BITWIDTH +: BITWIDTH] + posBeta;
+				else
+					bI_out_gate[j*BITWIDTH +: BITWIDTH] = bI[j*BITWIDTH +: BITWIDTH] + minusBeta;	
+				if(sign_bF[j] == 1)
+					bF_out_gate[j*BITWIDTH +: BITWIDTH] = bF[j*BITWIDTH +: BITWIDTH] + posBeta;
+				else
+					bF_out_gate[j*BITWIDTH +: BITWIDTH] = bF[j*BITWIDTH +: BITWIDTH] + minusBeta;	
+				if(sign_bO[j] == 1)
+					bO_out_gate[j*BITWIDTH +: BITWIDTH] = bO[j*BITWIDTH +: BITWIDTH] + posBeta;
+				else
+					bO_out_gate[j*BITWIDTH +: BITWIDTH] = bO[j*BITWIDTH +: BITWIDTH] + minusBeta;	
 			end
 		end
 		else begin
@@ -293,47 +324,70 @@ module network  #(parameter INPUT_SZ   =  2,
 			wFY_out_gate = wFY_out;
 			wOX_out_gate = wOX_out;
 			wOY_out_gate = wOY_out;
+			bZ_out_gate = bZ;
+			bI_out_gate = bI;
+			bF_out_gate = bF;
+			bO_out_gate = bO;
 		end
 	end
 	
 	// Evaluates the update to be applied for each training cycle
 	always @(*) begin
-		for(j = 0; j < HIDDEN_SZ; j = j + 1) begin
-			if(sign_wZX[j] == 1)
-				wZX_in[j*BITWIDTH +: BITWIDTH] = PREVwZX_out[j*BITWIDTH +: BITWIDTH] + (deltaCost >> (learnRate - pertRate));
-			else
-				wZX_in[j*BITWIDTH +: BITWIDTH] = PREVwZX_out[j*BITWIDTH +: BITWIDTH] - (deltaCost >> (learnRate - pertRate));
-			if(sign_wZY[j] == 1)
-				wZY_in[j*BITWIDTH +: BITWIDTH] = PREVwZY_out[j*BITWIDTH +: BITWIDTH] + (deltaCost >> (learnRate - pertRate));
-			else
-				wZY_in[j*BITWIDTH +: BITWIDTH] = PREVwZY_out[j*BITWIDTH +: BITWIDTH] - (deltaCost >> (learnRate - pertRate));
+		if(weightUpdate) begin
+			for(j = 0; j < HIDDEN_SZ; j = j + 1) begin
+				if(sign_wZX[j] == 1)
+					wZX_in[j*BITWIDTH +: BITWIDTH] = PREVwZX_out[j*BITWIDTH +: BITWIDTH] + (deltaCost >> (learnRate - pertRate));
+				else
+					wZX_in[j*BITWIDTH +: BITWIDTH] = PREVwZX_out[j*BITWIDTH +: BITWIDTH] - (deltaCost >> (learnRate - pertRate));
+				if(sign_wZY[j] == 1)
+					wZY_in[j*BITWIDTH +: BITWIDTH] = PREVwZY_out[j*BITWIDTH +: BITWIDTH] + (deltaCost >> (learnRate - pertRate));
+				else
+					wZY_in[j*BITWIDTH +: BITWIDTH] = PREVwZY_out[j*BITWIDTH +: BITWIDTH] - (deltaCost >> (learnRate - pertRate));
+					
+				if(sign_wIX[j] == 1)
+					wIX_in[j*BITWIDTH +: BITWIDTH] = PREVwIX_out[j*BITWIDTH +: BITWIDTH] + (deltaCost >> (learnRate - pertRate));
+				else
+					wIX_in[j*BITWIDTH +: BITWIDTH] = PREVwIX_out[j*BITWIDTH +: BITWIDTH] - (deltaCost >> (learnRate - pertRate));
+				if(sign_wIY[j] == 1)
+					wIY_in[j*BITWIDTH +: BITWIDTH] = PREVwIY_out[j*BITWIDTH +: BITWIDTH] + (deltaCost >> (learnRate - pertRate));
+				else
+					wIY_in[j*BITWIDTH +: BITWIDTH] = PREVwIY_out[j*BITWIDTH +: BITWIDTH] - (deltaCost >> (learnRate - pertRate));
 				
-			if(sign_wIX[j] == 1)
-				wIX_in[j*BITWIDTH +: BITWIDTH] = PREVwIX_out[j*BITWIDTH +: BITWIDTH] + (deltaCost >> (learnRate - pertRate));
-			else
-				wIX_in[j*BITWIDTH +: BITWIDTH] = PREVwIX_out[j*BITWIDTH +: BITWIDTH] - (deltaCost >> (learnRate - pertRate));
-			if(sign_wIY[j] == 1)
-				wIY_in[j*BITWIDTH +: BITWIDTH] = PREVwIY_out[j*BITWIDTH +: BITWIDTH] + (deltaCost >> (learnRate - pertRate));
-			else
-				wIY_in[j*BITWIDTH +: BITWIDTH] = PREVwIY_out[j*BITWIDTH +: BITWIDTH] - (deltaCost >> (learnRate - pertRate));
-			
-			if(sign_wFX[j] == 1)
-				wFX_in[j*BITWIDTH +: BITWIDTH] = PREVwFX_out[j*BITWIDTH +: BITWIDTH] + (deltaCost >> (learnRate - pertRate));
-			else
-				wFX_in[j*BITWIDTH +: BITWIDTH] = PREVwFX_out[j*BITWIDTH +: BITWIDTH] - (deltaCost >> (learnRate - pertRate));
-			if(sign_wFY[j] == 1)
-				wFY_in[j*BITWIDTH +: BITWIDTH] = PREVwFY_out[j*BITWIDTH +: BITWIDTH] + (deltaCost >> (learnRate - pertRate));
-			else
-				wFY_in[j*BITWIDTH +: BITWIDTH] = PREVwFY_out[j*BITWIDTH +: BITWIDTH] - (deltaCost >> (learnRate - pertRate));
-			
-			if(sign_wOX[j] == 1)
-				wOX_in[j*BITWIDTH +: BITWIDTH] = PREVwOX_out[j*BITWIDTH +: BITWIDTH] + (deltaCost >> (learnRate - pertRate));
-			else
-				wOX_in[j*BITWIDTH +: BITWIDTH] = PREVwOX_out[j*BITWIDTH +: BITWIDTH] - (deltaCost >> (learnRate - pertRate));	
-			if(sign_wOY[j] == 1)
-				wOY_in[j*BITWIDTH +: BITWIDTH] = PREVwOY_out[j*BITWIDTH +: BITWIDTH] + (deltaCost >> (learnRate - pertRate));
-			else
-				wOY_in[j*BITWIDTH +: BITWIDTH] = PREVwOY_out[j*BITWIDTH +: BITWIDTH] - (deltaCost >> (learnRate - pertRate));	
+				if(sign_wFX[j] == 1)
+					wFX_in[j*BITWIDTH +: BITWIDTH] = PREVwFX_out[j*BITWIDTH +: BITWIDTH] + (deltaCost >> (learnRate - pertRate));
+				else
+					wFX_in[j*BITWIDTH +: BITWIDTH] = PREVwFX_out[j*BITWIDTH +: BITWIDTH] - (deltaCost >> (learnRate - pertRate));
+				if(sign_wFY[j] == 1)
+					wFY_in[j*BITWIDTH +: BITWIDTH] = PREVwFY_out[j*BITWIDTH +: BITWIDTH] + (deltaCost >> (learnRate - pertRate));
+				else
+					wFY_in[j*BITWIDTH +: BITWIDTH] = PREVwFY_out[j*BITWIDTH +: BITWIDTH] - (deltaCost >> (learnRate - pertRate));
+				
+				if(sign_wOX[j] == 1)
+					wOX_in[j*BITWIDTH +: BITWIDTH] = PREVwOX_out[j*BITWIDTH +: BITWIDTH] + (deltaCost >> (learnRate - pertRate));
+				else
+					wOX_in[j*BITWIDTH +: BITWIDTH] = PREVwOX_out[j*BITWIDTH +: BITWIDTH] - (deltaCost >> (learnRate - pertRate));	
+				if(sign_wOY[j] == 1)
+					wOY_in[j*BITWIDTH +: BITWIDTH] = PREVwOY_out[j*BITWIDTH +: BITWIDTH] + (deltaCost >> (learnRate - pertRate));
+				else
+					wOY_in[j*BITWIDTH +: BITWIDTH] = PREVwOY_out[j*BITWIDTH +: BITWIDTH] - (deltaCost >> (learnRate - pertRate));
+					
+				if(sign_bZ[j] == 1)
+					bZ[j*BITWIDTH +: BITWIDTH] = PREVbZ[j*BITWIDTH +: BITWIDTH] + (deltaCost >> (learnRate - pertRate));
+				else
+					bZ[j*BITWIDTH +: BITWIDTH] = PREVbZ[j*BITWIDTH +: BITWIDTH] - (deltaCost >> (learnRate - pertRate));	
+				if(sign_bI[j] == 1)
+					bI[j*BITWIDTH +: BITWIDTH] = PREVbI[j*BITWIDTH +: BITWIDTH] + (deltaCost >> (learnRate - pertRate));
+				else
+					bI[j*BITWIDTH +: BITWIDTH] = PREVbI[j*BITWIDTH +: BITWIDTH] - (deltaCost >> (learnRate - pertRate));	
+				if(sign_bF[j] == 1)
+					bF[j*BITWIDTH +: BITWIDTH] = PREVbF[j*BITWIDTH +: BITWIDTH] + (deltaCost >> (learnRate - pertRate));
+				else
+					bF[j*BITWIDTH +: BITWIDTH] = PREVbF[j*BITWIDTH +: BITWIDTH] - (deltaCost >> (learnRate - pertRate));	
+				if(sign_bO[j] == 1)
+					bO[j*BITWIDTH +: BITWIDTH] = PREVbO[j*BITWIDTH +: BITWIDTH] + (deltaCost >> (learnRate - pertRate));
+				else
+					bO[j*BITWIDTH +: BITWIDTH] = PREVbO[j*BITWIDTH +: BITWIDTH] - (deltaCost >> (learnRate - pertRate));		
+			end
 		end
 	end
 	
@@ -347,6 +401,10 @@ module network  #(parameter INPUT_SZ   =  2,
 		PREVwFY_out <= wFY_out;
 		PREVwOX_out <= wOX_out;
 		PREVwOY_out <= wOY_out;
+		PREVbZ <= bZ;
+		PREVbI <= bI;
+		PREVbF <= bF;
+		PREVbO <= bO;
 	end
 	
 	always @(*) begin
@@ -486,7 +544,7 @@ module network  #(parameter INPUT_SZ   =  2,
     // --------------------- FINITE STATE MACHINE --------------------- //
     
     // The state tags
-    parameter IDLE        = 5'd0;
+    parameter IDLE             = 5'd0;
     parameter GATE_CALC_INIT   = 5'd1;
     parameter GATE_CALC   = 5'd2;
     parameter NON_LIN_1A  = 5'd3;

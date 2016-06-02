@@ -21,7 +21,7 @@ module tb_network();
     parameter HALF_CLOCK       = 1;
     parameter FULL_CLOCK       = 2*HALF_CLOCK;
     parameter MAX_SAMPLES      = 8;
-    parameter TRAIN_SAMPLES    = 6000;
+    parameter TRAIN_SAMPLES    = 1000;
 
 	reg clock;
 	reg reset;
@@ -59,6 +59,10 @@ module tb_network();
 
     // Keeping track of the simulation time
     real time_start, time_end;
+
+	always @(posedge dataReadyP) begin
+	    quantError = quantError + ($signed(networkOutput) - $signed(temp) )/(2.0**QM);
+	end
 
 	initial begin
 		fid_x = $fopen("goldenIn_x.bin", "r");

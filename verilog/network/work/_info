@@ -9,10 +9,10 @@ z2
 cModel Technology
 Z0 d/home/josefonseca/Documents/thesis/verilog/network
 T_opt
-!s110 1463159207
-V=JQgDXUjURk=JGXL8mP4N1
+!s110 1464813070
+VH3l>:2GKQ`?Dn`aMCVLXo1
 Z1 04 10 4 work tb_network fast 0
-=1-d43d7e359f7e-573609a7-7b8f1-128e
+=1-d43d7e359f7e-574f460e-d1179-2214
 Z2 o-quiet -auto_acc_if_foreign -work work
 n@_opt
 Z3 OL;O;10.4c_5;61
@@ -94,7 +94,7 @@ w1464692038
 Farray_prod.v
 L0 1
 Z6 OL;L;10.4c_5;61
-Z7 !s108 1464777547.000000
+Z7 !s108 1464873712.000000
 Z8 !s107 weightRAM.v|test.v|tb_network.v|tanh.v|sigmoid.v|network.v|gate.v|dot_prod.v|array_prod.v|
 Z9 !s90 array_prod.v|dot_prod.v|gate.v|network.v|sigmoid.v|tanh.v|tb_network.v|test.v|weightRAM.v|
 !i113 0
@@ -220,10 +220,10 @@ r1
 !s85 0
 31
 !i10b 1
-!s100 :inMjiXPe0ROoXM7GGoIW3
-IOkRQEfK>JC@cGT26MO7Rz2
+!s100 ILnV6]QU=5kPaldA3B^<K2
+I`8G8YSAF:4gKH42eODU033
 R0
-w1464775147
+w1464873551
 8tb_network.v
 Ftb_network.v
 L0 3
@@ -234,7 +234,7 @@ R9
 !i113 0
 R10
 vtest
-!s110 1464777547
+!s110 1464873712
 !i10b 1
 !s100 7X47;4fC1AE_eCRzged`A2
 I?A<6`FlW]VNROz4Po0laM0

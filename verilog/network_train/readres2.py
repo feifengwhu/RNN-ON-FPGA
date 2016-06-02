@@ -23,16 +23,19 @@ largest_number = pow(2,binary_dim)
 hiddenSz = 8
 QN = 6
 QM = 11
-numTrain = 10000
+numTrain = 1000
 prevX = list()
 outputGolden  = list()
 outputVerilog = list()
 outputPython  = list()
 wrongBits = 0
-f_in  = open("goldenIn_x.bin", "w")
+f_in   = open("goldenIn_x.bin", "w")
+f_out  = open("goldenOut.bin", "w")
 
-
- 
+# Loads the pickled layer
+f_pkl = open("layer.pickle", "rb")
+layer = pickle.load(f_pkl);
+layer.resetNetwork()
 
 for i in range(numTrain):
 	# Generates the golden input and output
@@ -50,14 +53,24 @@ for i in range(numTrain):
 		y  = np.array([int(c[binary_dim - position - 1])]).T
 		prevX.append(X)
 		f_in.write("{0:018b}\n".format(real_to_Qnm(X[0,0], QN, QM))) 
-		f_in.write("{0:018b}\n".format(real_to_Qnm(X[1,0], QN, QM))) 
+		f_in.write("{0:018b}\n".format(real_to_Qnm(X[1,0], QN, QM)))
+
+		y = layer.forwardPropagate(X); 
+		f_out.write("{0}\n".format(int(np.round(y)), QN, QM))
+		
+		layer.prev_c = layer.c
+		layer.prev_y = layer.y
+		
+	layer.resetNetwork()
 
 f_in.close()
+f_out.close()
 
 # Compiles and runs the Verilog simulation
 os.system("vlog *.v")
 os.system("vsim -c -novopt -do \"run -all\" tb_network")
 
+"""
 # Loads the pickled layer
 f_pkl = open("layer.pickle", "rb")
 layer = pickle.load(f_pkl);
@@ -74,7 +87,7 @@ for n in range(numTrain):
 		outputNetwork = Qnm_to_real(int(line), QN,QM);
 
 		# HDL Network output
-		temp = layer.forwardPropagate(prevX[i+numBits*n])
+
 		outputVerilog.append(int(np.round(sigmoid(outputNetwork))));
 		outputPython.append(int(np.round(temp)));
 	
@@ -97,3 +110,4 @@ for n in range(numTrain):
 	layer.resetNetwork()
 	
 print("% wrong bits: ", 100*wrongBits/(numTrain*numBits))
+"""

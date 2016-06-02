@@ -9,30 +9,38 @@ z2
 cModel Technology
 Z0 d/home/josefonseca/Documents/thesis/verilog/network_train
 T_opt
-!s110 1464449643
-VcXO=V`JB@jOgN_RHo7IMe0
+!s110 1464806236
+VBU:UZXZIH;:<l]Xd@<Q4:0
 04 4 4 work test fast 0
-=1-d43d7e359f7e-5749ba6b-1dbd9-2053
+=1-d43d7e359f7e-574f2b5c-41109-1967
 Z1 o-quiet -auto_acc_if_foreign -work work
 n@_opt
 Z2 OL;O;10.4c_5;61
 R0
 T_opt1
-!s110 1464528883
-V4aUZ;BL^Gj;4Q1U3BbJ2U0
+!s110 1464811779
+V@5DEbjdFPjk9;aJB?chR^1
 Z3 04 10 4 work tb_network fast 0
-=1-d43d7e359f7e-574aeff3-3fce5-1099
+=1-d43d7e359f7e-574f4102-f1677-202e
 R1
 n@_opt1
 R2
 R0
 T_opt2
-!s110 1464785032
-Vi<NI5I^B9N?UfD5G5Al];3
+!s110 1464877072
+VJ93O1]TW4hm2:TNAUbKaz0
 R3
-=1-d43d7e359f7e-574ed888-1c8ef-1ab0
+=1-d43d7e359f7e-57504010-329f7-140c
 o-quiet -auto_acc_if_foreign -work work +acc
 n@_opt2
+R2
+T_opt3
+!s110 1464876298
+V[_Q4GGb3H_Tdh;0[C@AJT1
+R3
+=1-d43d7e359f7e-57503d0a-20c52-1315
+R1
+n@_opt3
 R2
 R0
 varray_prod
@@ -44,12 +52,12 @@ r1
 !s100 m[KFbYiYj3oaci2JZ4o0o1
 ISb4fQ>`i2c?4GzbEaDHIE2
 R0
-w1464692038
+w1464876150
 8array_prod.v
 Farray_prod.v
 L0 1
 Z5 OL;L;10.4c_5;61
-Z6 !s108 1464787474.000000
+Z6 !s108 1464876547.000000
 Z7 !s107 weightRAM.v|test.v|tb_network.v|tanh.v|sigmoid.v|prng.v|network.v|gate.v|dot_prod.v|array_prod.v|
 Z8 !s90 array_prod.v|dot_prod.v|gate.v|network.v|prng.v|sigmoid.v|tanh.v|tb_network.v|test.v|weightRAM.v|
 !i113 0
@@ -98,10 +106,10 @@ r1
 !s85 0
 31
 !i10b 1
-!s100 RFe_0:S<zbLfkXQXzWTLJ1
-Io@;jePJFadgWhab<ffHfL0
+!s100 _^LT<cU^1NG0SS69a47RF2
+I=nKX;mXiA9^6S1b[TBCm11
 R0
-w1464473815
+w1464875013
 8network.v
 Fnetwork.v
 L0 1
@@ -174,10 +182,10 @@ r1
 !s85 0
 31
 !i10b 1
-!s100 XH9FVaAI3fS=Z1=h@SL4:0
-I4nkRFKFNzHTLV3gKVh8HI2
+!s100 [O5N4?LLWnPHl?nPlI>^N3
+ITl0WPdYCBoIOk>SL_zX:O3
 R0
-w1464787455
+w1464876490
 8tb_network.v
 Ftb_network.v
 L0 3
@@ -188,13 +196,13 @@ R8
 !i113 0
 R9
 vtest
-!s110 1464787474
+!s110 1464876547
 !i10b 1
-!s100 M4aKFGME2DK3h:h8O@=l32
-IoAd5Vj[SLNZDI=>n:Q`IO1
+!s100 [<FQDXnZ]Ncd<GALMecU@3
+I7d<WzT6V^l[llDQbcVhOk0
 R4
 R0
-w1464449638
+w1464807627
 8test.v
 Ftest.v
 L0 1

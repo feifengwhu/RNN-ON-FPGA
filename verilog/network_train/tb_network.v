@@ -9,6 +9,7 @@ module tb_network();
     parameter QM = 11;
 	parameter DSP48_PER_ROW_G = 2;
 	parameter DSP48_PER_ROW_M = 4;
+	parameter real e = 2.718281828459045;
     
     // Dependent Parameters
     parameter BITWIDTH         = QN + QM + 1;
@@ -20,26 +21,29 @@ module tb_network();
     parameter HALF_CLOCK       = 1;
     parameter FULL_CLOCK       = 2*HALF_CLOCK;
     parameter MAX_SAMPLES      = 8;
-	parameter TRAIN_SAMPLES    = 10000;
+	parameter TRAIN_SAMPLES    = 1000;
 
 	reg clock;
 	reg reset;
-    reg                       newSample;
-    wire   			          dataReady;
-    reg  [INPUT_BITWIDTH-1:0] inputVec;
-    wire [LAYER_BITWIDTH-1:0] outputVec;
-    reg [OUTPUT_BITWIDTH-1:0] test;
-    reg   [BITWIDTH-1:0] temp;
-    reg  [LAYER_BITWIDTH-1:0] Wperceptron;
-    wire  [BITWIDTH-1:0] networkOutput;
-    wire                  resetP;
-    wire                  dataReadyP;
+    reg                        newSample;
+    wire   			           dataReady;
+    reg  [INPUT_BITWIDTH-1:0]  inputVec;
+    wire [LAYER_BITWIDTH-1:0]  outputVec;
+    reg  [OUTPUT_BITWIDTH-1:0] test;
+    reg  [BITWIDTH-1:0]        temp;
+    reg  [LAYER_BITWIDTH-1:0]  Wperceptron;
+    wire  [BITWIDTH-1:0]       networkOutput;
+    wire                       resetP;
+    wire                       dataReadyP;
     reg	 enPerceptron;
+    reg  modelOutput;
+    reg [BITWIDTH-1:0] costFunc;
+    reg newCostFunc;
     
     // File descriptors for the error/output dumps
     integer fid, fid_error_dump, retVal;
-    integer fid_x, fid_Wz, fid_Wi, fid_Wf, fid_Wo, fid_Rz, fid_Ri, fid_Rf, fid_Ro, fid_bz, fid_bi, fid_bf, fid_bo, fid_outW;
-    integer i=0,j=0,k=0,l=0;
+    integer fid_x, fid_Wz, fid_Wi, fid_Wf, fid_Wo, fid_Rz, fid_Ri, fid_Rf, fid_Ro, fid_bz, fid_bi, fid_bf, fid_bo, fid_outW, fid_out;
+    integer i=0,j=0,k=0,l=0, roundOut;
     real    quantError=0;
     
     // Clock generation
@@ -52,10 +56,16 @@ module tb_network();
  
     // DUT Instantiation
     network              #(INPUT_SZ, HIDDEN_SZ, OUTPUT_SZ, QN, QM, DSP48_PER_ROW_G, DSP48_PER_ROW_M) 
-			LSTM_LAYER    (inputVec, 1'b0, 43'b0, 11'd3, 11'd3, clock, reset, 1'b0, 18'd0, newSample, dataReady, outputVec);
+			LSTM_LAYER    (inputVec, 1'b0, 43'd0, 11'd0, 11'd0, clock, reset, 1'b0, 18'd0, newSample, dataReady, outputVec);
 			
     array_prod #(HIDDEN_SZ, QN, QM)  PERCEPTRON  (Wperceptron, outputVec, clock, resetP, dataReadyP, networkOutput);
-    
+   
+   
+   /*
+    always @(*) begin
+        costFunc = (networkOutput - modelOutput)**2;
+    end
+	*/
     // Keeping track of the simulation time
     real time_start, time_end;
 
@@ -74,6 +84,7 @@ module tb_network();
 		fid_bf = $fopen("goldenIn_bf.bin", "r");
 		fid_bo = $fopen("goldenIn_bo.bin", "r");
 		fid_outW = $fopen("goldenIn_outW.bin", "r");
+		fid_out  = $fopen("goldenOut.bin", "r");
 		fid    = $fopen("output.bin", "w");
 		
 		// -------------------------------- Loading the weight memory ------------------------------- //
@@ -147,9 +158,10 @@ module tb_network();
     // Running the simulation
     initial begin
         time_start = $realtime;
-		clock = 0;
-		newSample = 0;
-		
+		clock        = 0;
+		newSample    = 0;
+	    newCostFunc  = 0;
+	    enPerceptron = 0;
 		// Applying the initial reset
 		reset     = 1'b1;
 		#(2*FULL_CLOCK);
@@ -179,8 +191,7 @@ module tb_network();
 				inputVec[17:0]  = temp;
 				retVal = $fscanf(fid_x,  "%b\n", temp);
 				inputVec[35:18] = temp;
-				//$fscanf(fid_out, "%b\n", ROM_goldenOut);
-				//$display("Read: %b and %b", inputVec[17:0], inputVec[35:18]);
+				retVal = $fscanf(fid_out, "%b\n", modelOutput);
 				
 				newSample = 1'b1;
 				#(FULL_CLOCK);
@@ -190,18 +201,24 @@ module tb_network();
 				
 				// Waiting for the result
 				@(posedge dataReady);
-				//@(posedge dataReady);
 				#(FULL_CLOCK);
 				enPerceptron = 1;
 				
 				@(posedge dataReadyP);
-				#(FULL_CLOCK);
-				$fwrite(fid, "%d\n", networkOutput);
+				roundOut = sigmoid(networkOutput);
 				enPerceptron = 0;
+				if (roundOut !=  modelOutput) begin
+					quantError <= quantError + 1;
+					//$display("%d --> %b", roundOut, modelOutput);
+					//$display("ERROR!\n");
+				end
+				 
+				//$display("%d --> %b", roundOut, modelOutput);
+				//$fwrite(fid, "%d\n", networkOutput);
 				
 			end
        end
- 
+		$display("Percentage Wrong bits: %f percent", 100*quantError/8000.0); 
        $stop; 
        
     end
@@ -217,6 +234,16 @@ function integer log2;
             i = i >> 1;
          end
     end
+endfunction
+
+		
+function real sigmoid;
+	input [BITWIDTH-1:0] bit_number;
+	real conv;
+	begin
+		conv = ($signed(bit_number)) / (2.0**QM);
+		sigmoid = 1/(1+ e**(-conv)); 
+	end
 endfunction
 
 endmodule
