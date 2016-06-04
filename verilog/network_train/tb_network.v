@@ -58,14 +58,14 @@ module tb_network();
  
     // DUT Instantiation
     network              #(INPUT_SZ, HIDDEN_SZ, OUTPUT_SZ, QN, QM, DSP48_PER_ROW_G, DSP48_PER_ROW_M) 
-			LSTM_LAYER    (inputVec, 1'b1, 43'd3711, 11'd9, 11'd4, clock, reset, newCostFunc, costFunc, newSample, dataReady, trainingReady, outputVec);
+			LSTM_LAYER    (inputVec, 1'b1, 43'd3711, 11'd4, 11'd0, clock, reset, newCostFunc, costFunc, newSample, dataReady, trainingReady, outputVec);
 			
     array_prod #(HIDDEN_SZ, QN, QM)  PERCEPTRON  (Wperceptron, outputVec, clock, resetP, dataReadyP, networkOutput);
    
    
    
-    always @(*) begin
-        costFuncIntermediate = (networkOutput - (modelOutput<<<QM))**2;
+    always @(posedge dataReadyP) begin
+        costFuncIntermediate = ((sigmoid(networkOutput)*(2**QM)) - (modelOutput<<QM))**2;
         costFunc = costFuncIntermediate>>>QM;
     end
 	

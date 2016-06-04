@@ -28,7 +28,7 @@ module network  #(parameter INPUT_SZ   =  2,
     parameter OUTPUT_BITWIDTH    = OUTPUT_SZ * BITWIDTH; //log2(NUM_OUTPUT_SYMBOLS);
 	parameter ADDR_BITWIDTH      = log2(HIDDEN_SZ);
 	parameter ADDR_BITWIDTH_X    = log2(INPUT_SZ);
-	parameter MUX_BITWIDTH		  = log2(DSP48_PER_ROW_M);  
+	parameter MUX_BITWIDTH		 = log2(DSP48_PER_ROW_M);  
 	parameter N_DSP48            = HIDDEN_SZ/DSP48_PER_ROW_M; 
 	parameter N_PRNG             = HIDDEN_SZ/4;
 	parameter N_PRNG_BIAS        = HIDDEN_SZ/8;
@@ -37,17 +37,17 @@ module network  #(parameter INPUT_SZ   =  2,
     // Input/Output definitions
     input [INPUT_BITWIDTH-1:0]       inputVec;
     input                            trainingFlag;
-    input [42:0]					  initSeed;
-    input [QM-1:0]					  pertRate;  // The absolute value of the exponent. Only supports (negative) powers of two
-    input [QM-1:0]					  learnRate; // The absolute value of the exponent. Only supports (negative) powers of two
+    input [42:0]					 initSeed;
+    input [QM-1:0]					 pertRate;  // The absolute value of the exponent. Only supports (negative) powers of two
+    input [QM-1:0]					 learnRate; // The absolute value of the exponent. Only supports (negative) powers of two
     input                            clock;
     input                            reset;
-    input 							  newCostFunc;
+    input 							 newCostFunc;
     input [OUTPUT_BITWIDTH-1:0]      costFunc;
     input                            newSample;
-    output reg                      dataoutReady;
-    output reg                      trainingReady;
-    output reg [LAYER_BITWIDTH-1:0] outputVec;
+    output reg                       dataoutReady;
+    output reg                       trainingReady;
+    output reg [LAYER_BITWIDTH-1:0]  outputVec;
             
 
     // Connecting wires and auxiliary registers
@@ -323,57 +323,57 @@ module network  #(parameter INPUT_SZ   =  2,
 		if(weightUpdate) begin
 			for(j = 0; j < HIDDEN_SZ; j = j + 1) begin
 				if(sign_wZX[j] == 1)
-					wZX_in[j*BITWIDTH +: BITWIDTH] = PREVwZX_out[j*BITWIDTH +: BITWIDTH] + (deltaCost >> (learnRate - pertRate));
+					wZX_in[j*BITWIDTH +: BITWIDTH] = PREVwZX_out[j*BITWIDTH +: BITWIDTH] + (deltaCost >>> (learnRate - pertRate));
 				else
-					wZX_in[j*BITWIDTH +: BITWIDTH] = PREVwZX_out[j*BITWIDTH +: BITWIDTH] - (deltaCost >> (learnRate - pertRate));
+					wZX_in[j*BITWIDTH +: BITWIDTH] = PREVwZX_out[j*BITWIDTH +: BITWIDTH] - (deltaCost >>> (learnRate - pertRate));
 				if(sign_wZY[j] == 1)
-					wZY_in[j*BITWIDTH +: BITWIDTH] = PREVwZY_out[j*BITWIDTH +: BITWIDTH] + (deltaCost >> (learnRate - pertRate));
+					wZY_in[j*BITWIDTH +: BITWIDTH] = PREVwZY_out[j*BITWIDTH +: BITWIDTH] + (deltaCost >>> (learnRate - pertRate));
 				else
-					wZY_in[j*BITWIDTH +: BITWIDTH] = PREVwZY_out[j*BITWIDTH +: BITWIDTH] - (deltaCost >> (learnRate - pertRate));
+					wZY_in[j*BITWIDTH +: BITWIDTH] = PREVwZY_out[j*BITWIDTH +: BITWIDTH] - (deltaCost >>> (learnRate - pertRate));
 					
 				if(sign_wIX[j] == 1)
-					wIX_in[j*BITWIDTH +: BITWIDTH] = PREVwIX_out[j*BITWIDTH +: BITWIDTH] + (deltaCost >> (learnRate - pertRate));
+					wIX_in[j*BITWIDTH +: BITWIDTH] = PREVwIX_out[j*BITWIDTH +: BITWIDTH] + (deltaCost >>> (learnRate - pertRate));
 				else
-					wIX_in[j*BITWIDTH +: BITWIDTH] = PREVwIX_out[j*BITWIDTH +: BITWIDTH] - (deltaCost >> (learnRate - pertRate));
+					wIX_in[j*BITWIDTH +: BITWIDTH] = PREVwIX_out[j*BITWIDTH +: BITWIDTH] - (deltaCost >>> (learnRate - pertRate));
 				if(sign_wIY[j] == 1)
-					wIY_in[j*BITWIDTH +: BITWIDTH] = PREVwIY_out[j*BITWIDTH +: BITWIDTH] + (deltaCost >> (learnRate - pertRate));
+					wIY_in[j*BITWIDTH +: BITWIDTH] = PREVwIY_out[j*BITWIDTH +: BITWIDTH] + (deltaCost >>> (learnRate - pertRate));
 				else
-					wIY_in[j*BITWIDTH +: BITWIDTH] = PREVwIY_out[j*BITWIDTH +: BITWIDTH] - (deltaCost >> (learnRate - pertRate));
+					wIY_in[j*BITWIDTH +: BITWIDTH] = PREVwIY_out[j*BITWIDTH +: BITWIDTH] - (deltaCost >>> (learnRate - pertRate));
 				
 				if(sign_wFX[j] == 1)
-					wFX_in[j*BITWIDTH +: BITWIDTH] = PREVwFX_out[j*BITWIDTH +: BITWIDTH] + (deltaCost >> (learnRate - pertRate));
+					wFX_in[j*BITWIDTH +: BITWIDTH] = PREVwFX_out[j*BITWIDTH +: BITWIDTH] + (deltaCost >>> (learnRate - pertRate));
 				else
-					wFX_in[j*BITWIDTH +: BITWIDTH] = PREVwFX_out[j*BITWIDTH +: BITWIDTH] - (deltaCost >> (learnRate - pertRate));
+					wFX_in[j*BITWIDTH +: BITWIDTH] = PREVwFX_out[j*BITWIDTH +: BITWIDTH] - (deltaCost >>> (learnRate - pertRate));
 				if(sign_wFY[j] == 1)
-					wFY_in[j*BITWIDTH +: BITWIDTH] = PREVwFY_out[j*BITWIDTH +: BITWIDTH] + (deltaCost >> (learnRate - pertRate));
+					wFY_in[j*BITWIDTH +: BITWIDTH] = PREVwFY_out[j*BITWIDTH +: BITWIDTH] + (deltaCost >>> (learnRate - pertRate));
 				else
-					wFY_in[j*BITWIDTH +: BITWIDTH] = PREVwFY_out[j*BITWIDTH +: BITWIDTH] - (deltaCost >> (learnRate - pertRate));
+					wFY_in[j*BITWIDTH +: BITWIDTH] = PREVwFY_out[j*BITWIDTH +: BITWIDTH] - (deltaCost >>> (learnRate - pertRate));
 				
 				if(sign_wOX[j] == 1)
-					wOX_in[j*BITWIDTH +: BITWIDTH] = PREVwOX_out[j*BITWIDTH +: BITWIDTH] + (deltaCost >> (learnRate - pertRate));
+					wOX_in[j*BITWIDTH +: BITWIDTH] = PREVwOX_out[j*BITWIDTH +: BITWIDTH] + (deltaCost >>> (learnRate - pertRate));
 				else
-					wOX_in[j*BITWIDTH +: BITWIDTH] = PREVwOX_out[j*BITWIDTH +: BITWIDTH] - (deltaCost >> (learnRate - pertRate));	
+					wOX_in[j*BITWIDTH +: BITWIDTH] = PREVwOX_out[j*BITWIDTH +: BITWIDTH] - (deltaCost >>> (learnRate - pertRate));	
 				if(sign_wOY[j] == 1)
-					wOY_in[j*BITWIDTH +: BITWIDTH] = PREVwOY_out[j*BITWIDTH +: BITWIDTH] + (deltaCost >> (learnRate - pertRate));
+					wOY_in[j*BITWIDTH +: BITWIDTH] = PREVwOY_out[j*BITWIDTH +: BITWIDTH] + (deltaCost >>> (learnRate - pertRate));
 				else
-					wOY_in[j*BITWIDTH +: BITWIDTH] = PREVwOY_out[j*BITWIDTH +: BITWIDTH] - (deltaCost >> (learnRate - pertRate));
+					wOY_in[j*BITWIDTH +: BITWIDTH] = PREVwOY_out[j*BITWIDTH +: BITWIDTH] - (deltaCost >>> (learnRate - pertRate));
 					
 				if(sign_bZ[j] == 1)
-					bZ[j*BITWIDTH +: BITWIDTH] = PREVbZ[j*BITWIDTH +: BITWIDTH] + (deltaCost >> (learnRate - pertRate));
+					bZ[j*BITWIDTH +: BITWIDTH] = PREVbZ[j*BITWIDTH +: BITWIDTH] + (deltaCost >>> (learnRate - pertRate));
 				else
-					bZ[j*BITWIDTH +: BITWIDTH] = PREVbZ[j*BITWIDTH +: BITWIDTH] - (deltaCost >> (learnRate - pertRate));	
+					bZ[j*BITWIDTH +: BITWIDTH] = PREVbZ[j*BITWIDTH +: BITWIDTH] - (deltaCost >>> (learnRate - pertRate));	
 				if(sign_bI[j] == 1)
-					bI[j*BITWIDTH +: BITWIDTH] = PREVbI[j*BITWIDTH +: BITWIDTH] + (deltaCost >> (learnRate - pertRate));
+					bI[j*BITWIDTH +: BITWIDTH] = PREVbI[j*BITWIDTH +: BITWIDTH] + (deltaCost >>> (learnRate - pertRate));
 				else
-					bI[j*BITWIDTH +: BITWIDTH] = PREVbI[j*BITWIDTH +: BITWIDTH] - (deltaCost >> (learnRate - pertRate));	
+					bI[j*BITWIDTH +: BITWIDTH] = PREVbI[j*BITWIDTH +: BITWIDTH] - (deltaCost >>> (learnRate - pertRate));	
 				if(sign_bF[j] == 1)
-					bF[j*BITWIDTH +: BITWIDTH] = PREVbF[j*BITWIDTH +: BITWIDTH] + (deltaCost >> (learnRate - pertRate));
+					bF[j*BITWIDTH +: BITWIDTH] = PREVbF[j*BITWIDTH +: BITWIDTH] + (deltaCost >>> (learnRate - pertRate));
 				else
-					bF[j*BITWIDTH +: BITWIDTH] = PREVbF[j*BITWIDTH +: BITWIDTH] - (deltaCost >> (learnRate - pertRate));	
+					bF[j*BITWIDTH +: BITWIDTH] = PREVbF[j*BITWIDTH +: BITWIDTH] - (deltaCost >>> (learnRate - pertRate));	
 				if(sign_bO[j] == 1)
-					bO[j*BITWIDTH +: BITWIDTH] = PREVbO[j*BITWIDTH +: BITWIDTH] + (deltaCost >> (learnRate - pertRate));
+					bO[j*BITWIDTH +: BITWIDTH] = PREVbO[j*BITWIDTH +: BITWIDTH] + (deltaCost >>> (learnRate - pertRate));
 				else
-					bO[j*BITWIDTH +: BITWIDTH] = PREVbO[j*BITWIDTH +: BITWIDTH] - (deltaCost >> (learnRate - pertRate));		
+					bO[j*BITWIDTH +: BITWIDTH] = PREVbO[j*BITWIDTH +: BITWIDTH] - (deltaCost >>> (learnRate - pertRate));		
 			end
 		end
 	end
@@ -765,6 +765,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				f_ready          = 1'b0;
 				y_ready          = 1'b0;
 				dataoutReady     = 1'b0;
+				pertWeights      = 1'b0;
 				NEXTcolAddressTRAIN_X = {ADDR_BITWIDTH_X{1'b0}};
 				NEXTcolAddressTRAIN_Y = {ADDR_BITWIDTH{1'b0}};
 				weightUpdate = 1'b0;
@@ -786,6 +787,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				f_ready          = 1'b0;
 				y_ready          = 1'b0;
 				dataoutReady     = 1'b0;
+				pertWeights      = 1'b0;
 				NEXTcolAddressTRAIN_X = {ADDR_BITWIDTH_X{1'b0}};
 				NEXTcolAddressTRAIN_Y = {ADDR_BITWIDTH{1'b0}};
 				weightUpdate = 1'b0;
@@ -807,6 +809,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				f_ready          = 1'b0;
 				y_ready          = 1'b0;
 				dataoutReady     = 1'b0;
+				pertWeights      = 1'b0;
 				NEXTcolAddressTRAIN_X = {ADDR_BITWIDTH_X{1'b0}};
 				NEXTcolAddressTRAIN_Y = {ADDR_BITWIDTH{1'b0}};
 				weightUpdate = 1'b0;
@@ -828,6 +831,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				f_ready          = 1'b0;
 				y_ready          = 1'b0;
 				dataoutReady     = 1'b0;
+				pertWeights      = 1'b0;
 				NEXTcolAddressTRAIN_X = {ADDR_BITWIDTH_X{1'b0}};
 				NEXTcolAddressTRAIN_Y = {ADDR_BITWIDTH{1'b0}};
 				weightUpdate = 1'b0;
@@ -849,6 +853,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				f_ready          = 1'b0;
 				y_ready          = 1'b0;
 				dataoutReady     = 1'b0;
+				pertWeights      = 1'b0;
 				NEXTcolAddressTRAIN_X = {ADDR_BITWIDTH_X{1'b0}};
 				NEXTcolAddressTRAIN_Y = {ADDR_BITWIDTH{1'b0}};
 				weightUpdate = 1'b0;
@@ -870,6 +875,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				f_ready          = 1'b0;
 				y_ready          = 1'b0;
 				dataoutReady     = 1'b0;
+				pertWeights      = 1'b0;
 				NEXTcolAddressTRAIN_X = {ADDR_BITWIDTH_X{1'b0}};
 				NEXTcolAddressTRAIN_Y = {ADDR_BITWIDTH{1'b0}};
 				weightUpdate = 1'b0;
@@ -891,6 +897,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				f_ready          = 1'b0;
 				y_ready          = 1'b0;
 				dataoutReady     = 1'b0;
+				pertWeights      = 1'b0;
 				NEXTcolAddressTRAIN_X = {ADDR_BITWIDTH_X{1'b0}};
 				NEXTcolAddressTRAIN_Y = {ADDR_BITWIDTH{1'b0}};
 				weightUpdate = 1'b0;
@@ -912,6 +919,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				f_ready          = 1'b0;
 				y_ready          = 1'b0;
 				dataoutReady     = 1'b0;
+				pertWeights      = 1'b0;
 				NEXTcolAddressTRAIN_X = {ADDR_BITWIDTH_X{1'b0}};
 				NEXTcolAddressTRAIN_Y = {ADDR_BITWIDTH{1'b0}};
 				weightUpdate = 1'b0;
@@ -933,6 +941,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				f_ready          = 1'b0;
 				y_ready          = 1'b0;
 				dataoutReady     = 1'b0;
+				pertWeights      = 1'b0;
 				NEXTcolAddressTRAIN_X = {ADDR_BITWIDTH_X{1'b0}};
 				NEXTcolAddressTRAIN_Y = {ADDR_BITWIDTH{1'b0}};
 				weightUpdate = 1'b0;
@@ -954,6 +963,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				f_ready          = 1'b1;
 				y_ready          = 1'b0;
 				dataoutReady     = 1'b0;
+				pertWeights      = 1'b0;
 				NEXTcolAddressTRAIN_X = {ADDR_BITWIDTH_X{1'b0}};
 				NEXTcolAddressTRAIN_Y = {ADDR_BITWIDTH{1'b0}};
 				weightUpdate = 1'b0;
@@ -975,6 +985,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				f_ready          = 1'b0;
 				y_ready          = 1'b0;
 				dataoutReady     = 1'b0;
+				pertWeights      = 1'b0;
 				NEXTcolAddressTRAIN_X = {ADDR_BITWIDTH_X{1'b0}};
 				NEXTcolAddressTRAIN_Y = {ADDR_BITWIDTH{1'b0}};
 				weightUpdate = 1'b0;
@@ -996,6 +1007,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				f_ready          = 1'b0;
 				y_ready          = 1'b0;
 				dataoutReady     = 1'b0;
+				pertWeights      = 1'b0;
 				NEXTcolAddressTRAIN_X = {ADDR_BITWIDTH_X{1'b0}};
 				NEXTcolAddressTRAIN_Y = {ADDR_BITWIDTH{1'b0}};
 				weightUpdate = 1'b0;
@@ -1017,6 +1029,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				f_ready          = 1'b0;
 				y_ready          = 1'b1;
 				dataoutReady     = 1'b1;
+				pertWeights      = 1'b0;
 				NEXTcolAddressTRAIN_X = {ADDR_BITWIDTH_X{1'b0}};
 				NEXTcolAddressTRAIN_Y = {ADDR_BITWIDTH{1'b0}};
 				weightUpdate = 1'b0;
@@ -1041,6 +1054,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				f_ready          = 1'b0;
 				y_ready          = 1'b0;
 				dataoutReady     = 1'b0;
+				pertWeights      = 1'b1;
 				NEXTcolAddressTRAIN_X = {ADDR_BITWIDTH_X{1'b0}};
 				NEXTcolAddressTRAIN_Y = {ADDR_BITWIDTH{1'b0}};
 				weightUpdate = 1'b0;
@@ -1062,6 +1076,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				f_ready          = 1'b0;
 				y_ready          = 1'b0;
 				dataoutReady     = 1'b0;
+				pertWeights      = 1'b1;
 				NEXTcolAddressTRAIN_X = {ADDR_BITWIDTH_X{1'b0}};
 				NEXTcolAddressTRAIN_Y = {ADDR_BITWIDTH{1'b0}};
 				weightUpdate = 1'b0;
@@ -1083,6 +1098,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				f_ready          = 1'b0;
 				y_ready          = 1'b0;
 				dataoutReady     = 1'b0;
+				pertWeights      = 1'b0;
 				NEXTcolAddressTRAIN_X = {ADDR_BITWIDTH_X{1'b0}};
 				NEXTcolAddressTRAIN_Y = {ADDR_BITWIDTH{1'b0}};
 				weightUpdate = 1'b0;
@@ -1104,6 +1120,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				f_ready          = 1'b0;
 				y_ready          = 1'b0;
 				dataoutReady     = 1'b0;
+				pertWeights      = 1'b0;
 				NEXTcolAddressTRAIN_X = {ADDR_BITWIDTH_X{1'b0}};
 				NEXTcolAddressTRAIN_Y = {ADDR_BITWIDTH{1'b0}};
 				weightUpdate = 1'b0;
@@ -1125,6 +1142,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				f_ready          = 1'b0;
 				y_ready          = 1'b0;
 				dataoutReady     = 1'b0;
+				pertWeights      = 1'b0;
 				NEXTcolAddressTRAIN_X = {ADDR_BITWIDTH_X{1'b0}};
 				NEXTcolAddressTRAIN_Y = {ADDR_BITWIDTH{1'b0}};
 				weightUpdate = 1'b0;
@@ -1146,6 +1164,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				f_ready          = 1'b0;
 				y_ready          = 1'b0;
 				dataoutReady     = 1'b0;
+				pertWeights      = 1'b0;
 				NEXTcolAddressTRAIN_X = {ADDR_BITWIDTH_X{1'b0}};
 				NEXTcolAddressTRAIN_Y = {ADDR_BITWIDTH{1'b0}};
 				weightUpdate = 1'b0;
@@ -1167,6 +1186,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				f_ready          = 1'b0;
 				y_ready          = 1'b0;
 				dataoutReady     = 1'b0;
+				pertWeights      = 1'b0;
 				NEXTcolAddressTRAIN_X = {ADDR_BITWIDTH_X{1'b0}};
 				NEXTcolAddressTRAIN_Y = {ADDR_BITWIDTH{1'b0}};
 				weightUpdate = 1'b0;
@@ -1188,6 +1208,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				f_ready          = 1'b0;
 				y_ready          = 1'b0;
 				dataoutReady     = 1'b0;
+				pertWeights      = 1'b0;
 				NEXTcolAddressTRAIN_X = {ADDR_BITWIDTH_X{1'b0}};
 				NEXTcolAddressTRAIN_Y = {ADDR_BITWIDTH{1'b0}};
 				weightUpdate = 1'b0;
@@ -1209,6 +1230,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				f_ready          = 1'b1;
 				y_ready          = 1'b0;
 				dataoutReady     = 1'b0;
+				pertWeights      = 1'b0;
 				NEXTcolAddressTRAIN_X = {ADDR_BITWIDTH_X{1'b0}};
 				NEXTcolAddressTRAIN_Y = {ADDR_BITWIDTH{1'b0}};
 				weightUpdate = 1'b0;
@@ -1230,6 +1252,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				f_ready          = 1'b0;
 				y_ready          = 1'b0;
 				dataoutReady     = 1'b0;
+				pertWeights      = 1'b0;
 				NEXTcolAddressTRAIN_X = {ADDR_BITWIDTH_X{1'b0}};
 				NEXTcolAddressTRAIN_Y = {ADDR_BITWIDTH{1'b0}};
 				weightUpdate = 1'b0;
@@ -1251,6 +1274,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				f_ready          = 1'b0;
 				y_ready          = 1'b0;
 				dataoutReady     = 1'b0;
+				pertWeights      = 1'b0;
 				NEXTcolAddressTRAIN_X = {ADDR_BITWIDTH_X{1'b0}};
 				NEXTcolAddressTRAIN_Y = {ADDR_BITWIDTH{1'b0}};
 				weightUpdate = 1'b0;
@@ -1271,7 +1295,8 @@ module network  #(parameter INPUT_SZ   =  2,
 				z_ready          = 1'b0;
 				f_ready          = 1'b0;
 				y_ready          = 1'b1;
-				dataoutReady     = 1'b1;		
+				dataoutReady     = 1'b1;
+				pertWeights      = 1'b0;		
 				NEXTcolAddressTRAIN_X = {ADDR_BITWIDTH_X{1'b0}};
 				NEXTcolAddressTRAIN_Y = {ADDR_BITWIDTH{1'b0}};
 				weightUpdate = 1'b0;
@@ -1292,7 +1317,8 @@ module network  #(parameter INPUT_SZ   =  2,
 				z_ready          = 1'b0;
 				f_ready          = 1'b0;
 				y_ready          = 1'b0;
-				dataoutReady     = 1'b0;	
+				dataoutReady     = 1'b0;
+				pertWeights      = 1'b0;	
 				NEXTcolAddressTRAIN_X = colAddressTRAIN_X + 1;
 				NEXTcolAddressTRAIN_Y = colAddressTRAIN_Y + 1;
 				weightUpdate = 1'b1;
@@ -1313,7 +1339,8 @@ module network  #(parameter INPUT_SZ   =  2,
 				z_ready          = 1'b0;
 				f_ready          = 1'b0;
 				y_ready          = 1'b0;
-				dataoutReady     = 1'b0;	
+				dataoutReady     = 1'b0;
+				pertWeights      = 1'b0;	
 				NEXTcolAddressTRAIN_X = {ADDR_BITWIDTH_X{1'b0}};
 				NEXTcolAddressTRAIN_Y = colAddressTRAIN_Y + 1;
 				weightUpdate = 1'b1;
@@ -1335,6 +1362,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				f_ready          = 1'b0;
 				y_ready          = 1'b0;
 				dataoutReady     = 1'b0;
+				pertWeights      = 1'b0;
 				NEXTcolAddressTRAIN_X = {ADDR_BITWIDTH_X{1'b0}};
 				NEXTcolAddressTRAIN_Y = {ADDR_BITWIDTH{1'b0}};
 				weightUpdate = 1'b0;

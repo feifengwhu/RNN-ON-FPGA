@@ -22,6 +22,7 @@ add wave -noupdate -radix binary /tb_network/LSTM_LAYER/PRAM_Z_X/RAM_matrix
 add wave -noupdate -radix binary /tb_network/LSTM_LAYER/PRAM_Z_Y/RAM_matrix
 add wave -noupdate /tb_network/LSTM_LAYER/wZX_out_gate
 add wave -noupdate /tb_network/LSTM_LAYER/wZY_out_gate
+add wave -noupdate /tb_network/LSTM_LAYER/pertWeights
 add wave -noupdate /tb_network/LSTM_LAYER/wZX_out
 add wave -noupdate /tb_network/LSTM_LAYER/wZY_out
 add wave -noupdate /tb_network/LSTM_LAYER/wZX_in
@@ -71,4 +72,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits ps
 update
-WaveRestoreZoom {1169715106 ps} {1170020258 ps}
+WaveRestoreZoom {1169932527 ps} {1170008815 ps}

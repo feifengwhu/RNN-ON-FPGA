@@ -70,4 +70,5 @@ function integer log2;
          end
     end
 endfunction
+
 endmodule
