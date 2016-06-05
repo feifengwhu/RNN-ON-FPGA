@@ -12,8 +12,13 @@ add wave -noupdate /tb_network/modelOutput
 add wave -noupdate /tb_network/resetP
 add wave -noupdate /tb_network/dataReadyP
 add wave -noupdate /tb_network/LSTM_LAYER/trainingReady
+add wave -noupdate /tb_network/LSTM_LAYER/fpType
 add wave -noupdate /tb_network/costFunc
+add wave -noupdate /tb_network/LSTM_LAYER/normalCost
+add wave -noupdate /tb_network/LSTM_LAYER/pertCost
+add wave -noupdate /tb_network/LSTM_LAYER/deltaCost
 add wave -noupdate /tb_network/newCostFunc
+add wave -noupdate -radix float32 /tb_network/costFuncIntermediate
 add wave -noupdate -radix unsigned /tb_network/LSTM_LAYER/state
 add wave -noupdate /tb_network/LSTM_LAYER/WRAM_Z_X/RAM_matrix
 add wave -noupdate /tb_network/LSTM_LAYER/WRAM_Z_Y/RAM_matrix
@@ -42,7 +47,6 @@ add wave -noupdate /tb_network/LSTM_LAYER/bZ_out_gate
 add wave -noupdate /tb_network/LSTM_LAYER/layer_C
 add wave -noupdate /tb_network/LSTM_LAYER/prev_C
 add wave -noupdate /tb_network/LSTM_LAYER/SS_layer_C
-add wave -noupdate /tb_network/LSTM_LAYER/deltaCost
 add wave -noupdate /tb_network/LSTM_LAYER/posBeta
 add wave -noupdate /tb_network/LSTM_LAYER/minusBeta
 add wave -noupdate /tb_network/LSTM_LAYER/randGenOutput
@@ -56,7 +60,7 @@ add wave -noupdate /tb_network/LSTM_LAYER/weightUpdate
 add wave -noupdate /tb_network/LSTM_LAYER/writeWeightUpdate_X
 add wave -noupdate /tb_network/LSTM_LAYER/writeWeightUpdate_Y
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {0 ps} 0}
+WaveRestoreCursors {{Cursor 1} {115655 ps} 0}
 quietly wave cursor active 1
 configure wave -namecolwidth 402
 configure wave -valuecolwidth 100
@@ -72,4 +76,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits ps
 update
-WaveRestoreZoom {1169932527 ps} {1170008815 ps}
+WaveRestoreZoom {5565106 ps} {5870258 ps}

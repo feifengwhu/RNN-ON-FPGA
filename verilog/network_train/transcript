@@ -1,6 +1,3 @@
-# vsim -c -novopt -do "run -all" tb_network 
-# Start time: 20:40:14 on Jun 03,2016
-# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
 # //  Questa Sim-64
 # //  Version 10.4c_5 linux_x86_64 Nov 14 2015
 # //
@@ -16,25 +13,57 @@
 # //  FURTHERMORE, THIS INFORMATION IS PROHIBITED FROM DISCLOSURE UNDER
 # //  THE TRADE SECRETS ACT, 18 U.S.C. SECTION 1905.
 # //
-# Refreshing /home/josefonseca/thesis/verilog/network_train/work.tb_network
-# Loading work.tb_network
-# Refreshing /home/josefonseca/thesis/verilog/network_train/work.network
-# Loading work.network
-# Refreshing /home/josefonseca/thesis/verilog/network_train/work.gate
-# Loading work.gate
-# Refreshing /home/josefonseca/thesis/verilog/network_train/work.dot_prod
-# Loading work.dot_prod
-# Refreshing /home/josefonseca/thesis/verilog/network_train/work.weightRAM
-# Loading work.weightRAM
-# Refreshing /home/josefonseca/thesis/verilog/network_train/work.prng
-# Loading work.prng
-# Refreshing /home/josefonseca/thesis/verilog/network_train/work.array_prod
-# Loading work.array_prod
-# Refreshing /home/josefonseca/thesis/verilog/network_train/work.sigmoid
-# Loading work.sigmoid
-# Refreshing /home/josefonseca/thesis/verilog/network_train/work.tanh
-# Loading work.tanh
-# run -all
+vsim -voptargs=+acc work.tb_network
+# vsim -voptargs="+acc" work.tb_network 
+# Start time: 17:47:32 on Jun 05,2016
+# ** Note: (vsim-8009) Loading existing optimized design _opt4
+# Loading work.tb_network(fast)
+# Loading work.network(fast)
+# Loading work.gate(fast)
+# Loading work.dot_prod(fast)
+# Loading work.dot_prod(fast__1)
+# Loading work.weightRAM(fast)
+# Loading work.weightRAM(fast__1)
+# Loading work.sigmoid(fast)
+# Loading work.tanh(fast)
+# Loading work.prng(fast)
+# Loading work.weightRAM(fast__2)
+# Loading work.weightRAM(fast__3)
+# Loading work.array_prod(fast)
+# ** Warning: (vsim-3015) network.v(224): [PCDPC] - Port size (1) does not match connection size (2) for port 'addressIn'. The port definition is at: weightRAM.v(4).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_network/LSTM_LAYER/WRAM_Z_X File: weightRAM.v
+# ** Warning: (vsim-3015) network.v(225): [PCDPC] - Port size (3) does not match connection size (4) for port 'addressIn'. The port definition is at: weightRAM.v(4).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_network/LSTM_LAYER/WRAM_Z_Y File: weightRAM.v
+# ** Warning: (vsim-3015) network.v(229): [PCDPC] - Port size (1) does not match connection size (2) for port 'addressIn'. The port definition is at: weightRAM.v(4).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_network/LSTM_LAYER/WRAM_I_X File: weightRAM.v
+# ** Warning: (vsim-3015) network.v(230): [PCDPC] - Port size (3) does not match connection size (4) for port 'addressIn'. The port definition is at: weightRAM.v(4).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_network/LSTM_LAYER/WRAM_I_Y File: weightRAM.v
+# ** Warning: (vsim-3015) network.v(234): [PCDPC] - Port size (1) does not match connection size (2) for port 'addressIn'. The port definition is at: weightRAM.v(4).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_network/LSTM_LAYER/WRAM_F_X File: weightRAM.v
+# ** Warning: (vsim-3015) network.v(235): [PCDPC] - Port size (3) does not match connection size (4) for port 'addressIn'. The port definition is at: weightRAM.v(4).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_network/LSTM_LAYER/WRAM_F_Y File: weightRAM.v
+# ** Warning: (vsim-3015) network.v(239): [PCDPC] - Port size (1) does not match connection size (2) for port 'addressIn'. The port definition is at: weightRAM.v(4).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_network/LSTM_LAYER/WRAM_O_X File: weightRAM.v
+# ** Warning: (vsim-3015) network.v(240): [PCDPC] - Port size (3) does not match connection size (4) for port 'addressIn'. The port definition is at: weightRAM.v(4).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_network/LSTM_LAYER/WRAM_O_Y File: weightRAM.v
+# ** Warning: (vsim-3015) network.v(269): [PCDPC] - Port size (1) does not match connection size (2) for port 'addressOut'. The port definition is at: weightRAM.v(5).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_network/LSTM_LAYER/PRAM_Z_X File: weightRAM.v
+# ** Warning: (vsim-3015) network.v(270): [PCDPC] - Port size (3) does not match connection size (4) for port 'addressOut'. The port definition is at: weightRAM.v(5).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_network/LSTM_LAYER/PRAM_Z_Y File: weightRAM.v
+# ** Warning: (vsim-3015) network.v(271): [PCDPC] - Port size (1) does not match connection size (2) for port 'addressOut'. The port definition is at: weightRAM.v(5).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_network/LSTM_LAYER/PRAM_I_X File: weightRAM.v
+# ** Warning: (vsim-3015) network.v(272): [PCDPC] - Port size (3) does not match connection size (4) for port 'addressOut'. The port definition is at: weightRAM.v(5).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_network/LSTM_LAYER/PRAM_I_Y File: weightRAM.v
+# ** Warning: (vsim-3015) network.v(273): [PCDPC] - Port size (1) does not match connection size (2) for port 'addressOut'. The port definition is at: weightRAM.v(5).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_network/LSTM_LAYER/PRAM_F_X File: weightRAM.v
+# ** Warning: (vsim-3015) network.v(274): [PCDPC] - Port size (3) does not match connection size (4) for port 'addressOut'. The port definition is at: weightRAM.v(5).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_network/LSTM_LAYER/PRAM_F_Y File: weightRAM.v
+# ** Warning: (vsim-3015) network.v(275): [PCDPC] - Port size (1) does not match connection size (2) for port 'addressOut'. The port definition is at: weightRAM.v(5).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_network/LSTM_LAYER/PRAM_O_X File: weightRAM.v
+# ** Warning: (vsim-3015) network.v(276): [PCDPC] - Port size (3) does not match connection size (4) for port 'addressOut'. The port definition is at: weightRAM.v(5).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_network/LSTM_LAYER/PRAM_O_Y File: weightRAM.v
+do lowLevel.do
+run -all
 # Simulation started at 0.000000
 # Input Sample           0
 # Input Sample         100
@@ -46,8 +75,7 @@
 # Input Sample         700
 # Input Sample         800
 # Input Sample         900
-# Percentage Wrong bits: 0.612500 percent
+# Percentage Wrong bits: 49.650000 percent
 # ** Note: $stop    : tb_network.v(241)
-#    Time: 1170005 ns  Iteration: 3  Instance: /tb_network
+#    Time: 1202005 ns  Iteration: 3  Instance: /tb_network
 # Break in Module tb_network at tb_network.v line 241
-# Stopped at tb_network.v line 241

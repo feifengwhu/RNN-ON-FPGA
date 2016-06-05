@@ -39,7 +39,7 @@ module tb_network();
     reg	 enPerceptron;
     reg  modelOutput;
     reg [BITWIDTH-1:0] costFunc;
-    reg [2*BITWIDTH-1:0] costFuncIntermediate;
+    //reg [2*BITWIDTH-1:0] costFuncIntermediate;
     reg newCostFunc;
     
     // File descriptors for the error/output dumps
@@ -47,6 +47,7 @@ module tb_network();
     integer fid_x, fid_Wz, fid_Wi, fid_Wf, fid_Wo, fid_Rz, fid_Ri, fid_Rf, fid_Ro, fid_bz, fid_bi, fid_bf, fid_bo, fid_outW, fid_out;
     integer i=0,j=0,k=0,l=0, roundOut;
     real    quantError=0;
+    real    costFuncIntermediate;
     
     // Clock generation
     always begin
@@ -58,15 +59,19 @@ module tb_network();
  
     // DUT Instantiation
     network              #(INPUT_SZ, HIDDEN_SZ, OUTPUT_SZ, QN, QM, DSP48_PER_ROW_G, DSP48_PER_ROW_M) 
-			LSTM_LAYER    (inputVec, 1'b1, 43'd3711, 11'd4, 11'd0, clock, reset, newCostFunc, costFunc, newSample, dataReady, trainingReady, outputVec);
+			LSTM_LAYER    (inputVec, 1'b1, 43'd3711, 11'd0, 11'd0, clock, reset, newCostFunc, costFunc, newSample, dataReady, trainingReady, outputVec);
 			
     array_prod #(HIDDEN_SZ, QN, QM)  PERCEPTRON  (Wperceptron, outputVec, clock, resetP, dataReadyP, networkOutput);
    
    
    
     always @(posedge dataReadyP) begin
-        costFuncIntermediate = ((sigmoid(networkOutput)*(2**QM)) - (modelOutput<<QM))**2;
-        costFunc = costFuncIntermediate>>>QM;
+        costFuncIntermediate = (modelOutput - sigmoid(networkOutput))**2;
+        costFunc = costFuncIntermediate * (2**QM);
+        #(FULL_CLOCK);
+		newCostFunc = 1;
+		#(FULL_CLOCK);
+		newCostFunc = 0;
     end
 	
     // Keeping track of the simulation time
@@ -215,9 +220,7 @@ module tb_network();
 					//$display("%d --> %b", roundOut, modelOutput);
 					//$display("ERROR!\n");
 				end
-				newCostFunc = 1;
-				#(FULL_CLOCK);
-				newCostFunc = 0;
+
 				
 				// If we are training, wait for the perturbed FP, and uncomment this
 				@(posedge dataReady);
@@ -227,9 +230,6 @@ module tb_network();
 				@(posedge dataReadyP);
 				roundOut = sigmoid(networkOutput);
 				enPerceptron = 0;
-				newCostFunc = 1;
-				#(FULL_CLOCK);
-				newCostFunc = 0;
 				
 				@(posedge trainingReady);
 				//$display("%d --> %b", roundOut, modelOutput);

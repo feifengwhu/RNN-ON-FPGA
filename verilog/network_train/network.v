@@ -48,7 +48,42 @@ module network  #(parameter INPUT_SZ   =  2,
     output reg                       dataoutReady;
     output reg                       trainingReady;
     output reg [LAYER_BITWIDTH-1:0]  outputVec;
-            
+    
+        
+    // The state tags
+    parameter IDLE             = 5'd0;
+    parameter GATE_CALC_INIT   = 5'd1;
+    parameter GATE_CALC   = 5'd2;
+    parameter NON_LIN_1A  = 5'd3;
+    parameter NON_LIN_2A  = 5'd4;
+    parameter ELEM_PROD_A = 5'd5;
+    parameter NON_LIN_1B  = 5'd6;
+    parameter NON_LIN_2B  = 5'd7;
+    parameter ELEM_PROD_B = 5'd8;
+    parameter NON_LIN_1C  = 5'd9;
+    parameter NON_LIN_2C  = 5'd10;
+    parameter ELEM_PROD_C = 5'd11;
+    parameter END         = 5'd12;
+    parameter TRAIN_GATE_CALC_INIT   = 5'd13;
+    parameter TRAIN_GATE_CALC   = 5'd14;
+    parameter TRAIN_NON_LIN_1A  = 5'd15;
+    parameter TRAIN_NON_LIN_2A  = 5'd16;
+    parameter TRAIN_ELEM_PROD_A = 5'd17;
+    parameter TRAIN_NON_LIN_1B  = 5'd18;
+    parameter TRAIN_NON_LIN_2B  = 5'd19;
+    parameter TRAIN_ELEM_PROD_B = 5'd20;
+    parameter TRAIN_NON_LIN_1C  = 5'd21;
+    parameter TRAIN_NON_LIN_2C  = 5'd22;
+    parameter TRAIN_ELEM_PROD_C = 5'd23;
+    parameter TRAIN_END         = 5'd24;
+    parameter WEIGHT_UPDATE_X   = 5'd25;
+    parameter WEIGHT_UPDATE_Y   = 5'd26;
+    
+    // The FSM registers
+    reg [4:0] state;
+    reg [4:0] NEXTstate;
+    reg fpType;
+    
 
     // Connecting wires and auxiliary registers
     wire   [ADDR_BITWIDTH_X-1:0] colAddressRead_wZX;
@@ -59,14 +94,14 @@ module network  #(parameter INPUT_SZ   =  2,
     wire   [ADDR_BITWIDTH-1:0]   colAddressRead_wFY;
     wire   [ADDR_BITWIDTH_X-1:0] colAddressRead_wOX;
     wire   [ADDR_BITWIDTH-1:0]   colAddressRead_wOY;
-    reg    [ADDR_BITWIDTH_X-1:0] colAddressTRAIN_X;
-    reg    [ADDR_BITWIDTH-1:0]   colAddressTRAIN_Y;
+    reg    [ADDR_BITWIDTH_X:0] colAddressTRAIN_X;
+    reg    [ADDR_BITWIDTH:0]   colAddressTRAIN_Y;
     reg    [ADDR_BITWIDTH_X-1:0] colAddressRead_X;
     reg    [ADDR_BITWIDTH-1:0]   colAddressRead_Y;
-    reg    [ADDR_BITWIDTH_X-1:0] PREVcolAddressTRAIN_X;
-    reg    [ADDR_BITWIDTH-1:0]   PREVcolAddressTRAIN_Y;
-    reg    [ADDR_BITWIDTH_X-1:0] NEXTcolAddressTRAIN_X;
-    reg    [ADDR_BITWIDTH-1:0]   NEXTcolAddressTRAIN_Y;
+    reg    [ADDR_BITWIDTH_X:0] PREVcolAddressTRAIN_X;
+    reg    [ADDR_BITWIDTH:0]   PREVcolAddressTRAIN_Y;
+    reg    [ADDR_BITWIDTH_X:0] NEXTcolAddressTRAIN_X;
+    reg    [ADDR_BITWIDTH:0]   NEXTcolAddressTRAIN_Y;
     reg    [LAYER_BITWIDTH-1:0]  wZX_in;
     wire   [LAYER_BITWIDTH-1:0]  wZX_out;
     reg    [LAYER_BITWIDTH-1:0]  wZY_in;
@@ -159,6 +194,8 @@ module network  #(parameter INPUT_SZ   =  2,
     reg signed [BITWIDTH-1:0] posBeta;
     reg signed [BITWIDTH-1:0] minusBeta;
     reg signed [BITWIDTH-1:0] deltaCost;
+    reg signed [BITWIDTH-1:0] normalCost;
+    reg signed [BITWIDTH-1:0] pertCost;
     wire [RAND_GEN_BITWIDTH*N_PRNG-1 : 0]      randGenOutput;
     wire [RAND_GEN_BITWIDTH*N_PRNG_BIAS-1 : 0] randGenOutput_bias;
     wire reset_sigm;
@@ -522,47 +559,26 @@ module network  #(parameter INPUT_SZ   =  2,
 
 	// Keeping track of the Cost Function variables
 	always @(posedge newCostFunc) begin
-		deltaCost <= costFunc - deltaCost;
+		fpType <= fpType + 1;
 	end
 	
-	always @(posedge newSample) begin
-		deltaCost <= {LAYER_BITWIDTH{1'b0}};
+	always @(posedge clock) begin
+		if(reset)
+			fpType = 0;
+	end
+	
+	always @(posedge newCostFunc) begin
+		if(fpType)
+			pertCost   = costFunc;
+		else
+			normalCost = costFunc;
+	end
+	
+	always @(*) begin
+		deltaCost = pertCost - normalCost;
 	end
 
     // --------------------- FINITE STATE MACHINE --------------------- //
-    
-    // The state tags
-    parameter IDLE             = 5'd0;
-    parameter GATE_CALC_INIT   = 5'd1;
-    parameter GATE_CALC   = 5'd2;
-    parameter NON_LIN_1A  = 5'd3;
-    parameter NON_LIN_2A  = 5'd4;
-    parameter ELEM_PROD_A = 5'd5;
-    parameter NON_LIN_1B  = 5'd6;
-    parameter NON_LIN_2B  = 5'd7;
-    parameter ELEM_PROD_B = 5'd8;
-    parameter NON_LIN_1C  = 5'd9;
-    parameter NON_LIN_2C  = 5'd10;
-    parameter ELEM_PROD_C = 5'd11;
-    parameter END         = 5'd12;
-    parameter TRAIN_GATE_CALC_INIT   = 5'd13;
-    parameter TRAIN_GATE_CALC   = 5'd14;
-    parameter TRAIN_NON_LIN_1A  = 5'd15;
-    parameter TRAIN_NON_LIN_2A  = 5'd16;
-    parameter TRAIN_ELEM_PROD_A = 5'd17;
-    parameter TRAIN_NON_LIN_1B  = 5'd18;
-    parameter TRAIN_NON_LIN_2B  = 5'd19;
-    parameter TRAIN_ELEM_PROD_B = 5'd20;
-    parameter TRAIN_NON_LIN_1C  = 5'd21;
-    parameter TRAIN_NON_LIN_2C  = 5'd22;
-    parameter TRAIN_ELEM_PROD_C = 5'd23;
-    parameter TRAIN_END         = 5'd24;
-    parameter WEIGHT_UPDATE_X   = 5'd25;
-    parameter WEIGHT_UPDATE_Y   = 5'd26;
-    
-    // The FSM registers
-    reg [4:0] state;
-    reg [4:0] NEXTstate;
 
     // The FSM that controls the gate
     always @(posedge clock) begin
@@ -731,7 +747,7 @@ module network  #(parameter INPUT_SZ   =  2,
 			
 			WEIGHT_UPDATE_X:
 			begin
-				if(colAddressTRAIN_X == (INPUT_SZ-1))
+				if(colAddressTRAIN_X == (INPUT_SZ))
 					NEXTstate = WEIGHT_UPDATE_Y;
 				else
 					NEXTstate = WEIGHT_UPDATE_X;
@@ -739,7 +755,7 @@ module network  #(parameter INPUT_SZ   =  2,
 			
 			WEIGHT_UPDATE_Y:
 			begin
-				if(colAddressTRAIN_Y == (HIDDEN_SZ-1))
+				if(colAddressTRAIN_Y == (HIDDEN_SZ))
 					NEXTstate = IDLE;
 				else
 					NEXTstate = WEIGHT_UPDATE_Y;
@@ -1376,7 +1392,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				
 		endcase
 	end
-    
+
     // ---------------------------------------------------------------- //
     
         
