@@ -7,9 +7,11 @@ module test();
 	wire [17:0]  test; 
 	reg [17:0]  minusTest;
 	reg [17:0]  expShift = 11'b1;
-	reg [3:0] a = 5;
-	reg [3:0] b = 8;
+	reg [17:0] a;
+	reg [17:0] b;
 	reg [17:0] c;
+	reg signed [11:0] alpha = 4;
+	reg signed [11:0] beta  = 9;
 	reg mo=1;
 	
 	assign test = 18'h0212f;
@@ -30,6 +32,7 @@ module test();
 		
 		$display("%5b\n", c);
 	*/
+	/*
 	#(10);
 	costFuncIntermediate = (mo - sigmoid(test>>>QM));
 	c = costFuncIntermediate * (2**QM);
@@ -39,7 +42,14 @@ module test();
 	$display("%h", test>>>QM);
 	$display("%f", sigmoid(test>>>QM));
 	$display("%f", costFuncIntermediate);
+	*/
 	
+	c = 18'h00800;
+	a = c <<< (-1);
+	b = c <<< (beta-alpha);
+	$display("%h", c);
+	$display("%h", a);
+	$display("%h", b);
 	end
 		
 function real sigmoid;

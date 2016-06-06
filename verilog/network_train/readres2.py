@@ -23,7 +23,7 @@ largest_number = pow(2,binary_dim)
 hiddenSz = 8
 QN = 6
 QM = 11
-numTrain = 1000
+numTrain = 100000
 prevX = list()
 outputGolden  = list()
 outputVerilog = list()
@@ -68,7 +68,7 @@ f_out.close()
 
 # Compiles and runs the Verilog simulation
 os.system("vlog *.v")
-os.system("vsim -c -novopt -do \"run -all\" tb_network")
+#os.system("vsim -c -novopt -do \"run -all\" tb_network")
 
 """
 # Loads the pickled layer

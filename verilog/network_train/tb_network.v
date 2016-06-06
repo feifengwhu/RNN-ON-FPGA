@@ -21,7 +21,7 @@ module tb_network();
     parameter HALF_CLOCK       = 1;
     parameter FULL_CLOCK       = 2*HALF_CLOCK;
     parameter MAX_SAMPLES      = 8;
-	parameter TRAIN_SAMPLES    = 1000;
+	parameter TRAIN_SAMPLES    = 100000;
 
 	reg clock;
 	reg reset;
@@ -59,7 +59,7 @@ module tb_network();
  
     // DUT Instantiation
     network              #(INPUT_SZ, HIDDEN_SZ, OUTPUT_SZ, QN, QM, DSP48_PER_ROW_G, DSP48_PER_ROW_M) 
-			LSTM_LAYER    (inputVec, 1'b1, 43'd3711, 11'd0, 11'd0, clock, reset, newCostFunc, costFunc, newSample, dataReady, trainingReady, outputVec);
+			LSTM_LAYER    (inputVec, 1'b1, 43'd3711, 11'd4, 11'd4, clock, reset, newCostFunc, costFunc, newSample, dataReady, trainingReady, outputVec);
 			
     array_prod #(HIDDEN_SZ, QN, QM)  PERCEPTRON  (Wperceptron, outputVec, clock, resetP, dataReadyP, networkOutput);
    
@@ -188,6 +188,8 @@ module tb_network();
 			
 			if(k % 100 == 0) begin
 				$display("Input Sample %d", k);
+				$display("Percentage Wrong bits: %f percent", 100*quantError/800.0);
+				quantError=0;
 			end
 			
 			for(i=0; i < MAX_SAMPLES; i = i + 1) begin
@@ -237,7 +239,7 @@ module tb_network();
 				
 			end
        end
-		$display("Percentage Wrong bits: %f percent", 100*quantError/8000.0); 
+	   //$display("Percentage Wrong bits: %f percent", 100*quantError/8000.0); 
        $stop; 
        
     end
