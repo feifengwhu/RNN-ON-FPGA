@@ -12,6 +12,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				  learnRate,
                   clock,
                   reset,
+                  resetRAM,
 				  newCostFunc,
                   costFunc,
                   newSample,
@@ -37,14 +38,15 @@ module network  #(parameter INPUT_SZ   =  2,
     // Input/Output definitions
     input [INPUT_BITWIDTH-1:0]       inputVec;
     input                            trainingFlag;
-    input [42:0]					 initSeed;
-    input [QM-1:0]					 pertRate;  // The absolute value of the exponent. Only supports (negative) powers of two
-    input [QM-1:0]					 learnRate; // The absolute value of the exponent. Only supports (negative) powers of two
-    input                            clock;
-    input                            reset;
-    input 							 newCostFunc;
-    input [OUTPUT_BITWIDTH-1:0]      costFunc;
-    input                            newSample;
+    input [42:0]					  initSeed;
+    input [QM-1:0]					  pertRate;  // The absolute value of the exponent. Only supports (negative) powers of two
+    input [QM-1:0]					  learnRate; // The absolute value of the exponent. Only supports (negative) powers of two
+    input                             clock;
+    input                             reset;
+    input 							  resetRAM;
+    input 							  newCostFunc;
+    input [OUTPUT_BITWIDTH-1:0]       costFunc;
+    input                             newSample;
     output reg                       dataoutReady;
     output reg                       trainingReady;
     output reg [LAYER_BITWIDTH-1:0]  outputVec;
@@ -193,8 +195,6 @@ module network  #(parameter INPUT_SZ   =  2,
     reg signed  [LAYER_BITWIDTH-1:0] elemWise_mult1;
     wire signed [LAYER_BITWIDTH-1:0] elemWise_mult2;
     wire signed [LAYER_BITWIDTH-1:0] tanh_result;
-    reg signed [BITWIDTH-1:0] posBeta;
-    reg signed [BITWIDTH-1:0] minusBeta;
     reg signed [BITWIDTH-1:0] deltaCost;
     reg signed [BITWIDTH-1:0] normalCost;
     reg signed [BITWIDTH-1:0] pertCost;
@@ -223,23 +223,23 @@ module network  #(parameter INPUT_SZ   =  2,
     // Module Instatiation
     gate #(INPUT_SZ, HIDDEN_SZ, QN, QM, DSP48_PER_ROW_G) GATE_Z (inputVecSample, prevOutVecSample, wZX_out_gate, wZY_out_gate, bZ, beginCalc,
                                                              clock, reset, colAddressRead_wZX, colAddressRead_wZY, gateReady_Z, gate_Z);
-    weightRAM  #(HIDDEN_SZ,  INPUT_SZ, BITWIDTH)  WRAM_Z_X (PREVcolAddressTRAIN_X, colAddressRead_X, writeWeightUpdate_X, clock, reset, wZX_in, wZX_out);
-    weightRAM  #(HIDDEN_SZ, HIDDEN_SZ, BITWIDTH)  WRAM_Z_Y (PREVcolAddressTRAIN_Y, colAddressRead_Y, writeWeightUpdate_Y, clock, reset, wZY_in, wZY_out);
+    weightRAM  #(HIDDEN_SZ,  INPUT_SZ, BITWIDTH)  WRAM_Z_X (PREVcolAddressTRAIN_X, colAddressRead_X, writeWeightUpdate_X, clock, resetRAM, wZX_in, wZX_out);
+    weightRAM  #(HIDDEN_SZ, HIDDEN_SZ, BITWIDTH)  WRAM_Z_Y (PREVcolAddressTRAIN_Y, colAddressRead_Y, writeWeightUpdate_Y, clock, resetRAM, wZY_in, wZY_out);
  
     gate #(INPUT_SZ, HIDDEN_SZ, QN, QM, DSP48_PER_ROW_G) GATE_I (inputVecSample, prevOutVecSample, wIX_out_gate, wIY_out_gate, bI, beginCalc,
                                                              clock, reset, colAddressRead_wIX, colAddressRead_wIY, gateReady_I, gate_I);
-    weightRAM  #(HIDDEN_SZ,  INPUT_SZ, BITWIDTH)  WRAM_I_X (PREVcolAddressTRAIN_X, colAddressRead_X, writeWeightUpdate_X, clock, reset, wIX_in, wIX_out);
-    weightRAM  #(HIDDEN_SZ, HIDDEN_SZ, BITWIDTH)  WRAM_I_Y (PREVcolAddressTRAIN_Y, colAddressRead_Y, writeWeightUpdate_Y, clock, reset, wIY_in, wIY_out);
+    weightRAM  #(HIDDEN_SZ,  INPUT_SZ, BITWIDTH)  WRAM_I_X (PREVcolAddressTRAIN_X, colAddressRead_X, writeWeightUpdate_X, clock, resetRAM, wIX_in, wIX_out);
+    weightRAM  #(HIDDEN_SZ, HIDDEN_SZ, BITWIDTH)  WRAM_I_Y (PREVcolAddressTRAIN_Y, colAddressRead_Y, writeWeightUpdate_Y, clock, resetRAM, wIY_in, wIY_out);
 
     gate #(INPUT_SZ, HIDDEN_SZ, QN, QM, DSP48_PER_ROW_G) GATE_F (inputVecSample, prevOutVecSample, wFX_out_gate, wFY_out_gate, bF, beginCalc,
                                                              clock, reset, colAddressRead_wFX, colAddressRead_wFY, gateReady_F, gate_F);
-    weightRAM  #(HIDDEN_SZ,  INPUT_SZ, BITWIDTH)  WRAM_F_X (PREVcolAddressTRAIN_X, colAddressRead_X, writeWeightUpdate_X, clock, reset, wFX_in, wFX_out);
-    weightRAM  #(HIDDEN_SZ, HIDDEN_SZ, BITWIDTH)  WRAM_F_Y (PREVcolAddressTRAIN_Y, colAddressRead_Y, writeWeightUpdate_Y, clock, reset, wFY_in, wFY_out);
+    weightRAM  #(HIDDEN_SZ,  INPUT_SZ, BITWIDTH)  WRAM_F_X (PREVcolAddressTRAIN_X, colAddressRead_X, writeWeightUpdate_X, clock, resetRAM, wFX_in, wFX_out);
+    weightRAM  #(HIDDEN_SZ, HIDDEN_SZ, BITWIDTH)  WRAM_F_Y (PREVcolAddressTRAIN_Y, colAddressRead_Y, writeWeightUpdate_Y, clock, resetRAM, wFY_in, wFY_out);
 
     gate #(INPUT_SZ, HIDDEN_SZ, QN, QM, DSP48_PER_ROW_G) GATE_O (inputVecSample, prevOutVecSample, wOX_out_gate, wOY_out_gate, bO, beginCalc,
                                                              clock, reset, colAddressRead_wOX, colAddressRead_wOY, gateReady_O, gate_O);
-    weightRAM  #(HIDDEN_SZ,  INPUT_SZ, BITWIDTH)  WRAM_O_X (PREVcolAddressTRAIN_X, colAddressRead_X, writeWeightUpdate_X, clock, reset, wOX_in, wOX_out);
-    weightRAM  #(HIDDEN_SZ, HIDDEN_SZ, BITWIDTH)  WRAM_O_Y (PREVcolAddressTRAIN_Y, colAddressRead_Y, writeWeightUpdate_Y, clock, reset, wOY_in, wOY_out);
+    weightRAM  #(HIDDEN_SZ,  INPUT_SZ, BITWIDTH)  WRAM_O_X (PREVcolAddressTRAIN_X, colAddressRead_X, writeWeightUpdate_X, clock, resetRAM, wOX_in, wOX_out);
+    weightRAM  #(HIDDEN_SZ, HIDDEN_SZ, BITWIDTH)  WRAM_O_Y (PREVcolAddressTRAIN_Y, colAddressRead_Y, writeWeightUpdate_Y, clock, resetRAM, wOY_in, wOY_out);
 
 	// The non-linearity modules
     genvar i;
@@ -259,6 +259,7 @@ module network  #(parameter INPUT_SZ   =  2,
 	prng PRNG_1 (initSeed, clock, reset, genRandNum_Y, genRandNum_Y, randGenOutput[0+:RAND_GEN_BITWIDTH]);
 	prng PRNG_2 (initSeed+43'd123, clock, reset, genRandNum_Y, genRandNum_Y, randGenOutput[RAND_GEN_BITWIDTH+:RAND_GEN_BITWIDTH]);
 	prng PRNG_b (initSeed+43'd812, clock, reset, genRandNum_Y, genRandNum_Y, randGenOutput_bias);
+	
 	/*
 	________________________THIS IS NOT WORKING, DON'T KNOW WHY???___________________________________
 	generate
@@ -284,70 +285,63 @@ module network  #(parameter INPUT_SZ   =  2,
 		sign_bF = randGenOutput_bias[2*HIDDEN_SZ +: HIDDEN_SZ];
 		sign_bO = randGenOutput_bias[3*HIDDEN_SZ +: HIDDEN_SZ];
 	end
-
-
-	// Evaluating the positive and negative versions of the perturbation constant
-	always @(*) begin
-		posBeta   = (1 << pertRate);
-		minusBeta = (~(1 << pertRate)) + 1;
-	end
 	
 	// Chooses to perturbate the weights going to the Gate, or not.
 	always @(*) begin
 		if(pertWeights) begin
 			for(j = 0; j < HIDDEN_SZ; j = j + 1) begin
 				if(sign_wZX[j] == 1)
-					wZX_out_gate[j*BITWIDTH +: BITWIDTH] = wZX_out[j*BITWIDTH +: BITWIDTH] + posBeta;
+					wZX_out_gate[j*BITWIDTH +: BITWIDTH] = wZX_out[j*BITWIDTH +: BITWIDTH] + (18'h00800 >>> pertRate);
 				else
-					wZX_out_gate[j*BITWIDTH +: BITWIDTH] = wZX_out[j*BITWIDTH +: BITWIDTH] + minusBeta;
+					wZX_out_gate[j*BITWIDTH +: BITWIDTH] = wZX_out[j*BITWIDTH +: BITWIDTH] - (18'h00800 >>> pertRate);
 				if(sign_wZY[j] == 1)
-					wZY_out_gate[j*BITWIDTH +: BITWIDTH] = wZY_out[j*BITWIDTH +: BITWIDTH] + posBeta;
+					wZY_out_gate[j*BITWIDTH +: BITWIDTH] = wZY_out[j*BITWIDTH +: BITWIDTH] + (18'h00800 >>> pertRate);
 				else
-					wZY_out_gate[j*BITWIDTH +: BITWIDTH] = wZY_out[j*BITWIDTH +: BITWIDTH] + minusBeta;
+					wZY_out_gate[j*BITWIDTH +: BITWIDTH] = wZY_out[j*BITWIDTH +: BITWIDTH] - (18'h00800 >>> pertRate);
 					
 				if(sign_wIX[j] == 1)
-					wIX_out_gate[j*BITWIDTH +: BITWIDTH] = wIX_out[j*BITWIDTH +: BITWIDTH] + posBeta;
+					wIX_out_gate[j*BITWIDTH +: BITWIDTH] = wIX_out[j*BITWIDTH +: BITWIDTH] + (18'h00800 >>> pertRate);
 				else
-					wIX_out_gate[j*BITWIDTH +: BITWIDTH] = wIX_out[j*BITWIDTH +: BITWIDTH] + minusBeta;
+					wIX_out_gate[j*BITWIDTH +: BITWIDTH] = wIX_out[j*BITWIDTH +: BITWIDTH] - (18'h00800 >>> pertRate);
 				if(sign_wIY[j] == 1)
-					wIY_out_gate[j*BITWIDTH +: BITWIDTH] = wIY_out[j*BITWIDTH +: BITWIDTH] + posBeta;
+					wIY_out_gate[j*BITWIDTH +: BITWIDTH] = wIY_out[j*BITWIDTH +: BITWIDTH] + (18'h00800 >>> pertRate);
 				else
-					wIY_out_gate[j*BITWIDTH +: BITWIDTH] = wIY_out[j*BITWIDTH +: BITWIDTH] + minusBeta;
+					wIY_out_gate[j*BITWIDTH +: BITWIDTH] = wIY_out[j*BITWIDTH +: BITWIDTH] - (18'h00800 >>> pertRate);
 				
 				if(sign_wFX[j] == 1)
-					wFX_out_gate[j*BITWIDTH +: BITWIDTH] = wFX_out[j*BITWIDTH +: BITWIDTH] + posBeta;
+					wFX_out_gate[j*BITWIDTH +: BITWIDTH] = wFX_out[j*BITWIDTH +: BITWIDTH] + (18'h00800 >>> pertRate);
 				else
-					wFX_out_gate[j*BITWIDTH +: BITWIDTH] = wFX_out[j*BITWIDTH +: BITWIDTH] + minusBeta;
+					wFX_out_gate[j*BITWIDTH +: BITWIDTH] = wFX_out[j*BITWIDTH +: BITWIDTH] - (18'h00800 >>> pertRate);
 				if(sign_wFY[j] == 1)
-					wFY_out_gate[j*BITWIDTH +: BITWIDTH] = wFY_out[j*BITWIDTH +: BITWIDTH] + posBeta;
+					wFY_out_gate[j*BITWIDTH +: BITWIDTH] = wFY_out[j*BITWIDTH +: BITWIDTH] + (18'h00800 >>> pertRate);
 				else
-					wFY_out_gate[j*BITWIDTH +: BITWIDTH] = wFY_out[j*BITWIDTH +: BITWIDTH] + minusBeta;
+					wFY_out_gate[j*BITWIDTH +: BITWIDTH] = wFY_out[j*BITWIDTH +: BITWIDTH] - (18'h00800 >>> pertRate);
 				
 				if(sign_wOX[j] == 1)
-					wOX_out_gate[j*BITWIDTH +: BITWIDTH] = wOX_out[j*BITWIDTH +: BITWIDTH] + posBeta;
+					wOX_out_gate[j*BITWIDTH +: BITWIDTH] = wOX_out[j*BITWIDTH +: BITWIDTH] + (18'h00800 >>> pertRate);
 				else
-					wOX_out_gate[j*BITWIDTH +: BITWIDTH] = wOX_out[j*BITWIDTH +: BITWIDTH] + minusBeta;	
+					wOX_out_gate[j*BITWIDTH +: BITWIDTH] = wOX_out[j*BITWIDTH +: BITWIDTH] - (18'h00800 >>> pertRate);	
 				if(sign_wOY[j] == 1)
-					wOY_out_gate[j*BITWIDTH +: BITWIDTH] = wOY_out[j*BITWIDTH +: BITWIDTH] + posBeta;
+					wOY_out_gate[j*BITWIDTH +: BITWIDTH] = wOY_out[j*BITWIDTH +: BITWIDTH] + (18'h00800 >>> pertRate);
 				else
-					wOY_out_gate[j*BITWIDTH +: BITWIDTH] = wOY_out[j*BITWIDTH +: BITWIDTH] + minusBeta;	
+					wOY_out_gate[j*BITWIDTH +: BITWIDTH] = wOY_out[j*BITWIDTH +: BITWIDTH] - (18'h00800 >>> pertRate);	
 					
 				if(sign_bZ[j] == 1)
-					bZ_out_gate[j*BITWIDTH +: BITWIDTH] = bZ[j*BITWIDTH +: BITWIDTH] + posBeta;
+					bZ_out_gate[j*BITWIDTH +: BITWIDTH] = bZ[j*BITWIDTH +: BITWIDTH] + (18'h00800 >>> pertRate);
 				else
-					bZ_out_gate[j*BITWIDTH +: BITWIDTH] = bZ[j*BITWIDTH +: BITWIDTH] + minusBeta;	
+					bZ_out_gate[j*BITWIDTH +: BITWIDTH] = bZ[j*BITWIDTH +: BITWIDTH] - (18'h00800 >>> pertRate);	
 				if(sign_bI[j] == 1)
-					bI_out_gate[j*BITWIDTH +: BITWIDTH] = bI[j*BITWIDTH +: BITWIDTH] + posBeta;
+					bI_out_gate[j*BITWIDTH +: BITWIDTH] = bI[j*BITWIDTH +: BITWIDTH] + (18'h00800 >>> pertRate);
 				else
-					bI_out_gate[j*BITWIDTH +: BITWIDTH] = bI[j*BITWIDTH +: BITWIDTH] + minusBeta;	
+					bI_out_gate[j*BITWIDTH +: BITWIDTH] = bI[j*BITWIDTH +: BITWIDTH] - (18'h00800 >>> pertRate);	
 				if(sign_bF[j] == 1)
-					bF_out_gate[j*BITWIDTH +: BITWIDTH] = bF[j*BITWIDTH +: BITWIDTH] + posBeta;
+					bF_out_gate[j*BITWIDTH +: BITWIDTH] = bF[j*BITWIDTH +: BITWIDTH] + (18'h00800 >>> pertRate);
 				else
-					bF_out_gate[j*BITWIDTH +: BITWIDTH] = bF[j*BITWIDTH +: BITWIDTH] + minusBeta;	
+					bF_out_gate[j*BITWIDTH +: BITWIDTH] = bF[j*BITWIDTH +: BITWIDTH] - (18'h00800 >>> pertRate);	
 				if(sign_bO[j] == 1)
-					bO_out_gate[j*BITWIDTH +: BITWIDTH] = bO[j*BITWIDTH +: BITWIDTH] + posBeta;
+					bO_out_gate[j*BITWIDTH +: BITWIDTH] = bO[j*BITWIDTH +: BITWIDTH] + (18'h00800 >>> pertRate);
 				else
-					bO_out_gate[j*BITWIDTH +: BITWIDTH] = bO[j*BITWIDTH +: BITWIDTH] + minusBeta;	
+					bO_out_gate[j*BITWIDTH +: BITWIDTH] = bO[j*BITWIDTH +: BITWIDTH] - (18'h00800 >>> pertRate);	
 			end
 		end
 		else begin
