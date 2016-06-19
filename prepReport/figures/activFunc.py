@@ -20,7 +20,7 @@ plt.grid(True);
 plt.xlabel(r"Activation $a$");
 plt.ylabel(r"$f(a)$");
 plt.legend(loc=2);
-plt.savefig(filename='activFunc.eps', ransparent=True);
+plt.savefig(filename='activFunc.eps', transparent=True);
 plt.show();
 
 

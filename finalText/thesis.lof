@@ -1,0 +1,15 @@
+\select@language {english}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Representations of a Neuron in an ANN~\ref {fig:modelNeuron_a} and a biological multi polar neuron~\ref {fig:modelNeuron_b}}}{7}{figure.caption.4}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Possible activation functions of choice for a neuron}}{8}{figure.caption.5}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Three layer ANN}}{9}{figure.caption.6}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Representation of a Recurrent Neuron (Figure~\ref {fig:recneuron}) and a Recurrent Neuron unfolded through time (Figure~\ref {fig:recneuron_unf})}}{11}{figure.caption.7}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces A complete LSTM neuron, with all the features as described in~\cite {Graves05}. Source:~\cite {Greff15}\relax }}{12}{figure.caption.8}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Block Diagram of the Non-linearity Calculator}}{27}{figure.caption.9}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces The output of the HDL implementation of the activation functions}}{28}{figure.caption.10}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces A column of the matrix that serves as input to the module}}{30}{figure.caption.11}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces The $i$-th row multiplication unit of the Module}}{30}{figure.caption.12}
+\addvspace {10\p@ }

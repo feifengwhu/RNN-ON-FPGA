@@ -1,0 +1,91 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\citation{Yates13}
+\@writefile{toc}{\contentsline {chapter}{\numberline {4}Proposed Architecture}{21}{chapter.4}}
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\newlabel{chap:propSol}{{4}{21}{Proposed Architecture}{chapter.4}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.1}Network Organization}{21}{section.4.1}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.2}Forward Propagation Circuit Overview}{21}{section.4.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.1}Finite-precision representation system}{21}{subsection.4.2.1}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.1.1}Precision bitwidth}{21}{subsubsection.4.2.1.1}}
+\newlabel{sec:precbit}{{4.2.1.1}{21}{Precision bitwidth}{subsubsection.4.2.1.1}{}}
+\newlabel{eq:maxpos}{{4.1}{21}{Precision bitwidth}{equation.4.2.1}{}}
+\newlabel{eq:minneg}{{4.2}{22}{Precision bitwidth}{equation.4.2.2}{}}
+\newlabel{eq:rangeQ611}{{4.3}{22}{Precision bitwidth}{equation.4.2.3}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.1.2}Conversion between real and fixed-point}{22}{subsubsection.4.2.1.2}}
+\newlabel{sec:convrulesfp}{{4.2.1.2}{22}{Conversion between real and fixed-point}{subsubsection.4.2.1.2}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.1.3}Fixed-point arithmetic rules}{22}{subsubsection.4.2.1.3}}
+\newlabel{sec:arithrulesfp}{{4.2.1.3}{22}{Fixed-point arithmetic rules}{subsubsection.4.2.1.3}{}}
+\citation{Muller05}
+\citation{Weierstrass1885}
+\citation{Muller05}
+\newlabel{eq:multfp}{{4.4}{23}{Fixed-point arithmetic rules}{equation.4.2.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.2}Non-linearity Calculator}{23}{subsection.4.2.2}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.2.1}Theoretical considerations on the approximation method}{23}{subsubsection.4.2.2.1}}
+\newlabel{eq:remezline}{{4.5}{24}{Theoretical considerations on the approximation method}{equation.4.2.5}{}}
+\newlabel{lst:remezpy}{{4.1}{24}{Python script that implements Remez's algorithm}{lstlisting.4.1}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {4.1}Python script that implements Remez's algorithm}{24}{lstlisting.4.1}}
+\newlabel{eq:coefs_sigm}{{4.7}{26}{Theoretical considerations on the approximation method}{equation.4.2.7}{}}
+\newlabel{eq:coefs_tanh}{{4.8}{26}{Theoretical considerations on the approximation method}{equation.4.2.8}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.2.2}Hardware Implementation}{26}{subsubsection.4.2.2.2}}
+\newlabel{eq:factorPol}{{4.9}{27}{Hardware Implementation}{equation.4.2.9}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces Block Diagram of the Non-linearity Calculator}}{27}{figure.caption.9}}
+\newlabel{fig:nonlin}{{4.1}{27}{Block Diagram of the Non-linearity Calculator}{figure.caption.9}{}}
+\newlabel{fig:nonlin-out-sig}{{4.2a}{28}{Plot of the output of the Sigmoid Calculator HDL module}{figure.caption.10}{}}
+\newlabel{sub@fig:nonlin-out-sig}{{a}{28}{Plot of the output of the Sigmoid Calculator HDL module}{figure.caption.10}{}}
+\newlabel{fig:nonlin-out-tanh}{{4.2b}{28}{Plot of the output of the Hyperbolic Tangent HDL module}{figure.caption.10}{}}
+\newlabel{sub@fig:nonlin-out-tanh}{{b}{28}{Plot of the output of the Hyperbolic Tangent HDL module}{figure.caption.10}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces The output of the HDL implementation of the activation functions}}{28}{figure.caption.10}}
+\newlabel{fig:nonlin-out}{{4.2}{28}{The output of the HDL implementation of the activation functions}{figure.caption.10}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.3}Matrix-vector Dot Product Unit}{29}{subsection.4.2.3}}
+\newlabel{sec:dotprod_sec}{{4.2.3}{29}{Matrix-vector Dot Product Unit}{subsection.4.2.3}{}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces Matrix-vector multiplication of a matrix\relax }}{29}{algorithm.1}}
+\newlabel{matvec-alg}{{1}{29}{Matrix-vector multiplication of a matrix\relax }{algorithm.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.3}{\ignorespaces A column of the matrix that serves as input to the module}}{30}{figure.caption.11}}
+\newlabel{fig:mem-arrayprod}{{4.3}{30}{A column of the matrix that serves as input to the module}{figure.caption.11}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.4}{\ignorespaces The $i$-th row multiplication unit of the Module}}{30}{figure.caption.12}}
+\newlabel{fig:array-prod}{{4.4}{30}{The $i$-th row multiplication unit of the Module}{figure.caption.12}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.4}Dual-port Block RAM}{31}{subsection.4.2.4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.5}Gate Module}{31}{subsection.4.2.5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.6}Timing Diagrams of Operation}{31}{subsection.4.2.6}}
+\@setckpt{proposedSol}{
+\setcounter{page}{32}
+\setcounter{equation}{9}
+\setcounter{enumi}{3}
+\setcounter{enumii}{0}
+\setcounter{enumiii}{0}
+\setcounter{enumiv}{0}
+\setcounter{footnote}{0}
+\setcounter{mpfootnote}{0}
+\setcounter{part}{0}
+\setcounter{chapter}{4}
+\setcounter{section}{2}
+\setcounter{subsection}{6}
+\setcounter{subsubsection}{0}
+\setcounter{paragraph}{0}
+\setcounter{subparagraph}{0}
+\setcounter{figure}{4}
+\setcounter{table}{0}
+\setcounter{ContinuedFloat}{0}
+\setcounter{subfigure}{0}
+\setcounter{subtable}{0}
+\setcounter{parentequation}{0}
+\setcounter{float@type}{16}
+\setcounter{lstnumber}{85}
+\setcounter{algorithm}{1}
+\setcounter{ALG@line}{5}
+\setcounter{ALG@rem}{5}
+\setcounter{ALG@nested}{0}
+\setcounter{ALG@Lnr}{2}
+\setcounter{ALG@blocknr}{10}
+\setcounter{ALG@storecount}{0}
+\setcounter{ALG@tmpcounter}{0}
+\setcounter{linenumber}{0}
+\setcounter{LN@truepage}{39}
+\setcounter{Item}{3}
+\setcounter{Hfootnote}{3}
+\setcounter{bookmark@seq@number}{29}
+\setcounter{lstlisting}{1}
+\setcounter{section@level}{2}
+}

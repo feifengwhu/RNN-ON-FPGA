@@ -58,7 +58,7 @@ module tb_tanh();
             @(posedge clock);
             operand <= ROM_input[i];
             #(HALF_CLOCK);
-            $fwrite(fid, "%018b\n", result);
+            $fwrite(fid, "0b%018b\n", result);
             if (i % 1000 == 0) 
                 $display("Simulated %d samples\n", i);
             

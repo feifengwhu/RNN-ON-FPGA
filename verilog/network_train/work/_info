@@ -61,14 +61,23 @@ R3
 R4
 n@_opt5
 R2
+R0
+T_opt6
+!s110 1466259384
+V>b>l_6c0dY>LYX56IU08T2
+R3
+=1-d43d7e359f7e-576557b7-6757c-2953
+R1
+n@_opt6
+R2
 varray_prod
-Z5 !s110 1465232696
+Z5 !s110 1466259337
 !i10b 1
 !s100 m[KFbYiYj3oaci2JZ4o0o1
 ISb4fQ>`i2c?4GzbEaDHIE2
 Z6 VDg1SIo80bB@j0V0VzS_@n1
-Z7 d/home/josefonseca/thesis/verilog/network_train
-w1464962302
+R0
+Z7 w1465990205
 8array_prod.v
 Farray_prod.v
 L0 1
@@ -76,7 +85,7 @@ Z8 OL;L;10.4c_5;61
 r1
 !s85 0
 31
-Z9 !s108 1465232696.000000
+Z9 !s108 1466259336.000000
 Z10 !s107 weightRAM.v|test.v|tb_network.v|tanh.v|sigmoid.v|prng.v|network.v|gate.v|dot_prod.v|array_prod.v|
 Z11 !s90 array_prod.v|dot_prod.v|gate.v|network.v|prng.v|sigmoid.v|tanh.v|tb_network.v|test.v|weightRAM.v|
 !i113 0
@@ -87,8 +96,8 @@ R5
 !s100 oHCm7P2f5b6C>Z[d<Nj_S2
 IHNPaG32oGPknzB[=7<`6M1
 R6
+R0
 R7
-Z13 w1464357075
 8dot_prod.v
 Fdot_prod.v
 L0 1
@@ -107,8 +116,8 @@ R5
 !s100 ;Rcno4gAW<?oQ3=0hGD2]2
 IMfSmXg7zX;]H_OB1jKJ]_2
 R6
+R0
 R7
-R13
 8gate.v
 Fgate.v
 L0 1
@@ -124,11 +133,11 @@ R12
 vnetwork
 R5
 !i10b 1
-!s100 0]zVJG[FK84gkRk9Kd?BP2
-ILhCVF6UQ=0N9]_5?:JIR33
+!s100 FTDSM5kXB[LbTn?l@ACGA0
+INm;nLc^T:9Te58ShI]AYZ3
 R6
-R7
-w1465232693
+R0
+w1466075077
 8network.v
 Fnetwork.v
 L0 1
@@ -147,8 +156,8 @@ R5
 !s100 dePj_k5mAjb::3M60HzJA3
 IMQ:c]c=g0GMa8YZOT0Fh83
 R6
+R0
 R7
-R13
 8prng.v
 Fprng.v
 L0 1
@@ -167,8 +176,8 @@ R5
 !s100 1:7_Q4dT_iT7d0C`djFhj1
 IEhe?kD14[Ab3ad:aeYXmY3
 R6
+R0
 R7
-R13
 8sigmoid.v
 Fsigmoid.v
 L0 1
@@ -187,8 +196,8 @@ R5
 !s100 IOXXJE>OW2b[ZX1`L7WPX0
 I0^e=H]?g@0lVVQXF>W]Ld2
 R6
+R0
 R7
-R13
 8tanh.v
 Ftanh.v
 L0 1
@@ -204,11 +213,11 @@ R12
 vtb_network
 R5
 !i10b 1
-!s100 X0NWQCm>0b6>@B0m5d?AQ3
-IPG>DBj9h67iL2^76i^^9c2
+!s100 `ACdXVgODjzX<8H5^gm543
+Ih4@MfBOjm>znUTSl8ZZHf3
 R6
-R7
-w1465231726
+R0
+w1465998143
 8tb_network.v
 Ftb_network.v
 L0 3
@@ -227,8 +236,8 @@ R5
 !s100 SW@1IGQVWN7HGe39`D]jj2
 I;g]G6?;oDojb=aU@V2cHS2
 R6
+R0
 R7
-w1465206111
 8test.v
 Ftest.v
 L0 1
@@ -244,11 +253,11 @@ R12
 vweightRAM
 R5
 !i10b 1
-!s100 M37UAi>7FI_Q7:b7QcXkU1
-I?_=]J6=1XD6c83mG_FMng1
+!s100 mlioY0;h[4[4V@lW9F5Xz3
+Ik<fU0XPX5k557eN0]DPTN2
 R6
-R7
-w1464963059
+R0
+w1466259313
 8weightRAM.v
 FweightRAM.v
 L0 1

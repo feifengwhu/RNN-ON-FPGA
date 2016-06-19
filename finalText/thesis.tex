@@ -1,0 +1,174 @@
+%% FEUP THESIS STYLE for LaTeX2e
+%% how to use feupteses (English version)
+%%
+%% FEUP, JCL & JCF, 31 July 2012
+%%
+%% PLEASE send improvements to jlopes at fe.up.pt and to jcf at fe.up.pt
+%%
+
+%%========================================
+%% Commands: pdflatex tese
+%%           bibtex tese
+%%           makeindex tese (only if creating an index)
+%%           pdflatex tese
+%% Alternative:
+%%          latexmk -pdf tese.tex
+%%========================================
+
+\documentclass[11pt,a4paper,twoside,openright]{report}
+
+%% For iso-8859-1 (latin1), comment next line and uncomment the second line
+\usepackage[utf8]{inputenc}
+\usepackage{subcaption}
+\usepackage{amsmath}
+\usepackage{float}
+\usepackage{lscape}
+\usepackage{textcomp}
+\usepackage{listings}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{pgfgantt}
+
+\usepackage{xcolor}
+    %%-- Customizing the Code Presentation -- %%
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\definecolor{sectioncol}{HTML}{9C0906}
+\definecolor{subsectioncol}{HTML}{CC100C}
+
+\lstdefinestyle{mystyle}{
+backgroundcolor=\color{backcolour},   
+commentstyle=\color{codegreen},
+keywordstyle=\color{magenta},
+numberstyle=\ttfamily\tiny\color{codegray},
+stringstyle=\color{codepurple},
+basicstyle=\ttfamily\scriptsize,
+breakatwhitespace=false,         
+breaklines=true,                 
+captionpos=b,                    
+keepspaces=true,                 
+numbers=left,                    
+numbersep=5pt,                  
+showspaces=false,                
+showstringspaces=false,
+showtabs=false,                 
+tabsize=2}
+\lstset{style=mystyle}
+%\usepackage[latin1]{inputenc}
+
+%% English version
+
+%% MIEIC options
+%\usepackage[mieic]{feupteses}
+%\usepackage[mieic,juri]{feupteses}
+%\usepackage[mieic,final]{feupteses}
+%\usepackage[mieic,final,onpaper]{feupteses}
+
+%% MIEEC options
+\usepackage[mieec, final]{feupteses}
+%\usepackage[mieec,juri]{feupteses}
+%\usepackage[mieec,final]{feupteses}
+
+%% For other degrees
+%\usepackage{feupteses} % you must define the degree bellow
+
+%% Additional options for feupteses.sty: 
+%% - onpaper: links are not shown (for paper versions)
+%% - backrefs: include back references from bibliography to citation place
+
+%% Uncomment to create an index (at the end of the document)
+%\makeindex
+\graphicspath{{figures/}}
+
+%%----------------------------------------
+%% TIP: if you want to define more macros, use an external file to keep them
+\include{mymacros}
+%%----------------------------------------
+
+%%========================================
+%% Start of document
+%%========================================
+\begin{document}
+
+%%----------------------------------------
+%% Information about the work
+%%----------------------------------------
+\title{Dissertation Preparation}
+\author{José Pedro Castro Fonseca}
+
+%% Comment next line if not necessary for degree
+\degree{Integrated Masters in Electrical and Computer Engineering}
+
+%% Uncomment next line for date of submission
+%\thesisdate{July 31, 2008}
+
+%% Comment next line copyright text if not used
+\copyrightnotice{José Fonseca, 2016}
+
+\supervisor{Supervisor}{João Canas Ferreira}
+\supervisor{Second Supervisor}{Ivo Timóteo}
+
+%% Uncomment next line if necessary
+%\supervisor{Second Supervisor}{Name of the Supervisor}
+
+%% Uncomment committee stuff in the final version if used
+%\committeetext{Approved by \ldots:}
+%\committeemember{President}{Name of the President}
+%\committeemember{Referee}{Name of the Referee}
+%\committeemember{Referee}{Name of the Referee}
+%\signature
+
+%% Specify cover logo (in folder ``figures'')
+\logo{uporto-feup.pdf}
+
+%% Uncomment next line for additional text below the author's name (front page)
+%\additionalfronttext{Preparação da Dissertação}
+
+%%----------------------------------------
+%% Preliminary materials
+%%----------------------------------------
+
+% remove unnecessary \include{} commands
+\begin{Prolog}
+  \pdfbookmark[0]{Table of Contents}{contents}
+  \tableofcontents
+  \pdfbookmark[0]{List of Figures}{figures}
+  \listoffigures
+  \include{abbrevs}  % the list of abbreviations used
+\end{Prolog}
+
+%%----------------------------------------
+%% Body
+%%----------------------------------------
+\StartBody
+
+%% TIP: use a separate file for each chapter
+\include{intro}
+\include{theorBack}
+\include{stateArt}
+\include{proposedSol}
+\include{results}
+
+%% comment next 2 commands if numbered appendices are not used
+%\appendix
+%\include{appendix1}
+
+%%----------------------------------------
+%% Final materials
+%%----------------------------------------
+
+%% Bibliography
+%% Comment the next command if BibTeX file not used
+%% bibliography is in ``myrefs.bib''
+\PrintBib{bibliography}
+%\bibliographystyle{IEEETran}
+%\bibliography{bibliography}
+%% Index
+%% Uncomment next command if index is required
+%% don't forget to run ``makeindex thesis'' command
+%\PrintIndex
+
+\end{document}

@@ -1,6 +1,6 @@
 # vsim -c -do "run -all" tb_tanh 
-# Start time: 12:48:50 on Apr 04,2016
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Start time: 23:07:58 on Jun 16,2016
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
 # //  Questa Sim-64
 # //  Version 10.4c_5 linux_x86_64 Nov 14 2015
 # //
@@ -103,5 +103,5 @@
 #    Time: 16384400 ns  Iteration: 0  Instance: /tb_tanh
 # Break at tb_tanh.v line 67
 # Stopped at tb_tanh.v line 67
-# End time: 12:48:51 on Apr 04,2016, Elapsed time: 0:00:01
+# End time: 23:08:00 on Jun 16,2016, Elapsed time: 0:00:02
 # Errors: 0, Warnings: 0
