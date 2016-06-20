@@ -1,8 +1,6 @@
 \chapter{Proposed Architecture}\label{chap:propSol}
 
-\section{Network Organization}
-
-\section{Forward Propagation Circuit Overview}
+\section{Constituent Modules}
 
 \subsection{Finite-precision representation system}
 Before discussing any details concerned with the actual hardware implementation, I will layout some of the design choices that were made regarding to how we numbers envolved in the calculations will be represented. For that purpose, Section~\ref{sec:precbit} discusses the fundamentals of fixed-point representation systems, as well as the bitwidth and precision chosen for then number representation system of the network, and Section~\ref{sec:convrulesfp} states how the conversion between real and fixed-point numbers is performed. Finally, Section~\ref{sec:arithrulesfp} explains the special rules that fixed-point arithmetic imposes. The considerations made in this chapter can be found on~\cite{Yates13}, which is a good reference for fixed-point arithmetic theory.
@@ -47,7 +45,7 @@ For signed multiplication, since both operands are in fixed-point $Qn.m$, and ar
 \end{equation}
 Since in $Qn.m$, all numbers are represented as $r 2^{m}$ with respect to their real counterpart $r$, we need to scale back the decimal point in the result of Equation~\ref{eq:multfp}. We can see that it can be easily achieved by dividing by $2^m$, as stated in the previous paragraph.
 
-\subsection{Non-linearity Calculator}
+\subsection{Non-linearity Calculator}\label{sec:nonlincalc}
 In order to evaluate the non-linear activation functions $\sigma(x)$ and $\tanh(x)$, since there is no algorithm that can directly compute them, I had to find a suitable way to compute them accurately using a finite number of elementary operations, multiplications and additions, that can be performed efficiently by specially tailored blocks within the FPGA (DSP48 slices for multiplication, for instance). For that purpose, after using~\cite{Muller05} as a reference on elementary function approximation algorithms, I decided to use \textbf{Polynomial Approximations}, since evaluating a polynomial does not have high memory usage needs (as opposed to Table Methods, for instance) and, if the polynomial degree is sufficiently low, the number of multiplications needed is low enough to not pose a restriction both on resources (now DSP slices, and not memory) and in speed (number of number of clock cycles needed to output a result).
 
 \subsubsection{Theoretical considerations on the approximation method}
@@ -113,14 +111,14 @@ p(x) = p_0 + p_1x + p_2x^2 = p_0 + x(p_1 + xp_2)
 \end{equation}
 where we can note that this operation can be divided in a two-step procedure of a simultaneous mutiplication of the operand by a constant, and a subsequent addition of another constant: first, by multiplying the operand by $p_2$ and summing $p_1$, and then by multiplying the operand by this last result and summing $p_0$. The block diagram of the hardware implementation of the non-linearity calculator is presented in Figure~\ref{fig:nonlin}. Also, in Figure~\ref{fig:nonlin-out}, the output of the Verilog module that implements this design is compared with the actual output (I used Numpy as reference) for both activation functions.
 
-\begin{figure}[H]
+\begin{figure}
     \centering
     \includegraphics[width=0.9\linewidth]{figures/non-lin.eps}
     \caption[Block Diagram of the Non-linearity Calculator]{Block Diagram of the Non-linearity Calculator using a single multiplication. The multiplexer state is controlled by the flip-flip and sum block, that change state every clock cycle. When reset is applied, the selector is set to zero.}
     \label{fig:nonlin}
 \end{figure}
 
-\begin{figure}[H]
+\begin{figure}
     \centering
     \begin{subfigure}{0.85\linewidth}
         \centering
@@ -190,6 +188,65 @@ The Verilog coding followed the Verilog Coding Guidelines in Xilinx's \href{http
 where we can see that each register contains the respective column of the matrix, with $\verb+PORT_BITWIDTH+ = \verb+BITWDITH+ \cdot M$ and $\verb+NCOL+ = M$.
  
 
-\subsection{Gate Module}
+\subsection{Gate Module}\label{sec:gatemod} 
+Note that, according to~\cite{Greff15} the usage of peepholes does not compromise the performance of the network~\ref{sec:struct_lstm}, and therefore they have been ommited in order to simplify the Gate Module.
+
+\section{Hardware LSTM Network -- Forward Propagation}\label{sec:hLSTM-fp}
+After detailing the design of each of the constituent modules of the LSTM Network, I will now show how they are interconnected
+to implement a hardware version of Equations~\ref{eq:equationsLSTM}. This will be performed in Section~\ref{sec:hLSTM-struct}, where the design decisions and compromises that were taken will be detailed, along with some estimates on the resource usage and calculation time for each of the design iteration versions, the naïve solution (~\ref{sec:struct-fullpar}) and an optimized version of the former (~\ref{sec:struct-shared}) that exploits some of the hardware redundancies by multiplexing in time the usage of those redundant structures.
+
+\subsection{Network Structure}\label{sec:hLSTM-struct}
+Looking at equations~\ref{eq:equationsLSTM}, we note that the signals $\mb{z}^{(t)}$, $\mb{i}^{(t)}$, $\mb{f}^{(t)}$ and $\mb{o}^{(t)}$ do not depend on each other -- they operate only on the current input vector $\mb{x}^{(t)}$ and the previous layer output $\mb{y}^{(t-1)}$ -- we see that they can be calculated in parallel, meaning that we need four Gate Modules (see Section~\ref{sec:gatemod} working in parallel, each one with its respective two Block RAMs for $\mb{W}_*$ and $\mb{R}_*$, each followed by the respective activation function calculator (detailed in Section~\ref{sec:nonlincalc}). There are three elementwise multiplications, two for producing signal $\mb{c}^{(t)}$ (which can be done in parallel and then summed elementwise) and one for $\mb{y}^{(t)}$ (which can be done only after applying the activation function $\mb{c}^{(t)}$).
+
+\subsubsection{Fully Parallel}\label{sec:struct-fullpar}
+By implementing directly the ideas outlined previously, we get the network of Figure~\ref{fig:network}. The memory element of the network is the array of flip-flops that keep the value of the vector $\mb{c}^{(t)}$, which is activated everytime we have a new incoming signal in order to store the last value, which is now $\mb{c}^{(t)}$
+
+(Talk about RAM usage)
+
+In terms of DSP slice usage, this proposed design comprises 3 elementwise multiplications and 5 activation function Modules. Since the number of elementwise multiplications is equal to the network size $N$, we need $3N$ DSP slices for each elementwise block. As far as the activation function module is concerned, since we need to apply it to each one of the elements of the layer, $N$, and each module uses one multiplication, the ensemble of all 5 modules needs $5N$ DSP slices. Therefore, and noting that each Gate has $\frac{2N}{K_G}$ DSP slices, the total number of DSP slices used is
+
+\begin{equation}\label{eq:numdsp_network}
+    4\frac{2N}{K_G} + 5N + 3N = N \left( \frac{8}{K_G} + 8 \right).
+\end{equation}
+In terms of time performance, we can measure it by estimating the number of clock cycles needed to perform a complete forward propagation. Since the gate module outputs a result in $K_G \cdot N$ cycles, the activation function evaluators need always 2, and the elementwise multiplicators need only 1 cycles, and noting that the two elementwise multiplicators that sum to produce $\mb{c}^{(t)}$ can work in parallel, the estimated number of clock cycles needed is
+
+\begin{equation}\label{eq:numcc_network}
+    (N \cdot K_G + 2) + (2 + 1) + (2 + 1) = 8 + N\cdot K_G
+\end{equation}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\linewidth]{figures/network.eps}
+    \caption[Hardware LSTM Network with full level of parallelism]{Hardware LSTM Network with full level of parallelism}
+    \label{fig:network}
+\end{figure}
+
+\subsubsection{Shared Elementwise Multiplication Block}\label{sec:struct-fullpar}
+In Figure~\ref{fig:network}, we see that, apart from the elementwise multiplicator preceeding the flip-flops, all of them follow a similar structure: one of the operands is the output of a $\tanh(\mb{x})$ block and the other from a $\sigma(\mb{x})$. A clever improvement over the last network architecture is to instead of replicating these $\tanh$-$\sigma$-$(\cdot)$wise structures use a \emph{single one} and choose the operand accordingly to the state that the network is currently in. Besides, the right elementwise multiplier of Figure~\ref{fig:network} is not used as the same time as any other, so it is a perfect waste of resources. The issue about the elementwise multiplier that precedes the flip-flops can be solved by adding another multiplexer that chooses between the output of the $\tanh(\mb{x})$ module or the signal $\mb{c}^{(t-1)}$. These ideas resulted in the improved network design of Figure~\ref{fig:network-opt}.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\linewidth]{figures/network-opt.eps}
+    \caption[Optimised version of~\ref{fig:network} that shares the elementwise multiplication and the activation function blocks]{Optimised version of~\ref{fig:network} that shares the elementwise multiplication and the activation function blocks}
+    \label{fig:network-opt}
+\end{figure}
+The two left multiplexers control the operands that are fed to the activation function modules, and the selecting signal is generated by the network's state machine, and its value is incremented after each complete usage of the $\tanh$-$\sigma$-$(\cdot)$wise  structure: this is where the time multiplexing of the structure takes place. Since in state $\verb+Sel+=1$ the left operand of the elementwise multiplicator (the one that preceeded the flip-flops in the previous design) is the signal $\mb{c}^{(t-1)}$, I added another multiplexer before the elementwise multiplication that selects that signal in that particular case, and the output from the $\tanh(\mb{x})$ block, otherwise.
+
+The flip-flops on the righthand side of Figure~\ref{fig:network-opt} are activated by signals generated within the network state machine that enable the appropriate flip-flop, placing the output from the elementwise multiplicator in the correct place. The first activated flip-flop is the middle one, which keeps the result from the operation of the $\mb{z}^{(t)}$ and $\mb{i}^{(t)}$ vectors, then, after a full operation of the elementwise multiplier, the bottom flip-flop to save the other portion of the sum that evaluates to the $\mb{c}^{(t)}$ signal. Lastly, the top flip-flop saves the network output $\mb{y}^{(t)}$, which in the next incoming sample becomes $\mb{y}^{(t-1)}$ and is used by the Gate modules in this next batch of calculations.
+
+Now, since there is only a single elementwise multiplier and only two activation function calculators, the total requirement for DSP slices is simply
+\begin{equation}\label{eq:numdsp_network-opt}
+    4\frac{2N}{K_G} + 2N + N = N \left( \frac{8}{K_G} + 3 \right).
+\end{equation}
+where we see that we saved $5N$ multipliers, which for a large value of $N$ can have a decisive impact. In terms of speed performance, although the Gate calculation time remains the same, now the $\tanh$-$\sigma$-$(\cdot)$wise structure runs for 3 consecutive times, in a non parallel fashion. The estimated number of clock cycles it takes to produce an output is
+
+\begin{equation}\label{eq:numcc_network-opt}
+    (N \cdot K_G + 2) + 3*(2 + 1)  = 11 + N\cdot K_G
+\end{equation}
+which is only 3 clock cycles more than the fully-parallel architecture. For instance, an $N=32$ neuron network would require 320 DSP slices, while this new architecture would only require 160, only at the expense of 3 more clock cycles.
+
+\subsection{Timing Diagrams of Operation}
+
+\section{Hardware LSTM Network -- SPSA Training}
 
 \subsection{Timing Diagrams of Operation}
