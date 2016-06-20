@@ -189,7 +189,21 @@ where we can see that each register contains the respective column of the matrix
  
 
 \subsection{Gate Module}\label{sec:gatemod} 
-Note that, according to~\cite{Greff15} the usage of peepholes does not compromise the performance of the network~\ref{sec:struct_lstm}, and therefore they have been ommited in order to simplify the Gate Module.
+The Gate modules are responsible for producing the internal signal vectors for $\mb{z}^{(t)}$, $\mb{i}^{(t)}$, $\mb{f}^{(t)}$ and $\mb{o}^{(t)}$. If we note that, according to~\cite{Greff15}, the removal of peepholes (the signals $\mb{p}_*$) does not compromise significantly the performance of the network~\ref{sec:struct_lstm}, we can ommit them in order to simplify the Gate Module and reduce the usage of DSP slices. This way, a Gate module needs to perform three tasks
+
+\begin{enumerate}
+    \item Multiply matrix $\mb{W}_*$ by the input vector $\mb{x}^{(t)}$
+    \item Multiply matrix $\mb{R}_*$ by the previous layer output vector $\mb{y}^{(t-1)}$
+    \item Sum the bias vector $\mb{b}_*$ to the remaining matrix-vector dot product results.
+\end{enumerate}
+Assuming that the network size $N$ is always larger than the input size $M$, if we use the matrix-vector dot product units of Section~\ref{sec:dotprod_sec}, the multiplication in task 1 takes $K_G\cdot M$ cycles and the one in task 2 takes $K_G\cdot N$ cycles. This way, task 2 and task 1 can be performed in parallel, and we can use the extra time that task 2 takes, relative to task 1,  to perform task 3, and sum the bias vector to the output of task 1, whose result is ready by that time.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\linewidth]{figures/gate.eps}
+    \caption[Diagram of the hardware block that implements the Gate]{Diagram of the hardware block that implements the Gate}
+    \label{fig:gate}
+\end{figure}
 
 \section{Hardware LSTM Network -- Forward Propagation}\label{sec:hLSTM-fp}
 After detailing the design of each of the constituent modules of the LSTM Network, I will now show how they are interconnected

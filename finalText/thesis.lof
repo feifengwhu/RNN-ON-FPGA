@@ -12,6 +12,7 @@
 \contentsline {figure}{\numberline {4.2}{\ignorespaces The output of the HDL implementation of the activation functions}}{28}{figure.caption.10}
 \contentsline {figure}{\numberline {4.3}{\ignorespaces A column of the matrix that serves as input to the module}}{30}{figure.caption.11}
 \contentsline {figure}{\numberline {4.4}{\ignorespaces The $i$-th row multiplication unit of the Module}}{30}{figure.caption.12}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Hardware LSTM Network with full level of parallelism}}{33}{figure.caption.13}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Optimised version of~\ref {fig:network} that shares the elementwise multiplication and the activation function blocks}}{33}{figure.caption.14}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Diagram of the hardware block that implements the Gate}}{32}{figure.caption.13}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Hardware LSTM Network with full level of parallelism}}{33}{figure.caption.14}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Optimised version of~\ref {fig:network} that shares the elementwise multiplication and the activation function blocks}}{34}{figure.caption.15}
 \addvspace {10\p@ }

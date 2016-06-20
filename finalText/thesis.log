@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.6.19)  19 JUN 2016 22:49
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.2.18)  20 JUN 2016 12:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1397,16 +1397,16 @@ Underfull \vbox (badness 6758) has occurred while \output is active []
  [5]
 [6]
 Package epstopdf Info: Source file: <figures/neuron.eps>
-(epstopdf)                    date: 2016-06-19 15:21:29
+(epstopdf)                    date: 2016-06-15 12:51:37
 (epstopdf)                    size: 122444 bytes
 (epstopdf)             Output file: <figures/neuron-eps-converted-to.pdf>
-(epstopdf)                    date: 2016-06-19 15:21:29
+(epstopdf)                    date: 2016-06-15 12:51:37
 (epstopdf)                    size: 10626 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/neuron-eps-convert
 ed-to.pdf figures/neuron.eps>
 (epstopdf)             \includegraphics on input line 36.
 Package epstopdf Info: Output file is already uptodate.
- <figures/neuron-eps-converted-to.pdf, id=321, 275.0275pt x 212.795pt>
+ <figures/neuron-eps-converted-to.pdf, id=323, 275.0275pt x 212.795pt>
 File: figures/neuron-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/neuron-eps-converted-to.pdf>
@@ -1414,7 +1414,7 @@ Package pdftex.def Info: figures/neuron-eps-converted-to.pdf used on input line
  36.
 (pdftex.def)             Requested size: 192.0548pt x 148.60155pt.
 
-<figures/MultipolarNeuron.png, id=322, 2509.375pt x 1618.045pt>
+<figures/MultipolarNeuron.png, id=324, 2509.375pt x 1618.045pt>
 File: figures/MultipolarNeuron.png Graphic file (type png)
 
 <use figures/MultipolarNeuron.png>
@@ -1426,16 +1426,16 @@ Overfull \hbox (2.0805pt too wide) in paragraph at lines 34--46
  []
 
 Package epstopdf Info: Source file: <figures/activFunc.eps>
-(epstopdf)                    date: 2016-06-19 15:21:29
+(epstopdf)                    date: 2016-06-15 12:51:37
 (epstopdf)                    size: 130968 bytes
 (epstopdf)             Output file: <figures/activFunc-eps-converted-to.pdf>
-(epstopdf)                    date: 2016-06-19 15:21:29
+(epstopdf)                    date: 2016-06-15 12:51:37
 (epstopdf)                    size: 14077 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/activFunc-eps-conv
 erted-to.pdf figures/activFunc.eps>
 (epstopdf)             \includegraphics on input line 56.
 Package epstopdf Info: Output file is already uptodate.
-<figures/activFunc-eps-converted-to.pdf, id=330, 578.16pt x 433.62pt>
+<figures/activFunc-eps-converted-to.pdf, id=332, 578.16pt x 433.62pt>
 File: figures/activFunc-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/activFunc-eps-converted-to.pdf>
@@ -1447,17 +1447,17 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [7 <./figures/neuron-eps-converted-to.pdf> <./figures/MultipolarNeuron.png>]
 Package epstopdf Info: Source file: <figures/ann.eps>
-(epstopdf)                    date: 2016-06-19 15:21:29
+(epstopdf)                    date: 2016-06-15 12:51:37
 (epstopdf)                    size: 158518 bytes
 (epstopdf)             Output file: <figures/ann-eps-converted-to.pdf>
-(epstopdf)                    date: 2016-06-19 15:21:29
+(epstopdf)                    date: 2016-06-15 12:51:37
 (epstopdf)                    size: 12583 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/ann-eps-converted-
 to.pdf figures/ann.eps>
 (epstopdf)             \includegraphics on input line 67.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/ann-eps-converted-to.pdf, id=359, 442.65375pt x 290.08376pt>
+<figures/ann-eps-converted-to.pdf, id=361, 442.65375pt x 290.08376pt>
 File: figures/ann-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/ann-eps-converted-to.pdf>
@@ -1472,17 +1472,17 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [9 <./figures/ann-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <figures/recneuron.eps>
-(epstopdf)                    date: 2016-06-19 15:21:29
+(epstopdf)                    date: 2016-06-15 12:51:37
 (epstopdf)                    size: 58085 bytes
 (epstopdf)             Output file: <figures/recneuron-eps-converted-to.pdf>
-(epstopdf)                    date: 2016-06-19 15:21:29
+(epstopdf)                    date: 2016-06-15 12:51:37
 (epstopdf)                    size: 6802 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/recneuron-eps-conv
 erted-to.pdf figures/recneuron.eps>
 (epstopdf)             \includegraphics on input line 105.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/recneuron-eps-converted-to.pdf, id=417, 89.33376pt x 136.51pt>
+<figures/recneuron-eps-converted-to.pdf, id=419, 89.33376pt x 136.51pt>
 File: figures/recneuron-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/recneuron-eps-converted-to.pdf>
@@ -1490,18 +1490,18 @@ Package pdftex.def Info: figures/recneuron-eps-converted-to.pdf used on input l
 ine 105.
 (pdftex.def)             Requested size: 72.55374pt x 110.87451pt.
 Package epstopdf Info: Source file: <figures/recneuron_unf.eps>
-(epstopdf)                    date: 2016-06-19 15:21:29
+(epstopdf)                    date: 2016-06-15 12:51:37
 (epstopdf)                    size: 114012 bytes
 (epstopdf)             Output file: <figures/recneuron_unf-eps-converted-to.pdf
 >
-(epstopdf)                    date: 2016-06-19 15:21:29
+(epstopdf)                    date: 2016-06-15 12:51:37
 (epstopdf)                    size: 9882 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/recneuron_unf-eps-
 converted-to.pdf figures/recneuron_unf.eps>
 (epstopdf)             \includegraphics on input line 111.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/recneuron_unf-eps-converted-to.pdf, id=418, 292.09125pt x 164.615pt>
+<figures/recneuron_unf-eps-converted-to.pdf, id=420, 292.09125pt x 164.615pt>
 File: figures/recneuron_unf-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/recneuron_unf-eps-converted-to.pdf>
@@ -1520,7 +1520,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 3514) has occurred while \output is active []
 
  [11 <./figures/recneuron-eps-converted-to.pdf> <./figures/recneuron_unf-eps-co
-nverted-to.pdf>] <figures/lstmneuron.png, id=473, 913.16156pt x 409.53pt>
+nverted-to.pdf>] <figures/lstmneuron.png, id=475, 913.16156pt x 409.53pt>
 File: figures/lstmneuron.png Graphic file (type png)
 
 <use figures/lstmneuron.png>
@@ -1590,16 +1590,16 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [25])
 [26]
 Package epstopdf Info: Source file: <figures/non-lin.eps>
-(epstopdf)                    date: 2016-06-19 15:21:29
+(epstopdf)                    date: 2016-06-16 20:33:27
 (epstopdf)                    size: 195994 bytes
 (epstopdf)             Output file: <figures/non-lin-eps-converted-to.pdf>
-(epstopdf)                    date: 2016-06-19 15:21:29
+(epstopdf)                    date: 2016-06-16 20:33:42
 (epstopdf)                    size: 11412 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/non-lin-eps-conver
 ted-to.pdf figures/non-lin.eps>
 (epstopdf)             \includegraphics on input line 116.
 Package epstopdf Info: Output file is already uptodate.
- <figures/non-lin-eps-converted-to.pdf, id=749, 457.71pt x 364.36125pt>
+ <figures/non-lin-eps-converted-to.pdf, id=751, 457.71pt x 364.36125pt>
 File: figures/non-lin-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/non-lin-eps-converted-to.pdf>
@@ -1607,17 +1607,17 @@ Package pdftex.def Info: figures/non-lin-eps-converted-to.pdf used on input lin
 e 116.
 (pdftex.def)             Requested size: 384.1096pt x 305.78337pt.
 Package epstopdf Info: Source file: <figures/nonlin-out.eps>
-(epstopdf)                    date: 2016-06-19 15:21:29
+(epstopdf)                    date: 2016-06-16 22:33:04
 (epstopdf)                    size: 156790 bytes
 (epstopdf)             Output file: <figures/nonlin-out-eps-converted-to.pdf>
-(epstopdf)                    date: 2016-06-19 15:21:29
+(epstopdf)                    date: 2016-06-16 23:56:32
 (epstopdf)                    size: 28980 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/nonlin-out-eps-con
 verted-to.pdf figures/nonlin-out.eps>
 (epstopdf)             \includegraphics on input line 125.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/nonlin-out-eps-converted-to.pdf, id=750, 578.16pt x 433.62pt>
+<figures/nonlin-out-eps-converted-to.pdf, id=752, 578.16pt x 433.62pt>
 File: figures/nonlin-out-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/nonlin-out-eps-converted-to.pdf>
@@ -1625,18 +1625,18 @@ Package pdftex.def Info: figures/nonlin-out-eps-converted-to.pdf used on input
 line 125.
 (pdftex.def)             Requested size: 362.77525pt x 272.07709pt.
 Package epstopdf Info: Source file: <figures/nonlin-out-tanh.eps>
-(epstopdf)                    date: 2016-06-19 15:21:29
+(epstopdf)                    date: 2016-06-16 23:50:34
 (epstopdf)                    size: 140363 bytes
 (epstopdf)             Output file: <figures/nonlin-out-tanh-eps-converted-to.p
 df>
-(epstopdf)                    date: 2016-06-19 15:21:29
+(epstopdf)                    date: 2016-06-16 23:56:32
 (epstopdf)                    size: 21108 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/nonlin-out-tanh-ep
 s-converted-to.pdf figures/nonlin-out-tanh.eps>
 (epstopdf)             \includegraphics on input line 131.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/nonlin-out-tanh-eps-converted-to.pdf, id=751, 578.16pt x 433.62pt>
+<figures/nonlin-out-tanh-eps-converted-to.pdf, id=753, 578.16pt x 433.62pt>
 File: figures/nonlin-out-tanh-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/nonlin-out-tanh-eps-converted-to.pdf>
@@ -1649,35 +1649,35 @@ Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
 put line 152.
  [29]
 Package epstopdf Info: Source file: <figures/mem-array-prod.eps>
-(epstopdf)                    date: 2016-06-19 15:21:29
+(epstopdf)                    date: 2016-06-17 17:39:02
 (epstopdf)                    size: 161229 bytes
 (epstopdf)             Output file: <figures/mem-array-prod-eps-converted-to.pd
 f>
-(epstopdf)                    date: 2016-06-19 15:21:29
+(epstopdf)                    date: 2016-06-17 22:33:15
 (epstopdf)                    size: 9675 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/mem-array-prod-eps
 -converted-to.pdf figures/mem-array-prod.eps>
 (epstopdf)             \includegraphics on input line 163.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/mem-array-prod-eps-converted-to.pdf, id=817, 246.9225pt x 153.57375pt>
+<figures/mem-array-prod-eps-converted-to.pdf, id=819, 246.9225pt x 153.57375pt>
 File: figures/mem-array-prod-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/mem-array-prod-eps-converted-to.pdf>
 Package pdftex.def Info: figures/mem-array-prod-eps-converted-to.pdf used on in
 put line 163.
 (pdftex.def)             Requested size: 384.1096pt x 238.9109pt.
 Package epstopdf Info: Source file: <figures/array-prod.eps>
-(epstopdf)                    date: 2016-06-19 15:21:29
+(epstopdf)                    date: 2016-06-17 17:30:38
 (epstopdf)                    size: 217074 bytes
 (epstopdf)             Output file: <figures/array-prod-eps-converted-to.pdf>
-(epstopdf)                    date: 2016-06-19 15:21:29
+(epstopdf)                    date: 2016-06-17 22:33:15
 (epstopdf)                    size: 14784 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/array-prod-eps-con
 verted-to.pdf figures/array-prod.eps>
 (epstopdf)             \includegraphics on input line 170.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/array-prod-eps-converted-to.pdf, id=818, 622.325pt x 134.5025pt>
+<figures/array-prod-eps-converted-to.pdf, id=820, 622.325pt x 134.5025pt>
 File: figures/array-prod-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/array-prod-eps-converted-to.pdf>
@@ -1700,67 +1700,88 @@ Overfull \hbox (33.85559pt too wide) in paragraph at lines 188--189
 ive col-umn of the ma-trix, with $[] \OT1/ztmcm/m/n/10.95 =
  []
 
+Package epstopdf Info: Source file: <figures/gate.eps>
+(epstopdf)                    date: 2016-06-20 12:47:40
+(epstopdf)                    size: 242302 bytes
+(epstopdf)             Output file: <figures/gate-eps-converted-to.pdf>
+(epstopdf)                    date: 2016-06-20 12:49:40
+(epstopdf)                    size: 15982 bytes
+(epstopdf)             Command: <repstopdf --outfile=figures/gate-eps-converted
+-to.pdf figures/gate.eps>
+(epstopdf)             \includegraphics on input line 203.
+Package epstopdf Info: Output file is already uptodate.
+<figures/gate-eps-converted-to.pdf, id=854, 519.9425pt x 182.6825pt>
+File: figures/gate-eps-converted-to.pdf Graphic file (type pdf)
+
+<use figures/gate-eps-converted-to.pdf>
+Package pdftex.def Info: figures/gate-eps-converted-to.pdf used on input line 2
+03.
+(pdftex.def)             Requested size: 426.79135pt x 149.95392pt.
+
 
 LaTeX Warning: Reference `sec:struct-shared' on page 31 undefined on input line
- 196.
+ 210.
 
-[31]
+[31] [32 <./figures/gate-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <figures/network.eps>
-(epstopdf)                    date: 2016-06-19 16:48:16
+(epstopdf)                    date: 2016-06-20 10:32:02
 (epstopdf)                    size: 226822 bytes
 (epstopdf)             Output file: <figures/network-eps-converted-to.pdf>
-(epstopdf)                    date: 2016-06-19 17:58:02
+(epstopdf)                    date: 2016-06-20 10:32:02
 (epstopdf)                    size: 13054 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/network-eps-conver
 ted-to.pdf figures/network.eps>
-(epstopdf)             \includegraphics on input line 219.
+(epstopdf)             \includegraphics on input line 233.
 Package epstopdf Info: Output file is already uptodate.
- <figures/network-eps-converted-to.pdf, id=863, 470.75874pt x 213.79875pt>
+
+<figures/network-eps-converted-to.pdf, id=897, 470.75874pt x 213.79875pt>
 File: figures/network-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/network-eps-converted-to.pdf>
 Package pdftex.def Info: figures/network-eps-converted-to.pdf used on input lin
-e 219.
+e 233.
 (pdftex.def)             Requested size: 384.1096pt x 174.44832pt.
 Package epstopdf Info: Source file: <figures/network-opt.eps>
-(epstopdf)                    date: 2016-06-19 16:47:35
+(epstopdf)                    date: 2016-06-20 10:32:02
 (epstopdf)                    size: 229338 bytes
 (epstopdf)             Output file: <figures/network-opt-eps-converted-to.pdf>
-(epstopdf)                    date: 2016-06-19 17:58:03
+(epstopdf)                    date: 2016-06-20 10:32:02
 (epstopdf)                    size: 13894 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/network-opt-eps-co
 nverted-to.pdf figures/network-opt.eps>
-(epstopdf)             \includegraphics on input line 229.
+(epstopdf)             \includegraphics on input line 243.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/network-opt-eps-converted-to.pdf, id=867, 540.0175pt x 177.66376pt>
+<figures/network-opt-eps-converted-to.pdf, id=901, 540.0175pt x 177.66376pt>
 File: figures/network-opt-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/network-opt-eps-converted-to.pdf>
 Package pdftex.def Info: figures/network-opt-eps-converted-to.pdf used on input
- line 229.
+ line 243.
 (pdftex.def)             Requested size: 384.1096pt x 126.37257pt.
- [32]
-Underfull \vbox (badness 1648) has occurred while \output is active []
 
- [33 <./figures/network-eps-converted-to.pdf> <./figures/network-opt-eps-conver
-ted-to.pdf>]) [34]
+Underfull \vbox (badness 1264) has occurred while \output is active []
+
+ [33 <./figures/network-eps-converted-to.pdf>])
+Underfull \vbox (badness 2460) has occurred while \output is active []
+
+ [34 <./figures/network-opt-eps-converted-to.pdf>] [35]
 \openout2 = `results.aux'.
 
- (./results.tex
+ (./results.tex [36
+
+
+
+]
 Chapter 5.
-) [35
+) [37] [38
 
 
+] (./thesis.bbl [39
 
-] [36
-
-
-] (./thesis.bbl [37
-
-] [38])
+] [40])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 174.
- [39]
+ [41]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 174.
  (./thesis.aux (./abbrevs.aux)
 (./intro.aux) (./theorBack.aux) (./stateArt.aux) (./proposedSol.aux)
@@ -1768,7 +1789,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 174.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 174.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 174.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 687CEFE82B89293804D1C861EF363315;2464.
+(rerunfilecheck)             Checksum: 4558BBA94DA676BBDEA00A8509871F83;2464.
 
 
 LaTeX Warning: There were undefined references.
@@ -1779,10 +1800,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 174.
  ) 
 Here is how much of TeX's memory you used:
- 21768 strings out of 493304
- 375300 string characters out of 6139871
- 650219 words of memory out of 5000000
- 24440 multiletter control sequences out of 15000+600000
+ 21780 strings out of 493304
+ 375518 string characters out of 6139871
+ 650307 words of memory out of 5000000
+ 24445 multiletter control sequences out of 15000+600000
  84298 words of font info for 115 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  63i,12n,59p,1500b,2024s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1808,10 +1829,10 @@ sr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive
 ts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/ti
 mes/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb
 >
-Output written on thesis.pdf (47 pages, 1688022 bytes).
+Output written on thesis.pdf (49 pages, 1696139 bytes).
 PDF statistics:
- 1050 PDF objects out of 1200 (max. 8388607)
- 944 compressed objects within 10 object streams
- 254 named destinations out of 1000 (max. 500000)
- 360 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1085 PDF objects out of 1200 (max. 8388607)
+ 976 compressed objects within 10 object streams
+ 260 named destinations out of 1000 (max. 500000)
+ 365 words of extra memory for PDF output out of 10000 (max. 10000000)
 
