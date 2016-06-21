@@ -25,6 +25,7 @@ R1
 Z4 o-quiet -auto_acc_if_foreign -work work +acc
 n@_opt1
 R3
+R0
 T_opt2
 !s110 1461791430
 V4GNiRJ=D2U59W[QlE@_bP2
@@ -35,31 +36,30 @@ n@_opt2
 R3
 R0
 T_opt3
-!s110 1461952854
-VGi1O5e9f0F=SR1OD4F^<X2
+!s110 1466527629
+V@NTZCZ=gMz0Ia2F7FzEhY1
 R1
-=1-d48564c0c748-5723a156-187da-3f4a
-R2
+=1-d43d7e359f7e-57696f8d-460c7-4db6
+R4
 n@_opt3
 R3
-R0
 T_opt4
-!s110 1461950139
-VZR=9;zd[IfA99R5gJc?<j3
-04 4 4 work gate fast 0
-=1-d48564c0c748-572396bb-7f1b7-3791
+!s110 1466527607
+VKX^FB8WkgBXa_nLFhj=j@1
+R1
+=1-d43d7e359f7e-57696f77-26b32-4dad
 R4
 n@_opt4
 R3
 R0
 vdot_prod
-Z5 !s110 1463507875
+Z5 !s110 1466527606
 !i10b 1
-!s100 oHCm7P2f5b6C>Z[d<Nj_S2
-IHNPaG32oGPknzB[=7<`6M1
+!s100 0;]]@ldm__2cWG>m_ecXf0
+I6l2E8`FP]MO6K;IDIXVTE0
 Z6 VDg1SIo80bB@j0V0VzS_@n1
 R0
-w1462551163
+w1466527222
 8dot_prod.v
 Fdot_prod.v
 L0 1
@@ -67,19 +67,19 @@ Z7 OL;L;10.4c_5;61
 r1
 !s85 0
 31
-Z8 !s108 1463507875.000000
-Z9 !s107 weightRAM.v|tb_gate.v|gate.v|dot_prod.v|
-Z10 !s90 dot_prod.v|gate.v|tb_gate.v|weightRAM.v|
+Z8 !s108 1466527606.000000
+Z9 !s107 weightRAM.v|test.v|tb_gate.v|gate.v|dot_prod.v|
+Z10 !s90 dot_prod.v|gate.v|tb_gate.v|test.v|weightRAM.v|
 !i113 0
 Z11 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 vgate
 R5
 !i10b 1
-!s100 ;Rcno4gAW<?oQ3=0hGD2]2
-IMfSmXg7zX;]H_OB1jKJ]_2
+!s100 ZfBU:1[S]UB::10lCYgee1
+I@h7_deO4U_PPE9nJ8U9@00
 R6
 R0
-w1462551501
+w1466527599
 8gate.v
 Fgate.v
 L0 1
@@ -95,11 +95,11 @@ R11
 vtb_gate
 R5
 !i10b 1
-!s100 OFI1F661EEUC3nE=T3lY;1
-IQQ:d>Zj>BR7im?N>PlneL2
+!s100 aI^2;alJGjoRiZkW=Fm[S2
+I7jOl?jN56EY?RnIT=@N:C1
 R6
 R0
-w1462390821
+w1466527278
 8tb_gate.v
 Ftb_gate.v
 L0 3
@@ -113,13 +113,13 @@ R10
 !i113 0
 R11
 vtest
-!s110 1461952853
+R5
 !i10b 1
 !s100 1HZ`g0h9Sme?378S=NBOU1
 IU_`Fc`n:fW@[;EH[hP?a82
 R6
-d/home/jfonseca/thesis/verilog/gate
-w1461836342
+R0
+w1465990204
 8test.v
 Ftest.v
 L0 1
@@ -127,19 +127,19 @@ R7
 r1
 !s85 0
 31
-!s108 1461952853.000000
-!s107 weightRAM.v|test.v|tb_gate.v|gate.v|dot_prod.v|
-!s90 dot_prod.v|gate.v|tb_gate.v|test.v|weightRAM.v|
+R8
+R9
+R10
 !i113 0
 R11
 vweightRAM
 R5
 !i10b 1
-!s100 MRBIQz;Y3S>5[TlP:BFJc0
-IF8bSWAe1z;^oa9EfAf8IF1
+!s100 HSm76JbU[cQzbj_Qmod^11
+IgoW`Y?ci@QJ0KG7l[OKb_1
 R6
 R0
-w1462022780
+w1466527215
 8weightRAM.v
 FweightRAM.v
 L0 1

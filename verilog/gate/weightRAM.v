@@ -4,7 +4,7 @@ module weightRAM #(parameter NROW = 16,
                   (addressIn,
                    addressOut,
                    writeEn,
-                   clk,
+                   clock,
                    reset,
                    rowIn,
                    rowOut);
@@ -16,7 +16,7 @@ module weightRAM #(parameter NROW = 16,
     // The input/output definitions
     input       [ADDR_BITWIDTH-1:0]     addressIn;
     input       [ADDR_BITWIDTH-1:0]     addressOut;
-    input                               clk;
+    input                               clock;
     input                               reset;
     input                               writeEn;
     output reg  [OUTPUT_PORT_SIZE-1:0]  rowOut;
@@ -38,7 +38,7 @@ module weightRAM #(parameter NROW = 16,
     end
     */
     
-    always @(negedge clk) begin
+    always @(posedge clock) begin
         if(writeEn == 1'b1) begin
             RAM_matrix[addressIn] <= rowIn;
         end

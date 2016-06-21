@@ -1,0 +1,462 @@
+/*
+
+Vivado v2015.4 (64-bit)
+SW Build 1412921 on Wed Nov 18 09:44:32 MST 2015
+Process ID: 20509
+
+Current time: 	6/21/16 5:56:43 PM WEST
+Time zone: 	Western European Time (Europe/Lisbon)
+
+OS: NAME="Ubuntu"
+Version: 3.16.0-73-generic
+Architecture: amd64
+Available processors (cores): 8
+
+DISPLAY: :0.0
+Screen size: 3200x1080
+Screen resolution (DPI): 95
+Available screens: 2
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	1.8.0_45 64-bit
+Java home: 	/opt/Xilinx/Vivado/2015.4/tps/lnx64/jre
+
+User name: 	josefonseca
+User home directory: /home/josefonseca
+User working directory: /home/josefonseca/Documents/thesis/verilog/network
+User country: 	US
+User language: 	en
+User locale: 	en_US
+
+Vivado preferences path: /home/josefonseca/.Xilinx/Vivado/2015.4/vivado.ini
+Vivado layouts directory: /home/josefonseca/.Xilinx/Vivado/2015.4/layouts
+
+GUI allocated memory:	200 MB
+GUI max memory:		3,052 MB
+Engine allocated memory: 4,845 MB
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// [GUI Memory]: 24 MB (+23048kb) [00:00:07]
+// [Engine Memory]: 4,843 MB (+4926728kb) [00:00:07]
+// HMemoryUtils.trashcanNow. Engine heap size: 4,850 MB. GUI used memory: 20 MB. Current time: 6/21/16 5:56:45 PM WEST
+selectList(PAResourceEtoH.GettingStartedView_RECENT_PROJECTS, "/home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.xpr", 1); // q:v (JViewport:JComponent, cq:JFrame)
+// bF:g (cq:JFrame):  Open Project : addNotify
+// Opening Vivado Project: /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.xpr. Version: Vivado v2015.4 
+// Tcl Message: open_project /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.xpr 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// [GUI Memory]: 46 MB (+21190kb) [00:00:22]
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_FAILED
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_NEW
+// Tcl Message: open_project /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.xpr 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified 
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 53 MB (+4875kb) [00:00:25]
+// [GUI Memory]: 58 MB (+2974kb) [00:00:25]
+// [GUI Memory]: 65 MB (+3803kb) [00:00:25]
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2015.4/data/ip'. 
+// HMemoryUtils.trashcanNow. Engine heap size: 4,967 MB. GUI used memory: 30 MB. Current time: 6/21/16 5:57:00 PM WEST
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Project name: Synth; location: /home/josefonseca/Documents/thesis/verilog/network/Synth; part: xc7z020clg484-1
+// Tcl Message: open_project: Time (s): cpu = 00:00:10 ; elapsed = 00:00:05 . Memory (MB): peak = 5809.457 ; gain = 116.430 ; free physical = 3772 ; free virtual = 8102 
+dismissDialog("Open Project"); // bF:g (cq:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints]", 3); // y:k (I:JPanel, cq:JFrame)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, lstm_const]", 4); // y:k (I:JPanel, cq:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, lstm_const, timing.xdc]", 5, false); // y:k (I:JPanel, cq:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, lstm_const, timing.xdc]", 5, false, false, false, false, false, true); // y:k (I:JPanel, cq:JFrame) - Double Click
+selectCodeEditor("timing.xdc", 162, 20); // bl:J (JPanel:JComponent, cq:JFrame)
+selectCodeEditor("timing.xdc", 408, 23); // bl:J (JPanel:JComponent, cq:JFrame)
+// TclEventType: FILE_SET_CHANGE
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Implementation, Run Implementation]", 21, false); // w:Y (v:I, cq:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_RUN_IMPLEMENTATION
+// bF:g (cq:JFrame):  Resetting Runs : addNotify
+selectButton("PAResourceQtoS.RunImplementation_THERE_NO_NETLIST_AVAILABLE_OK_OK", "OK"); // JButton:AbstractButton (JPanel:JComponent, T:JDialog)
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_4 
+// bF:g (cq:JFrame):  Starting Design Runs : addNotify
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_LAUNCH
+// Tcl Message: launch_runs impl_4 
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Tue Jun 21 17:57:27 2016] Launched synth_4... Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.runs/synth_4/runme.log [Tue Jun 21 17:57:27 2016] Launched impl_4... Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.runs/impl_4/runme.log 
+// 'c' command handler elapsed time: 4 seconds
+dismissDialog("Starting Design Runs"); // bF:g (cq:JFrame)
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STEP_COMPLETED
+// [GUI Memory]: 69 MB (+846kb) [00:03:36]
+// Elapsed time: 172 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_network (top_network.v)]", 1); // y:k (I:JPanel, cq:JFrame)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_network (top_network.v), LSTM_LAYER - network (network.v)]", 2); // y:k (I:JPanel, cq:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_network (top_network.v), LSTM_LAYER - network (network.v), GATE_Z - gate (gate.v)]", 3, true); // y:k (I:JPanel, cq:JFrame) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_network (top_network.v), LSTM_LAYER - network (network.v), GATE_Z - gate (gate.v)]", 3, true, false, false, false, false, true); // y:k (I:JPanel, cq:JFrame) - Double Click - Node
+// Elapsed time: 11 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_network (top_network.v), LSTM_LAYER - network (network.v), GATE_Z - gate (gate.v), DOTPROD_X - dot_prod (dot_prod.v)]", 4, false); // y:k (I:JPanel, cq:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_network (top_network.v), LSTM_LAYER - network (network.v), GATE_Z - gate (gate.v), DOTPROD_X - dot_prod (dot_prod.v)]", 4, false, false, false, false, false, true); // y:k (I:JPanel, cq:JFrame) - Double Click
+// Elapsed time: 12 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_network (top_network.v), LSTM_LAYER - network (network.v), WRAM_Z_X - weightRAM (weightRAM.v)]", 6, false); // y:k (I:JPanel, cq:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_network (top_network.v), LSTM_LAYER - network (network.v), WRAM_Z_X - weightRAM (weightRAM.v)]", 6, false, false, false, false, false, true); // y:k (I:JPanel, cq:JFrame) - Double Click
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // D:b
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // D:b
+// [GUI Memory]: 73 MB (+724kb) [00:04:24]
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // D:b
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_network (top_network.v), LSTM_LAYER - network (network.v), GATE_Z - gate (gate.v)]", 3); // y:k (I:JPanel, cq:JFrame)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_network (top_network.v), LSTM_LAYER - network (network.v)]", 2); // y:k (I:JPanel, cq:JFrame)
+// TclEventType: RUN_COMPLETED
+// X:G (cq:JFrame): Implementation Completed: addNotify
+// Elapsed time: 51 seconds
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a:JButton (JPanel:JComponent, X:G)
+dismissDialog("Implementation Completed"); // X:G (cq:JFrame)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "timing.xdc", 0); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cq:JFrame)
+// [GUI Memory]: 78 MB (+1319kb) [00:05:31]
+// Elapsed time: 10 seconds
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "impl_3 ; lstm_const ; Implementation Out-of-date ; -5.3144049644470215 ; -24908.0625 ; 0.02661537565290928 ; 0.0 ; 0.0 ; 0 ; 19409 ; 15966 ; 32 ; 0 ; 116 ; Tue Jun 21 12:44:36 WEST 2016 ; 00:02:47 ; Vivado Implementation Defaults (Vivado Implementation 2015) ; xc7z020clg484-1 ;  ; Vivado Implementation Defaults", 5, "Implementation Out-of-date", 2, false); // W:aw (JViewport:JComponent, cq:JFrame)
+// PAPropertyPanels.initPanels (impl_3) elapsed time: 0.4s
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "synth_1 ; lstm_const ; Synthesis Out-of-date ;  ;  ;  ;  ;  ;  ; 20892 ; 15966 ; 32 ; 0 ; 116 ; Mon Jun 20 18:47:22 WEST 2016 ; 00:05:15 ; Vivado Synthesis Defaults (Vivado Synthesis 2015) ; xc7z020clg484-1 ;  ; Vivado Synthesis Defaults", 0, "synth_1", 0, true); // W:aw (JViewport:JComponent, cq:JFrame) - Node
+// Run Command: RDIResourceCommand.RDICommands_DELETE
+// f:g (cq:JFrame): Delete Runs: addNotify
+selectButton(RDIResource.BaseDialog_OK, "Delete"); // a:JButton (JPanel:JComponent, f:g)
+// f:g (cq:JFrame): Delete Runs: addNotify
+// bF:g (f:g):  Deleting Runs : addNotify
+// TclEventType: RUN_DELETE
+// Tcl Message: delete_runs "synth_1" 
+// Tcl Message: INFO: [Vivado 12-3261] Dependent run, 'impl_1', will be deleted with parent run, 'synth_1'. 
+dismissDialog("Deleting Runs"); // bF:g (f:g)
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "synth_2 ; lstm_const ; Synthesis Out-of-date ;  ;  ;  ;  ;  ;  ; 25275 ; 16112 ; 32 ; 0 ; 116 ; Mon Jun 20 19:41:33 WEST 2016 ; 00:04:02 ; Flow_PerfOptimized_high (Vivado Synthesis 2015) ; xc7z020clg484-1 ;  ; Higher performance designs, resource sharing is turned off, the global fanout guide is set to a lower number, FSM extraction forced to one-hot, LUT combining is disabled, equivalent registers are preserved, SRL are inferred  with a larger threshold", 0, "synth_2", 0, true); // W:aw (JViewport:JComponent, cq:JFrame) - Node
+// Run Command: RDIResourceCommand.RDICommands_DELETE
+// f:g (cq:JFrame): Delete Runs: addNotify
+selectButton(RDIResource.BaseDialog_OK, "Delete"); // a:JButton (JPanel:JComponent, f:g)
+// f:g (cq:JFrame): Delete Runs: addNotify
+// bF:g (f:g):  Deleting Runs : addNotify
+// TclEventType: RUN_DELETE
+// Tcl Message: delete_runs "synth_2" 
+// Tcl Message: INFO: [Vivado 12-3261] Dependent run, 'impl_2', will be deleted with parent run, 'synth_2'. 
+dismissDialog("Deleting Runs"); // bF:g (f:g)
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "synth_3 ; lstm_const ; Synthesis Out-of-date ;  ;  ;  ;  ;  ;  ; 20849 ; 15966 ; 32 ; 0 ; 116 ; Tue Jun 21 12:32:23 WEST 2016 ; 00:05:06 ; Vivado Synthesis Defaults (Vivado Synthesis 2015) ; xc7z020clg484-1 ;  ; Vivado Synthesis Defaults", 0, "synth_3", 0, true); // W:aw (JViewport:JComponent, cq:JFrame) - Node
+// Run Command: RDIResourceCommand.RDICommands_DELETE
+// f:g (cq:JFrame): Delete Runs: addNotify
+selectButton(RDIResource.BaseDialog_OK, "Delete"); // a:JButton (JPanel:JComponent, f:g)
+// f:g (cq:JFrame): Delete Runs: addNotify
+// bF:g (f:g):  Deleting Runs : addNotify
+// TclEventType: RUN_DELETE
+// Tcl Message: delete_runs "synth_3" 
+// Tcl Message: INFO: [Vivado 12-3261] Dependent run, 'impl_3', will be deleted with parent run, 'synth_3'. 
+// TclEventType: RUN_DELETE
+dismissDialog("Deleting Runs"); // bF:g (f:g)
+selectTab((HResource) null, (HResource) null, "Messages", 1); // FrameContainer:JideTabbedPane (ContainerContainer:JideSplitPane, cq:JFrame)
+selectCheckBox(PAResourceItoN.MsgView_INFORMATION_MESSAGES, (String) null, false); // h:JCheckBox (JPanel:JComponent, cq:JFrame): FALSE
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Project Summary", 1); // TdiGroup:JideTabbedPane (CodeEditorDocumentPane:DocumentPane, cq:JFrame)
+selectCodeEditor("timing.xdc", 162, 27); // bl:J (JPanel:JComponent, cq:JFrame)
+selectCodeEditor("timing.xdc", 407, 23); // bl:J (JPanel:JComponent, cq:JFrame)
+// TclEventType: FILE_SET_CHANGE
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Implementation, Run Implementation]", 21, false); // w:Y (v:I, cq:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_RUN_IMPLEMENTATION
+// G:aY (cq:JFrame): Synthesis is Out-of-date: addNotify
+selectButton(RDIResource.BaseDialog_YES, "Yes"); // a:JButton (JPanel:JComponent, G:aY)
+// 'c' command handler elapsed time: 5 seconds
+// bF:g (cq:JFrame):  Resetting Runs : addNotify
+dismissDialog("Synthesis is Out-of-date"); // G:aY (cq:JFrame)
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_4 
+// bF:g (cq:JFrame):  Starting Design Runs : addNotify
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_4 
+// Tcl Message: [Tue Jun 21 18:02:50 2016] Launched synth_4... Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.runs/synth_4/runme.log [Tue Jun 21 18:02:50 2016] Launched impl_4... Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.runs/impl_4/runme.log 
+dismissDialog("Starting Design Runs"); // bF:g (cq:JFrame)
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STEP_COMPLETED
+// [GUI Memory]: 82 MB (+93kb) [00:09:09]
+// TclEventType: RUN_COMPLETED
+// X:G (cq:JFrame): Implementation Completed: addNotify
+// Elapsed time: 309 seconds
+selectRadioButton(PAResourceCommand.PACommandNames_REPORTS_WINDOW, "View Reports"); // a:JRadioButton (JPanel:JComponent, X:G)
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a:JButton (JPanel:JComponent, X:G)
+// Run Command: PAResourceCommand.PACommandNames_REPORTS_WINDOW
+dismissDialog("Implementation Completed"); // X:G (cq:JFrame)
+selectTreeTable(PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE, "Timing Summary Report ; Tue Jun 21 18:07:13 WEST 2016 ; 130474 ; Open", 28, "Timing Summary Report", 0, false); // z:aw (JViewport:JComponent, cq:JFrame)
+expandTreeTable(PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE, "Timing Summary Report ; Tue Jun 21 18:07:13 WEST 2016 ; 130474 ; Open", 28); // z:aw (JViewport:JComponent, cq:JFrame)
+selectTreeTable(PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE, "Timing Summary Report ; Tue Jun 21 18:07:13 WEST 2016 ; 130474 ; Open", 28, "Timing Summary Report", 0, false, false, false, false, false, true); // z:aw (JViewport:JComponent, cq:JFrame) - Double Click
+maximizeView(PAResourceOtoP.PAViews_BASE_WORKSPACE, "BaseWorkspace"); // V:a (Workspace:JPanel, cq:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// Elapsed time: 202 seconds
+selectButton(PAResourceTtoZ.TaskBanner_CLOSE, (String) null); // l:JideButton (JPanel:JComponent, cq:JFrame)
+closeTask("Project Manager", "Project Manager", "DesignTask.PROJECT_SETUP");
+// Run Command: PAResourceCommand.PACommandNames_CLOSE_PROJECT
+// G:aY (cq:JFrame): Close Project: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a:JButton (JPanel:JComponent, G:aY)
+// bF:g (cq:JFrame):  Close Project : addNotify
+dismissDialog("Close Project"); // G:aY (cq:JFrame)
+// TclEventType: PROJECT_CLOSE
+// HMemoryUtils.trashcanNow. Engine heap size: 4,993 MB. GUI used memory: 44 MB. Current time: 6/21/16 6:11:28 PM WEST
+// Tcl Message: close_project 
+dismissDialog("Close Project"); // bF:g (cq:JFrame)
+selectList(PAResourceEtoH.GettingStartedView_RECENT_PROJECTS, "/home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.xpr", 0); // q:v (JViewport:JComponent, cq:JFrame)
+// Opening Vivado Project: /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.xpr. Version: Vivado v2015.4 
+// bF:g (cq:JFrame):  Open Project : addNotify
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_NEW
+// Tcl Message: open_project /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.xpr 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified 
+// TclEventType: PROJECT_NEW
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2015.4/data/ip'. 
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Project name: Synth; location: /home/josefonseca/Documents/thesis/verilog/network/Synth; part: xc7z020clg484-1
+dismissDialog("Open Project"); // bF:g (cq:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// Elapsed time: 13 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Implementation, Run Implementation]", 21, false); // w:Y (v:I, cq:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_RUN_IMPLEMENTATION
+// G:aY (cq:JFrame): Synthesis is Out-of-date: addNotify
+selectButton(RDIResource.BaseDialog_YES, "Yes"); // a:JButton (JPanel:JComponent, G:aY)
+// bF:g (cq:JFrame):  Resetting Runs : addNotify
+dismissDialog("Synthesis is Out-of-date"); // G:aY (cq:JFrame)
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_4 
+// bF:g (cq:JFrame):  Starting Design Runs : addNotify
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_4 
+// Tcl Message: [Tue Jun 21 18:11:49 2016] Launched synth_4... Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.runs/synth_4/runme.log [Tue Jun 21 18:11:49 2016] Launched impl_4... Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.runs/impl_4/runme.log 
+dismissDialog("Starting Design Runs"); // bF:g (cq:JFrame)
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_COMPLETED
+// [GUI Memory]: 86 MB (+150kb) [00:19:53]
+// X:G (cq:JFrame): Implementation Completed: addNotify
+// Elapsed time: 314 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a:JButton (JPanel:JComponent, X:G)
+// Run Command: PAResourceCommand.PACommandNames_REPORTS_WINDOW
+dismissDialog("Implementation Completed"); // X:G (cq:JFrame)
+selectTreeTable(PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE, "Timing Summary Report ; Tue Jun 21 18:16:05 WEST 2016 ; 131211 ; Open", 28, "Timing Summary Report", 0, false); // z:aw (JViewport:JComponent, cq:JFrame)
+expandTreeTable(PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE, "Timing Summary Report ; Tue Jun 21 18:16:05 WEST 2016 ; 131211 ; Open", 28); // z:aw (JViewport:JComponent, cq:JFrame)
+selectTreeTable(PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE, "Timing Summary Report ; Tue Jun 21 18:16:05 WEST 2016 ; 131211 ; Open", 28, "Timing Summary Report", 0, false, false, false, false, false, true); // z:aw (JViewport:JComponent, cq:JFrame) - Double Click
+// HMemoryUtils.trashcanNow. Engine heap size: 5,014 MB. GUI used memory: 39 MB. Current time: 6/21/16 6:17:10 PM WEST
+maximizeView(PAResourceOtoP.PAViews_BASE_WORKSPACE, "BaseWorkspace"); // V:a (Workspace:JPanel, cq:JFrame)
+// Elapsed time: 100 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Synthesis Settings]", 16, false); // w:Y (v:I, cq:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_SYNTH_SETTINGS
+// Project Settings: addNotify
+selectTree("PAResourceOtoP.ProgramOptionsPanel_STRATEGY", "[Strategies, Vivado Strategies, Flow_PerfOptimized_high]", 7, false); // TreeChooserPanel:JTree (JViewport:JComponent, ResizableWindow:JWindow)
+selectTree("PAResourceOtoP.ProgramOptionsPanel_STRATEGY", "[Strategies, Vivado Strategies, Flow_AreaOptimized_high]", 3, false); // TreeChooserPanel:JTree (JViewport:JComponent, ResizableWindow:JWindow)
+selectButton("APPLY", "Apply"); // JButton:AbstractButton (ButtonPanel:JPanel, k:aJ)
+// G:aY (cq:JFrame): Create New Run: addNotify
+selectButton(RDIResource.BaseDialog_YES, "Yes"); // a:JButton (JPanel:JComponent, G:aY)
+// b:x (cq:JFrame): Create Run: addNotify
+dismissDialog("Create New Run"); // G:aY (cq:JFrame)
+setText(PAResourceAtoD.CopyRunDialog_RUN_NAME, "synth_1"); // ao:JTextField (JPanel:JComponent, b:x)
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a:JButton (JPanel:JComponent, b:x)
+// TclEventType: RUN_ADD
+// TclEventType: RUN_CURRENT
+// TclEventType: RUN_MODIFY
+// Tcl Message: create_run synth_1 -flow {Vivado Synthesis 2015} -strategy Flow_PerfOptimized_high 
+// Tcl Message: Run is defaulting to srcset: sources_1 Run is defaulting to constrset: lstm_const Run is defaulting to part: xc7z020clg484-1 
+// Tcl Message: current_run [get_runs synth_1] 
+// Tcl Message: set_property strategy Flow_AreaOptimized_high [get_runs synth_1] 
+dismissDialog("Create Run"); // b:x (cq:JFrame)
+selectButton("OK", "OK"); // JButton:AbstractButton (ButtonPanel:JPanel, k:aJ)
+dismissDialog("Project Settings"); // k:aJ (cq:JFrame)
+selectButton(PAResourceTtoZ.TaskBanner_CLOSE, (String) null); // l:JideButton (JPanel:JComponent, cq:JFrame)
+closeTask("Project Manager", "Project Manager", "DesignTask.PROJECT_SETUP");
+// Run Command: PAResourceCommand.PACommandNames_CLOSE_PROJECT
+// G:aY (cq:JFrame): Close Project: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a:JButton (JPanel:JComponent, G:aY)
+// bF:g (cq:JFrame):  Close Project : addNotify
+dismissDialog("Close Project"); // G:aY (cq:JFrame)
+// TclEventType: PROJECT_CLOSE
+// HMemoryUtils.trashcanNow. Engine heap size: 5,016 MB. GUI used memory: 35 MB. Current time: 6/21/16 6:19:19 PM WEST
+// Tcl Message: close_project 
+dismissDialog("Close Project"); // bF:g (cq:JFrame)
+selectList(PAResourceEtoH.GettingStartedView_RECENT_PROJECTS, "/home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.xpr", 0); // q:v (JViewport:JComponent, cq:JFrame)
+// Opening Vivado Project: /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.xpr. Version: Vivado v2015.4 
+// bF:g (cq:JFrame):  Open Project : addNotify
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_NEW
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: open_project /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.xpr 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2015.4/data/ip'. 
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Project name: Synth; location: /home/josefonseca/Documents/thesis/verilog/network/Synth; part: xc7z020clg484-1
+dismissDialog("Open Project"); // bF:g (cq:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Implementation, Run Implementation]", 21, false); // w:Y (v:I, cq:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_RUN_IMPLEMENTATION
+// bF:g (cq:JFrame):  Starting Design Runs : addNotify
+selectButton("PAResourceQtoS.RunImplementation_THERE_NO_NETLIST_AVAILABLE_OK_OK", "OK"); // JButton:AbstractButton (JPanel:JComponent, T:JDialog)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_LAUNCH
+// Tcl Message: launch_runs impl_1 
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Tue Jun 21 18:19:28 2016] Launched synth_1... Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.runs/synth_1/runme.log [Tue Jun 21 18:19:28 2016] Launched impl_1... Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.runs/impl_1/runme.log 
+// 'c' command handler elapsed time: 3 seconds
+dismissDialog("Starting Design Runs"); // bF:g (cq:JFrame)
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_FAILED
+// X:G (cq:JFrame): Implementation Failed: addNotify
+// Elapsed time: 443 seconds
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a:JButton (JPanel:JComponent, X:G)
+dismissDialog("Implementation Failed"); // X:G (cq:JFrame)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Synthesis Settings]", 16, false); // w:Y (v:I, cq:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_SYNTH_SETTINGS
+// Project Settings: addNotify
+selectTree("PAResourceOtoP.ProgramOptionsPanel_STRATEGY", "[Strategies, Vivado Strategies, Flow_AlternateRoutability]", 6, false); // TreeChooserPanel:JTree (JViewport:JComponent, ResizableWindow:JWindow)
+// Elapsed time: 11 seconds
+selectTree("PAResourceOtoP.ProgramOptionsPanel_STRATEGY", "[Strategies, Vivado Strategies, Flow_AreaOptimized_medium]", 4, false); // TreeChooserPanel:JTree (JViewport:JComponent, ResizableWindow:JWindow)
+selectButton("APPLY", "Apply"); // JButton:AbstractButton (ButtonPanel:JPanel, k:aJ)
+// G:aY (cq:JFrame): Create New Run: addNotify
+selectButton(RDIResource.BaseDialog_YES, "Yes"); // a:JButton (JPanel:JComponent, G:aY)
+// b:x (cq:JFrame): Create Run: addNotify
+dismissDialog("Create New Run"); // G:aY (cq:JFrame)
+setText(PAResourceAtoD.CopyRunDialog_RUN_NAME, "synth_1"); // ao:JTextField (JPanel:JComponent, b:x)
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a:JButton (JPanel:JComponent, b:x)
+// HOptionPane Error: "A run named 'synth_1' already exists. Please specify a unique name. (Invalid Run Name)"
+selectButton("PAResourceAtoD.CopyRunDialog_RUN_WITH_SPECIFIED_NAME_ALREADY_OK", "OK"); // JButton:AbstractButton (JPanel:JComponent, T:JDialog)
+setText(PAResourceAtoD.CopyRunDialog_RUN_NAME, "synth_1", true); // ao:JTextField (JPanel:JComponent, b:x)
+// HOptionPane Error: "A run named 'synth_1' already exists. Please specify a unique name. (Invalid Run Name)"
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a:JButton (JPanel:JComponent, b:x)
+selectButton("PAResourceAtoD.CopyRunDialog_RUN_WITH_SPECIFIED_NAME_ALREADY_OK", "OK"); // JButton:AbstractButton (JPanel:JComponent, T:JDialog)
+setText(PAResourceAtoD.CopyRunDialog_RUN_NAME, "synth_2", true); // ao:JTextField (JPanel:JComponent, b:x)
+// TclEventType: RUN_ADD
+// TclEventType: RUN_CURRENT
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a:JButton (JPanel:JComponent, b:x)
+// TclEventType: RUN_MODIFY
+// Tcl Message: create_run synth_2 -flow {Vivado Synthesis 2015} -strategy Flow_AreaOptimized_high 
+// Tcl Message: Run is defaulting to srcset: sources_1 Run is defaulting to constrset: lstm_const Run is defaulting to part: xc7z020clg484-1 
+// Tcl Message: current_run [get_runs synth_2] 
+// Tcl Message: set_property strategy Flow_AreaOptimized_medium [get_runs synth_2] 
+dismissDialog("Create Run"); // b:x (cq:JFrame)
+selectButton("OK", "OK"); // JButton:AbstractButton (ButtonPanel:JPanel, k:aJ)
+dismissDialog("Project Settings"); // k:aJ (cq:JFrame)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Implementation, Run Implementation]", 21, false); // w:Y (v:I, cq:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_RUN_IMPLEMENTATION
+// bF:g (cq:JFrame):  Starting Design Runs : addNotify
+selectButton("PAResourceQtoS.RunImplementation_THERE_NO_NETLIST_AVAILABLE_OK_OK", "OK"); // JButton:AbstractButton (JPanel:JComponent, T:JDialog)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_2 
+// Tcl Message: [Tue Jun 21 18:27:31 2016] Launched synth_2... Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.runs/synth_2/runme.log [Tue Jun 21 18:27:31 2016] Launched impl_2... Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.runs/impl_2/runme.log 
+dismissDialog("Starting Design Runs"); // bF:g (cq:JFrame)
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_COMPLETED
+// X:G (cq:JFrame): Implementation Completed: addNotify
+// Elapsed time: 320 seconds
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a:JButton (JPanel:JComponent, X:G)
+dismissDialog("Implementation Completed"); // X:G (cq:JFrame)
+selectTab((HResource) null, (HResource) null, "Reports", 3); // FrameContainer:JideTabbedPane (ContainerContainer:JideSplitPane, cq:JFrame)
+selectTreeTable(PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE, "Timing Summary Report ; Tue Jun 21 18:31:42 WEST 2016 ; 130188 ; Open", 28, "Timing Summary Report", 0, false); // z:aw (JViewport:JComponent, cq:JFrame)
+expandTreeTable(PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE, "Timing Summary Report ; Tue Jun 21 18:31:42 WEST 2016 ; 130188 ; Open", 28); // z:aw (JViewport:JComponent, cq:JFrame)
+selectTreeTable(PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE, "Timing Summary Report ; Tue Jun 21 18:31:42 WEST 2016 ; 130188 ; Open", 28, "Timing Summary Report", 0, false, false, false, false, false, true); // z:aw (JViewport:JComponent, cq:JFrame) - Double Click
+maximizeView(PAResourceOtoP.PAViews_BASE_WORKSPACE, "BaseWorkspace"); // V:a (Workspace:JPanel, cq:JFrame)

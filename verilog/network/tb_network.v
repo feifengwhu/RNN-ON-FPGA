@@ -21,7 +21,7 @@ module tb_network();
     parameter HALF_CLOCK       = 1;
     parameter FULL_CLOCK       = 2*HALF_CLOCK;
     parameter MAX_SAMPLES      = 8;
-    parameter TRAIN_SAMPLES    = 1000;
+    parameter TRAIN_SAMPLES    = 10000;
 
 	reg clock;
 	reg reset;
@@ -37,6 +37,7 @@ module tb_network();
     wire                  resetP;
     wire                  dataReadyP;
     reg	 enPerceptron;
+    reg	 enPerceptronPIPE;
     
     // File descriptors for the error/output dumps
     integer fid, fid_error_dump, retVal;
@@ -49,8 +50,12 @@ module tb_network();
         #(HALF_CLOCK) clock = ~clock;
         #(HALF_CLOCK) clock = ~clock;
     end
+
+	always @(posedge clock) begin
+		enPerceptronPIPE <= enPerceptron;
+	end
     
-    assign resetP = reset || !enPerceptron;
+    assign resetP = reset || !enPerceptronPIPE;
     
     // DUT Instantiation
     network              #(INPUT_SZ, HIDDEN_SZ, OUTPUT_SZ, QN, QM, DSP48_PER_ROW_G, DSP48_PER_ROW_M) 

@@ -1,0 +1,38 @@
+#-----------------------------------------------------------
+# Vivado v2015.4 (64-bit)
+# SW Build 1412921 on Wed Nov 18 09:44:32 MST 2015
+# IP Build 1412160 on Tue Nov 17 13:47:24 MST 2015
+# Start of session at: Mon Jun 20 18:46:55 2016
+# Process ID: 20573
+# Current directory: /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.runs/impl_1
+# Command line: vivado -log top_network.vdi -applog -messageDb vivado.pb -mode batch -source top_network.tcl -notrace
+# Log file: /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.runs/impl_1/top_network.vdi
+# Journal file: /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.runs/impl_1/vivado.jou
+#-----------------------------------------------------------
+source top_network.tcl -notrace
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+INFO: [Netlist 29-17] Analyzing 1211 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2015.4
+INFO: [Device 21-403] Loading part xc7z020clg484-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [/home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.srcs/lstm_const/new/timing.xdc]
+CRITICAL WARNING: [Constraints 18-948] create_clock: can't define clock 'clock' with period '5' which is less than or equal to the delta '5' between waveform edges (0,5) [/home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.srcs/lstm_const/new/timing.xdc:1]
+Finished Parsing XDC File [/home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.srcs/lstm_const/new/timing.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+link_design: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1315.117 ; gain = 398.160 ; free physical = 2705 ; free virtual = 7399
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:00.50 ; elapsed = 00:00:00.36 . Memory (MB): peak = 1390.152 ; gain = 67.031 ; free physical = 2729 ; free virtual = 7396

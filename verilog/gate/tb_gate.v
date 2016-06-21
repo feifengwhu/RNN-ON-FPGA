@@ -91,7 +91,7 @@ module tb_gate();
     // Keeping track of the simulation time
     real time_start, time_end;
 
-    always @(negedge clock) begin
+    always @(posedge clock) begin
         if( reset == 1'b1) begin
             inputVec   <= {BITWIDTH{1'b0}};
             prevOutVec <= {BITWIDTH{1'b0}};

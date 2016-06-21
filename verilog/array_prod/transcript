@@ -1,0 +1,39 @@
+# vsim -voptargs="+acc" -c -do "run -all" tb_array 
+# Start time: 22:04:26 on Jun 21,2016
+# ** Note: (vsim-8009) Loading existing optimized design _opt1
+# //  Questa Sim-64
+# //  Version 10.4c_5 linux_x86_64 Nov 14 2015
+# //
+# //  Copyright 1991-2015 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //  THIS DOCUMENT CONTAINS TRADE SECRETS AND COMMERCIAL OR FINANCIAL
+# //  INFORMATION THAT ARE PRIVILEGED, CONFIDENTIAL, AND EXEMPT FROM
+# //  DISCLOSURE UNDER THE FREEDOM OF INFORMATION ACT, 5 U.S.C. SECTION 552.
+# //  FURTHERMORE, THIS INFORMATION IS PROHIBITED FROM DISCLOSURE UNDER
+# //  THE TRADE SECRETS ACT, 18 U.S.C. SECTION 1905.
+# //
+# Loading work.tb_array(fast)
+# Loading work.array_prod(fast)
+# run -all
+# Simulation started at 0.000000
+# Input Sample           0
+# Input Sample         100
+# Input Sample         200
+# Input Sample         300
+# Input Sample         400
+# Input Sample         500
+# Input Sample         600
+# Input Sample         700
+# Input Sample         800
+# Input Sample         900
+# Average Quantization Error: -0.001883
+# ** Note: $stop    : tb_array.v(116)
+#    Time: 12005 ns  Iteration: 0  Instance: /tb_array
+# Break in Module tb_array at tb_array.v line 116
+# Stopped at tb_array.v line 116
+# End time: 22:04:30 on Jun 21,2016, Elapsed time: 0:00:04
+# Errors: 0, Warnings: 0

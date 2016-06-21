@@ -1,0 +1,79 @@
+#-----------------------------------------------------------
+# Vivado v2015.4 (64-bit)
+# SW Build 1412921 on Wed Nov 18 09:44:32 MST 2015
+# IP Build 1412160 on Tue Nov 17 13:47:24 MST 2015
+# Start of session at: Tue Jun 21 17:56:17 2016
+# Process ID: 20509
+# Current directory: /home/josefonseca/Documents/thesis/verilog/network
+# Command line: vivado
+# Log file: /home/josefonseca/Documents/thesis/verilog/network/vivado.log
+# Journal file: /home/josefonseca/Documents/thesis/verilog/network/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2015.4/data/ip'.
+open_project: Time (s): cpu = 00:00:10 ; elapsed = 00:00:05 . Memory (MB): peak = 5809.457 ; gain = 116.430 ; free physical = 3772 ; free virtual = 8102
+reset_run synth_4
+launch_runs impl_4
+[Tue Jun 21 17:57:27 2016] Launched synth_4...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.runs/synth_4/runme.log
+[Tue Jun 21 17:57:27 2016] Launched impl_4...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.runs/impl_4/runme.log
+delete_runs "synth_1"
+INFO: [Vivado 12-3261] Dependent run, 'impl_1', will be deleted with parent run, 'synth_1'.
+delete_runs "synth_2"
+INFO: [Vivado 12-3261] Dependent run, 'impl_2', will be deleted with parent run, 'synth_2'.
+delete_runs "synth_3"
+INFO: [Vivado 12-3261] Dependent run, 'impl_3', will be deleted with parent run, 'synth_3'.
+reset_run synth_4
+launch_runs impl_4
+[Tue Jun 21 18:02:50 2016] Launched synth_4...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.runs/synth_4/runme.log
+[Tue Jun 21 18:02:50 2016] Launched impl_4...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.runs/impl_4/runme.log
+close_project
+open_project /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2015.4/data/ip'.
+reset_run synth_4
+launch_runs impl_4
+[Tue Jun 21 18:11:49 2016] Launched synth_4...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.runs/synth_4/runme.log
+[Tue Jun 21 18:11:49 2016] Launched impl_4...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.runs/impl_4/runme.log
+create_run synth_1 -flow {Vivado Synthesis 2015} -strategy Flow_PerfOptimized_high
+Run is defaulting to srcset: sources_1
+Run is defaulting to constrset: lstm_const
+Run is defaulting to part: xc7z020clg484-1
+current_run [get_runs synth_1]
+set_property strategy Flow_AreaOptimized_high [get_runs synth_1]
+close_project
+open_project /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2015.4/data/ip'.
+launch_runs impl_1
+[Tue Jun 21 18:19:28 2016] Launched synth_1...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.runs/synth_1/runme.log
+[Tue Jun 21 18:19:28 2016] Launched impl_1...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.runs/impl_1/runme.log
+create_run synth_2 -flow {Vivado Synthesis 2015} -strategy Flow_AreaOptimized_high
+Run is defaulting to srcset: sources_1
+Run is defaulting to constrset: lstm_const
+Run is defaulting to part: xc7z020clg484-1
+current_run [get_runs synth_2]
+set_property strategy Flow_AreaOptimized_medium [get_runs synth_2]
+launch_runs impl_2
+[Tue Jun 21 18:27:31 2016] Launched synth_2...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.runs/synth_2/runme.log
+[Tue Jun 21 18:27:31 2016] Launched impl_2...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.runs/impl_2/runme.log

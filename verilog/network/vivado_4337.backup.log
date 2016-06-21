@@ -1,0 +1,448 @@
+#-----------------------------------------------------------
+# Vivado v2015.4 (64-bit)
+# SW Build 1412921 on Wed Nov 18 09:44:32 MST 2015
+# IP Build 1412160 on Tue Nov 17 13:47:24 MST 2015
+# Start of session at: Mon Jun 20 15:23:36 2016
+# Process ID: 4337
+# Current directory: /home/josefonseca/Documents/thesis/verilog/network
+# Command line: vivado
+# Log file: /home/josefonseca/Documents/thesis/verilog/network/vivado.log
+# Journal file: /home/josefonseca/Documents/thesis/verilog/network/vivado.jou
+#-----------------------------------------------------------
+start_gui
+create_project Synth /home/josefonseca/Documents/thesis/verilog/network/Synth -part xc7z020clg484-1
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2015.4/data/ip'.
+set_property board_part xilinx.com:zc702:part0:1.2 [current_project]
+set_property simulator_language Verilog [current_project]
+add_files -norecurse {/home/josefonseca/Documents/thesis/verilog/network/network.v /home/josefonseca/Documents/thesis/verilog/network/weightRAM.v /home/josefonseca/Documents/thesis/verilog/network/array_prod.v /home/josefonseca/Documents/thesis/verilog/network/sigmoid.v /home/josefonseca/Documents/thesis/verilog/network/gate.v /home/josefonseca/Documents/thesis/verilog/network/tanh.v /home/josefonseca/Documents/thesis/verilog/network/dot_prod.v /home/josefonseca/Documents/thesis/verilog/network/test.v}
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+update_compile_order -fileset sources_1
+launch_runs synth_1
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/array_prod.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/array_prod.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/gate.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/gate.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/network.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/network.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/sigmoid.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/sigmoid.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/tanh.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/tanh.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/test.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/test.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/weightRAM.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/weightRAM.v:1]
+[Mon Jun 20 15:47:49 2016] Launched synth_1...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.runs/synth_1/runme.log
+launch_runs: Time (s): cpu = 00:00:07 ; elapsed = 00:01:52 . Memory (MB): peak = 5847.699 ; gain = 52.438 ; free physical = 3033 ; free virtual = 8920
+launch_runs impl_1
+[Mon Jun 20 15:49:57 2016] Launched impl_1...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs synth_1
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/array_prod.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/array_prod.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/gate.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/gate.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/network.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/network.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/sigmoid.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/sigmoid.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/tanh.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/tanh.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/test.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/test.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/weightRAM.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/weightRAM.v:1]
+[Mon Jun 20 15:50:48 2016] Launched synth_1...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.runs/synth_1/runme.log
+reset_run synth_1
+launch_runs synth_1
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/array_prod.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/array_prod.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/gate.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/gate.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/network.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/network.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/sigmoid.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/sigmoid.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/tanh.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/tanh.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/test.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/test.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/weightRAM.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/weightRAM.v:1]
+[Mon Jun 20 16:00:20 2016] Launched synth_1...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.runs/synth_1/runme.log
+reset_run synth_1
+launch_runs synth_1
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/array_prod.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/array_prod.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/gate.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/gate.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/network.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/network.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/sigmoid.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/sigmoid.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/tanh.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/tanh.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/test.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/test.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/weightRAM.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/weightRAM.v:1]
+[Mon Jun 20 16:05:47 2016] Launched synth_1...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.runs/synth_1/runme.log
+reset_run synth_1
+launch_runs synth_1
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/array_prod.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/array_prod.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/gate.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/gate.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/network.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/network.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/sigmoid.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/sigmoid.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/tanh.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/tanh.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/test.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/test.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/weightRAM.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/weightRAM.v:1]
+[Mon Jun 20 16:11:59 2016] Launched synth_1...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.runs/synth_1/runme.log
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+add_files -fileset sim_1 -norecurse /home/josefonseca/Documents/thesis/verilog/network/tb_network.v
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
+launch_runs impl_1
+[Mon Jun 20 16:50:02 2016] Launched impl_1...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.runs/impl_1/runme.log
+add_files -norecurse /home/josefonseca/Documents/thesis/verilog/network/top_network.v
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+remove_files /home/josefonseca/Documents/thesis/verilog/network/top_network.v
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+add_files -norecurse /home/josefonseca/Documents/thesis/verilog/network/top_network.v
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+remove_files -fileset sim_1 /home/josefonseca/Documents/thesis/verilog/network/tb_network.v
+update_compile_order -fileset sim_1
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+add_files -fileset sim_1 -norecurse /home/josefonseca/Documents/thesis/verilog/network/tb_top_network.v
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
+reset_run synth_1
+launch_runs synth_1
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/array_prod.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/array_prod.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/gate.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/gate.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/network.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/network.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/sigmoid.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/sigmoid.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/tanh.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/tanh.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/test.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/test.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/top_network.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/top_network.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/weightRAM.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/weightRAM.v:1]
+[Mon Jun 20 17:40:49 2016] Launched synth_1...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.runs/synth_1/runme.log
+reset_run synth_1
+launch_runs synth_1
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/array_prod.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/array_prod.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/gate.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/gate.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/network.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/network.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/sigmoid.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/sigmoid.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/tanh.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/tanh.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/test.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/test.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/top_network.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/top_network.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/weightRAM.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/weightRAM.v:1]
+[Mon Jun 20 17:48:05 2016] Launched synth_1...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.runs/synth_1/runme.log
+reset_run synth_1
+launch_runs synth_1
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/array_prod.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/array_prod.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/gate.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/gate.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/network.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/network.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/sigmoid.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/sigmoid.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/tanh.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/tanh.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/test.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/test.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/top_network.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/top_network.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/weightRAM.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/weightRAM.v:1]
+[Mon Jun 20 17:58:38 2016] Launched synth_1...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.runs/synth_1/runme.log
+launch_runs impl_1
+[Mon Jun 20 18:00:45 2016] Launched impl_1...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.runs/impl_1/runme.log
+reset_run impl_1 -noclean_dir 
+reset_run synth_1
+launch_runs synth_1
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/array_prod.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/array_prod.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/gate.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/gate.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/network.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/network.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/sigmoid.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/sigmoid.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/tanh.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/tanh.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/test.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/test.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/top_network.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/top_network.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/weightRAM.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/weightRAM.v:1]
+[Mon Jun 20 18:04:06 2016] Launched synth_1...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.runs/synth_1/runme.log
+reset_run synth_1
+launch_runs synth_1
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/array_prod.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/array_prod.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/gate.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/gate.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/network.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/network.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/sigmoid.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/sigmoid.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/tanh.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/tanh.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/test.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/test.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/top_network.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/top_network.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/weightRAM.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/weightRAM.v:1]
+[Mon Jun 20 18:07:07 2016] Launched synth_1...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.runs/synth_1/runme.log
+launch_runs impl_1
+[Mon Jun 20 18:08:56 2016] Launched impl_1...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.runs/impl_1/runme.log
+create_fileset -constrset lstm_const
+file mkdir /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.srcs/lstm_const
+file mkdir /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.srcs/lstm_const/new
+close [ open /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.srcs/lstm_const/new/timing.xdc w ]
+add_files -fileset lstm_const /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.srcs/lstm_const/new/timing.xdc
+add_files -fileset lstm_const -norecurse /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.srcs/lstm_const/new/timing.xdc
+WARNING: [filemgmt 56-12] File '/home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.srcs/lstm_const/new/timing.xdc' cannot be added to the project because it already exists in the project, skipping this file
+set_property constrset lstm_const [get_runs synth_1]
+set_property constrset lstm_const [get_runs impl_1]
+open_run synth_1 -name synth_1
+Design is defaulting to impl run constrset: lstm_const
+Design is defaulting to synth run part: xc7z020clg484-1
+INFO: [Netlist 29-17] Analyzing 1211 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2015.4
+INFO: [Device 21-403] Loading part xc7z020clg484-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [/home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.srcs/lstm_const/new/timing.xdc]
+Finished Parsing XDC File [/home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.srcs/lstm_const/new/timing.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+open_run: Time (s): cpu = 00:00:16 ; elapsed = 00:00:11 . Memory (MB): peak = 6350.953 ; gain = 460.621 ; free physical = 3139 ; free virtual = 8333
+create_clock -period 10.000 -name clock -waveform {0.000 5.000} [get_ports -filter { NAME =~  "*clock*" && DIRECTION == "IN" }]
+set_property target_constrs_file /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.srcs/lstm_const/new/timing.xdc [current_fileset -constrset]
+save_constraints -force
+reset_run synth_1
+launch_runs synth_1
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/array_prod.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/array_prod.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/gate.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/gate.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/network.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/network.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/sigmoid.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/sigmoid.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/tanh.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/tanh.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/test.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/test.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/top_network.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/top_network.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/weightRAM.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/weightRAM.v:1]
+[Mon Jun 20 18:33:31 2016] Launched synth_1...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.runs/synth_1/runme.log
+close_design
+launch_runs impl_1
+[Mon Jun 20 18:38:59 2016] Launched impl_1...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.runs/impl_1/runme.log
+open_run impl_1
+INFO: [Netlist 29-17] Analyzing 1179 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2015.4
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [/home/josefonseca/Documents/thesis/verilog/network/.Xil/Vivado-4337-desktop4480/dcp/top_network.xdc]
+Finished Parsing XDC File [/home/josefonseca/Documents/thesis/verilog/network/.Xil/Vivado-4337-desktop4480/dcp/top_network.xdc]
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 6672.867 ; gain = 0.000 ; free physical = 3205 ; free virtual = 7871
+Restored from archive | CPU: 1.570000 secs | Memory: 38.338547 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 6672.867 ; gain = 0.000 ; free physical = 3205 ; free virtual = 7871
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+open_run: Time (s): cpu = 00:00:08 ; elapsed = 00:00:05 . Memory (MB): peak = 6672.867 ; gain = 0.004 ; free physical = 3251 ; free virtual = 7872
+CRITICAL WARNING: [Timing 38-282] The design failed to meet the timing requirements. Please see the timing summary report for details on the timing violations.
+reset_run synth_1
+launch_runs synth_1
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/array_prod.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/array_prod.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/gate.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/gate.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/network.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/network.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/sigmoid.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/sigmoid.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/tanh.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/tanh.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/test.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/test.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/top_network.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/top_network.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/weightRAM.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/weightRAM.v:1]
+[Mon Jun 20 18:44:46 2016] Launched synth_1...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.runs/synth_1/runme.log
+close_design
+launch_runs impl_1
+[Mon Jun 20 18:46:55 2016] Launched impl_1...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.runs/impl_1/runme.log
+reset_run impl_1 -noclean_dir 
+reset_run synth_1
+launch_runs synth_1
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/array_prod.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/array_prod.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/gate.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/gate.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/network.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/network.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/sigmoid.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/sigmoid.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/tanh.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/tanh.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/test.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/test.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/top_network.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/top_network.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/weightRAM.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/weightRAM.v:1]
+[Mon Jun 20 18:47:22 2016] Launched synth_1...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.runs/synth_1/runme.log
+launch_runs impl_1
+[Mon Jun 20 18:53:06 2016] Launched impl_1...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.runs/impl_1/runme.log
+open_run impl_1
+INFO: [Netlist 29-17] Analyzing 1179 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2015.4
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [/home/josefonseca/Documents/thesis/verilog/network/.Xil/Vivado-4337-desktop4480/dcp/top_network.xdc]
+Finished Parsing XDC File [/home/josefonseca/Documents/thesis/verilog/network/.Xil/Vivado-4337-desktop4480/dcp/top_network.xdc]
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 6719.281 ; gain = 0.000 ; free physical = 3498 ; free virtual = 8222
+Restored from archive | CPU: 1.550000 secs | Memory: 38.774620 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 6719.281 ; gain = 0.000 ; free physical = 3498 ; free virtual = 8222
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+CRITICAL WARNING: [Timing 38-282] The design failed to meet the timing requirements. Please see the timing summary report for details on the timing violations.
+create_run synth_2 -flow {Vivado Synthesis 2015} -strategy {Vivado Synthesis Defaults}
+Run is defaulting to srcset: sources_1
+Run is defaulting to constrset: lstm_const
+Run is defaulting to part: xc7z020clg484-1
+current_run [get_runs synth_2]
+set_property strategy Flow_PerfOptimized_high [get_runs synth_2]
+close_design
+launch_runs synth_2
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/array_prod.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/array_prod.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/gate.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/gate.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/network.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/network.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/sigmoid.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/sigmoid.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/tanh.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/tanh.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/test.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/test.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/top_network.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/top_network.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/weightRAM.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/weightRAM.v:1]
+[Mon Jun 20 18:59:08 2016] Launched synth_2...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.runs/synth_2/runme.log
+reset_run synth_2
+launch_runs synth_2
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/array_prod.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/array_prod.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/gate.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/gate.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/network.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/network.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/sigmoid.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/sigmoid.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/tanh.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/tanh.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/test.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/test.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/top_network.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/top_network.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/weightRAM.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/weightRAM.v:1]
+[Mon Jun 20 18:59:58 2016] Launched synth_2...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.runs/synth_2/runme.log
+launch_runs impl_2
+[Mon Jun 20 19:07:04 2016] Launched impl_2...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.runs/impl_2/runme.log
+reset_run synth_2
+launch_runs impl_2
+[Mon Jun 20 19:12:03 2016] Launched synth_2...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.runs/synth_2/runme.log
+[Mon Jun 20 19:12:03 2016] Launched impl_2...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.runs/impl_2/runme.log
+open_run impl_2
+INFO: [Netlist 29-17] Analyzing 1179 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2015.4
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [/home/josefonseca/Documents/thesis/verilog/network/.Xil/Vivado-4337-desktop4480/dcp/top_network.xdc]
+Finished Parsing XDC File [/home/josefonseca/Documents/thesis/verilog/network/.Xil/Vivado-4337-desktop4480/dcp/top_network.xdc]
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 6732.285 ; gain = 0.000 ; free physical = 3505 ; free virtual = 8168
+Restored from archive | CPU: 1.710000 secs | Memory: 39.109962 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 6732.285 ; gain = 0.000 ; free physical = 3501 ; free virtual = 8164
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+CRITICAL WARNING: [Timing 38-282] The design failed to meet the timing requirements. Please see the timing summary report for details on the timing violations.
+close_design
+open_run synth_2 -name synth_2
+Design is defaulting to impl run constrset: lstm_const
+Design is defaulting to synth run part: xc7z020clg484-1
+INFO: [Netlist 29-17] Analyzing 1211 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2015.4
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [/home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.srcs/lstm_const/new/timing.xdc]
+Finished Parsing XDC File [/home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.srcs/lstm_const/new/timing.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+open_run: Time (s): cpu = 00:00:08 ; elapsed = 00:00:05 . Memory (MB): peak = 6762.480 ; gain = 0.000 ; free physical = 3306 ; free virtual = 7965
+create_clock -period 10.000 -name clock -waveform {0.000 5.000} [get_ports -filter { NAME =~  "*clock*" && DIRECTION == "IN" }]
+save_constraints
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+close_design
+reset_run synth_2
+launch_runs synth_2
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/array_prod.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/array_prod.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/gate.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/gate.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/network.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/network.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/sigmoid.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/sigmoid.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/tanh.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/tanh.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/test.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/test.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/top_network.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/top_network.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/weightRAM.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/weightRAM.v:1]
+[Mon Jun 20 19:41:33 2016] Launched synth_2...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.runs/synth_2/runme.log
+launch_runs impl_2
+[Mon Jun 20 19:45:42 2016] Launched impl_2...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.runs/impl_2/runme.log
+open_run impl_2
+INFO: [Netlist 29-17] Analyzing 1179 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2015.4
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [/home/josefonseca/Documents/thesis/verilog/network/.Xil/Vivado-4337-desktop4480/dcp/top_network.xdc]
+Finished Parsing XDC File [/home/josefonseca/Documents/thesis/verilog/network/.Xil/Vivado-4337-desktop4480/dcp/top_network.xdc]
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 6860.055 ; gain = 0.000 ; free physical = 3330 ; free virtual = 7950
+Restored from archive | CPU: 1.720000 secs | Memory: 42.492981 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 6860.055 ; gain = 0.000 ; free physical = 3329 ; free virtual = 7949
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+CRITICAL WARNING: [Timing 38-282] The design failed to meet the timing requirements. Please see the timing summary report for details on the timing violations.
+create_run synth_3 -flow {Vivado Synthesis 2015} -strategy Flow_PerfOptimized_high
+Run is defaulting to srcset: sources_1
+Run is defaulting to constrset: lstm_const
+Run is defaulting to part: xc7z020clg484-1
+current_run [get_runs synth_3]
+set_property strategy {Vivado Synthesis Defaults} [get_runs synth_3]
+set_property STEPS.SYNTH_DESIGN.ARGS.CASCADE_DSP force [get_runs synth_3]
+launch_runs synth_3
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/array_prod.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/array_prod.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/gate.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/gate.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/network.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/network.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/sigmoid.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/sigmoid.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/tanh.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/tanh.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/test.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/test.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/top_network.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/top_network.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/weightRAM.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/weightRAM.v:1]
+[Mon Jun 20 20:00:09 2016] Launched synth_3...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.runs/synth_3/runme.log
+launch_runs impl_3
+[Mon Jun 20 20:04:56 2016] Launched impl_3...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.runs/impl_3/runme.log
+reset_run impl_3 -noclean_dir 
+close_design
+reset_run synth_3
+launch_runs synth_3
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/array_prod.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/array_prod.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/gate.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/gate.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/network.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/network.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/sigmoid.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/sigmoid.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/tanh.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/tanh.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/test.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/test.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/top_network.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/top_network.v:1]
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/network/weightRAM.v" into library work [/home/josefonseca/Documents/thesis/verilog/network/weightRAM.v:1]
+[Tue Jun 21 11:19:34 2016] Launched synth_3...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.runs/synth_3/runme.log
+launch_runs: Time (s): cpu = 00:00:00.49 ; elapsed = 00:00:12 . Memory (MB): peak = 6860.055 ; gain = 0.000 ; free physical = 2752 ; free virtual = 7537
+exit
+INFO: [Common 17-206] Exiting Vivado at Tue Jun 21 11:29:24 2016...

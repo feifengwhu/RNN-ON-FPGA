@@ -1,0 +1,1891 @@
+
+*** Running vivado
+    with args -log top_network.vds -m64 -mode batch -messageDb vivado.pb -notrace -source top_network.tcl
+
+
+****** Vivado v2015.4 (64-bit)
+  **** SW Build 1412921 on Wed Nov 18 09:44:32 MST 2015
+  **** IP Build 1412160 on Tue Nov 17 13:47:24 MST 2015
+    ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+
+source top_network.tcl -notrace
+Command: synth_design -top top_network -part xc7z020clg484-1 -fanout_limit 400 -fsm_extraction one_hot -keep_equivalent_registers -resource_sharing off -no_lc -shreg_min_size 5
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v:14]
+WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v:15]
+WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v:16]
+WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v:17]
+WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v:18]
+WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v:19]
+WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v:20]
+WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v:21]
+WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v:47]
+WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v:48]
+WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v:49]
+WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v:50]
+WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v:51]
+WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v:52]
+WARNING: [Synth 8-2507] parameter declaration becomes local in weightRAM with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/weightRAM.v:13]
+WARNING: [Synth 8-2507] parameter declaration becomes local in weightRAM with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/weightRAM.v:14]
+WARNING: [Synth 8-2507] parameter declaration becomes local in sigmoid with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/sigmoid.v:8]
+WARNING: [Synth 8-2507] parameter declaration becomes local in gate with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/gate.v:20]
+WARNING: [Synth 8-2507] parameter declaration becomes local in gate with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/gate.v:21]
+WARNING: [Synth 8-2507] parameter declaration becomes local in gate with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/gate.v:22]
+WARNING: [Synth 8-2507] parameter declaration becomes local in gate with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/gate.v:23]
+WARNING: [Synth 8-2507] parameter declaration becomes local in gate with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/gate.v:26]
+WARNING: [Synth 8-2507] parameter declaration becomes local in gate with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/gate.v:27]
+WARNING: [Synth 8-2507] parameter declaration becomes local in gate with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/gate.v:28]
+WARNING: [Synth 8-2507] parameter declaration becomes local in gate with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/gate.v:29]
+WARNING: [Synth 8-2507] parameter declaration becomes local in gate with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/gate.v:30]
+WARNING: [Synth 8-2507] parameter declaration becomes local in tanh with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/tanh.v:8]
+WARNING: [Synth 8-2507] parameter declaration becomes local in array_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/array_prod.v:11]
+WARNING: [Synth 8-2507] parameter declaration becomes local in array_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/array_prod.v:12]
+WARNING: [Synth 8-2507] parameter declaration becomes local in array_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/array_prod.v:13]
+WARNING: [Synth 8-2507] parameter declaration becomes local in array_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/array_prod.v:14]
+WARNING: [Synth 8-2507] parameter declaration becomes local in array_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/array_prod.v:15]
+WARNING: [Synth 8-2507] parameter declaration becomes local in array_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/array_prod.v:16]
+WARNING: [Synth 8-2507] parameter declaration becomes local in array_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/array_prod.v:17]
+WARNING: [Synth 8-2507] parameter declaration becomes local in array_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/array_prod.v:18]
+WARNING: [Synth 8-2507] parameter declaration becomes local in array_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/array_prod.v:19]
+WARNING: [Synth 8-2507] parameter declaration becomes local in array_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/array_prod.v:20]
+WARNING: [Synth 8-2507] parameter declaration becomes local in array_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/array_prod.v:40]
+WARNING: [Synth 8-2507] parameter declaration becomes local in array_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/array_prod.v:41]
+WARNING: [Synth 8-2507] parameter declaration becomes local in array_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/array_prod.v:42]
+WARNING: [Synth 8-2507] parameter declaration becomes local in array_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/array_prod.v:43]
+WARNING: [Synth 8-2507] parameter declaration becomes local in array_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/array_prod.v:44]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:17]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:18]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:19]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:20]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:21]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:22]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:23]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:24]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:25]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:26]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:277]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:278]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:279]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:280]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:281]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:282]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:283]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:284]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:285]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:286]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:287]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:288]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:289]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:290]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:291]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:292]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:293]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:294]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:295]
+WARNING: [Synth 8-2507] parameter declaration becomes local in top_network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/top_network.v:13]
+WARNING: [Synth 8-2507] parameter declaration becomes local in top_network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/top_network.v:14]
+WARNING: [Synth 8-2507] parameter declaration becomes local in top_network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/top_network.v:15]
+WARNING: [Synth 8-2507] parameter declaration becomes local in top_network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/top_network.v:16]
+WARNING: [Synth 8-2507] parameter declaration becomes local in top_network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/top_network.v:17]
+WARNING: [Synth 8-2507] parameter declaration becomes local in top_network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/top_network.v:18]
+WARNING: [Synth 8-2507] parameter declaration becomes local in top_network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/top_network.v:19]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 1037.531 ; gain = 191.926 ; free physical = 3575 ; free virtual = 9141
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'top_network' [/home/josefonseca/Documents/thesis/verilog/network/top_network.v:3]
+	Parameter INPUT_SZ bound to: 2 - type: integer 
+	Parameter HIDDEN_SZ bound to: 16 - type: integer 
+	Parameter OUTPUT_SZ bound to: 1 - type: integer 
+	Parameter QN bound to: 6 - type: integer 
+	Parameter QM bound to: 11 - type: integer 
+	Parameter DSP48_PER_ROW_G bound to: 2 - type: integer 
+	Parameter DSP48_PER_ROW_M bound to: 4 - type: integer 
+	Parameter BITWIDTH bound to: 18 - type: integer 
+	Parameter INPUT_BITWIDTH bound to: 36 - type: integer 
+	Parameter OUTPUT_BITWIDTH bound to: 18 - type: integer 
+	Parameter LAYER_BITWIDTH bound to: 288 - type: integer 
+	Parameter MAC_BITWIDTH bound to: 37 - type: integer 
+	Parameter ADDR_BITWIDTH bound to: 4 - type: integer 
+	Parameter ADDR_BITWIDTH_X bound to: 1 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'network' [/home/josefonseca/Documents/thesis/verilog/network/network.v:1]
+	Parameter INPUT_SZ bound to: 2 - type: integer 
+	Parameter HIDDEN_SZ bound to: 16 - type: integer 
+	Parameter OUTPUT_SZ bound to: 1 - type: integer 
+	Parameter QN bound to: 6 - type: integer 
+	Parameter QM bound to: 11 - type: integer 
+	Parameter DSP48_PER_ROW_G bound to: 2 - type: integer 
+	Parameter DSP48_PER_ROW_M bound to: 4 - type: integer 
+	Parameter BITWIDTH bound to: 18 - type: integer 
+	Parameter INPUT_BITWIDTH bound to: 36 - type: integer 
+	Parameter LAYER_BITWIDTH bound to: 288 - type: integer 
+	Parameter MULT_BITWIDTH bound to: 38 - type: integer 
+	Parameter ELEMWISE_BITWIDTH bound to: 608 - type: integer 
+	Parameter OUTPUT_BITWIDTH bound to: 18 - type: integer 
+	Parameter ADDR_BITWIDTH bound to: 4 - type: integer 
+	Parameter ADDR_BITWIDTH_X bound to: 1 - type: integer 
+	Parameter MUX_BITWIDTH bound to: 2 - type: integer 
+	Parameter N_DSP48 bound to: 4 - type: integer 
+	Parameter IDLE bound to: 5'b00000 
+	Parameter GATE_CALC_INIT bound to: 5'b00001 
+	Parameter GATE_CALC bound to: 5'b00010 
+	Parameter NON_LIN_1A_PIPE bound to: 5'b00011 
+	Parameter NON_LIN_1A bound to: 5'b00100 
+	Parameter NON_LIN_2A bound to: 5'b00101 
+	Parameter ELEM_PROD_A_PIPE bound to: 5'b00110 
+	Parameter ELEM_PROD_A bound to: 5'b00111 
+	Parameter NON_LIN_1B_PIPE bound to: 5'b01000 
+	Parameter NON_LIN_1B bound to: 5'b01001 
+	Parameter NON_LIN_2B bound to: 5'b01010 
+	Parameter ELEM_PROD_B_PIPE bound to: 5'b01011 
+	Parameter ELEM_PROD_B bound to: 5'b01100 
+	Parameter NON_LIN_1C_PIPE bound to: 5'b01101 
+	Parameter NON_LIN_1C bound to: 5'b01110 
+	Parameter NON_LIN_2C bound to: 5'b01111 
+	Parameter ELEM_PROD_C_PIPE bound to: 5'b10000 
+	Parameter ELEM_PROD_C bound to: 5'b10001 
+	Parameter END bound to: 5'b10010 
+INFO: [Synth 8-638] synthesizing module 'sigmoid' [/home/josefonseca/Documents/thesis/verilog/network/sigmoid.v:1]
+	Parameter QN bound to: 6 - type: integer 
+	Parameter QM bound to: 11 - type: integer 
+	Parameter BITWIDTH bound to: 18 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'sigmoid' (1#1) [/home/josefonseca/Documents/thesis/verilog/network/sigmoid.v:1]
+INFO: [Synth 8-638] synthesizing module 'tanh' [/home/josefonseca/Documents/thesis/verilog/network/tanh.v:1]
+	Parameter QN bound to: 6 - type: integer 
+	Parameter QM bound to: 11 - type: integer 
+	Parameter BITWIDTH bound to: 18 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'tanh' (2#1) [/home/josefonseca/Documents/thesis/verilog/network/tanh.v:1]
+INFO: [Synth 8-638] synthesizing module 'gate' [/home/josefonseca/Documents/thesis/verilog/network/gate.v:1]
+	Parameter INPUT_SZ bound to: 2 - type: integer 
+	Parameter HIDDEN_SZ bound to: 16 - type: integer 
+	Parameter QN bound to: 6 - type: integer 
+	Parameter QM bound to: 11 - type: integer 
+	Parameter DSP48_PER_ROW bound to: 2 - type: integer 
+	Parameter BITWIDTH bound to: 18 - type: integer 
+	Parameter LAYER_BITWIDTH bound to: 288 - type: integer 
+	Parameter ADDR_BITWIDTH_X bound to: 1 - type: integer 
+	Parameter ADDR_BITWIDTH bound to: 4 - type: integer 
+	Parameter IDLE bound to: 3'b000 
+	Parameter CALC_XandY bound to: 3'b001 
+	Parameter SUM_X bound to: 3'b010 
+	Parameter CALC_Y bound to: 3'b011 
+	Parameter SUM_Y bound to: 3'b100 
+INFO: [Synth 8-638] synthesizing module 'dot_prod' [/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v:1]
+	Parameter NROW bound to: 16 - type: integer 
+	Parameter NCOL bound to: 2 - type: integer 
+	Parameter QN bound to: 6 - type: integer 
+	Parameter QM bound to: 11 - type: integer 
+	Parameter DSP48_PER_ROW bound to: 2 - type: integer 
+	Parameter BITWIDTH bound to: 18 - type: integer 
+	Parameter ADDR_BITWIDTH bound to: 1 - type: integer 
+	Parameter LAYER_BITWIDTH bound to: 288 - type: integer 
+	Parameter N_DSP48 bound to: 8 - type: integer 
+	Parameter DSP48_INPUT_BITWIDTH bound to: 144 - type: integer 
+	Parameter DSP48_OUTPUT_BITWIDTH bound to: 592 - type: integer 
+	Parameter MAC_BITWIDTH bound to: 37 - type: integer 
+	Parameter MUX_BITWIDTH bound to: 1 - type: integer 
+	Parameter IDLE bound to: 3'b000 
+	Parameter IDLE_RDY bound to: 3'b001 
+	Parameter CALC bound to: 3'b010 
+	Parameter END_PIPE bound to: 3'b011 
+	Parameter END_PIPE2 bound to: 3'b100 
+	Parameter END bound to: 3'b101 
+INFO: [Synth 8-256] done synthesizing module 'dot_prod' (3#1) [/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v:1]
+INFO: [Synth 8-638] synthesizing module 'dot_prod__parameterized0' [/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v:1]
+	Parameter NROW bound to: 16 - type: integer 
+	Parameter NCOL bound to: 16 - type: integer 
+	Parameter QN bound to: 6 - type: integer 
+	Parameter QM bound to: 11 - type: integer 
+	Parameter DSP48_PER_ROW bound to: 2 - type: integer 
+	Parameter BITWIDTH bound to: 18 - type: integer 
+	Parameter ADDR_BITWIDTH bound to: 4 - type: integer 
+	Parameter LAYER_BITWIDTH bound to: 288 - type: integer 
+	Parameter N_DSP48 bound to: 8 - type: integer 
+	Parameter DSP48_INPUT_BITWIDTH bound to: 144 - type: integer 
+	Parameter DSP48_OUTPUT_BITWIDTH bound to: 592 - type: integer 
+	Parameter MAC_BITWIDTH bound to: 37 - type: integer 
+	Parameter MUX_BITWIDTH bound to: 1 - type: integer 
+	Parameter IDLE bound to: 3'b000 
+	Parameter IDLE_RDY bound to: 3'b001 
+	Parameter CALC bound to: 3'b010 
+	Parameter END_PIPE bound to: 3'b011 
+	Parameter END_PIPE2 bound to: 3'b100 
+	Parameter END bound to: 3'b101 
+INFO: [Synth 8-256] done synthesizing module 'dot_prod__parameterized0' (3#1) [/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v:1]
+INFO: [Synth 8-256] done synthesizing module 'gate' (4#1) [/home/josefonseca/Documents/thesis/verilog/network/gate.v:1]
+INFO: [Synth 8-638] synthesizing module 'weightRAM' [/home/josefonseca/Documents/thesis/verilog/network/weightRAM.v:1]
+	Parameter NROW bound to: 16 - type: integer 
+	Parameter NCOL bound to: 2 - type: integer 
+	Parameter BITWIDTH bound to: 18 - type: integer 
+	Parameter OUTPUT_PORT_SIZE bound to: 288 - type: integer 
+	Parameter ADDR_BITWIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-5534] Detected attribute (* ram_style = "block" *) [/home/josefonseca/Documents/thesis/verilog/network/weightRAM.v:26]
+INFO: [Synth 8-256] done synthesizing module 'weightRAM' (5#1) [/home/josefonseca/Documents/thesis/verilog/network/weightRAM.v:1]
+INFO: [Synth 8-638] synthesizing module 'weightRAM__parameterized0' [/home/josefonseca/Documents/thesis/verilog/network/weightRAM.v:1]
+	Parameter NROW bound to: 16 - type: integer 
+	Parameter NCOL bound to: 16 - type: integer 
+	Parameter BITWIDTH bound to: 18 - type: integer 
+	Parameter OUTPUT_PORT_SIZE bound to: 288 - type: integer 
+	Parameter ADDR_BITWIDTH bound to: 4 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'weightRAM__parameterized0' (5#1) [/home/josefonseca/Documents/thesis/verilog/network/weightRAM.v:1]
+INFO: [Synth 8-638] synthesizing module 'weightRAM__parameterized1' [/home/josefonseca/Documents/thesis/verilog/network/weightRAM.v:1]
+	Parameter NROW bound to: 16 - type: integer 
+	Parameter NCOL bound to: 16 - type: integer 
+	Parameter BITWIDTH bound to: 18 - type: integer 
+	Parameter OUTPUT_PORT_SIZE bound to: 288 - type: integer 
+	Parameter ADDR_BITWIDTH bound to: 4 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'weightRAM__parameterized1' (5#1) [/home/josefonseca/Documents/thesis/verilog/network/weightRAM.v:1]
+INFO: [Synth 8-638] synthesizing module 'weightRAM__parameterized2' [/home/josefonseca/Documents/thesis/verilog/network/weightRAM.v:1]
+	Parameter NROW bound to: 16 - type: integer 
+	Parameter NCOL bound to: 16 - type: integer 
+	Parameter BITWIDTH bound to: 18 - type: integer 
+	Parameter OUTPUT_PORT_SIZE bound to: 288 - type: integer 
+	Parameter ADDR_BITWIDTH bound to: 4 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'weightRAM__parameterized2' (5#1) [/home/josefonseca/Documents/thesis/verilog/network/weightRAM.v:1]
+INFO: [Synth 8-638] synthesizing module 'weightRAM__parameterized3' [/home/josefonseca/Documents/thesis/verilog/network/weightRAM.v:1]
+	Parameter NROW bound to: 16 - type: integer 
+	Parameter NCOL bound to: 16 - type: integer 
+	Parameter BITWIDTH bound to: 18 - type: integer 
+	Parameter OUTPUT_PORT_SIZE bound to: 288 - type: integer 
+	Parameter ADDR_BITWIDTH bound to: 4 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'weightRAM__parameterized3' (5#1) [/home/josefonseca/Documents/thesis/verilog/network/weightRAM.v:1]
+WARNING: [Synth 8-3848] Net bZ in module/entity network does not have driver. [/home/josefonseca/Documents/thesis/verilog/network/network.v:94]
+WARNING: [Synth 8-3848] Net bI in module/entity network does not have driver. [/home/josefonseca/Documents/thesis/verilog/network/network.v:95]
+WARNING: [Synth 8-3848] Net bF in module/entity network does not have driver. [/home/josefonseca/Documents/thesis/verilog/network/network.v:96]
+WARNING: [Synth 8-3848] Net bO in module/entity network does not have driver. [/home/josefonseca/Documents/thesis/verilog/network/network.v:97]
+WARNING: [Synth 8-3848] Net colAddressWrite_wZX in module/entity network does not have driver. [/home/josefonseca/Documents/thesis/verilog/network/network.v:39]
+WARNING: [Synth 8-3848] Net writeEn_wZX in module/entity network does not have driver. [/home/josefonseca/Documents/thesis/verilog/network/network.v:80]
+WARNING: [Synth 8-3848] Net wZX_in in module/entity network does not have driver. [/home/josefonseca/Documents/thesis/verilog/network/network.v:55]
+WARNING: [Synth 8-3848] Net colAddressWrite_wZY in module/entity network does not have driver. [/home/josefonseca/Documents/thesis/verilog/network/network.v:40]
+WARNING: [Synth 8-3848] Net writeEn_wZY in module/entity network does not have driver. [/home/josefonseca/Documents/thesis/verilog/network/network.v:81]
+WARNING: [Synth 8-3848] Net wZY_in in module/entity network does not have driver. [/home/josefonseca/Documents/thesis/verilog/network/network.v:57]
+WARNING: [Synth 8-3848] Net colAddressWrite_wIX in module/entity network does not have driver. [/home/josefonseca/Documents/thesis/verilog/network/network.v:43]
+WARNING: [Synth 8-3848] Net writeEn_wIX in module/entity network does not have driver. [/home/josefonseca/Documents/thesis/verilog/network/network.v:82]
+WARNING: [Synth 8-3848] Net wIX_in in module/entity network does not have driver. [/home/josefonseca/Documents/thesis/verilog/network/network.v:59]
+WARNING: [Synth 8-3848] Net colAddressWrite_wIY in module/entity network does not have driver. [/home/josefonseca/Documents/thesis/verilog/network/network.v:44]
+WARNING: [Synth 8-3848] Net writeEn_wIY in module/entity network does not have driver. [/home/josefonseca/Documents/thesis/verilog/network/network.v:83]
+WARNING: [Synth 8-3848] Net wIY_in in module/entity network does not have driver. [/home/josefonseca/Documents/thesis/verilog/network/network.v:61]
+WARNING: [Synth 8-3848] Net colAddressWrite_wFX in module/entity network does not have driver. [/home/josefonseca/Documents/thesis/verilog/network/network.v:47]
+WARNING: [Synth 8-3848] Net writeEn_wFX in module/entity network does not have driver. [/home/josefonseca/Documents/thesis/verilog/network/network.v:84]
+WARNING: [Synth 8-3848] Net wFX_in in module/entity network does not have driver. [/home/josefonseca/Documents/thesis/verilog/network/network.v:63]
+WARNING: [Synth 8-3848] Net colAddressWrite_wFY in module/entity network does not have driver. [/home/josefonseca/Documents/thesis/verilog/network/network.v:48]
+WARNING: [Synth 8-3848] Net writeEn_wFY in module/entity network does not have driver. [/home/josefonseca/Documents/thesis/verilog/network/network.v:85]
+WARNING: [Synth 8-3848] Net wFY_in in module/entity network does not have driver. [/home/josefonseca/Documents/thesis/verilog/network/network.v:65]
+WARNING: [Synth 8-3848] Net colAddressWrite_wOX in module/entity network does not have driver. [/home/josefonseca/Documents/thesis/verilog/network/network.v:51]
+WARNING: [Synth 8-3848] Net writeEn_wOX in module/entity network does not have driver. [/home/josefonseca/Documents/thesis/verilog/network/network.v:86]
+WARNING: [Synth 8-3848] Net wOX_in in module/entity network does not have driver. [/home/josefonseca/Documents/thesis/verilog/network/network.v:67]
+WARNING: [Synth 8-3848] Net colAddressWrite_wOY in module/entity network does not have driver. [/home/josefonseca/Documents/thesis/verilog/network/network.v:52]
+WARNING: [Synth 8-3848] Net writeEn_wOY in module/entity network does not have driver. [/home/josefonseca/Documents/thesis/verilog/network/network.v:87]
+WARNING: [Synth 8-3848] Net wOY_in in module/entity network does not have driver. [/home/josefonseca/Documents/thesis/verilog/network/network.v:69]
+INFO: [Synth 8-256] done synthesizing module 'network' (6#1) [/home/josefonseca/Documents/thesis/verilog/network/network.v:1]
+INFO: [Synth 8-638] synthesizing module 'array_prod' [/home/josefonseca/Documents/thesis/verilog/network/array_prod.v:1]
+	Parameter ARRAY_LEN bound to: 16 - type: integer 
+	Parameter QN bound to: 6 - type: integer 
+	Parameter QM bound to: 11 - type: integer 
+	Parameter BITWIDTH bound to: 18 - type: integer 
+	Parameter ADDR_BITWIDTH bound to: 4 - type: integer 
+	Parameter ARRAY_BITWIDTH bound to: 288 - type: integer 
+	Parameter MUX_SIZE bound to: 4 - type: integer 
+	Parameter MUX_BITWIDTH bound to: 2 - type: integer 
+	Parameter N_DSP48 bound to: 4 - type: integer 
+	Parameter DSP48_INPUT_BITWIDTH bound to: 72 - type: integer 
+	Parameter DSP48_OUTPUT_BITWIDTH bound to: 148 - type: integer 
+	Parameter MAC_BITWIDTH bound to: 37 - type: integer 
+	Parameter INT_ADDER_BITWIDTH bound to: 36 - type: integer 
+	Parameter IDLE bound to: 3'b000 
+	Parameter CALC bound to: 3'b001 
+	Parameter FINALSUM bound to: 3'b010 
+	Parameter FINALSUM2 bound to: 3'b011 
+	Parameter END bound to: 3'b100 
+INFO: [Synth 8-256] done synthesizing module 'array_prod' (7#1) [/home/josefonseca/Documents/thesis/verilog/network/array_prod.v:1]
+WARNING: [Synth 8-3848] Net Wperceptron in module/entity top_network does not have driver. [/home/josefonseca/Documents/thesis/verilog/network/top_network.v:35]
+INFO: [Synth 8-256] done synthesizing module 'top_network' (8#1) [/home/josefonseca/Documents/thesis/verilog/network/top_network.v:3]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 1078.789 ; gain = 233.184 ; free physical = 3530 ; free virtual = 9098
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[287] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[286] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[285] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[284] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[283] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[282] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[281] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[280] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[279] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[278] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[277] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[276] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[275] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[274] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[273] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[272] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[271] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[270] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[269] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[268] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[267] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[266] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[265] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[264] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[263] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[262] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[261] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[260] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[259] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[258] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[257] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[256] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[255] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[254] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[253] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[252] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[251] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[250] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[249] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[248] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[247] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[246] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[245] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[244] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[243] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[242] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[241] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[240] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[239] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[238] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[237] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[236] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[235] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[234] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[233] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[232] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[231] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[230] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[229] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[228] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[227] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[226] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[225] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[224] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[223] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[222] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[221] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[220] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[219] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[218] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[217] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[216] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[215] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[214] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[213] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[212] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[211] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[210] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[209] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[208] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[207] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[206] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[205] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[204] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[203] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[202] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[201] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[200] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[199] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[198] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[197] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[196] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[195] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[194] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[193] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[192] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[191] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[190] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[189] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[188] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
+INFO: [Common 17-14] Message 'Synth 8-3295' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 1078.789 ; gain = 233.184 ; free physical = 3530 ; free virtual = 9098
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z020clg484-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.srcs/lstm_const/new/timing.xdc]
+Finished Parsing XDC File [/home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.srcs/lstm_const/new/timing.xdc]
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.22 ; elapsed = 00:00:00.07 . Memory (MB): peak = 1513.492 ; gain = 5.000 ; free physical = 3168 ; free virtual = 8784
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 5012 
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:15 ; elapsed = 00:00:18 . Memory (MB): peak = 1513.492 ; gain = 667.887 ; free physical = 3138 ; free virtual = 8754
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg484-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:15 ; elapsed = 00:00:18 . Memory (MB): peak = 1513.492 ; gain = 667.887 ; free physical = 3138 ; free virtual = 8754
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:18 . Memory (MB): peak = 1513.492 ; gain = 667.887 ; free physical = 3138 ; free virtual = 8754
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'dot_prod'
+INFO: [Synth 8-5544] ROM "NEXTrowMux" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'dot_prod__parameterized0'
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'gate'
+INFO: [Synth 8-5544] ROM "dataReady_gate" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "enable_dotprodY" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "enable_dotprodX" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "NEXTstate" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "NEXTstate" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "p1" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "p0" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "p1" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "p0" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "NEXTstate" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'array_prod'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    IDLE |                           000001 |                              000
+                IDLE_RDY |                           000010 |                              001
+                    CALC |                           000100 |                              010
+                END_PIPE |                           001000 |                              011
+               END_PIPE2 |                           010000 |                              100
+                     END |                           100000 |                              101
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'dot_prod'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    IDLE |                           000001 |                              000
+                IDLE_RDY |                           000010 |                              001
+                    CALC |                           000100 |                              010
+                END_PIPE |                           001000 |                              011
+               END_PIPE2 |                           010000 |                              100
+                     END |                           100000 |                              101
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'dot_prod__parameterized0'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    IDLE |                            00001 |                              000
+              CALC_XandY |                            00010 |                              001
+                   SUM_X |                            00100 |                              010
+                  CALC_Y |                            01000 |                              011
+                   SUM_Y |                            10000 |                              100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'gate'
+INFO: [Synth 8-5583] The signal RAM_matrix_reg is implemented as block RAM but is better mapped onto distributed LUT RAM for the following reason(s): The depth (1 address bits) is shallow. Please use attribute (* ram_style = "distributed" *) to instruct Vivado to infer distributed LUT RAM.
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    IDLE |                            00001 |                              000
+                    CALC |                            00010 |                              001
+                FINALSUM |                            00100 |                              010
+               FINALSUM2 |                            01000 |                              011
+                     END |                            10000 |                              100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'array_prod'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 1513.492 ; gain = 667.887 ; free physical = 3128 ; free virtual = 8744
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++------+------------------------------+------------+----------+
+|      |RTL Partition                 |Replication |Instances |
++------+------------------------------+------------+----------+
+|1     |dot_prod__GB0                 |           1|     51161|
+|2     |dot_prod__GB1                 |           1|      8995|
+|3     |dot_prod__parameterized0__GB0 |           1|     51189|
+|4     |dot_prod__parameterized0__GB1 |           1|      8995|
+|5     |gate__GC0                     |           1|      2306|
+|6     |network__GC0                  |           1|     30474|
+|7     |top_network__GC0              |           1|       916|
++------+------------------------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     18 Bit       Adders := 178   
+	   3 Input     18 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 4     
+	   2 Input      2 Bit       Adders := 1     
+	   2 Input      1 Bit       Adders := 44    
++---Registers : 
+	              608 Bit    Registers := 1     
+	              592 Bit    Registers := 8     
+	              288 Bit    Registers := 31    
+	              148 Bit    Registers := 1     
+	               36 Bit    Registers := 1     
+	               18 Bit    Registers := 50    
+	                5 Bit    Registers := 1     
+	                4 Bit    Registers := 4     
+	                3 Bit    Registers := 4     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 109   
++---RAMs : 
+	               4K Bit         RAMs := 4     
+	              576 Bit         RAMs := 4     
++---Muxes : 
+	   2 Input    592 Bit        Muxes := 8     
+	   2 Input    288 Bit        Muxes := 1     
+	   4 Input    288 Bit        Muxes := 2     
+	   2 Input     37 Bit        Muxes := 64    
+	   2 Input     18 Bit        Muxes := 193   
+	   4 Input     18 Bit        Muxes := 8     
+	   2 Input     17 Bit        Muxes := 32    
+	   2 Input     16 Bit        Muxes := 48    
+	   2 Input     15 Bit        Muxes := 48    
+	   2 Input     14 Bit        Muxes := 64    
+	   6 Input     14 Bit        Muxes := 16    
+	   2 Input     13 Bit        Muxes := 64    
+	   2 Input     12 Bit        Muxes := 16    
+	   2 Input     11 Bit        Muxes := 32    
+	   6 Input     11 Bit        Muxes := 16    
+	   2 Input      9 Bit        Muxes := 16    
+	   7 Input      6 Bit        Muxes := 8     
+	   8 Input      5 Bit        Muxes := 4     
+	   6 Input      5 Bit        Muxes := 1     
+	   6 Input      4 Bit        Muxes := 4     
+	   7 Input      3 Bit        Muxes := 4     
+	   2 Input      2 Bit        Muxes := 4     
+	   5 Input      2 Bit        Muxes := 1     
+	   6 Input      1 Bit        Muxes := 32    
+	   8 Input      1 Bit        Muxes := 4     
+	   5 Input      1 Bit        Muxes := 8     
+	  20 Input      1 Bit        Muxes := 5     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module top_network 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
+Module dot_prod 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      1 Bit       Adders := 2     
++---Registers : 
+	              592 Bit    Registers := 1     
+	              288 Bit    Registers := 1     
+	                1 Bit    Registers := 10    
++---Muxes : 
+	   2 Input    592 Bit        Muxes := 1     
+	   2 Input     37 Bit        Muxes := 8     
+	   2 Input     18 Bit        Muxes := 8     
+	   7 Input      6 Bit        Muxes := 1     
+	   6 Input      1 Bit        Muxes := 5     
+Module dot_prod__parameterized0 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      4 Bit       Adders := 1     
+	   2 Input      1 Bit       Adders := 1     
++---Registers : 
+	              592 Bit    Registers := 1     
+	              288 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 9     
++---Muxes : 
+	   2 Input    592 Bit        Muxes := 1     
+	   2 Input     37 Bit        Muxes := 8     
+	   2 Input     18 Bit        Muxes := 8     
+	   7 Input      6 Bit        Muxes := 1     
+	   6 Input      4 Bit        Muxes := 1     
+	   7 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   8 Input      1 Bit        Muxes := 1     
+	   6 Input      1 Bit        Muxes := 3     
+Module gate 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     18 Bit       Adders := 32    
++---Registers : 
+	              288 Bit    Registers := 2     
++---Muxes : 
+	   8 Input      5 Bit        Muxes := 1     
+	   5 Input      1 Bit        Muxes := 2     
+Module weightRAM__1 
+Detailed RTL Component Info : 
++---Registers : 
+	              288 Bit    Registers := 1     
++---RAMs : 
+	              576 Bit         RAMs := 1     
+Module weightRAM__parameterized0 
+Detailed RTL Component Info : 
++---Registers : 
+	              288 Bit    Registers := 1     
++---RAMs : 
+	               4K Bit         RAMs := 1     
+Module weightRAM__2 
+Detailed RTL Component Info : 
++---Registers : 
+	              288 Bit    Registers := 1     
++---RAMs : 
+	              576 Bit         RAMs := 1     
+Module weightRAM__parameterized1 
+Detailed RTL Component Info : 
++---Registers : 
+	              288 Bit    Registers := 1     
++---RAMs : 
+	               4K Bit         RAMs := 1     
+Module weightRAM__3 
+Detailed RTL Component Info : 
++---Registers : 
+	              288 Bit    Registers := 1     
++---RAMs : 
+	              576 Bit         RAMs := 1     
+Module weightRAM__parameterized2 
+Detailed RTL Component Info : 
++---Registers : 
+	              288 Bit    Registers := 1     
++---RAMs : 
+	               4K Bit         RAMs := 1     
+Module weightRAM 
+Detailed RTL Component Info : 
++---Registers : 
+	              288 Bit    Registers := 1     
++---RAMs : 
+	              576 Bit         RAMs := 1     
+Module weightRAM__parameterized3 
+Detailed RTL Component Info : 
++---Registers : 
+	              288 Bit    Registers := 1     
++---RAMs : 
+	               4K Bit         RAMs := 1     
+Module sigmoid__1 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     18 Bit       Adders := 1     
+	   2 Input      1 Bit       Adders := 1     
++---Registers : 
+	               18 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     18 Bit        Muxes := 4     
+	   2 Input     17 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 1     
+	   2 Input     15 Bit        Muxes := 1     
+	   2 Input     14 Bit        Muxes := 2     
+	   2 Input     13 Bit        Muxes := 2     
+	   2 Input     12 Bit        Muxes := 1     
+	   2 Input     11 Bit        Muxes := 1     
+	   6 Input     11 Bit        Muxes := 1     
+	   2 Input      9 Bit        Muxes := 1     
+Module sigmoid__2 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     18 Bit       Adders := 1     
+	   2 Input      1 Bit       Adders := 1     
++---Registers : 
+	               18 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     18 Bit        Muxes := 4     
+	   2 Input     17 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 1     
+	   2 Input     15 Bit        Muxes := 1     
+	   2 Input     14 Bit        Muxes := 2     
+	   2 Input     13 Bit        Muxes := 2     
+	   2 Input     12 Bit        Muxes := 1     
+	   2 Input     11 Bit        Muxes := 1     
+	   6 Input     11 Bit        Muxes := 1     
+	   2 Input      9 Bit        Muxes := 1     
+Module sigmoid__3 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     18 Bit       Adders := 1     
+	   2 Input      1 Bit       Adders := 1     
++---Registers : 
+	               18 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     18 Bit        Muxes := 4     
+	   2 Input     17 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 1     
+	   2 Input     15 Bit        Muxes := 1     
+	   2 Input     14 Bit        Muxes := 2     
+	   2 Input     13 Bit        Muxes := 2     
+	   2 Input     12 Bit        Muxes := 1     
+	   2 Input     11 Bit        Muxes := 1     
+	   6 Input     11 Bit        Muxes := 1     
+	   2 Input      9 Bit        Muxes := 1     
+Module sigmoid__4 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     18 Bit       Adders := 1     
+	   2 Input      1 Bit       Adders := 1     
++---Registers : 
+	               18 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     18 Bit        Muxes := 4     
+	   2 Input     17 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 1     
+	   2 Input     15 Bit        Muxes := 1     
+	   2 Input     14 Bit        Muxes := 2     
+	   2 Input     13 Bit        Muxes := 2     
+	   2 Input     12 Bit        Muxes := 1     
+	   2 Input     11 Bit        Muxes := 1     
+	   6 Input     11 Bit        Muxes := 1     
+	   2 Input      9 Bit        Muxes := 1     
+Module sigmoid__5 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     18 Bit       Adders := 1     
+	   2 Input      1 Bit       Adders := 1     
++---Registers : 
+	               18 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     18 Bit        Muxes := 4     
+	   2 Input     17 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 1     
+	   2 Input     15 Bit        Muxes := 1     
+	   2 Input     14 Bit        Muxes := 2     
+	   2 Input     13 Bit        Muxes := 2     
+	   2 Input     12 Bit        Muxes := 1     
+	   2 Input     11 Bit        Muxes := 1     
+	   6 Input     11 Bit        Muxes := 1     
+	   2 Input      9 Bit        Muxes := 1     
+Module sigmoid__6 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     18 Bit       Adders := 1     
+	   2 Input      1 Bit       Adders := 1     
++---Registers : 
+	               18 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     18 Bit        Muxes := 4     
+	   2 Input     17 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 1     
+	   2 Input     15 Bit        Muxes := 1     
+	   2 Input     14 Bit        Muxes := 2     
+	   2 Input     13 Bit        Muxes := 2     
+	   2 Input     12 Bit        Muxes := 1     
+	   2 Input     11 Bit        Muxes := 1     
+	   6 Input     11 Bit        Muxes := 1     
+	   2 Input      9 Bit        Muxes := 1     
+Module sigmoid__7 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     18 Bit       Adders := 1     
+	   2 Input      1 Bit       Adders := 1     
++---Registers : 
+	               18 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     18 Bit        Muxes := 4     
+	   2 Input     17 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 1     
+	   2 Input     15 Bit        Muxes := 1     
+	   2 Input     14 Bit        Muxes := 2     
+	   2 Input     13 Bit        Muxes := 2     
+	   2 Input     12 Bit        Muxes := 1     
+	   2 Input     11 Bit        Muxes := 1     
+	   6 Input     11 Bit        Muxes := 1     
+	   2 Input      9 Bit        Muxes := 1     
+Module sigmoid__8 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     18 Bit       Adders := 1     
+	   2 Input      1 Bit       Adders := 1     
++---Registers : 
+	               18 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     18 Bit        Muxes := 4     
+	   2 Input     17 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 1     
+	   2 Input     15 Bit        Muxes := 1     
+	   2 Input     14 Bit        Muxes := 2     
+	   2 Input     13 Bit        Muxes := 2     
+	   2 Input     12 Bit        Muxes := 1     
+	   2 Input     11 Bit        Muxes := 1     
+	   6 Input     11 Bit        Muxes := 1     
+	   2 Input      9 Bit        Muxes := 1     
+Module sigmoid__9 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     18 Bit       Adders := 1     
+	   2 Input      1 Bit       Adders := 1     
++---Registers : 
+	               18 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     18 Bit        Muxes := 4     
+	   2 Input     17 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 1     
+	   2 Input     15 Bit        Muxes := 1     
+	   2 Input     14 Bit        Muxes := 2     
+	   2 Input     13 Bit        Muxes := 2     
+	   2 Input     12 Bit        Muxes := 1     
+	   2 Input     11 Bit        Muxes := 1     
+	   6 Input     11 Bit        Muxes := 1     
+	   2 Input      9 Bit        Muxes := 1     
+Module sigmoid__10 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     18 Bit       Adders := 1     
+	   2 Input      1 Bit       Adders := 1     
++---Registers : 
+	               18 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     18 Bit        Muxes := 4     
+	   2 Input     17 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 1     
+	   2 Input     15 Bit        Muxes := 1     
+	   2 Input     14 Bit        Muxes := 2     
+	   2 Input     13 Bit        Muxes := 2     
+	   2 Input     12 Bit        Muxes := 1     
+	   2 Input     11 Bit        Muxes := 1     
+	   6 Input     11 Bit        Muxes := 1     
+	   2 Input      9 Bit        Muxes := 1     
+Module sigmoid__11 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     18 Bit       Adders := 1     
+	   2 Input      1 Bit       Adders := 1     
++---Registers : 
+	               18 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     18 Bit        Muxes := 4     
+	   2 Input     17 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 1     
+	   2 Input     15 Bit        Muxes := 1     
+	   2 Input     14 Bit        Muxes := 2     
+	   2 Input     13 Bit        Muxes := 2     
+	   2 Input     12 Bit        Muxes := 1     
+	   2 Input     11 Bit        Muxes := 1     
+	   6 Input     11 Bit        Muxes := 1     
+	   2 Input      9 Bit        Muxes := 1     
+Module sigmoid__12 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     18 Bit       Adders := 1     
+	   2 Input      1 Bit       Adders := 1     
++---Registers : 
+	               18 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     18 Bit        Muxes := 4     
+	   2 Input     17 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 1     
+	   2 Input     15 Bit        Muxes := 1     
+	   2 Input     14 Bit        Muxes := 2     
+	   2 Input     13 Bit        Muxes := 2     
+	   2 Input     12 Bit        Muxes := 1     
+	   2 Input     11 Bit        Muxes := 1     
+	   6 Input     11 Bit        Muxes := 1     
+	   2 Input      9 Bit        Muxes := 1     
+Module sigmoid__13 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     18 Bit       Adders := 1     
+	   2 Input      1 Bit       Adders := 1     
++---Registers : 
+	               18 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     18 Bit        Muxes := 4     
+	   2 Input     17 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 1     
+	   2 Input     15 Bit        Muxes := 1     
+	   2 Input     14 Bit        Muxes := 2     
+	   2 Input     13 Bit        Muxes := 2     
+	   2 Input     12 Bit        Muxes := 1     
+	   2 Input     11 Bit        Muxes := 1     
+	   6 Input     11 Bit        Muxes := 1     
+	   2 Input      9 Bit        Muxes := 1     
+Module sigmoid__14 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     18 Bit       Adders := 1     
+	   2 Input      1 Bit       Adders := 1     
++---Registers : 
+	               18 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     18 Bit        Muxes := 4     
+	   2 Input     17 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 1     
+	   2 Input     15 Bit        Muxes := 1     
+	   2 Input     14 Bit        Muxes := 2     
+	   2 Input     13 Bit        Muxes := 2     
+	   2 Input     12 Bit        Muxes := 1     
+	   2 Input     11 Bit        Muxes := 1     
+	   6 Input     11 Bit        Muxes := 1     
+	   2 Input      9 Bit        Muxes := 1     
+Module sigmoid__15 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     18 Bit       Adders := 1     
+	   2 Input      1 Bit       Adders := 1     
++---Registers : 
+	               18 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     18 Bit        Muxes := 4     
+	   2 Input     17 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 1     
+	   2 Input     15 Bit        Muxes := 1     
+	   2 Input     14 Bit        Muxes := 2     
+	   2 Input     13 Bit        Muxes := 2     
+	   2 Input     12 Bit        Muxes := 1     
+	   2 Input     11 Bit        Muxes := 1     
+	   6 Input     11 Bit        Muxes := 1     
+	   2 Input      9 Bit        Muxes := 1     
+Module sigmoid 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     18 Bit       Adders := 1     
+	   2 Input      1 Bit       Adders := 1     
++---Registers : 
+	               18 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     18 Bit        Muxes := 4     
+	   2 Input     17 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 1     
+	   2 Input     15 Bit        Muxes := 1     
+	   2 Input     14 Bit        Muxes := 2     
+	   2 Input     13 Bit        Muxes := 2     
+	   2 Input     12 Bit        Muxes := 1     
+	   2 Input     11 Bit        Muxes := 1     
+	   6 Input     11 Bit        Muxes := 1     
+	   2 Input      9 Bit        Muxes := 1     
+Module tanh__1 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     18 Bit       Adders := 1     
+	   2 Input      1 Bit       Adders := 1     
++---Registers : 
+	               18 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     18 Bit        Muxes := 4     
+	   2 Input     17 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 2     
+	   2 Input     15 Bit        Muxes := 2     
+	   2 Input     14 Bit        Muxes := 2     
+	   6 Input     14 Bit        Muxes := 1     
+	   2 Input     13 Bit        Muxes := 2     
+	   2 Input     11 Bit        Muxes := 1     
+Module tanh__2 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     18 Bit       Adders := 1     
+	   2 Input      1 Bit       Adders := 1     
++---Registers : 
+	               18 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     18 Bit        Muxes := 4     
+	   2 Input     17 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 2     
+	   2 Input     15 Bit        Muxes := 2     
+	   2 Input     14 Bit        Muxes := 2     
+	   6 Input     14 Bit        Muxes := 1     
+	   2 Input     13 Bit        Muxes := 2     
+	   2 Input     11 Bit        Muxes := 1     
+Module tanh__3 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     18 Bit       Adders := 1     
+	   2 Input      1 Bit       Adders := 1     
++---Registers : 
+	               18 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     18 Bit        Muxes := 4     
+	   2 Input     17 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 2     
+	   2 Input     15 Bit        Muxes := 2     
+	   2 Input     14 Bit        Muxes := 2     
+	   6 Input     14 Bit        Muxes := 1     
+	   2 Input     13 Bit        Muxes := 2     
+	   2 Input     11 Bit        Muxes := 1     
+Module tanh__4 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     18 Bit       Adders := 1     
+	   2 Input      1 Bit       Adders := 1     
++---Registers : 
+	               18 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     18 Bit        Muxes := 4     
+	   2 Input     17 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 2     
+	   2 Input     15 Bit        Muxes := 2     
+	   2 Input     14 Bit        Muxes := 2     
+	   6 Input     14 Bit        Muxes := 1     
+	   2 Input     13 Bit        Muxes := 2     
+	   2 Input     11 Bit        Muxes := 1     
+Module tanh__5 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     18 Bit       Adders := 1     
+	   2 Input      1 Bit       Adders := 1     
++---Registers : 
+	               18 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     18 Bit        Muxes := 4     
+	   2 Input     17 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 2     
+	   2 Input     15 Bit        Muxes := 2     
+	   2 Input     14 Bit        Muxes := 2     
+	   6 Input     14 Bit        Muxes := 1     
+	   2 Input     13 Bit        Muxes := 2     
+	   2 Input     11 Bit        Muxes := 1     
+Module tanh__6 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     18 Bit       Adders := 1     
+	   2 Input      1 Bit       Adders := 1     
++---Registers : 
+	               18 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     18 Bit        Muxes := 4     
+	   2 Input     17 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 2     
+	   2 Input     15 Bit        Muxes := 2     
+	   2 Input     14 Bit        Muxes := 2     
+	   6 Input     14 Bit        Muxes := 1     
+	   2 Input     13 Bit        Muxes := 2     
+	   2 Input     11 Bit        Muxes := 1     
+Module tanh__7 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     18 Bit       Adders := 1     
+	   2 Input      1 Bit       Adders := 1     
++---Registers : 
+	               18 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     18 Bit        Muxes := 4     
+	   2 Input     17 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 2     
+	   2 Input     15 Bit        Muxes := 2     
+	   2 Input     14 Bit        Muxes := 2     
+	   6 Input     14 Bit        Muxes := 1     
+	   2 Input     13 Bit        Muxes := 2     
+	   2 Input     11 Bit        Muxes := 1     
+Module tanh__8 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     18 Bit       Adders := 1     
+	   2 Input      1 Bit       Adders := 1     
++---Registers : 
+	               18 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     18 Bit        Muxes := 4     
+	   2 Input     17 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 2     
+	   2 Input     15 Bit        Muxes := 2     
+	   2 Input     14 Bit        Muxes := 2     
+	   6 Input     14 Bit        Muxes := 1     
+	   2 Input     13 Bit        Muxes := 2     
+	   2 Input     11 Bit        Muxes := 1     
+Module tanh__9 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     18 Bit       Adders := 1     
+	   2 Input      1 Bit       Adders := 1     
++---Registers : 
+	               18 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     18 Bit        Muxes := 4     
+	   2 Input     17 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 2     
+	   2 Input     15 Bit        Muxes := 2     
+	   2 Input     14 Bit        Muxes := 2     
+	   6 Input     14 Bit        Muxes := 1     
+	   2 Input     13 Bit        Muxes := 2     
+	   2 Input     11 Bit        Muxes := 1     
+Module tanh__10 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     18 Bit       Adders := 1     
+	   2 Input      1 Bit       Adders := 1     
++---Registers : 
+	               18 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     18 Bit        Muxes := 4     
+	   2 Input     17 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 2     
+	   2 Input     15 Bit        Muxes := 2     
+	   2 Input     14 Bit        Muxes := 2     
+	   6 Input     14 Bit        Muxes := 1     
+	   2 Input     13 Bit        Muxes := 2     
+	   2 Input     11 Bit        Muxes := 1     
+Module tanh__11 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     18 Bit       Adders := 1     
+	   2 Input      1 Bit       Adders := 1     
++---Registers : 
+	               18 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     18 Bit        Muxes := 4     
+	   2 Input     17 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 2     
+	   2 Input     15 Bit        Muxes := 2     
+	   2 Input     14 Bit        Muxes := 2     
+	   6 Input     14 Bit        Muxes := 1     
+	   2 Input     13 Bit        Muxes := 2     
+	   2 Input     11 Bit        Muxes := 1     
+Module tanh__12 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     18 Bit       Adders := 1     
+	   2 Input      1 Bit       Adders := 1     
++---Registers : 
+	               18 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     18 Bit        Muxes := 4     
+	   2 Input     17 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 2     
+	   2 Input     15 Bit        Muxes := 2     
+	   2 Input     14 Bit        Muxes := 2     
+	   6 Input     14 Bit        Muxes := 1     
+	   2 Input     13 Bit        Muxes := 2     
+	   2 Input     11 Bit        Muxes := 1     
+Module tanh__13 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     18 Bit       Adders := 1     
+	   2 Input      1 Bit       Adders := 1     
++---Registers : 
+	               18 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     18 Bit        Muxes := 4     
+	   2 Input     17 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 2     
+	   2 Input     15 Bit        Muxes := 2     
+	   2 Input     14 Bit        Muxes := 2     
+	   6 Input     14 Bit        Muxes := 1     
+	   2 Input     13 Bit        Muxes := 2     
+	   2 Input     11 Bit        Muxes := 1     
+Module tanh__14 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     18 Bit       Adders := 1     
+	   2 Input      1 Bit       Adders := 1     
++---Registers : 
+	               18 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     18 Bit        Muxes := 4     
+	   2 Input     17 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 2     
+	   2 Input     15 Bit        Muxes := 2     
+	   2 Input     14 Bit        Muxes := 2     
+	   6 Input     14 Bit        Muxes := 1     
+	   2 Input     13 Bit        Muxes := 2     
+	   2 Input     11 Bit        Muxes := 1     
+Module tanh__15 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     18 Bit       Adders := 1     
+	   2 Input      1 Bit       Adders := 1     
++---Registers : 
+	               18 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     18 Bit        Muxes := 4     
+	   2 Input     17 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 2     
+	   2 Input     15 Bit        Muxes := 2     
+	   2 Input     14 Bit        Muxes := 2     
+	   6 Input     14 Bit        Muxes := 1     
+	   2 Input     13 Bit        Muxes := 2     
+	   2 Input     11 Bit        Muxes := 1     
+Module tanh 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     18 Bit       Adders := 1     
+	   2 Input      1 Bit       Adders := 1     
++---Registers : 
+	               18 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     18 Bit        Muxes := 4     
+	   2 Input     17 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 2     
+	   2 Input     15 Bit        Muxes := 2     
+	   2 Input     14 Bit        Muxes := 2     
+	   6 Input     14 Bit        Muxes := 1     
+	   2 Input     13 Bit        Muxes := 2     
+	   2 Input     11 Bit        Muxes := 1     
+Module network 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     18 Bit       Adders := 16    
++---Registers : 
+	              608 Bit    Registers := 1     
+	              288 Bit    Registers := 7     
+	               18 Bit    Registers := 17    
+	                5 Bit    Registers := 1     
++---Muxes : 
+	   2 Input    288 Bit        Muxes := 1     
+	   4 Input    288 Bit        Muxes := 2     
+	   2 Input     18 Bit        Muxes := 1     
+	  20 Input      1 Bit        Muxes := 5     
+Module array_prod 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     18 Bit       Adders := 2     
+	   3 Input     18 Bit       Adders := 1     
+	   2 Input      2 Bit       Adders := 1     
++---Registers : 
+	              148 Bit    Registers := 1     
+	               36 Bit    Registers := 1     
+	               18 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
++---Muxes : 
+	   4 Input     18 Bit        Muxes := 8     
+	   6 Input      5 Bit        Muxes := 1     
+	   5 Input      2 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:17 ; elapsed = 00:00:20 . Memory (MB): peak = 1513.492 ; gain = 667.887 ; free physical = 3127 ; free virtual = 8743
+---------------------------------------------------------------------------------
+Start Cross Boundary Optimization
+---------------------------------------------------------------------------------
+DSP Report: Generating DSP outputMAC8, operation Mode is: C+A*B.
+DSP Report: operator outputMAC8 is absorbed into DSP outputMAC8.
+DSP Report: operator outputMAC9 is absorbed into DSP outputMAC8.
+DSP Report: Generating DSP outputMAC7, operation Mode is: C+A*B.
+DSP Report: operator outputMAC7 is absorbed into DSP outputMAC7.
+DSP Report: operator outputMAC8 is absorbed into DSP outputMAC7.
+DSP Report: Generating DSP outputMAC6, operation Mode is: C+A*B.
+DSP Report: operator outputMAC6 is absorbed into DSP outputMAC6.
+DSP Report: operator outputMAC7 is absorbed into DSP outputMAC6.
+DSP Report: Generating DSP outputMAC5, operation Mode is: C+A*B.
+DSP Report: operator outputMAC5 is absorbed into DSP outputMAC5.
+DSP Report: operator outputMAC6 is absorbed into DSP outputMAC5.
+DSP Report: Generating DSP outputMAC4, operation Mode is: C+A*B.
+DSP Report: operator outputMAC4 is absorbed into DSP outputMAC4.
+DSP Report: operator outputMAC5 is absorbed into DSP outputMAC4.
+DSP Report: Generating DSP outputMAC3, operation Mode is: C+A*B.
+DSP Report: operator outputMAC3 is absorbed into DSP outputMAC3.
+DSP Report: operator outputMAC4 is absorbed into DSP outputMAC3.
+DSP Report: Generating DSP outputMAC2, operation Mode is: C+A*B.
+DSP Report: operator outputMAC2 is absorbed into DSP outputMAC2.
+DSP Report: operator outputMAC3 is absorbed into DSP outputMAC2.
+DSP Report: Generating DSP outputMAC1, operation Mode is: C+A*B.
+DSP Report: operator outputMAC1 is absorbed into DSP outputMAC1.
+DSP Report: operator outputMAC2 is absorbed into DSP outputMAC1.
+DSP Report: Generating DSP outputMAC8, operation Mode is: C+A*B.
+DSP Report: operator outputMAC8 is absorbed into DSP outputMAC8.
+DSP Report: operator outputMAC9 is absorbed into DSP outputMAC8.
+DSP Report: Generating DSP outputMAC7, operation Mode is: C+A*B.
+DSP Report: operator outputMAC7 is absorbed into DSP outputMAC7.
+DSP Report: operator outputMAC8 is absorbed into DSP outputMAC7.
+DSP Report: Generating DSP outputMAC6, operation Mode is: C+A*B.
+DSP Report: operator outputMAC6 is absorbed into DSP outputMAC6.
+DSP Report: operator outputMAC7 is absorbed into DSP outputMAC6.
+DSP Report: Generating DSP outputMAC5, operation Mode is: C+A*B.
+DSP Report: operator outputMAC5 is absorbed into DSP outputMAC5.
+DSP Report: operator outputMAC6 is absorbed into DSP outputMAC5.
+DSP Report: Generating DSP outputMAC4, operation Mode is: C+A*B.
+DSP Report: operator outputMAC4 is absorbed into DSP outputMAC4.
+DSP Report: operator outputMAC5 is absorbed into DSP outputMAC4.
+DSP Report: Generating DSP outputMAC3, operation Mode is: C+A*B.
+DSP Report: operator outputMAC3 is absorbed into DSP outputMAC3.
+DSP Report: operator outputMAC4 is absorbed into DSP outputMAC3.
+DSP Report: Generating DSP outputMAC2, operation Mode is: C+A*B.
+DSP Report: operator outputMAC2 is absorbed into DSP outputMAC2.
+DSP Report: operator outputMAC3 is absorbed into DSP outputMAC2.
+DSP Report: Generating DSP outputMAC1, operation Mode is: C+A*B.
+DSP Report: operator outputMAC1 is absorbed into DSP outputMAC1.
+DSP Report: operator outputMAC2 is absorbed into DSP outputMAC1.
+DSP Report: Generating DSP outputInt, operation Mode is: A*B.
+DSP Report: operator outputInt is absorbed into DSP outputInt.
+DSP Report: Generating DSP outputInt, operation Mode is: A*B.
+DSP Report: operator outputInt is absorbed into DSP outputInt.
+DSP Report: Generating DSP outputInt, operation Mode is: A*B.
+DSP Report: operator outputInt is absorbed into DSP outputInt.
+DSP Report: Generating DSP outputInt, operation Mode is: A*B.
+DSP Report: operator outputInt is absorbed into DSP outputInt.
+DSP Report: Generating DSP outputInt, operation Mode is: A*B.
+DSP Report: operator outputInt is absorbed into DSP outputInt.
+DSP Report: Generating DSP outputInt, operation Mode is: A*B.
+DSP Report: operator outputInt is absorbed into DSP outputInt.
+DSP Report: Generating DSP outputInt, operation Mode is: A*B.
+DSP Report: operator outputInt is absorbed into DSP outputInt.
+DSP Report: Generating DSP outputInt, operation Mode is: A*B.
+DSP Report: operator outputInt is absorbed into DSP outputInt.
+DSP Report: Generating DSP outputInt, operation Mode is: A*B.
+DSP Report: operator outputInt is absorbed into DSP outputInt.
+DSP Report: Generating DSP outputInt, operation Mode is: A*B.
+DSP Report: operator outputInt is absorbed into DSP outputInt.
+DSP Report: Generating DSP outputInt, operation Mode is: A*B.
+DSP Report: operator outputInt is absorbed into DSP outputInt.
+DSP Report: Generating DSP outputInt, operation Mode is: A*B.
+DSP Report: operator outputInt is absorbed into DSP outputInt.
+DSP Report: Generating DSP outputInt, operation Mode is: A*B.
+DSP Report: operator outputInt is absorbed into DSP outputInt.
+DSP Report: Generating DSP outputInt, operation Mode is: A*B.
+DSP Report: operator outputInt is absorbed into DSP outputInt.
+DSP Report: Generating DSP outputInt, operation Mode is: A*B.
+DSP Report: operator outputInt is absorbed into DSP outputInt.
+DSP Report: Generating DSP outputInt, operation Mode is: A*B.
+DSP Report: operator outputInt is absorbed into DSP outputInt.
+DSP Report: Generating DSP outputInt, operation Mode is: A*B.
+DSP Report: operator outputInt is absorbed into DSP outputInt.
+DSP Report: Generating DSP outputInt, operation Mode is: A*B.
+DSP Report: operator outputInt is absorbed into DSP outputInt.
+DSP Report: Generating DSP outputInt, operation Mode is: A*B.
+DSP Report: operator outputInt is absorbed into DSP outputInt.
+DSP Report: Generating DSP outputInt, operation Mode is: A*B.
+DSP Report: operator outputInt is absorbed into DSP outputInt.
+DSP Report: Generating DSP outputInt, operation Mode is: A*B.
+DSP Report: operator outputInt is absorbed into DSP outputInt.
+DSP Report: Generating DSP outputInt, operation Mode is: A*B.
+DSP Report: operator outputInt is absorbed into DSP outputInt.
+DSP Report: Generating DSP outputInt, operation Mode is: A*B.
+DSP Report: operator outputInt is absorbed into DSP outputInt.
+DSP Report: Generating DSP outputInt, operation Mode is: A*B.
+DSP Report: operator outputInt is absorbed into DSP outputInt.
+DSP Report: Generating DSP outputInt, operation Mode is: A*B.
+DSP Report: operator outputInt is absorbed into DSP outputInt.
+DSP Report: Generating DSP outputInt, operation Mode is: A*B.
+DSP Report: operator outputInt is absorbed into DSP outputInt.
+DSP Report: Generating DSP outputInt, operation Mode is: A*B.
+DSP Report: operator outputInt is absorbed into DSP outputInt.
+DSP Report: Generating DSP outputInt, operation Mode is: A*B.
+DSP Report: operator outputInt is absorbed into DSP outputInt.
+DSP Report: Generating DSP outputInt, operation Mode is: A*B.
+DSP Report: operator outputInt is absorbed into DSP outputInt.
+DSP Report: Generating DSP outputInt, operation Mode is: A*B.
+DSP Report: operator outputInt is absorbed into DSP outputInt.
+DSP Report: Generating DSP outputInt, operation Mode is: A*B.
+DSP Report: operator outputInt is absorbed into DSP outputInt.
+DSP Report: Generating DSP outputInt, operation Mode is: A*B.
+DSP Report: operator outputInt is absorbed into DSP outputInt.
+WARNING: [Synth 8-3936] Found unconnected internal register 'elemWiseMult_out_reg' and it is trimmed from '608' to '599' bits. [/home/josefonseca/Documents/thesis/verilog/network/network.v:265]
+WARNING: [Synth 8-3936] Found unconnected internal register 'elemWise_mult1_reg' and it is trimmed from '288' to '18' bits. [/home/josefonseca/Documents/thesis/verilog/network/network.v:201]
+WARNING: [Synth 8-3936] Found unconnected internal register 'elemWise_mult2_FF_reg' and it is trimmed from '288' to '18' bits. [/home/josefonseca/Documents/thesis/verilog/network/network.v:259]
+DSP Report: Generating DSP elemWiseMult_out0, operation Mode is: A2*B2.
+DSP Report: register elemWise_mult1_reg is absorbed into DSP elemWiseMult_out0.
+DSP Report: register elemWise_mult2_FF_reg is absorbed into DSP elemWiseMult_out0.
+DSP Report: operator elemWiseMult_out0 is absorbed into DSP elemWiseMult_out0.
+DSP Report: Generating DSP elemWiseMult_out0, operation Mode is: A2*B2.
+DSP Report: register B is absorbed into DSP elemWiseMult_out0.
+DSP Report: register A is absorbed into DSP elemWiseMult_out0.
+DSP Report: operator elemWiseMult_out0 is absorbed into DSP elemWiseMult_out0.
+DSP Report: Generating DSP elemWiseMult_out0, operation Mode is: A2*B2.
+DSP Report: register B is absorbed into DSP elemWiseMult_out0.
+DSP Report: register A is absorbed into DSP elemWiseMult_out0.
+DSP Report: operator elemWiseMult_out0 is absorbed into DSP elemWiseMult_out0.
+DSP Report: Generating DSP elemWiseMult_out0, operation Mode is: A2*B2.
+DSP Report: register B is absorbed into DSP elemWiseMult_out0.
+DSP Report: register A is absorbed into DSP elemWiseMult_out0.
+DSP Report: operator elemWiseMult_out0 is absorbed into DSP elemWiseMult_out0.
+DSP Report: Generating DSP elemWiseMult_out0, operation Mode is: A2*B2.
+DSP Report: register B is absorbed into DSP elemWiseMult_out0.
+DSP Report: register A is absorbed into DSP elemWiseMult_out0.
+DSP Report: operator elemWiseMult_out0 is absorbed into DSP elemWiseMult_out0.
+DSP Report: Generating DSP elemWiseMult_out0, operation Mode is: A2*B2.
+DSP Report: register B is absorbed into DSP elemWiseMult_out0.
+DSP Report: register A is absorbed into DSP elemWiseMult_out0.
+DSP Report: operator elemWiseMult_out0 is absorbed into DSP elemWiseMult_out0.
+DSP Report: Generating DSP elemWiseMult_out0, operation Mode is: A2*B2.
+DSP Report: register B is absorbed into DSP elemWiseMult_out0.
+DSP Report: register A is absorbed into DSP elemWiseMult_out0.
+DSP Report: operator elemWiseMult_out0 is absorbed into DSP elemWiseMult_out0.
+DSP Report: Generating DSP elemWiseMult_out0, operation Mode is: A2*B2.
+DSP Report: register B is absorbed into DSP elemWiseMult_out0.
+DSP Report: register A is absorbed into DSP elemWiseMult_out0.
+DSP Report: operator elemWiseMult_out0 is absorbed into DSP elemWiseMult_out0.
+DSP Report: Generating DSP elemWiseMult_out0, operation Mode is: A2*B2.
+DSP Report: register B is absorbed into DSP elemWiseMult_out0.
+DSP Report: register A is absorbed into DSP elemWiseMult_out0.
+DSP Report: operator elemWiseMult_out0 is absorbed into DSP elemWiseMult_out0.
+DSP Report: Generating DSP elemWiseMult_out0, operation Mode is: A2*B2.
+DSP Report: register B is absorbed into DSP elemWiseMult_out0.
+DSP Report: register A is absorbed into DSP elemWiseMult_out0.
+DSP Report: operator elemWiseMult_out0 is absorbed into DSP elemWiseMult_out0.
+DSP Report: Generating DSP elemWiseMult_out0, operation Mode is: A2*B2.
+DSP Report: register B is absorbed into DSP elemWiseMult_out0.
+DSP Report: register A is absorbed into DSP elemWiseMult_out0.
+DSP Report: operator elemWiseMult_out0 is absorbed into DSP elemWiseMult_out0.
+DSP Report: Generating DSP elemWiseMult_out0, operation Mode is: A2*B2.
+DSP Report: register B is absorbed into DSP elemWiseMult_out0.
+DSP Report: register A is absorbed into DSP elemWiseMult_out0.
+DSP Report: operator elemWiseMult_out0 is absorbed into DSP elemWiseMult_out0.
+DSP Report: Generating DSP elemWiseMult_out0, operation Mode is: A2*B2.
+DSP Report: register B is absorbed into DSP elemWiseMult_out0.
+DSP Report: register A is absorbed into DSP elemWiseMult_out0.
+DSP Report: operator elemWiseMult_out0 is absorbed into DSP elemWiseMult_out0.
+DSP Report: Generating DSP elemWiseMult_out0, operation Mode is: A2*B2.
+DSP Report: register B is absorbed into DSP elemWiseMult_out0.
+DSP Report: register A is absorbed into DSP elemWiseMult_out0.
+DSP Report: operator elemWiseMult_out0 is absorbed into DSP elemWiseMult_out0.
+DSP Report: Generating DSP elemWiseMult_out0, operation Mode is: A2*B2.
+DSP Report: register B is absorbed into DSP elemWiseMult_out0.
+DSP Report: register A is absorbed into DSP elemWiseMult_out0.
+DSP Report: operator elemWiseMult_out0 is absorbed into DSP elemWiseMult_out0.
+DSP Report: Generating DSP elemWiseMult_out0, operation Mode is: A2*B2.
+DSP Report: register B is absorbed into DSP elemWiseMult_out0.
+DSP Report: register A is absorbed into DSP elemWiseMult_out0.
+DSP Report: operator elemWiseMult_out0 is absorbed into DSP elemWiseMult_out0.
+DSP Report: Generating DSP PERCEPTRON/outputMAC0, operation Mode is: A*B.
+DSP Report: operator PERCEPTRON/outputMAC0 is absorbed into DSP PERCEPTRON/outputMAC0.
+DSP Report: Generating DSP PERCEPTRON/outputMAC0, operation Mode is: A*B.
+DSP Report: operator PERCEPTRON/outputMAC0 is absorbed into DSP PERCEPTRON/outputMAC0.
+DSP Report: Generating DSP PERCEPTRON/outputMAC0, operation Mode is: A*B.
+DSP Report: operator PERCEPTRON/outputMAC0 is absorbed into DSP PERCEPTRON/outputMAC0.
+DSP Report: Generating DSP PERCEPTRON/outputMAC0, operation Mode is: A*B.
+DSP Report: operator PERCEPTRON/outputMAC0 is absorbed into DSP PERCEPTRON/outputMAC0.
+WARNING: [Synth 8-3331] design top_network has unconnected port trainingFlag
+---------------------------------------------------------------------------------
+Finished Cross Boundary Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 1513.492 ; gain = 667.887 ; free physical = 3163 ; free virtual = 8781
+---------------------------------------------------------------------------------
+Finished Parallel Reinference  : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 1513.492 ; gain = 667.887 ; free physical = 3163 ; free virtual = 8781
+
+Report RTL Partitions: 
++------+------------------------------+------------+----------+
+|      |RTL Partition                 |Replication |Instances |
++------+------------------------------+------------+----------+
+|1     |dot_prod__GB0                 |           4|     31875|
+|2     |dot_prod__GB1                 |           4|      8995|
+|3     |dot_prod__parameterized0__GB0 |           4|     31903|
+|4     |dot_prod__parameterized0__GB1 |           4|      8995|
+|5     |gate__GC0                     |           4|      2306|
+|6     |network__GC0                  |           1|     32452|
+|7     |top_network__GC0              |           1|      1238|
++------+------------------------------+------------+----------+
+Optimized 0 bits of RAM "WRAM_Z_X/RAM_matrix_reg" due to constant propagation. Old ram width 288 bits, new ram width 288 bits
+INFO: [Synth 8-5583] The signal WRAM_Z_X/RAM_matrix_reg is implemented as block RAM but is better mapped onto distributed LUT RAM for the following reason(s): The depth (1 address bits) is shallow. Please use attribute (* ram_style = "distributed" *) to instruct Vivado to infer distributed LUT RAM.
+Optimized 0 bits of RAM "WRAM_Z_Y/RAM_matrix_reg" due to constant propagation. Old ram width 288 bits, new ram width 288 bits
+Optimized 0 bits of RAM "WRAM_I_X/RAM_matrix_reg" due to constant propagation. Old ram width 288 bits, new ram width 288 bits
+INFO: [Synth 8-5583] The signal WRAM_I_X/RAM_matrix_reg is implemented as block RAM but is better mapped onto distributed LUT RAM for the following reason(s): The depth (1 address bits) is shallow. Please use attribute (* ram_style = "distributed" *) to instruct Vivado to infer distributed LUT RAM.
+Optimized 0 bits of RAM "WRAM_I_Y/RAM_matrix_reg" due to constant propagation. Old ram width 288 bits, new ram width 288 bits
+Optimized 0 bits of RAM "WRAM_F_X/RAM_matrix_reg" due to constant propagation. Old ram width 288 bits, new ram width 288 bits
+INFO: [Synth 8-5583] The signal WRAM_F_X/RAM_matrix_reg is implemented as block RAM but is better mapped onto distributed LUT RAM for the following reason(s): The depth (1 address bits) is shallow. Please use attribute (* ram_style = "distributed" *) to instruct Vivado to infer distributed LUT RAM.
+Optimized 0 bits of RAM "WRAM_F_Y/RAM_matrix_reg" due to constant propagation. Old ram width 288 bits, new ram width 288 bits
+Optimized 0 bits of RAM "WRAM_O_X/RAM_matrix_reg" due to constant propagation. Old ram width 288 bits, new ram width 288 bits
+INFO: [Synth 8-5583] The signal WRAM_O_X/RAM_matrix_reg is implemented as block RAM but is better mapped onto distributed LUT RAM for the following reason(s): The depth (1 address bits) is shallow. Please use attribute (* ram_style = "distributed" *) to instruct Vivado to infer distributed LUT RAM.
+Optimized 0 bits of RAM "WRAM_O_Y/RAM_matrix_reg" due to constant propagation. Old ram width 288 bits, new ram width 288 bits
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+ROM:
++-------------+------------+---------------+----------------+
+|Module Name  | RTL Object | Depth x Width | Implemented As | 
++-------------+------------+---------------+----------------+
+|network      | rom        | 32x2          | LUT            | 
+|network      | rom__1     | 32x1          | LUT            | 
+|network__GC0 | rom        | 32x2          | LUT            | 
+|network__GC0 | rom__2     | 32x1          | LUT            | 
++-------------+------------+---------------+----------------+
+
+
+Block RAM:
++-------------+-------------------------+------------------------+---+---+------------------------+---+---+--------------+--------+--------+-------------------+
+|Module Name  | RTL Object              | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | OUT_REG      | RAMB18 | RAMB36 | Hierarchical Name | 
++-------------+-------------------------+------------------------+---+---+------------------------+---+---+--------------+--------+--------+-------------------+
+|network__GC0 | WRAM_Z_X/RAM_matrix_reg | 2 x 288(READ_FIRST)    | W |   | 2 x 288(WRITE_FIRST)   |   | R | Port A and B | 0      | 4      | extram__9         | 
+|network__GC0 | WRAM_Z_Y/RAM_matrix_reg | 16 x 288(READ_FIRST)   | W |   | 16 x 288(WRITE_FIRST)  |   | R | Port A and B | 0      | 4      | extram__11        | 
+|network__GC0 | WRAM_I_X/RAM_matrix_reg | 2 x 288(READ_FIRST)    | W |   | 2 x 288(WRITE_FIRST)   |   | R | Port A and B | 0      | 4      | extram__13        | 
+|network__GC0 | WRAM_I_Y/RAM_matrix_reg | 16 x 288(READ_FIRST)   | W |   | 16 x 288(WRITE_FIRST)  |   | R | Port A and B | 0      | 4      | extram__15        | 
+|network__GC0 | WRAM_F_X/RAM_matrix_reg | 2 x 288(READ_FIRST)    | W |   | 2 x 288(WRITE_FIRST)   |   | R | Port A and B | 0      | 4      | extram__17        | 
+|network__GC0 | WRAM_F_Y/RAM_matrix_reg | 16 x 288(READ_FIRST)   | W |   | 16 x 288(WRITE_FIRST)  |   | R | Port A and B | 0      | 4      | extram__19        | 
+|network__GC0 | WRAM_O_X/RAM_matrix_reg | 2 x 288(READ_FIRST)    | W |   | 2 x 288(WRITE_FIRST)   |   | R | Port A and B | 0      | 4      | extram__21        | 
+|network__GC0 | WRAM_O_Y/RAM_matrix_reg | 16 x 288(READ_FIRST)   | W |   | 16 x 288(WRITE_FIRST)  |   | R | Port A and B | 0      | 4      | extram__23        | 
++-------------+-------------------------+------------------------+---+---+------------------------+---+---+--------------+--------+--------+-------------------+
+
+Note: The table above shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. "Hierarchical Name" reflects the Block RAM name as it appears in the hierarchical module and only part of it is displayed.
+DSP:
++------------+-------------+--------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping | Neg Edge Clk | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+-------------+--------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|dot_prod    | C+A*B       | No           | 18     | 18     | 37     | 25     | 37     | 0    | 0    | 0    | 1    | 1     | 0    | 0    | 
+|dot_prod    | C+A*B       | No           | 18     | 18     | 37     | 25     | 37     | 0    | 0    | 0    | 1    | 1     | 0    | 0    | 
+|dot_prod    | C+A*B       | No           | 18     | 18     | 37     | 25     | 37     | 0    | 0    | 0    | 1    | 1     | 0    | 0    | 
+|dot_prod    | C+A*B       | No           | 18     | 18     | 37     | 25     | 37     | 0    | 0    | 0    | 1    | 1     | 0    | 0    | 
+|dot_prod    | C+A*B       | No           | 18     | 18     | 37     | 25     | 37     | 0    | 0    | 0    | 1    | 1     | 0    | 0    | 
+|dot_prod    | C+A*B       | No           | 18     | 18     | 37     | 25     | 37     | 0    | 0    | 0    | 1    | 1     | 0    | 0    | 
+|dot_prod    | C+A*B       | No           | 18     | 18     | 37     | 25     | 37     | 0    | 0    | 0    | 1    | 1     | 0    | 0    | 
+|dot_prod    | C+A*B       | No           | 18     | 18     | 37     | 25     | 37     | 0    | 0    | 0    | 1    | 1     | 0    | 0    | 
+|dot_prod    | C+A*B       | No           | 18     | 18     | 37     | 25     | 37     | 0    | 0    | 0    | 1    | 1     | 0    | 0    | 
+|dot_prod    | C+A*B       | No           | 18     | 18     | 37     | 25     | 37     | 0    | 0    | 0    | 1    | 1     | 0    | 0    | 
+|dot_prod    | C+A*B       | No           | 18     | 18     | 37     | 25     | 37     | 0    | 0    | 0    | 1    | 1     | 0    | 0    | 
+|dot_prod    | C+A*B       | No           | 18     | 18     | 37     | 25     | 37     | 0    | 0    | 0    | 1    | 1     | 0    | 0    | 
+|dot_prod    | C+A*B       | No           | 18     | 18     | 37     | 25     | 37     | 0    | 0    | 0    | 1    | 1     | 0    | 0    | 
+|dot_prod    | C+A*B       | No           | 18     | 18     | 37     | 25     | 37     | 0    | 0    | 0    | 1    | 1     | 0    | 0    | 
+|dot_prod    | C+A*B       | No           | 18     | 18     | 37     | 25     | 37     | 0    | 0    | 0    | 1    | 1     | 0    | 0    | 
+|dot_prod    | C+A*B       | No           | 18     | 18     | 37     | 25     | 37     | 0    | 0    | 0    | 1    | 1     | 0    | 0    | 
+|sigmoid     | A*B         | No           | 18     | 18     | 48     | 25     | 36     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
+|sigmoid     | A*B         | No           | 18     | 18     | 48     | 25     | 36     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
+|sigmoid     | A*B         | No           | 18     | 18     | 48     | 25     | 36     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
+|sigmoid     | A*B         | No           | 18     | 18     | 48     | 25     | 36     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
+|sigmoid     | A*B         | No           | 18     | 18     | 48     | 25     | 36     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
+|sigmoid     | A*B         | No           | 18     | 18     | 48     | 25     | 36     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
+|sigmoid     | A*B         | No           | 18     | 18     | 48     | 25     | 36     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
+|sigmoid     | A*B         | No           | 18     | 18     | 48     | 25     | 36     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
+|sigmoid     | A*B         | No           | 18     | 18     | 48     | 25     | 36     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
+|sigmoid     | A*B         | No           | 18     | 18     | 48     | 25     | 36     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
+|sigmoid     | A*B         | No           | 18     | 18     | 48     | 25     | 36     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
+|sigmoid     | A*B         | No           | 18     | 18     | 48     | 25     | 36     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
+|sigmoid     | A*B         | No           | 18     | 18     | 48     | 25     | 36     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
+|sigmoid     | A*B         | No           | 18     | 18     | 48     | 25     | 36     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
+|sigmoid     | A*B         | No           | 18     | 18     | 48     | 25     | 36     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
+|sigmoid     | A*B         | No           | 18     | 18     | 48     | 25     | 36     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
+|tanh        | A*B         | No           | 18     | 18     | 48     | 25     | 36     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
+|tanh        | A*B         | No           | 18     | 18     | 48     | 25     | 36     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
+|tanh        | A*B         | No           | 18     | 18     | 48     | 25     | 36     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
+|tanh        | A*B         | No           | 18     | 18     | 48     | 25     | 36     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
+|tanh        | A*B         | No           | 18     | 18     | 48     | 25     | 36     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
+|tanh        | A*B         | No           | 18     | 18     | 48     | 25     | 36     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
+|tanh        | A*B         | No           | 18     | 18     | 48     | 25     | 36     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
+|tanh        | A*B         | No           | 18     | 18     | 48     | 25     | 36     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
+|tanh        | A*B         | No           | 18     | 18     | 48     | 25     | 36     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
+|tanh        | A*B         | No           | 18     | 18     | 48     | 25     | 36     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
+|tanh        | A*B         | No           | 18     | 18     | 48     | 25     | 36     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
+|tanh        | A*B         | No           | 18     | 18     | 48     | 25     | 36     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
+|tanh        | A*B         | No           | 18     | 18     | 48     | 25     | 36     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
+|tanh        | A*B         | No           | 18     | 18     | 48     | 25     | 36     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
+|tanh        | A*B         | No           | 18     | 18     | 48     | 25     | 36     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
+|tanh        | A*B         | No           | 18     | 18     | 48     | 25     | 36     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
+|network     | A2*B2       | No           | 18     | 18     | 48     | 25     | 36     | 1    | 1    | 1    | 1    | 1     | 0    | 0    | 
+|network     | A2*B2       | No           | 18     | 18     | 48     | 25     | 36     | 1    | 1    | 1    | 1    | 1     | 0    | 0    | 
+|network     | A2*B2       | No           | 18     | 18     | 48     | 25     | 36     | 1    | 1    | 1    | 1    | 1     | 0    | 0    | 
+|network     | A2*B2       | No           | 18     | 18     | 48     | 25     | 36     | 1    | 1    | 1    | 1    | 1     | 0    | 0    | 
+|network     | A2*B2       | No           | 18     | 18     | 48     | 25     | 36     | 1    | 1    | 1    | 1    | 1     | 0    | 0    | 
+|network     | A2*B2       | No           | 18     | 18     | 48     | 25     | 36     | 1    | 1    | 1    | 1    | 1     | 0    | 0    | 
+|network     | A2*B2       | No           | 18     | 18     | 48     | 25     | 36     | 1    | 1    | 1    | 1    | 1     | 0    | 0    | 
+|network     | A2*B2       | No           | 18     | 18     | 48     | 25     | 36     | 1    | 1    | 1    | 1    | 1     | 0    | 0    | 
+|network     | A2*B2       | No           | 18     | 18     | 48     | 25     | 36     | 1    | 1    | 1    | 1    | 1     | 0    | 0    | 
+|network     | A2*B2       | No           | 18     | 18     | 48     | 25     | 36     | 1    | 1    | 1    | 1    | 1     | 0    | 0    | 
+|network     | A2*B2       | No           | 18     | 18     | 48     | 25     | 36     | 1    | 1    | 1    | 1    | 1     | 0    | 0    | 
+|network     | A2*B2       | No           | 18     | 18     | 48     | 25     | 36     | 1    | 1    | 1    | 1    | 1     | 0    | 0    | 
+|network     | A2*B2       | No           | 18     | 18     | 48     | 25     | 36     | 1    | 1    | 1    | 1    | 1     | 0    | 0    | 
+|network     | A2*B2       | No           | 18     | 18     | 48     | 25     | 36     | 1    | 1    | 1    | 1    | 1     | 0    | 0    | 
+|network     | A2*B2       | No           | 18     | 18     | 48     | 25     | 36     | 1    | 1    | 1    | 1    | 1     | 0    | 0    | 
+|network     | A2*B2       | No           | 18     | 18     | 48     | 25     | 36     | 1    | 1    | 1    | 1    | 1     | 0    | 0    | 
+|array_prod  | A*B         | No           | 18     | 18     | 48     | 25     | 36     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
+|array_prod  | A*B         | No           | 18     | 18     | 48     | 25     | 36     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
+|array_prod  | A*B         | No           | 18     | 18     | 48     | 25     | 36     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
+|array_prod  | A*B         | No           | 18     | 18     | 48     | 25     | 36     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
++------------+-------------+--------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Area Optimization : Time (s): cpu = 00:00:34 ; elapsed = 00:00:36 . Memory (MB): peak = 1513.492 ; gain = 667.887 ; free physical = 3143 ; free virtual = 8763
+---------------------------------------------------------------------------------
+Finished Parallel Area Optimization  : Time (s): cpu = 00:00:34 ; elapsed = 00:00:36 . Memory (MB): peak = 1513.492 ; gain = 667.887 ; free physical = 3143 ; free virtual = 8763
+
+Report RTL Partitions: 
++------+------------------------------+------------+----------+
+|      |RTL Partition                 |Replication |Instances |
++------+------------------------------+------------+----------+
+|1     |dot_prod__GB0                 |           4|      3820|
+|2     |dot_prod__GB1                 |           4|       436|
+|3     |dot_prod__parameterized0__GB0 |           4|      2964|
+|4     |dot_prod__parameterized0__GB1 |           4|       436|
+|5     |gate__GC0                     |           4|      1058|
+|6     |network__GC0                  |           1|     11676|
+|7     |top_network__GC0              |           1|      1086|
++------+------------------------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:42 ; elapsed = 00:00:45 . Memory (MB): peak = 1513.492 ; gain = 667.887 ; free physical = 3040 ; free virtual = 8668
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:47 ; elapsed = 00:00:50 . Memory (MB): peak = 1560.492 ; gain = 714.887 ; free physical = 3017 ; free virtual = 8646
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++------+------------------------------+------------+----------+
+|      |RTL Partition                 |Replication |Instances |
++------+------------------------------+------------+----------+
+|1     |dot_prod__GB0                 |           4|      3820|
+|2     |dot_prod__GB1                 |           4|       436|
+|3     |dot_prod__parameterized0__GB0 |           4|      2964|
+|4     |dot_prod__parameterized0__GB1 |           4|       436|
+|5     |gate__GC0                     |           4|      1058|
+|6     |network__GC0                  |           1|     11667|
+|7     |top_network__GC0              |           1|      1086|
++------+------------------------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-4480] The timing for the instance \LSTM_LAYER/WRAM_Z_X/RAM_matrix_reg_0  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance \LSTM_LAYER/WRAM_Z_X/RAM_matrix_reg_1  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance \LSTM_LAYER/WRAM_Z_X/RAM_matrix_reg_2  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance \LSTM_LAYER/WRAM_Z_X/RAM_matrix_reg_3  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance \LSTM_LAYER/WRAM_Z_Y/RAM_matrix_reg_0  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance \LSTM_LAYER/WRAM_Z_Y/RAM_matrix_reg_1  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance \LSTM_LAYER/WRAM_Z_Y/RAM_matrix_reg_2  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance \LSTM_LAYER/WRAM_Z_Y/RAM_matrix_reg_3  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance \LSTM_LAYER/WRAM_I_X/RAM_matrix_reg_0  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance \LSTM_LAYER/WRAM_I_X/RAM_matrix_reg_1  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance \LSTM_LAYER/WRAM_I_X/RAM_matrix_reg_2  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance \LSTM_LAYER/WRAM_I_X/RAM_matrix_reg_3  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance \LSTM_LAYER/WRAM_I_Y/RAM_matrix_reg_0  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance \LSTM_LAYER/WRAM_I_Y/RAM_matrix_reg_1  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance \LSTM_LAYER/WRAM_I_Y/RAM_matrix_reg_2  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance \LSTM_LAYER/WRAM_I_Y/RAM_matrix_reg_3  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance \LSTM_LAYER/WRAM_F_X/RAM_matrix_reg_0  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance \LSTM_LAYER/WRAM_F_X/RAM_matrix_reg_1  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance \LSTM_LAYER/WRAM_F_X/RAM_matrix_reg_2  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance \LSTM_LAYER/WRAM_F_X/RAM_matrix_reg_3  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance \LSTM_LAYER/WRAM_F_Y/RAM_matrix_reg_0  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance \LSTM_LAYER/WRAM_F_Y/RAM_matrix_reg_1  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance \LSTM_LAYER/WRAM_F_Y/RAM_matrix_reg_2  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance \LSTM_LAYER/WRAM_F_Y/RAM_matrix_reg_3  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance \LSTM_LAYER/WRAM_O_X/RAM_matrix_reg_0  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance \LSTM_LAYER/WRAM_O_X/RAM_matrix_reg_1  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance \LSTM_LAYER/WRAM_O_X/RAM_matrix_reg_2  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance \LSTM_LAYER/WRAM_O_X/RAM_matrix_reg_3  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance \LSTM_LAYER/WRAM_O_Y/RAM_matrix_reg_0  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance \LSTM_LAYER/WRAM_O_Y/RAM_matrix_reg_1  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance \LSTM_LAYER/WRAM_O_Y/RAM_matrix_reg_2  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance \LSTM_LAYER/WRAM_O_Y/RAM_matrix_reg_3  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:01:00 ; elapsed = 00:01:03 . Memory (MB): peak = 1631.977 ; gain = 786.371 ; free physical = 2940 ; free virtual = 8568
+---------------------------------------------------------------------------------
+Finished Parallel Technology Mapping Optimization  : Time (s): cpu = 00:01:00 ; elapsed = 00:01:03 . Memory (MB): peak = 1631.977 ; gain = 786.371 ; free physical = 2940 ; free virtual = 8568
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:01:00 ; elapsed = 00:01:03 . Memory (MB): peak = 1631.977 ; gain = 786.371 ; free physical = 2940 ; free virtual = 8568
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:01:01 ; elapsed = 00:01:04 . Memory (MB): peak = 1631.977 ; gain = 786.371 ; free physical = 2941 ; free virtual = 8570
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:01 ; elapsed = 00:01:05 . Memory (MB): peak = 1631.977 ; gain = 786.371 ; free physical = 2941 ; free virtual = 8569
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:03 ; elapsed = 00:01:06 . Memory (MB): peak = 1631.977 ; gain = 786.371 ; free physical = 2949 ; free virtual = 8577
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:03 ; elapsed = 00:01:06 . Memory (MB): peak = 1631.977 ; gain = 786.371 ; free physical = 2949 ; free virtual = 8577
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:03 ; elapsed = 00:01:06 . Memory (MB): peak = 1631.977 ; gain = 786.371 ; free physical = 2946 ; free virtual = 8575
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:03 ; elapsed = 00:01:06 . Memory (MB): peak = 1631.977 ; gain = 786.371 ; free physical = 2945 ; free virtual = 8575
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+----------+------+
+|      |Cell      |Count |
++------+----------+------+
+|1     |BUFG      |     1|
+|2     |CARRY4    |  1023|
+|3     |DSP48E1_3 |    32|
+|4     |DSP48E1_4 |    16|
+|5     |DSP48E1_5 |    64|
+|6     |DSP48E1_6 |     4|
+|7     |LUT1      |  1408|
+|8     |LUT2      |  5412|
+|9     |LUT3      |  4134|
+|10    |LUT4      |  1848|
+|11    |LUT5      |  1034|
+|12    |LUT6      |   836|
+|13    |MUXF7     |    36|
+|14    |MUXF8     |    18|
+|15    |RAMB36E1  |    32|
+|16    |FDRE      | 11622|
+|17    |FDSE      |    13|
+|18    |IBUF      |    40|
+|19    |OBUF      |    20|
++------+----------+------+
+
+Report Instance Areas: 
++------+----------------------------+----------------------------+------+
+|      |Instance                    |Module                      |Cells |
++------+----------------------------+----------------------------+------+
+|1     |top                         |                            | 27593|
+|2     |  LSTM_LAYER                |network                     | 27301|
+|3     |    GATE_F                  |gate                        |  5281|
+|4     |      DOTPROD_X             |dot_prod_40                 |  2198|
+|5     |      DOTPROD_Y             |dot_prod__parameterized0_41 |  2212|
+|6     |    GATE_I                  |gate_0                      |  4992|
+|7     |      DOTPROD_X             |dot_prod_38                 |  2198|
+|8     |      DOTPROD_Y             |dot_prod__parameterized0_39 |  2212|
+|9     |    GATE_O                  |gate_1                      |  4993|
+|10    |      DOTPROD_X             |dot_prod_36                 |  2198|
+|11    |      DOTPROD_Y             |dot_prod__parameterized0_37 |  2212|
+|12    |    GATE_Z                  |gate_2                      |  5424|
+|13    |      DOTPROD_X             |dot_prod                    |  2216|
+|14    |      DOTPROD_Y             |dot_prod__parameterized0    |  2338|
+|15    |    WRAM_F_X                |weightRAM                   |   148|
+|16    |    WRAM_F_Y                |weightRAM__parameterized2   |   148|
+|17    |    WRAM_I_X                |weightRAM_3                 |   148|
+|18    |    WRAM_I_Y                |weightRAM__parameterized1   |   148|
+|19    |    WRAM_O_X                |weightRAM_4                 |   148|
+|20    |    WRAM_O_Y                |weightRAM__parameterized3   |   148|
+|21    |    WRAM_Z_X                |weightRAM_5                 |   148|
+|22    |    WRAM_Z_Y                |weightRAM__parameterized0   |   148|
+|23    |    \genblk1[0].sigmoid_i   |sigmoid                     |    97|
+|24    |    \genblk1[10].sigmoid_i  |sigmoid_6                   |    97|
+|25    |    \genblk1[11].sigmoid_i  |sigmoid_7                   |    97|
+|26    |    \genblk1[12].sigmoid_i  |sigmoid_8                   |    97|
+|27    |    \genblk1[13].sigmoid_i  |sigmoid_9                   |    97|
+|28    |    \genblk1[14].sigmoid_i  |sigmoid_10                  |    97|
+|29    |    \genblk1[15].sigmoid_i  |sigmoid_11                  |    96|
+|30    |    \genblk1[1].sigmoid_i   |sigmoid_12                  |    97|
+|31    |    \genblk1[2].sigmoid_i   |sigmoid_13                  |    97|
+|32    |    \genblk1[3].sigmoid_i   |sigmoid_14                  |    97|
+|33    |    \genblk1[4].sigmoid_i   |sigmoid_15                  |    97|
+|34    |    \genblk1[5].sigmoid_i   |sigmoid_16                  |    97|
+|35    |    \genblk1[6].sigmoid_i   |sigmoid_17                  |    97|
+|36    |    \genblk1[7].sigmoid_i   |sigmoid_18                  |    97|
+|37    |    \genblk1[8].sigmoid_i   |sigmoid_19                  |    97|
+|38    |    \genblk1[9].sigmoid_i   |sigmoid_20                  |    97|
+|39    |    \genblk2[0].tanh_i      |tanh                        |   147|
+|40    |    \genblk2[10].tanh_i     |tanh_21                     |   146|
+|41    |    \genblk2[11].tanh_i     |tanh_22                     |   146|
+|42    |    \genblk2[12].tanh_i     |tanh_23                     |   146|
+|43    |    \genblk2[13].tanh_i     |tanh_24                     |   146|
+|44    |    \genblk2[14].tanh_i     |tanh_25                     |   146|
+|45    |    \genblk2[15].tanh_i     |tanh_26                     |   147|
+|46    |    \genblk2[1].tanh_i      |tanh_27                     |   146|
+|47    |    \genblk2[2].tanh_i      |tanh_28                     |   146|
+|48    |    \genblk2[3].tanh_i      |tanh_29                     |   146|
+|49    |    \genblk2[4].tanh_i      |tanh_30                     |   146|
+|50    |    \genblk2[5].tanh_i      |tanh_31                     |   146|
+|51    |    \genblk2[6].tanh_i      |tanh_32                     |   146|
+|52    |    \genblk2[7].tanh_i      |tanh_33                     |   146|
+|53    |    \genblk2[8].tanh_i      |tanh_34                     |   147|
+|54    |    \genblk2[9].tanh_i      |tanh_35                     |   146|
+|55    |  PERCEPTRON                |array_prod                  |   230|
++------+----------------------------+----------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:03 ; elapsed = 00:01:06 . Memory (MB): peak = 1631.977 ; gain = 786.371 ; free physical = 2945 ; free virtual = 8575
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 4 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:55 ; elapsed = 00:00:56 . Memory (MB): peak = 1631.977 ; gain = 229.863 ; free physical = 2935 ; free virtual = 8564
+Synthesis Optimization Complete : Time (s): cpu = 00:01:03 ; elapsed = 00:01:06 . Memory (MB): peak = 1631.977 ; gain = 786.371 ; free physical = 2941 ; free virtual = 8570
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 1211 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+95 Infos, 211 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:07 ; elapsed = 00:01:10 . Memory (MB): peak = 1663.992 ; gain = 747.051 ; free physical = 2913 ; free virtual = 8545
+report_utilization: Time (s): cpu = 00:00:00.14 ; elapsed = 00:00:00.16 . Memory (MB): peak = 1696.012 ; gain = 0.000 ; free physical = 2930 ; free virtual = 8566
+INFO: [Common 17-206] Exiting Vivado at Wed Jun 22 00:07:41 2016...

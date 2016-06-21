@@ -68,11 +68,11 @@ module gate     #(parameter INPUT_SZ  = 8,
     dot_prod  #(HIDDEN_SZ,HIDDEN_SZ,QN,QM,DSP48_PER_ROW) DOTPROD_Y (weightMem_Y, prevLayerOut, clock, reset_dotProd_Y, dataReady_Y, colAddress_Y, outputVec_Y);
 	
     // The bias and X sum unit
-    always @(negedge dataReady_X or posedge reset) begin
+    always @(posedge clock) begin
         if (reset == 1'b1) begin
             adder_X    <= {LAYER_BITWIDTH{1'b0}};
         end
-        else begin        
+        else if(dataReady_X) begin        
             for (i = 0; i < HIDDEN_SZ; i = i + 1) begin
                 adder_X[i*BITWIDTH +: BITWIDTH] <= outputVec_X[i*BITWIDTH +: BITWIDTH] + biasVec[i*BITWIDTH +: BITWIDTH];
             end
@@ -80,11 +80,11 @@ module gate     #(parameter INPUT_SZ  = 8,
 	end
     
     // The X and Y sum unit
-    always @(negedge dataReady_Y or posedge reset) begin
+    always @(posedge clock) begin
         if (reset == 1'b1) begin
             gateOutput <= {LAYER_BITWIDTH{1'b0}};
         end
-        else begin
+        else if(dataReady_Y) begin
             for (i = 0; i < HIDDEN_SZ; i = i + 1) begin
                 gateOutput[i*BITWIDTH +: BITWIDTH] <= adder_X[i*BITWIDTH +: BITWIDTH] + outputVec_Y[i*BITWIDTH +: BITWIDTH];
             end

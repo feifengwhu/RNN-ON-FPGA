@@ -45,11 +45,11 @@ n@_opt3
 R3
 R0
 T_opt4
-!s110 1461952055
-Vk`]cVKfOZhVk8BHnOm0hY3
+!s110 1466527003
+VRUPWO_ziSDD28KBU_CPll0
 R1
-=1-d48564c0c748-57239e37-14944-3b91
-R2
+=1-d43d7e359f7e-57696d1b-1d0de-4be6
+R4
 n@_opt4
 R3
 R0
@@ -62,84 +62,93 @@ R2
 n@_opt5
 R3
 R0
+T_opt6
+!s110 1466527088
+VC7EN`OUcQReD@HQ471Q1f3
+R1
+=1-d43d7e359f7e-57696d70-78e76-4c28
+R4
+n@_opt6
+R3
+R0
 vdot_prod
-Z5 !s110 1464964080
+Z5 !s110 1466527139
 !i10b 1
-!s100 oHCm7P2f5b6C>Z[d<Nj_S2
-IHNPaG32oGPknzB[=7<`6M1
+!s100 0;]]@ldm__2cWG>m_ecXf0
+I6l2E8`FP]MO6K;IDIXVTE0
 Z6 VDg1SIo80bB@j0V0VzS_@n1
-Z7 d/home/josefonseca/thesis/verilog/dot_prod
-Z8 w1463750330
+R0
+w1466526971
 8dot_prod.v
 Fdot_prod.v
 L0 1
-Z9 OL;L;10.4c_5;61
+Z7 OL;L;10.4c_5;61
 r1
 !s85 0
 31
-Z10 !s108 1464964080.000000
-Z11 !s107 weightRAM.v|test.v|tb_dot_prod.v|dot_prod.v|
-Z12 !s90 dot_prod.v|tb_dot_prod.v|test.v|weightRAM.v|
+Z8 !s108 1466527139.000000
+Z9 !s107 weightRAM.v|test.v|tb_dot_prod.v|dot_prod.v|
+Z10 !s90 dot_prod.v|tb_dot_prod.v|test.v|weightRAM.v|
 !i113 0
-Z13 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z11 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 vtb_dot_prod
 R5
 !i10b 1
-!s100 `<kFQ>BVeeRC?NK;h<WTT3
-IgUB2C:d^4;?e^0:MhjW4G2
+!s100 YEc96Qae8b07Bi[YB^`XP3
+IY6?=ZBCg9fRnTEI]KUm<Z1
 R6
-R7
-R8
+R0
+w1466526981
 8tb_dot_prod.v
 Ftb_dot_prod.v
 L0 3
-R9
+R7
 r1
 !s85 0
 31
+R8
+R9
 R10
-R11
-R12
 !i113 0
-R13
+R11
 vtest
 R5
 !i10b 1
 !s100 jI:CUCA4h]D;^C8m=I`<o2
 IEH3R6Vmnen^LQ4VNQ2nWW3
 R6
-R7
-R8
+R0
+w1465990204
 8test.v
 Ftest.v
 L0 1
-R9
+R7
 r1
 !s85 0
 31
+R8
+R9
 R10
-R11
-R12
 !i113 0
-R13
+R11
 vweightRAM
 R5
 !i10b 1
-!s100 _edC1BENjcPn9;jc3a>jZ2
-I9PIdb:eX_FJ?DB6HlA8F02
+!s100 HSm76JbU[cQzbj_Qmod^11
+IgoW`Y?ci@QJ0KG7l[OKb_1
 R6
-R7
-R8
+R0
+w1466519359
 8weightRAM.v
 FweightRAM.v
 L0 1
-R9
+R7
 r1
 !s85 0
 31
+R8
+R9
 R10
-R11
-R12
 !i113 0
-R13
+R11
 nweight@r@a@m

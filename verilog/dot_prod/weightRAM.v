@@ -4,7 +4,7 @@ module weightRAM #(parameter NROW = 16,
                   (addressIn,
                    addressOut,
                    writeEn,
-                   clk,
+                   clock,
                    reset,
                    rowIn,
                    rowOut);
@@ -16,14 +16,14 @@ module weightRAM #(parameter NROW = 16,
     // The input/output definitions
     input       [ADDR_BITWIDTH-1:0]     addressIn;
     input       [ADDR_BITWIDTH-1:0]     addressOut;
-    input                               clk;
+    input                               clock;
     input                               reset;
     input                               writeEn;
     output reg  [OUTPUT_PORT_SIZE-1:0]  rowOut;
     input       [OUTPUT_PORT_SIZE-1:0]  rowIn;
 
     // The RAM registers
-    reg [BITWIDTH-1:0] RAM_matrix [0:NROW-1] [0:NCOL-1];    
+    (* ram_style = "block" *) reg [OUTPUT_PORT_SIZE-1:0] RAM_matrix [NCOL-1:0];    
 
     // Loading the RAM with dummy values
     integer i, j;
@@ -38,16 +38,15 @@ module weightRAM #(parameter NROW = 16,
     end
     */
     
-    always @(negedge clk) begin
+    always @(posedge clock) begin
         if(writeEn == 1'b1) begin
-            for(i = 0; i < NROW; i = i + 1) begin
-                RAM_matrix[i][addressIn] <= rowIn[i*BITWIDTH +: BITWIDTH];
-            end
+            RAM_matrix[addressIn] <= rowIn;
         end
         else begin
-            for(i = 0; i < NROW; i = i + 1) begin
-                rowOut[i*BITWIDTH +: BITWIDTH] <= RAM_matrix[i][addressOut];
-            end
+            if(reset == 1'b1) 
+                rowOut <= {OUTPUT_PORT_SIZE{1'b0}};
+            else
+                rowOut <= RAM_matrix[addressOut];
         end
     end
 

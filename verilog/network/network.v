@@ -109,6 +109,8 @@ module network  #(parameter INPUT_SZ   =  2,
     reg signed  [LAYER_BITWIDTH-1:0] elemWise_op2;
     reg signed  [LAYER_BITWIDTH-1:0] elemWise_mult1;
     wire signed  [LAYER_BITWIDTH-1:0] elemWise_mult2;
+    reg  signed  [LAYER_BITWIDTH-1:0] elemWise_mult1_FF;
+    reg  signed  [LAYER_BITWIDTH-1:0] elemWise_mult2_FF;
     wire signed  [LAYER_BITWIDTH-1:0] tanh_result;
     wire reset_sigm;
     wire reset_tanh;
@@ -157,7 +159,7 @@ module network  #(parameter INPUT_SZ   =  2,
     endgenerate 
 
 	// Slicing the input and previous output vectors
-	always @(negedge clock) begin
+	always @(posedge clock) begin
         if( reset == 1'b1) begin
             inputVecSample   <= {BITWIDTH{1'b0}};
             prevOutVecSample <= {BITWIDTH{1'b0}};
@@ -169,67 +171,74 @@ module network  #(parameter INPUT_SZ   =  2,
     end
 
     // Selecting the source for the elementwise multiplication first operand
-    always @(*) begin
+    always @(posedge clock) begin
         case (muxStageSelector) 
             2'd0 : begin
-                elemWise_op1 = gate_Z;
-                elemWise_op2 = gate_I;
+                elemWise_op1 <= gate_Z;
+                elemWise_op2 <= gate_I;
             end
         
             2'd1 : begin
-                elemWise_op1 = 18'b0;
-                elemWise_op2 = gate_F;
+                elemWise_op1 <= 18'b0;
+                elemWise_op2 <= gate_F;
             end
 
             2'd2 : begin
-                elemWise_op1 = layer_C;
-                elemWise_op2 = gate_O;
+                elemWise_op1 <= layer_C;
+                elemWise_op2 <= gate_O;
             end
             
             default : begin
-				elemWise_op1 = gate_Z;
-                elemWise_op2 = gate_I;
+				elemWise_op1 <= gate_Z;
+                elemWise_op2 <= gate_I;
             end
         endcase
     end
 
     // Selecting the source for the elementwise multiplication first operand
-    always @(*) begin
+    always @(posedge clock) begin
         if(muxStageSelector == 2'd1)
-            elemWise_mult1 = prev_C;
+            elemWise_mult1 <= prev_C;
         else
-            elemWise_mult1 = tanh_result;
+            elemWise_mult1 <= tanh_result;
     end  
     
+    // Partial Non-liearity/Elementwise Block Result --- z signal TIMES i signal
     always @(posedge clock) begin
 		if(reset) begin
 			ZI_prod <= {LAYER_BITWIDTH{1'b0}};
+		end
+        else if (z_ready) begin
+            for(j=0; j < HIDDEN_SZ; j = j + 1) begin
+                ZI_prod[j*BITWIDTH +: BITWIDTH] <= elemWiseMult_out[j*MULT_BITWIDTH +: MULT_BITWIDTH] >>> QM;
+            end
+        end
+	end
+    
+    // Partial Non-liearity/Elementwise Block Result --- c signal TIMES f signal
+    always @(posedge clock) begin
+		if(reset) begin
 			CF_prod <= {LAYER_BITWIDTH{1'b0}};
+		end
+        else if (f_ready) begin
+            for(j=0; j < HIDDEN_SZ; j = j + 1) begin
+                CF_prod[j*BITWIDTH +: BITWIDTH] <= elemWiseMult_out[j*MULT_BITWIDTH +: MULT_BITWIDTH] >>> QM;
+            end
+        end
+	end
+
+    // Saving the current layer output (that serves as input to the gate modules)
+    always @(posedge clock) begin
+		if(reset) begin
 			prevLayerOut <= {LAYER_BITWIDTH{1'b0}};
 		end
+        else if (y_ready) begin
+            for(j=0; j < HIDDEN_SZ; j = j + 1) begin
+                prevLayerOut[j*BITWIDTH +: BITWIDTH] <= elemWiseMult_out[j*MULT_BITWIDTH +: MULT_BITWIDTH] >>> QM;
+            end
+        end
 	end
-			
-    
-    // Partial Non-liearity/Elementwise Block Result --- z signal TIMES i signal
-    always @(posedge z_ready) begin
-		for(j=0; j < HIDDEN_SZ; j = j + 1) begin
-			ZI_prod[j*BITWIDTH +: BITWIDTH] <= elemWiseMult_out[j*MULT_BITWIDTH +: MULT_BITWIDTH] >>> QM;
-		end
-    end
-
-    // Partial Non-liearity/Elementwise Block Result --- c signal TIMES f signal
-    always @(posedge f_ready) begin
-		for(j=0; j < HIDDEN_SZ; j = j + 1) begin
-			CF_prod[j*BITWIDTH +: BITWIDTH] <= elemWiseMult_out[j*MULT_BITWIDTH +: MULT_BITWIDTH] >>> QM;
-		end
-    end
      
-    // Saving the current layer output (that serves as input to the gate modules)
-    always @(posedge y_ready) begin
-		for(j=0; j < HIDDEN_SZ; j = j + 1) begin
-			prevLayerOut[j*BITWIDTH +: BITWIDTH] <= elemWiseMult_out[j*MULT_BITWIDTH +: MULT_BITWIDTH] >>> QM;
-		end
-    end
 
     // The C signal --- The memory element
     always @(*) begin
@@ -238,18 +247,22 @@ module network  #(parameter INPUT_SZ   =  2,
         end
     end
     
-    always @(posedge reset) begin
-		prev_C <= {LAYER_BITWIDTH{1'b0}};
+    always @(posedge clock) begin
+        if (reset)
+    		prev_C <= {LAYER_BITWIDTH{1'b0}};
+        else if(newSample)
+            prev_C <= layer_C;
+            
 	end
 	
-    always @(posedge newSample) begin
-        prev_C <= layer_C;
-    end
+    always @(posedge clock) begin
+		elemWise_mult2_FF <= elemWise_mult2;
+	end
     
     // The elementwise multiplication DSP slices
     always @(posedge clock) begin
         for(j=0; j < HIDDEN_SZ; j = j + 1) begin
-            elemWiseMult_out[j*MULT_BITWIDTH +: MULT_BITWIDTH] <= ($signed(elemWise_mult2[j*BITWIDTH +: BITWIDTH]) * 
+            elemWiseMult_out[j*MULT_BITWIDTH +: MULT_BITWIDTH] <= ($signed(elemWise_mult2_FF[j*BITWIDTH +: BITWIDTH]) * 
 																							 $signed(elemWise_mult1[j*BITWIDTH +: BITWIDTH]));
         end
     end
@@ -261,23 +274,29 @@ module network  #(parameter INPUT_SZ   =  2,
     // --------------------- FINITE STATE MACHINE --------------------- //
     
     // The state tags
-    parameter IDLE        = 4'd0;
-    parameter GATE_CALC_INIT   = 4'd1;
-    parameter GATE_CALC   = 4'd2;
-    parameter NON_LIN_1A  = 4'd3;
-    parameter NON_LIN_2A  = 4'd4;
-    parameter ELEM_PROD_A = 4'd5;
-    parameter NON_LIN_1B  = 4'd6;
-    parameter NON_LIN_2B  = 4'd7;
-    parameter ELEM_PROD_B = 4'd8;
-    parameter NON_LIN_1C  = 4'd9;
-    parameter NON_LIN_2C  = 4'd10;
-    parameter ELEM_PROD_C = 4'd11;
-    parameter END         = 4'd12;
+    parameter IDLE             = 5'd0;
+    parameter GATE_CALC_INIT   = 5'd1;
+    parameter GATE_CALC        = 5'd2;
+    parameter NON_LIN_1A_PIPE  = 5'd3;
+    parameter NON_LIN_1A       = 5'd4;
+    parameter NON_LIN_2A       = 5'd5;
+    parameter ELEM_PROD_A_PIPE = 5'd6;
+    parameter ELEM_PROD_A      = 5'd7;
+    parameter NON_LIN_1B_PIPE  = 5'd8;
+    parameter NON_LIN_1B       = 5'd9;
+    parameter NON_LIN_2B       = 5'd10;
+    parameter ELEM_PROD_B_PIPE = 5'd11;
+    parameter ELEM_PROD_B      = 5'd12;
+    parameter NON_LIN_1C_PIPE  = 5'd13;
+    parameter NON_LIN_1C       = 5'd14;
+    parameter NON_LIN_2C       = 5'd15;
+    parameter ELEM_PROD_C_PIPE = 5'd16;
+    parameter ELEM_PROD_C      = 5'd17;
+    parameter END              = 5'd18;
     
     // The FSM registers
-    reg [3:0] state;
-    reg [3:0] NEXTstate;
+    reg [4:0] state;
+    reg [4:0] NEXTstate;
 
     // The FSM that controls the gate
     always @(posedge clock) begin
@@ -310,13 +329,18 @@ module network  #(parameter INPUT_SZ   =  2,
 			GATE_CALC:
 			begin
 				if (gateReady_Z == 1'b1 || gateReady_I == 1'b1 || gateReady_F == 1'b1 || gateReady_O == 1'b1) begin
-					NEXTstate = NON_LIN_1A;
+					NEXTstate = NON_LIN_1A_PIPE;
 				end
 				else begin
 					NEXTstate = GATE_CALC;
 				end
 			end
 			
+			
+			NON_LIN_1A_PIPE:		
+			begin
+				NEXTstate = NON_LIN_1A;
+			end
 			
 			NON_LIN_1A:		
 			begin
@@ -325,12 +349,22 @@ module network  #(parameter INPUT_SZ   =  2,
 			
 			NON_LIN_2A:		
 			begin
-				NEXTstate = ELEM_PROD_A;
+				NEXTstate = ELEM_PROD_A_PIPE;
 			end	
+			
+			ELEM_PROD_A_PIPE:
+			begin
+					NEXTstate  = ELEM_PROD_A;
+			end
 			
 			ELEM_PROD_A:
 			begin
-					NEXTstate  = NON_LIN_1B;
+					NEXTstate  = NON_LIN_1B_PIPE;
+			end
+			
+			NON_LIN_1B_PIPE:		
+			begin
+				NEXTstate = NON_LIN_1B;
 			end
 			
 			NON_LIN_1B:		
@@ -340,12 +374,22 @@ module network  #(parameter INPUT_SZ   =  2,
 			
 			NON_LIN_2B:		
 			begin
-				NEXTstate = ELEM_PROD_B;
+				NEXTstate = ELEM_PROD_B_PIPE;
 			end	
+			
+			ELEM_PROD_B_PIPE:
+			begin
+					NEXTstate  = ELEM_PROD_B;
+			end
 			
 			ELEM_PROD_B:
 			begin
-					NEXTstate  = NON_LIN_1C;
+					NEXTstate  = NON_LIN_1C_PIPE;
+			end
+			
+			NON_LIN_1C_PIPE:		
+			begin
+				NEXTstate = NON_LIN_1C;
 			end
 			
 			NON_LIN_1C:		
@@ -355,8 +399,13 @@ module network  #(parameter INPUT_SZ   =  2,
 			
 			NON_LIN_2C:		
 			begin
-				NEXTstate = ELEM_PROD_C;
+				NEXTstate = ELEM_PROD_C_PIPE;
 			end	
+			
+			ELEM_PROD_C_PIPE:
+			begin
+					NEXTstate  = ELEM_PROD_C;
+			end
 			
 			ELEM_PROD_C:
 			begin
@@ -414,6 +463,18 @@ module network  #(parameter INPUT_SZ   =  2,
 				dataoutReady     = 1'b0;
 			end
 			
+			NON_LIN_1A_PIPE:		
+			begin
+				beginCalc        = 1'b0;
+				muxStageSelector = 2'b0;
+				sigmoidEnable    = 1'b0;
+				tanhEnable       = 1'b0;
+				z_ready          = 1'b0;
+				f_ready          = 1'b0;
+				y_ready          = 1'b0;
+				dataoutReady     = 1'b0;
+			end
+			
 			NON_LIN_1A:		
 			begin
 				beginCalc        = 1'b0;
@@ -438,6 +499,18 @@ module network  #(parameter INPUT_SZ   =  2,
 				dataoutReady     = 1'b0;
 			end
 			
+			ELEM_PROD_A_PIPE:
+			begin
+				beginCalc        = 1'b0;
+				muxStageSelector = 2'b0;
+				sigmoidEnable    = 1'b0;
+				tanhEnable       = 1'b0;
+				z_ready          = 1'b0;
+				f_ready          = 1'b0;
+				y_ready          = 1'b0;
+				dataoutReady     = 1'b0;
+			end
+			
 			ELEM_PROD_A:
 			begin
 				beginCalc        = 1'b0;
@@ -450,13 +523,25 @@ module network  #(parameter INPUT_SZ   =  2,
 				dataoutReady     = 1'b0;
 			end
 			
+			NON_LIN_1B_PIPE:		
+			begin
+				beginCalc        = 1'b0;
+				muxStageSelector = 2'b1;
+				sigmoidEnable    = 1'b0;
+				tanhEnable       = 1'b0;
+				z_ready          = 1'b1;
+				f_ready          = 1'b0;
+				y_ready          = 1'b0;
+				dataoutReady     = 1'b0;
+			end
+			
 			NON_LIN_1B:		
 			begin
 				beginCalc        = 1'b0;
 				muxStageSelector = 2'b1;
 				sigmoidEnable    = 1'b1;
 				tanhEnable       = 1'b0;
-				z_ready          = 1'b1;
+				z_ready          = 1'b0;
 				f_ready          = 1'b0;
 				y_ready          = 1'b0;
 				dataoutReady     = 1'b0;
@@ -467,6 +552,18 @@ module network  #(parameter INPUT_SZ   =  2,
 				beginCalc        = 1'b0;
 				muxStageSelector = 2'b1;
 				sigmoidEnable    = 1'b1;
+				tanhEnable       = 1'b0;
+				z_ready          = 1'b0;
+				f_ready          = 1'b0;
+				y_ready          = 1'b0;
+				dataoutReady     = 1'b0;
+			end
+			
+			ELEM_PROD_B_PIPE:
+			begin
+				beginCalc        = 1'b0;
+				muxStageSelector = 2'b1;
+				sigmoidEnable    = 1'b0;
 				tanhEnable       = 1'b0;
 				z_ready          = 1'b0;
 				f_ready          = 1'b0;
@@ -486,6 +583,18 @@ module network  #(parameter INPUT_SZ   =  2,
 				dataoutReady     = 1'b0;
 			end
 			
+			NON_LIN_1C_PIPE:		
+			begin
+				beginCalc        = 1'b0;
+				muxStageSelector = 2'd2;
+				sigmoidEnable    = 1'b0;
+				tanhEnable       = 1'b0;
+				z_ready          = 1'b0;
+				f_ready          = 1'b1;
+				y_ready          = 1'b0;
+				dataoutReady     = 1'b0;
+			end
+			
 			NON_LIN_1C:		
 			begin
 				beginCalc        = 1'b0;
@@ -493,7 +602,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				sigmoidEnable    = 1'b1;
 				tanhEnable       = 1'b1;
 				z_ready          = 1'b0;
-				f_ready          = 1'b1;
+				f_ready          = 1'b0;
 				y_ready          = 1'b0;
 				dataoutReady     = 1'b0;
 			end
@@ -504,6 +613,18 @@ module network  #(parameter INPUT_SZ   =  2,
 				muxStageSelector = 2'd2;
 				sigmoidEnable    = 1'b1;
 				tanhEnable       = 1'b1;
+				z_ready          = 1'b0;
+				f_ready          = 1'b0;
+				y_ready          = 1'b0;
+				dataoutReady     = 1'b0;
+			end
+			
+			ELEM_PROD_C_PIPE:
+			begin
+				beginCalc        = 1'b0;
+				muxStageSelector = 2'd2;
+				sigmoidEnable    = 1'b0;
+				tanhEnable       = 1'b0;
 				z_ready          = 1'b0;
 				f_ready          = 1'b0;
 				y_ready          = 1'b0;

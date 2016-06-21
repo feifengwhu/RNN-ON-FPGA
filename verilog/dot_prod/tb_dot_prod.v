@@ -64,7 +64,7 @@ module tb_dot_prod();
     dot_prod   #(NROW,NCOL,QN,QM,DSP48_PER_ROW) DOTPROD  (weightMemOutput, inputVec, clock, reset, dataReady, colAddressRead, outputVec);  
     weightRAM  #(NROW,NCOL,BITWIDTH)            WRAM     (colAddressWrite, colAddressRead, writeEn, clock, reset, weightMemInput, weightMemOutput);
     
-    always @(negedge clock) begin
+    always @(posedge clock) begin
         if (reset == 1'b1)
             inputVec = {BITWIDTH{1'b0}};
         else
@@ -112,6 +112,8 @@ module tb_dot_prod();
                 quantError = quantError + ($signed(ROM_goldenOut[i][j]) - $signed(outputVec[j*BITWIDTH+:BITWIDTH]) )/(2.0**QM);
                 //$display("Error: %b",(ROM_goldenOut[i][j] ^ outputVec[j*BITWIDTH+:BITWIDTH]) & ({ {(QN+1){1'b1}}, {(QM){1'b0}} }));
             end
+ 
+			#(FULL_CLOCK);
  
             @(posedge clock);
             

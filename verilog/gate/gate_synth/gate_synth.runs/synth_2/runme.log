@@ -14,7 +14,7 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 28372 
+INFO: Helper process launched with PID 20071 
 WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:14]
 WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:15]
 WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:16]
@@ -23,9 +23,12 @@ WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with for
 WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:19]
 WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:20]
 WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:21]
-WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:46]
 WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:47]
 WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:48]
+WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:49]
+WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:50]
+WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:51]
+WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:52]
 WARNING: [Synth 8-2507] parameter declaration becomes local in gate with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/gate/gate.v:20]
 WARNING: [Synth 8-2507] parameter declaration becomes local in gate with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/gate/gate.v:21]
 WARNING: [Synth 8-2507] parameter declaration becomes local in gate with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/gate/gate.v:22]
@@ -36,7 +39,7 @@ WARNING: [Synth 8-2507] parameter declaration becomes local in gate with formal 
 WARNING: [Synth 8-2507] parameter declaration becomes local in gate with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/gate/gate.v:29]
 WARNING: [Synth 8-2507] parameter declaration becomes local in gate with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/gate/gate.v:30]
 ---------------------------------------------------------------------------------
-Starting Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1035.543 ; gain = 189.926 ; free physical = 2578 ; free virtual = 8269
+Starting Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1037.543 ; gain = 191.926 ; free physical = 2777 ; free virtual = 7763
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'gate' [/home/josefonseca/Documents/thesis/verilog/gate/gate.v:1]
 	Parameter INPUT_SZ bound to: 8 - type: integer 
@@ -67,9 +70,12 @@ INFO: [Synth 8-638] synthesizing module 'dot_prod' [/home/josefonseca/Documents/
 	Parameter DSP48_OUTPUT_BITWIDTH bound to: 2368 - type: integer 
 	Parameter MAC_BITWIDTH bound to: 37 - type: integer 
 	Parameter MUX_BITWIDTH bound to: 3 - type: integer 
-	Parameter IDLE bound to: 2'b00 
-	Parameter CALC bound to: 2'b01 
-	Parameter END bound to: 2'b10 
+	Parameter IDLE bound to: 3'b000 
+	Parameter IDLE_RDY bound to: 3'b001 
+	Parameter CALC bound to: 3'b010 
+	Parameter END_PIPE bound to: 3'b011 
+	Parameter END_PIPE2 bound to: 3'b100 
+	Parameter END bound to: 3'b101 
 INFO: [Synth 8-256] done synthesizing module 'dot_prod' (1#1) [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:1]
 INFO: [Synth 8-638] synthesizing module 'dot_prod__parameterized0' [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:1]
 	Parameter NROW bound to: 64 - type: integer 
@@ -85,33 +91,60 @@ INFO: [Synth 8-638] synthesizing module 'dot_prod__parameterized0' [/home/josefo
 	Parameter DSP48_OUTPUT_BITWIDTH bound to: 2368 - type: integer 
 	Parameter MAC_BITWIDTH bound to: 37 - type: integer 
 	Parameter MUX_BITWIDTH bound to: 3 - type: integer 
-	Parameter IDLE bound to: 2'b00 
-	Parameter CALC bound to: 2'b01 
-	Parameter END bound to: 2'b10 
+	Parameter IDLE bound to: 3'b000 
+	Parameter IDLE_RDY bound to: 3'b001 
+	Parameter CALC bound to: 3'b010 
+	Parameter END_PIPE bound to: 3'b011 
+	Parameter END_PIPE2 bound to: 3'b100 
+	Parameter END bound to: 3'b101 
 INFO: [Synth 8-256] done synthesizing module 'dot_prod__parameterized0' (1#1) [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:1]
 INFO: [Synth 8-256] done synthesizing module 'gate' (2#1) [/home/josefonseca/Documents/thesis/verilog/gate/gate.v:1]
 ---------------------------------------------------------------------------------
-Finished Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 1136.801 ; gain = 291.184 ; free physical = 2464 ; free virtual = 8157
+Finished Synthesize : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1091.801 ; gain = 246.184 ; free physical = 2699 ; free virtual = 7687
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1136.801 ; gain = 291.184 ; free physical = 2464 ; free virtual = 8157
+Finished Constraint Validation : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1091.801 ; gain = 246.184 ; free physical = 2699 ; free virtual = 7687
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg484-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1144.801 ; gain = 299.184 ; free physical = 2464 ; free virtual = 8157
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1099.801 ; gain = 254.184 ; free physical = 2699 ; free virtual = 7687
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7z020clg484-1
 INFO: [Synth 8-5544] ROM "NEXTrowMux" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'dot_prod'
 INFO: [Synth 8-5546] ROM "NEXTrowMux" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'dot_prod__parameterized0'
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'gate'
 INFO: [Synth 8-5544] ROM "dataReady_gate" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "enable_dotprodY" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "enable_dotprodX" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "NEXTstate" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "NEXTstate" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    IDLE |                              000 |                              000
+                IDLE_RDY |                              001 |                              001
+                    CALC |                              010 |                              010
+                END_PIPE |                              011 |                              011
+               END_PIPE2 |                              100 |                              100
+                     END |                              101 |                              101
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'dot_prod'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    IDLE |                              000 |                              000
+                IDLE_RDY |                              001 |                              001
+                    CALC |                              010 |                              010
+                END_PIPE |                              011 |                              011
+               END_PIPE2 |                              100 |                              100
+                     END |                              101 |                              101
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'dot_prod__parameterized0'
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -123,93 +156,80 @@ INFO: [Synth 8-5544] ROM "NEXTstate" won't be mapped to Block RAM because addres
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'gate'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1472.941 ; gain = 627.324 ; free physical = 2129 ; free virtual = 7822
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:09 . Memory (MB): peak = 1307.262 ; gain = 461.645 ; free physical = 2485 ; free virtual = 7473
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
-+------+-------------------------------+------------+----------+
-|      |RTL Partition                  |Replication |Instances |
-+------+-------------------------------+------------+----------+
-|1     |logic__76__GD                  |           1|     47320|
-|2     |dot_prod__GB1                  |           1|     21576|
-|3     |dot_prod__GB2                  |           1|      9472|
-|4     |dot_prod__GB3                  |           1|     21550|
-|5     |dot_prod__GB4                  |           1|     23918|
-|6     |dot_prod__GB5                  |           1|     13359|
-|7     |dot_prod__GB6                  |           1|     48446|
-|8     |dot_prod__GB7                  |           1|     21550|
-|9     |datapath__12__GD               |           1|     10558|
-|10    |dot_prod__GB9                  |           1|     58311|
-|11    |datapath__31__GD               |           1|     10991|
-|12    |datapath__30__GD               |           1|     10991|
-|13    |dot_prod__GB12                 |           1|     13358|
-|14    |dot_prod__GB13                 |           1|     13358|
-|15    |dot_prod__GB14                 |           1|     43964|
-|16    |dot_prod__GB15                 |           1|     33554|
-|17    |dot_prod__GB16                 |           1|     43530|
-|18    |dot_prod__GB17                 |           1|     21982|
-|19    |logic__158__GD                 |           1|     47320|
-|20    |dot_prod__parameterized0__GB1  |           1|     21576|
-|21    |dot_prod__parameterized0__GB2  |           1|      9472|
-|22    |dot_prod__parameterized0__GB3  |           1|     21550|
-|23    |dot_prod__parameterized0__GB4  |           1|     23918|
-|24    |dot_prod__parameterized0__GB5  |           1|     13359|
-|25    |dot_prod__parameterized0__GB6  |           1|     48446|
-|26    |dot_prod__parameterized0__GB7  |           1|     21550|
-|27    |datapath__46__GD               |           1|     10558|
-|28    |dot_prod__parameterized0__GB9  |           1|     58311|
-|29    |datapath__65__GD               |           1|     10991|
-|30    |datapath__64__GD               |           1|     10991|
-|31    |dot_prod__parameterized0__GB12 |           1|     13358|
-|32    |dot_prod__parameterized0__GB13 |           1|     13358|
-|33    |dot_prod__parameterized0__GB14 |           1|     43964|
-|34    |dot_prod__parameterized0__GB15 |           1|     33576|
-|35    |dot_prod__parameterized0__GB16 |           1|     43530|
-|36    |dot_prod__parameterized0__GB17 |           1|     21982|
-|37    |gate__GC0                      |           1|      9118|
-+------+-------------------------------+------------+----------+
++------+------------------------------+------------+----------+
+|      |RTL Partition                 |Replication |Instances |
++------+------------------------------+------------+----------+
+|1     |logic__78__GD                 |           1|     54424|
+|2     |datapath__9__GD               |           1|     10990|
+|3     |logic__79__GD                 |           1|     14472|
+|4     |dot_prod__GB3                 |           1|      4736|
+|5     |datapath__13__GD              |           1|     10991|
+|6     |datapath__7__GD               |           1|     10990|
+|7     |dot_prod__GB6                 |           1|     30797|
+|8     |dot_prod__GB7                 |           1|     21982|
+|9     |dot_prod__GB8                 |           1|     34049|
+|10    |dot_prod__GB9                 |           1|     32972|
+|11    |logic__159__GD                |           1|     54424|
+|12    |datapath__25__GD              |           1|     10990|
+|13    |logic__160__GD                |           1|     14472|
+|14    |dot_prod__parameterized0__GB3 |           1|      4736|
+|15    |datapath__31__GD              |           1|     10991|
+|16    |datapath__27__GD              |           1|     10990|
+|17    |dot_prod__parameterized0__GB6 |           1|     30797|
+|18    |dot_prod__parameterized0__GB7 |           1|     21982|
+|19    |dot_prod__parameterized0__GB8 |           1|     34085|
+|20    |dot_prod__parameterized0__GB9 |           1|     32972|
+|21    |gate__GC0                     |           1|      9118|
++------+------------------------------+------------+----------+
 No constraint files found.
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-3538] Detected potentially large (wide) register outputMAC_sum_reg [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:63]
-INFO: [Synth 8-3538] Detected potentially large (wide) register outputVector_reg [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:93]
-INFO: [Synth 8-3538] Detected potentially large (wide) register outputMAC_sum_reg [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:63]
-INFO: [Synth 8-3538] Detected potentially large (wide) register outputVector_reg [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:93]
+INFO: [Synth 8-3538] Detected potentially large (wide) register outputVector_reg [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:97]
+INFO: [Synth 8-3538] Detected potentially large (wide) register outputVector_reg [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:97]
+INFO: [Synth 8-3538] Detected potentially large (wide) register adder_X_reg [/home/josefonseca/Documents/thesis/verilog/gate/gate.v:73]
+INFO: [Synth 8-3538] Detected potentially large (wide) register gateOutput_reg [/home/josefonseca/Documents/thesis/verilog/gate/gate.v:85]
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input     18 Bit       Adders := 128   
 	   2 Input      6 Bit       Adders := 1     
 	   2 Input      3 Bit       Adders := 3     
 +---Registers : 
-	             2368 Bit    Registers := 2     
-	             1152 Bit    Registers := 2     
+	             1152 Bit    Registers := 4     
 	                6 Bit    Registers := 1     
-	                3 Bit    Registers := 17    
-	                2 Bit    Registers := 2     
+	                3 Bit    Registers := 18    
+	                1 Bit    Registers := 2     
 +---Muxes : 
-	   2 Input   2368 Bit        Muxes := 4     
-	   4 Input      6 Bit        Muxes := 1     
-	   4 Input      3 Bit        Muxes := 3     
+	   2 Input   2368 Bit        Muxes := 2     
+	   6 Input      6 Bit        Muxes := 1     
+	   6 Input      3 Bit        Muxes := 3     
+	   7 Input      3 Bit        Muxes := 3     
 	   8 Input      3 Bit        Muxes := 1     
-	   5 Input      2 Bit        Muxes := 2     
-	   4 Input      1 Bit        Muxes := 4     
-	   5 Input      1 Bit        Muxes := 5     
+	   2 Input      2 Bit        Muxes := 1     
+	   6 Input      1 Bit        Muxes := 4     
+	   8 Input      1 Bit        Muxes := 2     
+	   5 Input      1 Bit        Muxes := 3     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Hierarchical Component Statistics 
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-3538] Detected potentially large (wide) register outputMAC_sum_reg [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:63]
-INFO: [Synth 8-3538] Detected potentially large (wide) register outputVector_reg [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:93]
-INFO: [Synth 8-3538] Detected potentially large (wide) register outputMAC_sum_reg [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:63]
-INFO: [Synth 8-3538] Detected potentially large (wide) register outputVector_reg [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:93]
+INFO: [Synth 8-3538] Detected potentially large (wide) register outputVector_reg [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:97]
+INFO: [Synth 8-3538] Detected potentially large (wide) register outputVector_reg [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:97]
+INFO: [Synth 8-3538] Detected potentially large (wide) register adder_X_reg [/home/josefonseca/Documents/thesis/verilog/gate/gate.v:73]
+INFO: [Synth 8-3538] Detected potentially large (wide) register gateOutput_reg [/home/josefonseca/Documents/thesis/verilog/gate/gate.v:85]
 Hierarchical RTL Component report 
 Module gate 
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input     18 Bit       Adders := 128   
++---Registers : 
+	             1152 Bit    Registers := 2     
 +---Muxes : 
 	   8 Input      3 Bit        Muxes := 1     
 	   5 Input      1 Bit        Muxes := 3     
@@ -218,34 +238,33 @@ Detailed RTL Component Info :
 +---Adders : 
 	   2 Input      3 Bit       Adders := 2     
 +---Registers : 
-	             2368 Bit    Registers := 1     
 	             1152 Bit    Registers := 1     
 	                3 Bit    Registers := 9     
-	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
 +---Muxes : 
-	   2 Input   2368 Bit        Muxes := 2     
-	   4 Input      3 Bit        Muxes := 2     
-	   5 Input      2 Bit        Muxes := 1     
-	   4 Input      1 Bit        Muxes := 2     
-	   5 Input      1 Bit        Muxes := 1     
+	   2 Input   2368 Bit        Muxes := 1     
+	   6 Input      3 Bit        Muxes := 2     
+	   7 Input      3 Bit        Muxes := 1     
+	   6 Input      1 Bit        Muxes := 2     
+	   8 Input      1 Bit        Muxes := 1     
 Module dot_prod__parameterized0 
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input      6 Bit       Adders := 1     
 	   2 Input      3 Bit       Adders := 1     
 +---Registers : 
-	             2368 Bit    Registers := 1     
 	             1152 Bit    Registers := 1     
 	                6 Bit    Registers := 1     
-	                3 Bit    Registers := 8     
-	                2 Bit    Registers := 1     
+	                3 Bit    Registers := 9     
+	                1 Bit    Registers := 1     
 +---Muxes : 
-	   2 Input   2368 Bit        Muxes := 2     
-	   4 Input      6 Bit        Muxes := 1     
-	   4 Input      3 Bit        Muxes := 1     
-	   5 Input      2 Bit        Muxes := 1     
-	   4 Input      1 Bit        Muxes := 2     
-	   5 Input      1 Bit        Muxes := 1     
+	   2 Input   2368 Bit        Muxes := 1     
+	   6 Input      6 Bit        Muxes := 1     
+	   6 Input      3 Bit        Muxes := 1     
+	   7 Input      3 Bit        Muxes := 2     
+	   2 Input      2 Bit        Muxes := 1     
+	   6 Input      1 Bit        Muxes := 2     
+	   8 Input      1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
@@ -262,220 +281,204 @@ INFO: [Synth 8-5580] Multithreading enabled for synth_design using a maximum of 
 ---------------------------------------------------------------------------------
 Start Cross Boundary Optimization
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-4471] merging register 'rowMux_reg[2:0]' into 'rowMux_reg[2:0]' [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:107]
-INFO: [Synth 8-4471] merging register 'rowMux_reg[2:0]' into 'rowMux_reg[2:0]' [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:107]
-INFO: [Synth 8-4471] merging register 'rowMux_reg[2:0]' into 'rowMux_reg[2:0]' [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:107]
-INFO: [Synth 8-4471] merging register 'rowMux_reg[2:0]' into 'rowMux_reg[2:0]' [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:107]
-INFO: [Synth 8-4471] merging register 'rowMux_reg[2:0]' into 'rowMux_reg[2:0]' [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:107]
-INFO: [Synth 8-4471] merging register 'rowMux_reg[2:0]' into 'rowMux_reg[2:0]' [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:107]
-INFO: [Synth 8-4471] merging register 'rowMux_reg[2:0]' into 'rowMux_reg[2:0]' [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:107]
-INFO: [Synth 8-4471] merging register 'rowMux_reg[2:0]' into 'rowMux_reg[2:0]' [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:107]
-DSP Report: Generating DSP outputMAC1, operation Mode is: C+A*B.
-DSP Report: operator outputMAC1 is absorbed into DSP outputMAC1.
-DSP Report: operator outputMAC2 is absorbed into DSP outputMAC1.
+INFO: [Synth 8-4471] merging register 'rowMux_reg[2:0]' into 'rowMux_reg[2:0]' [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:115]
+INFO: [Synth 8-4471] merging register 'rowMux_reg[2:0]' into 'rowMux_reg[2:0]' [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:115]
+INFO: [Synth 8-4471] merging register 'rowMux_reg[2:0]' into 'rowMux_reg[2:0]' [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:115]
+INFO: [Synth 8-4471] merging register 'rowMux_reg[2:0]' into 'rowMux_reg[2:0]' [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:115]
+DSP Report: Generating DSP outputMAC3, operation Mode is: C+A*B.
+DSP Report: operator outputMAC3 is absorbed into DSP outputMAC3.
+DSP Report: operator outputMAC4 is absorbed into DSP outputMAC3.
 DSP Report: Generating DSP outputMAC8, operation Mode is: C+A*B.
 DSP Report: operator outputMAC8 is absorbed into DSP outputMAC8.
 DSP Report: operator outputMAC9 is absorbed into DSP outputMAC8.
 DSP Report: Generating DSP outputMAC7, operation Mode is: C+A*B.
 DSP Report: operator outputMAC7 is absorbed into DSP outputMAC7.
 DSP Report: operator outputMAC8 is absorbed into DSP outputMAC7.
+DSP Report: Generating DSP outputMAC4, operation Mode is: C+A*B.
+DSP Report: operator outputMAC4 is absorbed into DSP outputMAC4.
+DSP Report: operator outputMAC5 is absorbed into DSP outputMAC4.
 DSP Report: Generating DSP outputMAC6, operation Mode is: C+A*B.
 DSP Report: operator outputMAC6 is absorbed into DSP outputMAC6.
 DSP Report: operator outputMAC7 is absorbed into DSP outputMAC6.
-DSP Report: Generating DSP outputMAC5, operation Mode is: C+A*B.
-DSP Report: operator outputMAC5 is absorbed into DSP outputMAC5.
-DSP Report: operator outputMAC6 is absorbed into DSP outputMAC5.
 DSP Report: Generating DSP outputMAC2, operation Mode is: C+A*B.
 DSP Report: operator outputMAC2 is absorbed into DSP outputMAC2.
 DSP Report: operator outputMAC3 is absorbed into DSP outputMAC2.
+DSP Report: Generating DSP outputMAC5, operation Mode is: C+A*B.
+DSP Report: operator outputMAC5 is absorbed into DSP outputMAC5.
+DSP Report: operator outputMAC6 is absorbed into DSP outputMAC5.
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port P[12] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port P[11] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port P[10] driven by constant 1
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port P[9] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port p_12_in[2083] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port p_12_in[2082] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port p_12_in[2081] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port p_12_in[2080] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port p_12_in[2079] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port p_12_in[2078] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port p_12_in[2077] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port p_12_in[2076] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port p_12_in[2075] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port p_12_in[2074] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port p_12_in[2073] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port p_12_in[2072] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port p_12_in[2071] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port p_12_in[2070] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port p_12_in[2069] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port p_12_in[2068] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port p_12_in[2067] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port p_12_in[2066] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port p_12_in[2065] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port p_12_in[2064] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port p_12_in[2063] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port p_12_in[2062] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port p_12_in[2061] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port p_12_in[2060] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port p_12_in[2059] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port p_12_in[2058] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port p_12_in[2057] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port p_12_in[2056] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port p_12_in[2055] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port p_12_in[2054] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port p_12_in[2053] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port p_12_in[2052] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port p_12_in[2051] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port p_12_in[2050] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port p_12_in[2049] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port p_12_in[2048] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port p_12_in[2047] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port p_12_in[2046] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port p_12_in[2045] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port p_12_in[2044] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port p_12_in[2043] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port p_12_in[2042] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port p_12_in[2041] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port p_12_in[2040] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port p_12_in[2039] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port p_12_in[2038] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port p_12_in[2037] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port p_12_in[2036] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port p_12_in[2035] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port p_12_in[2034] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port p_12_in[2033] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port p_12_in[2032] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port p_12_in[2031] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port p_12_in[2030] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port p_12_in[2029] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port p_12_in[2028] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port p_12_in[2027] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port p_12_in[2026] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port p_12_in[2025] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port p_12_in[2024] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port p_12_in[2023] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port p_12_in[2022] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port p_12_in[2021] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port p_12_in[2020] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port p_12_in[2019] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port p_12_in[2018] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port p_12_in[2017] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port p_12_in[2016] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port p_12_in[2015] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port p_12_in[2014] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port p_12_in[2013] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port p_12_in[2012] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port p_12_in[2011] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port p_12_in[2010] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port p_12_in[2009] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port p_12_in[2008] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port p_12_in[2007] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port p_12_in[2006] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port p_12_in[2005] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port p_12_in[2004] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port p_12_in[2003] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port p_12_in[2002] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port p_12_in[2001] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port p_12_in[2000] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port p_12_in[1999] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port p_12_in[1998] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port p_12_in[1997] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port p_12_in[1996] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port p_12_in[1995] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port p_12_in[1994] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port p_12_in[1993] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port p_12_in[1992] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port p_12_in[1991] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port p_12_in[1990] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port p_12_in[1989] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB6 has port p_12_in[1988] driven by constant 0
+INFO: [Common 17-14] Message 'Synth 8-3917' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Common 17-14] Message 'Synth 8-3917' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-4471] merging register 'rowMux_reg[2:0]' into 'rowMux_reg[2:0]' [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:115]
+INFO: [Synth 8-4471] merging register 'rowMux_reg[2:0]' into 'rowMux_reg[2:0]' [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:115]
+INFO: [Synth 8-4471] merging register 'rowMux_reg[2:0]' into 'rowMux_reg[2:0]' [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:115]
+DSP Report: Generating DSP outputMAC1, operation Mode is: C+A*B.
+DSP Report: operator outputMAC1 is absorbed into DSP outputMAC1.
+DSP Report: operator outputMAC2 is absorbed into DSP outputMAC1.
+INFO: [Common 17-14] Message 'Synth 8-3917' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-4471] merging register 'rowMux_reg[2:0]' into 'rowMux_reg[2:0]' [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:115]
+INFO: [Synth 8-4471] merging register 'rowMux_reg[2:0]' into 'rowMux_reg[2:0]' [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:115]
+INFO: [Synth 8-4471] merging register 'rowMux_reg[2:0]' into 'rowMux_reg[2:0]' [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:115]
+INFO: [Synth 8-4471] merging register 'rowMux_reg[2:0]' into 'rowMux_reg[2:0]' [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:115]
 DSP Report: Generating DSP outputMAC4, operation Mode is: C+A*B.
 DSP Report: operator outputMAC4 is absorbed into DSP outputMAC4.
 DSP Report: operator outputMAC5 is absorbed into DSP outputMAC4.
 DSP Report: Generating DSP outputMAC3, operation Mode is: C+A*B.
 DSP Report: operator outputMAC3 is absorbed into DSP outputMAC3.
 DSP Report: operator outputMAC4 is absorbed into DSP outputMAC3.
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port P[12] driven by constant 0
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port P[11] driven by constant 0
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port P[10] driven by constant 1
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port P[9] driven by constant 0
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port O1[11] driven by constant 0
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port O2[11] driven by constant 0
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port O2[10] driven by constant 0
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port O2[9] driven by constant 1
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2083] driven by constant 0
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2082] driven by constant 0
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2081] driven by constant 0
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2080] driven by constant 0
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2079] driven by constant 0
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2078] driven by constant 0
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2077] driven by constant 0
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2076] driven by constant 0
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2075] driven by constant 0
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2074] driven by constant 0
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2073] driven by constant 0
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2072] driven by constant 0
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2071] driven by constant 0
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2070] driven by constant 0
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2069] driven by constant 0
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2068] driven by constant 0
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2067] driven by constant 0
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2066] driven by constant 0
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2065] driven by constant 0
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2064] driven by constant 0
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2063] driven by constant 0
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2062] driven by constant 0
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2061] driven by constant 0
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2060] driven by constant 0
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2059] driven by constant 0
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2058] driven by constant 0
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2057] driven by constant 0
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2056] driven by constant 0
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2055] driven by constant 0
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2054] driven by constant 0
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2053] driven by constant 0
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2052] driven by constant 0
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2051] driven by constant 0
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2050] driven by constant 0
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2049] driven by constant 0
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2048] driven by constant 0
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2047] driven by constant 0
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2046] driven by constant 0
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2045] driven by constant 0
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2044] driven by constant 0
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2043] driven by constant 0
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2042] driven by constant 0
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2041] driven by constant 0
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2040] driven by constant 0
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2039] driven by constant 0
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2038] driven by constant 0
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2037] driven by constant 0
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2036] driven by constant 0
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2035] driven by constant 0
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2034] driven by constant 0
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2033] driven by constant 0
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2032] driven by constant 0
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2031] driven by constant 0
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2030] driven by constant 0
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2029] driven by constant 0
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2028] driven by constant 0
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2027] driven by constant 0
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2026] driven by constant 0
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2025] driven by constant 0
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2024] driven by constant 0
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2023] driven by constant 0
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2022] driven by constant 0
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2021] driven by constant 0
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2020] driven by constant 0
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2019] driven by constant 0
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2018] driven by constant 0
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2017] driven by constant 0
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2016] driven by constant 0
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2015] driven by constant 0
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2014] driven by constant 0
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2013] driven by constant 0
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2012] driven by constant 0
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2011] driven by constant 0
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2010] driven by constant 0
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2009] driven by constant 0
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2008] driven by constant 0
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2007] driven by constant 0
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2006] driven by constant 0
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2005] driven by constant 0
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2004] driven by constant 0
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2003] driven by constant 0
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2002] driven by constant 0
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2001] driven by constant 0
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[2000] driven by constant 0
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[1999] driven by constant 0
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[1998] driven by constant 0
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[1997] driven by constant 0
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[1996] driven by constant 0
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[1995] driven by constant 0
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[1994] driven by constant 0
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[1993] driven by constant 0
-WARNING: [Synth 8-3917] design dot_prod__GB15 has port p_49_in[1992] driven by constant 0
-INFO: [Common 17-14] Message 'Synth 8-3917' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
-INFO: [Common 17-14] Message 'Synth 8-3917' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
-INFO: [Synth 8-4471] merging register 'rowMux_reg[2:0]' into 'rowMux_reg[2:0]' [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:107]
-INFO: [Synth 8-4471] merging register 'rowMux_reg[2:0]' into 'rowMux_reg[2:0]' [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:107]
-INFO: [Synth 8-4471] merging register 'rowMux_reg[2:0]' into 'rowMux_reg[2:0]' [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:107]
-INFO: [Synth 8-4471] merging register 'rowMux_reg[2:0]' into 'rowMux_reg[2:0]' [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:107]
-INFO: [Synth 8-4471] merging register 'rowMux_reg[2:0]' into 'rowMux_reg[2:0]' [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:107]
-INFO: [Synth 8-4471] merging register 'rowMux_reg[2:0]' into 'rowMux_reg[2:0]' [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:107]
-INFO: [Synth 8-4471] merging register 'rowMux_reg[2:0]' into 'rowMux_reg[2:0]' [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:107]
-INFO: [Synth 8-4471] merging register 'rowMux_reg[2:0]' into 'rowMux_reg[2:0]' [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:107]
-DSP Report: Generating DSP outputMAC1, operation Mode is: C+A*B.
-DSP Report: operator outputMAC1 is absorbed into DSP outputMAC1.
-DSP Report: operator outputMAC2 is absorbed into DSP outputMAC1.
 DSP Report: Generating DSP outputMAC8, operation Mode is: C+A*B.
 DSP Report: operator outputMAC8 is absorbed into DSP outputMAC8.
 DSP Report: operator outputMAC9 is absorbed into DSP outputMAC8.
 DSP Report: Generating DSP outputMAC7, operation Mode is: C+A*B.
 DSP Report: operator outputMAC7 is absorbed into DSP outputMAC7.
 DSP Report: operator outputMAC8 is absorbed into DSP outputMAC7.
+DSP Report: Generating DSP outputMAC2, operation Mode is: C+A*B.
+DSP Report: operator outputMAC2 is absorbed into DSP outputMAC2.
+DSP Report: operator outputMAC3 is absorbed into DSP outputMAC2.
 DSP Report: Generating DSP outputMAC6, operation Mode is: C+A*B.
 DSP Report: operator outputMAC6 is absorbed into DSP outputMAC6.
 DSP Report: operator outputMAC7 is absorbed into DSP outputMAC6.
 DSP Report: Generating DSP outputMAC5, operation Mode is: C+A*B.
 DSP Report: operator outputMAC5 is absorbed into DSP outputMAC5.
 DSP Report: operator outputMAC6 is absorbed into DSP outputMAC5.
-DSP Report: Generating DSP outputMAC2, operation Mode is: C+A*B.
-DSP Report: operator outputMAC2 is absorbed into DSP outputMAC2.
-DSP Report: operator outputMAC3 is absorbed into DSP outputMAC2.
-DSP Report: Generating DSP outputMAC4, operation Mode is: C+A*B.
-DSP Report: operator outputMAC4 is absorbed into DSP outputMAC4.
-DSP Report: operator outputMAC5 is absorbed into DSP outputMAC4.
-DSP Report: Generating DSP outputMAC3, operation Mode is: C+A*B.
-DSP Report: operator outputMAC3 is absorbed into DSP outputMAC3.
-DSP Report: operator outputMAC4 is absorbed into DSP outputMAC3.
+INFO: [Common 17-14] Message 'Synth 8-3917' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-4471] merging register 'rowMux_reg[2:0]' into 'rowMux_reg[2:0]' [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:115]
+INFO: [Synth 8-4471] merging register 'rowMux_reg[2:0]' into 'rowMux_reg[2:0]' [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:115]
+INFO: [Synth 8-4471] merging register 'rowMux_reg[2:0]' into 'rowMux_reg[2:0]' [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:115]
+DSP Report: Generating DSP outputMAC1, operation Mode is: C+A*B.
+DSP Report: operator outputMAC1 is absorbed into DSP outputMAC1.
+DSP Report: operator outputMAC2 is absorbed into DSP outputMAC1.
 INFO: [Common 17-14] Message 'Synth 8-3917' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary Optimization : Time (s): cpu = 00:00:24 ; elapsed = 00:00:34 . Memory (MB): peak = 1610.875 ; gain = 765.258 ; free physical = 412 ; free virtual = 6106
+Finished Cross Boundary Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:29 . Memory (MB): peak = 1415.598 ; gain = 569.980 ; free physical = 838 ; free virtual = 5856
 ---------------------------------------------------------------------------------
-Finished Parallel Reinference  : Time (s): cpu = 00:00:24 ; elapsed = 00:00:34 . Memory (MB): peak = 1610.875 ; gain = 765.258 ; free physical = 412 ; free virtual = 6106
+Finished Parallel Reinference  : Time (s): cpu = 00:00:17 ; elapsed = 00:00:29 . Memory (MB): peak = 1415.598 ; gain = 569.980 ; free physical = 838 ; free virtual = 5856
 
 Report RTL Partitions: 
-+------+-------------------------------+------------+----------+
-|      |RTL Partition                  |Replication |Instances |
-+------+-------------------------------+------------+----------+
-|1     |logic__76__GD                  |           1|     47320|
-|2     |dot_prod__GB1                  |           1|     26312|
-|3     |dot_prod__GB2                  |           1|     11840|
-|4     |dot_prod__GB3                  |           1|     21550|
-|5     |dot_prod__GB4                  |           1|     23918|
-|6     |dot_prod__GB5                  |           1|     13359|
-|7     |dot_prod__GB6                  |           1|     48446|
-|8     |dot_prod__GB7                  |           1|     21550|
-|9     |datapath__12__GD               |           1|     10558|
-|10    |dot_prod__GB9                  |           1|     58311|
-|11    |datapath__31__GD               |           1|     10991|
-|12    |datapath__30__GD               |           1|     10991|
-|13    |dot_prod__GB12                 |           1|     13358|
-|14    |dot_prod__GB13                 |           1|     13358|
-|15    |dot_prod__GB14                 |           1|     43964|
-|16    |dot_prod__GB15                 |           1|     23369|
-|17    |dot_prod__GB16                 |           1|     43530|
-|18    |dot_prod__GB17                 |           1|     21982|
-|19    |logic__158__GD                 |           1|     47320|
-|20    |dot_prod__parameterized0__GB1  |           1|     26312|
-|21    |dot_prod__parameterized0__GB2  |           1|     11840|
-|22    |dot_prod__parameterized0__GB3  |           1|     21550|
-|23    |dot_prod__parameterized0__GB4  |           1|     23918|
-|24    |dot_prod__parameterized0__GB5  |           1|     13359|
-|25    |dot_prod__parameterized0__GB6  |           1|     48446|
-|26    |dot_prod__parameterized0__GB7  |           1|     21550|
-|27    |datapath__46__GD               |           1|     10558|
-|28    |dot_prod__parameterized0__GB9  |           1|     58311|
-|29    |datapath__65__GD               |           1|     10991|
-|30    |datapath__64__GD               |           1|     10991|
-|31    |dot_prod__parameterized0__GB12 |           1|     13358|
-|32    |dot_prod__parameterized0__GB13 |           1|     13358|
-|33    |dot_prod__parameterized0__GB14 |           1|     43964|
-|34    |dot_prod__parameterized0__GB15 |           1|     23391|
-|35    |dot_prod__parameterized0__GB16 |           1|     43530|
-|36    |dot_prod__parameterized0__GB17 |           1|     21982|
-|37    |gate__GC0                      |           1|      9118|
-+------+-------------------------------+------------+----------+
++------+------------------------------+------------+----------+
+|      |RTL Partition                 |Replication |Instances |
++------+------------------------------+------------+----------+
+|1     |logic__78__GD                 |           1|     54424|
+|2     |datapath__9__GD               |           1|     10990|
+|3     |logic__79__GD                 |           1|     14472|
+|4     |dot_prod__GB3                 |           1|      7104|
+|5     |datapath__13__GD              |           1|     10991|
+|6     |datapath__7__GD               |           1|     10990|
+|7     |dot_prod__GB6                 |           1|     15575|
+|8     |dot_prod__GB7                 |           1|     21982|
+|9     |dot_prod__GB8                 |           1|      8405|
+|10    |dot_prod__GB9                 |           1|     32972|
+|11    |logic__159__GD                |           1|     54424|
+|12    |datapath__25__GD              |           1|     10990|
+|13    |logic__160__GD                |           1|     14472|
+|14    |dot_prod__parameterized0__GB3 |           1|      7104|
+|15    |datapath__31__GD              |           1|     10991|
+|16    |datapath__27__GD              |           1|     10990|
+|17    |dot_prod__parameterized0__GB6 |           1|     15575|
+|18    |dot_prod__parameterized0__GB7 |           1|     21982|
+|19    |dot_prod__parameterized0__GB8 |           1|      8441|
+|20    |dot_prod__parameterized0__GB9 |           1|     32972|
+|21    |gate__GC0                     |           1|      9118|
++------+------------------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
 ---------------------------------------------------------------------------------
@@ -510,130 +513,199 @@ No constraint files found.
 ---------------------------------------------------------------------------------
 Start Area Optimization
 ---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Area Optimization : Time (s): cpu = 00:00:52 ; elapsed = 00:01:07 . Memory (MB): peak = 1951.070 ; gain = 1105.453 ; free physical = 164 ; free virtual = 3631
+---------------------------------------------------------------------------------
+Finished Parallel Area Optimization  : Time (s): cpu = 00:00:52 ; elapsed = 00:01:07 . Memory (MB): peak = 1951.070 ; gain = 1105.453 ; free physical = 163 ; free virtual = 3631
 
-*** Running vivado
-    with args -log gate.vds -m64 -mode batch -messageDb vivado.pb -notrace -source gate.tcl
+Report RTL Partitions: 
++------+------------------------------+------------+----------+
+|      |RTL Partition                 |Replication |Instances |
++------+------------------------------+------------+----------+
+|1     |logic__78__GD                 |           1|     52056|
+|2     |datapath__9__GD               |           1|      4937|
+|3     |logic__79__GD                 |           1|     14472|
+|4     |dot_prod__GB3                 |           1|      9472|
+|5     |datapath__13__GD              |           1|      4000|
+|6     |datapath__7__GD               |           1|      4937|
+|7     |dot_prod__GB6                 |           1|      9632|
+|8     |dot_prod__GB7                 |           1|      7305|
+|9     |dot_prod__GB8                 |           1|      3406|
+|10    |dot_prod__GB9                 |           1|      9778|
+|11    |logic__159__GD                |           1|     52056|
+|12    |datapath__25__GD              |           1|      4937|
+|13    |logic__160__GD                |           1|     14472|
+|14    |dot_prod__parameterized0__GB3 |           1|      9472|
+|15    |datapath__31__GD              |           1|      4000|
+|16    |datapath__27__GD              |           1|      4937|
+|17    |dot_prod__parameterized0__GB6 |           1|      9627|
+|18    |dot_prod__parameterized0__GB7 |           1|      7305|
+|19    |dot_prod__parameterized0__GB8 |           1|      3447|
+|20    |dot_prod__parameterized0__GB9 |           1|      9778|
+|21    |gate__GC0                     |           1|      5275|
++------+------------------------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:52 ; elapsed = 00:01:07 . Memory (MB): peak = 1951.070 ; gain = 1105.453 ; free physical = 160 ; free virtual = 3631
+---------------------------------------------------------------------------------
 
+Report RTL Partitions: 
++------+------------------------------+------------+----------+
+|      |RTL Partition                 |Replication |Instances |
++------+------------------------------+------------+----------+
+|1     |logic__78__GD                 |           1|     52056|
+|2     |datapath__9__GD               |           1|      4937|
+|3     |logic__79__GD                 |           1|     14472|
+|4     |dot_prod__GB3                 |           1|      9472|
+|5     |datapath__13__GD              |           1|      4000|
+|6     |datapath__7__GD               |           1|      4937|
+|7     |dot_prod__GB6                 |           1|      9632|
+|8     |dot_prod__GB7                 |           1|      7305|
+|9     |dot_prod__GB8                 |           1|      3406|
+|10    |dot_prod__GB9                 |           1|      9778|
+|11    |logic__159__GD                |           1|     52056|
+|12    |datapath__25__GD              |           1|      4937|
+|13    |logic__160__GD                |           1|     14472|
+|14    |dot_prod__parameterized0__GB3 |           1|      9472|
+|15    |datapath__31__GD              |           1|      4000|
+|16    |datapath__27__GD              |           1|      4937|
+|17    |dot_prod__parameterized0__GB6 |           1|      9627|
+|18    |dot_prod__parameterized0__GB7 |           1|      7305|
+|19    |dot_prod__parameterized0__GB8 |           1|      3447|
+|20    |dot_prod__parameterized0__GB9 |           1|      9778|
+|21    |gate__GC0                     |           1|      5275|
++------+------------------------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:01:13 ; elapsed = 00:01:30 . Memory (MB): peak = 2115.105 ; gain = 1269.488 ; free physical = 133 ; free virtual = 3481
+---------------------------------------------------------------------------------
+Finished Parallel Technology Mapping Optimization  : Time (s): cpu = 00:01:13 ; elapsed = 00:01:30 . Memory (MB): peak = 2115.105 ; gain = 1269.488 ; free physical = 133 ; free virtual = 3481
 
-****** Vivado v2015.4 (64-bit)
-  **** SW Build 1412921 on Wed Nov 18 09:44:32 MST 2015
-  **** IP Build 1412160 on Tue Nov 17 13:47:24 MST 2015
-    ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:01:13 ; elapsed = 00:01:30 . Memory (MB): peak = 2115.105 ; gain = 1269.488 ; free physical = 133 ; free virtual = 3481
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:01:18 ; elapsed = 00:01:36 . Memory (MB): peak = 2115.105 ; gain = 1269.488 ; free physical = 134 ; free virtual = 3479
+---------------------------------------------------------------------------------
 
-source gate.tcl -notrace
-Command: synth_design -top gate -part xc7z020clg484-1 -mode out_of_context
-Starting synth_design
-Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
-INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
-INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 27712 
-WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:14]
-WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:15]
-WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:16]
-WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:17]
-WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:18]
-WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:19]
-WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:20]
-WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:21]
-WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:46]
-WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:47]
-WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:48]
-WARNING: [Synth 8-2507] parameter declaration becomes local in gate with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/gate/gate.v:20]
-WARNING: [Synth 8-2507] parameter declaration becomes local in gate with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/gate/gate.v:21]
-WARNING: [Synth 8-2507] parameter declaration becomes local in gate with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/gate/gate.v:22]
-WARNING: [Synth 8-2507] parameter declaration becomes local in gate with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/gate/gate.v:23]
-WARNING: [Synth 8-2507] parameter declaration becomes local in gate with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/gate/gate.v:26]
-WARNING: [Synth 8-2507] parameter declaration becomes local in gate with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/gate/gate.v:27]
-WARNING: [Synth 8-2507] parameter declaration becomes local in gate with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/gate/gate.v:28]
-WARNING: [Synth 8-2507] parameter declaration becomes local in gate with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/gate/gate.v:29]
-WARNING: [Synth 8-2507] parameter declaration becomes local in gate with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/gate/gate.v:30]
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
-Starting Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 1037.547 ; gain = 191.926 ; free physical = 4148 ; free virtual = 9440
----------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'gate' [/home/josefonseca/Documents/thesis/verilog/gate/gate.v:1]
-	Parameter INPUT_SZ bound to: 8 - type: integer 
-	Parameter HIDDEN_SZ bound to: 64 - type: integer 
-	Parameter QN bound to: 6 - type: integer 
-	Parameter QM bound to: 11 - type: integer 
-	Parameter DSP48_PER_ROW bound to: 8 - type: integer 
-	Parameter BITWIDTH bound to: 18 - type: integer 
-	Parameter LAYER_BITWIDTH bound to: 1152 - type: integer 
-	Parameter ADDR_BITWIDTH_X bound to: 3 - type: integer 
-	Parameter ADDR_BITWIDTH bound to: 6 - type: integer 
-	Parameter IDLE bound to: 3'b000 
-	Parameter CALC_XandY bound to: 3'b001 
-	Parameter SUM_X bound to: 3'b010 
-	Parameter CALC_Y bound to: 3'b011 
-	Parameter SUM_Y bound to: 3'b100 
-INFO: [Synth 8-638] synthesizing module 'dot_prod' [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:1]
-	Parameter NROW bound to: 64 - type: integer 
-	Parameter NCOL bound to: 8 - type: integer 
-	Parameter QN bound to: 6 - type: integer 
-	Parameter QM bound to: 11 - type: integer 
-	Parameter DSP48_PER_ROW bound to: 8 - type: integer 
-	Parameter BITWIDTH bound to: 18 - type: integer 
-	Parameter ADDR_BITWIDTH bound to: 3 - type: integer 
-	Parameter LAYER_BITWIDTH bound to: 1152 - type: integer 
-	Parameter N_DSP48 bound to: 8 - type: integer 
-	Parameter DSP48_INPUT_BITWIDTH bound to: 144 - type: integer 
-	Parameter DSP48_OUTPUT_BITWIDTH bound to: 2368 - type: integer 
-	Parameter MAC_BITWIDTH bound to: 37 - type: integer 
-	Parameter MUX_BITWIDTH bound to: 3 - type: integer 
-	Parameter IDLE bound to: 2'b00 
-	Parameter CALC bound to: 2'b01 
-	Parameter END bound to: 2'b10 
-INFO: [Synth 8-256] done synthesizing module 'dot_prod' (1#1) [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:1]
-INFO: [Synth 8-638] synthesizing module 'dot_prod__parameterized0' [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:1]
-	Parameter NROW bound to: 64 - type: integer 
-	Parameter NCOL bound to: 64 - type: integer 
-	Parameter QN bound to: 6 - type: integer 
-	Parameter QM bound to: 11 - type: integer 
-	Parameter DSP48_PER_ROW bound to: 8 - type: integer 
-	Parameter BITWIDTH bound to: 18 - type: integer 
-	Parameter ADDR_BITWIDTH bound to: 6 - type: integer 
-	Parameter LAYER_BITWIDTH bound to: 1152 - type: integer 
-	Parameter N_DSP48 bound to: 8 - type: integer 
-	Parameter DSP48_INPUT_BITWIDTH bound to: 144 - type: integer 
-	Parameter DSP48_OUTPUT_BITWIDTH bound to: 2368 - type: integer 
-	Parameter MAC_BITWIDTH bound to: 37 - type: integer 
-	Parameter MUX_BITWIDTH bound to: 3 - type: integer 
-	Parameter IDLE bound to: 2'b00 
-	Parameter CALC bound to: 2'b01 
-	Parameter END bound to: 2'b10 
-INFO: [Synth 8-256] done synthesizing module 'dot_prod__parameterized0' (1#1) [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:1]
-INFO: [Synth 8-256] done synthesizing module 'gate' (2#1) [/home/josefonseca/Documents/thesis/verilog/gate/gate.v:1]
----------------------------------------------------------------------------------
-Finished Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 1137.805 ; gain = 292.184 ; free physical = 4042 ; free virtual = 9337
+Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1137.805 ; gain = 292.184 ; free physical = 4042 ; free virtual = 9337
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:18 ; elapsed = 00:01:36 . Memory (MB): peak = 2115.105 ; gain = 1269.488 ; free physical = 133 ; free virtual = 3479
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Start Loading Part and Timing Information
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:20 ; elapsed = 00:01:38 . Memory (MB): peak = 2115.105 ; gain = 1269.488 ; free physical = 132 ; free virtual = 3479
 ---------------------------------------------------------------------------------
-Loading part: xc7z020clg484-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1145.805 ; gain = 300.184 ; free physical = 4042 ; free virtual = 9337
+Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
-INFO: [Device 21-403] Loading part xc7z020clg484-1
-INFO: [Synth 8-5544] ROM "NEXTrowMux" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
-INFO: [Synth 8-5546] ROM "NEXTrowMux" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'gate'
-INFO: [Synth 8-5544] ROM "dataReady_gate" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "enable_dotprodY" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "enable_dotprodX" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "NEXTstate" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "NEXTstate" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
----------------------------------------------------------------------------------------------------
-                   State |                     New Encoding |                Previous Encoding 
----------------------------------------------------------------------------------------------------
-                    IDLE |                              000 |                              000
-              CALC_XandY |                              001 |                              001
-                   SUM_X |                              010 |                              010
-                  CALC_Y |                              011 |                              011
-                   SUM_Y |                              100 |                              100
----------------------------------------------------------------------------------------------------
-INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'gate'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:12 . Memory (MB): peak = 1474.484 ; gain = 628.863 ; free physical = 3688 ; free virtual = 9008
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:20 ; elapsed = 00:01:38 . Memory (MB): peak = 2115.105 ; gain = 1269.488 ; free physical = 132 ; free virtual = 3479
 ---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:26 ; elapsed = 00:01:43 . Memory (MB): peak = 2115.105 ; gain = 1269.488 ; free physical = 122 ; free virtual = 3479
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:26 ; elapsed = 00:01:44 . Memory (MB): peak = 2115.105 ; gain = 1269.488 ; free physical = 123 ; free virtual = 3479
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+--------+------+
+|      |Cell    |Count |
++------+--------+------+
+|1     |CARRY4  |   644|
+|2     |DSP48E1 |    16|
+|3     |LUT1    |     2|
+|4     |LUT2    |  3586|
+|5     |LUT3    |  6454|
+|6     |LUT4    | 11581|
+|7     |LUT5    |  9001|
+|8     |LUT6    | 16297|
+|9     |MUXF7   |   880|
+|10    |FDRE    |  9553|
++------+--------+------+
+
+Report Instance Areas: 
++------+------------+-------------------------+------+
+|      |Instance    |Module                   |Cells |
++------+------------+-------------------------+------+
+|1     |top         |                         | 58014|
+|2     |  DOTPROD_X |dot_prod                 | 27886|
+|3     |  DOTPROD_Y |dot_prod__parameterized0 | 27820|
++------+------------+-------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:26 ; elapsed = 00:01:44 . Memory (MB): peak = 2115.105 ; gain = 1269.488 ; free physical = 123 ; free virtual = 3479
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 423 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:24 ; elapsed = 00:01:41 . Memory (MB): peak = 2119.020 ; gain = 1151.602 ; free physical = 124 ; free virtual = 3484
+Synthesis Optimization Complete : Time (s): cpu = 00:01:26 ; elapsed = 00:01:45 . Memory (MB): peak = 2119.020 ; gain = 1273.402 ; free physical = 151 ; free virtual = 3466
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 660 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+56 Infos, 123 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:03:44 ; elapsed = 00:02:02 . Memory (MB): peak = 2171.133 ; gain = 1254.180 ; free physical = 3459 ; free virtual = 6797
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+write_checkpoint: Time (s): cpu = 00:00:16 ; elapsed = 00:00:14 . Memory (MB): peak = 2267.184 ; gain = 96.051 ; free physical = 3415 ; free virtual = 6796
+report_utilization: Time (s): cpu = 00:00:00.33 ; elapsed = 00:00:01 . Memory (MB): peak = 2267.184 ; gain = 0.000 ; free physical = 3407 ; free virtual = 6798
+INFO: [Common 17-206] Exiting Vivado at Tue Jun 21 17:52:17 2016...

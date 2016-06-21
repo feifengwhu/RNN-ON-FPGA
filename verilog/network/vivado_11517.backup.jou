@@ -1,0 +1,55 @@
+#-----------------------------------------------------------
+# Vivado v2015.4 (64-bit)
+# SW Build 1412921 on Wed Nov 18 09:44:32 MST 2015
+# IP Build 1412160 on Tue Nov 17 13:47:24 MST 2015
+# Start of session at: Tue Jun 21 11:29:31 2016
+# Process ID: 11517
+# Current directory: /home/josefonseca/Documents/thesis/verilog/network
+# Command line: vivado
+# Log file: /home/josefonseca/Documents/thesis/verilog/network/vivado.log
+# Journal file: /home/josefonseca/Documents/thesis/verilog/network/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.xpr
+reset_run synth_3
+launch_runs synth_3
+wait_on_run synth_3
+launch_runs impl_3
+wait_on_run impl_3
+close_project
+open_project /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.xpr
+set_property STEPS.SYNTH_DESIGN.ARGS.CASCADE_DSP auto [get_runs synth_3]
+reset_run synth_3
+launch_runs synth_3
+wait_on_run synth_3
+launch_runs impl_3
+wait_on_run impl_3
+reset_run synth_3
+launch_runs synth_3
+wait_on_run synth_3
+launch_runs impl_3
+wait_on_run impl_3
+open_run impl_3
+create_run synth_4 -flow {Vivado Synthesis 2015} -strategy {Vivado Synthesis Defaults}
+current_run [get_runs synth_4]
+set_property strategy Flow_PerfOptimized_high [get_runs synth_4]
+launch_runs synth_4
+wait_on_run synth_4
+launch_runs impl_4
+wait_on_run impl_4
+reset_run synth_4
+launch_runs impl_4
+wait_on_run impl_4
+reset_run synth_4
+launch_runs impl_4
+wait_on_run impl_4
+reset_run synth_4
+launch_runs impl_4
+wait_on_run impl_4
+close_design
+reset_run synth_4
+launch_runs impl_4
+wait_on_run impl_4
+reset_run synth_4
+launch_runs impl_4
+wait_on_run impl_4

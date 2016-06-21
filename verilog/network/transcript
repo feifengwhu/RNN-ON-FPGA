@@ -1,3 +1,11 @@
+# vsim -voptargs="+acc" -c -do "run -all" tb_top_network 
+# Start time: 00:04:47 on Jun 22,2016
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Note: (vopt-143) Recognized 1 FSM in module "network(fast)".
+# ** Note: (vopt-143) Recognized 1 FSM in module "dot_prod(fast)".
+# ** Note: (vopt-143) Recognized 1 FSM in module "dot_prod(fast__1)".
+# ** Note: (vopt-143) Recognized 1 FSM in module "gate(fast)".
+# ** Note: (vopt-143) Recognized 1 FSM in module "array_prod(fast)".
 # //  Questa Sim-64
 # //  Version 10.4c_5 linux_x86_64 Nov 14 2015
 # //
@@ -13,16 +21,8 @@
 # //  FURTHERMORE, THIS INFORMATION IS PROHIBITED FROM DISCLOSURE UNDER
 # //  THE TRADE SECRETS ACT, 18 U.S.C. SECTION 1905.
 # //
-vsim -voptargs=+acc work.tb_network
-# vsim -voptargs="+acc" work.tb_network 
-# Start time: 15:03:42 on Jun 03,2016
-# ** Note: (vsim-3812) Design is being optimized...
-# ** Note: (vopt-143) Recognized 1 FSM in module "network(fast)".
-# ** Note: (vopt-143) Recognized 1 FSM in module "dot_prod(fast)".
-# ** Note: (vopt-143) Recognized 1 FSM in module "dot_prod(fast__1)".
-# ** Note: (vopt-143) Recognized 1 FSM in module "gate(fast)".
-# ** Note: (vopt-143) Recognized 1 FSM in module "array_prod(fast)".
-# Loading work.tb_network(fast)
+# Loading work.tb_top_network(fast)
+# Loading work.top_network(fast)
 # Loading work.network(fast)
 # Loading work.gate(fast)
 # Loading work.dot_prod(fast)
@@ -32,48 +32,111 @@ vsim -voptargs=+acc work.tb_network
 # Loading work.sigmoid(fast)
 # Loading work.tanh(fast)
 # Loading work.array_prod(fast)
-do lowLevel.do
-# Cannot open macro file: lowLevel.do
-ls
-# array_prod.v
-# dot_prod.v
-# gate.v
-# goldenIn_bf.bin
-# goldenIn_bi.bin
-# goldenIn_bo.bin
-# goldenIn_bz.bin
-# goldenIn_outW.bin
-# goldenIn_Rf.bin
-# goldenIn_Ri.bin
-# goldenIn_Ro.bin
-# goldenIn_Rz.bin
-# goldenIn_Wf.bin
-# goldenIn_Wi.bin
-# goldenIn_Wo.bin
-# goldenIn_Wz.bin
-# goldenIn_x.bin
-# layer.pickle
-# LSTMlayer.py
-# network.v
-# output.bin
-# project_1
-# __pycache__
-# readres2.py
-# readres.py
-# sigmoid.v
-# tanh.v
-# tb_network.v
-# test.bin
-# test.v
-# transcript
-# vivado_26408.backup.jou
-# vivado_26408.backup.log
-# vivado.jou
-# vivado.log
-# vivado_pid4860.str
-# vsim.wlf
-# wave.do
-# weightRAM.v
-# work
-# End time: 15:04:27 on Jun 03,2016, Elapsed time: 0:00:45
-# Errors: 1, Warnings: 0
+# run -all
+# Simulation started at 0.000000
+# Input Sample           0
+# Input Sample         100
+# Input Sample         200
+# Input Sample         300
+# Input Sample         400
+# Input Sample         500
+# Input Sample         600
+# Input Sample         700
+# Input Sample         800
+# Input Sample         900
+# Input Sample        1000
+# Input Sample        1100
+# Input Sample        1200
+# Input Sample        1300
+# Input Sample        1400
+# Input Sample        1500
+# Input Sample        1600
+# Input Sample        1700
+# Input Sample        1800
+# Input Sample        1900
+# Input Sample        2000
+# Input Sample        2100
+# Input Sample        2200
+# Input Sample        2300
+# Input Sample        2400
+# Input Sample        2500
+# Input Sample        2600
+# Input Sample        2700
+# Input Sample        2800
+# Input Sample        2900
+# Input Sample        3000
+# Input Sample        3100
+# Input Sample        3200
+# Input Sample        3300
+# Input Sample        3400
+# Input Sample        3500
+# Input Sample        3600
+# Input Sample        3700
+# Input Sample        3800
+# Input Sample        3900
+# Input Sample        4000
+# Input Sample        4100
+# Input Sample        4200
+# Input Sample        4300
+# Input Sample        4400
+# Input Sample        4500
+# Input Sample        4600
+# Input Sample        4700
+# Input Sample        4800
+# Input Sample        4900
+# Input Sample        5000
+# Input Sample        5100
+# Input Sample        5200
+# Input Sample        5300
+# Input Sample        5400
+# Input Sample        5500
+# Input Sample        5600
+# Input Sample        5700
+# Input Sample        5800
+# Input Sample        5900
+# Input Sample        6000
+# Input Sample        6100
+# Input Sample        6200
+# Input Sample        6300
+# Input Sample        6400
+# Input Sample        6500
+# Input Sample        6600
+# Input Sample        6700
+# Input Sample        6800
+# Input Sample        6900
+# Input Sample        7000
+# Input Sample        7100
+# Input Sample        7200
+# Input Sample        7300
+# Input Sample        7400
+# Input Sample        7500
+# Input Sample        7600
+# Input Sample        7700
+# Input Sample        7800
+# Input Sample        7900
+# Input Sample        8000
+# Input Sample        8100
+# Input Sample        8200
+# Input Sample        8300
+# Input Sample        8400
+# Input Sample        8500
+# Input Sample        8600
+# Input Sample        8700
+# Input Sample        8800
+# Input Sample        8900
+# Input Sample        9000
+# Input Sample        9100
+# Input Sample        9200
+# Input Sample        9300
+# Input Sample        9400
+# Input Sample        9500
+# Input Sample        9600
+# Input Sample        9700
+# Input Sample        9800
+# Input Sample        9900
+# ** Note: $stop    : tb_top_network.v(211)
+#    Time: 7080005 ns  Iteration: 0  Instance: /tb_top_network
+# Break in Module tb_top_network at tb_top_network.v line 211
+# Stopped at tb_top_network.v line 211
+# End time: 00:05:18 on Jun 22,2016, Elapsed time: 0:00:31
+# Errors: 0, Warnings: 0

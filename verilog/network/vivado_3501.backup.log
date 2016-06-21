@@ -1,0 +1,101 @@
+#-----------------------------------------------------------
+# Vivado v2015.4 (64-bit)
+# SW Build 1412921 on Wed Nov 18 09:44:32 MST 2015
+# IP Build 1412160 on Tue Nov 17 13:47:24 MST 2015
+# Start of session at: Tue Jun 21 19:42:16 2016
+# Process ID: 3501
+# Current directory: /home/josefonseca/Documents/thesis/verilog/network
+# Command line: vivado
+# Log file: /home/josefonseca/Documents/thesis/verilog/network/vivado.log
+# Journal file: /home/josefonseca/Documents/thesis/verilog/network/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2015.4/data/ip'.
+open_project: Time (s): cpu = 00:00:13 ; elapsed = 00:00:07 . Memory (MB): peak = 5837.766 ; gain = 130.676 ; free physical = 4470 ; free virtual = 9762
+set_property strategy Flow_PerfOptimized_high [get_runs synth_2]
+reset_run synth_2
+launch_runs impl_2
+[Tue Jun 21 19:44:38 2016] Launched synth_2...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.runs/synth_2/runme.log
+[Tue Jun 21 19:44:38 2016] Launched impl_2...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.runs/impl_2/runme.log
+create_run synth_5 -flow {Vivado Synthesis 2015} -strategy Flow_PerfOptimized_high
+Run is defaulting to srcset: sources_1
+Run is defaulting to constrset: lstm_const
+Run is defaulting to part: xc7z020clg484-1
+current_run [get_runs synth_5]
+set_property strategy Flow_AreaMultThresholdDSP [get_runs synth_5]
+launch_runs impl_3
+[Tue Jun 21 19:50:44 2016] Launched synth_5...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.runs/synth_5/runme.log
+[Tue Jun 21 19:50:44 2016] Launched impl_3...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.runs/impl_3/runme.log
+delete_runs "synth_4 synth_1 synth_2"
+INFO: [Vivado 12-3261] Dependent run, 'impl_4', will be deleted with parent run, 'synth_4'.
+INFO: [Vivado 12-3261] Dependent run, 'impl_1', will be deleted with parent run, 'synth_1'.
+INFO: [Vivado 12-3261] Dependent run, 'impl_2', will be deleted with parent run, 'synth_2'.
+create_run synth_1 -flow {Vivado Synthesis 2015} -strategy Flow_AreaMultThresholdDSP
+Run is defaulting to srcset: sources_1
+Run is defaulting to constrset: lstm_const
+Run is defaulting to part: xc7z020clg484-1
+current_run [get_runs synth_1]
+set_property strategy Flow_AreaOptimized_medium [get_runs synth_1]
+set_property strategy Performance_ExplorePostRoutePhysOpt [get_runs impl_3]
+launch_runs impl_1
+[Tue Jun 21 19:59:24 2016] Launched synth_1...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.runs/synth_1/runme.log
+[Tue Jun 21 19:59:24 2016] Launched impl_1...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.runs/impl_1/runme.log
+create_run synth_2 -flow {Vivado Synthesis 2015} -strategy Flow_AreaOptimized_medium
+Run is defaulting to srcset: sources_1
+Run is defaulting to constrset: lstm_const
+Run is defaulting to part: xc7z020clg484-1
+current_run [get_runs synth_2]
+set_property strategy Flow_PerfOptimized_high [get_runs synth_2]
+set_property strategy Performance_ExplorePostRoutePhysOpt [get_runs impl_1]
+launch_runs impl_2
+[Tue Jun 21 20:05:18 2016] Launched synth_2...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.runs/synth_2/runme.log
+[Tue Jun 21 20:05:18 2016] Launched impl_2...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.runs/impl_2/runme.log
+reset_run synth_2
+launch_runs impl_2
+[Tue Jun 21 20:30:22 2016] Launched synth_2...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.runs/synth_2/runme.log
+[Tue Jun 21 20:30:22 2016] Launched impl_2...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.runs/impl_2/runme.log
+reset_run synth_2
+launch_runs impl_2
+[Tue Jun 21 20:49:58 2016] Launched synth_2...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.runs/synth_2/runme.log
+[Tue Jun 21 20:49:58 2016] Launched impl_2...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.runs/impl_2/runme.log
+reset_run synth_2
+launch_runs impl_2
+[Tue Jun 21 21:07:51 2016] Launched synth_2...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.runs/synth_2/runme.log
+[Tue Jun 21 21:07:51 2016] Launched impl_2...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.runs/impl_2/runme.log
+reset_run synth_2
+launch_runs impl_2
+[Tue Jun 21 21:12:30 2016] Launched synth_2...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.runs/synth_2/runme.log
+[Tue Jun 21 21:12:30 2016] Launched impl_2...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.runs/impl_2/runme.log
+reset_run synth_2
+launch_runs impl_2
+[Tue Jun 21 21:21:56 2016] Launched synth_2...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.runs/synth_2/runme.log
+[Tue Jun 21 21:21:56 2016] Launched impl_2...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.runs/impl_2/runme.log
+reset_run synth_2
+launch_runs impl_2
+[Tue Jun 21 22:04:45 2016] Launched synth_2...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.runs/synth_2/runme.log
+[Tue Jun 21 22:04:45 2016] Launched impl_2...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.runs/impl_2/runme.log

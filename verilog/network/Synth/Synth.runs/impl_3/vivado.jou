@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2015.4 (64-bit)
+# SW Build 1412921 on Wed Nov 18 09:44:32 MST 2015
+# IP Build 1412160 on Tue Nov 17 13:47:24 MST 2015
+# Start of session at: Tue Jun 21 19:54:45 2016
+# Process ID: 8367
+# Current directory: /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.runs/impl_3
+# Command line: vivado -log top_network.vdi -applog -messageDb vivado.pb -mode batch -source top_network.tcl -notrace
+# Log file: /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.runs/impl_3/top_network.vdi
+# Journal file: /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.runs/impl_3/vivado.jou
+#-----------------------------------------------------------
+source top_network.tcl -notrace

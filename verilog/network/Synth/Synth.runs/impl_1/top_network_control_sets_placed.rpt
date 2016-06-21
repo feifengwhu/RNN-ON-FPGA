@@ -1,0 +1,238 @@
+Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+----------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2015.4 (lin64) Build 1412921 Wed Nov 18 09:44:32 MST 2015
+| Date         : Tue Jun 21 20:02:23 2016
+| Host         : desktop4480 running 64-bit Ubuntu 14.04.4 LTS
+| Command      : report_control_sets -verbose -file top_network_control_sets_placed.rpt
+| Design       : top_network
+| Device       : xc7z020
+----------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Flip-Flop Distribution
+3. Detailed Control Set Information
+
+1. Summary
+----------
+
++-------------------------------------------------------------------+-------+
+|                               Status                              | Count |
++-------------------------------------------------------------------+-------+
+| Number of unique control sets                                     |   185 |
+| Minimum Number of register sites lost to control set restrictions |   793 |
++-------------------------------------------------------------------+-------+
+
+
+2. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |               9 |            8 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |            1974 |          777 |
+| Yes          | No                    | No                     |               0 |            0 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |            9312 |         3045 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+3. Detailed Control Set Information
+-----------------------------------
+
++------------------+-------------------------------------------------------+--------------------------------------------------+------------------+----------------+
+|   Clock Signal   |                     Enable Signal                     |                 Set/Reset Signal                 | Slice Load Count | Bel Load Count |
++------------------+-------------------------------------------------------+--------------------------------------------------+------------------+----------------+
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_F/DOTPROD_Y/outputMAC[216]_i_1__4_n_0 | LSTM_LAYER/GATE_F/DOTPROD_Y/reset_dotProd_Y      |                2 |              2 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_I/DOTPROD_X/outputMAC[38]_i_1__1_n_0  | LSTM_LAYER/GATE_I/DOTPROD_X/reset_dotProd_X      |                1 |              2 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC[192]_i_1__5_n_0 | LSTM_LAYER/GATE_O/DOTPROD_X/reset_dotProd_X      |                2 |              2 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_I/DOTPROD_Y/outputMAC[38]_i_1__2_n_0  | LSTM_LAYER/GATE_I/DOTPROD_Y/reset_dotProd_Y      |                1 |              2 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_Z/DOTPROD_X/outputMAC[38]_i_1_n_0     | LSTM_LAYER/GATE_Z/DOTPROD_X/reset_dotProd_X      |                1 |              2 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC[155]_i_1__5_n_0 | LSTM_LAYER/GATE_O/DOTPROD_X/reset_dotProd_X      |                1 |              2 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_F/DOTPROD_Y/outputMAC[38]_i_1__4_n_0  | LSTM_LAYER/GATE_F/DOTPROD_Y/reset_dotProd_Y      |                2 |              2 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_Z/DOTPROD_X/outputMAC[480]_i_1_n_0    | LSTM_LAYER/GATE_Z/DOTPROD_X/reset_dotProd_X      |                1 |              2 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_I/DOTPROD_Y/outputMAC[480]_i_1__2_n_0 | LSTM_LAYER/GATE_I/DOTPROD_Y/reset_dotProd_Y      |                1 |              2 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_O/DOTPROD_Y/outputMAC[155]_i_1__6_n_0 | LSTM_LAYER/GATE_O/DOTPROD_Y/reset_dotProd_Y      |                2 |              2 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC[147]_i_1__5_n_0 | LSTM_LAYER/GATE_O/DOTPROD_X/reset_dotProd_X      |                1 |              2 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_O/DOTPROD_Y/outputMAC[192]_i_1__6_n_0 | LSTM_LAYER/GATE_O/DOTPROD_Y/reset_dotProd_Y      |                1 |              2 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC[480]_i_1__5_n_0 | LSTM_LAYER/GATE_O/DOTPROD_X/reset_dotProd_X      |                1 |              2 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_O/DOTPROD_Y/outputMAC[216]_i_1__6_n_0 | LSTM_LAYER/GATE_O/DOTPROD_Y/reset_dotProd_Y      |                1 |              2 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_F/DOTPROD_Y/outputMAC[224]_i_1__4_n_0 | LSTM_LAYER/GATE_F/DOTPROD_Y/reset_dotProd_Y      |                2 |              2 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_F/DOTPROD_X/outputMAC[480]_i_1__3_n_0 | LSTM_LAYER/GATE_F/DOTPROD_X/reset_dotProd_X      |                1 |              2 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_F/DOTPROD_Y/outputMAC[192]_i_1__4_n_0 | LSTM_LAYER/GATE_F/DOTPROD_Y/reset_dotProd_Y      |                1 |              2 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_F/DOTPROD_Y/outputMAC[155]_i_1__4_n_0 | LSTM_LAYER/GATE_F/DOTPROD_Y/reset_dotProd_Y      |                2 |              2 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_F/DOTPROD_Y/outputMAC[147]_i_1__4_n_0 | LSTM_LAYER/GATE_F/DOTPROD_Y/reset_dotProd_Y      |                2 |              2 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_O/DOTPROD_Y/outputMAC[224]_i_1__6_n_0 | LSTM_LAYER/GATE_O/DOTPROD_Y/reset_dotProd_Y      |                1 |              2 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC[38]_i_1__5_n_0  | LSTM_LAYER/GATE_O/DOTPROD_X/reset_dotProd_X      |                1 |              2 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_F/DOTPROD_Y/outputMAC[480]_i_1__4_n_0 | LSTM_LAYER/GATE_F/DOTPROD_Y/reset_dotProd_Y      |                2 |              2 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_I/DOTPROD_X/outputMAC[192]_i_1__1_n_0 | LSTM_LAYER/GATE_I/DOTPROD_X/reset_dotProd_X      |                1 |              2 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_I/DOTPROD_X/outputMAC[216]_i_1__1_n_0 | LSTM_LAYER/GATE_I/DOTPROD_X/reset_dotProd_X      |                1 |              2 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_I/DOTPROD_X/outputMAC[155]_i_1__1_n_0 | LSTM_LAYER/GATE_I/DOTPROD_X/reset_dotProd_X      |                1 |              2 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_I/DOTPROD_X/outputMAC[147]_i_1__1_n_0 | LSTM_LAYER/GATE_I/DOTPROD_X/reset_dotProd_X      |                1 |              2 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_I/DOTPROD_X/outputMAC[224]_i_1__1_n_0 | LSTM_LAYER/GATE_I/DOTPROD_X/reset_dotProd_X      |                1 |              2 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_O/DOTPROD_Y/outputMAC[38]_i_1__6_n_0  | LSTM_LAYER/GATE_O/DOTPROD_Y/reset_dotProd_Y      |                2 |              2 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_I/DOTPROD_X/outputMAC[480]_i_1__1_n_0 | LSTM_LAYER/GATE_I/DOTPROD_X/reset_dotProd_X      |                1 |              2 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC[216]_i_1__5_n_0 | LSTM_LAYER/GATE_O/DOTPROD_X/reset_dotProd_X      |                1 |              2 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_Z/DOTPROD_Y/outputMAC[192]_i_1__0_n_0 | LSTM_LAYER/GATE_Z/DOTPROD_Y/reset_dotProd_Y      |                1 |              2 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_Z/DOTPROD_Y/outputMAC[216]_i_1__0_n_0 | LSTM_LAYER/GATE_Z/DOTPROD_Y/reset_dotProd_Y      |                1 |              2 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_Z/DOTPROD_Y/outputMAC[224]_i_1__0_n_0 | LSTM_LAYER/GATE_Z/DOTPROD_Y/reset_dotProd_Y      |                1 |              2 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_I/DOTPROD_Y/outputMAC[147]_i_1__2_n_0 | LSTM_LAYER/GATE_I/DOTPROD_Y/reset_dotProd_Y      |                1 |              2 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_I/DOTPROD_Y/outputMAC[155]_i_1__2_n_0 | LSTM_LAYER/GATE_I/DOTPROD_Y/reset_dotProd_Y      |                2 |              2 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_I/DOTPROD_Y/outputMAC[192]_i_1__2_n_0 | LSTM_LAYER/GATE_I/DOTPROD_Y/reset_dotProd_Y      |                1 |              2 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_I/DOTPROD_Y/outputMAC[216]_i_1__2_n_0 | LSTM_LAYER/GATE_I/DOTPROD_Y/reset_dotProd_Y      |                1 |              2 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_Z/DOTPROD_Y/outputMAC[38]_i_1__0_n_0  | LSTM_LAYER/GATE_Z/DOTPROD_Y/reset_dotProd_Y      |                1 |              2 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_I/DOTPROD_Y/outputMAC[224]_i_1__2_n_0 | LSTM_LAYER/GATE_I/DOTPROD_Y/reset_dotProd_Y      |                1 |              2 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_Z/DOTPROD_Y/outputMAC[480]_i_1__0_n_0 | LSTM_LAYER/GATE_Z/DOTPROD_Y/reset_dotProd_Y      |                1 |              2 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_Z/DOTPROD_Y/outputMAC[147]_i_1__0_n_0 | LSTM_LAYER/GATE_Z/DOTPROD_Y/reset_dotProd_Y      |                1 |              2 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_Z/DOTPROD_Y/outputMAC[155]_i_1__0_n_0 | LSTM_LAYER/GATE_Z/DOTPROD_Y/reset_dotProd_Y      |                1 |              2 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_Z/DOTPROD_X/outputMAC[147]_i_1_n_0    | LSTM_LAYER/GATE_Z/DOTPROD_X/reset_dotProd_X      |                1 |              2 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_Z/DOTPROD_X/outputMAC[155]_i_1_n_0    | LSTM_LAYER/GATE_Z/DOTPROD_X/reset_dotProd_X      |                2 |              2 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_F/DOTPROD_X/outputMAC[147]_i_1__3_n_0 | LSTM_LAYER/GATE_F/DOTPROD_X/reset_dotProd_X      |                2 |              2 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_F/DOTPROD_X/outputMAC[155]_i_1__3_n_0 | LSTM_LAYER/GATE_F/DOTPROD_X/reset_dotProd_X      |                1 |              2 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_F/DOTPROD_X/outputMAC[192]_i_1__3_n_0 | LSTM_LAYER/GATE_F/DOTPROD_X/reset_dotProd_X      |                1 |              2 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_F/DOTPROD_X/outputMAC[216]_i_1__3_n_0 | LSTM_LAYER/GATE_F/DOTPROD_X/reset_dotProd_X      |                1 |              2 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_F/DOTPROD_X/outputMAC[224]_i_1__3_n_0 | LSTM_LAYER/GATE_F/DOTPROD_X/reset_dotProd_X      |                2 |              2 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_Z/DOTPROD_X/outputMAC[192]_i_1_n_0    | LSTM_LAYER/GATE_Z/DOTPROD_X/reset_dotProd_X      |                1 |              2 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_O/DOTPROD_Y/outputMAC[147]_i_1__6_n_0 | LSTM_LAYER/GATE_O/DOTPROD_Y/reset_dotProd_Y      |                1 |              2 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_Z/DOTPROD_X/outputMAC[216]_i_1_n_0    | LSTM_LAYER/GATE_Z/DOTPROD_X/reset_dotProd_X      |                1 |              2 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC[224]_i_1__5_n_0 | LSTM_LAYER/GATE_O/DOTPROD_X/reset_dotProd_X      |                1 |              2 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_Z/DOTPROD_X/outputMAC[224]_i_1_n_0    | LSTM_LAYER/GATE_Z/DOTPROD_X/reset_dotProd_X      |                1 |              2 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_F/DOTPROD_X/outputMAC[38]_i_1__3_n_0  | LSTM_LAYER/GATE_F/DOTPROD_X/reset_dotProd_X      |                2 |              2 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_O/DOTPROD_Y/outputMAC[480]_i_1__6_n_0 | LSTM_LAYER/GATE_O/DOTPROD_Y/reset_dotProd_Y      |                1 |              2 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_I/DOTPROD_X/outputMAC[268]_i_1__1_n_0 | LSTM_LAYER/GATE_I/DOTPROD_X/reset_dotProd_X      |                2 |              4 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC[300]_i_1__5_n_0 | LSTM_LAYER/GATE_O/DOTPROD_X/reset_dotProd_X      |                3 |              4 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_I/DOTPROD_X/outputMAC[300]_i_1__1_n_0 | LSTM_LAYER/GATE_I/DOTPROD_X/reset_dotProd_X      |                3 |              4 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC[369]_i_1__5_n_0 | LSTM_LAYER/GATE_O/DOTPROD_X/reset_dotProd_X      |                1 |              4 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC[332]_i_1__5_n_0 | LSTM_LAYER/GATE_O/DOTPROD_X/reset_dotProd_X      |                2 |              4 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC[401]_i_1__5_n_0 | LSTM_LAYER/GATE_O/DOTPROD_X/reset_dotProd_X      |                2 |              4 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_I/DOTPROD_Y/outputMAC[401]_i_1__2_n_0 | LSTM_LAYER/GATE_I/DOTPROD_Y/reset_dotProd_Y      |                2 |              4 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_I/DOTPROD_Y/outputMAC[369]_i_1__2_n_0 | LSTM_LAYER/GATE_I/DOTPROD_Y/reset_dotProd_Y      |                1 |              4 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_I/DOTPROD_Y/outputMAC[332]_i_1__2_n_0 | LSTM_LAYER/GATE_I/DOTPROD_Y/reset_dotProd_Y      |                2 |              4 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_I/DOTPROD_Y/outputMAC[300]_i_1__2_n_0 | LSTM_LAYER/GATE_I/DOTPROD_Y/reset_dotProd_Y      |                3 |              4 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC[268]_i_1__5_n_0 | LSTM_LAYER/GATE_O/DOTPROD_X/reset_dotProd_X      |                2 |              4 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_I/DOTPROD_Y/outputMAC[268]_i_1__2_n_0 | LSTM_LAYER/GATE_I/DOTPROD_Y/reset_dotProd_Y      |                2 |              4 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_I/DOTPROD_X/outputMAC[332]_i_1__1_n_0 | LSTM_LAYER/GATE_I/DOTPROD_X/reset_dotProd_X      |                2 |              4 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_Z/DOTPROD_Y/outputMAC[268]_i_1__0_n_0 | LSTM_LAYER/GATE_Z/DOTPROD_Y/reset_dotProd_Y      |                2 |              4 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_Z/DOTPROD_Y/outputMAC[300]_i_1__0_n_0 | LSTM_LAYER/GATE_Z/DOTPROD_Y/reset_dotProd_Y      |                3 |              4 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_Z/DOTPROD_Y/outputMAC[332]_i_1__0_n_0 | LSTM_LAYER/GATE_Z/DOTPROD_Y/reset_dotProd_Y      |                2 |              4 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_Z/DOTPROD_Y/outputMAC[369]_i_1__0_n_0 | LSTM_LAYER/GATE_Z/DOTPROD_Y/reset_dotProd_Y      |                1 |              4 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_Z/DOTPROD_Y/outputMAC[401]_i_1__0_n_0 | LSTM_LAYER/GATE_Z/DOTPROD_Y/reset_dotProd_Y      |                3 |              4 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_F/DOTPROD_X/outputMAC[268]_i_1__3_n_0 | LSTM_LAYER/GATE_F/DOTPROD_X/reset_dotProd_X      |                2 |              4 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_F/DOTPROD_X/outputMAC[300]_i_1__3_n_0 | LSTM_LAYER/GATE_F/DOTPROD_X/reset_dotProd_X      |                4 |              4 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_F/DOTPROD_X/outputMAC[332]_i_1__3_n_0 | LSTM_LAYER/GATE_F/DOTPROD_X/reset_dotProd_X      |                2 |              4 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_F/DOTPROD_X/outputMAC[369]_i_1__3_n_0 | LSTM_LAYER/GATE_F/DOTPROD_X/reset_dotProd_X      |                2 |              4 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_Z/DOTPROD_X/outputMAC[268]_i_1_n_0    | LSTM_LAYER/GATE_Z/DOTPROD_X/reset_dotProd_X      |                3 |              4 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_F/DOTPROD_X/outputMAC[401]_i_1__3_n_0 | LSTM_LAYER/GATE_F/DOTPROD_X/reset_dotProd_X      |                3 |              4 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_Z/DOTPROD_X/outputMAC[300]_i_1_n_0    | LSTM_LAYER/GATE_Z/DOTPROD_X/reset_dotProd_X      |                2 |              4 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_Z/DOTPROD_X/outputMAC[332]_i_1_n_0    | LSTM_LAYER/GATE_Z/DOTPROD_X/reset_dotProd_X      |                2 |              4 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_Z/DOTPROD_X/outputMAC[369]_i_1_n_0    | LSTM_LAYER/GATE_Z/DOTPROD_X/reset_dotProd_X      |                3 |              4 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_F/DOTPROD_Y/outputMAC[401]_i_1__4_n_0 | LSTM_LAYER/GATE_F/DOTPROD_Y/reset_dotProd_Y      |                2 |              4 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_Z/DOTPROD_X/outputMAC[401]_i_1_n_0    | LSTM_LAYER/GATE_Z/DOTPROD_X/reset_dotProd_X      |                1 |              4 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_F/DOTPROD_Y/outputMAC[369]_i_1__4_n_0 | LSTM_LAYER/GATE_F/DOTPROD_Y/reset_dotProd_Y      |                2 |              4 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_F/DOTPROD_Y/outputMAC[332]_i_1__4_n_0 | LSTM_LAYER/GATE_F/DOTPROD_Y/reset_dotProd_Y      |                2 |              4 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_F/DOTPROD_Y/outputMAC[300]_i_1__4_n_0 | LSTM_LAYER/GATE_F/DOTPROD_Y/reset_dotProd_Y      |                3 |              4 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_F/DOTPROD_Y/outputMAC[268]_i_1__4_n_0 | LSTM_LAYER/GATE_F/DOTPROD_Y/reset_dotProd_Y      |                1 |              4 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_O/DOTPROD_Y/outputMAC[268]_i_1__6_n_0 | LSTM_LAYER/GATE_O/DOTPROD_Y/reset_dotProd_Y      |                2 |              4 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_O/DOTPROD_Y/outputMAC[300]_i_1__6_n_0 | LSTM_LAYER/GATE_O/DOTPROD_Y/reset_dotProd_Y      |                2 |              4 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_O/DOTPROD_Y/outputMAC[332]_i_1__6_n_0 | LSTM_LAYER/GATE_O/DOTPROD_Y/reset_dotProd_Y      |                2 |              4 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_O/DOTPROD_Y/outputMAC[369]_i_1__6_n_0 | LSTM_LAYER/GATE_O/DOTPROD_Y/reset_dotProd_Y      |                1 |              4 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_I/DOTPROD_X/outputMAC[401]_i_1__1_n_0 | LSTM_LAYER/GATE_I/DOTPROD_X/reset_dotProd_X      |                2 |              4 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_O/DOTPROD_Y/outputMAC[401]_i_1__6_n_0 | LSTM_LAYER/GATE_O/DOTPROD_Y/reset_dotProd_Y      |                2 |              4 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_I/DOTPROD_X/outputMAC[369]_i_1__1_n_0 | LSTM_LAYER/GATE_I/DOTPROD_X/reset_dotProd_X      |                1 |              4 |
+|  clock_IBUF_BUFG |                                                       |                                                  |                8 |              9 |
+|  clock_IBUF_BUFG |                                                       | reset_IBUF                                       |                8 |             16 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_F/DOTPROD_Y/outputMAC[396]_i_1__4_n_0 | LSTM_LAYER/GATE_F/DOTPROD_Y/reset_dotProd_Y      |                7 |             19 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_F/DOTPROD_X/outputMAC[396]_i_1__3_n_0 | LSTM_LAYER/GATE_F/DOTPROD_X/reset_dotProd_X      |                7 |             19 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC[396]_i_1__5_n_0 | LSTM_LAYER/GATE_O/DOTPROD_X/reset_dotProd_X      |                8 |             19 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_I/DOTPROD_X/outputMAC[396]_i_1__1_n_0 | LSTM_LAYER/GATE_I/DOTPROD_X/reset_dotProd_X      |                6 |             19 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_O/DOTPROD_Y/outputMAC[396]_i_1__6_n_0 | LSTM_LAYER/GATE_O/DOTPROD_Y/reset_dotProd_Y      |                6 |             19 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_Z/DOTPROD_X/outputMAC[396]_i_1_n_0    | LSTM_LAYER/GATE_Z/DOTPROD_X/reset_dotProd_X      |                7 |             19 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_I/DOTPROD_Y/outputMAC[396]_i_1__2_n_0 | LSTM_LAYER/GATE_I/DOTPROD_Y/reset_dotProd_Y      |                5 |             19 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_Z/DOTPROD_Y/outputMAC[396]_i_1__0_n_0 | LSTM_LAYER/GATE_Z/DOTPROD_Y/reset_dotProd_Y      |                7 |             19 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_Z/DOTPROD_X/outputMAC[294]_i_1_n_0    | LSTM_LAYER/GATE_Z/DOTPROD_X/reset_dotProd_X      |                8 |             21 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_F/DOTPROD_X/outputMAC[294]_i_1__3_n_0 | LSTM_LAYER/GATE_F/DOTPROD_X/reset_dotProd_X      |               11 |             21 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_Z/DOTPROD_Y/outputMAC[294]_i_1__0_n_0 | LSTM_LAYER/GATE_Z/DOTPROD_Y/reset_dotProd_Y      |                7 |             21 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_I/DOTPROD_Y/outputMAC[294]_i_1__2_n_0 | LSTM_LAYER/GATE_I/DOTPROD_Y/reset_dotProd_Y      |               11 |             21 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC[294]_i_1__5_n_0 | LSTM_LAYER/GATE_O/DOTPROD_X/reset_dotProd_X      |               11 |             21 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_I/DOTPROD_X/outputMAC[294]_i_1__1_n_0 | LSTM_LAYER/GATE_I/DOTPROD_X/reset_dotProd_X      |               10 |             21 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_F/DOTPROD_Y/outputMAC[294]_i_1__4_n_0 | LSTM_LAYER/GATE_F/DOTPROD_Y/reset_dotProd_Y      |               11 |             21 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_O/DOTPROD_Y/outputMAC[294]_i_1__6_n_0 | LSTM_LAYER/GATE_O/DOTPROD_Y/reset_dotProd_Y      |                8 |             21 |
+|  clock_IBUF_BUFG |                                                       | PERCEPTRON/resetP                                |                6 |             22 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC[36]_i_1__5_n_0  | LSTM_LAYER/GATE_O/DOTPROD_X/reset_dotProd_X      |               11 |             27 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_O/DOTPROD_Y/outputMAC[36]_i_1__6_n_0  | LSTM_LAYER/GATE_O/DOTPROD_Y/reset_dotProd_Y      |               13 |             27 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_I/DOTPROD_X/outputMAC[36]_i_1__1_n_0  | LSTM_LAYER/GATE_I/DOTPROD_X/reset_dotProd_X      |               13 |             27 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_F/DOTPROD_X/outputMAC[36]_i_1__3_n_0  | LSTM_LAYER/GATE_F/DOTPROD_X/reset_dotProd_X      |               17 |             27 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_Z/DOTPROD_Y/outputMAC[36]_i_1__0_n_0  | LSTM_LAYER/GATE_Z/DOTPROD_Y/reset_dotProd_Y      |               12 |             27 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_F/DOTPROD_Y/outputMAC[36]_i_1__4_n_0  | LSTM_LAYER/GATE_F/DOTPROD_Y/reset_dotProd_Y      |               16 |             27 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_I/DOTPROD_Y/outputMAC[36]_i_1__2_n_0  | LSTM_LAYER/GATE_I/DOTPROD_Y/reset_dotProd_Y      |               10 |             27 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_Z/DOTPROD_X/outputMAC[36]_i_1_n_0     | LSTM_LAYER/GATE_Z/DOTPROD_X/reset_dotProd_X      |               12 |             27 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_Z/DOTPROD_Y/outputMAC[364]_i_1__0_n_0 | LSTM_LAYER/GATE_Z/DOTPROD_Y/reset_dotProd_Y      |                6 |             28 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_Z/DOTPROD_X/outputMAC[364]_i_1_n_0    | LSTM_LAYER/GATE_Z/DOTPROD_X/reset_dotProd_X      |                9 |             28 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_O/DOTPROD_Y/outputMAC[364]_i_1__6_n_0 | LSTM_LAYER/GATE_O/DOTPROD_Y/reset_dotProd_Y      |               12 |             28 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_F/DOTPROD_Y/outputMAC[364]_i_1__4_n_0 | LSTM_LAYER/GATE_F/DOTPROD_Y/reset_dotProd_Y      |                8 |             28 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_I/DOTPROD_X/outputMAC[364]_i_1__1_n_0 | LSTM_LAYER/GATE_I/DOTPROD_X/reset_dotProd_X      |               10 |             28 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_I/DOTPROD_Y/outputMAC[364]_i_1__2_n_0 | LSTM_LAYER/GATE_I/DOTPROD_Y/reset_dotProd_Y      |               10 |             28 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC[364]_i_1__5_n_0 | LSTM_LAYER/GATE_O/DOTPROD_X/reset_dotProd_X      |               14 |             28 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_F/DOTPROD_X/outputMAC[364]_i_1__3_n_0 | LSTM_LAYER/GATE_F/DOTPROD_X/reset_dotProd_X      |               15 |             28 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_F/DOTPROD_X/outputMAC[327]_i_1__3_n_0 | LSTM_LAYER/GATE_F/DOTPROD_X/reset_dotProd_X      |               19 |             44 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_O/DOTPROD_Y/outputMAC[327]_i_1__6_n_0 | LSTM_LAYER/GATE_O/DOTPROD_Y/reset_dotProd_Y      |               19 |             44 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC[327]_i_1__5_n_0 | LSTM_LAYER/GATE_O/DOTPROD_X/reset_dotProd_X      |               19 |             44 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_I/DOTPROD_X/outputMAC[327]_i_1__1_n_0 | LSTM_LAYER/GATE_I/DOTPROD_X/reset_dotProd_X      |               19 |             44 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_I/DOTPROD_Y/outputMAC[327]_i_1__2_n_0 | LSTM_LAYER/GATE_I/DOTPROD_Y/reset_dotProd_Y      |               18 |             44 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_F/DOTPROD_Y/outputMAC[327]_i_1__4_n_0 | LSTM_LAYER/GATE_F/DOTPROD_Y/reset_dotProd_Y      |               19 |             44 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_Z/DOTPROD_X/outputMAC[327]_i_1_n_0    | LSTM_LAYER/GATE_Z/DOTPROD_X/reset_dotProd_X      |               16 |             44 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_Z/DOTPROD_Y/outputMAC[327]_i_1__0_n_0 | LSTM_LAYER/GATE_Z/DOTPROD_Y/reset_dotProd_Y      |               18 |             44 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_I/DOTPROD_X/outputMAC[554]_i_1__1_n_0 | LSTM_LAYER/GATE_I/DOTPROD_X/reset_dotProd_X      |               44 |            113 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_I/DOTPROD_Y/outputMAC[554]_i_1__2_n_0 | LSTM_LAYER/GATE_I/DOTPROD_Y/reset_dotProd_Y      |               47 |            113 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC[554]_i_1__5_n_0 | LSTM_LAYER/GATE_O/DOTPROD_X/reset_dotProd_X      |               49 |            113 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_Z/DOTPROD_X/outputMAC[554]_i_1_n_0    | LSTM_LAYER/GATE_Z/DOTPROD_X/reset_dotProd_X      |               51 |            113 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_Z/DOTPROD_Y/outputMAC[554]_i_1__0_n_0 | LSTM_LAYER/GATE_Z/DOTPROD_Y/reset_dotProd_Y      |               55 |            113 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_F/DOTPROD_X/outputMAC[554]_i_1__3_n_0 | LSTM_LAYER/GATE_F/DOTPROD_X/reset_dotProd_X      |               50 |            113 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_F/DOTPROD_Y/outputMAC[554]_i_1__4_n_0 | LSTM_LAYER/GATE_F/DOTPROD_Y/reset_dotProd_Y      |               54 |            113 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_O/DOTPROD_Y/outputMAC[554]_i_1__6_n_0 | LSTM_LAYER/GATE_O/DOTPROD_Y/reset_dotProd_Y      |               47 |            113 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_F/DOTPROD_X/outputMAC[591]_i_1__3_n_0 | LSTM_LAYER/GATE_F/DOTPROD_X/reset_dotProd_X      |               63 |            158 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_I/DOTPROD_X/outputMAC[591]_i_1__1_n_0 | LSTM_LAYER/GATE_I/DOTPROD_X/reset_dotProd_X      |               59 |            158 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_Z/DOTPROD_X/outputMAC[591]_i_1_n_0    | LSTM_LAYER/GATE_Z/DOTPROD_X/reset_dotProd_X      |               58 |            158 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_F/DOTPROD_Y/outputMAC[591]_i_1__4_n_0 | LSTM_LAYER/GATE_F/DOTPROD_Y/reset_dotProd_Y      |               63 |            158 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_O/DOTPROD_Y/outputMAC[591]_i_1__6_n_0 | LSTM_LAYER/GATE_O/DOTPROD_Y/reset_dotProd_Y      |               57 |            158 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_Z/DOTPROD_Y/outputMAC[591]_i_1__0_n_0 | LSTM_LAYER/GATE_Z/DOTPROD_Y/reset_dotProd_Y      |               70 |            158 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_I/DOTPROD_Y/outputMAC[591]_i_1__2_n_0 | LSTM_LAYER/GATE_I/DOTPROD_Y/reset_dotProd_Y      |               50 |            158 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC[591]_i_1__5_n_0 | LSTM_LAYER/GATE_O/DOTPROD_X/reset_dotProd_X      |               51 |            158 |
+|  clock_IBUF_BUFG |                                                       | LSTM_LAYER/GATE_O/DOTPROD_X/reset_dotProd_X      |               66 |            163 |
+|  clock_IBUF_BUFG |                                                       | LSTM_LAYER/GATE_Z/DOTPROD_X/reset_dotProd_X      |               75 |            163 |
+|  clock_IBUF_BUFG |                                                       | LSTM_LAYER/GATE_I/DOTPROD_X/reset_dotProd_X      |               66 |            163 |
+|  clock_IBUF_BUFG |                                                       | LSTM_LAYER/GATE_F/DOTPROD_X/reset_dotProd_X      |               79 |            163 |
+|  clock_IBUF_BUFG |                                                       | LSTM_LAYER/GATE_I/DOTPROD_Y/reset_dotProd_Y      |               69 |            169 |
+|  clock_IBUF_BUFG |                                                       | LSTM_LAYER/GATE_F/DOTPROD_Y/reset_dotProd_Y      |               75 |            169 |
+|  clock_IBUF_BUFG |                                                       | LSTM_LAYER/GATE_O/DOTPROD_Y/reset_dotProd_Y      |               68 |            169 |
+|  clock_IBUF_BUFG |                                                       | LSTM_LAYER/GATE_Z/DOTPROD_Y/reset_dotProd_Y      |               73 |            169 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_Z/DOTPROD_Y/E[0]                      | reset_IBUF                                       |               80 |            288 |
+|  clock_IBUF_BUFG | LSTM_LAYER/dataoutReady                               | reset_IBUF                                       |              101 |            288 |
+|  clock_IBUF_BUFG | LSTM_LAYER/f_ready                                    | reset_IBUF                                       |               65 |            288 |
+|  clock_IBUF_BUFG | LSTM_LAYER/z_ready                                    | reset_IBUF                                       |               67 |            288 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_O/DOTPROD_X/dataReadyF_i_1__5_n_0     | LSTM_LAYER/GATE_O/DOTPROD_X/reset_dotProd_X      |               81 |            288 |
+|  clock_IBUF_BUFG | newSample_IBUF                                        | reset_IBUF                                       |               80 |            288 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_Z/DOTPROD_Y/dataReadyF_i_1__0_n_0     | LSTM_LAYER/GATE_Z/DOTPROD_Y/reset_dotProd_Y      |               79 |            288 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_Z/DOTPROD_X/E[0]                      | reset_IBUF                                       |               80 |            288 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_F/DOTPROD_X/E[0]                      | reset_IBUF                                       |               80 |            288 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_F/DOTPROD_X/dataReadyF_i_1__3_n_0     | LSTM_LAYER/GATE_F/DOTPROD_X/reset_dotProd_X      |               69 |            288 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_F/DOTPROD_Y/dataReadyF_i_1__4_n_0     | LSTM_LAYER/GATE_F/DOTPROD_Y/reset_dotProd_Y      |               78 |            288 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_Z/DOTPROD_X/dataReadyF_i_1_n_0        | LSTM_LAYER/GATE_Z/DOTPROD_X/reset_dotProd_X      |               79 |            288 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_O/DOTPROD_Y/E[0]                      | reset_IBUF                                       |               80 |            288 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_F/DOTPROD_Y/E[0]                      | reset_IBUF                                       |               80 |            288 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_I/DOTPROD_X/dataReadyF_i_1__1_n_0     | LSTM_LAYER/GATE_I/DOTPROD_X/reset_dotProd_X      |               79 |            288 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_O/DOTPROD_Y/dataReadyF_i_1__6_n_0     | LSTM_LAYER/GATE_O/DOTPROD_Y/reset_dotProd_Y      |               72 |            288 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_O/DOTPROD_X/E[0]                      | reset_IBUF                                       |               80 |            288 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_I/DOTPROD_X/E[0]                      | reset_IBUF                                       |               80 |            288 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_I/DOTPROD_Y/dataReadyF_i_1__2_n_0     | LSTM_LAYER/GATE_I/DOTPROD_Y/reset_dotProd_Y      |               68 |            288 |
+|  clock_IBUF_BUFG | LSTM_LAYER/GATE_I/DOTPROD_Y/E[0]                      | reset_IBUF                                       |               80 |            288 |
+|  clock_IBUF_BUFG |                                                       | LSTM_LAYER/genblk1[15].sigmoid_i/result_reg[0]_0 |               96 |            304 |
+|  clock_IBUF_BUFG |                                                       | LSTM_LAYER/genblk2[15].tanh_i/result_reg[0]_0    |               96 |            304 |
++------------------+-------------------------------------------------------+--------------------------------------------------+------------------+----------------+
+
+

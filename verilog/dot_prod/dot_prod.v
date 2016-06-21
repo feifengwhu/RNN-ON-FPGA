@@ -7,7 +7,7 @@ module dot_prod #(parameter NROW = 16,
                   inputVector, 
                   clk,
                   reset,
-                  dataReady,
+                  dataReadyF,
                   colAddress,
                   outputVector);
 
@@ -24,12 +24,13 @@ module dot_prod #(parameter NROW = 16,
 	input signed      [BITWIDTH-1:0]       inputVector; 
 	input         clk;
 	input         reset;
-	output reg    dataReady;
+	output reg    dataReadyF;
 	output reg          [ADDR_BITWIDTH-1:0]  colAddress;
 	output reg signed  [LAYER_BITWIDTH-1:0] outputVector;
 	reg signed  [LAYER_BITWIDTH-1:0] outputVectorTEMP;
 	
     // Internal register definition
+    reg dataReady;
     reg [MUX_BITWIDTH-1:0] rowMux;
     reg signed [DSP48_INPUT_BITWIDTH -1:0]  weightMAC;
     reg signed [DSP48_OUTPUT_BITWIDTH -1:0] outputMAC;
@@ -37,17 +38,21 @@ module dot_prod #(parameter NROW = 16,
     integer i;
 
     // FSM Registers
-    reg [1:0] state;
-    reg [1:0] NEXTstate;
+    reg [2:0] state;
+    reg [2:0] NEXTstate;
     reg [ADDR_BITWIDTH-1:0] NEXTcolAddress;
     reg [MUX_BITWIDTH-1:0] NEXTrowMux;
     reg outputEn;
     reg clearMAC;
-    parameter IDLE = 2'd0;
-    parameter CALC = 2'd1;
-    parameter END  = 2'd2;
+    parameter IDLE = 3'd0;
+    parameter IDLE_RDY = 3'd1;
+    parameter CALC = 3'd2;
+    parameter END_PIPE  = 3'd3;
+    parameter END_PIPE2  = 3'd4;
+    parameter END  = 3'd5;
 
     // The MAC multiplexer that selects the appropriate weight row for the MAC
+    /*
     always @(*) begin
         if (reset == 1'b1) 
             weightMAC = {DSP48_INPUT_BITWIDTH{1'b0}};
@@ -60,7 +65,7 @@ module dot_prod #(parameter NROW = 16,
     always @(posedge clk) begin
 		if(dataReady == 1'b0) begin
 			for (i=0; i < N_DSP48; i = i + 1) begin
-				outputMAC_sum[(i*DSP48_PER_ROW+rowMux)*MAC_BITWIDTH +: MAC_BITWIDTH] = $signed(outputMAC[(i*DSP48_PER_ROW+rowMux)*MAC_BITWIDTH +: MAC_BITWIDTH]);
+				outputMAC_sum[(i*DSP48_PER_ROW+rowMux)*MAC_BITWIDTH +: MAC_BITWIDTH] = $signed();
 			end
 		end
 		else begin
@@ -71,14 +76,14 @@ module dot_prod #(parameter NROW = 16,
 		
 		end
 	end
-    
+    */
 	always @(posedge clk) begin
 		if (reset == 1'b1)
             outputMAC <= {DSP48_OUTPUT_BITWIDTH{1'b0}};
         else
 			if(outputEn == 1'b1) begin
 				for (i=0; i < N_DSP48; i = i + 1) begin
-					outputMAC[(i*DSP48_PER_ROW+rowMux)*MAC_BITWIDTH +: MAC_BITWIDTH] <= $signed(outputMAC_sum[(i*DSP48_PER_ROW+rowMux)*MAC_BITWIDTH +: MAC_BITWIDTH]) + ($signed(weightMAC[i*BITWIDTH +: BITWIDTH]) * $signed(inputVector));
+					outputMAC[(i*DSP48_PER_ROW+rowMux)*MAC_BITWIDTH +: MAC_BITWIDTH] <= $signed(outputMAC[(i*DSP48_PER_ROW+rowMux)*MAC_BITWIDTH +: MAC_BITWIDTH]) + ($signed(weightRow[(i*DSP48_PER_ROW+rowMux)*BITWIDTH +: BITWIDTH]) * $signed(inputVector));
 				end	
 			end
 			else
@@ -86,23 +91,26 @@ module dot_prod #(parameter NROW = 16,
 			
     end
     
-    
     // The output vector and adder
-    always @(posedge dataReady or posedge reset) begin
+    always @(posedge clk) begin
 		if (reset == 1'b1) begin
 			outputVector <= {LAYER_BITWIDTH{1'b0}};
 		end
-		else begin
+		else if (dataReady) begin
 			for(i = 0; i < NROW; i = i + 1) begin
 				outputVector[i*BITWIDTH +: BITWIDTH] <= ($signed(outputMAC[i*MAC_BITWIDTH +: MAC_BITWIDTH]) >>> QM);
 			end
 		end
     end
 
+	always @(posedge clk) begin
+		dataReadyF <= dataReady;
+	end
+
 // The control signal FSM
     always @(posedge clk) begin
         if( reset == 1'b1) begin 
-            state <= 2'd0;
+            state <= 3'd0;
             colAddress <= {ADDR_BITWIDTH{1'b0}};
             rowMux     <= {MUX_BITWIDTH{1'b0}};
         end
@@ -117,12 +125,18 @@ module dot_prod #(parameter NROW = 16,
     always @(*) begin
         case(state)
             IDLE : 
+                NEXTstate = IDLE_RDY;
+            IDLE_RDY : 
                 NEXTstate = CALC;
             CALC :
                 if (colAddress == NCOL-1 && rowMux == DSP48_PER_ROW-1)
-                    NEXTstate = END;
+                    NEXTstate = END_PIPE;
                 else
                     NEXTstate = CALC;
+            END_PIPE :
+                NEXTstate = END_PIPE2;
+            END_PIPE2:
+                NEXTstate = END;
             END :
                 NEXTstate = CALC;
             default:
@@ -142,6 +156,15 @@ module dot_prod #(parameter NROW = 16,
                 clearMAC       = 1'b1;
             end
             
+            IDLE_RDY : 
+            begin
+                dataReady      = 1'b0;
+                NEXTcolAddress = 1;      
+                NEXTrowMux     = 0;     
+                outputEn       = 1'b0;
+                clearMAC       = 1'b1;
+            end
+            
             CALC :
             begin
                 dataReady      = 1'b0;
@@ -157,12 +180,30 @@ module dot_prod #(parameter NROW = 16,
                 outputEn       = 1'b1;
             end
            
+            END_PIPE :
+            begin
+                dataReady      = 1'b0;
+                NEXTcolAddress = {ADDR_BITWIDTH{1'b0}};      
+                NEXTrowMux     = {MUX_BITWIDTH{1'b0}};      
+                outputEn       = 1'b1;
+                clearMAC       = 1'b0;
+            end
+            
+            END_PIPE2 :
+            begin
+                dataReady      = 1'b1;
+                NEXTcolAddress = {ADDR_BITWIDTH{1'b0}};      
+                NEXTrowMux     = {MUX_BITWIDTH{1'b0}};      
+                outputEn       = 1'b0;
+                clearMAC       = 1'b0;
+            end
+            
             END :
             begin
                 dataReady      = 1'b1;
                 NEXTcolAddress = {ADDR_BITWIDTH{1'b0}};      
                 NEXTrowMux     = {MUX_BITWIDTH{1'b0}};      
-                outputEn       = 1'b1;
+                outputEn       = 1'b0;
                 clearMAC       = 1'b0;
             end
             

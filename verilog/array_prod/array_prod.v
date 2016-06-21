@@ -43,16 +43,16 @@ module array_prod #(parameter ARRAY_LEN = 16,
     parameter FINALSUM2 = 3'd3;
     parameter END  = 3'd4;
     
-	always @(*) begin
+	always @(posedge clk) begin
 		if (reset)
             outputMAC <= {DSP48_OUTPUT_BITWIDTH{1'b0}};
         else
 			for (i=0; i < N_DSP48; i = i + 1) begin
-				outputMAC[i*MAC_BITWIDTH +: MAC_BITWIDTH] =  $signed(weightRow[(i*2+rowMux)*BITWIDTH +: BITWIDTH]) * $signed(inputVector[(i*2+rowMux)*BITWIDTH +: BITWIDTH]);
+				outputMAC[i*MAC_BITWIDTH +: MAC_BITWIDTH] <=  $signed(weightRow[(i*2+rowMux)*BITWIDTH +: BITWIDTH]) * $signed(inputVector[(i*2+rowMux)*BITWIDTH +: BITWIDTH]);
 			end	
     end
     
-    always @(*) begin
+    always @(posedge clk) begin
 		if(reset) begin
 			Adder1 <= {INT_ADDER_BITWIDTH{1'b0}};
 		end
@@ -88,11 +88,11 @@ module array_prod #(parameter ARRAY_LEN = 16,
                 NEXTstate = CALC;
             CALC :
                 if (rowMux == (MUX_SIZE-1))
-                    NEXTstate = END;
+                    NEXTstate = FINALSUM;
                 else
                     NEXTstate = CALC;
             FINALSUM :
-                NEXTstate = END;
+                NEXTstate = FINALSUM2;
             FINALSUM2 :
                 NEXTstate = END;
 			END	:
@@ -108,7 +108,7 @@ module array_prod #(parameter ARRAY_LEN = 16,
             IDLE : 
             begin
                 dataReady      = 1'b0;  
-                NEXTrowMux     = {MUX_BITWIDTH{1'b0}};     
+                NEXTrowMux     = 1;     
             end
             
             CALC :

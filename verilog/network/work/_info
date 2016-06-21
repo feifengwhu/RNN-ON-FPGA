@@ -72,139 +72,154 @@ n@_opt6
 R3
 R0
 T_opt7
-!s110 1464962625
-VBLk>bo7D_`mKQGgj:Rg401
+!s110 1466549858
+VJ?Ai7<B1En@hjQ8<;hYi>0
 R1
-=1-50465de28cf7-57518e40-22b9f-c27
+=1-d43d7e359f7e-5769c662-97553-1150
 R4
 n@_opt7
 R3
-varray_prod
-Z5 VDg1SIo80bB@j0V0VzS_@n1
-r1
-!s85 0
-31
-!i10b 1
-!s100 m[KFbYiYj3oaci2JZ4o0o1
-ISb4fQ>`i2c?4GzbEaDHIE2
 R0
-w1464692038
+T_opt8
+!s110 1466550287
+VX[hd1I^=V;]Yl>iNL519n0
+04 14 4 work tb_top_network fast 0
+=1-d43d7e359f7e-5769c80f-42c8e-12be
+R4
+n@_opt8
+R3
+varray_prod
+Z5 !s110 1466550286
+!i10b 1
+!s100 A=>PV6O:Ual]JLS`<Iimf3
+IeUDVnzYGRg^CSf:Ll4W7z3
+Z6 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1466542980
 8array_prod.v
 Farray_prod.v
 L0 1
-Z6 OL;L;10.4c_5;61
-Z7 !s108 1464873712.000000
-Z8 !s107 weightRAM.v|test.v|tb_network.v|tanh.v|sigmoid.v|network.v|gate.v|dot_prod.v|array_prod.v|
-Z9 !s90 array_prod.v|dot_prod.v|gate.v|network.v|sigmoid.v|tanh.v|tb_network.v|test.v|weightRAM.v|
-!i113 0
-Z10 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-vdot_prod
-R5
+Z7 OL;L;10.4c_5;61
 r1
 !s85 0
 31
+Z8 !s108 1466550286.000000
+Z9 !s107 weightRAM.v|top_network.v|test.v|tb_top_network.v|tb_network.v|tanh.v|sigmoid.v|network.v|gate.v|dot_prod.v|array_prod.v|
+Z10 !s90 array_prod.v|dot_prod.v|gate.v|network.v|sigmoid.v|tanh.v|tb_network.v|tb_top_network.v|test.v|top_network.v|weightRAM.v|
+!i113 0
+Z11 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+vdot_prod
+R5
 !i10b 1
-!s100 oHCm7P2f5b6C>Z[d<Nj_S2
-IHNPaG32oGPknzB[=7<`6M1
+!s100 0;]]@ldm__2cWG>m_ecXf0
+I6l2E8`FP]MO6K;IDIXVTE0
+R6
 R0
-Z11 w1463674348
+w1466528067
 8dot_prod.v
 Fdot_prod.v
 L0 1
-R6
 R7
-R8
-R9
-!i113 0
-R10
-vgate
-R5
 r1
 !s85 0
 31
-!i10b 1
-!s100 ;Rcno4gAW<?oQ3=0hGD2]2
-IMfSmXg7zX;]H_OB1jKJ]_2
-R0
+R8
+R9
+R10
+!i113 0
 R11
+vgate
+R5
+!i10b 1
+!s100 ZfBU:1[S]UB::10lCYgee1
+I@h7_deO4U_PPE9nJ8U9@00
+R6
+R0
+w1466528056
 8gate.v
 Fgate.v
 L0 1
-R6
 R7
-R8
-R9
-!i113 0
-R10
-vnetwork
-R5
 r1
 !s85 0
 31
+R8
+R9
+R10
+!i113 0
+R11
+vnetwork
+R5
 !i10b 1
-!s100 ^45ZgDTRh5SmM4iaic0CH2
-IjmVNkVGKhkK4oSdWL:;j`2
+!s100 Kgkol[oE>kOhLDA[IX7VG0
+IXoz[XFJ0Vn]J>P=L]m9aR0
+R6
 R0
-w1463698980
+w1466539571
 8network.v
 Fnetwork.v
 L0 1
-R6
 R7
-R8
-R9
-!i113 0
-R10
-vsigmoid
-R5
 r1
 !s85 0
 31
+R8
+R9
+R10
+!i113 0
+R11
+vsigmoid
+R5
 !i10b 1
 !s100 1:7_Q4dT_iT7d0C`djFhj1
 IEhe?kD14[Ab3ad:aeYXmY3
+R6
 R0
-R11
+Z12 w1465990204
 8sigmoid.v
 Fsigmoid.v
 L0 1
-R6
 R7
-R8
-R9
-!i113 0
-R10
-vtanh
-R5
 r1
 !s85 0
 31
+R8
+R9
+R10
+!i113 0
+R11
+vtanh
+R5
 !i10b 1
 !s100 IOXXJE>OW2b[ZX1`L7WPX0
 I0^e=H]?g@0lVVQXF>W]Ld2
+R6
 R0
-R11
+R12
 8tanh.v
 Ftanh.v
 L0 1
-R6
 R7
+r1
+!s85 0
+31
 R8
 R9
-!i113 0
 R10
+!i113 0
+R11
 vtb_gate
 !s110 1462725753
 !i10b 1
 !s100 2DK65^9GegUIDBOA?]RRd1
 IQQ1l>[1lP3aMlKE@NGz;Y3
-R5
+R6
 R0
 w1461884043
 8tb_gate.v
 Ftb_gate.v
 L0 3
-R6
+R7
 r1
 !s85 0
 31
@@ -212,63 +227,105 @@ r1
 !s107 weightRAM.v|tb_gate.v|tanh.v|sigmoid.v|network.v|gate.v|dot_prod.v|
 !s90 dot_prod.v|gate.v|network.v|sigmoid.v|tanh.v|tb_gate.v|weightRAM.v|
 !i113 0
-R10
+R11
 vtb_network
 R5
-r1
-!s85 0
-31
 !i10b 1
-!s100 ILnV6]QU=5kPaldA3B^<K2
-I`8G8YSAF:4gKH42eODU033
+!s100 `z]P3@fFAb^aeF_nnWHV>0
+IPL85CnTUk=acekad3CD_n3
+R6
 R0
-w1464873551
+w1466550119
 8tb_network.v
 Ftb_network.v
 L0 3
-R6
 R7
+r1
+!s85 0
+31
 R8
 R9
-!i113 0
 R10
+!i113 0
+R11
+vtb_top_network
+R5
+!i10b 1
+!s100 5enXX5AJ[g_`NcKmAz^1^2
+I4Qz9ETd^=87NTE>oD<Rk>1
+R6
+R0
+w1466442187
+8tb_top_network.v
+Ftb_top_network.v
+L0 3
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 0
+R11
 vtest
-!s110 1464873712
+R5
 !i10b 1
 !s100 7X47;4fC1AE_eCRzged`A2
 I?A<6`FlW]VNROz4Po0laM0
-R5
+R6
 R0
-R11
+R12
 8test.v
 Ftest.v
 L0 1
-R6
+R7
 r1
 !s85 0
 31
-R7
 R8
 R9
-!i113 0
 R10
-vweightRAM
+!i113 0
+R11
+vtop_network
 R5
+!i10b 1
+!s100 maRG2k=jLB0WbPH3h_3hN2
+I6Q[IkM6Z218o]nQBUa5=O1
+R6
+R0
+w1466550220
+8top_network.v
+Ftop_network.v
+L0 3
+R7
 r1
 !s85 0
 31
-!i10b 1
-!s100 MRBIQz;Y3S>5[TlP:BFJc0
-IF8bSWAe1z;^oa9EfAf8IF1
-R0
+R8
+R9
+R10
+!i113 0
 R11
+vweightRAM
+R5
+!i10b 1
+!s100 HSm76JbU[cQzbj_Qmod^11
+IgoW`Y?ci@QJ0KG7l[OKb_1
+R6
+R0
+w1466528050
 8weightRAM.v
 FweightRAM.v
 L0 1
-R6
 R7
+r1
+!s85 0
+31
 R8
 R9
-!i113 0
 R10
+!i113 0
+R11
 nweight@r@a@m
