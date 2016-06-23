@@ -2,7 +2,6 @@ onerror {resume}
 quietly WaveActivateNextPane {} 0
 add wave -noupdate /tb_sigmoid/SIGMOID01/clk
 add wave -noupdate /tb_sigmoid/SIGMOID01/reset
-add wave -noupdate /tb_sigmoid/SIGMOID01/result
 add wave -noupdate /tb_sigmoid/SIGMOID01/p2_i1
 add wave -noupdate /tb_sigmoid/SIGMOID01/p1_i1
 add wave -noupdate /tb_sigmoid/SIGMOID01/p0_i1
@@ -15,19 +14,19 @@ add wave -noupdate /tb_sigmoid/SIGMOID01/p0_i3
 add wave -noupdate /tb_sigmoid/SIGMOID01/p2_i4
 add wave -noupdate /tb_sigmoid/SIGMOID01/p1_i4
 add wave -noupdate /tb_sigmoid/SIGMOID01/p0_i4
-add wave -noupdate /tb_sigmoid/SIGMOID01/p2
-add wave -noupdate /tb_sigmoid/SIGMOID01/p1
-add wave -noupdate /tb_sigmoid/SIGMOID01/p0
 add wave -noupdate /tb_sigmoid/SIGMOID01/state
-add wave -noupdate /tb_sigmoid/SIGMOID01/outputInt
-add wave -noupdate /tb_sigmoid/SIGMOID01/multiplierMux
-add wave -noupdate /tb_sigmoid/SIGMOID01/adderMux
+add wave -noupdate /tb_sigmoid/SIGMOID01/p0
+add wave -noupdate /tb_sigmoid/SIGMOID01/p1
+add wave -noupdate /tb_sigmoid/SIGMOID01/p2
 add wave -noupdate /tb_sigmoid/SIGMOID01/operand
-add wave -noupdate /tb_sigmoid/SIGMOID01/operandPipe1
-add wave -noupdate /tb_sigmoid/SIGMOID01/operandPipe2
+add wave -noupdate /tb_sigmoid/SIGMOID01/adderMux
+add wave -noupdate /tb_sigmoid/SIGMOID01/multiplierMux
+add wave -noupdate /tb_sigmoid/SIGMOID01/outputMAC
+add wave -noupdate /tb_sigmoid/SIGMOID01/result
+add wave -noupdate /tb_sigmoid/SIGMOID01/STATE
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {0 ns} 0}
-quietly wave cursor active 0
+WaveRestoreCursors {{Cursor 1} {49148700 ns} 0}
+quietly wave cursor active 1
 configure wave -namecolwidth 438
 configure wave -valuecolwidth 100
 configure wave -justifyvalue left
@@ -42,4 +41,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits ns
 update
-WaveRestoreZoom {0 ns} {8267 ns}
+WaveRestoreZoom {49145847 ns} {49154114 ns}

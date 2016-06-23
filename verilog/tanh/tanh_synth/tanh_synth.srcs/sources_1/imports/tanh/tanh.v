@@ -34,7 +34,7 @@ module tanh     #(parameter QN = 6,
     reg signed [BITWIDTH-1:0] operandPipe2;
 
     // Interval selector logic
-    always @(*) begin
+    always @(posedge clk) begin
         if (operand < $signed(18'b111110100000000000)) begin
             p2 <= 18'd0;  
             p1 <= 18'd0;   
@@ -68,7 +68,7 @@ module tanh     #(parameter QN = 6,
     end
 
     // The coefficient multiplier input Muxes
-    always @(*) begin
+    always @(posedge clk) begin
         if(reset == 1'b1) begin
             multiplierMux <= 18'd0;
             adderMux      <= 18'd0;

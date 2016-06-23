@@ -2,11 +2,11 @@
 # Vivado v2015.4 (64-bit)
 # SW Build 1412921 on Wed Nov 18 09:44:32 MST 2015
 # IP Build 1412160 on Tue Nov 17 13:47:24 MST 2015
-# Start of session at: Mon Apr  4 12:14:31 2016
-# Process ID: 19540
-# Current directory: /home/jfonseca/thesis/verilog/tanh/tanh_synth/tanh_synth.runs/impl_1
+# Start of session at: Wed Jun 22 16:24:06 2016
+# Process ID: 13173
+# Current directory: /home/josefonseca/Documents/thesis/verilog/tanh/tanh_synth/tanh_synth.runs/impl_1
 # Command line: vivado -log tanh.vdi -applog -messageDb vivado.pb -mode batch -source tanh.tcl -notrace
-# Log file: /home/jfonseca/thesis/verilog/tanh/tanh_synth/tanh_synth.runs/impl_1/tanh.vdi
-# Journal file: /home/jfonseca/thesis/verilog/tanh/tanh_synth/tanh_synth.runs/impl_1/vivado.jou
+# Log file: /home/josefonseca/Documents/thesis/verilog/tanh/tanh_synth/tanh_synth.runs/impl_1/tanh.vdi
+# Journal file: /home/josefonseca/Documents/thesis/verilog/tanh/tanh_synth/tanh_synth.runs/impl_1/vivado.jou
 #-----------------------------------------------------------
 source tanh.tcl -notrace

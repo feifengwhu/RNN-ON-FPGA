@@ -2,57 +2,27 @@
 # Vivado v2015.4 (64-bit)
 # SW Build 1412921 on Wed Nov 18 09:44:32 MST 2015
 # IP Build 1412160 on Tue Nov 17 13:47:24 MST 2015
-# Start of session at: Mon Apr  4 11:44:27 2016
-# Process ID: 16903
-# Current directory: /home/jfonseca/thesis/verilog/tanh
+# Start of session at: Wed Jun 22 16:14:31 2016
+# Process ID: 8092
+# Current directory: /home/josefonseca/Documents/thesis/verilog/tanh
 # Command line: vivado
-# Log file: /home/jfonseca/thesis/verilog/tanh/vivado.log
-# Journal file: /home/jfonseca/thesis/verilog/tanh/vivado.jou
+# Log file: /home/josefonseca/Documents/thesis/verilog/tanh/vivado.log
+# Journal file: /home/josefonseca/Documents/thesis/verilog/tanh/vivado.jou
 #-----------------------------------------------------------
 start_gui
-create_project tanh_synth /home/jfonseca/thesis/verilog/tanh/tanh_synth -part xc7z020clg400-3
-set_property simulator_language Verilog [current_project]
-add_files -norecurse {/home/jfonseca/thesis/verilog/tanh/tanh.v /home/jfonseca/thesis/verilog/tanh/tb_tanh.v}
-update_compile_order -fileset sources_1
-update_compile_order -fileset sim_1
-launch_runs synth_1
-wait_on_run synth_1
-close_project
-create_project tanh_synth /home/jfonseca/thesis/verilog/tanh/tanh_synth -part xc7z020clg484-1
-set_property simulator_language Verilog [current_project]
-add_files -norecurse /home/jfonseca/thesis/verilog/tanh/tanh.v
-import_files -force -norecurse
-update_compile_order -fileset sources_1
-update_compile_order -fileset sim_1
-synth_design -rtl -name rtl_1
-set_property SOURCE_SET sources_1 [get_filesets sim_1]
-import_files -fileset sim_1 -norecurse /home/jfonseca/thesis/verilog/tanh/tb_tanh.v
-update_compile_order -fileset sim_1
-update_compile_order -fileset sim_1
-update_compile_order -fileset sim_1
-launch_simulation
-source tb_tanh.tcl
-add_wave {{/tb_tanh/TANH01/p2}} {{/tb_tanh/TANH01/p1}} {{/tb_tanh/TANH01/p0}} 
-add_wave {{/tb_tanh/TANH01/state}} {{/tb_tanh/TANH01/outputInt}} {{/tb_tanh/TANH01/multiplierMux}} {{/tb_tanh/TANH01/adderMux}} 
-save_wave_config {/home/jfonseca/thesis/verilog/tanh/tanh_synth/tb_tanh_behav.wcfg}
-add_files -fileset sim_1 -norecurse /home/jfonseca/thesis/verilog/tanh/tanh_synth/tb_tanh_behav.wcfg
-set_property xsim.view /home/jfonseca/thesis/verilog/tanh/tanh_synth/tb_tanh_behav.wcfg [get_filesets sim_1]
-close_sim
-launch_simulation
-open_wave_config /home/jfonseca/thesis/verilog/tanh/tanh_synth/tb_tanh_behav.wcfg
-source tb_tanh.tcl
-set_property -name {xsim.simulate.runtime} -value {1000us} -objects [current_fileset -simset]
-close_sim
-launch_simulation
-open_wave_config /home/jfonseca/thesis/verilog/tanh/tanh_synth/tb_tanh_behav.wcfg
-source tb_tanh.tcl
-set_property -name {xsim.simulate.runtime} -value {1s} -objects [current_fileset -simset]
-close_sim
-launch_simulation
-open_wave_config /home/jfonseca/thesis/verilog/tanh/tanh_synth/tb_tanh_behav.wcfg
-source tb_tanh.tcl
-launch_runs synth_1
-wait_on_run synth_1
+open_project /home/josefonseca/Documents/thesis/verilog/tanh/tanh_synth/tanh_synth.xpr
+file mkdir /home/josefonseca/Documents/thesis/verilog/tanh/tanh_synth/tanh_synth.srcs/constrs_1
+file mkdir /home/josefonseca/Documents/thesis/verilog/tanh/tanh_synth/tanh_synth.srcs/constrs_1/new
+close [ open /home/josefonseca/Documents/thesis/verilog/tanh/tanh_synth/tanh_synth.srcs/constrs_1/new/tanh_const.xdc w ]
+add_files -fileset constrs_1 /home/josefonseca/Documents/thesis/verilog/tanh/tanh_synth/tanh_synth.srcs/constrs_1/new/tanh_const.xdc
+open_run impl_1
+reset_run synth_1
 launch_runs impl_1
 wait_on_run impl_1
-close_sim
+close_design
+reset_run synth_1
+launch_runs impl_1
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1
+wait_on_run impl_1

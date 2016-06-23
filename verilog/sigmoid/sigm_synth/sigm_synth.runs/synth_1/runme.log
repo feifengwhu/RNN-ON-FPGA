@@ -1,0 +1,452 @@
+
+*** Running vivado
+    with args -log sigmoid.vds -m64 -mode batch -messageDb vivado.pb -notrace -source sigmoid.tcl
+
+
+****** Vivado v2015.4 (64-bit)
+  **** SW Build 1412921 on Wed Nov 18 09:44:32 MST 2015
+  **** IP Build 1412160 on Tue Nov 17 13:47:24 MST 2015
+    ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+
+source sigmoid.tcl -notrace
+Command: synth_design -top sigmoid -part xc7z020clg484-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+WARNING: [Synth 8-2507] parameter declaration becomes local in sigmoid with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/sigmoid/sigmoid.v:8]
+WARNING: [Synth 8-2507] parameter declaration becomes local in sigmoid with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/sigmoid/sigmoid.v:39]
+WARNING: [Synth 8-2507] parameter declaration becomes local in sigmoid with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/sigmoid/sigmoid.v:40]
+WARNING: [Synth 8-2507] parameter declaration becomes local in sigmoid with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/sigmoid/sigmoid.v:41]
+WARNING: [Synth 8-2507] parameter declaration becomes local in sigmoid with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/sigmoid/sigmoid.v:42]
+WARNING: [Synth 8-2507] parameter declaration becomes local in sigmoid with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/sigmoid/sigmoid.v:43]
+WARNING: [Synth 8-2507] parameter declaration becomes local in sigmoid with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/sigmoid/sigmoid.v:44]
+WARNING: [Synth 8-2507] parameter declaration becomes local in sigmoid with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/sigmoid/sigmoid.v:45]
+WARNING: [Synth 8-2507] parameter declaration becomes local in sigmoid with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/sigmoid/sigmoid.v:46]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1037.539 ; gain = 191.926 ; free physical = 2245 ; free virtual = 8266
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'sigmoid' [/home/josefonseca/Documents/thesis/verilog/sigmoid/sigmoid.v:1]
+	Parameter QN bound to: 6 - type: integer 
+	Parameter QM bound to: 11 - type: integer 
+	Parameter BITWIDTH bound to: 18 - type: integer 
+	Parameter IDLE bound to: 3'b000 
+	Parameter INTERVAL_CHOICE bound to: 3'b001 
+	Parameter COEF_CHOICE bound to: 3'b010 
+	Parameter MAC1 bound to: 3'b011 
+	Parameter MAC2 bound to: 3'b100 
+	Parameter END bound to: 3'b101 
+	Parameter END1 bound to: 3'b110 
+	Parameter END2 bound to: 3'b111 
+INFO: [Synth 8-226] default block is never used [/home/josefonseca/Documents/thesis/verilog/sigmoid/sigmoid.v:134]
+INFO: [Synth 8-226] default block is never used [/home/josefonseca/Documents/thesis/verilog/sigmoid/sigmoid.v:212]
+INFO: [Synth 8-256] done synthesizing module 'sigmoid' (1#1) [/home/josefonseca/Documents/thesis/verilog/sigmoid/sigmoid.v:1]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1061.797 ; gain = 216.184 ; free physical = 2219 ; free virtual = 8240
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1061.797 ; gain = 216.184 ; free physical = 2217 ; free virtual = 8239
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z020clg484-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/josefonseca/Documents/thesis/verilog/sigmoid/sigm_synth/sigm_synth.srcs/constrs_1/new/sigm.xdc]
+Finished Parsing XDC File [/home/josefonseca/Documents/thesis/verilog/sigmoid/sigm_synth/sigm_synth.srcs/constrs_1/new/sigm.xdc]
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 1410.492 ; gain = 0.000 ; free physical = 1927 ; free virtual = 7949
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 2842 
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 1410.492 ; gain = 564.879 ; free physical = 1929 ; free virtual = 7951
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg484-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 1410.492 ; gain = 564.879 ; free physical = 1929 ; free virtual = 7951
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 1410.492 ; gain = 564.879 ; free physical = 1929 ; free virtual = 7951
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5544] ROM "interval_mux_active" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "NEXT_STATE" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-802] inferred FSM for state register 'STATE_reg' in module 'sigmoid'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    IDLE |                         00000001 |                              000
+         INTERVAL_CHOICE |                         00000010 |                              001
+             COEF_CHOICE |                         00000100 |                              010
+                    MAC1 |                         00001000 |                              011
+                    MAC2 |                         00010000 |                              100
+                     END |                         00100000 |                              101
+                    END1 |                         01000000 |                              110
+                    END2 |                         10000000 |                              111
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'STATE_reg' using encoding 'one-hot' in module 'sigmoid'
+WARNING: [Synth 8-327] inferring latch for variable 'p0_reg' [/home/josefonseca/Documents/thesis/verilog/sigmoid/sigmoid.v:53]
+WARNING: [Synth 8-327] inferring latch for variable 'p1_reg' [/home/josefonseca/Documents/thesis/verilog/sigmoid/sigmoid.v:52]
+WARNING: [Synth 8-327] inferring latch for variable 'p2_reg' [/home/josefonseca/Documents/thesis/verilog/sigmoid/sigmoid.v:51]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1410.492 ; gain = 564.879 ; free physical = 1927 ; free virtual = 7949
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     18 Bit       Adders := 2     
++---Registers : 
+	               18 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     18 Bit        Muxes := 2     
+	   6 Input     17 Bit        Muxes := 1     
+	   6 Input     14 Bit        Muxes := 1     
+	   6 Input     11 Bit        Muxes := 1     
+	   8 Input      1 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module sigmoid 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     18 Bit       Adders := 2     
++---Registers : 
+	               18 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     18 Bit        Muxes := 2     
+	   6 Input     17 Bit        Muxes := 1     
+	   6 Input     14 Bit        Muxes := 1     
+	   6 Input     11 Bit        Muxes := 1     
+	   8 Input      1 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1410.492 ; gain = 564.879 ; free physical = 1927 ; free virtual = 7949
+---------------------------------------------------------------------------------
+Start Cross Boundary Optimization
+---------------------------------------------------------------------------------
+DSP Report: Generating DSP outputMAC_reg, operation Mode is: (A*B2)'.
+DSP Report: register multiplierMux_reg is absorbed into DSP outputMAC_reg.
+DSP Report: register outputMAC_reg is absorbed into DSP outputMAC_reg.
+DSP Report: operator outputMAC0 is absorbed into DSP outputMAC_reg.
+---------------------------------------------------------------------------------
+Finished Cross Boundary Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1410.492 ; gain = 564.879 ; free physical = 1929 ; free virtual = 7951
+---------------------------------------------------------------------------------
+Finished Parallel Reinference  : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1410.492 ; gain = 564.879 ; free physical = 1929 ; free virtual = 7951
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+DSP:
++------------+-------------+--------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping | Neg Edge Clk | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+-------------+--------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|sigmoid     | (A*B2)'     | No           | 18     | 18     | 48     | 25     | 36     | 0    | 1    | 1    | 1    | 1     | 1    | 0    | 
++------------+-------------+--------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Area Optimization
+---------------------------------------------------------------------------------
+INFO: [Synth 8-3886] merging instance '\p0_reg[0] ' (LDC) to '\p1_reg[17] '
+INFO: [Synth 8-3886] merging instance '\p1_reg[0] ' (LDC) to '\p1_reg[4] '
+INFO: [Synth 8-3886] merging instance '\p0_reg[1] ' (LDC) to '\p1_reg[17] '
+INFO: [Synth 8-3886] merging instance '\p1_reg[2] ' (LDC) to '\p1_reg[3] '
+INFO: [Synth 8-3886] merging instance '\p0_reg[3] ' (LDC) to '\p0_reg[4] '
+INFO: [Synth 8-3886] merging instance '\p1_reg[3] ' (LDC) to '\p1_reg[5] '
+INFO: [Synth 8-3886] merging instance '\p1_reg[4] ' (LDC) to '\p1_reg[7] '
+INFO: [Synth 8-3886] merging instance '\p1_reg[5] ' (LDC) to '\p1_reg[9] '
+INFO: [Synth 8-3886] merging instance '\p0_reg[6] ' (LDC) to '\p0_reg[9] '
+INFO: [Synth 8-3886] merging instance '\p1_reg[6] ' (LDC) to '\p1_reg[17] '
+INFO: [Synth 8-3886] merging instance '\p0_reg[7] ' (LDC) to '\p0_reg[8] '
+INFO: [Synth 8-3886] merging instance '\p1_reg[8] ' (LDC) to '\p1_reg[17] '
+INFO: [Synth 8-3886] merging instance '\p1_reg[10] ' (LDC) to '\p1_reg[17] '
+INFO: [Synth 8-3886] merging instance '\p1_reg[11] ' (LDC) to '\p1_reg[17] '
+INFO: [Synth 8-3886] merging instance '\p0_reg[12] ' (LDC) to '\p1_reg[17] '
+INFO: [Synth 8-3886] merging instance '\p1_reg[12] ' (LDC) to '\p1_reg[17] '
+INFO: [Synth 8-3886] merging instance '\p0_reg[13] ' (LDC) to '\p1_reg[17] '
+INFO: [Synth 8-3886] merging instance '\p1_reg[13] ' (LDC) to '\p1_reg[17] '
+INFO: [Synth 8-3886] merging instance '\p0_reg[14] ' (LDC) to '\p1_reg[17] '
+INFO: [Synth 8-3886] merging instance '\p1_reg[14] ' (LDC) to '\p1_reg[17] '
+INFO: [Synth 8-3886] merging instance '\p0_reg[15] ' (LDC) to '\p1_reg[17] '
+INFO: [Synth 8-3886] merging instance '\p1_reg[15] ' (LDC) to '\p1_reg[17] '
+INFO: [Synth 8-3886] merging instance '\p0_reg[16] ' (LDC) to '\p1_reg[17] '
+INFO: [Synth 8-3886] merging instance '\p1_reg[16] ' (LDC) to '\p1_reg[17] '
+INFO: [Synth 8-3886] merging instance '\p2_reg[1] ' (LDC) to '\p2_reg[4] '
+INFO: [Synth 8-3886] merging instance '\p2_reg[2] ' (LDC) to '\p2_reg[3] '
+INFO: [Synth 8-3886] merging instance '\p2_reg[4] ' (LDC) to '\p2_reg[6] '
+INFO: [Synth 8-3886] merging instance '\p2_reg[5] ' (LDC) to '\p2_reg[7] '
+INFO: [Synth 8-3886] merging instance '\p2_reg[7] ' (LDC) to '\p2_reg[8] '
+INFO: [Synth 8-3886] merging instance '\p2_reg[8] ' (LDC) to '\p2_reg[9] '
+INFO: [Synth 8-3886] merging instance '\p2_reg[9] ' (LDC) to '\p2_reg[10] '
+INFO: [Synth 8-3886] merging instance '\p2_reg[10] ' (LDC) to '\p2_reg[11] '
+INFO: [Synth 8-3886] merging instance '\p2_reg[11] ' (LDC) to '\p2_reg[12] '
+INFO: [Synth 8-3886] merging instance '\p2_reg[12] ' (LDC) to '\p2_reg[13] '
+INFO: [Synth 8-3886] merging instance '\p2_reg[13] ' (LDC) to '\p2_reg[14] '
+INFO: [Synth 8-3886] merging instance '\p2_reg[14] ' (LDC) to '\p2_reg[15] '
+INFO: [Synth 8-3886] merging instance '\p2_reg[15] ' (LDC) to '\p2_reg[16] '
+INFO: [Synth 8-3886] merging instance '\p2_reg[16] ' (LDC) to '\p2_reg[17] '
+INFO: [Synth 8-3886] merging instance '\p0_reg[17] ' (LDC) to '\p1_reg[17] '
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\p1_reg[17] )
+WARNING: [Synth 8-3332] Sequential element (\p0_reg[7] ) is unused and will be removed from module sigmoid.
+WARNING: [Synth 8-3332] Sequential element (\p0_reg[6] ) is unused and will be removed from module sigmoid.
+WARNING: [Synth 8-3332] Sequential element (\p0_reg[3] ) is unused and will be removed from module sigmoid.
+WARNING: [Synth 8-3332] Sequential element (\p1_reg[5] ) is unused and will be removed from module sigmoid.
+WARNING: [Synth 8-3332] Sequential element (\p1_reg[4] ) is unused and will be removed from module sigmoid.
+WARNING: [Synth 8-3332] Sequential element (\p1_reg[3] ) is unused and will be removed from module sigmoid.
+WARNING: [Synth 8-3332] Sequential element (\p1_reg[2] ) is unused and will be removed from module sigmoid.
+WARNING: [Synth 8-3332] Sequential element (\p1_reg[0] ) is unused and will be removed from module sigmoid.
+WARNING: [Synth 8-3332] Sequential element (\p2_reg[16] ) is unused and will be removed from module sigmoid.
+WARNING: [Synth 8-3332] Sequential element (\p2_reg[15] ) is unused and will be removed from module sigmoid.
+WARNING: [Synth 8-3332] Sequential element (\p2_reg[14] ) is unused and will be removed from module sigmoid.
+WARNING: [Synth 8-3332] Sequential element (\p2_reg[13] ) is unused and will be removed from module sigmoid.
+WARNING: [Synth 8-3332] Sequential element (\p2_reg[12] ) is unused and will be removed from module sigmoid.
+WARNING: [Synth 8-3332] Sequential element (\p2_reg[11] ) is unused and will be removed from module sigmoid.
+WARNING: [Synth 8-3332] Sequential element (\p2_reg[10] ) is unused and will be removed from module sigmoid.
+WARNING: [Synth 8-3332] Sequential element (\p2_reg[9] ) is unused and will be removed from module sigmoid.
+WARNING: [Synth 8-3332] Sequential element (\p2_reg[8] ) is unused and will be removed from module sigmoid.
+WARNING: [Synth 8-3332] Sequential element (\p2_reg[7] ) is unused and will be removed from module sigmoid.
+WARNING: [Synth 8-3332] Sequential element (\p2_reg[5] ) is unused and will be removed from module sigmoid.
+WARNING: [Synth 8-3332] Sequential element (\p2_reg[4] ) is unused and will be removed from module sigmoid.
+WARNING: [Synth 8-3332] Sequential element (\p2_reg[2] ) is unused and will be removed from module sigmoid.
+WARNING: [Synth 8-3332] Sequential element (\p2_reg[1] ) is unused and will be removed from module sigmoid.
+WARNING: [Synth 8-3332] Sequential element (\adderMux_reg[17] ) is unused and will be removed from module sigmoid.
+WARNING: [Synth 8-3332] Sequential element (\adderMux_reg[16] ) is unused and will be removed from module sigmoid.
+WARNING: [Synth 8-3332] Sequential element (\adderMux_reg[15] ) is unused and will be removed from module sigmoid.
+WARNING: [Synth 8-3332] Sequential element (\adderMux_reg[14] ) is unused and will be removed from module sigmoid.
+WARNING: [Synth 8-3332] Sequential element (\adderMux_reg[13] ) is unused and will be removed from module sigmoid.
+WARNING: [Synth 8-3332] Sequential element (\adderMux_reg[12] ) is unused and will be removed from module sigmoid.
+WARNING: [Synth 8-3332] Sequential element (\p1_reg[17] ) is unused and will be removed from module sigmoid.
+WARNING: [Synth 8-3332] Sequential element (\p0_reg[0] ) is unused and will be removed from module sigmoid.
+WARNING: [Synth 8-3332] Sequential element (\p0_reg[1] ) is unused and will be removed from module sigmoid.
+WARNING: [Synth 8-3332] Sequential element (\p1_reg[6] ) is unused and will be removed from module sigmoid.
+WARNING: [Synth 8-3332] Sequential element (\p1_reg[8] ) is unused and will be removed from module sigmoid.
+WARNING: [Synth 8-3332] Sequential element (\p1_reg[10] ) is unused and will be removed from module sigmoid.
+WARNING: [Synth 8-3332] Sequential element (\p1_reg[11] ) is unused and will be removed from module sigmoid.
+WARNING: [Synth 8-3332] Sequential element (\p0_reg[12] ) is unused and will be removed from module sigmoid.
+WARNING: [Synth 8-3332] Sequential element (\p1_reg[12] ) is unused and will be removed from module sigmoid.
+WARNING: [Synth 8-3332] Sequential element (\p0_reg[13] ) is unused and will be removed from module sigmoid.
+WARNING: [Synth 8-3332] Sequential element (\p1_reg[13] ) is unused and will be removed from module sigmoid.
+WARNING: [Synth 8-3332] Sequential element (\p0_reg[14] ) is unused and will be removed from module sigmoid.
+WARNING: [Synth 8-3332] Sequential element (\p1_reg[14] ) is unused and will be removed from module sigmoid.
+WARNING: [Synth 8-3332] Sequential element (\p0_reg[15] ) is unused and will be removed from module sigmoid.
+WARNING: [Synth 8-3332] Sequential element (\p1_reg[15] ) is unused and will be removed from module sigmoid.
+WARNING: [Synth 8-3332] Sequential element (\p0_reg[16] ) is unused and will be removed from module sigmoid.
+WARNING: [Synth 8-3332] Sequential element (\p1_reg[16] ) is unused and will be removed from module sigmoid.
+WARNING: [Synth 8-3332] Sequential element (\p0_reg[17] ) is unused and will be removed from module sigmoid.
+INFO: [Synth 8-3886] merging instance '\p2_reg[0] ' (LDC) to '\p1_reg[1] '
+INFO: [Synth 8-3886] merging instance '\p2_reg[3] ' (LDC) to '\p0_reg[8] '
+INFO: [Synth 8-3886] merging instance '\p2_reg[6] ' (LDC) to '\p0_reg[10] '
+INFO: [Synth 8-3886] merging instance '\p2_reg[17] ' (LDC) to '\p0_reg[9] '
+INFO: [Synth 8-3886] merging instance '\p0_reg[2] ' (LDC) to '\p1_reg[9] '
+WARNING: [Synth 8-3332] Sequential element (\p2_reg[0] ) is unused and will be removed from module sigmoid.
+WARNING: [Synth 8-3332] Sequential element (\p2_reg[3] ) is unused and will be removed from module sigmoid.
+WARNING: [Synth 8-3332] Sequential element (\p2_reg[6] ) is unused and will be removed from module sigmoid.
+WARNING: [Synth 8-3332] Sequential element (\p2_reg[17] ) is unused and will be removed from module sigmoid.
+WARNING: [Synth 8-3332] Sequential element (\p0_reg[2] ) is unused and will be removed from module sigmoid.
+---------------------------------------------------------------------------------
+Finished Area Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1410.492 ; gain = 564.879 ; free physical = 1930 ; free virtual = 7951
+---------------------------------------------------------------------------------
+Finished Parallel Area Optimization  : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1410.492 ; gain = 564.879 ; free physical = 1930 ; free virtual = 7951
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 1410.492 ; gain = 564.879 ; free physical = 1905 ; free virtual = 7927
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 1410.492 ; gain = 564.879 ; free physical = 1905 ; free virtual = 7926
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 1410.492 ; gain = 564.879 ; free physical = 1887 ; free virtual = 7909
+---------------------------------------------------------------------------------
+Finished Parallel Technology Mapping Optimization  : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 1410.492 ; gain = 564.879 ; free physical = 1887 ; free virtual = 7909
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 1410.492 ; gain = 564.879 ; free physical = 1887 ; free virtual = 7909
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1410.492 ; gain = 564.879 ; free physical = 1893 ; free virtual = 7914
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1410.492 ; gain = 564.879 ; free physical = 1893 ; free virtual = 7914
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1410.492 ; gain = 564.879 ; free physical = 1893 ; free virtual = 7914
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1410.492 ; gain = 564.879 ; free physical = 1892 ; free virtual = 7914
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1410.492 ; gain = 564.879 ; free physical = 1892 ; free virtual = 7914
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1410.492 ; gain = 564.879 ; free physical = 1892 ; free virtual = 7914
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+--------+------+
+|      |Cell    |Count |
++------+--------+------+
+|1     |BUFG    |     1|
+|2     |CARRY4  |    14|
+|3     |DSP48E1 |     1|
+|4     |LUT1    |     9|
+|5     |LUT2    |    34|
+|6     |LUT3    |    11|
+|7     |LUT4    |    15|
+|8     |LUT5    |     7|
+|9     |LUT6    |    18|
+|10    |FDRE    |    19|
+|11    |FDSE    |     1|
+|12    |LDC     |     9|
+|13    |IBUF    |    20|
+|14    |OBUF    |    18|
++------+--------+------+
+
+Report Instance Areas: 
++------+---------+-------+------+
+|      |Instance |Module |Cells |
++------+---------+-------+------+
+|1     |top      |       |   177|
++------+---------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1410.492 ; gain = 564.879 ; free physical = 1892 ; free virtual = 7914
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 54 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 1410.492 ; gain = 94.379 ; free physical = 1899 ; free virtual = 7920
+Synthesis Optimization Complete : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1410.492 ; gain = 564.879 ; free physical = 1899 ; free virtual = 7920
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 44 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 9 instances were transformed.
+  LDC => LDCE: 9 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+65 Infos, 63 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 1436.523 ; gain = 519.574 ; free physical = 1899 ; free virtual = 7921
+report_utilization: Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.09 . Memory (MB): peak = 1468.543 ; gain = 0.000 ; free physical = 1899 ; free virtual = 7921
+INFO: [Common 17-206] Exiting Vivado at Wed Jun 22 23:59:51 2016...

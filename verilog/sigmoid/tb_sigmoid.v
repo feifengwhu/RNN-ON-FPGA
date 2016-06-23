@@ -53,13 +53,21 @@ module tb_sigmoid();
         reset = 0;
 
         for(i=0; i < MAX_SAMPLES; i = i + 1) begin
+			@(posedge clock);
+			operand <= ROM_input[i];
             @(posedge clock);
             @(posedge clock);
-            operand <= ROM_input[i];
+            @(posedge clock);
+            @(posedge clock);
             #(HALF_CLOCK);
             $fwrite(fid, "%d\n", result);
+            $display("%18b\n", result);
             if (i % 1000 == 0) 
                 $display("Simulated %d samples\n", i);
+            #(HALF_CLOCK);
+            reset = 1;
+            #(2*HALF_CLOCK);
+            reset = 0;
             
         end
         

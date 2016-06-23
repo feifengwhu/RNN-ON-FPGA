@@ -2,462 +2,62 @@
 # Vivado v2015.4 (64-bit)
 # SW Build 1412921 on Wed Nov 18 09:44:32 MST 2015
 # IP Build 1412160 on Tue Nov 17 13:47:24 MST 2015
-# Start of session at: Mon Apr  4 11:44:27 2016
-# Process ID: 16903
-# Current directory: /home/jfonseca/thesis/verilog/tanh
+# Start of session at: Wed Jun 22 16:14:31 2016
+# Process ID: 8092
+# Current directory: /home/josefonseca/Documents/thesis/verilog/tanh
 # Command line: vivado
-# Log file: /home/jfonseca/thesis/verilog/tanh/vivado.log
-# Journal file: /home/jfonseca/thesis/verilog/tanh/vivado.jou
+# Log file: /home/josefonseca/Documents/thesis/verilog/tanh/vivado.log
+# Journal file: /home/josefonseca/Documents/thesis/verilog/tanh/vivado.jou
 #-----------------------------------------------------------
 start_gui
-create_project tanh_synth /home/jfonseca/thesis/verilog/tanh/tanh_synth -part xc7z020clg400-3
+open_project /home/josefonseca/Documents/thesis/verilog/tanh/tanh_synth/tanh_synth.xpr
+INFO: [Project 1-313] Project file moved from '/home/jfonseca/thesis/verilog/tanh/tanh_synth' since last save.
+Scanning sources...
+Finished scanning sources
+WARNING: [filemgmt 56-2] IPStaticSourceDir: Could not find the directory '/home/josefonseca/Documents/thesis/verilog/tanh/tanh_synth/tanh_synth.ip_user_files/ipstatic', nor could it be found using path '/home/jfonseca/thesis/verilog/tanh/tanh_synth/tanh_synth.ip_user_files/ipstatic'.
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2015.4/data/ip'.
-create_project: Time (s): cpu = 00:00:13 ; elapsed = 00:00:12 . Memory (MB): peak = 5858.258 ; gain = 39.152 ; free physical = 196 ; free virtual = 6825
-set_property simulator_language Verilog [current_project]
-add_files -norecurse {/home/jfonseca/thesis/verilog/tanh/tanh.v /home/jfonseca/thesis/verilog/tanh/tb_tanh.v}
-update_compile_order -fileset sources_1
-update_compile_order -fileset sim_1
-launch_runs synth_1
-INFO: [HDL 9-2216] Analyzing Verilog file "/home/jfonseca/thesis/verilog/tanh/tanh.v" into library work [/home/jfonseca/thesis/verilog/tanh/tanh.v:1]
-INFO: [HDL 9-2216] Analyzing Verilog file "/home/jfonseca/thesis/verilog/tanh/tb_tanh.v" into library work [/home/jfonseca/thesis/verilog/tanh/tb_tanh.v:1]
-[Mon Apr  4 11:50:50 2016] Launched synth_1...
-Run output will be captured here: /home/jfonseca/thesis/verilog/tanh/tanh_synth/tanh_synth.runs/synth_1/runme.log
-close_project
-****** Webtalk v2015.4 (64-bit)
-  **** SW Build 1412921 on Wed Nov 18 09:44:32 MST 2015
-  **** IP Build 1412160 on Tue Nov 17 13:47:24 MST 2015
-    ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
-
-source /home/jfonseca/thesis/verilog/tanh/tanh_synth/tanh_synth.hw/webtalk/labtool_webtalk.tcl -notrace
-INFO: [Common 17-206] Exiting Webtalk at Mon Apr  4 11:53:46 2016...
-create_project tanh_synth /home/jfonseca/thesis/verilog/tanh/tanh_synth -part xc7z020clg484-1
-INFO: [IP_Flow 19-234] Refreshing IP repositories
-INFO: [IP_Flow 19-1704] No user IP repositories specified
-INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2015.4/data/ip'.
-set_property simulator_language Verilog [current_project]
-add_files -norecurse /home/jfonseca/thesis/verilog/tanh/tanh.v
-import_files -force -norecurse
-INFO: [filemgmt 20-348] Importing the appropriate files for fileset: 'sources_1'
-update_compile_order -fileset sources_1
-update_compile_order -fileset sim_1
-synth_design -rtl -name rtl_1
-Command: synth_design -rtl -name rtl_1
-Starting synth_design
-Using part: xc7z020clg484-1
-Top: tanh
-WARNING: [Synth 8-2507] parameter declaration becomes local in tanh with formal parameter declaration list [/home/jfonseca/thesis/verilog/tanh/tanh_synth/tanh_synth.srcs/sources_1/imports/tanh/tanh.v:8]
----------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:02:23 ; elapsed = 00:15:47 . Memory (MB): peak = 5939.871 ; gain = 5014.988 ; free physical = 641 ; free virtual = 6952
----------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'tanh' [/home/jfonseca/thesis/verilog/tanh/tanh_synth/tanh_synth.srcs/sources_1/imports/tanh/tanh.v:1]
-	Parameter QN bound to: 6 - type: integer 
-	Parameter QM bound to: 11 - type: integer 
-	Parameter BITWIDTH bound to: 18 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'tanh' (1#1) [/home/jfonseca/thesis/verilog/tanh/tanh_synth/tanh_synth.srcs/sources_1/imports/tanh/tanh.v:1]
----------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:02:23 ; elapsed = 00:15:48 . Memory (MB): peak = 5970.129 ; gain = 5045.246 ; free physical = 610 ; free virtual = 6920
----------------------------------------------------------------------------------
-
-Report Check Netlist: 
-+------+------------------+-------+---------+-------+------------------+
-|      |Item              |Errors |Warnings |Status |Description       |
-+------+------------------+-------+---------+-------+------------------+
-|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
-+------+------------------+-------+---------+-------+------------------+
----------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:02:24 ; elapsed = 00:15:48 . Memory (MB): peak = 5970.129 ; gain = 5045.246 ; free physical = 609 ; free virtual = 6919
----------------------------------------------------------------------------------
+open_project: Time (s): cpu = 00:00:10 ; elapsed = 00:00:06 . Memory (MB): peak = 5813.602 ; gain = 124.680 ; free physical = 3566 ; free virtual = 9281
+file mkdir /home/josefonseca/Documents/thesis/verilog/tanh/tanh_synth/tanh_synth.srcs/constrs_1
+file mkdir /home/josefonseca/Documents/thesis/verilog/tanh/tanh_synth/tanh_synth.srcs/constrs_1/new
+close [ open /home/josefonseca/Documents/thesis/verilog/tanh/tanh_synth/tanh_synth.srcs/constrs_1/new/tanh_const.xdc w ]
+add_files -fileset constrs_1 /home/josefonseca/Documents/thesis/verilog/tanh/tanh_synth/tanh_synth.srcs/constrs_1/new/tanh_const.xdc
+open_run impl_1
+INFO: [Netlist 29-17] Analyzing 30 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2015.4
 INFO: [Device 21-403] Loading part xc7z020clg484-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
-INFO: [Opt 31-141] Inserted 18 OBUFs to IO ports without IO buffers.
-
-Processing XDC Constraints
-Initializing timing engine
-Completed Processing XDC Constraints
-
-INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.05 . Memory (MB): peak = 6042.527 ; gain = 0.996 ; free physical = 3315 ; free virtual = 9093
+Restored from archive | CPU: 0.050000 secs | Memory: 0.178551 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.05 . Memory (MB): peak = 6042.527 ; gain = 0.996 ; free physical = 3315 ; free virtual = 9093
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-RTL Elaboration Complete:  : Time (s): cpu = 00:02:37 ; elapsed = 00:15:57 . Memory (MB): peak = 6323.629 ; gain = 5398.746 ; free physical = 293 ; free virtual = 6613
-7 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
-synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:19 ; elapsed = 00:00:14 . Memory (MB): peak = 6323.629 ; gain = 407.730 ; free physical = 289 ; free virtual = 6609
-set_property SOURCE_SET sources_1 [get_filesets sim_1]
-import_files -fileset sim_1 -norecurse /home/jfonseca/thesis/verilog/tanh/tb_tanh.v
-update_compile_order -fileset sim_1
-update_compile_order -fileset sim_1
-update_compile_order -fileset sim_1
-launch_simulation
-INFO: [USF-XSim-27] Simulation object is 'sim_1'
-INFO: [USF-XSim-37] Inspecting design source files for 'tb_tanh' in fileset 'sim_1'...
-INFO: [USF-XSim-97] Finding global include files...
-INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
-INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE' step in '/home/jfonseca/thesis/verilog/tanh/tanh_synth/tanh_synth.sim/sim_1/behav'
-xvlog -m64 --relax -prj tb_tanh_vlog.prj
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/jfonseca/thesis/verilog/tanh/tanh_synth/tanh_synth.srcs/sources_1/imports/tanh/tanh.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module tanh
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/jfonseca/thesis/verilog/tanh/tanh_synth/tanh_synth.srcs/sim_1/imports/tanh/tb_tanh.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module tb_tanh
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/jfonseca/thesis/verilog/tanh/tanh_synth/tanh_synth.sim/sim_1/behav/glbl.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module glbl
-INFO: [USF-XSim-3] XSim::Elaborate design
-INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/jfonseca/thesis/verilog/tanh/tanh_synth/tanh_synth.sim/sim_1/behav'
-Vivado Simulator 2015.4
-Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
-Running: /opt/Xilinx/Vivado/2015.4/bin/unwrapped/lnx64.o/xelab -wto 418e883df0ba4c649c8494ebfc1313d7 --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_tanh_behav xil_defaultlib.tb_tanh xil_defaultlib.glbl -log elaborate.log 
-Using 8 slave threads.
-Starting static elaboration
-Completed static elaboration
-Starting simulation data flow analysis
-WARNING: [XSIM 43-4100] "/home/jfonseca/thesis/verilog/tanh/tanh_synth/tanh_synth.sim/sim_1/behav/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
-WARNING: [XSIM 43-4100] "/home/jfonseca/thesis/verilog/tanh/tanh_synth/tanh_synth.sim/sim_1/behav/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
-Completed simulation data flow analysis
-Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.tanh_default
-Compiling module xil_defaultlib.tb_tanh
-Compiling module xil_defaultlib.glbl
-Built simulation snapshot tb_tanh_behav
-
-****** Webtalk v2015.4 (64-bit)
-  **** SW Build 1412921 on Wed Nov 18 09:44:32 MST 2015
-  **** IP Build 1412160 on Tue Nov 17 13:47:24 MST 2015
-    ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
-
-source /home/jfonseca/thesis/verilog/tanh/tanh_synth/tanh_synth.sim/sim_1/behav/xsim.dir/tb_tanh_behav/webtalk/xsim_webtalk.tcl -notrace
-INFO: [Common 17-206] Exiting Webtalk at Mon Apr  4 12:08:19 2016...
-run_program: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 6323.629 ; gain = 0.000 ; free physical = 397 ; free virtual = 6543
-INFO: [USF-XSim-4] XSim::Simulate design
-INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/jfonseca/thesis/verilog/tanh/tanh_synth/tanh_synth.sim/sim_1/behav'
-INFO: [USF-XSim-98] *** Running xsim
-   with args "tb_tanh_behav -key {Behavioral:sim_1:Functional:tb_tanh} -tclbatch {tb_tanh.tcl} -log {simulate.log}"
-INFO: [USF-XSim-8] Loading simulator feature
-Vivado Simulator 2015.4
-Time resolution is 1 ps
-source tb_tanh.tcl
-# set curr_wave [current_wave_config]
-# if { [string length $curr_wave] == 0 } {
-#   if { [llength [get_objects]] > 0} {
-#     add_wave /
-#     set_property needs_save false [current_wave_config]
-#   } else {
-#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
-#   }
-# }
-WARNING: [Wavedata 42-489] Can't add object "/tb_tanh/ROM_input" to the wave window because it has 737298 bits, which exceeds the display limit of 65536 bits.  To change the display limit, use the command "set_property display_limit <new limit> [current_wave_config]".
-WARNING: [Wavedata 42-489] Can't add object "/tb_tanh/ROM_goldenOut" to the wave window because it has 737298 bits, which exceeds the display limit of 65536 bits.  To change the display limit, use the command "set_property display_limit <new limit> [current_wave_config]".
-# run 1000ns
-WARNING: File goldenIN.hex referenced on /home/jfonseca/thesis/verilog/tanh/tanh_synth/tanh_synth.srcs/sim_1/imports/tanh/tb_tanh.v at line 29 cannot be opened for reading. Please ensure that this file is available in the current working directory.
-WARNING: File tanh_goldenOUT.hex referenced on /home/jfonseca/thesis/verilog/tanh/tanh_synth/tanh_synth.srcs/sim_1/imports/tanh/tb_tanh.v at line 30 cannot be opened for reading. Please ensure that this file is available in the current working directory.
-Simulation started at 0.000000
-Simulated           0 samples
-
-INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_tanh_behav' loaded.
-INFO: [USF-XSim-97] XSim simulation ran for 1000ns
-launch_simulation: Time (s): cpu = 00:00:06 ; elapsed = 00:00:13 . Memory (MB): peak = 6354.656 ; gain = 31.027 ; free physical = 375 ; free virtual = 6533
-add_wave {{/tb_tanh/TANH01/p2}} {{/tb_tanh/TANH01/p1}} {{/tb_tanh/TANH01/p0}} 
-add_wave {{/tb_tanh/TANH01/state}} {{/tb_tanh/TANH01/outputInt}} {{/tb_tanh/TANH01/multiplierMux}} {{/tb_tanh/TANH01/adderMux}} 
-save_wave_config {/home/jfonseca/thesis/verilog/tanh/tanh_synth/tb_tanh_behav.wcfg}
-add_files -fileset sim_1 -norecurse /home/jfonseca/thesis/verilog/tanh/tanh_synth/tb_tanh_behav.wcfg
-set_property xsim.view /home/jfonseca/thesis/verilog/tanh/tanh_synth/tb_tanh_behav.wcfg [get_filesets sim_1]
-close_sim
-INFO: [Simtcl 6-16] Simulation closed
-launch_simulation
-INFO: [USF-XSim-27] Simulation object is 'sim_1'
-INFO: [USF-XSim-37] Inspecting design source files for 'tb_tanh' in fileset 'sim_1'...
-INFO: [USF-XSim-97] Finding global include files...
-INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
-INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE' step in '/home/jfonseca/thesis/verilog/tanh/tanh_synth/tanh_synth.sim/sim_1/behav'
-xvlog -m64 --relax -prj tb_tanh_vlog.prj
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/jfonseca/thesis/verilog/tanh/tanh_synth/tanh_synth.srcs/sources_1/imports/tanh/tanh.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module tanh
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/jfonseca/thesis/verilog/tanh/tanh_synth/tanh_synth.srcs/sim_1/imports/tanh/tb_tanh.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module tb_tanh
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/jfonseca/thesis/verilog/tanh/tanh_synth/tanh_synth.sim/sim_1/behav/glbl.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module glbl
-INFO: [USF-XSim-3] XSim::Elaborate design
-INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/jfonseca/thesis/verilog/tanh/tanh_synth/tanh_synth.sim/sim_1/behav'
-Vivado Simulator 2015.4
-Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
-Running: /opt/Xilinx/Vivado/2015.4/bin/unwrapped/lnx64.o/xelab -wto 418e883df0ba4c649c8494ebfc1313d7 --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_tanh_behav xil_defaultlib.tb_tanh xil_defaultlib.glbl -log elaborate.log 
-Using 8 slave threads.
-Starting static elaboration
-Completed static elaboration
-Starting simulation data flow analysis
-WARNING: [XSIM 43-4100] "/home/jfonseca/thesis/verilog/tanh/tanh_synth/tanh_synth.sim/sim_1/behav/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
-WARNING: [XSIM 43-4100] "/home/jfonseca/thesis/verilog/tanh/tanh_synth/tanh_synth.sim/sim_1/behav/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
-Completed simulation data flow analysis
-Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.tanh_default
-Compiling module xil_defaultlib.tb_tanh
-Compiling module xil_defaultlib.glbl
-Built simulation snapshot tb_tanh_behav
-
-****** Webtalk v2015.4 (64-bit)
-  **** SW Build 1412921 on Wed Nov 18 09:44:32 MST 2015
-  **** IP Build 1412160 on Tue Nov 17 13:47:24 MST 2015
-    ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
-
-source /home/jfonseca/thesis/verilog/tanh/tanh_synth/tanh_synth.sim/sim_1/behav/xsim.dir/tb_tanh_behav/webtalk/xsim_webtalk.tcl -notrace
-INFO: [Common 17-206] Exiting Webtalk at Mon Apr  4 12:09:16 2016...
-INFO: [USF-XSim-4] XSim::Simulate design
-INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/jfonseca/thesis/verilog/tanh/tanh_synth/tanh_synth.sim/sim_1/behav'
-INFO: [USF-XSim-98] *** Running xsim
-   with args "tb_tanh_behav -key {Behavioral:sim_1:Functional:tb_tanh} -tclbatch {tb_tanh.tcl} -view {/home/jfonseca/thesis/verilog/tanh/tanh_synth/tb_tanh_behav.wcfg} -log {simulate.log}"
-INFO: [USF-XSim-8] Loading simulator feature
-Vivado Simulator 2015.4
-Time resolution is 1 ps
-open_wave_config /home/jfonseca/thesis/verilog/tanh/tanh_synth/tb_tanh_behav.wcfg
-source tb_tanh.tcl
-# set curr_wave [current_wave_config]
-# if { [string length $curr_wave] == 0 } {
-#   if { [llength [get_objects]] > 0} {
-#     add_wave /
-#     set_property needs_save false [current_wave_config]
-#   } else {
-#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
-#   }
-# }
-# run 1000ns
-WARNING: File goldenIN.hex referenced on /home/jfonseca/thesis/verilog/tanh/tanh_synth/tanh_synth.srcs/sim_1/imports/tanh/tb_tanh.v at line 29 cannot be opened for reading. Please ensure that this file is available in the current working directory.
-WARNING: File tanh_goldenOUT.hex referenced on /home/jfonseca/thesis/verilog/tanh/tanh_synth/tanh_synth.srcs/sim_1/imports/tanh/tb_tanh.v at line 30 cannot be opened for reading. Please ensure that this file is available in the current working directory.
-Simulation started at 0.000000
-Simulated           0 samples
-
-INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_tanh_behav' loaded.
-INFO: [USF-XSim-97] XSim simulation ran for 1000ns
-set_property -name {xsim.simulate.runtime} -value {1000us} -objects [current_fileset -simset]
-close_sim
-INFO: [Simtcl 6-16] Simulation closed
-launch_simulation
-INFO: [USF-XSim-27] Simulation object is 'sim_1'
-INFO: [USF-XSim-37] Inspecting design source files for 'tb_tanh' in fileset 'sim_1'...
-INFO: [USF-XSim-97] Finding global include files...
-INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
-INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE' step in '/home/jfonseca/thesis/verilog/tanh/tanh_synth/tanh_synth.sim/sim_1/behav'
-xvlog -m64 --relax -prj tb_tanh_vlog.prj
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/jfonseca/thesis/verilog/tanh/tanh_synth/tanh_synth.srcs/sources_1/imports/tanh/tanh.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module tanh
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/jfonseca/thesis/verilog/tanh/tanh_synth/tanh_synth.srcs/sim_1/imports/tanh/tb_tanh.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module tb_tanh
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/jfonseca/thesis/verilog/tanh/tanh_synth/tanh_synth.sim/sim_1/behav/glbl.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module glbl
-INFO: [USF-XSim-3] XSim::Elaborate design
-INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/jfonseca/thesis/verilog/tanh/tanh_synth/tanh_synth.sim/sim_1/behav'
-Vivado Simulator 2015.4
-Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
-Running: /opt/Xilinx/Vivado/2015.4/bin/unwrapped/lnx64.o/xelab -wto 418e883df0ba4c649c8494ebfc1313d7 --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_tanh_behav xil_defaultlib.tb_tanh xil_defaultlib.glbl -log elaborate.log 
-Using 8 slave threads.
-Starting static elaboration
-Completed static elaboration
-Starting simulation data flow analysis
-WARNING: [XSIM 43-4100] "/home/jfonseca/thesis/verilog/tanh/tanh_synth/tanh_synth.sim/sim_1/behav/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
-WARNING: [XSIM 43-4100] "/home/jfonseca/thesis/verilog/tanh/tanh_synth/tanh_synth.sim/sim_1/behav/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
-Completed simulation data flow analysis
-Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.tanh_default
-Compiling module xil_defaultlib.tb_tanh
-Compiling module xil_defaultlib.glbl
-Built simulation snapshot tb_tanh_behav
-
-****** Webtalk v2015.4 (64-bit)
-  **** SW Build 1412921 on Wed Nov 18 09:44:32 MST 2015
-  **** IP Build 1412160 on Tue Nov 17 13:47:24 MST 2015
-    ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
-
-source /home/jfonseca/thesis/verilog/tanh/tanh_synth/tanh_synth.sim/sim_1/behav/xsim.dir/tb_tanh_behav/webtalk/xsim_webtalk.tcl -notrace
-INFO: [Common 17-206] Exiting Webtalk at Mon Apr  4 12:10:15 2016...
-INFO: [USF-XSim-4] XSim::Simulate design
-INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/jfonseca/thesis/verilog/tanh/tanh_synth/tanh_synth.sim/sim_1/behav'
-INFO: [USF-XSim-98] *** Running xsim
-   with args "tb_tanh_behav -key {Behavioral:sim_1:Functional:tb_tanh} -tclbatch {tb_tanh.tcl} -view {/home/jfonseca/thesis/verilog/tanh/tanh_synth/tb_tanh_behav.wcfg} -log {simulate.log}"
-INFO: [USF-XSim-8] Loading simulator feature
-Vivado Simulator 2015.4
-Time resolution is 1 ps
-open_wave_config /home/jfonseca/thesis/verilog/tanh/tanh_synth/tb_tanh_behav.wcfg
-source tb_tanh.tcl
-# set curr_wave [current_wave_config]
-# if { [string length $curr_wave] == 0 } {
-#   if { [llength [get_objects]] > 0} {
-#     add_wave /
-#     set_property needs_save false [current_wave_config]
-#   } else {
-#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
-#   }
-# }
-# run 1000us
-WARNING: File goldenIN.hex referenced on /home/jfonseca/thesis/verilog/tanh/tanh_synth/tanh_synth.srcs/sim_1/imports/tanh/tb_tanh.v at line 29 cannot be opened for reading. Please ensure that this file is available in the current working directory.
-WARNING: File tanh_goldenOUT.hex referenced on /home/jfonseca/thesis/verilog/tanh/tanh_synth/tanh_synth.srcs/sim_1/imports/tanh/tb_tanh.v at line 30 cannot be opened for reading. Please ensure that this file is available in the current working directory.
-Simulation started at 0.000000
-Simulated           0 samples
-
-Simulated        1000 samples
-
-Simulated        2000 samples
-
-INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_tanh_behav' loaded.
-INFO: [USF-XSim-97] XSim simulation ran for 1000us
-set_property -name {xsim.simulate.runtime} -value {1s} -objects [current_fileset -simset]
-close_sim
-INFO: [Simtcl 6-16] Simulation closed
-launch_simulation
-INFO: [USF-XSim-27] Simulation object is 'sim_1'
-INFO: [USF-XSim-37] Inspecting design source files for 'tb_tanh' in fileset 'sim_1'...
-INFO: [USF-XSim-97] Finding global include files...
-INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
-INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE' step in '/home/jfonseca/thesis/verilog/tanh/tanh_synth/tanh_synth.sim/sim_1/behav'
-xvlog -m64 --relax -prj tb_tanh_vlog.prj
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/jfonseca/thesis/verilog/tanh/tanh_synth/tanh_synth.srcs/sources_1/imports/tanh/tanh.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module tanh
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/jfonseca/thesis/verilog/tanh/tanh_synth/tanh_synth.srcs/sim_1/imports/tanh/tb_tanh.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module tb_tanh
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/jfonseca/thesis/verilog/tanh/tanh_synth/tanh_synth.sim/sim_1/behav/glbl.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module glbl
-INFO: [USF-XSim-3] XSim::Elaborate design
-INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/jfonseca/thesis/verilog/tanh/tanh_synth/tanh_synth.sim/sim_1/behav'
-Vivado Simulator 2015.4
-Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
-Running: /opt/Xilinx/Vivado/2015.4/bin/unwrapped/lnx64.o/xelab -wto 418e883df0ba4c649c8494ebfc1313d7 --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_tanh_behav xil_defaultlib.tb_tanh xil_defaultlib.glbl -log elaborate.log 
-Using 8 slave threads.
-Starting static elaboration
-Completed static elaboration
-Starting simulation data flow analysis
-WARNING: [XSIM 43-4100] "/home/jfonseca/thesis/verilog/tanh/tanh_synth/tanh_synth.sim/sim_1/behav/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
-WARNING: [XSIM 43-4100] "/home/jfonseca/thesis/verilog/tanh/tanh_synth/tanh_synth.sim/sim_1/behav/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
-Completed simulation data flow analysis
-Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.tanh_default
-Compiling module xil_defaultlib.tb_tanh
-Compiling module xil_defaultlib.glbl
-Built simulation snapshot tb_tanh_behav
-
-****** Webtalk v2015.4 (64-bit)
-  **** SW Build 1412921 on Wed Nov 18 09:44:32 MST 2015
-  **** IP Build 1412160 on Tue Nov 17 13:47:24 MST 2015
-    ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
-
-source /home/jfonseca/thesis/verilog/tanh/tanh_synth/tanh_synth.sim/sim_1/behav/xsim.dir/tb_tanh_behav/webtalk/xsim_webtalk.tcl -notrace
-INFO: [Common 17-206] Exiting Webtalk at Mon Apr  4 12:11:39 2016...
-INFO: [USF-XSim-4] XSim::Simulate design
-INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/jfonseca/thesis/verilog/tanh/tanh_synth/tanh_synth.sim/sim_1/behav'
-INFO: [USF-XSim-98] *** Running xsim
-   with args "tb_tanh_behav -key {Behavioral:sim_1:Functional:tb_tanh} -tclbatch {tb_tanh.tcl} -view {/home/jfonseca/thesis/verilog/tanh/tanh_synth/tb_tanh_behav.wcfg} -log {simulate.log}"
-INFO: [USF-XSim-8] Loading simulator feature
-Vivado Simulator 2015.4
-Time resolution is 1 ps
-open_wave_config /home/jfonseca/thesis/verilog/tanh/tanh_synth/tb_tanh_behav.wcfg
-source tb_tanh.tcl
-# set curr_wave [current_wave_config]
-# if { [string length $curr_wave] == 0 } {
-#   if { [llength [get_objects]] > 0} {
-#     add_wave /
-#     set_property needs_save false [current_wave_config]
-#   } else {
-#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
-#   }
-# }
-# run 1s
-WARNING: File goldenIN.hex referenced on /home/jfonseca/thesis/verilog/tanh/tanh_synth/tanh_synth.srcs/sim_1/imports/tanh/tb_tanh.v at line 29 cannot be opened for reading. Please ensure that this file is available in the current working directory.
-WARNING: File tanh_goldenOUT.hex referenced on /home/jfonseca/thesis/verilog/tanh/tanh_synth/tanh_synth.srcs/sim_1/imports/tanh/tb_tanh.v at line 30 cannot be opened for reading. Please ensure that this file is available in the current working directory.
-Simulation started at 0.000000
-Simulated           0 samples
-
-Simulated        1000 samples
-
-Simulated        2000 samples
-
-Simulated        3000 samples
-
-Simulated        4000 samples
-
-Simulated        5000 samples
-
-Simulated        6000 samples
-
-Simulated        7000 samples
-
-Simulated        8000 samples
-
-Simulated        9000 samples
-
-Simulated       10000 samples
-
-Simulated       11000 samples
-
-Simulated       12000 samples
-
-Simulated       13000 samples
-
-Simulated       14000 samples
-
-Simulated       15000 samples
-
-Simulated       16000 samples
-
-Simulated       17000 samples
-
-Simulated       18000 samples
-
-Simulated       19000 samples
-
-Simulated       20000 samples
-
-Simulated       21000 samples
-
-Simulated       22000 samples
-
-Simulated       23000 samples
-
-Simulated       24000 samples
-
-Simulated       25000 samples
-
-Simulated       26000 samples
-
-Simulated       27000 samples
-
-Simulated       28000 samples
-
-Simulated       29000 samples
-
-Simulated       30000 samples
-
-Simulated       31000 samples
-
-Simulated       32000 samples
-
-Simulated       33000 samples
-
-Simulated       34000 samples
-
-Simulated       35000 samples
-
-Simulated       36000 samples
-
-Simulated       37000 samples
-
-Simulated       38000 samples
-
-Simulated       39000 samples
-
-Simulated       40000 samples
-
-INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_tanh_behav' loaded.
-INFO: [USF-XSim-97] XSim simulation ran for 1s
-launch_runs synth_1
-INFO: [HDL 9-2216] Analyzing Verilog file "/home/jfonseca/thesis/verilog/tanh/tanh_synth/tanh_synth.srcs/sources_1/imports/tanh/tanh.v" into library work [/home/jfonseca/thesis/verilog/tanh/tanh_synth/tanh_synth.srcs/sources_1/imports/tanh/tanh.v:1]
-[Mon Apr  4 12:12:47 2016] Launched synth_1...
-Run output will be captured here: /home/jfonseca/thesis/verilog/tanh/tanh_synth/tanh_synth.runs/synth_1/runme.log
+open_run: Time (s): cpu = 00:00:13 ; elapsed = 00:00:07 . Memory (MB): peak = 6209.777 ; gain = 375.391 ; free physical = 3144 ; free virtual = 8929
+WARNING: [Timing 38-313] There are no user specified timing constraints. Timing constraints are needed for proper timing analysis.
+reset_run synth_1
 launch_runs impl_1
-[Mon Apr  4 12:14:31 2016] Launched impl_1...
-Run output will be captured here: /home/jfonseca/thesis/verilog/tanh/tanh_synth/tanh_synth.runs/impl_1/runme.log
-close_sim
-INFO: [Simtcl 6-16] Simulation closed
+[Wed Jun 22 16:17:47 2016] Launched synth_1...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/tanh/tanh_synth/tanh_synth.runs/synth_1/runme.log
+[Wed Jun 22 16:17:47 2016] Launched impl_1...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/tanh/tanh_synth/tanh_synth.runs/impl_1/runme.log
+close_design
+reset_run synth_1
+launch_runs impl_1
+[Wed Jun 22 16:21:48 2016] Launched synth_1...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/tanh/tanh_synth/tanh_synth.runs/synth_1/runme.log
+[Wed Jun 22 16:21:48 2016] Launched impl_1...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/tanh/tanh_synth/tanh_synth.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1
+[Wed Jun 22 16:23:39 2016] Launched synth_1...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/tanh/tanh_synth/tanh_synth.runs/synth_1/runme.log
+[Wed Jun 22 16:23:39 2016] Launched impl_1...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/tanh/tanh_synth/tanh_synth.runs/impl_1/runme.log
 exit
-INFO: [Common 17-206] Exiting Vivado at Mon Apr  4 12:23:25 2016...
+INFO: [Common 17-206] Exiting Vivado at Wed Jun 22 16:25:15 2016...

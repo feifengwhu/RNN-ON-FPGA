@@ -203,6 +203,8 @@ module network  #(parameter INPUT_SZ   =  2,
             elemWise_mult1 <= tanh_result;
     end  
     
+
+	
     // Partial Non-liearity/Elementwise Block Result --- z signal TIMES i signal
     always @(posedge clock) begin
 		if(reset) begin
@@ -250,9 +252,8 @@ module network  #(parameter INPUT_SZ   =  2,
     always @(posedge clock) begin
         if (reset)
     		prev_C <= {LAYER_BITWIDTH{1'b0}};
-        else if(newSample)
-            prev_C <= layer_C;
-            
+        else if(y_ready)
+            prev_C <= layer_C;   
 	end
 	
     always @(posedge clock) begin
@@ -280,19 +281,27 @@ module network  #(parameter INPUT_SZ   =  2,
     parameter NON_LIN_1A_PIPE  = 5'd3;
     parameter NON_LIN_1A       = 5'd4;
     parameter NON_LIN_2A       = 5'd5;
-    parameter ELEM_PROD_A_PIPE = 5'd6;
-    parameter ELEM_PROD_A      = 5'd7;
-    parameter NON_LIN_1B_PIPE  = 5'd8;
-    parameter NON_LIN_1B       = 5'd9;
-    parameter NON_LIN_2B       = 5'd10;
-    parameter ELEM_PROD_B_PIPE = 5'd11;
-    parameter ELEM_PROD_B      = 5'd12;
-    parameter NON_LIN_1C_PIPE  = 5'd13;
-    parameter NON_LIN_1C       = 5'd14;
-    parameter NON_LIN_2C       = 5'd15;
-    parameter ELEM_PROD_C_PIPE = 5'd16;
-    parameter ELEM_PROD_C      = 5'd17;
-    parameter END              = 5'd18;
+    parameter NON_LIN_3A       = 5'd6;
+    parameter NON_LIN_4A       = 5'd7;
+    parameter ELEM_PROD_A_PIPE = 5'd8;
+    parameter ELEM_PROD_A      = 5'd9;
+    parameter NON_LIN_1B_PIPE  = 5'd10;
+    parameter NON_LIN_1B       = 5'd11;
+    parameter NON_LIN_2B       = 5'd12;
+    parameter NON_LIN_3B       = 5'd13;
+    parameter NON_LIN_4B       = 5'd14;
+    parameter ELEM_PROD_B_PIPE = 5'd15;
+    parameter ELEM_PROD_B      = 5'd16;
+    parameter NON_LIN_1C_PIPE  = 5'd17;
+    parameter NON_LIN_1C_PIPE2  = 5'd18;
+    parameter NON_LIN_1C_PIPE3  = 5'd19;
+    parameter NON_LIN_1C       = 5'd20;
+    parameter NON_LIN_2C       = 5'd21;
+    parameter NON_LIN_3C       = 5'd22;
+    parameter NON_LIN_4C       = 5'd23;
+    parameter ELEM_PROD_C_PIPE = 5'd24;
+    parameter ELEM_PROD_C      = 5'd25;
+    parameter END              = 5'd26;
     
     // The FSM registers
     reg [4:0] state;
@@ -349,6 +358,16 @@ module network  #(parameter INPUT_SZ   =  2,
 			
 			NON_LIN_2A:		
 			begin
+				NEXTstate = NON_LIN_3A;
+			end
+			
+			NON_LIN_3A:		
+			begin
+				NEXTstate = NON_LIN_4A;
+			end
+			
+			NON_LIN_4A:		
+			begin
 				NEXTstate = ELEM_PROD_A_PIPE;
 			end	
 			
@@ -374,6 +393,16 @@ module network  #(parameter INPUT_SZ   =  2,
 			
 			NON_LIN_2B:		
 			begin
+				NEXTstate = NON_LIN_3B;
+			end
+			
+			NON_LIN_3B:		
+			begin
+				NEXTstate = NON_LIN_4B;
+			end
+			
+			NON_LIN_4B:		
+			begin
 				NEXTstate = ELEM_PROD_B_PIPE;
 			end	
 			
@@ -389,6 +418,16 @@ module network  #(parameter INPUT_SZ   =  2,
 			
 			NON_LIN_1C_PIPE:		
 			begin
+				NEXTstate = NON_LIN_1C_PIPE2;
+			end
+			
+			NON_LIN_1C_PIPE2:		
+			begin
+				NEXTstate = NON_LIN_1C_PIPE3;
+			end
+			
+			NON_LIN_1C_PIPE3:		
+			begin
 				NEXTstate = NON_LIN_1C;
 			end
 			
@@ -398,6 +437,16 @@ module network  #(parameter INPUT_SZ   =  2,
 			end
 			
 			NON_LIN_2C:		
+			begin
+				NEXTstate = NON_LIN_3C;
+			end
+			
+			NON_LIN_3C:		
+			begin
+				NEXTstate = NON_LIN_4C;
+			end
+			
+			NON_LIN_4C:		
 			begin
 				NEXTstate = ELEM_PROD_C_PIPE;
 			end	
@@ -499,6 +548,30 @@ module network  #(parameter INPUT_SZ   =  2,
 				dataoutReady     = 1'b0;
 			end
 			
+			NON_LIN_3A:		
+			begin
+				beginCalc        = 1'b0;
+				muxStageSelector = 2'b0;
+				sigmoidEnable    = 1'b1;
+				tanhEnable       = 1'b1;
+				z_ready          = 1'b0;
+				f_ready          = 1'b0;
+				y_ready          = 1'b0;
+				dataoutReady     = 1'b0;
+			end
+			
+			NON_LIN_4A:		
+			begin
+				beginCalc        = 1'b0;
+				muxStageSelector = 2'b0;
+				sigmoidEnable    = 1'b1;
+				tanhEnable       = 1'b1;
+				z_ready          = 1'b0;
+				f_ready          = 1'b0;
+				y_ready          = 1'b0;
+				dataoutReady     = 1'b0;
+			end
+			
 			ELEM_PROD_A_PIPE:
 			begin
 				beginCalc        = 1'b0;
@@ -514,7 +587,7 @@ module network  #(parameter INPUT_SZ   =  2,
 			ELEM_PROD_A:
 			begin
 				beginCalc        = 1'b0;
-				muxStageSelector = 2'b0;
+				muxStageSelector = 2'b1;
 				sigmoidEnable    = 1'b0;
 				tanhEnable       = 1'b0;
 				z_ready          = 1'b0;
@@ -559,6 +632,30 @@ module network  #(parameter INPUT_SZ   =  2,
 				dataoutReady     = 1'b0;
 			end
 			
+			NON_LIN_3B:		
+			begin
+				beginCalc        = 1'b0;
+				muxStageSelector = 2'b1;
+				sigmoidEnable    = 1'b1;
+				tanhEnable       = 1'b0;
+				z_ready          = 1'b0;
+				f_ready          = 1'b0;
+				y_ready          = 1'b0;
+				dataoutReady     = 1'b0;
+			end
+			
+			NON_LIN_4B:		
+			begin
+				beginCalc        = 1'b0;
+				muxStageSelector = 2'b1;
+				sigmoidEnable    = 1'b1;
+				tanhEnable       = 1'b0;
+				z_ready          = 1'b0;
+				f_ready          = 1'b0;
+				y_ready          = 1'b0;
+				dataoutReady     = 1'b0;
+			end
+			
 			ELEM_PROD_B_PIPE:
 			begin
 				beginCalc        = 1'b0;
@@ -574,7 +671,7 @@ module network  #(parameter INPUT_SZ   =  2,
 			ELEM_PROD_B:
 			begin
 				beginCalc        = 1'b0;
-				muxStageSelector = 2'b1;
+				muxStageSelector = 2'd2;
 				sigmoidEnable    = 1'b0;
 				tanhEnable       = 1'b0;
 				z_ready          = 1'b0;
@@ -595,6 +692,30 @@ module network  #(parameter INPUT_SZ   =  2,
 				dataoutReady     = 1'b0;
 			end
 			
+			NON_LIN_1C_PIPE2:		
+			begin
+				beginCalc        = 1'b0;
+				muxStageSelector = 2'd2;
+				sigmoidEnable    = 1'b0;
+				tanhEnable       = 1'b0;
+				z_ready          = 1'b0;
+				f_ready          = 1'b0;
+				y_ready          = 1'b0;
+				dataoutReady     = 1'b0;
+			end
+			
+			NON_LIN_1C_PIPE3:		
+			begin
+				beginCalc        = 1'b0;
+				muxStageSelector = 2'd2;
+				sigmoidEnable    = 1'b0;
+				tanhEnable       = 1'b0;
+				z_ready          = 1'b0;
+				f_ready          = 1'b0;
+				y_ready          = 1'b0;
+				dataoutReady     = 1'b0;
+			end
+			
 			NON_LIN_1C:		
 			begin
 				beginCalc        = 1'b0;
@@ -608,6 +729,30 @@ module network  #(parameter INPUT_SZ   =  2,
 			end
 			
 			NON_LIN_2C:		
+			begin
+				beginCalc        = 1'b0;
+				muxStageSelector = 2'd2;
+				sigmoidEnable    = 1'b1;
+				tanhEnable       = 1'b1;
+				z_ready          = 1'b0;
+				f_ready          = 1'b0;
+				y_ready          = 1'b0;
+				dataoutReady     = 1'b0;
+			end
+			
+			NON_LIN_3C:		
+			begin
+				beginCalc        = 1'b0;
+				muxStageSelector = 2'd2;
+				sigmoidEnable    = 1'b1;
+				tanhEnable       = 1'b1;
+				z_ready          = 1'b0;
+				f_ready          = 1'b0;
+				y_ready          = 1'b0;
+				dataoutReady     = 1'b0;
+			end
+			
+			NON_LIN_4C:		
 			begin
 				beginCalc        = 1'b0;
 				muxStageSelector = 2'd2;

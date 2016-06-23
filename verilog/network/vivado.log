@@ -2,8 +2,8 @@
 # Vivado v2015.4 (64-bit)
 # SW Build 1412921 on Wed Nov 18 09:44:32 MST 2015
 # IP Build 1412160 on Tue Nov 17 13:47:24 MST 2015
-# Start of session at: Wed Jun 22 00:05:34 2016
-# Process ID: 4856
+# Start of session at: Thu Jun 23 00:20:26 2016
+# Process ID: 5822
 # Current directory: /home/josefonseca/Documents/thesis/verilog/network
 # Command line: vivado
 # Log file: /home/josefonseca/Documents/thesis/verilog/network/vivado.log
@@ -16,10 +16,39 @@ Finished scanning sources
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2015.4/data/ip'.
-open_project: Time (s): cpu = 00:00:11 ; elapsed = 00:00:08 . Memory (MB): peak = 5821.336 ; gain = 138.820 ; free physical = 3846 ; free virtual = 9395
 reset_run synth_2
-launch_runs impl_2
-[Wed Jun 22 00:06:24 2016] Launched synth_2...
+launch_runs impl_5
+[Thu Jun 23 00:22:00 2016] Launched synth_2...
 Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.runs/synth_2/runme.log
-[Wed Jun 22 00:06:24 2016] Launched impl_2...
-Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.runs/impl_2/runme.log
+[Thu Jun 23 00:22:00 2016] Launched impl_5...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.runs/impl_5/runme.log
+reset_run synth_2
+launch_runs impl_5
+[Thu Jun 23 00:29:01 2016] Launched synth_2...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.runs/synth_2/runme.log
+[Thu Jun 23 00:29:01 2016] Launched impl_5...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.runs/impl_5/runme.log
+reset_run synth_2
+launch_runs impl_5
+[Thu Jun 23 00:38:47 2016] Launched synth_2...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.runs/synth_2/runme.log
+[Thu Jun 23 00:38:47 2016] Launched impl_5...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.runs/impl_5/runme.log
+reset_run synth_2
+launch_runs impl_5
+[Thu Jun 23 00:53:28 2016] Launched synth_2...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.runs/synth_2/runme.log
+[Thu Jun 23 00:53:28 2016] Launched impl_5...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.runs/impl_5/runme.log
+reset_run synth_2
+launch_runs impl_5
+[Thu Jun 23 01:10:33 2016] Launched synth_2...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.runs/synth_2/runme.log
+[Thu Jun 23 01:10:33 2016] Launched impl_5...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.runs/impl_5/runme.log
+reset_run synth_2
+launch_runs impl_5
+[Thu Jun 23 01:17:50 2016] Launched synth_2...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.runs/synth_2/runme.log
+[Thu Jun 23 01:17:50 2016] Launched impl_5...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.runs/impl_5/runme.log

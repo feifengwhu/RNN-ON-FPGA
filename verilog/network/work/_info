@@ -72,24 +72,24 @@ n@_opt6
 R3
 R0
 T_opt7
-!s110 1466549858
-VJ?Ai7<B1En@hjQ8<;hYi>0
+!s110 1466684918
+V6BhR[DohGH1A7O5`goR^Q0
 R1
-=1-d43d7e359f7e-5769c662-97553-1150
+=1-d43d7e359f7e-576bd5f6-27815-28c4
 R4
 n@_opt7
 R3
-R0
 T_opt8
-!s110 1466550287
-VX[hd1I^=V;]Yl>iNL519n0
-04 14 4 work tb_top_network fast 0
-=1-d43d7e359f7e-5769c80f-42c8e-12be
+!s110 1466684883
+VTTC7>IE^@6iMe`6?GO4LD3
+R1
+=1-d43d7e359f7e-576bd5d3-e6eb-28a8
 R4
 n@_opt8
 R3
+R0
 varray_prod
-Z5 !s110 1466550286
+Z5 !s110 1466684882
 !i10b 1
 !s100 A=>PV6O:Ual]JLS`<Iimf3
 IeUDVnzYGRg^CSf:Ll4W7z3
@@ -103,7 +103,7 @@ Z7 OL;L;10.4c_5;61
 r1
 !s85 0
 31
-Z8 !s108 1466550286.000000
+Z8 !s108 1466684882.000000
 Z9 !s107 weightRAM.v|top_network.v|test.v|tb_top_network.v|tb_network.v|tanh.v|sigmoid.v|network.v|gate.v|dot_prod.v|array_prod.v|
 Z10 !s90 array_prod.v|dot_prod.v|gate.v|network.v|sigmoid.v|tanh.v|tb_network.v|tb_top_network.v|test.v|top_network.v|weightRAM.v|
 !i113 0
@@ -151,11 +151,11 @@ R11
 vnetwork
 R5
 !i10b 1
-!s100 Kgkol[oE>kOhLDA[IX7VG0
-IXoz[XFJ0Vn]J>P=L]m9aR0
+!s100 `j`z9=07IBaa5SezEcdOo3
+I[Ei<fK98Lb<cV`]1z>24z2
 R6
 R0
-w1466539571
+w1466684869
 8network.v
 Fnetwork.v
 L0 1
@@ -171,11 +171,11 @@ R11
 vsigmoid
 R5
 !i10b 1
-!s100 1:7_Q4dT_iT7d0C`djFhj1
-IEhe?kD14[Ab3ad:aeYXmY3
+!s100 ][@KLGO<63b`@S;KFbhBI0
+IA35An5oJDF>ShgZo5:fc82
 R6
 R0
-Z12 w1465990204
+w1466639529
 8sigmoid.v
 Fsigmoid.v
 L0 1
@@ -191,11 +191,11 @@ R11
 vtanh
 R5
 !i10b 1
-!s100 IOXXJE>OW2b[ZX1`L7WPX0
-I0^e=H]?g@0lVVQXF>W]Ld2
+!s100 =R5dnVj_J;3X^M`H5a0?O3
+IE>82J:F3VBezY>]D1IJ3N2
 R6
 R0
-R12
+w1466638714
 8tanh.v
 Ftanh.v
 L0 1
@@ -231,11 +231,11 @@ R11
 vtb_network
 R5
 !i10b 1
-!s100 `z]P3@fFAb^aeF_nnWHV>0
-IPL85CnTUk=acekad3CD_n3
+!s100 XafM=ie6IWGXOdN2`@GiW0
+I]UP65k>YGo5^i?V9Xm5N^3
 R6
 R0
-w1466550119
+w1466681494
 8tb_network.v
 Ftb_network.v
 L0 3
@@ -251,11 +251,11 @@ R11
 vtb_top_network
 R5
 !i10b 1
-!s100 5enXX5AJ[g_`NcKmAz^1^2
-I4Qz9ETd^=87NTE>oD<Rk>1
+!s100 36P6nK>GP^Ha@]JAh>L_X3
+I@H`RUSaZ18Ha6jaR?GVI43
 R6
 R0
-w1466442187
+w1466675336
 8tb_top_network.v
 Ftb_top_network.v
 L0 3
@@ -275,7 +275,7 @@ R5
 I?A<6`FlW]VNROz4Po0laM0
 R6
 R0
-R12
+w1465990204
 8test.v
 Ftest.v
 L0 1
@@ -311,11 +311,11 @@ R11
 vweightRAM
 R5
 !i10b 1
-!s100 HSm76JbU[cQzbj_Qmod^11
-IgoW`Y?ci@QJ0KG7l[OKb_1
+!s100 :``BWjB>:l^hb<FBG;<P@3
+IUD6KLHHhO<aB8LD0KL@hf1
 R6
 R0
-w1466528050
+w1466641062
 8weightRAM.v
 FweightRAM.v
 L0 1

@@ -3,7 +3,7 @@ module sigmoid  #(parameter QN = 6,
                  (input signed  [QN+QM:0] operand,
                   input                 clk,
                   input                 reset,
-                  output reg  [QN+QM:0] result);
+                  output reg signed [QN+QM:0] result);
    
     parameter BITWIDTH = QN + QM + 1;
 
@@ -27,49 +27,65 @@ module sigmoid  #(parameter QN = 6,
 
     // The state register
     reg state = 1'b0;
-    wire signed [2*BITWIDTH:0] outputInt;
+    reg signed [2*BITWIDTH:0] outputMAC;
     reg signed [BITWIDTH-1:0] multiplierMux;
     reg signed [BITWIDTH-1:0] adderMux;
-    reg signed [BITWIDTH-1:0] operandPipe1;
-    reg signed [BITWIDTH-1:0] operandPipe2;
+    //reg signed [BITWIDTH-1:0] result;
+    reg interval_mux_active;
+
+	reg [2:0] STATE;
+	reg [2:0] NEXT_STATE;
+	parameter IDLE            = 3'd0;
+	parameter INTERVAL_CHOICE = 3'd1;
+	parameter COEF_CHOICE     = 3'd2;
+	parameter MAC1 = 3'd3;
+	parameter MAC2 = 3'd4;
+	parameter END  = 3'd5;
 
     // Interval selector logic
     always @(*) begin
-        if (operand < $signed(18'b111101000000000000)) begin
-            p2 <= 18'd0;  
-            p1 <= 18'd0;   
-            p0 <= 18'd0;   
-        end
-        else if (operand < $signed(18'b111110100000000000)) begin
-            p2 <= p2_i1;
-            p1 <= p1_i1;
-            p0 <= p0_i1;
-        end
-        else if (operand < $signed(18'd0)) begin
-            p2 <= p2_i2;
-            p1 <= p1_i2;
-            p0 <= p0_i2;
-        end
-        else if (operand < $signed(18'b000001100000000000)) begin
-            p2 <= p2_i3;
-            p1 <= p1_i3;
-            p0 <= p0_i3;
-        end
-        else if (operand < $signed(18'b000011000000000000)) begin
-            p2 <= p2_i4;
-            p1 <= p1_i4;
-            p0 <= p0_i4;
-        end
-        else begin
-            p2 <= 18'd0;
-            p1 <= 18'd0;
-            p0 <= 18'b000000100000000000;
-        end
+		if(reset) begin
+			p2 <= 18'd0;
+			p1 <= 18'd0;
+			p0 <= 18'd0;
+		end
+		else if(interval_mux_active) begin
+			if (operand < $signed(18'b111101000000000000)) begin
+				p2 <= 18'd0;  
+				p1 <= 18'd0;   
+				p0 <= 18'd0;   
+			end
+			else if (operand < $signed(18'b111110100000000000)) begin
+				p2 <= p2_i1;
+				p1 <= p1_i1;
+				p0 <= p0_i1;
+			end
+			else if (operand < $signed(18'd0)) begin
+				p2 <= p2_i2;
+				p1 <= p1_i2;
+				p0 <= p0_i2;
+			end
+			else if (operand < $signed(18'b000001100000000000)) begin
+				p2 <= p2_i3;
+				p1 <= p1_i3;
+				p0 <= p0_i3;
+			end
+			else if (operand < $signed(18'b000011000000000000)) begin
+				p2 <= p2_i4;
+				p1 <= p1_i4;
+				p0 <= p0_i4;
+			end
+			else begin
+				p2 <= 18'd0;
+				p1 <= 18'd0;
+				p0 <= 18'b000000100000000000;
+			end
+		end
     end
 
     // The coefficient multiplier input Muxes
-    always @(*) begin
-        if(reset == 1'b1) begin
+    always @(posedge clk) begin
+        if(reset) begin
             multiplierMux <= 18'd0;
             adderMux      <= 18'd0;
         end
@@ -84,20 +100,127 @@ module sigmoid  #(parameter QN = 6,
             end
         end
     end
-            
     
-    // The DSP Slices 
     always @(posedge clk) begin
-        if (reset == 1'b1) begin
-            state     <= 1'b0;
-            result    <= 18'b0; 
-        end
-        else begin
-            state     <= state + 1'b1;
-            result    <= (outputInt>>>QM) + adderMux; 
-        end
-    end        
+		if(reset) begin
+			outputMAC <= 37'b0;
+			//resultP   <= 18'd0;
+		end 
+		else begin
+			outputMAC <= operand*multiplierMux;
+			//resultP   <= result;
+		end
+	end
+	
+	always @(*) begin
+		result = (outputMAC >>> QM) + adderMux;
+	end
+    
+    
+    // --- Finite State Machine --- //
+    always @(posedge clk) begin
+		if(reset) begin
+			STATE <= IDLE;
+		end
+		else begin
+			STATE <= NEXT_STATE;
+		end
+	end
+	
+	always @(*) begin
+		case(STATE)
+		
+		IDLE:
+		begin
+			interval_mux_active = 1;
+			state =0;
 
-    assign outputInt = multiplierMux * operand;
+		end
+		
+		INTERVAL_CHOICE:
+		begin
+			interval_mux_active = 1;
+			state =0;
+
+		end
+		
+		COEF_CHOICE:
+		begin
+			interval_mux_active = 0;
+			state =0;
+
+		end
+		
+		MAC1:
+		begin
+			interval_mux_active = 0;
+			state = 1;
+
+		end
+		
+		MAC2:
+		begin
+			interval_mux_active = 0;
+			state = 1;
+
+		end	
+		
+		END:
+		begin
+			interval_mux_active = 0;
+			state = 1;
+
+		end
+		
+		default:
+		begin
+			interval_mux_active = 0;
+			state = 0;
+
+		end
+		endcase
+	end
+	
+	always @(*) begin
+		case(STATE)
+		
+		IDLE:
+		begin
+			NEXT_STATE = INTERVAL_CHOICE;
+		end
+		
+		INTERVAL_CHOICE:
+		begin
+			NEXT_STATE = COEF_CHOICE;
+		end
+		
+		COEF_CHOICE:
+		begin
+			NEXT_STATE = MAC1;
+		end
+		
+		MAC1:
+		begin
+			NEXT_STATE = MAC2;
+		end
+		
+		MAC2:
+		begin
+			NEXT_STATE = END;
+		end	
+		
+		END:
+		begin
+			NEXT_STATE = IDLE;
+		end
+		
+		default:
+		begin
+			NEXT_STATE = IDLE;
+		end
+		
+		endcase
+	end		
+	
 
 endmodule

@@ -1,0 +1,591 @@
+Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------
+| Tool Version     : Vivado v.2015.4 (lin64) Build 1412921 Wed Nov 18 09:44:32 MST 2015
+| Date             : Thu Jun 23 01:22:15 2016
+| Host             : desktop4480 running 64-bit Ubuntu 14.04.4 LTS
+| Command          : report_power -file top_network_power_routed.rpt -pb top_network_power_summary_routed.pb
+| Design           : top_network
+| Device           : xc7z020clg484-1
+| Design State     : routed
+| Grade            : commercial
+| Process          : typical
+| Characterization : Production
+---------------------------------------------------------------------------------------------------------------------
+
+Power Report
+
+Table of Contents
+-----------------
+1. Summary
+1.1 On-Chip Components
+1.2 Power Supply Summary
+1.3 Confidence Level
+2. Settings
+2.1 Environment
+2.2 Clock Constraints
+3. Detailed Reports
+3.1 By Hierarchy
+
+1. Summary
+----------
+
++--------------------------+-------+
+| Total On-Chip Power (W)  | 0.391 |
+| Dynamic (W)              | 0.268 |
+| Device Static (W)        | 0.123 |
+| Effective TJA (C/W)      | 11.5  |
+| Max Ambient (C)          | 80.5  |
+| Junction Temperature (C) | 29.5  |
+| Confidence Level         | Low   |
+| Setting File             | ---   |
+| Simulation Activity File | ---   |
+| Design Nets Matched      | NA    |
++--------------------------+-------+
+
+
+1.1 On-Chip Components
+----------------------
+
++--------------------------+-----------+----------+-----------+-----------------+
+| On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
++--------------------------+-----------+----------+-----------+-----------------+
+| Clocks                   |     0.046 |        3 |       --- |             --- |
+| Slice Logic              |     0.038 |    36526 |       --- |             --- |
+|   LUT as Logic           |     0.033 |    13849 |     53200 |           26.03 |
+|   CARRY4                 |     0.003 |     1183 |     13300 |            8.89 |
+|   Register               |     0.001 |    14367 |    106400 |           13.50 |
+|   F7/F8 Muxes            |    <0.001 |       54 |     53200 |            0.10 |
+|   Others                 |     0.000 |     3638 |       --- |             --- |
+|   LUT as Distributed RAM |     0.000 |     1536 |     17400 |            8.83 |
+| Signals                  |     0.078 |    25676 |       --- |             --- |
+| DSPs                     |     0.099 |      116 |       220 |           52.73 |
+| I/O                      |     0.006 |       60 |       200 |           30.00 |
+| Static Power             |     0.123 |          |           |                 |
+| Total                    |     0.391 |          |           |                 |
++--------------------------+-----------+----------+-----------+-----------------+
+
+
+1.2 Power Supply Summary
+------------------------
+
++-----------+-------------+-----------+-------------+------------+
+| Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
++-----------+-------------+-----------+-------------+------------+
+| Vccint    |       1.000 |     0.270 |       0.262 |      0.008 |
+| Vccaux    |       1.800 |     0.019 |       0.000 |      0.019 |
+| Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |
+| Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
+| Vcco18    |       1.800 |     0.004 |       0.003 |      0.001 |
+| Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
+| Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |
+| Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |
+| Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |
+| Vccbram   |       1.000 |     0.000 |       0.000 |      0.000 |
+| MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |
+| MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |
+| MGTVccaux |       1.800 |     0.000 |       0.000 |      0.000 |
+| Vccpint   |       1.000 |     0.018 |       0.000 |      0.018 |
+| Vccpaux   |       1.800 |     0.010 |       0.000 |      0.010 |
+| Vccpll    |       1.800 |     0.003 |       0.000 |      0.003 |
+| Vcco_ddr  |       1.500 |     0.000 |       0.000 |      0.000 |
+| Vcco_mio0 |       1.800 |     0.000 |       0.000 |      0.000 |
+| Vcco_mio1 |       1.800 |     0.000 |       0.000 |      0.000 |
+| Vccadc    |       1.800 |     0.020 |       0.000 |      0.020 |
++-----------+-------------+-----------+-------------+------------+
+
+
+1.3 Confidence Level
+--------------------
+
++-----------------------------+------------+--------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+| User Input Data             | Confidence | Details                                                | Action                                                                                                     |
++-----------------------------+------------+--------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+| Design implementation state | High       | Design is routed                                       |                                                                                                            |
+| Clock nodes activity        | High       | User specified more than 95% of clocks                 |                                                                                                            |
+| I/O nodes activity          | Low        | More than 75% of inputs are missing user specification | Provide missing input activity with simulation results or by editing the "By Resource Type -> I/Os" view   |
+| Internal nodes activity     | Medium     | User specified less than 25% of internal nodes         | Provide missing internal nodes activity with simulation results or by editing the "By Resource Type" views |
+| Device models               | High       | Device models are Production                           |                                                                                                            |
+|                             |            |                                                        |                                                                                                            |
+| Overall confidence level    | Low        |                                                        |                                                                                                            |
++-----------------------------+------------+--------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+
+
+2. Settings
+-----------
+
+2.1 Environment
+---------------
+
++-----------------------+------------------------+
+| Ambient Temp (C)      | 25.0                   |
+| ThetaJA (C/W)         | 11.5                   |
+| Airflow (LFM)         | 250                    |
+| Heat Sink             | none                   |
+| ThetaSA (C/W)         | 0.0                    |
+| Board Selection       | medium (10"x10")       |
+| # of Board Layers     | 8to11 (8 to 11 Layers) |
+| Board Temperature (C) | 25.0                   |
++-----------------------+------------------------+
+
+
+2.2 Clock Constraints
+---------------------
+
++-------+--------+-----------------+
+| Clock | Domain | Constraint (ns) |
++-------+--------+-----------------+
+| clock | clock  |             9.6 |
++-------+--------+-----------------+
+
+
+3. Detailed Reports
+-------------------
+
+3.1 By Hierarchy
+----------------
+
++-----------------------------------+-----------+
+| Name                              | Power (W) |
++-----------------------------------+-----------+
+| top_network                       |     0.268 |
+|   LSTM_LAYER                      |     0.261 |
+|     GATE_F                        |     0.033 |
+|       DOTPROD_X                   |     0.013 |
+|       DOTPROD_Y                   |     0.015 |
+|     GATE_I                        |     0.024 |
+|       DOTPROD_X                   |     0.010 |
+|       DOTPROD_Y                   |     0.012 |
+|     GATE_O                        |     0.024 |
+|       DOTPROD_X                   |     0.010 |
+|       DOTPROD_Y                   |     0.012 |
+|     GATE_Z                        |     0.030 |
+|       DOTPROD_X                   |     0.010 |
+|       DOTPROD_Y                   |     0.015 |
+|     WRAM_F_X                      |     0.002 |
+|       RAM_matrix_reg_0_1_0_5      |    <0.001 |
+|       RAM_matrix_reg_0_1_102_107  |    <0.001 |
+|       RAM_matrix_reg_0_1_108_113  |    <0.001 |
+|       RAM_matrix_reg_0_1_114_119  |    <0.001 |
+|       RAM_matrix_reg_0_1_120_125  |    <0.001 |
+|       RAM_matrix_reg_0_1_126_131  |    <0.001 |
+|       RAM_matrix_reg_0_1_12_17    |    <0.001 |
+|       RAM_matrix_reg_0_1_132_137  |    <0.001 |
+|       RAM_matrix_reg_0_1_138_143  |    <0.001 |
+|       RAM_matrix_reg_0_1_144_149  |    <0.001 |
+|       RAM_matrix_reg_0_1_150_155  |    <0.001 |
+|       RAM_matrix_reg_0_1_156_161  |    <0.001 |
+|       RAM_matrix_reg_0_1_162_167  |    <0.001 |
+|       RAM_matrix_reg_0_1_168_173  |    <0.001 |
+|       RAM_matrix_reg_0_1_174_179  |    <0.001 |
+|       RAM_matrix_reg_0_1_180_185  |    <0.001 |
+|       RAM_matrix_reg_0_1_186_191  |    <0.001 |
+|       RAM_matrix_reg_0_1_18_23    |    <0.001 |
+|       RAM_matrix_reg_0_1_192_197  |    <0.001 |
+|       RAM_matrix_reg_0_1_198_203  |    <0.001 |
+|       RAM_matrix_reg_0_1_204_209  |    <0.001 |
+|       RAM_matrix_reg_0_1_210_215  |    <0.001 |
+|       RAM_matrix_reg_0_1_216_221  |    <0.001 |
+|       RAM_matrix_reg_0_1_222_227  |    <0.001 |
+|       RAM_matrix_reg_0_1_228_233  |    <0.001 |
+|       RAM_matrix_reg_0_1_234_239  |    <0.001 |
+|       RAM_matrix_reg_0_1_240_245  |    <0.001 |
+|       RAM_matrix_reg_0_1_246_251  |    <0.001 |
+|       RAM_matrix_reg_0_1_24_29    |    <0.001 |
+|       RAM_matrix_reg_0_1_252_257  |    <0.001 |
+|       RAM_matrix_reg_0_1_258_263  |    <0.001 |
+|       RAM_matrix_reg_0_1_264_269  |    <0.001 |
+|       RAM_matrix_reg_0_1_270_275  |    <0.001 |
+|       RAM_matrix_reg_0_1_276_281  |    <0.001 |
+|       RAM_matrix_reg_0_1_282_287  |    <0.001 |
+|       RAM_matrix_reg_0_1_30_35    |    <0.001 |
+|       RAM_matrix_reg_0_1_36_41    |    <0.001 |
+|       RAM_matrix_reg_0_1_42_47    |    <0.001 |
+|       RAM_matrix_reg_0_1_48_53    |    <0.001 |
+|       RAM_matrix_reg_0_1_54_59    |    <0.001 |
+|       RAM_matrix_reg_0_1_60_65    |    <0.001 |
+|       RAM_matrix_reg_0_1_66_71    |    <0.001 |
+|       RAM_matrix_reg_0_1_6_11     |    <0.001 |
+|       RAM_matrix_reg_0_1_72_77    |    <0.001 |
+|       RAM_matrix_reg_0_1_78_83    |    <0.001 |
+|       RAM_matrix_reg_0_1_84_89    |    <0.001 |
+|       RAM_matrix_reg_0_1_90_95    |    <0.001 |
+|       RAM_matrix_reg_0_1_96_101   |    <0.001 |
+|     WRAM_F_Y                      |     0.002 |
+|       RAM_matrix_reg_0_15_0_5     |    <0.001 |
+|       RAM_matrix_reg_0_15_102_107 |    <0.001 |
+|       RAM_matrix_reg_0_15_108_113 |    <0.001 |
+|       RAM_matrix_reg_0_15_114_119 |    <0.001 |
+|       RAM_matrix_reg_0_15_120_125 |    <0.001 |
+|       RAM_matrix_reg_0_15_126_131 |    <0.001 |
+|       RAM_matrix_reg_0_15_12_17   |    <0.001 |
+|       RAM_matrix_reg_0_15_132_137 |    <0.001 |
+|       RAM_matrix_reg_0_15_138_143 |    <0.001 |
+|       RAM_matrix_reg_0_15_144_149 |    <0.001 |
+|       RAM_matrix_reg_0_15_150_155 |    <0.001 |
+|       RAM_matrix_reg_0_15_156_161 |    <0.001 |
+|       RAM_matrix_reg_0_15_162_167 |    <0.001 |
+|       RAM_matrix_reg_0_15_168_173 |    <0.001 |
+|       RAM_matrix_reg_0_15_174_179 |    <0.001 |
+|       RAM_matrix_reg_0_15_180_185 |    <0.001 |
+|       RAM_matrix_reg_0_15_186_191 |    <0.001 |
+|       RAM_matrix_reg_0_15_18_23   |    <0.001 |
+|       RAM_matrix_reg_0_15_192_197 |    <0.001 |
+|       RAM_matrix_reg_0_15_198_203 |    <0.001 |
+|       RAM_matrix_reg_0_15_204_209 |    <0.001 |
+|       RAM_matrix_reg_0_15_210_215 |    <0.001 |
+|       RAM_matrix_reg_0_15_216_221 |    <0.001 |
+|       RAM_matrix_reg_0_15_222_227 |    <0.001 |
+|       RAM_matrix_reg_0_15_228_233 |    <0.001 |
+|       RAM_matrix_reg_0_15_234_239 |    <0.001 |
+|       RAM_matrix_reg_0_15_240_245 |    <0.001 |
+|       RAM_matrix_reg_0_15_246_251 |    <0.001 |
+|       RAM_matrix_reg_0_15_24_29   |    <0.001 |
+|       RAM_matrix_reg_0_15_252_257 |    <0.001 |
+|       RAM_matrix_reg_0_15_258_263 |    <0.001 |
+|       RAM_matrix_reg_0_15_264_269 |    <0.001 |
+|       RAM_matrix_reg_0_15_270_275 |    <0.001 |
+|       RAM_matrix_reg_0_15_276_281 |    <0.001 |
+|       RAM_matrix_reg_0_15_282_287 |    <0.001 |
+|       RAM_matrix_reg_0_15_30_35   |    <0.001 |
+|       RAM_matrix_reg_0_15_36_41   |    <0.001 |
+|       RAM_matrix_reg_0_15_42_47   |    <0.001 |
+|       RAM_matrix_reg_0_15_48_53   |    <0.001 |
+|       RAM_matrix_reg_0_15_54_59   |    <0.001 |
+|       RAM_matrix_reg_0_15_60_65   |    <0.001 |
+|       RAM_matrix_reg_0_15_66_71   |    <0.001 |
+|       RAM_matrix_reg_0_15_6_11    |    <0.001 |
+|       RAM_matrix_reg_0_15_72_77   |    <0.001 |
+|       RAM_matrix_reg_0_15_78_83   |    <0.001 |
+|       RAM_matrix_reg_0_15_84_89   |    <0.001 |
+|       RAM_matrix_reg_0_15_90_95   |    <0.001 |
+|       RAM_matrix_reg_0_15_96_101  |    <0.001 |
+|     WRAM_I_X                      |     0.002 |
+|       RAM_matrix_reg_0_1_0_5      |    <0.001 |
+|       RAM_matrix_reg_0_1_102_107  |    <0.001 |
+|       RAM_matrix_reg_0_1_108_113  |    <0.001 |
+|       RAM_matrix_reg_0_1_114_119  |    <0.001 |
+|       RAM_matrix_reg_0_1_120_125  |    <0.001 |
+|       RAM_matrix_reg_0_1_126_131  |    <0.001 |
+|       RAM_matrix_reg_0_1_12_17    |    <0.001 |
+|       RAM_matrix_reg_0_1_132_137  |    <0.001 |
+|       RAM_matrix_reg_0_1_138_143  |    <0.001 |
+|       RAM_matrix_reg_0_1_144_149  |    <0.001 |
+|       RAM_matrix_reg_0_1_150_155  |    <0.001 |
+|       RAM_matrix_reg_0_1_156_161  |    <0.001 |
+|       RAM_matrix_reg_0_1_162_167  |    <0.001 |
+|       RAM_matrix_reg_0_1_168_173  |    <0.001 |
+|       RAM_matrix_reg_0_1_174_179  |    <0.001 |
+|       RAM_matrix_reg_0_1_180_185  |    <0.001 |
+|       RAM_matrix_reg_0_1_186_191  |    <0.001 |
+|       RAM_matrix_reg_0_1_18_23    |    <0.001 |
+|       RAM_matrix_reg_0_1_192_197  |    <0.001 |
+|       RAM_matrix_reg_0_1_198_203  |    <0.001 |
+|       RAM_matrix_reg_0_1_204_209  |    <0.001 |
+|       RAM_matrix_reg_0_1_210_215  |    <0.001 |
+|       RAM_matrix_reg_0_1_216_221  |    <0.001 |
+|       RAM_matrix_reg_0_1_222_227  |    <0.001 |
+|       RAM_matrix_reg_0_1_228_233  |    <0.001 |
+|       RAM_matrix_reg_0_1_234_239  |    <0.001 |
+|       RAM_matrix_reg_0_1_240_245  |    <0.001 |
+|       RAM_matrix_reg_0_1_246_251  |    <0.001 |
+|       RAM_matrix_reg_0_1_24_29    |    <0.001 |
+|       RAM_matrix_reg_0_1_252_257  |    <0.001 |
+|       RAM_matrix_reg_0_1_258_263  |    <0.001 |
+|       RAM_matrix_reg_0_1_264_269  |    <0.001 |
+|       RAM_matrix_reg_0_1_270_275  |    <0.001 |
+|       RAM_matrix_reg_0_1_276_281  |    <0.001 |
+|       RAM_matrix_reg_0_1_282_287  |    <0.001 |
+|       RAM_matrix_reg_0_1_30_35    |    <0.001 |
+|       RAM_matrix_reg_0_1_36_41    |    <0.001 |
+|       RAM_matrix_reg_0_1_42_47    |    <0.001 |
+|       RAM_matrix_reg_0_1_48_53    |    <0.001 |
+|       RAM_matrix_reg_0_1_54_59    |    <0.001 |
+|       RAM_matrix_reg_0_1_60_65    |    <0.001 |
+|       RAM_matrix_reg_0_1_66_71    |    <0.001 |
+|       RAM_matrix_reg_0_1_6_11     |    <0.001 |
+|       RAM_matrix_reg_0_1_72_77    |    <0.001 |
+|       RAM_matrix_reg_0_1_78_83    |    <0.001 |
+|       RAM_matrix_reg_0_1_84_89    |    <0.001 |
+|       RAM_matrix_reg_0_1_90_95    |    <0.001 |
+|       RAM_matrix_reg_0_1_96_101   |    <0.001 |
+|     WRAM_I_Y                      |     0.002 |
+|       RAM_matrix_reg_0_15_0_5     |    <0.001 |
+|       RAM_matrix_reg_0_15_102_107 |    <0.001 |
+|       RAM_matrix_reg_0_15_108_113 |    <0.001 |
+|       RAM_matrix_reg_0_15_114_119 |    <0.001 |
+|       RAM_matrix_reg_0_15_120_125 |    <0.001 |
+|       RAM_matrix_reg_0_15_126_131 |    <0.001 |
+|       RAM_matrix_reg_0_15_12_17   |    <0.001 |
+|       RAM_matrix_reg_0_15_132_137 |    <0.001 |
+|       RAM_matrix_reg_0_15_138_143 |    <0.001 |
+|       RAM_matrix_reg_0_15_144_149 |    <0.001 |
+|       RAM_matrix_reg_0_15_150_155 |    <0.001 |
+|       RAM_matrix_reg_0_15_156_161 |    <0.001 |
+|       RAM_matrix_reg_0_15_162_167 |    <0.001 |
+|       RAM_matrix_reg_0_15_168_173 |    <0.001 |
+|       RAM_matrix_reg_0_15_174_179 |    <0.001 |
+|       RAM_matrix_reg_0_15_180_185 |    <0.001 |
+|       RAM_matrix_reg_0_15_186_191 |    <0.001 |
+|       RAM_matrix_reg_0_15_18_23   |    <0.001 |
+|       RAM_matrix_reg_0_15_192_197 |    <0.001 |
+|       RAM_matrix_reg_0_15_198_203 |    <0.001 |
+|       RAM_matrix_reg_0_15_204_209 |    <0.001 |
+|       RAM_matrix_reg_0_15_210_215 |    <0.001 |
+|       RAM_matrix_reg_0_15_216_221 |    <0.001 |
+|       RAM_matrix_reg_0_15_222_227 |    <0.001 |
+|       RAM_matrix_reg_0_15_228_233 |    <0.001 |
+|       RAM_matrix_reg_0_15_234_239 |    <0.001 |
+|       RAM_matrix_reg_0_15_240_245 |    <0.001 |
+|       RAM_matrix_reg_0_15_246_251 |    <0.001 |
+|       RAM_matrix_reg_0_15_24_29   |    <0.001 |
+|       RAM_matrix_reg_0_15_252_257 |    <0.001 |
+|       RAM_matrix_reg_0_15_258_263 |    <0.001 |
+|       RAM_matrix_reg_0_15_264_269 |    <0.001 |
+|       RAM_matrix_reg_0_15_270_275 |    <0.001 |
+|       RAM_matrix_reg_0_15_276_281 |    <0.001 |
+|       RAM_matrix_reg_0_15_282_287 |    <0.001 |
+|       RAM_matrix_reg_0_15_30_35   |    <0.001 |
+|       RAM_matrix_reg_0_15_36_41   |    <0.001 |
+|       RAM_matrix_reg_0_15_42_47   |    <0.001 |
+|       RAM_matrix_reg_0_15_48_53   |    <0.001 |
+|       RAM_matrix_reg_0_15_54_59   |    <0.001 |
+|       RAM_matrix_reg_0_15_60_65   |    <0.001 |
+|       RAM_matrix_reg_0_15_66_71   |    <0.001 |
+|       RAM_matrix_reg_0_15_6_11    |    <0.001 |
+|       RAM_matrix_reg_0_15_72_77   |    <0.001 |
+|       RAM_matrix_reg_0_15_78_83   |    <0.001 |
+|       RAM_matrix_reg_0_15_84_89   |    <0.001 |
+|       RAM_matrix_reg_0_15_90_95   |    <0.001 |
+|       RAM_matrix_reg_0_15_96_101  |    <0.001 |
+|     WRAM_O_X                      |     0.002 |
+|       RAM_matrix_reg_0_1_0_5      |    <0.001 |
+|       RAM_matrix_reg_0_1_102_107  |    <0.001 |
+|       RAM_matrix_reg_0_1_108_113  |    <0.001 |
+|       RAM_matrix_reg_0_1_114_119  |    <0.001 |
+|       RAM_matrix_reg_0_1_120_125  |    <0.001 |
+|       RAM_matrix_reg_0_1_126_131  |    <0.001 |
+|       RAM_matrix_reg_0_1_12_17    |    <0.001 |
+|       RAM_matrix_reg_0_1_132_137  |    <0.001 |
+|       RAM_matrix_reg_0_1_138_143  |    <0.001 |
+|       RAM_matrix_reg_0_1_144_149  |    <0.001 |
+|       RAM_matrix_reg_0_1_150_155  |    <0.001 |
+|       RAM_matrix_reg_0_1_156_161  |    <0.001 |
+|       RAM_matrix_reg_0_1_162_167  |    <0.001 |
+|       RAM_matrix_reg_0_1_168_173  |    <0.001 |
+|       RAM_matrix_reg_0_1_174_179  |    <0.001 |
+|       RAM_matrix_reg_0_1_180_185  |    <0.001 |
+|       RAM_matrix_reg_0_1_186_191  |    <0.001 |
+|       RAM_matrix_reg_0_1_18_23    |    <0.001 |
+|       RAM_matrix_reg_0_1_192_197  |    <0.001 |
+|       RAM_matrix_reg_0_1_198_203  |    <0.001 |
+|       RAM_matrix_reg_0_1_204_209  |    <0.001 |
+|       RAM_matrix_reg_0_1_210_215  |    <0.001 |
+|       RAM_matrix_reg_0_1_216_221  |    <0.001 |
+|       RAM_matrix_reg_0_1_222_227  |    <0.001 |
+|       RAM_matrix_reg_0_1_228_233  |    <0.001 |
+|       RAM_matrix_reg_0_1_234_239  |    <0.001 |
+|       RAM_matrix_reg_0_1_240_245  |    <0.001 |
+|       RAM_matrix_reg_0_1_246_251  |    <0.001 |
+|       RAM_matrix_reg_0_1_24_29    |    <0.001 |
+|       RAM_matrix_reg_0_1_252_257  |    <0.001 |
+|       RAM_matrix_reg_0_1_258_263  |    <0.001 |
+|       RAM_matrix_reg_0_1_264_269  |    <0.001 |
+|       RAM_matrix_reg_0_1_270_275  |    <0.001 |
+|       RAM_matrix_reg_0_1_276_281  |    <0.001 |
+|       RAM_matrix_reg_0_1_282_287  |    <0.001 |
+|       RAM_matrix_reg_0_1_30_35    |    <0.001 |
+|       RAM_matrix_reg_0_1_36_41    |    <0.001 |
+|       RAM_matrix_reg_0_1_42_47    |    <0.001 |
+|       RAM_matrix_reg_0_1_48_53    |    <0.001 |
+|       RAM_matrix_reg_0_1_54_59    |    <0.001 |
+|       RAM_matrix_reg_0_1_60_65    |    <0.001 |
+|       RAM_matrix_reg_0_1_66_71    |    <0.001 |
+|       RAM_matrix_reg_0_1_6_11     |    <0.001 |
+|       RAM_matrix_reg_0_1_72_77    |    <0.001 |
+|       RAM_matrix_reg_0_1_78_83    |    <0.001 |
+|       RAM_matrix_reg_0_1_84_89    |    <0.001 |
+|       RAM_matrix_reg_0_1_90_95    |    <0.001 |
+|       RAM_matrix_reg_0_1_96_101   |    <0.001 |
+|     WRAM_O_Y                      |     0.002 |
+|       RAM_matrix_reg_0_15_0_5     |    <0.001 |
+|       RAM_matrix_reg_0_15_102_107 |    <0.001 |
+|       RAM_matrix_reg_0_15_108_113 |    <0.001 |
+|       RAM_matrix_reg_0_15_114_119 |    <0.001 |
+|       RAM_matrix_reg_0_15_120_125 |    <0.001 |
+|       RAM_matrix_reg_0_15_126_131 |    <0.001 |
+|       RAM_matrix_reg_0_15_12_17   |    <0.001 |
+|       RAM_matrix_reg_0_15_132_137 |    <0.001 |
+|       RAM_matrix_reg_0_15_138_143 |    <0.001 |
+|       RAM_matrix_reg_0_15_144_149 |    <0.001 |
+|       RAM_matrix_reg_0_15_150_155 |    <0.001 |
+|       RAM_matrix_reg_0_15_156_161 |    <0.001 |
+|       RAM_matrix_reg_0_15_162_167 |    <0.001 |
+|       RAM_matrix_reg_0_15_168_173 |    <0.001 |
+|       RAM_matrix_reg_0_15_174_179 |    <0.001 |
+|       RAM_matrix_reg_0_15_180_185 |    <0.001 |
+|       RAM_matrix_reg_0_15_186_191 |    <0.001 |
+|       RAM_matrix_reg_0_15_18_23   |    <0.001 |
+|       RAM_matrix_reg_0_15_192_197 |    <0.001 |
+|       RAM_matrix_reg_0_15_198_203 |    <0.001 |
+|       RAM_matrix_reg_0_15_204_209 |    <0.001 |
+|       RAM_matrix_reg_0_15_210_215 |    <0.001 |
+|       RAM_matrix_reg_0_15_216_221 |    <0.001 |
+|       RAM_matrix_reg_0_15_222_227 |    <0.001 |
+|       RAM_matrix_reg_0_15_228_233 |    <0.001 |
+|       RAM_matrix_reg_0_15_234_239 |    <0.001 |
+|       RAM_matrix_reg_0_15_240_245 |    <0.001 |
+|       RAM_matrix_reg_0_15_246_251 |    <0.001 |
+|       RAM_matrix_reg_0_15_24_29   |    <0.001 |
+|       RAM_matrix_reg_0_15_252_257 |    <0.001 |
+|       RAM_matrix_reg_0_15_258_263 |    <0.001 |
+|       RAM_matrix_reg_0_15_264_269 |    <0.001 |
+|       RAM_matrix_reg_0_15_270_275 |    <0.001 |
+|       RAM_matrix_reg_0_15_276_281 |    <0.001 |
+|       RAM_matrix_reg_0_15_282_287 |    <0.001 |
+|       RAM_matrix_reg_0_15_30_35   |    <0.001 |
+|       RAM_matrix_reg_0_15_36_41   |    <0.001 |
+|       RAM_matrix_reg_0_15_42_47   |    <0.001 |
+|       RAM_matrix_reg_0_15_48_53   |    <0.001 |
+|       RAM_matrix_reg_0_15_54_59   |    <0.001 |
+|       RAM_matrix_reg_0_15_60_65   |    <0.001 |
+|       RAM_matrix_reg_0_15_66_71   |    <0.001 |
+|       RAM_matrix_reg_0_15_6_11    |    <0.001 |
+|       RAM_matrix_reg_0_15_72_77   |    <0.001 |
+|       RAM_matrix_reg_0_15_78_83   |    <0.001 |
+|       RAM_matrix_reg_0_15_84_89   |    <0.001 |
+|       RAM_matrix_reg_0_15_90_95   |    <0.001 |
+|       RAM_matrix_reg_0_15_96_101  |    <0.001 |
+|     WRAM_Z_X                      |     0.002 |
+|       RAM_matrix_reg_0_1_0_5      |    <0.001 |
+|       RAM_matrix_reg_0_1_102_107  |    <0.001 |
+|       RAM_matrix_reg_0_1_108_113  |    <0.001 |
+|       RAM_matrix_reg_0_1_114_119  |    <0.001 |
+|       RAM_matrix_reg_0_1_120_125  |    <0.001 |
+|       RAM_matrix_reg_0_1_126_131  |    <0.001 |
+|       RAM_matrix_reg_0_1_12_17    |    <0.001 |
+|       RAM_matrix_reg_0_1_132_137  |    <0.001 |
+|       RAM_matrix_reg_0_1_138_143  |    <0.001 |
+|       RAM_matrix_reg_0_1_144_149  |    <0.001 |
+|       RAM_matrix_reg_0_1_150_155  |    <0.001 |
+|       RAM_matrix_reg_0_1_156_161  |    <0.001 |
+|       RAM_matrix_reg_0_1_162_167  |    <0.001 |
+|       RAM_matrix_reg_0_1_168_173  |    <0.001 |
+|       RAM_matrix_reg_0_1_174_179  |    <0.001 |
+|       RAM_matrix_reg_0_1_180_185  |    <0.001 |
+|       RAM_matrix_reg_0_1_186_191  |    <0.001 |
+|       RAM_matrix_reg_0_1_18_23    |    <0.001 |
+|       RAM_matrix_reg_0_1_192_197  |    <0.001 |
+|       RAM_matrix_reg_0_1_198_203  |    <0.001 |
+|       RAM_matrix_reg_0_1_204_209  |    <0.001 |
+|       RAM_matrix_reg_0_1_210_215  |    <0.001 |
+|       RAM_matrix_reg_0_1_216_221  |    <0.001 |
+|       RAM_matrix_reg_0_1_222_227  |    <0.001 |
+|       RAM_matrix_reg_0_1_228_233  |    <0.001 |
+|       RAM_matrix_reg_0_1_234_239  |    <0.001 |
+|       RAM_matrix_reg_0_1_240_245  |    <0.001 |
+|       RAM_matrix_reg_0_1_246_251  |    <0.001 |
+|       RAM_matrix_reg_0_1_24_29    |    <0.001 |
+|       RAM_matrix_reg_0_1_252_257  |    <0.001 |
+|       RAM_matrix_reg_0_1_258_263  |    <0.001 |
+|       RAM_matrix_reg_0_1_264_269  |    <0.001 |
+|       RAM_matrix_reg_0_1_270_275  |    <0.001 |
+|       RAM_matrix_reg_0_1_276_281  |    <0.001 |
+|       RAM_matrix_reg_0_1_282_287  |    <0.001 |
+|       RAM_matrix_reg_0_1_30_35    |    <0.001 |
+|       RAM_matrix_reg_0_1_36_41    |    <0.001 |
+|       RAM_matrix_reg_0_1_42_47    |    <0.001 |
+|       RAM_matrix_reg_0_1_48_53    |    <0.001 |
+|       RAM_matrix_reg_0_1_54_59    |    <0.001 |
+|       RAM_matrix_reg_0_1_60_65    |    <0.001 |
+|       RAM_matrix_reg_0_1_66_71    |    <0.001 |
+|       RAM_matrix_reg_0_1_6_11     |    <0.001 |
+|       RAM_matrix_reg_0_1_72_77    |    <0.001 |
+|       RAM_matrix_reg_0_1_78_83    |    <0.001 |
+|       RAM_matrix_reg_0_1_84_89    |    <0.001 |
+|       RAM_matrix_reg_0_1_90_95    |    <0.001 |
+|       RAM_matrix_reg_0_1_96_101   |    <0.001 |
+|     WRAM_Z_Y                      |     0.002 |
+|       RAM_matrix_reg_0_15_0_5     |    <0.001 |
+|       RAM_matrix_reg_0_15_102_107 |    <0.001 |
+|       RAM_matrix_reg_0_15_108_113 |    <0.001 |
+|       RAM_matrix_reg_0_15_114_119 |    <0.001 |
+|       RAM_matrix_reg_0_15_120_125 |    <0.001 |
+|       RAM_matrix_reg_0_15_126_131 |    <0.001 |
+|       RAM_matrix_reg_0_15_12_17   |    <0.001 |
+|       RAM_matrix_reg_0_15_132_137 |    <0.001 |
+|       RAM_matrix_reg_0_15_138_143 |    <0.001 |
+|       RAM_matrix_reg_0_15_144_149 |    <0.001 |
+|       RAM_matrix_reg_0_15_150_155 |    <0.001 |
+|       RAM_matrix_reg_0_15_156_161 |    <0.001 |
+|       RAM_matrix_reg_0_15_162_167 |    <0.001 |
+|       RAM_matrix_reg_0_15_168_173 |    <0.001 |
+|       RAM_matrix_reg_0_15_174_179 |    <0.001 |
+|       RAM_matrix_reg_0_15_180_185 |    <0.001 |
+|       RAM_matrix_reg_0_15_186_191 |    <0.001 |
+|       RAM_matrix_reg_0_15_18_23   |    <0.001 |
+|       RAM_matrix_reg_0_15_192_197 |    <0.001 |
+|       RAM_matrix_reg_0_15_198_203 |    <0.001 |
+|       RAM_matrix_reg_0_15_204_209 |    <0.001 |
+|       RAM_matrix_reg_0_15_210_215 |    <0.001 |
+|       RAM_matrix_reg_0_15_216_221 |    <0.001 |
+|       RAM_matrix_reg_0_15_222_227 |    <0.001 |
+|       RAM_matrix_reg_0_15_228_233 |    <0.001 |
+|       RAM_matrix_reg_0_15_234_239 |    <0.001 |
+|       RAM_matrix_reg_0_15_240_245 |    <0.001 |
+|       RAM_matrix_reg_0_15_246_251 |    <0.001 |
+|       RAM_matrix_reg_0_15_24_29   |    <0.001 |
+|       RAM_matrix_reg_0_15_252_257 |    <0.001 |
+|       RAM_matrix_reg_0_15_258_263 |    <0.001 |
+|       RAM_matrix_reg_0_15_264_269 |    <0.001 |
+|       RAM_matrix_reg_0_15_270_275 |    <0.001 |
+|       RAM_matrix_reg_0_15_276_281 |    <0.001 |
+|       RAM_matrix_reg_0_15_282_287 |    <0.001 |
+|       RAM_matrix_reg_0_15_30_35   |    <0.001 |
+|       RAM_matrix_reg_0_15_36_41   |    <0.001 |
+|       RAM_matrix_reg_0_15_42_47   |    <0.001 |
+|       RAM_matrix_reg_0_15_48_53   |    <0.001 |
+|       RAM_matrix_reg_0_15_54_59   |    <0.001 |
+|       RAM_matrix_reg_0_15_60_65   |    <0.001 |
+|       RAM_matrix_reg_0_15_66_71   |    <0.001 |
+|       RAM_matrix_reg_0_15_6_11    |    <0.001 |
+|       RAM_matrix_reg_0_15_72_77   |    <0.001 |
+|       RAM_matrix_reg_0_15_78_83   |    <0.001 |
+|       RAM_matrix_reg_0_15_84_89   |    <0.001 |
+|       RAM_matrix_reg_0_15_90_95   |    <0.001 |
+|       RAM_matrix_reg_0_15_96_101  |    <0.001 |
+|     genblk1[0].sigmoid_i          |     0.003 |
+|     genblk1[10].sigmoid_i         |     0.003 |
+|     genblk1[11].sigmoid_i         |     0.003 |
+|     genblk1[12].sigmoid_i         |     0.003 |
+|     genblk1[13].sigmoid_i         |     0.002 |
+|     genblk1[14].sigmoid_i         |     0.003 |
+|     genblk1[15].sigmoid_i         |     0.003 |
+|     genblk1[1].sigmoid_i          |     0.003 |
+|     genblk1[2].sigmoid_i          |     0.003 |
+|     genblk1[3].sigmoid_i          |     0.003 |
+|     genblk1[4].sigmoid_i          |     0.003 |
+|     genblk1[5].sigmoid_i          |     0.003 |
+|     genblk1[6].sigmoid_i          |     0.003 |
+|     genblk1[7].sigmoid_i          |     0.003 |
+|     genblk1[8].sigmoid_i          |     0.003 |
+|     genblk1[9].sigmoid_i          |     0.003 |
+|     genblk2[0].tanh_i             |     0.003 |
+|     genblk2[10].tanh_i            |     0.003 |
+|     genblk2[11].tanh_i            |     0.003 |
+|     genblk2[12].tanh_i            |     0.003 |
+|     genblk2[13].tanh_i            |     0.003 |
+|     genblk2[14].tanh_i            |     0.003 |
+|     genblk2[15].tanh_i            |     0.004 |
+|     genblk2[1].tanh_i             |     0.003 |
+|     genblk2[2].tanh_i             |     0.003 |
+|     genblk2[3].tanh_i             |     0.003 |
+|     genblk2[4].tanh_i             |     0.003 |
+|     genblk2[5].tanh_i             |     0.003 |
+|     genblk2[6].tanh_i             |     0.003 |
+|     genblk2[7].tanh_i             |     0.003 |
+|     genblk2[8].tanh_i             |     0.003 |
+|     genblk2[9].tanh_i             |     0.003 |
+|   PERCEPTRON                      |    <0.001 |
++-----------------------------------+-----------+
+
+

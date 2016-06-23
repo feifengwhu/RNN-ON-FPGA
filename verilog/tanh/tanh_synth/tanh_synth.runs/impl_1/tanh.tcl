@@ -44,18 +44,17 @@ proc step_failed { step } {
 
 set_msg_config -id {HDL 9-1061} -limit 100000
 set_msg_config -id {HDL 9-1654} -limit 100000
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
 
 start_step init_design
 set rc [catch {
   create_msg_db init_design.pb
   set_property design_mode GateLvl [current_fileset]
-  set_property webtalk.parent_dir /home/jfonseca/thesis/verilog/tanh/tanh_synth/tanh_synth.cache/wt [current_project]
-  set_property parent.project_path /home/jfonseca/thesis/verilog/tanh/tanh_synth/tanh_synth.xpr [current_project]
-  set_property ip_repo_paths /home/jfonseca/thesis/verilog/tanh/tanh_synth/tanh_synth.cache/ip [current_project]
-  set_property ip_output_repo /home/jfonseca/thesis/verilog/tanh/tanh_synth/tanh_synth.cache/ip [current_project]
-  add_files -quiet /home/jfonseca/thesis/verilog/tanh/tanh_synth/tanh_synth.runs/synth_1/tanh.dcp
+  set_property webtalk.parent_dir /home/josefonseca/Documents/thesis/verilog/tanh/tanh_synth/tanh_synth.cache/wt [current_project]
+  set_property parent.project_path /home/josefonseca/Documents/thesis/verilog/tanh/tanh_synth/tanh_synth.xpr [current_project]
+  set_property ip_repo_paths /home/josefonseca/Documents/thesis/verilog/tanh/tanh_synth/tanh_synth.cache/ip [current_project]
+  set_property ip_output_repo /home/josefonseca/Documents/thesis/verilog/tanh/tanh_synth/tanh_synth.cache/ip [current_project]
+  add_files -quiet /home/josefonseca/Documents/thesis/verilog/tanh/tanh_synth/tanh_synth.runs/synth_1/tanh.dcp
+  read_xdc /home/josefonseca/Documents/thesis/verilog/tanh/tanh_synth/tanh_synth.srcs/constrs_1/new/tanh_const.xdc
   link_design -top tanh -part xc7z020clg484-1
   close_msg_db -file init_design.pb
 } RESULT]

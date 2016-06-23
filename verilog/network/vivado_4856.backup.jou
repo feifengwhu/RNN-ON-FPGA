@@ -1,0 +1,55 @@
+#-----------------------------------------------------------
+# Vivado v2015.4 (64-bit)
+# SW Build 1412921 on Wed Nov 18 09:44:32 MST 2015
+# IP Build 1412160 on Tue Nov 17 13:47:24 MST 2015
+# Start of session at: Wed Jun 22 00:05:34 2016
+# Process ID: 4856
+# Current directory: /home/josefonseca/Documents/thesis/verilog/network
+# Command line: vivado
+# Log file: /home/josefonseca/Documents/thesis/verilog/network/vivado.log
+# Journal file: /home/josefonseca/Documents/thesis/verilog/network/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.xpr
+reset_run synth_2
+launch_runs impl_2
+wait_on_run impl_2
+reset_run synth_2
+launch_runs impl_2
+wait_on_run impl_2
+reset_run synth_2
+launch_runs impl_2
+wait_on_run impl_2
+reset_run synth_2
+launch_runs impl_2
+wait_on_run impl_2
+create_run synth_6 -flow {Vivado Synthesis 2015} -strategy Flow_PerfOptimized_high
+current_run [get_runs synth_6]
+set_property strategy Flow_AreaOptimized_high [get_runs synth_6]
+set_property strategy Performance_ExplorePostRoutePhysOpt [get_runs impl_2]
+launch_runs impl_4
+wait_on_run impl_4
+create_run synth_3 -flow {Vivado Synthesis 2015} -strategy Flow_AreaOptimized_high
+current_run [get_runs synth_3]
+set_property strategy Flow_AreaOptimized_medium [get_runs synth_3]
+launch_runs impl_5
+wait_on_run impl_5
+current_run [get_runs synth_2]
+delete_runs "synth_6 synth_3"
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+reset_run synth_2
+launch_runs impl_2
+wait_on_run impl_2
+create_run impl_4 -parent_run synth_2 -flow {Vivado Implementation 2015} -strategy Performance_ExplorePostRoutePhysOpt
+current_run [get_runs impl_4]
+set_property strategy Performance_RefinePlacement [get_runs impl_4]
+launch_runs impl_4
+wait_on_run impl_4
+current_run [get_runs impl_2]
+delete_runs "impl_4"
+create_run impl_4 -parent_run synth_2 -flow {Vivado Implementation 2015} -strategy Performance_ExplorePostRoutePhysOpt
+current_run [get_runs impl_4]
+set_property strategy Area_Explore [get_runs impl_4]
+launch_runs impl_4
+wait_on_run impl_4

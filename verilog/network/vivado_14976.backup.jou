@@ -1,0 +1,26 @@
+#-----------------------------------------------------------
+# Vivado v2015.4 (64-bit)
+# SW Build 1412921 on Wed Nov 18 09:44:32 MST 2015
+# IP Build 1412160 on Tue Nov 17 13:47:24 MST 2015
+# Start of session at: Wed Jun 22 16:25:52 2016
+# Process ID: 14976
+# Current directory: /home/josefonseca/Documents/thesis/verilog/network
+# Command line: vivado
+# Log file: /home/josefonseca/Documents/thesis/verilog/network/vivado.log
+# Journal file: /home/josefonseca/Documents/thesis/verilog/network/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.xpr
+reset_run synth_2
+launch_runs synth_2
+wait_on_run synth_2
+launch_runs impl_4
+wait_on_run impl_4
+reset_run synth_2
+launch_runs impl_4
+wait_on_run impl_4
+create_run impl_5 -parent_run synth_2 -flow {Vivado Implementation 2015} -strategy Area_Explore
+current_run [get_runs impl_5]
+set_property strategy Performance_ExplorePostRoutePhysOpt [get_runs impl_5]
+launch_runs impl_5
+wait_on_run impl_5

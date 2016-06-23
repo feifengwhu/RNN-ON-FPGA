@@ -23,7 +23,7 @@ module weightRAM #(parameter NROW = 16,
     input       [OUTPUT_PORT_SIZE-1:0]  rowIn;
 
     // The RAM registers
-    (* ram_style = "block" *) reg [OUTPUT_PORT_SIZE-1:0] RAM_matrix [NCOL-1:0];    
+    /*(* ram_style = "block" *)*/ reg [OUTPUT_PORT_SIZE-1:0] RAM_matrix [NCOL-1:0];    
 
     // Loading the RAM with dummy values
     integer i, j;

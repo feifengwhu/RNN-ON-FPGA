@@ -2,8 +2,8 @@
 # Vivado v2015.4 (64-bit)
 # SW Build 1412921 on Wed Nov 18 09:44:32 MST 2015
 # IP Build 1412160 on Tue Nov 17 13:47:24 MST 2015
-# Start of session at: Wed Jun 22 00:06:24 2016
-# Process ID: 4985
+# Start of session at: Thu Jun 23 01:17:50 2016
+# Process ID: 27679
 # Current directory: /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.runs/synth_2
 # Command line: vivado -log top_network.vds -mode batch -messageDb vivado.pb -notrace -source top_network.tcl
 # Log file: /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.runs/synth_2/top_network.vds
@@ -28,9 +28,15 @@ WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with for
 WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v:50]
 WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v:51]
 WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v:52]
+WARNING: [Synth 8-2507] parameter declaration becomes local in sigmoid with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/sigmoid.v:8]
+WARNING: [Synth 8-2507] parameter declaration becomes local in sigmoid with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/sigmoid.v:38]
+WARNING: [Synth 8-2507] parameter declaration becomes local in sigmoid with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/sigmoid.v:39]
+WARNING: [Synth 8-2507] parameter declaration becomes local in sigmoid with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/sigmoid.v:40]
+WARNING: [Synth 8-2507] parameter declaration becomes local in sigmoid with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/sigmoid.v:41]
+WARNING: [Synth 8-2507] parameter declaration becomes local in sigmoid with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/sigmoid.v:42]
+WARNING: [Synth 8-2507] parameter declaration becomes local in sigmoid with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/sigmoid.v:43]
 WARNING: [Synth 8-2507] parameter declaration becomes local in weightRAM with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/weightRAM.v:13]
 WARNING: [Synth 8-2507] parameter declaration becomes local in weightRAM with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/weightRAM.v:14]
-WARNING: [Synth 8-2507] parameter declaration becomes local in sigmoid with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/sigmoid.v:8]
 WARNING: [Synth 8-2507] parameter declaration becomes local in gate with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/gate.v:20]
 WARNING: [Synth 8-2507] parameter declaration becomes local in gate with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/gate.v:21]
 WARNING: [Synth 8-2507] parameter declaration becomes local in gate with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/gate.v:22]
@@ -41,6 +47,12 @@ WARNING: [Synth 8-2507] parameter declaration becomes local in gate with formal 
 WARNING: [Synth 8-2507] parameter declaration becomes local in gate with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/gate.v:29]
 WARNING: [Synth 8-2507] parameter declaration becomes local in gate with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/gate.v:30]
 WARNING: [Synth 8-2507] parameter declaration becomes local in tanh with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/tanh.v:8]
+WARNING: [Synth 8-2507] parameter declaration becomes local in tanh with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/tanh.v:38]
+WARNING: [Synth 8-2507] parameter declaration becomes local in tanh with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/tanh.v:39]
+WARNING: [Synth 8-2507] parameter declaration becomes local in tanh with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/tanh.v:40]
+WARNING: [Synth 8-2507] parameter declaration becomes local in tanh with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/tanh.v:41]
+WARNING: [Synth 8-2507] parameter declaration becomes local in tanh with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/tanh.v:42]
+WARNING: [Synth 8-2507] parameter declaration becomes local in tanh with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/tanh.v:43]
 WARNING: [Synth 8-2507] parameter declaration becomes local in array_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/array_prod.v:11]
 WARNING: [Synth 8-2507] parameter declaration becomes local in array_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/array_prod.v:12]
 WARNING: [Synth 8-2507] parameter declaration becomes local in array_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/array_prod.v:13]
@@ -93,7 +105,7 @@ WARNING: [Synth 8-2507] parameter declaration becomes local in top_network with 
 WARNING: [Synth 8-2507] parameter declaration becomes local in top_network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/top_network.v:18]
 WARNING: [Synth 8-2507] parameter declaration becomes local in top_network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/top_network.v:19]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 1037.531 ; gain = 191.926 ; free physical = 3575 ; free virtual = 9141
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 1037.539 ; gain = 191.926 ; free physical = 2563 ; free virtual = 8532
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'top_network' [/home/josefonseca/Documents/thesis/verilog/network/top_network.v:3]
 	Parameter INPUT_SZ bound to: 2 - type: integer 
@@ -151,11 +163,23 @@ INFO: [Synth 8-638] synthesizing module 'sigmoid' [/home/josefonseca/Documents/t
 	Parameter QN bound to: 6 - type: integer 
 	Parameter QM bound to: 11 - type: integer 
 	Parameter BITWIDTH bound to: 18 - type: integer 
+	Parameter IDLE bound to: 3'b000 
+	Parameter INTERVAL_CHOICE bound to: 3'b001 
+	Parameter COEF_CHOICE bound to: 3'b010 
+	Parameter MAC1 bound to: 3'b011 
+	Parameter MAC2 bound to: 3'b100 
+	Parameter END bound to: 3'b101 
 INFO: [Synth 8-256] done synthesizing module 'sigmoid' (1#1) [/home/josefonseca/Documents/thesis/verilog/network/sigmoid.v:1]
 INFO: [Synth 8-638] synthesizing module 'tanh' [/home/josefonseca/Documents/thesis/verilog/network/tanh.v:1]
 	Parameter QN bound to: 6 - type: integer 
 	Parameter QM bound to: 11 - type: integer 
 	Parameter BITWIDTH bound to: 18 - type: integer 
+	Parameter IDLE bound to: 3'b000 
+	Parameter INTERVAL_CHOICE bound to: 3'b001 
+	Parameter COEF_CHOICE bound to: 3'b010 
+	Parameter MAC1 bound to: 3'b011 
+	Parameter MAC2 bound to: 3'b100 
+	Parameter END bound to: 3'b101 
 INFO: [Synth 8-256] done synthesizing module 'tanh' (2#1) [/home/josefonseca/Documents/thesis/verilog/network/tanh.v:1]
 INFO: [Synth 8-638] synthesizing module 'gate' [/home/josefonseca/Documents/thesis/verilog/network/gate.v:1]
 	Parameter INPUT_SZ bound to: 2 - type: integer 
@@ -221,7 +245,6 @@ INFO: [Synth 8-638] synthesizing module 'weightRAM' [/home/josefonseca/Documents
 	Parameter BITWIDTH bound to: 18 - type: integer 
 	Parameter OUTPUT_PORT_SIZE bound to: 288 - type: integer 
 	Parameter ADDR_BITWIDTH bound to: 1 - type: integer 
-INFO: [Synth 8-5534] Detected attribute (* ram_style = "block" *) [/home/josefonseca/Documents/thesis/verilog/network/weightRAM.v:26]
 INFO: [Synth 8-256] done synthesizing module 'weightRAM' (5#1) [/home/josefonseca/Documents/thesis/verilog/network/weightRAM.v:1]
 INFO: [Synth 8-638] synthesizing module 'weightRAM__parameterized0' [/home/josefonseca/Documents/thesis/verilog/network/weightRAM.v:1]
 	Parameter NROW bound to: 16 - type: integer 
@@ -303,7 +326,7 @@ INFO: [Synth 8-256] done synthesizing module 'array_prod' (7#1) [/home/josefonse
 WARNING: [Synth 8-3848] Net Wperceptron in module/entity top_network does not have driver. [/home/josefonseca/Documents/thesis/verilog/network/top_network.v:35]
 INFO: [Synth 8-256] done synthesizing module 'top_network' (8#1) [/home/josefonseca/Documents/thesis/verilog/network/top_network.v:3]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 1078.789 ; gain = 233.184 ; free physical = 3530 ; free virtual = 9098
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1078.797 ; gain = 233.184 ; free physical = 2507 ; free virtual = 8477
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -414,7 +437,7 @@ WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[189] to constant 0 [/h
 WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[188] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
 INFO: [Common 17-14] Message 'Synth 8-3295' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 1078.789 ; gain = 233.184 ; free physical = 3530 ; free virtual = 9098
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1078.797 ; gain = 233.184 ; free physical = 2517 ; free virtual = 8486
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7z020clg484-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -428,24 +451,24 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.22 ; elapsed = 00:00:00.07 . Memory (MB): peak = 1513.492 ; gain = 5.000 ; free physical = 3168 ; free virtual = 8784
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.25 ; elapsed = 00:00:00.07 . Memory (MB): peak = 1517.500 ; gain = 6.000 ; free physical = 2156 ; free virtual = 8128
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 5012 
+INFO: Helper process launched with PID 27727 
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:15 ; elapsed = 00:00:18 . Memory (MB): peak = 1513.492 ; gain = 667.887 ; free physical = 3138 ; free virtual = 8754
+Finished Constraint Validation : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1517.500 ; gain = 671.887 ; free physical = 2189 ; free virtual = 8161
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg484-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:15 ; elapsed = 00:00:18 . Memory (MB): peak = 1513.492 ; gain = 667.887 ; free physical = 3138 ; free virtual = 8754
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1517.500 ; gain = 671.887 ; free physical = 2189 ; free virtual = 8161
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:18 . Memory (MB): peak = 1513.492 ; gain = 667.887 ; free physical = 3138 ; free virtual = 8754
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1517.500 ; gain = 671.887 ; free physical = 2189 ; free virtual = 8161
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'dot_prod'
 INFO: [Synth 8-5544] ROM "NEXTrowMux" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
@@ -456,10 +479,14 @@ INFO: [Synth 8-5544] ROM "enable_dotprodY" won't be mapped to Block RAM because 
 INFO: [Synth 8-5544] ROM "enable_dotprodX" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "NEXTstate" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "NEXTstate" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "p1" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "p0" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "p1" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "p0" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "interval_mux_active" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "NEXT_STATE" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-802] inferred FSM for state register 'STATE_reg' in module 'sigmoid'
+INFO: [Synth 8-5544] ROM "interval_mux_active" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "NEXT_STATE" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-802] inferred FSM for state register 'STATE_reg' in module 'tanh'
 INFO: [Synth 8-5544] ROM "NEXTstate" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'array_prod'
 ---------------------------------------------------------------------------------------------------
@@ -494,7 +521,34 @@ INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 
                    SUM_Y |                            10000 |                              100
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'gate'
-INFO: [Synth 8-5583] The signal RAM_matrix_reg is implemented as block RAM but is better mapped onto distributed LUT RAM for the following reason(s): The depth (1 address bits) is shallow. Please use attribute (* ram_style = "distributed" *) to instruct Vivado to infer distributed LUT RAM.
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    IDLE |                           000001 |                              000
+         INTERVAL_CHOICE |                           000010 |                              001
+             COEF_CHOICE |                           000100 |                              010
+                    MAC1 |                           001000 |                              011
+                    MAC2 |                           010000 |                              100
+                     END |                           100000 |                              101
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'STATE_reg' using encoding 'one-hot' in module 'sigmoid'
+WARNING: [Synth 8-327] inferring latch for variable 'p0_reg' [/home/josefonseca/Documents/thesis/verilog/network/sigmoid.v:50]
+WARNING: [Synth 8-327] inferring latch for variable 'p1_reg' [/home/josefonseca/Documents/thesis/verilog/network/sigmoid.v:49]
+WARNING: [Synth 8-327] inferring latch for variable 'p2_reg' [/home/josefonseca/Documents/thesis/verilog/network/sigmoid.v:48]
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    IDLE |                           000001 |                              000
+         INTERVAL_CHOICE |                           000010 |                              001
+             COEF_CHOICE |                           000100 |                              010
+                    MAC1 |                           001000 |                              011
+                    MAC2 |                           010000 |                              100
+                     END |                           100000 |                              101
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'STATE_reg' using encoding 'one-hot' in module 'tanh'
+WARNING: [Synth 8-327] inferring latch for variable 'p0_reg' [/home/josefonseca/Documents/thesis/verilog/network/tanh.v:50]
+WARNING: [Synth 8-327] inferring latch for variable 'p1_reg' [/home/josefonseca/Documents/thesis/verilog/network/tanh.v:49]
+WARNING: [Synth 8-327] inferring latch for variable 'p2_reg' [/home/josefonseca/Documents/thesis/verilog/network/tanh.v:48]
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -506,7 +560,7 @@ INFO: [Synth 8-5583] The signal RAM_matrix_reg is implemented as block RAM but i
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'array_prod'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 1513.492 ; gain = 667.887 ; free physical = 3128 ; free virtual = 8744
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 1517.500 ; gain = 671.887 ; free physical = 2177 ; free virtual = 8149
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -518,51 +572,46 @@ Report RTL Partitions:
 |3     |dot_prod__parameterized0__GB0 |           1|     51189|
 |4     |dot_prod__parameterized0__GB1 |           1|      8995|
 |5     |gate__GC0                     |           1|      2306|
-|6     |network__GC0                  |           1|     30474|
-|7     |top_network__GC0              |           1|       916|
+|6     |network__GCB0                 |           1|     27505|
+|7     |network__GCB1                 |           1|      6741|
+|8     |top_network__GC0              |           1|       916|
 +------+------------------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     18 Bit       Adders := 178   
+	   2 Input     18 Bit       Adders := 210   
 	   3 Input     18 Bit       Adders := 1     
 	   2 Input      4 Bit       Adders := 4     
 	   2 Input      2 Bit       Adders := 1     
-	   2 Input      1 Bit       Adders := 44    
+	   2 Input      1 Bit       Adders := 12    
 +---Registers : 
 	              608 Bit    Registers := 1     
 	              592 Bit    Registers := 8     
 	              288 Bit    Registers := 31    
 	              148 Bit    Registers := 1     
 	               36 Bit    Registers := 1     
-	               18 Bit    Registers := 50    
+	               18 Bit    Registers := 82    
 	                5 Bit    Registers := 1     
 	                4 Bit    Registers := 4     
 	                3 Bit    Registers := 4     
 	                2 Bit    Registers := 1     
-	                1 Bit    Registers := 109   
+	                1 Bit    Registers := 77    
 +---RAMs : 
 	               4K Bit         RAMs := 4     
 	              576 Bit         RAMs := 4     
 +---Muxes : 
 	   2 Input    592 Bit        Muxes := 8     
-	   2 Input    288 Bit        Muxes := 1     
 	   4 Input    288 Bit        Muxes := 2     
+	   2 Input    288 Bit        Muxes := 1     
 	   2 Input     37 Bit        Muxes := 64    
-	   2 Input     18 Bit        Muxes := 193   
+	   2 Input     18 Bit        Muxes := 129   
 	   4 Input     18 Bit        Muxes := 8     
-	   2 Input     17 Bit        Muxes := 32    
-	   2 Input     16 Bit        Muxes := 48    
-	   2 Input     15 Bit        Muxes := 48    
-	   2 Input     14 Bit        Muxes := 64    
-	   6 Input     14 Bit        Muxes := 16    
-	   2 Input     13 Bit        Muxes := 64    
-	   2 Input     12 Bit        Muxes := 16    
-	   2 Input     11 Bit        Muxes := 32    
+	   6 Input     17 Bit        Muxes := 32    
+	   6 Input     16 Bit        Muxes := 16    
+	   6 Input     14 Bit        Muxes := 32    
 	   6 Input     11 Bit        Muxes := 16    
-	   2 Input      9 Bit        Muxes := 16    
 	   7 Input      6 Bit        Muxes := 8     
 	   8 Input      5 Bit        Muxes := 4     
 	   6 Input      5 Bit        Muxes := 1     
@@ -570,7 +619,7 @@ Detailed RTL Component Info :
 	   7 Input      3 Bit        Muxes := 4     
 	   2 Input      2 Bit        Muxes := 4     
 	   5 Input      2 Bit        Muxes := 1     
-	   6 Input      1 Bit        Muxes := 32    
+	   6 Input      1 Bit        Muxes := 96    
 	   8 Input      1 Bit        Muxes := 4     
 	   5 Input      1 Bit        Muxes := 8     
 	  20 Input      1 Bit        Muxes := 5     
@@ -680,579 +729,387 @@ Detailed RTL Component Info :
 Module sigmoid__1 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     18 Bit       Adders := 1     
-	   2 Input      1 Bit       Adders := 1     
+	   2 Input     18 Bit       Adders := 2     
 +---Registers : 
-	               18 Bit    Registers := 1     
-	                1 Bit    Registers := 1     
+	               18 Bit    Registers := 2     
 +---Muxes : 
-	   2 Input     18 Bit        Muxes := 4     
-	   2 Input     17 Bit        Muxes := 1     
-	   2 Input     16 Bit        Muxes := 1     
-	   2 Input     15 Bit        Muxes := 1     
-	   2 Input     14 Bit        Muxes := 2     
-	   2 Input     13 Bit        Muxes := 2     
-	   2 Input     12 Bit        Muxes := 1     
-	   2 Input     11 Bit        Muxes := 1     
+	   2 Input     18 Bit        Muxes := 2     
+	   6 Input     17 Bit        Muxes := 1     
+	   6 Input     14 Bit        Muxes := 1     
 	   6 Input     11 Bit        Muxes := 1     
-	   2 Input      9 Bit        Muxes := 1     
+	   6 Input      1 Bit        Muxes := 2     
 Module sigmoid__2 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     18 Bit       Adders := 1     
-	   2 Input      1 Bit       Adders := 1     
+	   2 Input     18 Bit       Adders := 2     
 +---Registers : 
-	               18 Bit    Registers := 1     
-	                1 Bit    Registers := 1     
+	               18 Bit    Registers := 2     
 +---Muxes : 
-	   2 Input     18 Bit        Muxes := 4     
-	   2 Input     17 Bit        Muxes := 1     
-	   2 Input     16 Bit        Muxes := 1     
-	   2 Input     15 Bit        Muxes := 1     
-	   2 Input     14 Bit        Muxes := 2     
-	   2 Input     13 Bit        Muxes := 2     
-	   2 Input     12 Bit        Muxes := 1     
-	   2 Input     11 Bit        Muxes := 1     
+	   2 Input     18 Bit        Muxes := 2     
+	   6 Input     17 Bit        Muxes := 1     
+	   6 Input     14 Bit        Muxes := 1     
 	   6 Input     11 Bit        Muxes := 1     
-	   2 Input      9 Bit        Muxes := 1     
+	   6 Input      1 Bit        Muxes := 2     
 Module sigmoid__3 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     18 Bit       Adders := 1     
-	   2 Input      1 Bit       Adders := 1     
+	   2 Input     18 Bit       Adders := 2     
 +---Registers : 
-	               18 Bit    Registers := 1     
-	                1 Bit    Registers := 1     
+	               18 Bit    Registers := 2     
 +---Muxes : 
-	   2 Input     18 Bit        Muxes := 4     
-	   2 Input     17 Bit        Muxes := 1     
-	   2 Input     16 Bit        Muxes := 1     
-	   2 Input     15 Bit        Muxes := 1     
-	   2 Input     14 Bit        Muxes := 2     
-	   2 Input     13 Bit        Muxes := 2     
-	   2 Input     12 Bit        Muxes := 1     
-	   2 Input     11 Bit        Muxes := 1     
+	   2 Input     18 Bit        Muxes := 2     
+	   6 Input     17 Bit        Muxes := 1     
+	   6 Input     14 Bit        Muxes := 1     
 	   6 Input     11 Bit        Muxes := 1     
-	   2 Input      9 Bit        Muxes := 1     
+	   6 Input      1 Bit        Muxes := 2     
 Module sigmoid__4 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     18 Bit       Adders := 1     
-	   2 Input      1 Bit       Adders := 1     
+	   2 Input     18 Bit       Adders := 2     
 +---Registers : 
-	               18 Bit    Registers := 1     
-	                1 Bit    Registers := 1     
+	               18 Bit    Registers := 2     
 +---Muxes : 
-	   2 Input     18 Bit        Muxes := 4     
-	   2 Input     17 Bit        Muxes := 1     
-	   2 Input     16 Bit        Muxes := 1     
-	   2 Input     15 Bit        Muxes := 1     
-	   2 Input     14 Bit        Muxes := 2     
-	   2 Input     13 Bit        Muxes := 2     
-	   2 Input     12 Bit        Muxes := 1     
-	   2 Input     11 Bit        Muxes := 1     
+	   2 Input     18 Bit        Muxes := 2     
+	   6 Input     17 Bit        Muxes := 1     
+	   6 Input     14 Bit        Muxes := 1     
 	   6 Input     11 Bit        Muxes := 1     
-	   2 Input      9 Bit        Muxes := 1     
+	   6 Input      1 Bit        Muxes := 2     
 Module sigmoid__5 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     18 Bit       Adders := 1     
-	   2 Input      1 Bit       Adders := 1     
+	   2 Input     18 Bit       Adders := 2     
 +---Registers : 
-	               18 Bit    Registers := 1     
-	                1 Bit    Registers := 1     
+	               18 Bit    Registers := 2     
 +---Muxes : 
-	   2 Input     18 Bit        Muxes := 4     
-	   2 Input     17 Bit        Muxes := 1     
-	   2 Input     16 Bit        Muxes := 1     
-	   2 Input     15 Bit        Muxes := 1     
-	   2 Input     14 Bit        Muxes := 2     
-	   2 Input     13 Bit        Muxes := 2     
-	   2 Input     12 Bit        Muxes := 1     
-	   2 Input     11 Bit        Muxes := 1     
+	   2 Input     18 Bit        Muxes := 2     
+	   6 Input     17 Bit        Muxes := 1     
+	   6 Input     14 Bit        Muxes := 1     
 	   6 Input     11 Bit        Muxes := 1     
-	   2 Input      9 Bit        Muxes := 1     
+	   6 Input      1 Bit        Muxes := 2     
 Module sigmoid__6 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     18 Bit       Adders := 1     
-	   2 Input      1 Bit       Adders := 1     
+	   2 Input     18 Bit       Adders := 2     
 +---Registers : 
-	               18 Bit    Registers := 1     
-	                1 Bit    Registers := 1     
+	               18 Bit    Registers := 2     
 +---Muxes : 
-	   2 Input     18 Bit        Muxes := 4     
-	   2 Input     17 Bit        Muxes := 1     
-	   2 Input     16 Bit        Muxes := 1     
-	   2 Input     15 Bit        Muxes := 1     
-	   2 Input     14 Bit        Muxes := 2     
-	   2 Input     13 Bit        Muxes := 2     
-	   2 Input     12 Bit        Muxes := 1     
-	   2 Input     11 Bit        Muxes := 1     
+	   2 Input     18 Bit        Muxes := 2     
+	   6 Input     17 Bit        Muxes := 1     
+	   6 Input     14 Bit        Muxes := 1     
 	   6 Input     11 Bit        Muxes := 1     
-	   2 Input      9 Bit        Muxes := 1     
+	   6 Input      1 Bit        Muxes := 2     
 Module sigmoid__7 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     18 Bit       Adders := 1     
-	   2 Input      1 Bit       Adders := 1     
+	   2 Input     18 Bit       Adders := 2     
 +---Registers : 
-	               18 Bit    Registers := 1     
-	                1 Bit    Registers := 1     
+	               18 Bit    Registers := 2     
 +---Muxes : 
-	   2 Input     18 Bit        Muxes := 4     
-	   2 Input     17 Bit        Muxes := 1     
-	   2 Input     16 Bit        Muxes := 1     
-	   2 Input     15 Bit        Muxes := 1     
-	   2 Input     14 Bit        Muxes := 2     
-	   2 Input     13 Bit        Muxes := 2     
-	   2 Input     12 Bit        Muxes := 1     
-	   2 Input     11 Bit        Muxes := 1     
+	   2 Input     18 Bit        Muxes := 2     
+	   6 Input     17 Bit        Muxes := 1     
+	   6 Input     14 Bit        Muxes := 1     
 	   6 Input     11 Bit        Muxes := 1     
-	   2 Input      9 Bit        Muxes := 1     
+	   6 Input      1 Bit        Muxes := 2     
 Module sigmoid__8 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     18 Bit       Adders := 1     
-	   2 Input      1 Bit       Adders := 1     
+	   2 Input     18 Bit       Adders := 2     
 +---Registers : 
-	               18 Bit    Registers := 1     
-	                1 Bit    Registers := 1     
+	               18 Bit    Registers := 2     
 +---Muxes : 
-	   2 Input     18 Bit        Muxes := 4     
-	   2 Input     17 Bit        Muxes := 1     
-	   2 Input     16 Bit        Muxes := 1     
-	   2 Input     15 Bit        Muxes := 1     
-	   2 Input     14 Bit        Muxes := 2     
-	   2 Input     13 Bit        Muxes := 2     
-	   2 Input     12 Bit        Muxes := 1     
-	   2 Input     11 Bit        Muxes := 1     
+	   2 Input     18 Bit        Muxes := 2     
+	   6 Input     17 Bit        Muxes := 1     
+	   6 Input     14 Bit        Muxes := 1     
 	   6 Input     11 Bit        Muxes := 1     
-	   2 Input      9 Bit        Muxes := 1     
-Module sigmoid__9 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input     18 Bit       Adders := 1     
-	   2 Input      1 Bit       Adders := 1     
-+---Registers : 
-	               18 Bit    Registers := 1     
-	                1 Bit    Registers := 1     
-+---Muxes : 
-	   2 Input     18 Bit        Muxes := 4     
-	   2 Input     17 Bit        Muxes := 1     
-	   2 Input     16 Bit        Muxes := 1     
-	   2 Input     15 Bit        Muxes := 1     
-	   2 Input     14 Bit        Muxes := 2     
-	   2 Input     13 Bit        Muxes := 2     
-	   2 Input     12 Bit        Muxes := 1     
-	   2 Input     11 Bit        Muxes := 1     
-	   6 Input     11 Bit        Muxes := 1     
-	   2 Input      9 Bit        Muxes := 1     
-Module sigmoid__10 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input     18 Bit       Adders := 1     
-	   2 Input      1 Bit       Adders := 1     
-+---Registers : 
-	               18 Bit    Registers := 1     
-	                1 Bit    Registers := 1     
-+---Muxes : 
-	   2 Input     18 Bit        Muxes := 4     
-	   2 Input     17 Bit        Muxes := 1     
-	   2 Input     16 Bit        Muxes := 1     
-	   2 Input     15 Bit        Muxes := 1     
-	   2 Input     14 Bit        Muxes := 2     
-	   2 Input     13 Bit        Muxes := 2     
-	   2 Input     12 Bit        Muxes := 1     
-	   2 Input     11 Bit        Muxes := 1     
-	   6 Input     11 Bit        Muxes := 1     
-	   2 Input      9 Bit        Muxes := 1     
-Module sigmoid__11 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input     18 Bit       Adders := 1     
-	   2 Input      1 Bit       Adders := 1     
-+---Registers : 
-	               18 Bit    Registers := 1     
-	                1 Bit    Registers := 1     
-+---Muxes : 
-	   2 Input     18 Bit        Muxes := 4     
-	   2 Input     17 Bit        Muxes := 1     
-	   2 Input     16 Bit        Muxes := 1     
-	   2 Input     15 Bit        Muxes := 1     
-	   2 Input     14 Bit        Muxes := 2     
-	   2 Input     13 Bit        Muxes := 2     
-	   2 Input     12 Bit        Muxes := 1     
-	   2 Input     11 Bit        Muxes := 1     
-	   6 Input     11 Bit        Muxes := 1     
-	   2 Input      9 Bit        Muxes := 1     
-Module sigmoid__12 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input     18 Bit       Adders := 1     
-	   2 Input      1 Bit       Adders := 1     
-+---Registers : 
-	               18 Bit    Registers := 1     
-	                1 Bit    Registers := 1     
-+---Muxes : 
-	   2 Input     18 Bit        Muxes := 4     
-	   2 Input     17 Bit        Muxes := 1     
-	   2 Input     16 Bit        Muxes := 1     
-	   2 Input     15 Bit        Muxes := 1     
-	   2 Input     14 Bit        Muxes := 2     
-	   2 Input     13 Bit        Muxes := 2     
-	   2 Input     12 Bit        Muxes := 1     
-	   2 Input     11 Bit        Muxes := 1     
-	   6 Input     11 Bit        Muxes := 1     
-	   2 Input      9 Bit        Muxes := 1     
-Module sigmoid__13 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input     18 Bit       Adders := 1     
-	   2 Input      1 Bit       Adders := 1     
-+---Registers : 
-	               18 Bit    Registers := 1     
-	                1 Bit    Registers := 1     
-+---Muxes : 
-	   2 Input     18 Bit        Muxes := 4     
-	   2 Input     17 Bit        Muxes := 1     
-	   2 Input     16 Bit        Muxes := 1     
-	   2 Input     15 Bit        Muxes := 1     
-	   2 Input     14 Bit        Muxes := 2     
-	   2 Input     13 Bit        Muxes := 2     
-	   2 Input     12 Bit        Muxes := 1     
-	   2 Input     11 Bit        Muxes := 1     
-	   6 Input     11 Bit        Muxes := 1     
-	   2 Input      9 Bit        Muxes := 1     
-Module sigmoid__14 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input     18 Bit       Adders := 1     
-	   2 Input      1 Bit       Adders := 1     
-+---Registers : 
-	               18 Bit    Registers := 1     
-	                1 Bit    Registers := 1     
-+---Muxes : 
-	   2 Input     18 Bit        Muxes := 4     
-	   2 Input     17 Bit        Muxes := 1     
-	   2 Input     16 Bit        Muxes := 1     
-	   2 Input     15 Bit        Muxes := 1     
-	   2 Input     14 Bit        Muxes := 2     
-	   2 Input     13 Bit        Muxes := 2     
-	   2 Input     12 Bit        Muxes := 1     
-	   2 Input     11 Bit        Muxes := 1     
-	   6 Input     11 Bit        Muxes := 1     
-	   2 Input      9 Bit        Muxes := 1     
-Module sigmoid__15 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input     18 Bit       Adders := 1     
-	   2 Input      1 Bit       Adders := 1     
-+---Registers : 
-	               18 Bit    Registers := 1     
-	                1 Bit    Registers := 1     
-+---Muxes : 
-	   2 Input     18 Bit        Muxes := 4     
-	   2 Input     17 Bit        Muxes := 1     
-	   2 Input     16 Bit        Muxes := 1     
-	   2 Input     15 Bit        Muxes := 1     
-	   2 Input     14 Bit        Muxes := 2     
-	   2 Input     13 Bit        Muxes := 2     
-	   2 Input     12 Bit        Muxes := 1     
-	   2 Input     11 Bit        Muxes := 1     
-	   6 Input     11 Bit        Muxes := 1     
-	   2 Input      9 Bit        Muxes := 1     
-Module sigmoid 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input     18 Bit       Adders := 1     
-	   2 Input      1 Bit       Adders := 1     
-+---Registers : 
-	               18 Bit    Registers := 1     
-	                1 Bit    Registers := 1     
-+---Muxes : 
-	   2 Input     18 Bit        Muxes := 4     
-	   2 Input     17 Bit        Muxes := 1     
-	   2 Input     16 Bit        Muxes := 1     
-	   2 Input     15 Bit        Muxes := 1     
-	   2 Input     14 Bit        Muxes := 2     
-	   2 Input     13 Bit        Muxes := 2     
-	   2 Input     12 Bit        Muxes := 1     
-	   2 Input     11 Bit        Muxes := 1     
-	   6 Input     11 Bit        Muxes := 1     
-	   2 Input      9 Bit        Muxes := 1     
+	   6 Input      1 Bit        Muxes := 2     
 Module tanh__1 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     18 Bit       Adders := 1     
-	   2 Input      1 Bit       Adders := 1     
+	   2 Input     18 Bit       Adders := 2     
 +---Registers : 
-	               18 Bit    Registers := 1     
-	                1 Bit    Registers := 1     
+	               18 Bit    Registers := 2     
 +---Muxes : 
-	   2 Input     18 Bit        Muxes := 4     
-	   2 Input     17 Bit        Muxes := 1     
-	   2 Input     16 Bit        Muxes := 2     
-	   2 Input     15 Bit        Muxes := 2     
-	   2 Input     14 Bit        Muxes := 2     
+	   2 Input     18 Bit        Muxes := 2     
+	   6 Input     17 Bit        Muxes := 1     
+	   6 Input     16 Bit        Muxes := 1     
 	   6 Input     14 Bit        Muxes := 1     
-	   2 Input     13 Bit        Muxes := 2     
-	   2 Input     11 Bit        Muxes := 1     
+	   6 Input      1 Bit        Muxes := 2     
 Module tanh__2 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     18 Bit       Adders := 1     
-	   2 Input      1 Bit       Adders := 1     
+	   2 Input     18 Bit       Adders := 2     
 +---Registers : 
-	               18 Bit    Registers := 1     
-	                1 Bit    Registers := 1     
+	               18 Bit    Registers := 2     
 +---Muxes : 
-	   2 Input     18 Bit        Muxes := 4     
-	   2 Input     17 Bit        Muxes := 1     
-	   2 Input     16 Bit        Muxes := 2     
-	   2 Input     15 Bit        Muxes := 2     
-	   2 Input     14 Bit        Muxes := 2     
+	   2 Input     18 Bit        Muxes := 2     
+	   6 Input     17 Bit        Muxes := 1     
+	   6 Input     16 Bit        Muxes := 1     
 	   6 Input     14 Bit        Muxes := 1     
-	   2 Input     13 Bit        Muxes := 2     
-	   2 Input     11 Bit        Muxes := 1     
+	   6 Input      1 Bit        Muxes := 2     
 Module tanh__3 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     18 Bit       Adders := 1     
-	   2 Input      1 Bit       Adders := 1     
+	   2 Input     18 Bit       Adders := 2     
 +---Registers : 
-	               18 Bit    Registers := 1     
-	                1 Bit    Registers := 1     
+	               18 Bit    Registers := 2     
 +---Muxes : 
-	   2 Input     18 Bit        Muxes := 4     
-	   2 Input     17 Bit        Muxes := 1     
-	   2 Input     16 Bit        Muxes := 2     
-	   2 Input     15 Bit        Muxes := 2     
-	   2 Input     14 Bit        Muxes := 2     
+	   2 Input     18 Bit        Muxes := 2     
+	   6 Input     17 Bit        Muxes := 1     
+	   6 Input     16 Bit        Muxes := 1     
 	   6 Input     14 Bit        Muxes := 1     
-	   2 Input     13 Bit        Muxes := 2     
-	   2 Input     11 Bit        Muxes := 1     
+	   6 Input      1 Bit        Muxes := 2     
 Module tanh__4 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     18 Bit       Adders := 1     
-	   2 Input      1 Bit       Adders := 1     
+	   2 Input     18 Bit       Adders := 2     
 +---Registers : 
-	               18 Bit    Registers := 1     
-	                1 Bit    Registers := 1     
+	               18 Bit    Registers := 2     
 +---Muxes : 
-	   2 Input     18 Bit        Muxes := 4     
-	   2 Input     17 Bit        Muxes := 1     
-	   2 Input     16 Bit        Muxes := 2     
-	   2 Input     15 Bit        Muxes := 2     
-	   2 Input     14 Bit        Muxes := 2     
+	   2 Input     18 Bit        Muxes := 2     
+	   6 Input     17 Bit        Muxes := 1     
+	   6 Input     16 Bit        Muxes := 1     
 	   6 Input     14 Bit        Muxes := 1     
-	   2 Input     13 Bit        Muxes := 2     
-	   2 Input     11 Bit        Muxes := 1     
+	   6 Input      1 Bit        Muxes := 2     
 Module tanh__5 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     18 Bit       Adders := 1     
-	   2 Input      1 Bit       Adders := 1     
+	   2 Input     18 Bit       Adders := 2     
 +---Registers : 
-	               18 Bit    Registers := 1     
-	                1 Bit    Registers := 1     
+	               18 Bit    Registers := 2     
 +---Muxes : 
-	   2 Input     18 Bit        Muxes := 4     
-	   2 Input     17 Bit        Muxes := 1     
-	   2 Input     16 Bit        Muxes := 2     
-	   2 Input     15 Bit        Muxes := 2     
-	   2 Input     14 Bit        Muxes := 2     
+	   2 Input     18 Bit        Muxes := 2     
+	   6 Input     17 Bit        Muxes := 1     
+	   6 Input     16 Bit        Muxes := 1     
 	   6 Input     14 Bit        Muxes := 1     
-	   2 Input     13 Bit        Muxes := 2     
-	   2 Input     11 Bit        Muxes := 1     
+	   6 Input      1 Bit        Muxes := 2     
 Module tanh__6 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     18 Bit       Adders := 1     
-	   2 Input      1 Bit       Adders := 1     
+	   2 Input     18 Bit       Adders := 2     
 +---Registers : 
-	               18 Bit    Registers := 1     
-	                1 Bit    Registers := 1     
+	               18 Bit    Registers := 2     
 +---Muxes : 
-	   2 Input     18 Bit        Muxes := 4     
-	   2 Input     17 Bit        Muxes := 1     
-	   2 Input     16 Bit        Muxes := 2     
-	   2 Input     15 Bit        Muxes := 2     
-	   2 Input     14 Bit        Muxes := 2     
+	   2 Input     18 Bit        Muxes := 2     
+	   6 Input     17 Bit        Muxes := 1     
+	   6 Input     16 Bit        Muxes := 1     
 	   6 Input     14 Bit        Muxes := 1     
-	   2 Input     13 Bit        Muxes := 2     
-	   2 Input     11 Bit        Muxes := 1     
+	   6 Input      1 Bit        Muxes := 2     
 Module tanh__7 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     18 Bit       Adders := 1     
-	   2 Input      1 Bit       Adders := 1     
+	   2 Input     18 Bit       Adders := 2     
 +---Registers : 
-	               18 Bit    Registers := 1     
-	                1 Bit    Registers := 1     
+	               18 Bit    Registers := 2     
 +---Muxes : 
-	   2 Input     18 Bit        Muxes := 4     
-	   2 Input     17 Bit        Muxes := 1     
-	   2 Input     16 Bit        Muxes := 2     
-	   2 Input     15 Bit        Muxes := 2     
-	   2 Input     14 Bit        Muxes := 2     
+	   2 Input     18 Bit        Muxes := 2     
+	   6 Input     17 Bit        Muxes := 1     
+	   6 Input     16 Bit        Muxes := 1     
 	   6 Input     14 Bit        Muxes := 1     
-	   2 Input     13 Bit        Muxes := 2     
-	   2 Input     11 Bit        Muxes := 1     
+	   6 Input      1 Bit        Muxes := 2     
 Module tanh__8 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     18 Bit       Adders := 1     
-	   2 Input      1 Bit       Adders := 1     
+	   2 Input     18 Bit       Adders := 2     
 +---Registers : 
-	               18 Bit    Registers := 1     
-	                1 Bit    Registers := 1     
+	               18 Bit    Registers := 2     
 +---Muxes : 
-	   2 Input     18 Bit        Muxes := 4     
-	   2 Input     17 Bit        Muxes := 1     
-	   2 Input     16 Bit        Muxes := 2     
-	   2 Input     15 Bit        Muxes := 2     
-	   2 Input     14 Bit        Muxes := 2     
+	   2 Input     18 Bit        Muxes := 2     
+	   6 Input     17 Bit        Muxes := 1     
+	   6 Input     16 Bit        Muxes := 1     
 	   6 Input     14 Bit        Muxes := 1     
-	   2 Input     13 Bit        Muxes := 2     
-	   2 Input     11 Bit        Muxes := 1     
+	   6 Input      1 Bit        Muxes := 2     
 Module tanh__9 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     18 Bit       Adders := 1     
-	   2 Input      1 Bit       Adders := 1     
+	   2 Input     18 Bit       Adders := 2     
 +---Registers : 
-	               18 Bit    Registers := 1     
-	                1 Bit    Registers := 1     
+	               18 Bit    Registers := 2     
 +---Muxes : 
-	   2 Input     18 Bit        Muxes := 4     
-	   2 Input     17 Bit        Muxes := 1     
-	   2 Input     16 Bit        Muxes := 2     
-	   2 Input     15 Bit        Muxes := 2     
-	   2 Input     14 Bit        Muxes := 2     
+	   2 Input     18 Bit        Muxes := 2     
+	   6 Input     17 Bit        Muxes := 1     
+	   6 Input     16 Bit        Muxes := 1     
 	   6 Input     14 Bit        Muxes := 1     
-	   2 Input     13 Bit        Muxes := 2     
-	   2 Input     11 Bit        Muxes := 1     
+	   6 Input      1 Bit        Muxes := 2     
 Module tanh__10 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     18 Bit       Adders := 1     
-	   2 Input      1 Bit       Adders := 1     
+	   2 Input     18 Bit       Adders := 2     
 +---Registers : 
-	               18 Bit    Registers := 1     
-	                1 Bit    Registers := 1     
+	               18 Bit    Registers := 2     
 +---Muxes : 
-	   2 Input     18 Bit        Muxes := 4     
-	   2 Input     17 Bit        Muxes := 1     
-	   2 Input     16 Bit        Muxes := 2     
-	   2 Input     15 Bit        Muxes := 2     
-	   2 Input     14 Bit        Muxes := 2     
+	   2 Input     18 Bit        Muxes := 2     
+	   6 Input     17 Bit        Muxes := 1     
+	   6 Input     16 Bit        Muxes := 1     
 	   6 Input     14 Bit        Muxes := 1     
-	   2 Input     13 Bit        Muxes := 2     
-	   2 Input     11 Bit        Muxes := 1     
+	   6 Input      1 Bit        Muxes := 2     
 Module tanh__11 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     18 Bit       Adders := 1     
-	   2 Input      1 Bit       Adders := 1     
+	   2 Input     18 Bit       Adders := 2     
 +---Registers : 
-	               18 Bit    Registers := 1     
-	                1 Bit    Registers := 1     
+	               18 Bit    Registers := 2     
 +---Muxes : 
-	   2 Input     18 Bit        Muxes := 4     
-	   2 Input     17 Bit        Muxes := 1     
-	   2 Input     16 Bit        Muxes := 2     
-	   2 Input     15 Bit        Muxes := 2     
-	   2 Input     14 Bit        Muxes := 2     
+	   2 Input     18 Bit        Muxes := 2     
+	   6 Input     17 Bit        Muxes := 1     
+	   6 Input     16 Bit        Muxes := 1     
 	   6 Input     14 Bit        Muxes := 1     
-	   2 Input     13 Bit        Muxes := 2     
-	   2 Input     11 Bit        Muxes := 1     
+	   6 Input      1 Bit        Muxes := 2     
 Module tanh__12 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     18 Bit       Adders := 1     
-	   2 Input      1 Bit       Adders := 1     
+	   2 Input     18 Bit       Adders := 2     
 +---Registers : 
-	               18 Bit    Registers := 1     
-	                1 Bit    Registers := 1     
+	               18 Bit    Registers := 2     
 +---Muxes : 
-	   2 Input     18 Bit        Muxes := 4     
-	   2 Input     17 Bit        Muxes := 1     
-	   2 Input     16 Bit        Muxes := 2     
-	   2 Input     15 Bit        Muxes := 2     
-	   2 Input     14 Bit        Muxes := 2     
+	   2 Input     18 Bit        Muxes := 2     
+	   6 Input     17 Bit        Muxes := 1     
+	   6 Input     16 Bit        Muxes := 1     
 	   6 Input     14 Bit        Muxes := 1     
-	   2 Input     13 Bit        Muxes := 2     
-	   2 Input     11 Bit        Muxes := 1     
+	   6 Input      1 Bit        Muxes := 2     
 Module tanh__13 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     18 Bit       Adders := 1     
-	   2 Input      1 Bit       Adders := 1     
+	   2 Input     18 Bit       Adders := 2     
 +---Registers : 
-	               18 Bit    Registers := 1     
-	                1 Bit    Registers := 1     
+	               18 Bit    Registers := 2     
 +---Muxes : 
-	   2 Input     18 Bit        Muxes := 4     
-	   2 Input     17 Bit        Muxes := 1     
-	   2 Input     16 Bit        Muxes := 2     
-	   2 Input     15 Bit        Muxes := 2     
-	   2 Input     14 Bit        Muxes := 2     
+	   2 Input     18 Bit        Muxes := 2     
+	   6 Input     17 Bit        Muxes := 1     
+	   6 Input     16 Bit        Muxes := 1     
 	   6 Input     14 Bit        Muxes := 1     
-	   2 Input     13 Bit        Muxes := 2     
-	   2 Input     11 Bit        Muxes := 1     
+	   6 Input      1 Bit        Muxes := 2     
 Module tanh__14 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     18 Bit       Adders := 1     
-	   2 Input      1 Bit       Adders := 1     
+	   2 Input     18 Bit       Adders := 2     
 +---Registers : 
-	               18 Bit    Registers := 1     
-	                1 Bit    Registers := 1     
+	               18 Bit    Registers := 2     
 +---Muxes : 
-	   2 Input     18 Bit        Muxes := 4     
-	   2 Input     17 Bit        Muxes := 1     
-	   2 Input     16 Bit        Muxes := 2     
-	   2 Input     15 Bit        Muxes := 2     
-	   2 Input     14 Bit        Muxes := 2     
+	   2 Input     18 Bit        Muxes := 2     
+	   6 Input     17 Bit        Muxes := 1     
+	   6 Input     16 Bit        Muxes := 1     
 	   6 Input     14 Bit        Muxes := 1     
-	   2 Input     13 Bit        Muxes := 2     
-	   2 Input     11 Bit        Muxes := 1     
+	   6 Input      1 Bit        Muxes := 2     
 Module tanh__15 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     18 Bit       Adders := 1     
-	   2 Input      1 Bit       Adders := 1     
+	   2 Input     18 Bit       Adders := 2     
 +---Registers : 
-	               18 Bit    Registers := 1     
-	                1 Bit    Registers := 1     
+	               18 Bit    Registers := 2     
 +---Muxes : 
-	   2 Input     18 Bit        Muxes := 4     
-	   2 Input     17 Bit        Muxes := 1     
-	   2 Input     16 Bit        Muxes := 2     
-	   2 Input     15 Bit        Muxes := 2     
-	   2 Input     14 Bit        Muxes := 2     
+	   2 Input     18 Bit        Muxes := 2     
+	   6 Input     17 Bit        Muxes := 1     
+	   6 Input     16 Bit        Muxes := 1     
 	   6 Input     14 Bit        Muxes := 1     
-	   2 Input     13 Bit        Muxes := 2     
-	   2 Input     11 Bit        Muxes := 1     
+	   6 Input      1 Bit        Muxes := 2     
 Module tanh 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     18 Bit       Adders := 1     
-	   2 Input      1 Bit       Adders := 1     
+	   2 Input     18 Bit       Adders := 2     
 +---Registers : 
-	               18 Bit    Registers := 1     
-	                1 Bit    Registers := 1     
+	               18 Bit    Registers := 2     
 +---Muxes : 
-	   2 Input     18 Bit        Muxes := 4     
-	   2 Input     17 Bit        Muxes := 1     
-	   2 Input     16 Bit        Muxes := 2     
-	   2 Input     15 Bit        Muxes := 2     
-	   2 Input     14 Bit        Muxes := 2     
+	   2 Input     18 Bit        Muxes := 2     
+	   6 Input     17 Bit        Muxes := 1     
+	   6 Input     16 Bit        Muxes := 1     
 	   6 Input     14 Bit        Muxes := 1     
-	   2 Input     13 Bit        Muxes := 2     
-	   2 Input     11 Bit        Muxes := 1     
+	   6 Input      1 Bit        Muxes := 2     
+Module sigmoid__9 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     18 Bit       Adders := 2     
++---Registers : 
+	               18 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     18 Bit        Muxes := 2     
+	   6 Input     17 Bit        Muxes := 1     
+	   6 Input     14 Bit        Muxes := 1     
+	   6 Input     11 Bit        Muxes := 1     
+	   6 Input      1 Bit        Muxes := 2     
+Module sigmoid__10 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     18 Bit       Adders := 2     
++---Registers : 
+	               18 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     18 Bit        Muxes := 2     
+	   6 Input     17 Bit        Muxes := 1     
+	   6 Input     14 Bit        Muxes := 1     
+	   6 Input     11 Bit        Muxes := 1     
+	   6 Input      1 Bit        Muxes := 2     
+Module sigmoid__11 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     18 Bit       Adders := 2     
++---Registers : 
+	               18 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     18 Bit        Muxes := 2     
+	   6 Input     17 Bit        Muxes := 1     
+	   6 Input     14 Bit        Muxes := 1     
+	   6 Input     11 Bit        Muxes := 1     
+	   6 Input      1 Bit        Muxes := 2     
+Module sigmoid__12 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     18 Bit       Adders := 2     
++---Registers : 
+	               18 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     18 Bit        Muxes := 2     
+	   6 Input     17 Bit        Muxes := 1     
+	   6 Input     14 Bit        Muxes := 1     
+	   6 Input     11 Bit        Muxes := 1     
+	   6 Input      1 Bit        Muxes := 2     
+Module sigmoid__13 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     18 Bit       Adders := 2     
++---Registers : 
+	               18 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     18 Bit        Muxes := 2     
+	   6 Input     17 Bit        Muxes := 1     
+	   6 Input     14 Bit        Muxes := 1     
+	   6 Input     11 Bit        Muxes := 1     
+	   6 Input      1 Bit        Muxes := 2     
+Module sigmoid__14 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     18 Bit       Adders := 2     
++---Registers : 
+	               18 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     18 Bit        Muxes := 2     
+	   6 Input     17 Bit        Muxes := 1     
+	   6 Input     14 Bit        Muxes := 1     
+	   6 Input     11 Bit        Muxes := 1     
+	   6 Input      1 Bit        Muxes := 2     
+Module sigmoid__15 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     18 Bit       Adders := 2     
++---Registers : 
+	               18 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     18 Bit        Muxes := 2     
+	   6 Input     17 Bit        Muxes := 1     
+	   6 Input     14 Bit        Muxes := 1     
+	   6 Input     11 Bit        Muxes := 1     
+	   6 Input      1 Bit        Muxes := 2     
+Module sigmoid 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     18 Bit       Adders := 2     
++---Registers : 
+	               18 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     18 Bit        Muxes := 2     
+	   6 Input     17 Bit        Muxes := 1     
+	   6 Input     14 Bit        Muxes := 1     
+	   6 Input     11 Bit        Muxes := 1     
+	   6 Input      1 Bit        Muxes := 2     
 Module network 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -1263,8 +1120,8 @@ Detailed RTL Component Info :
 	               18 Bit    Registers := 17    
 	                5 Bit    Registers := 1     
 +---Muxes : 
-	   2 Input    288 Bit        Muxes := 1     
 	   4 Input    288 Bit        Muxes := 2     
+	   2 Input    288 Bit        Muxes := 1     
 	   2 Input     18 Bit        Muxes := 1     
 	  20 Input      1 Bit        Muxes := 5     
 Module array_prod 
@@ -1294,7 +1151,7 @@ BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
 ---------------------------------------------------------------------------------
 Finished Part Resource Summary
 ---------------------------------------------------------------------------------
-Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:17 ; elapsed = 00:00:20 . Memory (MB): peak = 1513.492 ; gain = 667.887 ; free physical = 3127 ; free virtual = 8743
+Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 1517.500 ; gain = 671.887 ; free physical = 2174 ; free virtual = 8147
 ---------------------------------------------------------------------------------
 Start Cross Boundary Optimization
 ---------------------------------------------------------------------------------
@@ -1346,70 +1203,102 @@ DSP Report: operator outputMAC3 is absorbed into DSP outputMAC2.
 DSP Report: Generating DSP outputMAC1, operation Mode is: C+A*B.
 DSP Report: operator outputMAC1 is absorbed into DSP outputMAC1.
 DSP Report: operator outputMAC2 is absorbed into DSP outputMAC1.
-DSP Report: Generating DSP outputInt, operation Mode is: A*B.
-DSP Report: operator outputInt is absorbed into DSP outputInt.
-DSP Report: Generating DSP outputInt, operation Mode is: A*B.
-DSP Report: operator outputInt is absorbed into DSP outputInt.
-DSP Report: Generating DSP outputInt, operation Mode is: A*B.
-DSP Report: operator outputInt is absorbed into DSP outputInt.
-DSP Report: Generating DSP outputInt, operation Mode is: A*B.
-DSP Report: operator outputInt is absorbed into DSP outputInt.
-DSP Report: Generating DSP outputInt, operation Mode is: A*B.
-DSP Report: operator outputInt is absorbed into DSP outputInt.
-DSP Report: Generating DSP outputInt, operation Mode is: A*B.
-DSP Report: operator outputInt is absorbed into DSP outputInt.
-DSP Report: Generating DSP outputInt, operation Mode is: A*B.
-DSP Report: operator outputInt is absorbed into DSP outputInt.
-DSP Report: Generating DSP outputInt, operation Mode is: A*B.
-DSP Report: operator outputInt is absorbed into DSP outputInt.
-DSP Report: Generating DSP outputInt, operation Mode is: A*B.
-DSP Report: operator outputInt is absorbed into DSP outputInt.
-DSP Report: Generating DSP outputInt, operation Mode is: A*B.
-DSP Report: operator outputInt is absorbed into DSP outputInt.
-DSP Report: Generating DSP outputInt, operation Mode is: A*B.
-DSP Report: operator outputInt is absorbed into DSP outputInt.
-DSP Report: Generating DSP outputInt, operation Mode is: A*B.
-DSP Report: operator outputInt is absorbed into DSP outputInt.
-DSP Report: Generating DSP outputInt, operation Mode is: A*B.
-DSP Report: operator outputInt is absorbed into DSP outputInt.
-DSP Report: Generating DSP outputInt, operation Mode is: A*B.
-DSP Report: operator outputInt is absorbed into DSP outputInt.
-DSP Report: Generating DSP outputInt, operation Mode is: A*B.
-DSP Report: operator outputInt is absorbed into DSP outputInt.
-DSP Report: Generating DSP outputInt, operation Mode is: A*B.
-DSP Report: operator outputInt is absorbed into DSP outputInt.
-DSP Report: Generating DSP outputInt, operation Mode is: A*B.
-DSP Report: operator outputInt is absorbed into DSP outputInt.
-DSP Report: Generating DSP outputInt, operation Mode is: A*B.
-DSP Report: operator outputInt is absorbed into DSP outputInt.
-DSP Report: Generating DSP outputInt, operation Mode is: A*B.
-DSP Report: operator outputInt is absorbed into DSP outputInt.
-DSP Report: Generating DSP outputInt, operation Mode is: A*B.
-DSP Report: operator outputInt is absorbed into DSP outputInt.
-DSP Report: Generating DSP outputInt, operation Mode is: A*B.
-DSP Report: operator outputInt is absorbed into DSP outputInt.
-DSP Report: Generating DSP outputInt, operation Mode is: A*B.
-DSP Report: operator outputInt is absorbed into DSP outputInt.
-DSP Report: Generating DSP outputInt, operation Mode is: A*B.
-DSP Report: operator outputInt is absorbed into DSP outputInt.
-DSP Report: Generating DSP outputInt, operation Mode is: A*B.
-DSP Report: operator outputInt is absorbed into DSP outputInt.
-DSP Report: Generating DSP outputInt, operation Mode is: A*B.
-DSP Report: operator outputInt is absorbed into DSP outputInt.
-DSP Report: Generating DSP outputInt, operation Mode is: A*B.
-DSP Report: operator outputInt is absorbed into DSP outputInt.
-DSP Report: Generating DSP outputInt, operation Mode is: A*B.
-DSP Report: operator outputInt is absorbed into DSP outputInt.
-DSP Report: Generating DSP outputInt, operation Mode is: A*B.
-DSP Report: operator outputInt is absorbed into DSP outputInt.
-DSP Report: Generating DSP outputInt, operation Mode is: A*B.
-DSP Report: operator outputInt is absorbed into DSP outputInt.
-DSP Report: Generating DSP outputInt, operation Mode is: A*B.
-DSP Report: operator outputInt is absorbed into DSP outputInt.
-DSP Report: Generating DSP outputInt, operation Mode is: A*B.
-DSP Report: operator outputInt is absorbed into DSP outputInt.
-DSP Report: Generating DSP outputInt, operation Mode is: A*B.
-DSP Report: operator outputInt is absorbed into DSP outputInt.
+DSP Report: Generating DSP outputMAC_reg, operation Mode is: (A*B2)'.
+DSP Report: register multiplierMux_reg is absorbed into DSP outputMAC_reg.
+DSP Report: register outputMAC_reg is absorbed into DSP outputMAC_reg.
+DSP Report: operator outputMAC0 is absorbed into DSP outputMAC_reg.
+DSP Report: Generating DSP outputMAC_reg, operation Mode is: (A*B2)'.
+DSP Report: register multiplierMux_reg is absorbed into DSP outputMAC_reg.
+DSP Report: register outputMAC_reg is absorbed into DSP outputMAC_reg.
+DSP Report: operator outputMAC0 is absorbed into DSP outputMAC_reg.
+DSP Report: Generating DSP outputMAC_reg, operation Mode is: (A*B2)'.
+DSP Report: register multiplierMux_reg is absorbed into DSP outputMAC_reg.
+DSP Report: register outputMAC_reg is absorbed into DSP outputMAC_reg.
+DSP Report: operator outputMAC0 is absorbed into DSP outputMAC_reg.
+DSP Report: Generating DSP outputMAC_reg, operation Mode is: (A*B2)'.
+DSP Report: register multiplierMux_reg is absorbed into DSP outputMAC_reg.
+DSP Report: register outputMAC_reg is absorbed into DSP outputMAC_reg.
+DSP Report: operator outputMAC0 is absorbed into DSP outputMAC_reg.
+DSP Report: Generating DSP outputMAC_reg, operation Mode is: (A*B2)'.
+DSP Report: register multiplierMux_reg is absorbed into DSP outputMAC_reg.
+DSP Report: register outputMAC_reg is absorbed into DSP outputMAC_reg.
+DSP Report: operator outputMAC0 is absorbed into DSP outputMAC_reg.
+DSP Report: Generating DSP outputMAC_reg, operation Mode is: (A*B2)'.
+DSP Report: register multiplierMux_reg is absorbed into DSP outputMAC_reg.
+DSP Report: register outputMAC_reg is absorbed into DSP outputMAC_reg.
+DSP Report: operator outputMAC0 is absorbed into DSP outputMAC_reg.
+DSP Report: Generating DSP outputMAC_reg, operation Mode is: (A*B2)'.
+DSP Report: register multiplierMux_reg is absorbed into DSP outputMAC_reg.
+DSP Report: register outputMAC_reg is absorbed into DSP outputMAC_reg.
+DSP Report: operator outputMAC0 is absorbed into DSP outputMAC_reg.
+DSP Report: Generating DSP outputMAC_reg, operation Mode is: (A*B2)'.
+DSP Report: register multiplierMux_reg is absorbed into DSP outputMAC_reg.
+DSP Report: register outputMAC_reg is absorbed into DSP outputMAC_reg.
+DSP Report: operator outputMAC0 is absorbed into DSP outputMAC_reg.
+DSP Report: Generating DSP outputMAC_reg, operation Mode is: (A*B2)'.
+DSP Report: register multiplierMux_reg is absorbed into DSP outputMAC_reg.
+DSP Report: register outputMAC_reg is absorbed into DSP outputMAC_reg.
+DSP Report: operator outputMAC0 is absorbed into DSP outputMAC_reg.
+DSP Report: Generating DSP outputMAC_reg, operation Mode is: (A*B2)'.
+DSP Report: register multiplierMux_reg is absorbed into DSP outputMAC_reg.
+DSP Report: register outputMAC_reg is absorbed into DSP outputMAC_reg.
+DSP Report: operator outputMAC0 is absorbed into DSP outputMAC_reg.
+DSP Report: Generating DSP outputMAC_reg, operation Mode is: (A*B2)'.
+DSP Report: register multiplierMux_reg is absorbed into DSP outputMAC_reg.
+DSP Report: register outputMAC_reg is absorbed into DSP outputMAC_reg.
+DSP Report: operator outputMAC0 is absorbed into DSP outputMAC_reg.
+DSP Report: Generating DSP outputMAC_reg, operation Mode is: (A*B2)'.
+DSP Report: register multiplierMux_reg is absorbed into DSP outputMAC_reg.
+DSP Report: register outputMAC_reg is absorbed into DSP outputMAC_reg.
+DSP Report: operator outputMAC0 is absorbed into DSP outputMAC_reg.
+DSP Report: Generating DSP outputMAC_reg, operation Mode is: (A*B2)'.
+DSP Report: register multiplierMux_reg is absorbed into DSP outputMAC_reg.
+DSP Report: register outputMAC_reg is absorbed into DSP outputMAC_reg.
+DSP Report: operator outputMAC0 is absorbed into DSP outputMAC_reg.
+DSP Report: Generating DSP outputMAC_reg, operation Mode is: (A*B2)'.
+DSP Report: register multiplierMux_reg is absorbed into DSP outputMAC_reg.
+DSP Report: register outputMAC_reg is absorbed into DSP outputMAC_reg.
+DSP Report: operator outputMAC0 is absorbed into DSP outputMAC_reg.
+DSP Report: Generating DSP outputMAC_reg, operation Mode is: (A*B2)'.
+DSP Report: register multiplierMux_reg is absorbed into DSP outputMAC_reg.
+DSP Report: register outputMAC_reg is absorbed into DSP outputMAC_reg.
+DSP Report: operator outputMAC0 is absorbed into DSP outputMAC_reg.
+DSP Report: Generating DSP outputMAC_reg, operation Mode is: (A*B2)'.
+DSP Report: register multiplierMux_reg is absorbed into DSP outputMAC_reg.
+DSP Report: register outputMAC_reg is absorbed into DSP outputMAC_reg.
+DSP Report: operator outputMAC0 is absorbed into DSP outputMAC_reg.
+DSP Report: Generating DSP outputMAC_reg, operation Mode is: (A*B2)'.
+DSP Report: register multiplierMux_reg is absorbed into DSP outputMAC_reg.
+DSP Report: register outputMAC_reg is absorbed into DSP outputMAC_reg.
+DSP Report: operator outputMAC0 is absorbed into DSP outputMAC_reg.
+DSP Report: Generating DSP outputMAC_reg, operation Mode is: (A*B2)'.
+DSP Report: register multiplierMux_reg is absorbed into DSP outputMAC_reg.
+DSP Report: register outputMAC_reg is absorbed into DSP outputMAC_reg.
+DSP Report: operator outputMAC0 is absorbed into DSP outputMAC_reg.
+DSP Report: Generating DSP outputMAC_reg, operation Mode is: (A*B2)'.
+DSP Report: register multiplierMux_reg is absorbed into DSP outputMAC_reg.
+DSP Report: register outputMAC_reg is absorbed into DSP outputMAC_reg.
+DSP Report: operator outputMAC0 is absorbed into DSP outputMAC_reg.
+DSP Report: Generating DSP outputMAC_reg, operation Mode is: (A*B2)'.
+DSP Report: register multiplierMux_reg is absorbed into DSP outputMAC_reg.
+DSP Report: register outputMAC_reg is absorbed into DSP outputMAC_reg.
+DSP Report: operator outputMAC0 is absorbed into DSP outputMAC_reg.
+DSP Report: Generating DSP outputMAC_reg, operation Mode is: (A*B2)'.
+DSP Report: register multiplierMux_reg is absorbed into DSP outputMAC_reg.
+DSP Report: register outputMAC_reg is absorbed into DSP outputMAC_reg.
+DSP Report: operator outputMAC0 is absorbed into DSP outputMAC_reg.
+DSP Report: Generating DSP outputMAC_reg, operation Mode is: (A*B2)'.
+DSP Report: register multiplierMux_reg is absorbed into DSP outputMAC_reg.
+DSP Report: register outputMAC_reg is absorbed into DSP outputMAC_reg.
+DSP Report: operator outputMAC0 is absorbed into DSP outputMAC_reg.
+DSP Report: Generating DSP outputMAC_reg, operation Mode is: (A*B2)'.
+DSP Report: register multiplierMux_reg is absorbed into DSP outputMAC_reg.
+DSP Report: register outputMAC_reg is absorbed into DSP outputMAC_reg.
+DSP Report: operator outputMAC0 is absorbed into DSP outputMAC_reg.
+DSP Report: Generating DSP outputMAC_reg, operation Mode is: (A*B2)'.
+DSP Report: register multiplierMux_reg is absorbed into DSP outputMAC_reg.
+DSP Report: register outputMAC_reg is absorbed into DSP outputMAC_reg.
+DSP Report: operator outputMAC0 is absorbed into DSP outputMAC_reg.
 WARNING: [Synth 8-3936] Found unconnected internal register 'elemWiseMult_out_reg' and it is trimmed from '608' to '599' bits. [/home/josefonseca/Documents/thesis/verilog/network/network.v:265]
 WARNING: [Synth 8-3936] Found unconnected internal register 'elemWise_mult1_reg' and it is trimmed from '288' to '18' bits. [/home/josefonseca/Documents/thesis/verilog/network/network.v:201]
 WARNING: [Synth 8-3936] Found unconnected internal register 'elemWise_mult2_FF_reg' and it is trimmed from '288' to '18' bits. [/home/josefonseca/Documents/thesis/verilog/network/network.v:259]
@@ -1477,6 +1366,38 @@ DSP Report: Generating DSP elemWiseMult_out0, operation Mode is: A2*B2.
 DSP Report: register B is absorbed into DSP elemWiseMult_out0.
 DSP Report: register A is absorbed into DSP elemWiseMult_out0.
 DSP Report: operator elemWiseMult_out0 is absorbed into DSP elemWiseMult_out0.
+DSP Report: Generating DSP outputMAC_reg, operation Mode is: (A*B2)'.
+DSP Report: register multiplierMux_reg is absorbed into DSP outputMAC_reg.
+DSP Report: register outputMAC_reg is absorbed into DSP outputMAC_reg.
+DSP Report: operator outputMAC0 is absorbed into DSP outputMAC_reg.
+DSP Report: Generating DSP outputMAC_reg, operation Mode is: (A*B2)'.
+DSP Report: register multiplierMux_reg is absorbed into DSP outputMAC_reg.
+DSP Report: register outputMAC_reg is absorbed into DSP outputMAC_reg.
+DSP Report: operator outputMAC0 is absorbed into DSP outputMAC_reg.
+DSP Report: Generating DSP outputMAC_reg, operation Mode is: (A*B2)'.
+DSP Report: register multiplierMux_reg is absorbed into DSP outputMAC_reg.
+DSP Report: register outputMAC_reg is absorbed into DSP outputMAC_reg.
+DSP Report: operator outputMAC0 is absorbed into DSP outputMAC_reg.
+DSP Report: Generating DSP outputMAC_reg, operation Mode is: (A*B2)'.
+DSP Report: register multiplierMux_reg is absorbed into DSP outputMAC_reg.
+DSP Report: register outputMAC_reg is absorbed into DSP outputMAC_reg.
+DSP Report: operator outputMAC0 is absorbed into DSP outputMAC_reg.
+DSP Report: Generating DSP outputMAC_reg, operation Mode is: (A*B2)'.
+DSP Report: register multiplierMux_reg is absorbed into DSP outputMAC_reg.
+DSP Report: register outputMAC_reg is absorbed into DSP outputMAC_reg.
+DSP Report: operator outputMAC0 is absorbed into DSP outputMAC_reg.
+DSP Report: Generating DSP outputMAC_reg, operation Mode is: (A*B2)'.
+DSP Report: register multiplierMux_reg is absorbed into DSP outputMAC_reg.
+DSP Report: register outputMAC_reg is absorbed into DSP outputMAC_reg.
+DSP Report: operator outputMAC0 is absorbed into DSP outputMAC_reg.
+DSP Report: Generating DSP outputMAC_reg, operation Mode is: (A*B2)'.
+DSP Report: register multiplierMux_reg is absorbed into DSP outputMAC_reg.
+DSP Report: register outputMAC_reg is absorbed into DSP outputMAC_reg.
+DSP Report: operator outputMAC0 is absorbed into DSP outputMAC_reg.
+DSP Report: Generating DSP outputMAC_reg, operation Mode is: (A*B2)'.
+DSP Report: register multiplierMux_reg is absorbed into DSP outputMAC_reg.
+DSP Report: register outputMAC_reg is absorbed into DSP outputMAC_reg.
+DSP Report: operator outputMAC0 is absorbed into DSP outputMAC_reg.
 DSP Report: Generating DSP PERCEPTRON/outputMAC0, operation Mode is: A*B.
 DSP Report: operator PERCEPTRON/outputMAC0 is absorbed into DSP PERCEPTRON/outputMAC0.
 DSP Report: Generating DSP PERCEPTRON/outputMAC0, operation Mode is: A*B.
@@ -1487,9 +1408,9 @@ DSP Report: Generating DSP PERCEPTRON/outputMAC0, operation Mode is: A*B.
 DSP Report: operator PERCEPTRON/outputMAC0 is absorbed into DSP PERCEPTRON/outputMAC0.
 WARNING: [Synth 8-3331] design top_network has unconnected port trainingFlag
 ---------------------------------------------------------------------------------
-Finished Cross Boundary Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 1513.492 ; gain = 667.887 ; free physical = 3163 ; free virtual = 8781
+Finished Cross Boundary Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 1517.500 ; gain = 671.887 ; free physical = 2176 ; free virtual = 8149
 ---------------------------------------------------------------------------------
-Finished Parallel Reinference  : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 1513.492 ; gain = 667.887 ; free physical = 3163 ; free virtual = 8781
+Finished Parallel Reinference  : Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 1517.500 ; gain = 671.887 ; free physical = 2176 ; free virtual = 8149
 
 Report RTL Partitions: 
 +------+------------------------------+------------+----------+
@@ -1500,51 +1421,51 @@ Report RTL Partitions:
 |3     |dot_prod__parameterized0__GB0 |           4|     31903|
 |4     |dot_prod__parameterized0__GB1 |           4|      8995|
 |5     |gate__GC0                     |           4|      2306|
-|6     |network__GC0                  |           1|     32452|
-|7     |top_network__GC0              |           1|      1238|
+|6     |network__GCB0                 |           1|     31115|
+|7     |network__GCB1                 |           1|      7285|
+|8     |top_network__GC0              |           1|      1238|
 +------+------------------------------+------------+----------+
-Optimized 0 bits of RAM "WRAM_Z_X/RAM_matrix_reg" due to constant propagation. Old ram width 288 bits, new ram width 288 bits
-INFO: [Synth 8-5583] The signal WRAM_Z_X/RAM_matrix_reg is implemented as block RAM but is better mapped onto distributed LUT RAM for the following reason(s): The depth (1 address bits) is shallow. Please use attribute (* ram_style = "distributed" *) to instruct Vivado to infer distributed LUT RAM.
 Optimized 0 bits of RAM "WRAM_Z_Y/RAM_matrix_reg" due to constant propagation. Old ram width 288 bits, new ram width 288 bits
-Optimized 0 bits of RAM "WRAM_I_X/RAM_matrix_reg" due to constant propagation. Old ram width 288 bits, new ram width 288 bits
-INFO: [Synth 8-5583] The signal WRAM_I_X/RAM_matrix_reg is implemented as block RAM but is better mapped onto distributed LUT RAM for the following reason(s): The depth (1 address bits) is shallow. Please use attribute (* ram_style = "distributed" *) to instruct Vivado to infer distributed LUT RAM.
 Optimized 0 bits of RAM "WRAM_I_Y/RAM_matrix_reg" due to constant propagation. Old ram width 288 bits, new ram width 288 bits
-Optimized 0 bits of RAM "WRAM_F_X/RAM_matrix_reg" due to constant propagation. Old ram width 288 bits, new ram width 288 bits
-INFO: [Synth 8-5583] The signal WRAM_F_X/RAM_matrix_reg is implemented as block RAM but is better mapped onto distributed LUT RAM for the following reason(s): The depth (1 address bits) is shallow. Please use attribute (* ram_style = "distributed" *) to instruct Vivado to infer distributed LUT RAM.
 Optimized 0 bits of RAM "WRAM_F_Y/RAM_matrix_reg" due to constant propagation. Old ram width 288 bits, new ram width 288 bits
-Optimized 0 bits of RAM "WRAM_O_X/RAM_matrix_reg" due to constant propagation. Old ram width 288 bits, new ram width 288 bits
-INFO: [Synth 8-5583] The signal WRAM_O_X/RAM_matrix_reg is implemented as block RAM but is better mapped onto distributed LUT RAM for the following reason(s): The depth (1 address bits) is shallow. Please use attribute (* ram_style = "distributed" *) to instruct Vivado to infer distributed LUT RAM.
 Optimized 0 bits of RAM "WRAM_O_Y/RAM_matrix_reg" due to constant propagation. Old ram width 288 bits, new ram width 288 bits
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
 ---------------------------------------------------------------------------------
 
 ROM:
-+-------------+------------+---------------+----------------+
-|Module Name  | RTL Object | Depth x Width | Implemented As | 
-+-------------+------------+---------------+----------------+
-|network      | rom        | 32x2          | LUT            | 
-|network      | rom__1     | 32x1          | LUT            | 
-|network__GC0 | rom        | 32x2          | LUT            | 
-|network__GC0 | rom__2     | 32x1          | LUT            | 
-+-------------+------------+---------------+----------------+
++--------------+------------+---------------+----------------+
+|Module Name   | RTL Object | Depth x Width | Implemented As | 
++--------------+------------+---------------+----------------+
+|network       | rom        | 32x2          | LUT            | 
+|network       | rom__1     | 32x1          | LUT            | 
+|network__GCB1 | rom        | 32x2          | LUT            | 
+|network__GCB1 | rom__2     | 32x1          | LUT            | 
++--------------+------------+---------------+----------------+
 
 
 Block RAM:
-+-------------+-------------------------+------------------------+---+---+------------------------+---+---+--------------+--------+--------+-------------------+
-|Module Name  | RTL Object              | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | OUT_REG      | RAMB18 | RAMB36 | Hierarchical Name | 
-+-------------+-------------------------+------------------------+---+---+------------------------+---+---+--------------+--------+--------+-------------------+
-|network__GC0 | WRAM_Z_X/RAM_matrix_reg | 2 x 288(READ_FIRST)    | W |   | 2 x 288(WRITE_FIRST)   |   | R | Port A and B | 0      | 4      | extram__9         | 
-|network__GC0 | WRAM_Z_Y/RAM_matrix_reg | 16 x 288(READ_FIRST)   | W |   | 16 x 288(WRITE_FIRST)  |   | R | Port A and B | 0      | 4      | extram__11        | 
-|network__GC0 | WRAM_I_X/RAM_matrix_reg | 2 x 288(READ_FIRST)    | W |   | 2 x 288(WRITE_FIRST)   |   | R | Port A and B | 0      | 4      | extram__13        | 
-|network__GC0 | WRAM_I_Y/RAM_matrix_reg | 16 x 288(READ_FIRST)   | W |   | 16 x 288(WRITE_FIRST)  |   | R | Port A and B | 0      | 4      | extram__15        | 
-|network__GC0 | WRAM_F_X/RAM_matrix_reg | 2 x 288(READ_FIRST)    | W |   | 2 x 288(WRITE_FIRST)   |   | R | Port A and B | 0      | 4      | extram__17        | 
-|network__GC0 | WRAM_F_Y/RAM_matrix_reg | 16 x 288(READ_FIRST)   | W |   | 16 x 288(WRITE_FIRST)  |   | R | Port A and B | 0      | 4      | extram__19        | 
-|network__GC0 | WRAM_O_X/RAM_matrix_reg | 2 x 288(READ_FIRST)    | W |   | 2 x 288(WRITE_FIRST)   |   | R | Port A and B | 0      | 4      | extram__21        | 
-|network__GC0 | WRAM_O_Y/RAM_matrix_reg | 16 x 288(READ_FIRST)   | W |   | 16 x 288(WRITE_FIRST)  |   | R | Port A and B | 0      | 4      | extram__23        | 
-+-------------+-------------------------+------------------------+---+---+------------------------+---+---+--------------+--------+--------+-------------------+
++--------------+-------------------------+------------------------+---+---+------------------------+---+---+--------------+--------+--------+-------------------+
+|Module Name   | RTL Object              | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | OUT_REG      | RAMB18 | RAMB36 | Hierarchical Name | 
++--------------+-------------------------+------------------------+---+---+------------------------+---+---+--------------+--------+--------+-------------------+
+|network__GCB0 | WRAM_Z_Y/RAM_matrix_reg | 16 x 288(READ_FIRST)   | W |   | 16 x 288(WRITE_FIRST)  |   | R | Port A and B | 0      | 4      | extram__11        | 
+|network__GCB0 | WRAM_I_Y/RAM_matrix_reg | 16 x 288(READ_FIRST)   | W |   | 16 x 288(WRITE_FIRST)  |   | R | Port A and B | 0      | 4      | extram__15        | 
+|network__GCB0 | WRAM_F_Y/RAM_matrix_reg | 16 x 288(READ_FIRST)   | W |   | 16 x 288(WRITE_FIRST)  |   | R | Port A and B | 0      | 4      | extram__19        | 
+|network__GCB0 | WRAM_O_Y/RAM_matrix_reg | 16 x 288(READ_FIRST)   | W |   | 16 x 288(WRITE_FIRST)  |   | R | Port A and B | 0      | 4      | extram__23        | 
++--------------+-------------------------+------------------------+---+---+------------------------+---+---+--------------+--------+--------+-------------------+
 
 Note: The table above shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. "Hierarchical Name" reflects the Block RAM name as it appears in the hierarchical module and only part of it is displayed.
+Distributed RAM: 
++--------------+-------------------------+-----------+----------------------+---------------+-------------------+
+|Module Name   | RTL Object              | Inference | Size (Depth x Width) | Primitives    | Hierarchical Name | 
++--------------+-------------------------+-----------+----------------------+---------------+-------------------+
+|network__GCB0 | WRAM_Z_X/RAM_matrix_reg | Implied   | 2 x 288              | RAM32M x 48   | ram__4            | 
+|network__GCB0 | WRAM_I_X/RAM_matrix_reg | Implied   | 2 x 288              | RAM32M x 48   | ram__5            | 
+|network__GCB0 | WRAM_F_X/RAM_matrix_reg | Implied   | 2 x 288              | RAM32M x 48   | ram__6            | 
+|network__GCB0 | WRAM_O_X/RAM_matrix_reg | Implied   | 2 x 288              | RAM32M x 48   | ram__7            | 
++--------------+-------------------------+-----------+----------------------+---------------+-------------------+
+
+Note: The table above shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once. "Hierarchical Name" reflects the Distributed RAM name as it appears in the hierarchical module and only part of it is displayed.
 DSP:
 +------------+-------------+--------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
 |Module Name | DSP Mapping | Neg Edge Clk | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
@@ -1565,38 +1486,30 @@ DSP:
 |dot_prod    | C+A*B       | No           | 18     | 18     | 37     | 25     | 37     | 0    | 0    | 0    | 1    | 1     | 0    | 0    | 
 |dot_prod    | C+A*B       | No           | 18     | 18     | 37     | 25     | 37     | 0    | 0    | 0    | 1    | 1     | 0    | 0    | 
 |dot_prod    | C+A*B       | No           | 18     | 18     | 37     | 25     | 37     | 0    | 0    | 0    | 1    | 1     | 0    | 0    | 
-|sigmoid     | A*B         | No           | 18     | 18     | 48     | 25     | 36     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
-|sigmoid     | A*B         | No           | 18     | 18     | 48     | 25     | 36     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
-|sigmoid     | A*B         | No           | 18     | 18     | 48     | 25     | 36     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
-|sigmoid     | A*B         | No           | 18     | 18     | 48     | 25     | 36     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
-|sigmoid     | A*B         | No           | 18     | 18     | 48     | 25     | 36     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
-|sigmoid     | A*B         | No           | 18     | 18     | 48     | 25     | 36     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
-|sigmoid     | A*B         | No           | 18     | 18     | 48     | 25     | 36     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
-|sigmoid     | A*B         | No           | 18     | 18     | 48     | 25     | 36     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
-|sigmoid     | A*B         | No           | 18     | 18     | 48     | 25     | 36     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
-|sigmoid     | A*B         | No           | 18     | 18     | 48     | 25     | 36     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
-|sigmoid     | A*B         | No           | 18     | 18     | 48     | 25     | 36     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
-|sigmoid     | A*B         | No           | 18     | 18     | 48     | 25     | 36     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
-|sigmoid     | A*B         | No           | 18     | 18     | 48     | 25     | 36     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
-|sigmoid     | A*B         | No           | 18     | 18     | 48     | 25     | 36     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
-|sigmoid     | A*B         | No           | 18     | 18     | 48     | 25     | 36     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
-|sigmoid     | A*B         | No           | 18     | 18     | 48     | 25     | 36     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
-|tanh        | A*B         | No           | 18     | 18     | 48     | 25     | 36     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
-|tanh        | A*B         | No           | 18     | 18     | 48     | 25     | 36     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
-|tanh        | A*B         | No           | 18     | 18     | 48     | 25     | 36     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
-|tanh        | A*B         | No           | 18     | 18     | 48     | 25     | 36     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
-|tanh        | A*B         | No           | 18     | 18     | 48     | 25     | 36     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
-|tanh        | A*B         | No           | 18     | 18     | 48     | 25     | 36     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
-|tanh        | A*B         | No           | 18     | 18     | 48     | 25     | 36     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
-|tanh        | A*B         | No           | 18     | 18     | 48     | 25     | 36     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
-|tanh        | A*B         | No           | 18     | 18     | 48     | 25     | 36     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
-|tanh        | A*B         | No           | 18     | 18     | 48     | 25     | 36     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
-|tanh        | A*B         | No           | 18     | 18     | 48     | 25     | 36     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
-|tanh        | A*B         | No           | 18     | 18     | 48     | 25     | 36     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
-|tanh        | A*B         | No           | 18     | 18     | 48     | 25     | 36     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
-|tanh        | A*B         | No           | 18     | 18     | 48     | 25     | 36     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
-|tanh        | A*B         | No           | 18     | 18     | 48     | 25     | 36     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
-|tanh        | A*B         | No           | 18     | 18     | 48     | 25     | 36     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
+|sigmoid     | (A*B2)'     | No           | 18     | 18     | 48     | 25     | 36     | 0    | 1    | 1    | 1    | 1     | 1    | 0    | 
+|sigmoid     | (A*B2)'     | No           | 18     | 18     | 48     | 25     | 36     | 0    | 1    | 1    | 1    | 1     | 1    | 0    | 
+|sigmoid     | (A*B2)'     | No           | 18     | 18     | 48     | 25     | 36     | 0    | 1    | 1    | 1    | 1     | 1    | 0    | 
+|sigmoid     | (A*B2)'     | No           | 18     | 18     | 48     | 25     | 36     | 0    | 1    | 1    | 1    | 1     | 1    | 0    | 
+|sigmoid     | (A*B2)'     | No           | 18     | 18     | 48     | 25     | 36     | 0    | 1    | 1    | 1    | 1     | 1    | 0    | 
+|sigmoid     | (A*B2)'     | No           | 18     | 18     | 48     | 25     | 36     | 0    | 1    | 1    | 1    | 1     | 1    | 0    | 
+|sigmoid     | (A*B2)'     | No           | 18     | 18     | 48     | 25     | 36     | 0    | 1    | 1    | 1    | 1     | 1    | 0    | 
+|sigmoid     | (A*B2)'     | No           | 18     | 18     | 48     | 25     | 36     | 0    | 1    | 1    | 1    | 1     | 1    | 0    | 
+|tanh        | (A*B2)'     | No           | 18     | 18     | 48     | 25     | 36     | 0    | 1    | 1    | 1    | 1     | 1    | 0    | 
+|tanh        | (A*B2)'     | No           | 18     | 18     | 48     | 25     | 36     | 0    | 1    | 1    | 1    | 1     | 1    | 0    | 
+|tanh        | (A*B2)'     | No           | 18     | 18     | 48     | 25     | 36     | 0    | 1    | 1    | 1    | 1     | 1    | 0    | 
+|tanh        | (A*B2)'     | No           | 18     | 18     | 48     | 25     | 36     | 0    | 1    | 1    | 1    | 1     | 1    | 0    | 
+|tanh        | (A*B2)'     | No           | 18     | 18     | 48     | 25     | 36     | 0    | 1    | 1    | 1    | 1     | 1    | 0    | 
+|tanh        | (A*B2)'     | No           | 18     | 18     | 48     | 25     | 36     | 0    | 1    | 1    | 1    | 1     | 1    | 0    | 
+|tanh        | (A*B2)'     | No           | 18     | 18     | 48     | 25     | 36     | 0    | 1    | 1    | 1    | 1     | 1    | 0    | 
+|tanh        | (A*B2)'     | No           | 18     | 18     | 48     | 25     | 36     | 0    | 1    | 1    | 1    | 1     | 1    | 0    | 
+|tanh        | (A*B2)'     | No           | 18     | 18     | 48     | 25     | 36     | 0    | 1    | 1    | 1    | 1     | 1    | 0    | 
+|tanh        | (A*B2)'     | No           | 18     | 18     | 48     | 25     | 36     | 0    | 1    | 1    | 1    | 1     | 1    | 0    | 
+|tanh        | (A*B2)'     | No           | 18     | 18     | 48     | 25     | 36     | 0    | 1    | 1    | 1    | 1     | 1    | 0    | 
+|tanh        | (A*B2)'     | No           | 18     | 18     | 48     | 25     | 36     | 0    | 1    | 1    | 1    | 1     | 1    | 0    | 
+|tanh        | (A*B2)'     | No           | 18     | 18     | 48     | 25     | 36     | 0    | 1    | 1    | 1    | 1     | 1    | 0    | 
+|tanh        | (A*B2)'     | No           | 18     | 18     | 48     | 25     | 36     | 0    | 1    | 1    | 1    | 1     | 1    | 0    | 
+|tanh        | (A*B2)'     | No           | 18     | 18     | 48     | 25     | 36     | 0    | 1    | 1    | 1    | 1     | 1    | 0    | 
+|tanh        | (A*B2)'     | No           | 18     | 18     | 48     | 25     | 36     | 0    | 1    | 1    | 1    | 1     | 1    | 0    | 
 |network     | A2*B2       | No           | 18     | 18     | 48     | 25     | 36     | 1    | 1    | 1    | 1    | 1     | 0    | 0    | 
 |network     | A2*B2       | No           | 18     | 18     | 48     | 25     | 36     | 1    | 1    | 1    | 1    | 1     | 0    | 0    | 
 |network     | A2*B2       | No           | 18     | 18     | 48     | 25     | 36     | 1    | 1    | 1    | 1    | 1     | 0    | 0    | 
@@ -1613,6 +1526,14 @@ DSP:
 |network     | A2*B2       | No           | 18     | 18     | 48     | 25     | 36     | 1    | 1    | 1    | 1    | 1     | 0    | 0    | 
 |network     | A2*B2       | No           | 18     | 18     | 48     | 25     | 36     | 1    | 1    | 1    | 1    | 1     | 0    | 0    | 
 |network     | A2*B2       | No           | 18     | 18     | 48     | 25     | 36     | 1    | 1    | 1    | 1    | 1     | 0    | 0    | 
+|sigmoid     | (A*B2)'     | No           | 18     | 18     | 48     | 25     | 36     | 0    | 1    | 1    | 1    | 1     | 1    | 0    | 
+|sigmoid     | (A*B2)'     | No           | 18     | 18     | 48     | 25     | 36     | 0    | 1    | 1    | 1    | 1     | 1    | 0    | 
+|sigmoid     | (A*B2)'     | No           | 18     | 18     | 48     | 25     | 36     | 0    | 1    | 1    | 1    | 1     | 1    | 0    | 
+|sigmoid     | (A*B2)'     | No           | 18     | 18     | 48     | 25     | 36     | 0    | 1    | 1    | 1    | 1     | 1    | 0    | 
+|sigmoid     | (A*B2)'     | No           | 18     | 18     | 48     | 25     | 36     | 0    | 1    | 1    | 1    | 1     | 1    | 0    | 
+|sigmoid     | (A*B2)'     | No           | 18     | 18     | 48     | 25     | 36     | 0    | 1    | 1    | 1    | 1     | 1    | 0    | 
+|sigmoid     | (A*B2)'     | No           | 18     | 18     | 48     | 25     | 36     | 0    | 1    | 1    | 1    | 1     | 1    | 0    | 
+|sigmoid     | (A*B2)'     | No           | 18     | 18     | 48     | 25     | 36     | 0    | 1    | 1    | 1    | 1     | 1    | 0    | 
 |array_prod  | A*B         | No           | 18     | 18     | 48     | 25     | 36     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
 |array_prod  | A*B         | No           | 18     | 18     | 48     | 25     | 36     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
 |array_prod  | A*B         | No           | 18     | 18     | 48     | 25     | 36     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
@@ -1626,10 +1547,244 @@ Finished ROM, RAM, DSP and Shift Register Reporting
 ---------------------------------------------------------------------------------
 Start Area Optimization
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[0].tanh_i /\p0_reg[0] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[0].tanh_i /\p0_reg[4] '
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[0].tanh_i /\p0_reg[1] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[0].tanh_i /\p0_reg[2] '
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[0].tanh_i /\p1_reg[2] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[0].tanh_i /\p1_reg[11] '
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[0].tanh_i /\p1_reg[3] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[0].tanh_i /\p1_reg[5] '
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[0].tanh_i /\p1_reg[4] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[0].tanh_i /\p1_reg[8] '
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[0].tanh_i /\p0_reg[5] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[0].tanh_i /\p0_reg[8] '
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[0].tanh_i /\p1_reg[5] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[0].tanh_i /\p1_reg[7] '
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[0].tanh_i /\p0_reg[6] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[0].tanh_i /\p0_reg[7] '
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[0].tanh_i /\p1_reg[6] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[0].tanh_i /\p1_reg[17] '
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[0].tanh_i /\p0_reg[7] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[0].tanh_i /\p0_reg[10] '
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[0].tanh_i /\p0_reg[8] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[0].tanh_i /\p0_reg[9] '
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[0].tanh_i /\p1_reg[8] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[0].tanh_i /\p1_reg[9] '
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[0].tanh_i /\p1_reg[10] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[0].tanh_i /\p1_reg[17] '
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[0].tanh_i /\p0_reg[12] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[0].tanh_i /\p0_reg[13] '
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[0].tanh_i /\p1_reg[12] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[0].tanh_i /\p1_reg[17] '
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[0].tanh_i /\p0_reg[13] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[0].tanh_i /\p0_reg[14] '
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[0].tanh_i /\p1_reg[13] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[0].tanh_i /\p1_reg[17] '
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[0].tanh_i /\p0_reg[14] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[0].tanh_i /\p0_reg[15] '
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[0].tanh_i /\p1_reg[14] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[0].tanh_i /\p1_reg[17] '
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[0].tanh_i /\p0_reg[15] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[0].tanh_i /\p0_reg[16] '
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[0].tanh_i /\p1_reg[15] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[0].tanh_i /\p1_reg[17] '
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[0].tanh_i /\p0_reg[16] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[0].tanh_i /\p0_reg[17] '
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[0].tanh_i /\p1_reg[16] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[0].tanh_i /\p1_reg[17] '
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[0].tanh_i /\p2_reg[0] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[0].tanh_i /\p2_reg[1] '
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[0].tanh_i /\p2_reg[1] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[0].tanh_i /\p2_reg[2] '
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[0].tanh_i /\p2_reg[4] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[0].tanh_i /\p2_reg[5] '
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[0].tanh_i /\p2_reg[6] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[0].tanh_i /\p2_reg[8] '
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[0].tanh_i /\p2_reg[8] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[0].tanh_i /\p2_reg[10] '
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[0].tanh_i /\p2_reg[10] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[0].tanh_i /\p2_reg[11] '
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[0].tanh_i /\p2_reg[11] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[0].tanh_i /\p2_reg[12] '
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[0].tanh_i /\p2_reg[12] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[0].tanh_i /\p2_reg[13] '
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[0].tanh_i /\p2_reg[13] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[0].tanh_i /\p2_reg[14] '
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[0].tanh_i /\p2_reg[14] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[0].tanh_i /\p2_reg[15] '
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[0].tanh_i /\p2_reg[15] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[0].tanh_i /\p2_reg[16] '
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[0].tanh_i /\p2_reg[16] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[0].tanh_i /\p2_reg[17] '
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (LSTM_LAYERi_20/\genblk2[0].tanh_i /\p1_reg[17] )
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[1].tanh_i /\p0_reg[0] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[1].tanh_i /\p0_reg[4] '
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[1].tanh_i /\p0_reg[1] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[1].tanh_i /\p0_reg[2] '
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[1].tanh_i /\p1_reg[2] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[1].tanh_i /\p1_reg[11] '
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[1].tanh_i /\p1_reg[3] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[1].tanh_i /\p1_reg[5] '
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[1].tanh_i /\p1_reg[4] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[1].tanh_i /\p1_reg[8] '
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[1].tanh_i /\p0_reg[5] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[1].tanh_i /\p0_reg[8] '
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[1].tanh_i /\p1_reg[5] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[1].tanh_i /\p1_reg[7] '
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[1].tanh_i /\p0_reg[6] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[1].tanh_i /\p0_reg[7] '
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[1].tanh_i /\p1_reg[6] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[1].tanh_i /\p1_reg[17] '
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[1].tanh_i /\p0_reg[7] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[1].tanh_i /\p0_reg[10] '
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[1].tanh_i /\p0_reg[8] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[1].tanh_i /\p0_reg[9] '
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[1].tanh_i /\p1_reg[8] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[1].tanh_i /\p1_reg[9] '
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[1].tanh_i /\p1_reg[10] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[1].tanh_i /\p1_reg[17] '
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[1].tanh_i /\p0_reg[12] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[1].tanh_i /\p0_reg[13] '
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[1].tanh_i /\p1_reg[12] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[1].tanh_i /\p1_reg[17] '
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[1].tanh_i /\p0_reg[13] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[1].tanh_i /\p0_reg[14] '
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[1].tanh_i /\p1_reg[13] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[1].tanh_i /\p1_reg[17] '
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[1].tanh_i /\p0_reg[14] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[1].tanh_i /\p0_reg[15] '
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[1].tanh_i /\p1_reg[14] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[1].tanh_i /\p1_reg[17] '
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[1].tanh_i /\p0_reg[15] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[1].tanh_i /\p0_reg[16] '
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[1].tanh_i /\p1_reg[15] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[1].tanh_i /\p1_reg[17] '
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[1].tanh_i /\p0_reg[16] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[1].tanh_i /\p0_reg[17] '
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[1].tanh_i /\p1_reg[16] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[1].tanh_i /\p1_reg[17] '
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[1].tanh_i /\p2_reg[0] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[1].tanh_i /\p2_reg[1] '
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[1].tanh_i /\p2_reg[1] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[1].tanh_i /\p2_reg[2] '
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[1].tanh_i /\p2_reg[4] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[1].tanh_i /\p2_reg[5] '
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[1].tanh_i /\p2_reg[6] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[1].tanh_i /\p2_reg[8] '
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[1].tanh_i /\p2_reg[8] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[1].tanh_i /\p2_reg[10] '
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[1].tanh_i /\p2_reg[10] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[1].tanh_i /\p2_reg[11] '
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[1].tanh_i /\p2_reg[11] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[1].tanh_i /\p2_reg[12] '
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[1].tanh_i /\p2_reg[12] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[1].tanh_i /\p2_reg[13] '
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[1].tanh_i /\p2_reg[13] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[1].tanh_i /\p2_reg[14] '
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[1].tanh_i /\p2_reg[14] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[1].tanh_i /\p2_reg[15] '
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[1].tanh_i /\p2_reg[15] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[1].tanh_i /\p2_reg[16] '
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[1].tanh_i /\p2_reg[16] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[1].tanh_i /\p2_reg[17] '
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (LSTM_LAYERi_20/\genblk2[1].tanh_i /\p1_reg[17] )
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[2].tanh_i /\p0_reg[0] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[2].tanh_i /\p0_reg[4] '
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[2].tanh_i /\p0_reg[1] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[2].tanh_i /\p0_reg[2] '
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[2].tanh_i /\p1_reg[2] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[2].tanh_i /\p1_reg[11] '
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[2].tanh_i /\p1_reg[3] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[2].tanh_i /\p1_reg[5] '
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[2].tanh_i /\p1_reg[4] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[2].tanh_i /\p1_reg[8] '
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[2].tanh_i /\p0_reg[5] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[2].tanh_i /\p0_reg[8] '
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[2].tanh_i /\p1_reg[5] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[2].tanh_i /\p1_reg[7] '
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[2].tanh_i /\p0_reg[6] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[2].tanh_i /\p0_reg[7] '
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[2].tanh_i /\p1_reg[6] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[2].tanh_i /\p1_reg[17] '
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[2].tanh_i /\p0_reg[7] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[2].tanh_i /\p0_reg[10] '
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[2].tanh_i /\p0_reg[8] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[2].tanh_i /\p0_reg[9] '
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[2].tanh_i /\p1_reg[8] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[2].tanh_i /\p1_reg[9] '
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[2].tanh_i /\p1_reg[10] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[2].tanh_i /\p1_reg[17] '
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[2].tanh_i /\p0_reg[12] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[2].tanh_i /\p0_reg[13] '
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[2].tanh_i /\p1_reg[12] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[2].tanh_i /\p1_reg[17] '
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[2].tanh_i /\p0_reg[13] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[2].tanh_i /\p0_reg[14] '
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[2].tanh_i /\p1_reg[13] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[2].tanh_i /\p1_reg[17] '
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[2].tanh_i /\p0_reg[14] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[2].tanh_i /\p0_reg[15] '
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[2].tanh_i /\p1_reg[14] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[2].tanh_i /\p1_reg[17] '
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[2].tanh_i /\p0_reg[15] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[2].tanh_i /\p0_reg[16] '
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[2].tanh_i /\p1_reg[15] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[2].tanh_i /\p1_reg[17] '
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[2].tanh_i /\p0_reg[16] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[2].tanh_i /\p0_reg[17] '
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[2].tanh_i /\p1_reg[16] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[2].tanh_i /\p1_reg[17] '
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[2].tanh_i /\p2_reg[0] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[2].tanh_i /\p2_reg[1] '
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[2].tanh_i /\p2_reg[1] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[2].tanh_i /\p2_reg[2] '
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[2].tanh_i /\p2_reg[4] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[2].tanh_i /\p2_reg[5] '
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[2].tanh_i /\p2_reg[6] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[2].tanh_i /\p2_reg[8] '
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[2].tanh_i /\p2_reg[8] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[2].tanh_i /\p2_reg[10] '
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[2].tanh_i /\p2_reg[10] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[2].tanh_i /\p2_reg[11] '
+INFO: [Synth 8-3886] merging instance 'LSTM_LAYERi_20/\genblk2[2].tanh_i /\p2_reg[11] ' (LDC) to 'LSTM_LAYERi_20/\genblk2[2].tanh_i /\p2_reg[12] '
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (LSTM_LAYERi_20/\genblk2[2].tanh_i /\p1_reg[17] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (LSTM_LAYERi_20/\genblk2[3].tanh_i /\p1_reg[17] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (LSTM_LAYERi_20/\genblk2[4].tanh_i /\p1_reg[17] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (LSTM_LAYERi_20/\genblk2[5].tanh_i /\p1_reg[17] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (LSTM_LAYERi_20/\genblk2[6].tanh_i /\p1_reg[17] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (LSTM_LAYERi_20/\genblk2[7].tanh_i /\p1_reg[17] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (LSTM_LAYERi_20/\genblk1[8].sigmoid_i /\p1_reg[17] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (LSTM_LAYERi_20/\genblk2[8].tanh_i /\p1_reg[17] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (LSTM_LAYERi_20/\genblk1[9].sigmoid_i /\p1_reg[17] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (LSTM_LAYERi_20/\genblk2[9].tanh_i /\p1_reg[17] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (LSTM_LAYERi_20/\genblk1[10].sigmoid_i /\p1_reg[17] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (LSTM_LAYERi_20/\genblk2[10].tanh_i /\p1_reg[17] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (LSTM_LAYERi_20/\genblk1[11].sigmoid_i /\p1_reg[17] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (LSTM_LAYERi_20/\genblk2[11].tanh_i /\p1_reg[17] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (LSTM_LAYERi_20/\genblk1[12].sigmoid_i /\p1_reg[17] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (LSTM_LAYERi_20/\genblk2[12].tanh_i /\p1_reg[17] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (LSTM_LAYERi_20/\genblk1[13].sigmoid_i /\p1_reg[17] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (LSTM_LAYERi_20/\genblk2[13].tanh_i /\p1_reg[17] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (LSTM_LAYERi_20/\genblk1[14].sigmoid_i /\p1_reg[17] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (LSTM_LAYERi_20/\genblk2[14].tanh_i /\p1_reg[17] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (LSTM_LAYERi_20/\genblk1[15].sigmoid_i /\p1_reg[17] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (LSTM_LAYERi_20/\genblk2[15].tanh_i /\p1_reg[17] )
+WARNING: [Synth 8-3332] Sequential element (\p0_reg[7] ) is unused and will be removed from module sigmoid__1.
+WARNING: [Synth 8-3332] Sequential element (\p0_reg[6] ) is unused and will be removed from module sigmoid__1.
+WARNING: [Synth 8-3332] Sequential element (\p0_reg[3] ) is unused and will be removed from module sigmoid__1.
+WARNING: [Synth 8-3332] Sequential element (\p1_reg[5] ) is unused and will be removed from module sigmoid__1.
+WARNING: [Synth 8-3332] Sequential element (\p1_reg[4] ) is unused and will be removed from module sigmoid__1.
+WARNING: [Synth 8-3332] Sequential element (\p1_reg[3] ) is unused and will be removed from module sigmoid__1.
+WARNING: [Synth 8-3332] Sequential element (\p1_reg[2] ) is unused and will be removed from module sigmoid__1.
+WARNING: [Synth 8-3332] Sequential element (\p1_reg[0] ) is unused and will be removed from module sigmoid__1.
+WARNING: [Synth 8-3332] Sequential element (\p2_reg[16] ) is unused and will be removed from module sigmoid__1.
+WARNING: [Synth 8-3332] Sequential element (\p2_reg[15] ) is unused and will be removed from module sigmoid__1.
+WARNING: [Synth 8-3332] Sequential element (\p2_reg[14] ) is unused and will be removed from module sigmoid__1.
+WARNING: [Synth 8-3332] Sequential element (\p2_reg[13] ) is unused and will be removed from module sigmoid__1.
+WARNING: [Synth 8-3332] Sequential element (\p2_reg[12] ) is unused and will be removed from module sigmoid__1.
+WARNING: [Synth 8-3332] Sequential element (\p2_reg[11] ) is unused and will be removed from module sigmoid__1.
+WARNING: [Synth 8-3332] Sequential element (\p2_reg[10] ) is unused and will be removed from module sigmoid__1.
+WARNING: [Synth 8-3332] Sequential element (\p2_reg[9] ) is unused and will be removed from module sigmoid__1.
+WARNING: [Synth 8-3332] Sequential element (\p2_reg[8] ) is unused and will be removed from module sigmoid__1.
+WARNING: [Synth 8-3332] Sequential element (\p2_reg[7] ) is unused and will be removed from module sigmoid__1.
+WARNING: [Synth 8-3332] Sequential element (\p2_reg[5] ) is unused and will be removed from module sigmoid__1.
+WARNING: [Synth 8-3332] Sequential element (\p2_reg[4] ) is unused and will be removed from module sigmoid__1.
+WARNING: [Synth 8-3332] Sequential element (\p2_reg[2] ) is unused and will be removed from module sigmoid__1.
+WARNING: [Synth 8-3332] Sequential element (\p2_reg[1] ) is unused and will be removed from module sigmoid__1.
+WARNING: [Synth 8-3332] Sequential element (\adderMux_reg[17] ) is unused and will be removed from module sigmoid__1.
+WARNING: [Synth 8-3332] Sequential element (\adderMux_reg[16] ) is unused and will be removed from module sigmoid__1.
+WARNING: [Synth 8-3332] Sequential element (\adderMux_reg[15] ) is unused and will be removed from module sigmoid__1.
+WARNING: [Synth 8-3332] Sequential element (\adderMux_reg[14] ) is unused and will be removed from module sigmoid__1.
+WARNING: [Synth 8-3332] Sequential element (\adderMux_reg[13] ) is unused and will be removed from module sigmoid__1.
+WARNING: [Synth 8-3332] Sequential element (\adderMux_reg[12] ) is unused and will be removed from module sigmoid__1.
+WARNING: [Synth 8-3332] Sequential element (\p1_reg[17] ) is unused and will be removed from module sigmoid__1.
+WARNING: [Synth 8-3332] Sequential element (\p0_reg[0] ) is unused and will be removed from module sigmoid__1.
+WARNING: [Synth 8-3332] Sequential element (\p0_reg[1] ) is unused and will be removed from module sigmoid__1.
+WARNING: [Synth 8-3332] Sequential element (\p1_reg[6] ) is unused and will be removed from module sigmoid__1.
+WARNING: [Synth 8-3332] Sequential element (\p1_reg[8] ) is unused and will be removed from module sigmoid__1.
+WARNING: [Synth 8-3332] Sequential element (\p1_reg[10] ) is unused and will be removed from module sigmoid__1.
+WARNING: [Synth 8-3332] Sequential element (\p1_reg[11] ) is unused and will be removed from module sigmoid__1.
+WARNING: [Synth 8-3332] Sequential element (\p0_reg[12] ) is unused and will be removed from module sigmoid__1.
+WARNING: [Synth 8-3332] Sequential element (\p1_reg[12] ) is unused and will be removed from module sigmoid__1.
+WARNING: [Synth 8-3332] Sequential element (\p0_reg[13] ) is unused and will be removed from module sigmoid__1.
+WARNING: [Synth 8-3332] Sequential element (\p1_reg[13] ) is unused and will be removed from module sigmoid__1.
+WARNING: [Synth 8-3332] Sequential element (\p0_reg[14] ) is unused and will be removed from module sigmoid__1.
+WARNING: [Synth 8-3332] Sequential element (\p1_reg[14] ) is unused and will be removed from module sigmoid__1.
+WARNING: [Synth 8-3332] Sequential element (\p0_reg[15] ) is unused and will be removed from module sigmoid__1.
+WARNING: [Synth 8-3332] Sequential element (\p1_reg[15] ) is unused and will be removed from module sigmoid__1.
+WARNING: [Synth 8-3332] Sequential element (\p0_reg[16] ) is unused and will be removed from module sigmoid__1.
+WARNING: [Synth 8-3332] Sequential element (\p1_reg[16] ) is unused and will be removed from module sigmoid__1.
+WARNING: [Synth 8-3332] Sequential element (\p0_reg[17] ) is unused and will be removed from module sigmoid__1.
+WARNING: [Synth 8-3332] Sequential element (\p0_reg[7] ) is unused and will be removed from module sigmoid__2.
+WARNING: [Synth 8-3332] Sequential element (\p0_reg[6] ) is unused and will be removed from module sigmoid__2.
+WARNING: [Synth 8-3332] Sequential element (\p0_reg[3] ) is unused and will be removed from module sigmoid__2.
+WARNING: [Synth 8-3332] Sequential element (\p1_reg[5] ) is unused and will be removed from module sigmoid__2.
+WARNING: [Synth 8-3332] Sequential element (\p1_reg[4] ) is unused and will be removed from module sigmoid__2.
+WARNING: [Synth 8-3332] Sequential element (\p1_reg[3] ) is unused and will be removed from module sigmoid__2.
+WARNING: [Synth 8-3332] Sequential element (\p1_reg[2] ) is unused and will be removed from module sigmoid__2.
+WARNING: [Synth 8-3332] Sequential element (\p1_reg[0] ) is unused and will be removed from module sigmoid__2.
+WARNING: [Synth 8-3332] Sequential element (\p2_reg[16] ) is unused and will be removed from module sigmoid__2.
+WARNING: [Synth 8-3332] Sequential element (\p2_reg[15] ) is unused and will be removed from module sigmoid__2.
+WARNING: [Synth 8-3332] Sequential element (\p2_reg[14] ) is unused and will be removed from module sigmoid__2.
+WARNING: [Synth 8-3332] Sequential element (\p2_reg[13] ) is unused and will be removed from module sigmoid__2.
+WARNING: [Synth 8-3332] Sequential element (\p2_reg[12] ) is unused and will be removed from module sigmoid__2.
+WARNING: [Synth 8-3332] Sequential element (\p2_reg[11] ) is unused and will be removed from module sigmoid__2.
+WARNING: [Synth 8-3332] Sequential element (\p2_reg[10] ) is unused and will be removed from module sigmoid__2.
+WARNING: [Synth 8-3332] Sequential element (\p2_reg[9] ) is unused and will be removed from module sigmoid__2.
+WARNING: [Synth 8-3332] Sequential element (\p2_reg[8] ) is unused and will be removed from module sigmoid__2.
+WARNING: [Synth 8-3332] Sequential element (\p2_reg[7] ) is unused and will be removed from module sigmoid__2.
+WARNING: [Synth 8-3332] Sequential element (\p2_reg[5] ) is unused and will be removed from module sigmoid__2.
+WARNING: [Synth 8-3332] Sequential element (\p2_reg[4] ) is unused and will be removed from module sigmoid__2.
+WARNING: [Synth 8-3332] Sequential element (\p2_reg[2] ) is unused and will be removed from module sigmoid__2.
+WARNING: [Synth 8-3332] Sequential element (\p2_reg[1] ) is unused and will be removed from module sigmoid__2.
+WARNING: [Synth 8-3332] Sequential element (\adderMux_reg[17] ) is unused and will be removed from module sigmoid__2.
+WARNING: [Synth 8-3332] Sequential element (\adderMux_reg[16] ) is unused and will be removed from module sigmoid__2.
+WARNING: [Synth 8-3332] Sequential element (\adderMux_reg[15] ) is unused and will be removed from module sigmoid__2.
+WARNING: [Synth 8-3332] Sequential element (\adderMux_reg[14] ) is unused and will be removed from module sigmoid__2.
+WARNING: [Synth 8-3332] Sequential element (\adderMux_reg[13] ) is unused and will be removed from module sigmoid__2.
+WARNING: [Synth 8-3332] Sequential element (\adderMux_reg[12] ) is unused and will be removed from module sigmoid__2.
+WARNING: [Synth 8-3332] Sequential element (\p1_reg[17] ) is unused and will be removed from module sigmoid__2.
+WARNING: [Synth 8-3332] Sequential element (\p0_reg[0] ) is unused and will be removed from module sigmoid__2.
+WARNING: [Synth 8-3332] Sequential element (\p0_reg[1] ) is unused and will be removed from module sigmoid__2.
+WARNING: [Synth 8-3332] Sequential element (\p1_reg[6] ) is unused and will be removed from module sigmoid__2.
+WARNING: [Synth 8-3332] Sequential element (\p1_reg[8] ) is unused and will be removed from module sigmoid__2.
+WARNING: [Synth 8-3332] Sequential element (\p1_reg[10] ) is unused and will be removed from module sigmoid__2.
+WARNING: [Synth 8-3332] Sequential element (\p1_reg[11] ) is unused and will be removed from module sigmoid__2.
+WARNING: [Synth 8-3332] Sequential element (\p0_reg[12] ) is unused and will be removed from module sigmoid__2.
+WARNING: [Synth 8-3332] Sequential element (\p1_reg[12] ) is unused and will be removed from module sigmoid__2.
+WARNING: [Synth 8-3332] Sequential element (\p0_reg[13] ) is unused and will be removed from module sigmoid__2.
+WARNING: [Synth 8-3332] Sequential element (\p1_reg[13] ) is unused and will be removed from module sigmoid__2.
+WARNING: [Synth 8-3332] Sequential element (\p0_reg[14] ) is unused and will be removed from module sigmoid__2.
+WARNING: [Synth 8-3332] Sequential element (\p1_reg[14] ) is unused and will be removed from module sigmoid__2.
+WARNING: [Synth 8-3332] Sequential element (\p0_reg[15] ) is unused and will be removed from module sigmoid__2.
+WARNING: [Synth 8-3332] Sequential element (\p1_reg[15] ) is unused and will be removed from module sigmoid__2.
+WARNING: [Synth 8-3332] Sequential element (\p0_reg[16] ) is unused and will be removed from module sigmoid__2.
+WARNING: [Synth 8-3332] Sequential element (\p1_reg[16] ) is unused and will be removed from module sigmoid__2.
+WARNING: [Synth 8-3332] Sequential element (\p0_reg[17] ) is unused and will be removed from module sigmoid__2.
+WARNING: [Synth 8-3332] Sequential element (\p0_reg[7] ) is unused and will be removed from module sigmoid__3.
+WARNING: [Synth 8-3332] Sequential element (\p0_reg[6] ) is unused and will be removed from module sigmoid__3.
+WARNING: [Synth 8-3332] Sequential element (\p0_reg[3] ) is unused and will be removed from module sigmoid__3.
+WARNING: [Synth 8-3332] Sequential element (\p1_reg[5] ) is unused and will be removed from module sigmoid__3.
+WARNING: [Synth 8-3332] Sequential element (\p1_reg[4] ) is unused and will be removed from module sigmoid__3.
+WARNING: [Synth 8-3332] Sequential element (\p1_reg[3] ) is unused and will be removed from module sigmoid__3.
+WARNING: [Synth 8-3332] Sequential element (\p1_reg[2] ) is unused and will be removed from module sigmoid__3.
+WARNING: [Synth 8-3332] Sequential element (\p1_reg[0] ) is unused and will be removed from module sigmoid__3.
+INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (LSTM_LAYERi_21/\genblk1[0].sigmoid_i/p1_reg[17] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (LSTM_LAYERi_21/\genblk1[1].sigmoid_i/p1_reg[17] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (LSTM_LAYERi_21/\genblk1[2].sigmoid_i/p1_reg[17] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (LSTM_LAYERi_21/\genblk1[3].sigmoid_i/p1_reg[17] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (LSTM_LAYERi_21/\genblk1[4].sigmoid_i/p1_reg[17] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (LSTM_LAYERi_21/\genblk1[5].sigmoid_i/p1_reg[17] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (LSTM_LAYERi_21/\genblk1[6].sigmoid_i/p1_reg[17] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (LSTM_LAYERi_21/\genblk1[7].sigmoid_i/p1_reg[17] )
 ---------------------------------------------------------------------------------
-Finished Area Optimization : Time (s): cpu = 00:00:34 ; elapsed = 00:00:36 . Memory (MB): peak = 1513.492 ; gain = 667.887 ; free physical = 3143 ; free virtual = 8763
+Finished Area Optimization : Time (s): cpu = 00:00:33 ; elapsed = 00:00:34 . Memory (MB): peak = 1517.500 ; gain = 671.887 ; free physical = 2136 ; free virtual = 8108
 ---------------------------------------------------------------------------------
-Finished Parallel Area Optimization  : Time (s): cpu = 00:00:34 ; elapsed = 00:00:36 . Memory (MB): peak = 1513.492 ; gain = 667.887 ; free physical = 3143 ; free virtual = 8763
+Finished Parallel Area Optimization  : Time (s): cpu = 00:00:33 ; elapsed = 00:00:34 . Memory (MB): peak = 1517.500 ; gain = 671.887 ; free physical = 2136 ; free virtual = 8108
 
 Report RTL Partitions: 
 +------+------------------------------+------------+----------+
@@ -1640,8 +1795,9 @@ Report RTL Partitions:
 |3     |dot_prod__parameterized0__GB0 |           4|      2964|
 |4     |dot_prod__parameterized0__GB1 |           4|       436|
 |5     |gate__GC0                     |           4|      1058|
-|6     |network__GC0                  |           1|     11676|
-|7     |top_network__GC0              |           1|      1086|
+|6     |network__GCB0                 |           1|     12855|
+|7     |network__GCB1                 |           1|      1561|
+|8     |top_network__GC0              |           1|      1086|
 +------+------------------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Timing Optimization
@@ -1650,70 +1806,47 @@ Start Timing Optimization
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:42 ; elapsed = 00:00:45 . Memory (MB): peak = 1513.492 ; gain = 667.887 ; free physical = 3040 ; free virtual = 8668
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:42 ; elapsed = 00:00:43 . Memory (MB): peak = 1517.500 ; gain = 671.887 ; free physical = 2067 ; free virtual = 8039
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-5584] The signal LSTM_LAYER/WRAM_O_Y/RAM_matrix_reg is implemented as distributed LUT RAM for the following reason(s): The timing constraints suggest that the chosen mapping will yield better timing results.
+INFO: [Synth 8-5584] The signal LSTM_LAYER/WRAM_O_Y/RAM_matrix_reg is implemented as distributed LUT RAM for the following reason(s): The timing constraints suggest that the chosen mapping will yield better timing results.
+INFO: [Synth 8-5584] The signal LSTM_LAYER/WRAM_I_Y/RAM_matrix_reg is implemented as distributed LUT RAM for the following reason(s): The timing constraints suggest that the chosen mapping will yield better timing results.
+INFO: [Synth 8-5584] The signal LSTM_LAYER/WRAM_I_Y/RAM_matrix_reg is implemented as distributed LUT RAM for the following reason(s): The timing constraints suggest that the chosen mapping will yield better timing results.
+INFO: [Synth 8-5584] The signal LSTM_LAYER/WRAM_F_Y/RAM_matrix_reg is implemented as distributed LUT RAM for the following reason(s): The timing constraints suggest that the chosen mapping will yield better timing results.
+INFO: [Synth 8-5584] The signal LSTM_LAYER/WRAM_F_Y/RAM_matrix_reg is implemented as distributed LUT RAM for the following reason(s): The timing constraints suggest that the chosen mapping will yield better timing results.
+INFO: [Synth 8-5584] The signal LSTM_LAYER/WRAM_Z_Y/RAM_matrix_reg is implemented as distributed LUT RAM for the following reason(s): The timing constraints suggest that the chosen mapping will yield better timing results.
+INFO: [Synth 8-5584] The signal LSTM_LAYER/WRAM_Z_Y/RAM_matrix_reg is implemented as distributed LUT RAM for the following reason(s): The timing constraints suggest that the chosen mapping will yield better timing results.
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:47 ; elapsed = 00:00:50 . Memory (MB): peak = 1560.492 ; gain = 714.887 ; free physical = 3017 ; free virtual = 8646
+Finished Timing Optimization : Time (s): cpu = 00:01:31 ; elapsed = 00:01:32 . Memory (MB): peak = 1612.512 ; gain = 766.898 ; free physical = 1987 ; free virtual = 7961
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
 +------+------------------------------+------------+----------+
 |      |RTL Partition                 |Replication |Instances |
 +------+------------------------------+------------+----------+
-|1     |dot_prod__GB0                 |           4|      3820|
+|1     |dot_prod__GB0                 |           2|      3820|
 |2     |dot_prod__GB1                 |           4|       436|
-|3     |dot_prod__parameterized0__GB0 |           4|      2964|
+|3     |dot_prod__parameterized0__GB0 |           2|      2964|
 |4     |dot_prod__parameterized0__GB1 |           4|       436|
 |5     |gate__GC0                     |           4|      1058|
-|6     |network__GC0                  |           1|     11667|
+|6     |network__GCB1                 |           1|      1561|
 |7     |top_network__GC0              |           1|      1086|
+|8     |top_network_GT0               |           1|     27751|
 +------+------------------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-4480] The timing for the instance \LSTM_LAYER/WRAM_Z_X/RAM_matrix_reg_0  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance \LSTM_LAYER/WRAM_Z_X/RAM_matrix_reg_1  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance \LSTM_LAYER/WRAM_Z_X/RAM_matrix_reg_2  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance \LSTM_LAYER/WRAM_Z_X/RAM_matrix_reg_3  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance \LSTM_LAYER/WRAM_Z_Y/RAM_matrix_reg_0  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance \LSTM_LAYER/WRAM_Z_Y/RAM_matrix_reg_1  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance \LSTM_LAYER/WRAM_Z_Y/RAM_matrix_reg_2  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance \LSTM_LAYER/WRAM_Z_Y/RAM_matrix_reg_3  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance \LSTM_LAYER/WRAM_I_X/RAM_matrix_reg_0  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance \LSTM_LAYER/WRAM_I_X/RAM_matrix_reg_1  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance \LSTM_LAYER/WRAM_I_X/RAM_matrix_reg_2  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance \LSTM_LAYER/WRAM_I_X/RAM_matrix_reg_3  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance \LSTM_LAYER/WRAM_I_Y/RAM_matrix_reg_0  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance \LSTM_LAYER/WRAM_I_Y/RAM_matrix_reg_1  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance \LSTM_LAYER/WRAM_I_Y/RAM_matrix_reg_2  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance \LSTM_LAYER/WRAM_I_Y/RAM_matrix_reg_3  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance \LSTM_LAYER/WRAM_F_X/RAM_matrix_reg_0  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance \LSTM_LAYER/WRAM_F_X/RAM_matrix_reg_1  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance \LSTM_LAYER/WRAM_F_X/RAM_matrix_reg_2  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance \LSTM_LAYER/WRAM_F_X/RAM_matrix_reg_3  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance \LSTM_LAYER/WRAM_F_Y/RAM_matrix_reg_0  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance \LSTM_LAYER/WRAM_F_Y/RAM_matrix_reg_1  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance \LSTM_LAYER/WRAM_F_Y/RAM_matrix_reg_2  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance \LSTM_LAYER/WRAM_F_Y/RAM_matrix_reg_3  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance \LSTM_LAYER/WRAM_O_X/RAM_matrix_reg_0  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance \LSTM_LAYER/WRAM_O_X/RAM_matrix_reg_1  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance \LSTM_LAYER/WRAM_O_X/RAM_matrix_reg_2  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance \LSTM_LAYER/WRAM_O_X/RAM_matrix_reg_3  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance \LSTM_LAYER/WRAM_O_Y/RAM_matrix_reg_0  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance \LSTM_LAYER/WRAM_O_Y/RAM_matrix_reg_1  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance \LSTM_LAYER/WRAM_O_Y/RAM_matrix_reg_2  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance \LSTM_LAYER/WRAM_O_Y/RAM_matrix_reg_3  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:01:00 ; elapsed = 00:01:03 . Memory (MB): peak = 1631.977 ; gain = 786.371 ; free physical = 2940 ; free virtual = 8568
+Finished Technology Mapping : Time (s): cpu = 00:01:46 ; elapsed = 00:01:47 . Memory (MB): peak = 1684.289 ; gain = 838.676 ; free physical = 1940 ; free virtual = 7913
 ---------------------------------------------------------------------------------
-Finished Parallel Technology Mapping Optimization  : Time (s): cpu = 00:01:00 ; elapsed = 00:01:03 . Memory (MB): peak = 1631.977 ; gain = 786.371 ; free physical = 2940 ; free virtual = 8568
+Finished Parallel Technology Mapping Optimization  : Time (s): cpu = 00:01:46 ; elapsed = 00:01:47 . Memory (MB): peak = 1684.289 ; gain = 838.676 ; free physical = 1940 ; free virtual = 7913
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
 | |RTL Partition |Replication |Instances |
 +-+--------------+------------+----------+
 +-+--------------+------------+----------+
-Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:01:00 ; elapsed = 00:01:03 . Memory (MB): peak = 1631.977 ; gain = 786.371 ; free physical = 2940 ; free virtual = 8568
+Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:01:46 ; elapsed = 00:01:47 . Memory (MB): peak = 1684.289 ; gain = 838.676 ; free physical = 1940 ; free virtual = 7913
 ---------------------------------------------------------------------------------
 Start IO Insertion
 ---------------------------------------------------------------------------------
@@ -1730,7 +1863,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:01 ; elapsed = 00:01:04 . Memory (MB): peak = 1631.977 ; gain = 786.371 ; free physical = 2941 ; free virtual = 8570
+Finished IO Insertion : Time (s): cpu = 00:01:48 ; elapsed = 00:01:49 . Memory (MB): peak = 1684.289 ; gain = 838.676 ; free physical = 1946 ; free virtual = 7919
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -1743,7 +1876,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:01 ; elapsed = 00:01:05 . Memory (MB): peak = 1631.977 ; gain = 786.371 ; free physical = 2941 ; free virtual = 8569
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:48 ; elapsed = 00:01:49 . Memory (MB): peak = 1684.289 ; gain = 838.676 ; free physical = 1945 ; free virtual = 7919
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1755,25 +1888,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:03 ; elapsed = 00:01:06 . Memory (MB): peak = 1631.977 ; gain = 786.371 ; free physical = 2949 ; free virtual = 8577
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:49 ; elapsed = 00:01:50 . Memory (MB): peak = 1684.289 ; gain = 838.676 ; free physical = 1948 ; free virtual = 7922
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:03 ; elapsed = 00:01:06 . Memory (MB): peak = 1631.977 ; gain = 786.371 ; free physical = 2949 ; free virtual = 8577
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:49 ; elapsed = 00:01:50 . Memory (MB): peak = 1684.289 ; gain = 838.676 ; free physical = 1948 ; free virtual = 7922
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:03 ; elapsed = 00:01:06 . Memory (MB): peak = 1631.977 ; gain = 786.371 ; free physical = 2946 ; free virtual = 8575
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:49 ; elapsed = 00:01:50 . Memory (MB): peak = 1684.289 ; gain = 838.676 ; free physical = 1948 ; free virtual = 7922
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:01:03 ; elapsed = 00:01:06 . Memory (MB): peak = 1631.977 ; gain = 786.371 ; free physical = 2945 ; free virtual = 8575
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:49 ; elapsed = 00:01:50 . Memory (MB): peak = 1684.289 ; gain = 838.676 ; free physical = 1948 ; free virtual = 7922
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -1790,103 +1923,106 @@ Report Cell Usage:
 |      |Cell      |Count |
 +------+----------+------+
 |1     |BUFG      |     1|
-|2     |CARRY4    |  1023|
-|3     |DSP48E1_3 |    32|
-|4     |DSP48E1_4 |    16|
-|5     |DSP48E1_5 |    64|
-|6     |DSP48E1_6 |     4|
-|7     |LUT1      |  1408|
-|8     |LUT2      |  5412|
-|9     |LUT3      |  4134|
-|10    |LUT4      |  1848|
-|11    |LUT5      |  1034|
-|12    |LUT6      |   836|
+|2     |CARRY4    |  1183|
+|3     |DSP48E1_4 |    64|
+|4     |DSP48E1_5 |    32|
+|5     |DSP48E1_6 |    16|
+|6     |DSP48E1_7 |     4|
+|7     |LUT1      |  1376|
+|8     |LUT2      |  5892|
+|9     |LUT3      |  3967|
+|10    |LUT4      |  2316|
+|11    |LUT5      |  1197|
+|12    |LUT6      |   712|
 |13    |MUXF7     |    36|
 |14    |MUXF8     |    18|
-|15    |RAMB36E1  |    32|
-|16    |FDRE      | 11622|
-|17    |FDSE      |    13|
-|18    |IBUF      |    40|
-|19    |OBUF      |    20|
+|15    |RAM32M    |   384|
+|16    |FDRE      | 13954|
+|17    |FDSE      |    45|
+|18    |LDC       |   368|
+|19    |IBUF      |    40|
+|20    |OBUF      |    20|
 +------+----------+------+
 
 Report Instance Areas: 
 +------+----------------------------+----------------------------+------+
 |      |Instance                    |Module                      |Cells |
 +------+----------------------------+----------------------------+------+
-|1     |top                         |                            | 27593|
-|2     |  LSTM_LAYER                |network                     | 27301|
-|3     |    GATE_F                  |gate                        |  5281|
-|4     |      DOTPROD_X             |dot_prod_40                 |  2198|
-|5     |      DOTPROD_Y             |dot_prod__parameterized0_41 |  2212|
+|1     |top                         |                            | 31625|
+|2     |  LSTM_LAYER                |network                     | 31333|
+|3     |    GATE_F                  |gate                        |  5278|
+|4     |      DOTPROD_X             |dot_prod_40                 |  2197|
+|5     |      DOTPROD_Y             |dot_prod__parameterized0_41 |  2210|
 |6     |    GATE_I                  |gate_0                      |  4992|
 |7     |      DOTPROD_X             |dot_prod_38                 |  2198|
 |8     |      DOTPROD_Y             |dot_prod__parameterized0_39 |  2212|
 |9     |    GATE_O                  |gate_1                      |  4993|
 |10    |      DOTPROD_X             |dot_prod_36                 |  2198|
 |11    |      DOTPROD_Y             |dot_prod__parameterized0_37 |  2212|
-|12    |    GATE_Z                  |gate_2                      |  5424|
-|13    |      DOTPROD_X             |dot_prod                    |  2216|
-|14    |      DOTPROD_Y             |dot_prod__parameterized0    |  2338|
-|15    |    WRAM_F_X                |weightRAM                   |   148|
-|16    |    WRAM_F_Y                |weightRAM__parameterized2   |   148|
-|17    |    WRAM_I_X                |weightRAM_3                 |   148|
-|18    |    WRAM_I_Y                |weightRAM__parameterized1   |   148|
-|19    |    WRAM_O_X                |weightRAM_4                 |   148|
-|20    |    WRAM_O_Y                |weightRAM__parameterized3   |   148|
-|21    |    WRAM_Z_X                |weightRAM_5                 |   148|
-|22    |    WRAM_Z_Y                |weightRAM__parameterized0   |   148|
-|23    |    \genblk1[0].sigmoid_i   |sigmoid                     |    97|
-|24    |    \genblk1[10].sigmoid_i  |sigmoid_6                   |    97|
-|25    |    \genblk1[11].sigmoid_i  |sigmoid_7                   |    97|
-|26    |    \genblk1[12].sigmoid_i  |sigmoid_8                   |    97|
-|27    |    \genblk1[13].sigmoid_i  |sigmoid_9                   |    97|
-|28    |    \genblk1[14].sigmoid_i  |sigmoid_10                  |    97|
-|29    |    \genblk1[15].sigmoid_i  |sigmoid_11                  |    96|
-|30    |    \genblk1[1].sigmoid_i   |sigmoid_12                  |    97|
-|31    |    \genblk1[2].sigmoid_i   |sigmoid_13                  |    97|
-|32    |    \genblk1[3].sigmoid_i   |sigmoid_14                  |    97|
-|33    |    \genblk1[4].sigmoid_i   |sigmoid_15                  |    97|
-|34    |    \genblk1[5].sigmoid_i   |sigmoid_16                  |    97|
-|35    |    \genblk1[6].sigmoid_i   |sigmoid_17                  |    97|
-|36    |    \genblk1[7].sigmoid_i   |sigmoid_18                  |    97|
-|37    |    \genblk1[8].sigmoid_i   |sigmoid_19                  |    97|
-|38    |    \genblk1[9].sigmoid_i   |sigmoid_20                  |    97|
-|39    |    \genblk2[0].tanh_i      |tanh                        |   147|
-|40    |    \genblk2[10].tanh_i     |tanh_21                     |   146|
-|41    |    \genblk2[11].tanh_i     |tanh_22                     |   146|
-|42    |    \genblk2[12].tanh_i     |tanh_23                     |   146|
-|43    |    \genblk2[13].tanh_i     |tanh_24                     |   146|
-|44    |    \genblk2[14].tanh_i     |tanh_25                     |   146|
-|45    |    \genblk2[15].tanh_i     |tanh_26                     |   147|
-|46    |    \genblk2[1].tanh_i      |tanh_27                     |   146|
-|47    |    \genblk2[2].tanh_i      |tanh_28                     |   146|
-|48    |    \genblk2[3].tanh_i      |tanh_29                     |   146|
-|49    |    \genblk2[4].tanh_i      |tanh_30                     |   146|
-|50    |    \genblk2[5].tanh_i      |tanh_31                     |   146|
-|51    |    \genblk2[6].tanh_i      |tanh_32                     |   146|
-|52    |    \genblk2[7].tanh_i      |tanh_33                     |   146|
-|53    |    \genblk2[8].tanh_i      |tanh_34                     |   147|
-|54    |    \genblk2[9].tanh_i      |tanh_35                     |   146|
+|12    |    GATE_Z                  |gate_2                      |  5412|
+|13    |      DOTPROD_X             |dot_prod                    |  2198|
+|14    |      DOTPROD_Y             |dot_prod__parameterized0    |  2344|
+|15    |    WRAM_F_X                |weightRAM                   |   480|
+|16    |    WRAM_F_Y                |weightRAM__parameterized2   |   480|
+|17    |    WRAM_I_X                |weightRAM_3                 |   480|
+|18    |    WRAM_I_Y                |weightRAM__parameterized1   |   480|
+|19    |    WRAM_O_X                |weightRAM_4                 |   480|
+|20    |    WRAM_O_Y                |weightRAM__parameterized3   |   480|
+|21    |    WRAM_Z_X                |weightRAM_5                 |   480|
+|22    |    WRAM_Z_Y                |weightRAM__parameterized0   |   480|
+|23    |    \genblk1[0].sigmoid_i   |sigmoid                     |   135|
+|24    |    \genblk1[10].sigmoid_i  |sigmoid_6                   |   130|
+|25    |    \genblk1[11].sigmoid_i  |sigmoid_7                   |   130|
+|26    |    \genblk1[12].sigmoid_i  |sigmoid_8                   |   130|
+|27    |    \genblk1[13].sigmoid_i  |sigmoid_9                   |   130|
+|28    |    \genblk1[14].sigmoid_i  |sigmoid_10                  |   130|
+|29    |    \genblk1[15].sigmoid_i  |sigmoid_11                  |   130|
+|30    |    \genblk1[1].sigmoid_i   |sigmoid_12                  |   135|
+|31    |    \genblk1[2].sigmoid_i   |sigmoid_13                  |   135|
+|32    |    \genblk1[3].sigmoid_i   |sigmoid_14                  |   135|
+|33    |    \genblk1[4].sigmoid_i   |sigmoid_15                  |   135|
+|34    |    \genblk1[5].sigmoid_i   |sigmoid_16                  |   135|
+|35    |    \genblk1[6].sigmoid_i   |sigmoid_17                  |   135|
+|36    |    \genblk1[7].sigmoid_i   |sigmoid_18                  |   135|
+|37    |    \genblk1[8].sigmoid_i   |sigmoid_19                  |   130|
+|38    |    \genblk1[9].sigmoid_i   |sigmoid_20                  |   130|
+|39    |    \genblk2[0].tanh_i      |tanh                        |   199|
+|40    |    \genblk2[10].tanh_i     |tanh_21                     |   199|
+|41    |    \genblk2[11].tanh_i     |tanh_22                     |   199|
+|42    |    \genblk2[12].tanh_i     |tanh_23                     |   199|
+|43    |    \genblk2[13].tanh_i     |tanh_24                     |   199|
+|44    |    \genblk2[14].tanh_i     |tanh_25                     |   199|
+|45    |    \genblk2[15].tanh_i     |tanh_26                     |   200|
+|46    |    \genblk2[1].tanh_i      |tanh_27                     |   199|
+|47    |    \genblk2[2].tanh_i      |tanh_28                     |   199|
+|48    |    \genblk2[3].tanh_i      |tanh_29                     |   199|
+|49    |    \genblk2[4].tanh_i      |tanh_30                     |   199|
+|50    |    \genblk2[5].tanh_i      |tanh_31                     |   199|
+|51    |    \genblk2[6].tanh_i      |tanh_32                     |   199|
+|52    |    \genblk2[7].tanh_i      |tanh_33                     |   199|
+|53    |    \genblk2[8].tanh_i      |tanh_34                     |   199|
+|54    |    \genblk2[9].tanh_i      |tanh_35                     |   199|
 |55    |  PERCEPTRON                |array_prod                  |   230|
 +------+----------------------------+----------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:03 ; elapsed = 00:01:06 . Memory (MB): peak = 1631.977 ; gain = 786.371 ; free physical = 2945 ; free virtual = 8575
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:49 ; elapsed = 00:01:50 . Memory (MB): peak = 1684.289 ; gain = 838.676 ; free physical = 1948 ; free virtual = 7922
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 4 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:55 ; elapsed = 00:00:56 . Memory (MB): peak = 1631.977 ; gain = 229.863 ; free physical = 2935 ; free virtual = 8564
-Synthesis Optimization Complete : Time (s): cpu = 00:01:03 ; elapsed = 00:01:06 . Memory (MB): peak = 1631.977 ; gain = 786.371 ; free physical = 2941 ; free virtual = 8570
+Synthesis finished with 0 errors, 0 critical warnings and 1058 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:41 ; elapsed = 00:01:42 . Memory (MB): peak = 1684.289 ; gain = 278.168 ; free physical = 1948 ; free virtual = 7921
+Synthesis Optimization Complete : Time (s): cpu = 00:01:50 ; elapsed = 00:01:50 . Memory (MB): peak = 1684.289 ; gain = 838.676 ; free physical = 1948 ; free virtual = 7921
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 1211 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 2091 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
 INFO: [Project 1-111] Unisim Transformation Summary:
-No Unisim elements were transformed.
+  A total of 752 instances were transformed.
+  LDC => LDCE: 368 instances
+  RAM32M => RAM32M (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 384 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-95 Infos, 211 Warnings, 0 Critical Warnings and 0 Errors encountered.
+205 Infos, 329 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:07 ; elapsed = 00:01:10 . Memory (MB): peak = 1663.992 ; gain = 747.051 ; free physical = 2913 ; free virtual = 8545
-report_utilization: Time (s): cpu = 00:00:00.14 ; elapsed = 00:00:00.16 . Memory (MB): peak = 1696.012 ; gain = 0.000 ; free physical = 2930 ; free virtual = 8566
-INFO: [Common 17-206] Exiting Vivado at Wed Jun 22 00:07:41 2016...
+synth_design: Time (s): cpu = 00:01:54 ; elapsed = 00:01:54 . Memory (MB): peak = 1716.305 ; gain = 799.355 ; free physical = 1943 ; free virtual = 7915
+report_utilization: Time (s): cpu = 00:00:00.25 ; elapsed = 00:00:00.27 . Memory (MB): peak = 1748.324 ; gain = 0.000 ; free physical = 1924 ; free virtual = 7899
+INFO: [Common 17-206] Exiting Vivado at Thu Jun 23 01:19:52 2016...

@@ -1,8 +1,8 @@
 Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2015.4 (lin64) Build 1412921 Wed Nov 18 09:44:32 MST 2015
-| Date         : Mon Apr  4 12:14:59 2016
-| Host         : vlsilab7.fe.up.pt running 64-bit CentOS release 6.4 (Final)
+| Date         : Wed Jun 22 16:24:24 2016
+| Host         : desktop4480 running 64-bit Ubuntu 14.04.4 LTS
 | Command      : report_drc
 ------------------------------------------------------------------------------------
 
@@ -20,7 +20,7 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max violations: <unlimited>
-             Violations found: 7
+             Violations found: 6
 
 2. REPORT DETAILS
 -----------------
@@ -35,11 +35,6 @@ Unconstrained Logical Port
 Related violations: <none>
 
 DPIP-1#1 Warning
-Input pipelining  
-DSP outputInt input outputInt/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
-Related violations: <none>
-
-DPIP-1#2 Warning
 Input pipelining  
 DSP outputInt input outputInt/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>

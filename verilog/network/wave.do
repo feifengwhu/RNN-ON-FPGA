@@ -22,10 +22,11 @@ add wave -noupdate /tb_network/LSTM_LAYER/prev_C
 add wave -noupdate /tb_network/LSTM_LAYER/prevLayerOut
 add wave -noupdate /tb_network/LSTM_LAYER/elemWise_op1
 add wave -noupdate /tb_network/LSTM_LAYER/elemWise_op2
-add wave -noupdate /tb_network/LSTM_LAYER/elemWise_mult1
 add wave -noupdate /tb_network/LSTM_LAYER/elemWise_mult2
-add wave -noupdate /tb_network/LSTM_LAYER/elemWiseMult_out
+add wave -noupdate /tb_network/LSTM_LAYER/elemWise_mult2_FF
 add wave -noupdate /tb_network/LSTM_LAYER/tanh_result
+add wave -noupdate /tb_network/LSTM_LAYER/elemWise_mult1
+add wave -noupdate /tb_network/LSTM_LAYER/elemWiseMult_out
 add wave -noupdate /tb_network/LSTM_LAYER/gate_Z
 add wave -noupdate /tb_network/LSTM_LAYER/gate_I
 add wave -noupdate /tb_network/LSTM_LAYER/gate_F
@@ -36,7 +37,7 @@ add wave -noupdate /tb_network/LSTM_LAYER/z_ready
 add wave -noupdate /tb_network/LSTM_LAYER/f_ready
 add wave -noupdate /tb_network/LSTM_LAYER/y_ready
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {8000 ps} 0}
+WaveRestoreCursors {{Cursor 1} {2179711922 ps} 0}
 quietly wave cursor active 1
 configure wave -namecolwidth 450
 configure wave -valuecolwidth 100
@@ -52,4 +53,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits ns
 update
-WaveRestoreZoom {0 ps} {94560 ps}
+WaveRestoreZoom {2556090084 ps} {2556137364 ps}

@@ -1,0 +1,417 @@
+Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+----------------------------------------------------------------------------------------------
+| Tool Version      : Vivado v.2015.4 (lin64) Build 1412921 Wed Nov 18 09:44:32 MST 2015
+| Date              : Thu Jun 23 01:22:16 2016
+| Host              : desktop4480 running 64-bit Ubuntu 14.04.4 LTS
+| Command           : report_clock_utilization -file top_network_clock_utilization_routed.rpt
+| Design            : top_network
+| Device            : 7z020-clg484
+| Speed File        : -1  PRODUCTION 1.11 2014-09-11
+| Temperature Grade : C
+----------------------------------------------------------------------------------------------
+
+Clock Utilization Report
+
+Table of Contents
+-----------------
+1. Clock Primitive Utilization
+2. Details of Global Clocks
+3. Details of Regional Clocks
+4. Details of Multi-Regional Clocks
+5. Details of I/O Clocks
+6. Details of Local Clocks
+7. Clock Regions : Key Resource Utilization
+8. Net wise resources used in clock region X0Y0
+9. Net wise resources used in clock region X1Y0
+10. Net wise resources used in clock region X0Y1
+11. Net wise resources used in clock region X1Y1
+
+1. Clock Primitive Utilization
+------------------------------
+
++-------+------+-----------+-----------+
+| Type  | Used | Available | Num Fixed |
++-------+------+-----------+-----------+
+| BUFG  |    1 |        32 |         0 |
+| BUFH  |    0 |        72 |         0 |
+| BUFIO |    0 |        16 |         0 |
+| MMCM  |    0 |         4 |         0 |
+| PLL   |    0 |         4 |         0 |
+| BUFR  |    0 |        16 |         0 |
+| BUFMR |    0 |         8 |         0 |
++-------+------+-----------+-----------+
+
+
+2. Details of Global Clocks
+---------------------------
+
++-------+----------------------+-----------------+---------------+-------+
+|       |                      |                 |   Num Loads   |       |
++-------+----------------------+-----------------+-------+-------+-------+
+| Index | BUFG Cell            | Net Name        |  BELs | Sites | Fixed |
++-------+----------------------+-----------------+-------+-------+-------+
+|     1 | clock_IBUF_BUFG_inst | clock_IBUF_BUFG | 17187 |  4740 |    no |
++-------+----------------------+-----------------+-------+-------+-------+
+
+
+3. Details of Regional Clocks
+-----------------------------
+
+4. Details of Multi-Regional Clocks
+-----------------------------------
+
+5. Details of I/O Clocks
+------------------------
+
+6. Details of Local Clocks
+--------------------------
+
++-------+-----------------------------------------------------+------------------------------------------------------+--------------+-------+
+|       |                                                     |                                                      |   Num Loads  |       |
++-------+-----------------------------------------------------+------------------------------------------------------+------+-------+-------+
+| Index | Local Clk Src                                       | Net Name                                             | BELs | Sites | Fixed |
++-------+-----------------------------------------------------+------------------------------------------------------+------+-------+-------+
+|     1 | LSTM_LAYER/genblk1[0].sigmoid_i/p0_reg[11]_i_2__6   | LSTM_LAYER/genblk1[0].sigmoid_i/interval_mux_active  |    9 |     3 |    no |
+|     2 | LSTM_LAYER/genblk1[10].sigmoid_i/p0_reg[11]_i_2__9  | LSTM_LAYER/genblk1[10].sigmoid_i/interval_mux_active |    9 |     4 |    no |
+|     3 | LSTM_LAYER/genblk1[11].sigmoid_i/p0_reg[11]_i_2__10 | LSTM_LAYER/genblk1[11].sigmoid_i/interval_mux_active |    9 |     3 |    no |
+|     4 | LSTM_LAYER/genblk1[12].sigmoid_i/p0_reg[11]_i_2__11 | LSTM_LAYER/genblk1[12].sigmoid_i/interval_mux_active |    9 |     3 |    no |
+|     5 | LSTM_LAYER/genblk1[13].sigmoid_i/p0_reg[11]_i_2__12 | LSTM_LAYER/genblk1[13].sigmoid_i/interval_mux_active |    9 |     3 |    no |
+|     6 | LSTM_LAYER/genblk1[14].sigmoid_i/p0_reg[11]_i_2__13 | LSTM_LAYER/genblk1[14].sigmoid_i/interval_mux_active |    9 |     3 |    no |
+|     7 | LSTM_LAYER/genblk1[15].sigmoid_i/p0_reg[11]_i_2__14 | LSTM_LAYER/genblk1[15].sigmoid_i/interval_mux_active |    9 |     3 |    no |
+|     8 | LSTM_LAYER/genblk1[1].sigmoid_i/p0_reg[11]_i_2__5   | LSTM_LAYER/genblk1[1].sigmoid_i/interval_mux_active  |    9 |     5 |    no |
+|     9 | LSTM_LAYER/genblk1[2].sigmoid_i/p0_reg[11]_i_2__4   | LSTM_LAYER/genblk1[2].sigmoid_i/interval_mux_active  |    9 |     4 |    no |
+|    10 | LSTM_LAYER/genblk1[3].sigmoid_i/p0_reg[11]_i_2__3   | LSTM_LAYER/genblk1[3].sigmoid_i/interval_mux_active  |    9 |     3 |    no |
+|    11 | LSTM_LAYER/genblk1[4].sigmoid_i/p0_reg[11]_i_2__2   | LSTM_LAYER/genblk1[4].sigmoid_i/interval_mux_active  |    9 |     3 |    no |
+|    12 | LSTM_LAYER/genblk1[5].sigmoid_i/p0_reg[11]_i_2__1   | LSTM_LAYER/genblk1[5].sigmoid_i/interval_mux_active  |    9 |     3 |    no |
+|    13 | LSTM_LAYER/genblk1[6].sigmoid_i/p0_reg[11]_i_2__0   | LSTM_LAYER/genblk1[6].sigmoid_i/interval_mux_active  |    9 |     4 |    no |
+|    14 | LSTM_LAYER/genblk1[7].sigmoid_i/p0_reg[11]_i_2      | LSTM_LAYER/genblk1[7].sigmoid_i/interval_mux_active  |    9 |     3 |    no |
+|    15 | LSTM_LAYER/genblk1[8].sigmoid_i/p0_reg[11]_i_2__7   | LSTM_LAYER/genblk1[8].sigmoid_i/interval_mux_active  |    9 |     3 |    no |
+|    16 | LSTM_LAYER/genblk1[9].sigmoid_i/p0_reg[11]_i_2__8   | LSTM_LAYER/genblk1[9].sigmoid_i/interval_mux_active  |    9 |     3 |    no |
+|    17 | LSTM_LAYER/genblk2[0].tanh_i/p0_reg[17]_i_2         | LSTM_LAYER/genblk2[0].tanh_i/interval_mux_active     |   14 |     7 |    no |
+|    18 | LSTM_LAYER/genblk2[10].tanh_i/p0_reg[17]_i_2__9     | LSTM_LAYER/genblk2[10].tanh_i/interval_mux_active    |   14 |     4 |    no |
+|    19 | LSTM_LAYER/genblk2[11].tanh_i/p0_reg[17]_i_2__10    | LSTM_LAYER/genblk2[11].tanh_i/interval_mux_active    |   14 |     5 |    no |
+|    20 | LSTM_LAYER/genblk2[12].tanh_i/p0_reg[17]_i_2__11    | LSTM_LAYER/genblk2[12].tanh_i/interval_mux_active    |   14 |     4 |    no |
+|    21 | LSTM_LAYER/genblk2[13].tanh_i/p0_reg[17]_i_2__12    | LSTM_LAYER/genblk2[13].tanh_i/interval_mux_active    |   14 |     6 |    no |
+|    22 | LSTM_LAYER/genblk2[14].tanh_i/p0_reg[17]_i_2__13    | LSTM_LAYER/genblk2[14].tanh_i/interval_mux_active    |   14 |     5 |    no |
+|    23 | LSTM_LAYER/genblk2[15].tanh_i/p0_reg[17]_i_2__14    | LSTM_LAYER/genblk2[15].tanh_i/interval_mux_active    |   14 |     7 |    no |
+|    24 | LSTM_LAYER/genblk2[1].tanh_i/p0_reg[17]_i_2__0      | LSTM_LAYER/genblk2[1].tanh_i/interval_mux_active     |   14 |     4 |    no |
+|    25 | LSTM_LAYER/genblk2[2].tanh_i/p0_reg[17]_i_2__1      | LSTM_LAYER/genblk2[2].tanh_i/interval_mux_active     |   14 |     5 |    no |
+|    26 | LSTM_LAYER/genblk2[3].tanh_i/p0_reg[17]_i_2__2      | LSTM_LAYER/genblk2[3].tanh_i/interval_mux_active     |   14 |     6 |    no |
+|    27 | LSTM_LAYER/genblk2[4].tanh_i/p0_reg[17]_i_2__3      | LSTM_LAYER/genblk2[4].tanh_i/interval_mux_active     |   14 |     5 |    no |
+|    28 | LSTM_LAYER/genblk2[5].tanh_i/p0_reg[17]_i_2__4      | LSTM_LAYER/genblk2[5].tanh_i/interval_mux_active     |   14 |     5 |    no |
+|    29 | LSTM_LAYER/genblk2[6].tanh_i/p0_reg[17]_i_2__5      | LSTM_LAYER/genblk2[6].tanh_i/interval_mux_active     |   14 |     4 |    no |
+|    30 | LSTM_LAYER/genblk2[7].tanh_i/p0_reg[17]_i_2__6      | LSTM_LAYER/genblk2[7].tanh_i/interval_mux_active     |   14 |     4 |    no |
+|    31 | LSTM_LAYER/genblk2[8].tanh_i/p0_reg[17]_i_2__7      | LSTM_LAYER/genblk2[8].tanh_i/interval_mux_active     |   14 |     5 |    no |
+|    32 | LSTM_LAYER/genblk2[9].tanh_i/p0_reg[17]_i_2__8      | LSTM_LAYER/genblk2[9].tanh_i/interval_mux_active     |   14 |     6 |    no |
++-------+-----------------------------------------------------+------------------------------------------------------+------+-------+-------+
+
+
+7. Clock Regions : Key Resource Utilization
+-------------------------------------------
+
++-------------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+
+|                   | Global Clock |     BUFRs    |    BUFMRs    |    BUFIOs    |     MMCM     |      PLL     |      GT      |      PCI     |    ILOGIC    |    OLOGIC    |      FF      |     LUTM     |    RAMB18    |    RAMB36    |    DSP48E1   |
++-------------------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+
+| Clock Region Name | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail |
++-------------------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+
+| X0Y0              |    1 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 | 3714 | 20000 |  672 |  4000 |    0 |    60 |    0 |    30 |   42 |    60 |
+| X1Y0              |    1 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 | 5838 | 25600 | 1136 |  3400 |    0 |    60 |    0 |    30 |   39 |    40 |
+| X0Y1              |    1 |    12 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |  981 |  9600 |  240 |  1600 |    0 |    20 |    0 |    10 |    7 |    20 |
+| X1Y1              |    1 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 | 3834 | 20800 | 1024 |  3400 |    0 |    60 |    0 |    30 |   28 |    40 |
+| X0Y2              |    0 |    12 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |  9600 |    0 |  1600 |    0 |    20 |    0 |    10 |    0 |    20 |
+| X1Y2              |    0 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |    0 | 20800 |    0 |  3400 |    0 |    60 |    0 |    30 |    0 |    40 |
++-------------------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+
+* RAMB36 site can be used as two RAMB18/FIFO18 sites.
+
+
+8. Net wise resources used in clock region X0Y0
+-----------------------------------------------
+
++-------------+-------------+-------+-----------+----------+---------+-----------+---------+---------+------+-------+----------+-----------------+
+| Source Type | BUFHCE Site | Fixed | MMCM Pins | PLL Pins | GT Pins | BRAM Pins | ILOGICs | OLOGICs |  FFs | LUTMs | DSP48E1s |  Clock Net Name |
++-------------+-------------+-------+-----------+----------+---------+-----------+---------+---------+------+-------+----------+-----------------+
+| BUFG        | BUFHCE_X0Y8 |   no  |         0 |        0 |       0 |         0 |       0 |       0 | 3557 |   672 |       42 | clock_IBUF_BUFG |
++-------------+-------------+-------+-----------+----------+---------+-----------+---------+---------+------+-------+----------+-----------------+
+
+
+9. Net wise resources used in clock region X1Y0
+-----------------------------------------------
+
++-------------+-------------+-------+-----------+----------+---------+-----------+---------+---------+------+-------+----------+-----------------+
+| Source Type | BUFHCE Site | Fixed | MMCM Pins | PLL Pins | GT Pins | BRAM Pins | ILOGICs | OLOGICs |  FFs | LUTMs | DSP48E1s |  Clock Net Name |
++-------------+-------------+-------+-----------+----------+---------+-----------+---------+---------+------+-------+----------+-----------------+
+| BUFG        | BUFHCE_X1Y8 |   no  |         0 |        0 |       0 |         0 |       0 |       0 | 5663 |  1136 |       39 | clock_IBUF_BUFG |
++-------------+-------------+-------+-----------+----------+---------+-----------+---------+---------+------+-------+----------+-----------------+
+
+
+10. Net wise resources used in clock region X0Y1
+------------------------------------------------
+
++-------------+--------------+-------+-----------+----------+---------+-----------+---------+---------+-----+-------+----------+-----------------+
+| Source Type | BUFHCE Site  | Fixed | MMCM Pins | PLL Pins | GT Pins | BRAM Pins | ILOGICs | OLOGICs | FFs | LUTMs | DSP48E1s |  Clock Net Name |
++-------------+--------------+-------+-----------+----------+---------+-----------+---------+---------+-----+-------+----------+-----------------+
+| BUFG        | BUFHCE_X0Y20 |   no  |         0 |        0 |       0 |         0 |       0 |       0 | 981 |   240 |        7 | clock_IBUF_BUFG |
++-------------+--------------+-------+-----------+----------+---------+-----------+---------+---------+-----+-------+----------+-----------------+
+
+
+11. Net wise resources used in clock region X1Y1
+------------------------------------------------
+
++-------------+--------------+-------+-----------+----------+---------+-----------+---------+---------+------+-------+----------+-----------------+
+| Source Type | BUFHCE Site  | Fixed | MMCM Pins | PLL Pins | GT Pins | BRAM Pins | ILOGICs | OLOGICs |  FFs | LUTMs | DSP48E1s |  Clock Net Name |
++-------------+--------------+-------+-----------+----------+---------+-----------+---------+---------+------+-------+----------+-----------------+
+| BUFG        | BUFHCE_X1Y20 |   no  |         0 |        0 |       0 |         0 |       0 |       0 | 3798 |  1024 |       28 | clock_IBUF_BUFG |
++-------------+--------------+-------+-----------+----------+---------+-----------+---------+---------+------+-------+----------+-----------------+
+
+
+
+# Location of BUFG Primitives 
+set_property LOC BUFGCTRL_X0Y0 [get_cells clock_IBUF_BUFG_inst]
+
+# Location of IO Clock Primitives
+
+# Location of MMCM Clock Primitives
+
+# Location of BUFH Clock Primitives
+
+# Location of BUFR Clock Primitives
+
+# Location of BUFMR Clock Primitives
+
+# Location of PLL Clock Primitives
+
+# Location of IO Primitives which is load of clock spine
+
+# Location of clock ports
+set_property LOC IOB_X0Y28 [get_ports clock]
+
+# Clock net "LSTM_LAYER/genblk1[0].sigmoid_i/interval_mux_active" driven by instance "LSTM_LAYER/genblk1[0].sigmoid_i/p0_reg[11]_i_2__6" located at site "SLICE_X91Y18"
+#startgroup
+create_pblock {CLKAG_LSTM_LAYER/genblk1[0].sigmoid_i/interval_mux_active}
+add_cells_to_pblock [get_pblocks  {CLKAG_LSTM_LAYER/genblk1[0].sigmoid_i/interval_mux_active}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="LSTM_LAYER/genblk1[0].sigmoid_i/interval_mux_active"}]]]
+resize_pblock [get_pblocks {CLKAG_LSTM_LAYER/genblk1[0].sigmoid_i/interval_mux_active}] -add {CLOCKREGION_X1Y0:CLOCKREGION_X1Y0}
+#endgroup
+
+# Clock net "LSTM_LAYER/genblk1[10].sigmoid_i/interval_mux_active" driven by instance "LSTM_LAYER/genblk1[10].sigmoid_i/p0_reg[11]_i_2__9" located at site "SLICE_X22Y41"
+#startgroup
+create_pblock {CLKAG_LSTM_LAYER/genblk1[10].sigmoid_i/interval_mux_active}
+add_cells_to_pblock [get_pblocks  {CLKAG_LSTM_LAYER/genblk1[10].sigmoid_i/interval_mux_active}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="LSTM_LAYER/genblk1[10].sigmoid_i/interval_mux_active"}]]]
+resize_pblock [get_pblocks {CLKAG_LSTM_LAYER/genblk1[10].sigmoid_i/interval_mux_active}] -add {CLOCKREGION_X0Y0:CLOCKREGION_X0Y0}
+#endgroup
+
+# Clock net "LSTM_LAYER/genblk1[11].sigmoid_i/interval_mux_active" driven by instance "LSTM_LAYER/genblk1[11].sigmoid_i/p0_reg[11]_i_2__10" located at site "SLICE_X76Y48"
+#startgroup
+create_pblock {CLKAG_LSTM_LAYER/genblk1[11].sigmoid_i/interval_mux_active}
+add_cells_to_pblock [get_pblocks  {CLKAG_LSTM_LAYER/genblk1[11].sigmoid_i/interval_mux_active}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="LSTM_LAYER/genblk1[11].sigmoid_i/interval_mux_active"}]]]
+resize_pblock [get_pblocks {CLKAG_LSTM_LAYER/genblk1[11].sigmoid_i/interval_mux_active}] -add {CLOCKREGION_X1Y0:CLOCKREGION_X1Y0}
+#endgroup
+
+# Clock net "LSTM_LAYER/genblk1[12].sigmoid_i/interval_mux_active" driven by instance "LSTM_LAYER/genblk1[12].sigmoid_i/p0_reg[11]_i_2__11" located at site "SLICE_X22Y38"
+#startgroup
+create_pblock {CLKAG_LSTM_LAYER/genblk1[12].sigmoid_i/interval_mux_active}
+add_cells_to_pblock [get_pblocks  {CLKAG_LSTM_LAYER/genblk1[12].sigmoid_i/interval_mux_active}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="LSTM_LAYER/genblk1[12].sigmoid_i/interval_mux_active"}]]]
+resize_pblock [get_pblocks {CLKAG_LSTM_LAYER/genblk1[12].sigmoid_i/interval_mux_active}] -add {CLOCKREGION_X0Y0:CLOCKREGION_X0Y0}
+#endgroup
+
+# Clock net "LSTM_LAYER/genblk1[13].sigmoid_i/interval_mux_active" driven by instance "LSTM_LAYER/genblk1[13].sigmoid_i/p0_reg[11]_i_2__12" located at site "SLICE_X24Y36"
+#startgroup
+create_pblock {CLKAG_LSTM_LAYER/genblk1[13].sigmoid_i/interval_mux_active}
+add_cells_to_pblock [get_pblocks  {CLKAG_LSTM_LAYER/genblk1[13].sigmoid_i/interval_mux_active}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="LSTM_LAYER/genblk1[13].sigmoid_i/interval_mux_active"}]]]
+resize_pblock [get_pblocks {CLKAG_LSTM_LAYER/genblk1[13].sigmoid_i/interval_mux_active}] -add {CLOCKREGION_X0Y0:CLOCKREGION_X0Y0}
+#endgroup
+
+# Clock net "LSTM_LAYER/genblk1[14].sigmoid_i/interval_mux_active" driven by instance "LSTM_LAYER/genblk1[14].sigmoid_i/p0_reg[11]_i_2__13" located at site "SLICE_X67Y68"
+#startgroup
+create_pblock {CLKAG_LSTM_LAYER/genblk1[14].sigmoid_i/interval_mux_active}
+add_cells_to_pblock [get_pblocks  {CLKAG_LSTM_LAYER/genblk1[14].sigmoid_i/interval_mux_active}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="LSTM_LAYER/genblk1[14].sigmoid_i/interval_mux_active"}]]]
+resize_pblock [get_pblocks {CLKAG_LSTM_LAYER/genblk1[14].sigmoid_i/interval_mux_active}] -add {CLOCKREGION_X1Y1:CLOCKREGION_X1Y1}
+#endgroup
+
+# Clock net "LSTM_LAYER/genblk1[15].sigmoid_i/interval_mux_active" driven by instance "LSTM_LAYER/genblk1[15].sigmoid_i/p0_reg[11]_i_2__14" located at site "SLICE_X80Y68"
+#startgroup
+create_pblock {CLKAG_LSTM_LAYER/genblk1[15].sigmoid_i/interval_mux_active}
+add_cells_to_pblock [get_pblocks  {CLKAG_LSTM_LAYER/genblk1[15].sigmoid_i/interval_mux_active}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="LSTM_LAYER/genblk1[15].sigmoid_i/interval_mux_active"}]]]
+resize_pblock [get_pblocks {CLKAG_LSTM_LAYER/genblk1[15].sigmoid_i/interval_mux_active}] -add {CLOCKREGION_X1Y1:CLOCKREGION_X1Y1}
+#endgroup
+
+# Clock net "LSTM_LAYER/genblk1[1].sigmoid_i/interval_mux_active" driven by instance "LSTM_LAYER/genblk1[1].sigmoid_i/p0_reg[11]_i_2__5" located at site "SLICE_X93Y7"
+#startgroup
+create_pblock {CLKAG_LSTM_LAYER/genblk1[1].sigmoid_i/interval_mux_active}
+add_cells_to_pblock [get_pblocks  {CLKAG_LSTM_LAYER/genblk1[1].sigmoid_i/interval_mux_active}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="LSTM_LAYER/genblk1[1].sigmoid_i/interval_mux_active"}]]]
+resize_pblock [get_pblocks {CLKAG_LSTM_LAYER/genblk1[1].sigmoid_i/interval_mux_active}] -add {CLOCKREGION_X1Y0:CLOCKREGION_X1Y0}
+#endgroup
+
+# Clock net "LSTM_LAYER/genblk1[2].sigmoid_i/interval_mux_active" driven by instance "LSTM_LAYER/genblk1[2].sigmoid_i/p0_reg[11]_i_2__4" located at site "SLICE_X96Y52"
+#startgroup
+create_pblock {CLKAG_LSTM_LAYER/genblk1[2].sigmoid_i/interval_mux_active}
+add_cells_to_pblock [get_pblocks  {CLKAG_LSTM_LAYER/genblk1[2].sigmoid_i/interval_mux_active}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="LSTM_LAYER/genblk1[2].sigmoid_i/interval_mux_active"}]]]
+resize_pblock [get_pblocks {CLKAG_LSTM_LAYER/genblk1[2].sigmoid_i/interval_mux_active}] -add {CLOCKREGION_X1Y1:CLOCKREGION_X1Y1}
+#endgroup
+
+# Clock net "LSTM_LAYER/genblk1[3].sigmoid_i/interval_mux_active" driven by instance "LSTM_LAYER/genblk1[3].sigmoid_i/p0_reg[11]_i_2__3" located at site "SLICE_X89Y54"
+#startgroup
+create_pblock {CLKAG_LSTM_LAYER/genblk1[3].sigmoid_i/interval_mux_active}
+add_cells_to_pblock [get_pblocks  {CLKAG_LSTM_LAYER/genblk1[3].sigmoid_i/interval_mux_active}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="LSTM_LAYER/genblk1[3].sigmoid_i/interval_mux_active"}]]]
+resize_pblock [get_pblocks {CLKAG_LSTM_LAYER/genblk1[3].sigmoid_i/interval_mux_active}] -add {CLOCKREGION_X1Y1:CLOCKREGION_X1Y1}
+#endgroup
+
+# Clock net "LSTM_LAYER/genblk1[4].sigmoid_i/interval_mux_active" driven by instance "LSTM_LAYER/genblk1[4].sigmoid_i/p0_reg[11]_i_2__2" located at site "SLICE_X54Y23"
+#startgroup
+create_pblock {CLKAG_LSTM_LAYER/genblk1[4].sigmoid_i/interval_mux_active}
+add_cells_to_pblock [get_pblocks  {CLKAG_LSTM_LAYER/genblk1[4].sigmoid_i/interval_mux_active}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="LSTM_LAYER/genblk1[4].sigmoid_i/interval_mux_active"}]]]
+resize_pblock [get_pblocks {CLKAG_LSTM_LAYER/genblk1[4].sigmoid_i/interval_mux_active}] -add {CLOCKREGION_X1Y0:CLOCKREGION_X1Y0}
+#endgroup
+
+# Clock net "LSTM_LAYER/genblk1[5].sigmoid_i/interval_mux_active" driven by instance "LSTM_LAYER/genblk1[5].sigmoid_i/p0_reg[11]_i_2__1" located at site "SLICE_X96Y13"
+#startgroup
+create_pblock {CLKAG_LSTM_LAYER/genblk1[5].sigmoid_i/interval_mux_active}
+add_cells_to_pblock [get_pblocks  {CLKAG_LSTM_LAYER/genblk1[5].sigmoid_i/interval_mux_active}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="LSTM_LAYER/genblk1[5].sigmoid_i/interval_mux_active"}]]]
+resize_pblock [get_pblocks {CLKAG_LSTM_LAYER/genblk1[5].sigmoid_i/interval_mux_active}] -add {CLOCKREGION_X1Y0:CLOCKREGION_X1Y0}
+#endgroup
+
+# Clock net "LSTM_LAYER/genblk1[6].sigmoid_i/interval_mux_active" driven by instance "LSTM_LAYER/genblk1[6].sigmoid_i/p0_reg[11]_i_2__0" located at site "SLICE_X63Y37"
+#startgroup
+create_pblock {CLKAG_LSTM_LAYER/genblk1[6].sigmoid_i/interval_mux_active}
+add_cells_to_pblock [get_pblocks  {CLKAG_LSTM_LAYER/genblk1[6].sigmoid_i/interval_mux_active}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="LSTM_LAYER/genblk1[6].sigmoid_i/interval_mux_active"}]]]
+resize_pblock [get_pblocks {CLKAG_LSTM_LAYER/genblk1[6].sigmoid_i/interval_mux_active}] -add {CLOCKREGION_X1Y0:CLOCKREGION_X1Y0}
+#endgroup
+
+# Clock net "LSTM_LAYER/genblk1[7].sigmoid_i/interval_mux_active" driven by instance "LSTM_LAYER/genblk1[7].sigmoid_i/p0_reg[11]_i_2" located at site "SLICE_X75Y39"
+#startgroup
+create_pblock {CLKAG_LSTM_LAYER/genblk1[7].sigmoid_i/interval_mux_active}
+add_cells_to_pblock [get_pblocks  {CLKAG_LSTM_LAYER/genblk1[7].sigmoid_i/interval_mux_active}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="LSTM_LAYER/genblk1[7].sigmoid_i/interval_mux_active"}]]]
+resize_pblock [get_pblocks {CLKAG_LSTM_LAYER/genblk1[7].sigmoid_i/interval_mux_active}] -add {CLOCKREGION_X1Y0:CLOCKREGION_X1Y0}
+#endgroup
+
+# Clock net "LSTM_LAYER/genblk1[8].sigmoid_i/interval_mux_active" driven by instance "LSTM_LAYER/genblk1[8].sigmoid_i/p0_reg[11]_i_2__7" located at site "SLICE_X32Y38"
+#startgroup
+create_pblock {CLKAG_LSTM_LAYER/genblk1[8].sigmoid_i/interval_mux_active}
+add_cells_to_pblock [get_pblocks  {CLKAG_LSTM_LAYER/genblk1[8].sigmoid_i/interval_mux_active}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="LSTM_LAYER/genblk1[8].sigmoid_i/interval_mux_active"}]]]
+resize_pblock [get_pblocks {CLKAG_LSTM_LAYER/genblk1[8].sigmoid_i/interval_mux_active}] -add {CLOCKREGION_X0Y0:CLOCKREGION_X0Y0}
+#endgroup
+
+# Clock net "LSTM_LAYER/genblk1[9].sigmoid_i/interval_mux_active" driven by instance "LSTM_LAYER/genblk1[9].sigmoid_i/p0_reg[11]_i_2__8" located at site "SLICE_X23Y37"
+#startgroup
+create_pblock {CLKAG_LSTM_LAYER/genblk1[9].sigmoid_i/interval_mux_active}
+add_cells_to_pblock [get_pblocks  {CLKAG_LSTM_LAYER/genblk1[9].sigmoid_i/interval_mux_active}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="LSTM_LAYER/genblk1[9].sigmoid_i/interval_mux_active"}]]]
+resize_pblock [get_pblocks {CLKAG_LSTM_LAYER/genblk1[9].sigmoid_i/interval_mux_active}] -add {CLOCKREGION_X0Y0:CLOCKREGION_X0Y0}
+#endgroup
+
+# Clock net "LSTM_LAYER/genblk2[0].tanh_i/interval_mux_active" driven by instance "LSTM_LAYER/genblk2[0].tanh_i/p0_reg[17]_i_2" located at site "SLICE_X99Y5"
+#startgroup
+create_pblock {CLKAG_LSTM_LAYER/genblk2[0].tanh_i/interval_mux_active}
+add_cells_to_pblock [get_pblocks  {CLKAG_LSTM_LAYER/genblk2[0].tanh_i/interval_mux_active}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="LSTM_LAYER/genblk2[0].tanh_i/interval_mux_active"}]]]
+resize_pblock [get_pblocks {CLKAG_LSTM_LAYER/genblk2[0].tanh_i/interval_mux_active}] -add {CLOCKREGION_X1Y0:CLOCKREGION_X1Y0}
+#endgroup
+
+# Clock net "LSTM_LAYER/genblk2[10].tanh_i/interval_mux_active" driven by instance "LSTM_LAYER/genblk2[10].tanh_i/p0_reg[17]_i_2__9" located at site "SLICE_X25Y34"
+#startgroup
+create_pblock {CLKAG_LSTM_LAYER/genblk2[10].tanh_i/interval_mux_active}
+add_cells_to_pblock [get_pblocks  {CLKAG_LSTM_LAYER/genblk2[10].tanh_i/interval_mux_active}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="LSTM_LAYER/genblk2[10].tanh_i/interval_mux_active"}]]]
+resize_pblock [get_pblocks {CLKAG_LSTM_LAYER/genblk2[10].tanh_i/interval_mux_active}] -add {CLOCKREGION_X0Y0:CLOCKREGION_X0Y0}
+#endgroup
+
+# Clock net "LSTM_LAYER/genblk2[11].tanh_i/interval_mux_active" driven by instance "LSTM_LAYER/genblk2[11].tanh_i/p0_reg[17]_i_2__10" located at site "SLICE_X38Y31"
+#startgroup
+create_pblock {CLKAG_LSTM_LAYER/genblk2[11].tanh_i/interval_mux_active}
+add_cells_to_pblock [get_pblocks  {CLKAG_LSTM_LAYER/genblk2[11].tanh_i/interval_mux_active}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="LSTM_LAYER/genblk2[11].tanh_i/interval_mux_active"}]]]
+resize_pblock [get_pblocks {CLKAG_LSTM_LAYER/genblk2[11].tanh_i/interval_mux_active}] -add {CLOCKREGION_X0Y0:CLOCKREGION_X0Y0}
+#endgroup
+
+# Clock net "LSTM_LAYER/genblk2[12].tanh_i/interval_mux_active" driven by instance "LSTM_LAYER/genblk2[12].tanh_i/p0_reg[17]_i_2__11" located at site "SLICE_X16Y27"
+#startgroup
+create_pblock {CLKAG_LSTM_LAYER/genblk2[12].tanh_i/interval_mux_active}
+add_cells_to_pblock [get_pblocks  {CLKAG_LSTM_LAYER/genblk2[12].tanh_i/interval_mux_active}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="LSTM_LAYER/genblk2[12].tanh_i/interval_mux_active"}]]]
+resize_pblock [get_pblocks {CLKAG_LSTM_LAYER/genblk2[12].tanh_i/interval_mux_active}] -add {CLOCKREGION_X0Y0:CLOCKREGION_X0Y0}
+#endgroup
+
+# Clock net "LSTM_LAYER/genblk2[13].tanh_i/interval_mux_active" driven by instance "LSTM_LAYER/genblk2[13].tanh_i/p0_reg[17]_i_2__12" located at site "SLICE_X31Y29"
+#startgroup
+create_pblock {CLKAG_LSTM_LAYER/genblk2[13].tanh_i/interval_mux_active}
+add_cells_to_pblock [get_pblocks  {CLKAG_LSTM_LAYER/genblk2[13].tanh_i/interval_mux_active}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="LSTM_LAYER/genblk2[13].tanh_i/interval_mux_active"}]]]
+resize_pblock [get_pblocks {CLKAG_LSTM_LAYER/genblk2[13].tanh_i/interval_mux_active}] -add {CLOCKREGION_X0Y0:CLOCKREGION_X0Y0}
+#endgroup
+
+# Clock net "LSTM_LAYER/genblk2[14].tanh_i/interval_mux_active" driven by instance "LSTM_LAYER/genblk2[14].tanh_i/p0_reg[17]_i_2__13" located at site "SLICE_X83Y34"
+#startgroup
+create_pblock {CLKAG_LSTM_LAYER/genblk2[14].tanh_i/interval_mux_active}
+add_cells_to_pblock [get_pblocks  {CLKAG_LSTM_LAYER/genblk2[14].tanh_i/interval_mux_active}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="LSTM_LAYER/genblk2[14].tanh_i/interval_mux_active"}]]]
+resize_pblock [get_pblocks {CLKAG_LSTM_LAYER/genblk2[14].tanh_i/interval_mux_active}] -add {CLOCKREGION_X1Y0:CLOCKREGION_X1Y0}
+#endgroup
+
+# Clock net "LSTM_LAYER/genblk2[15].tanh_i/interval_mux_active" driven by instance "LSTM_LAYER/genblk2[15].tanh_i/p0_reg[17]_i_2__14" located at site "SLICE_X81Y44"
+#startgroup
+create_pblock {CLKAG_LSTM_LAYER/genblk2[15].tanh_i/interval_mux_active}
+add_cells_to_pblock [get_pblocks  {CLKAG_LSTM_LAYER/genblk2[15].tanh_i/interval_mux_active}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="LSTM_LAYER/genblk2[15].tanh_i/interval_mux_active"}]]]
+resize_pblock [get_pblocks {CLKAG_LSTM_LAYER/genblk2[15].tanh_i/interval_mux_active}] -add {CLOCKREGION_X1Y0:CLOCKREGION_X1Y0}
+#endgroup
+
+# Clock net "LSTM_LAYER/genblk2[1].tanh_i/interval_mux_active" driven by instance "LSTM_LAYER/genblk2[1].tanh_i/p0_reg[17]_i_2__0" located at site "SLICE_X97Y1"
+#startgroup
+create_pblock {CLKAG_LSTM_LAYER/genblk2[1].tanh_i/interval_mux_active}
+add_cells_to_pblock [get_pblocks  {CLKAG_LSTM_LAYER/genblk2[1].tanh_i/interval_mux_active}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="LSTM_LAYER/genblk2[1].tanh_i/interval_mux_active"}]]]
+resize_pblock [get_pblocks {CLKAG_LSTM_LAYER/genblk2[1].tanh_i/interval_mux_active}] -add {CLOCKREGION_X1Y0:CLOCKREGION_X1Y0}
+#endgroup
+
+# Clock net "LSTM_LAYER/genblk2[2].tanh_i/interval_mux_active" driven by instance "LSTM_LAYER/genblk2[2].tanh_i/p0_reg[17]_i_2__1" located at site "SLICE_X54Y28"
+#startgroup
+create_pblock {CLKAG_LSTM_LAYER/genblk2[2].tanh_i/interval_mux_active}
+add_cells_to_pblock [get_pblocks  {CLKAG_LSTM_LAYER/genblk2[2].tanh_i/interval_mux_active}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="LSTM_LAYER/genblk2[2].tanh_i/interval_mux_active"}]]]
+resize_pblock [get_pblocks {CLKAG_LSTM_LAYER/genblk2[2].tanh_i/interval_mux_active}] -add {CLOCKREGION_X1Y0:CLOCKREGION_X1Y0}
+#endgroup
+
+# Clock net "LSTM_LAYER/genblk2[3].tanh_i/interval_mux_active" driven by instance "LSTM_LAYER/genblk2[3].tanh_i/p0_reg[17]_i_2__2" located at site "SLICE_X73Y40"
+#startgroup
+create_pblock {CLKAG_LSTM_LAYER/genblk2[3].tanh_i/interval_mux_active}
+add_cells_to_pblock [get_pblocks  {CLKAG_LSTM_LAYER/genblk2[3].tanh_i/interval_mux_active}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="LSTM_LAYER/genblk2[3].tanh_i/interval_mux_active"}]]]
+resize_pblock [get_pblocks {CLKAG_LSTM_LAYER/genblk2[3].tanh_i/interval_mux_active}] -add {CLOCKREGION_X1Y0:CLOCKREGION_X1Y0}
+#endgroup
+
+# Clock net "LSTM_LAYER/genblk2[4].tanh_i/interval_mux_active" driven by instance "LSTM_LAYER/genblk2[4].tanh_i/p0_reg[17]_i_2__3" located at site "SLICE_X64Y14"
+#startgroup
+create_pblock {CLKAG_LSTM_LAYER/genblk2[4].tanh_i/interval_mux_active}
+add_cells_to_pblock [get_pblocks  {CLKAG_LSTM_LAYER/genblk2[4].tanh_i/interval_mux_active}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="LSTM_LAYER/genblk2[4].tanh_i/interval_mux_active"}]]]
+resize_pblock [get_pblocks {CLKAG_LSTM_LAYER/genblk2[4].tanh_i/interval_mux_active}] -add {CLOCKREGION_X1Y0:CLOCKREGION_X1Y0}
+#endgroup
+
+# Clock net "LSTM_LAYER/genblk2[5].tanh_i/interval_mux_active" driven by instance "LSTM_LAYER/genblk2[5].tanh_i/p0_reg[17]_i_2__4" located at site "SLICE_X86Y11"
+#startgroup
+create_pblock {CLKAG_LSTM_LAYER/genblk2[5].tanh_i/interval_mux_active}
+add_cells_to_pblock [get_pblocks  {CLKAG_LSTM_LAYER/genblk2[5].tanh_i/interval_mux_active}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="LSTM_LAYER/genblk2[5].tanh_i/interval_mux_active"}]]]
+resize_pblock [get_pblocks {CLKAG_LSTM_LAYER/genblk2[5].tanh_i/interval_mux_active}] -add {CLOCKREGION_X1Y0:CLOCKREGION_X1Y0}
+#endgroup
+
+# Clock net "LSTM_LAYER/genblk2[6].tanh_i/interval_mux_active" driven by instance "LSTM_LAYER/genblk2[6].tanh_i/p0_reg[17]_i_2__5" located at site "SLICE_X42Y22"
+#startgroup
+create_pblock {CLKAG_LSTM_LAYER/genblk2[6].tanh_i/interval_mux_active}
+add_cells_to_pblock [get_pblocks  {CLKAG_LSTM_LAYER/genblk2[6].tanh_i/interval_mux_active}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="LSTM_LAYER/genblk2[6].tanh_i/interval_mux_active"}]]]
+resize_pblock [get_pblocks {CLKAG_LSTM_LAYER/genblk2[6].tanh_i/interval_mux_active}] -add {CLOCKREGION_X0Y0:CLOCKREGION_X0Y0}
+#endgroup
+
+# Clock net "LSTM_LAYER/genblk2[7].tanh_i/interval_mux_active" driven by instance "LSTM_LAYER/genblk2[7].tanh_i/p0_reg[17]_i_2__6" located at site "SLICE_X53Y26"
+#startgroup
+create_pblock {CLKAG_LSTM_LAYER/genblk2[7].tanh_i/interval_mux_active}
+add_cells_to_pblock [get_pblocks  {CLKAG_LSTM_LAYER/genblk2[7].tanh_i/interval_mux_active}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="LSTM_LAYER/genblk2[7].tanh_i/interval_mux_active"}]]]
+resize_pblock [get_pblocks {CLKAG_LSTM_LAYER/genblk2[7].tanh_i/interval_mux_active}] -add {CLOCKREGION_X0Y0:CLOCKREGION_X0Y0}
+#endgroup
+
+# Clock net "LSTM_LAYER/genblk2[8].tanh_i/interval_mux_active" driven by instance "LSTM_LAYER/genblk2[8].tanh_i/p0_reg[17]_i_2__7" located at site "SLICE_X36Y27"
+#startgroup
+create_pblock {CLKAG_LSTM_LAYER/genblk2[8].tanh_i/interval_mux_active}
+add_cells_to_pblock [get_pblocks  {CLKAG_LSTM_LAYER/genblk2[8].tanh_i/interval_mux_active}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="LSTM_LAYER/genblk2[8].tanh_i/interval_mux_active"}]]]
+resize_pblock [get_pblocks {CLKAG_LSTM_LAYER/genblk2[8].tanh_i/interval_mux_active}] -add {CLOCKREGION_X0Y0:CLOCKREGION_X0Y0}
+#endgroup
+
+# Clock net "LSTM_LAYER/genblk2[9].tanh_i/interval_mux_active" driven by instance "LSTM_LAYER/genblk2[9].tanh_i/p0_reg[17]_i_2__8" located at site "SLICE_X12Y27"
+#startgroup
+create_pblock {CLKAG_LSTM_LAYER/genblk2[9].tanh_i/interval_mux_active}
+add_cells_to_pblock [get_pblocks  {CLKAG_LSTM_LAYER/genblk2[9].tanh_i/interval_mux_active}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="LSTM_LAYER/genblk2[9].tanh_i/interval_mux_active"}]]]
+resize_pblock [get_pblocks {CLKAG_LSTM_LAYER/genblk2[9].tanh_i/interval_mux_active}] -add {CLOCKREGION_X0Y0:CLOCKREGION_X0Y0}
+#endgroup
+
+# Clock net "clock_IBUF_BUFG" driven by instance "clock_IBUF_BUFG_inst" located at site "BUFGCTRL_X0Y0"
+#startgroup
+create_pblock {CLKAG_clock_IBUF_BUFG}
+add_cells_to_pblock [get_pblocks  {CLKAG_clock_IBUF_BUFG}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="clock_IBUF_BUFG"}]]]
+resize_pblock [get_pblocks {CLKAG_clock_IBUF_BUFG}] -add {CLOCKREGION_X0Y0:CLOCKREGION_X0Y0 CLOCKREGION_X0Y1:CLOCKREGION_X0Y1 CLOCKREGION_X1Y0:CLOCKREGION_X1Y0 CLOCKREGION_X1Y1:CLOCKREGION_X1Y1}
+#endgroup
