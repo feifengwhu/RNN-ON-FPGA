@@ -9,31 +9,31 @@ z2
 cModel Technology
 Z0 d/home/jfonseca/thesis/verilog/sigmoid
 T_opt
-!s110 1466622135
-VB0E;;47cJYK:0@cT?WN2N3
+!s110 1466698437
+VP6=g<VF[0jgX_4cQPH2Tb2
 Z1 04 10 4 work tb_sigmoid fast 0
-=1-d43d7e359f7e-576ae0b7-aec36-4318
-o-quiet -auto_acc_if_foreign -work work
+=1-d48564c0c748-576c0ac5-61260-47f8
+Z2 o-quiet -auto_acc_if_foreign -work work +acc
 n@_opt
-Z2 OL;O;10.4c_5;61
-R0
+Z3 OL;O;10.4c_5;61
 T_opt1
 !s110 1466635801
 V44R<egD[o?O9IVVKSZzgR2
 R1
 =1-d43d7e359f7e-576b1619-cd19b-7e77
-Z3 o-quiet -auto_acc_if_foreign -work work +acc
-n@_opt1
 R2
+n@_opt1
+R3
 R0
 T_opt2
 !s110 1466636972
 Vf7SafM>L;VSh4NiZUWMT53
 R1
 =1-d43d7e359f7e-576b1aac-5c2f9-1404
-R3
-n@_opt2
 R2
+n@_opt2
+R3
+R0
 vsigmoid
 Z4 !s110 1466636969
 !i10b 1
