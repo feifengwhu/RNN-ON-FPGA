@@ -1,9 +1,13 @@
 \select@language {english}
+\contentsline {chapter}{Resumo}{i}{chapter*.1}
+\contentsline {chapter}{Abstract}{iii}{chapter*.2}
+\contentsline {chapter}{Acknowledgements}{v}{chapter*.3}
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}Background}{1}{section.1.1}
-\contentsline {section}{\numberline {1.2}Motivation}{2}{section.1.2}
+\contentsline {section}{\numberline {1.2}Motivation}{1}{section.1.2}
 \contentsline {section}{\numberline {1.3}Objectives}{2}{section.1.3}
-\contentsline {section}{\numberline {1.4}People Involved}{3}{section.1.4}
+\contentsline {section}{\numberline {1.4}People Involved}{2}{section.1.4}
+\contentsline {section}{\numberline {1.5}Overview of the Document}{3}{section.1.5}
 \contentsline {chapter}{\numberline {2}Problem Characterization}{5}{chapter.2}
 \contentsline {section}{\numberline {2.1}Theoretical Background}{5}{section.2.1}
 \contentsline {subsection}{\numberline {2.1.1}Basic Concepts of Machine Learning}{5}{subsection.2.1.1}
@@ -12,30 +16,43 @@
 \contentsline {subsection}{\numberline {2.1.4}Long Short-Term Memory Networks}{11}{subsection.2.1.4}
 \contentsline {subsubsection}{\numberline {2.1.4.1}Structure, Operation and Equations}{12}{subsubsection.2.1.4.1}
 \contentsline {subsubsection}{\numberline {2.1.4.2}Training -- SPSA}{13}{subsubsection.2.1.4.2}
-\contentsline {section}{\numberline {2.2}Proposed Solution}{15}{section.2.2}
-\contentsline {chapter}{\numberline {3}State of the Art}{17}{chapter.3}
-\contentsline {section}{\numberline {3.1}LSTM Applications (non-FPGA related)}{17}{section.3.1}
-\contentsline {section}{\numberline {3.2}Hardware Implementations of LSTM}{18}{section.3.2}
-\contentsline {section}{\numberline {3.3}Training Algorithms and Implementation}{19}{section.3.3}
-\contentsline {section}{\numberline {3.4}Final Overview}{20}{section.3.4}
-\contentsline {chapter}{\numberline {4}Proposed Architecture}{21}{chapter.4}
-\contentsline {section}{\numberline {4.1}Constituent Modules}{21}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}Finite-precision representation system}{21}{subsection.4.1.1}
-\contentsline {subsubsection}{\numberline {4.1.1.1}Precision bitwidth}{21}{subsubsection.4.1.1.1}
-\contentsline {subsubsection}{\numberline {4.1.1.2}Conversion between real and fixed-point}{22}{subsubsection.4.1.1.2}
-\contentsline {subsubsection}{\numberline {4.1.1.3}Fixed-point arithmetic rules}{22}{subsubsection.4.1.1.3}
-\contentsline {subsection}{\numberline {4.1.2}Non-linearity Calculator}{23}{subsection.4.1.2}
-\contentsline {subsubsection}{\numberline {4.1.2.1}Theoretical considerations on the approximation method}{23}{subsubsection.4.1.2.1}
-\contentsline {subsubsection}{\numberline {4.1.2.2}Hardware Implementation}{26}{subsubsection.4.1.2.2}
-\contentsline {subsection}{\numberline {4.1.3}Matrix-vector Dot Product Unit}{27}{subsection.4.1.3}
-\contentsline {subsection}{\numberline {4.1.4}Dual-port Block RAM}{31}{subsection.4.1.4}
-\contentsline {subsection}{\numberline {4.1.5}Gate Module}{31}{subsection.4.1.5}
-\contentsline {section}{\numberline {4.2}Hardware LSTM Network -- Forward Propagation}{32}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}Network Structure}{32}{subsection.4.2.1}
-\contentsline {subsubsection}{\numberline {4.2.1.1}Fully Parallel}{32}{subsubsection.4.2.1.1}
-\contentsline {subsubsection}{\numberline {4.2.1.2}Shared Elementwise Multiplication Block}{33}{subsubsection.4.2.1.2}
-\contentsline {subsection}{\numberline {4.2.2}Timing Diagrams of Operation}{35}{subsection.4.2.2}
-\contentsline {section}{\numberline {4.3}Hardware LSTM Network -- SPSA Training}{35}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}Timing Diagrams of Operation}{35}{subsection.4.3.1}
-\contentsline {chapter}{\numberline {5}Work Plan}{37}{chapter.5}
-\contentsline {chapter}{References}{39}{section*.16}
+\contentsline {chapter}{\numberline {3}State of the Art}{15}{chapter.3}
+\contentsline {section}{\numberline {3.1}LSTM Applications (non-FPGA related)}{15}{section.3.1}
+\contentsline {section}{\numberline {3.2}Hardware Implementations of LSTM}{16}{section.3.2}
+\contentsline {section}{\numberline {3.3}Training Algorithms and Implementation}{17}{section.3.3}
+\contentsline {section}{\numberline {3.4}Final Overview}{18}{section.3.4}
+\contentsline {chapter}{\numberline {4}Proposed Architecture}{19}{chapter.4}
+\contentsline {section}{\numberline {4.1}Constituent Modules}{19}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Finite-precision representation system}{19}{subsection.4.1.1}
+\contentsline {subsubsection}{\numberline {4.1.1.1}Precision bitwidth}{19}{subsubsection.4.1.1.1}
+\contentsline {subsubsection}{\numberline {4.1.1.2}Conversion between real and fixed-point}{20}{subsubsection.4.1.1.2}
+\contentsline {subsubsection}{\numberline {4.1.1.3}Fixed-point arithmetic rules}{20}{subsubsection.4.1.1.3}
+\contentsline {subsection}{\numberline {4.1.2}Non-linearity Calculator}{21}{subsection.4.1.2}
+\contentsline {subsubsection}{\numberline {4.1.2.1}Theoretical considerations on the approximation method}{21}{subsubsection.4.1.2.1}
+\contentsline {subsubsection}{\numberline {4.1.2.2}Hardware Implementation}{23}{subsubsection.4.1.2.2}
+\contentsline {subsection}{\numberline {4.1.3}Matrix-vector Dot Product Unit}{26}{subsection.4.1.3}
+\contentsline {subsection}{\numberline {4.1.4}Dual-port weight RAM}{27}{subsection.4.1.4}
+\contentsline {subsection}{\numberline {4.1.5}Gate Module}{28}{subsection.4.1.5}
+\contentsline {section}{\numberline {4.2}Hardware LSTM Network -- Forward Propagation}{29}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Network Structure}{29}{subsection.4.2.1}
+\contentsline {subsubsection}{\numberline {4.2.1.1}Fully Parallel}{30}{subsubsection.4.2.1.1}
+\contentsline {subsubsection}{\numberline {4.2.1.2}Shared Elementwise Multiplication Block}{30}{subsubsection.4.2.1.2}
+\contentsline {section}{\numberline {4.3}Hardware LSTM Network -- SPSA Training}{32}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Pseudo-random Number Generator}{33}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Training Algorithm Circuit}{34}{subsection.4.3.2}
+\contentsline {chapter}{\numberline {5}Results}{37}{chapter.5}
+\contentsline {section}{\numberline {5.1}Synthesis}{37}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Maximum Frequency}{37}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}DSP Slices Usage}{38}{subsection.5.1.2}
+\contentsline {subsection}{\numberline {5.1.3}Power Usage}{40}{subsection.5.1.3}
+\contentsline {subsection}{\numberline {5.1.4}Other Resources Usage}{40}{subsection.5.1.4}
+\contentsline {section}{\numberline {5.2}Validation and Comparison}{41}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Reference Python Module}{41}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Methodology}{42}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.3}Performance}{42}{subsection.5.2.3}
+\contentsline {chapter}{\numberline {A}Remez Algorithm Implementation}{45}{appendix.A}
+\contentsline {chapter}{\numberline {B}LSTM Layer Implementation}{47}{appendix.B}
+\contentsline {chapter}{\numberline {C}LSTM Layer Testbench}{51}{appendix.C}
+\contentsline {chapter}{\numberline {D}LSTM Layer Implementation}{55}{appendix.D}
+\contentsline {chapter}{\numberline {E}Transcript from a successful simulation of the Hardware Network}{59}{appendix.E}
+\contentsline {chapter}{References}{61}{section*.30}

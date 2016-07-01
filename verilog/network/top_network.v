@@ -1,11 +1,11 @@
 `timescale 1ns / 1ps
 
 module top_network #(parameter INPUT_SZ=2,
-					  parameter HIDDEN_SZ=16,
+					  parameter HIDDEN_SZ=32,
 					  parameter OUTPUT_SZ=1,
 					  parameter QN=6,
 					  parameter QM=11,
-					  parameter DSP48_PER_ROW_G=2,
+					  parameter DSP48_PER_ROW_G=4,
 					  parameter DSP48_PER_ROW_M=4) 
                      (inputVec, trainingFlag, clock, reset, newSample, dataReady_net, dataReadyP_net, enPerceptron, networkOutput);
     

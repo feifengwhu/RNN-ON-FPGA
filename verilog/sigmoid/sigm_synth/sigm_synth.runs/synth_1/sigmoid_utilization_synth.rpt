@@ -1,7 +1,7 @@
 Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2015.4 (lin64) Build 1412921 Wed Nov 18 09:44:32 MST 2015
-| Date         : Wed Jun 22 23:59:51 2016
+| Date         : Fri Jun 24 17:57:50 2016
 | Host         : desktop4480 running 64-bit Ubuntu 14.04.4 LTS
 | Command      : report_utilization -file sigmoid_utilization_synth.rpt -pb sigmoid_utilization_synth.pb
 | Design       : sigmoid
@@ -30,11 +30,11 @@ Table of Contents
 +-------------------------+------+-------+-----------+-------+
 |        Site Type        | Used | Fixed | Available | Util% |
 +-------------------------+------+-------+-----------+-------+
-| Slice LUTs*             |   78 |     0 |     53200 |  0.15 |
-|   LUT as Logic          |   78 |     0 |     53200 |  0.15 |
+| Slice LUTs*             |   83 |     0 |     53200 |  0.16 |
+|   LUT as Logic          |   83 |     0 |     53200 |  0.16 |
 |   LUT as Memory         |    0 |     0 |     17400 |  0.00 |
-| Slice Registers         |   29 |     0 |    106400 |  0.03 |
-|   Register as Flip Flop |   20 |     0 |    106400 |  0.02 |
+| Slice Registers         |   27 |     0 |    106400 |  0.03 |
+|   Register as Flip Flop |   18 |     0 |    106400 |  0.02 |
 |   Register as Latch     |    9 |     0 |    106400 | <0.01 |
 | F7 Muxes                |    0 |     0 |     26600 |  0.00 |
 | F8 Muxes                |    0 |     0 |     13300 |  0.00 |
@@ -57,7 +57,7 @@ Table of Contents
 | 0     |          Yes |           - |          Set |
 | 9     |          Yes |           - |        Reset |
 | 1     |          Yes |         Set |            - |
-| 19    |          Yes |       Reset |            - |
+| 17    |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -148,16 +148,15 @@ Table of Contents
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
 | LUT2     |   34 |                 LUT |
+| LUT4     |   21 |                 LUT |
 | IBUF     |   20 |                  IO |
-| FDRE     |   19 |        Flop & Latch |
 | OBUF     |   18 |                  IO |
-| LUT6     |   18 |                 LUT |
-| LUT4     |   15 |                 LUT |
+| LUT5     |   17 |                 LUT |
+| FDRE     |   17 |        Flop & Latch |
 | CARRY4   |   14 |          CarryLogic |
-| LUT3     |   11 |                 LUT |
+| LUT6     |   12 |                 LUT |
 | LUT1     |    9 |                 LUT |
 | LDCE     |    9 |        Flop & Latch |
-| LUT5     |    7 |                 LUT |
 | FDSE     |    1 |        Flop & Latch |
 | DSP48E1  |    1 |    Block Arithmetic |
 | BUFG     |    1 |               Clock |

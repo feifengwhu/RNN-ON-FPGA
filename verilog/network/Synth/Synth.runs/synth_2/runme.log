@@ -27,6 +27,15 @@ WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with for
 WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v:50]
 WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v:51]
 WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v:52]
+WARNING: [Synth 8-2507] parameter declaration becomes local in weightRAM with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/weightRAM.v:13]
+WARNING: [Synth 8-2507] parameter declaration becomes local in weightRAM with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/weightRAM.v:14]
+WARNING: [Synth 8-2507] parameter declaration becomes local in tanh with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/tanh.v:8]
+WARNING: [Synth 8-2507] parameter declaration becomes local in tanh with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/tanh.v:38]
+WARNING: [Synth 8-2507] parameter declaration becomes local in tanh with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/tanh.v:39]
+WARNING: [Synth 8-2507] parameter declaration becomes local in tanh with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/tanh.v:40]
+WARNING: [Synth 8-2507] parameter declaration becomes local in tanh with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/tanh.v:41]
+WARNING: [Synth 8-2507] parameter declaration becomes local in tanh with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/tanh.v:42]
+WARNING: [Synth 8-2507] parameter declaration becomes local in tanh with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/tanh.v:43]
 WARNING: [Synth 8-2507] parameter declaration becomes local in sigmoid with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/sigmoid.v:8]
 WARNING: [Synth 8-2507] parameter declaration becomes local in sigmoid with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/sigmoid.v:38]
 WARNING: [Synth 8-2507] parameter declaration becomes local in sigmoid with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/sigmoid.v:39]
@@ -34,8 +43,6 @@ WARNING: [Synth 8-2507] parameter declaration becomes local in sigmoid with form
 WARNING: [Synth 8-2507] parameter declaration becomes local in sigmoid with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/sigmoid.v:41]
 WARNING: [Synth 8-2507] parameter declaration becomes local in sigmoid with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/sigmoid.v:42]
 WARNING: [Synth 8-2507] parameter declaration becomes local in sigmoid with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/sigmoid.v:43]
-WARNING: [Synth 8-2507] parameter declaration becomes local in weightRAM with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/weightRAM.v:13]
-WARNING: [Synth 8-2507] parameter declaration becomes local in weightRAM with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/weightRAM.v:14]
 WARNING: [Synth 8-2507] parameter declaration becomes local in gate with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/gate.v:20]
 WARNING: [Synth 8-2507] parameter declaration becomes local in gate with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/gate.v:21]
 WARNING: [Synth 8-2507] parameter declaration becomes local in gate with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/gate.v:22]
@@ -45,28 +52,6 @@ WARNING: [Synth 8-2507] parameter declaration becomes local in gate with formal 
 WARNING: [Synth 8-2507] parameter declaration becomes local in gate with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/gate.v:28]
 WARNING: [Synth 8-2507] parameter declaration becomes local in gate with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/gate.v:29]
 WARNING: [Synth 8-2507] parameter declaration becomes local in gate with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/gate.v:30]
-WARNING: [Synth 8-2507] parameter declaration becomes local in tanh with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/tanh.v:8]
-WARNING: [Synth 8-2507] parameter declaration becomes local in tanh with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/tanh.v:38]
-WARNING: [Synth 8-2507] parameter declaration becomes local in tanh with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/tanh.v:39]
-WARNING: [Synth 8-2507] parameter declaration becomes local in tanh with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/tanh.v:40]
-WARNING: [Synth 8-2507] parameter declaration becomes local in tanh with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/tanh.v:41]
-WARNING: [Synth 8-2507] parameter declaration becomes local in tanh with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/tanh.v:42]
-WARNING: [Synth 8-2507] parameter declaration becomes local in tanh with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/tanh.v:43]
-WARNING: [Synth 8-2507] parameter declaration becomes local in array_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/array_prod.v:11]
-WARNING: [Synth 8-2507] parameter declaration becomes local in array_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/array_prod.v:12]
-WARNING: [Synth 8-2507] parameter declaration becomes local in array_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/array_prod.v:13]
-WARNING: [Synth 8-2507] parameter declaration becomes local in array_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/array_prod.v:14]
-WARNING: [Synth 8-2507] parameter declaration becomes local in array_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/array_prod.v:15]
-WARNING: [Synth 8-2507] parameter declaration becomes local in array_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/array_prod.v:16]
-WARNING: [Synth 8-2507] parameter declaration becomes local in array_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/array_prod.v:17]
-WARNING: [Synth 8-2507] parameter declaration becomes local in array_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/array_prod.v:18]
-WARNING: [Synth 8-2507] parameter declaration becomes local in array_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/array_prod.v:19]
-WARNING: [Synth 8-2507] parameter declaration becomes local in array_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/array_prod.v:20]
-WARNING: [Synth 8-2507] parameter declaration becomes local in array_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/array_prod.v:40]
-WARNING: [Synth 8-2507] parameter declaration becomes local in array_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/array_prod.v:41]
-WARNING: [Synth 8-2507] parameter declaration becomes local in array_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/array_prod.v:42]
-WARNING: [Synth 8-2507] parameter declaration becomes local in array_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/array_prod.v:43]
-WARNING: [Synth 8-2507] parameter declaration becomes local in array_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/array_prod.v:44]
 WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:17]
 WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:18]
 WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:19]
@@ -77,10 +62,6 @@ WARNING: [Synth 8-2507] parameter declaration becomes local in network with form
 WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:24]
 WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:25]
 WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:26]
-WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:277]
-WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:278]
-WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:279]
-WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:280]
 WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:281]
 WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:282]
 WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:283]
@@ -96,6 +77,35 @@ WARNING: [Synth 8-2507] parameter declaration becomes local in network with form
 WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:293]
 WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:294]
 WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:295]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:296]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:297]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:298]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:299]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:300]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:301]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:302]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:303]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:304]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:305]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:306]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:307]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:308]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:309]
+WARNING: [Synth 8-2507] parameter declaration becomes local in array_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/array_prod.v:11]
+WARNING: [Synth 8-2507] parameter declaration becomes local in array_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/array_prod.v:12]
+WARNING: [Synth 8-2507] parameter declaration becomes local in array_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/array_prod.v:13]
+WARNING: [Synth 8-2507] parameter declaration becomes local in array_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/array_prod.v:14]
+WARNING: [Synth 8-2507] parameter declaration becomes local in array_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/array_prod.v:15]
+WARNING: [Synth 8-2507] parameter declaration becomes local in array_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/array_prod.v:16]
+WARNING: [Synth 8-2507] parameter declaration becomes local in array_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/array_prod.v:17]
+WARNING: [Synth 8-2507] parameter declaration becomes local in array_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/array_prod.v:18]
+WARNING: [Synth 8-2507] parameter declaration becomes local in array_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/array_prod.v:19]
+WARNING: [Synth 8-2507] parameter declaration becomes local in array_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/array_prod.v:20]
+WARNING: [Synth 8-2507] parameter declaration becomes local in array_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/array_prod.v:40]
+WARNING: [Synth 8-2507] parameter declaration becomes local in array_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/array_prod.v:41]
+WARNING: [Synth 8-2507] parameter declaration becomes local in array_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/array_prod.v:42]
+WARNING: [Synth 8-2507] parameter declaration becomes local in array_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/array_prod.v:43]
+WARNING: [Synth 8-2507] parameter declaration becomes local in array_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/array_prod.v:44]
 WARNING: [Synth 8-2507] parameter declaration becomes local in top_network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/top_network.v:13]
 WARNING: [Synth 8-2507] parameter declaration becomes local in top_network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/top_network.v:14]
 WARNING: [Synth 8-2507] parameter declaration becomes local in top_network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/top_network.v:15]
@@ -103,8 +113,9 @@ WARNING: [Synth 8-2507] parameter declaration becomes local in top_network with 
 WARNING: [Synth 8-2507] parameter declaration becomes local in top_network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/top_network.v:17]
 WARNING: [Synth 8-2507] parameter declaration becomes local in top_network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/top_network.v:18]
 WARNING: [Synth 8-2507] parameter declaration becomes local in top_network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/top_network.v:19]
+INFO: [Common 17-14] Message 'Synth 8-2507' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 1037.539 ; gain = 191.926 ; free physical = 2563 ; free virtual = 8532
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1037.535 ; gain = 191.926 ; free physical = 1460 ; free virtual = 8133
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'top_network' [/home/josefonseca/Documents/thesis/verilog/network/top_network.v:3]
 	Parameter INPUT_SZ bound to: 2 - type: integer 
@@ -145,19 +156,29 @@ INFO: [Synth 8-638] synthesizing module 'network' [/home/josefonseca/Documents/t
 	Parameter NON_LIN_1A_PIPE bound to: 5'b00011 
 	Parameter NON_LIN_1A bound to: 5'b00100 
 	Parameter NON_LIN_2A bound to: 5'b00101 
-	Parameter ELEM_PROD_A_PIPE bound to: 5'b00110 
-	Parameter ELEM_PROD_A bound to: 5'b00111 
-	Parameter NON_LIN_1B_PIPE bound to: 5'b01000 
-	Parameter NON_LIN_1B bound to: 5'b01001 
-	Parameter NON_LIN_2B bound to: 5'b01010 
-	Parameter ELEM_PROD_B_PIPE bound to: 5'b01011 
-	Parameter ELEM_PROD_B bound to: 5'b01100 
-	Parameter NON_LIN_1C_PIPE bound to: 5'b01101 
-	Parameter NON_LIN_1C bound to: 5'b01110 
-	Parameter NON_LIN_2C bound to: 5'b01111 
-	Parameter ELEM_PROD_C_PIPE bound to: 5'b10000 
-	Parameter ELEM_PROD_C bound to: 5'b10001 
-	Parameter END bound to: 5'b10010 
+	Parameter NON_LIN_3A bound to: 5'b00110 
+	Parameter NON_LIN_4A bound to: 5'b00111 
+	Parameter NON_LIN_5A bound to: 5'b01000 
+	Parameter ELEM_PROD_A_PIPE bound to: 5'b01001 
+	Parameter ELEM_PROD_A bound to: 5'b01010 
+	Parameter NON_LIN_1B_PIPE bound to: 5'b01011 
+	Parameter NON_LIN_1B bound to: 5'b01100 
+	Parameter NON_LIN_2B bound to: 5'b01101 
+	Parameter NON_LIN_3B bound to: 5'b01110 
+	Parameter NON_LIN_4B bound to: 5'b01111 
+	Parameter NON_LIN_5B bound to: 5'b10000 
+	Parameter ELEM_PROD_B_PIPE bound to: 5'b10001 
+	Parameter ELEM_PROD_B bound to: 5'b10010 
+	Parameter NON_LIN_1C_PIPE bound to: 5'b10011 
+	Parameter NON_LIN_1C_PIPE2 bound to: 5'b10100 
+	Parameter NON_LIN_1C bound to: 5'b10101 
+	Parameter NON_LIN_2C bound to: 5'b10110 
+	Parameter NON_LIN_3C bound to: 5'b10111 
+	Parameter NON_LIN_4C bound to: 5'b11000 
+	Parameter NON_LIN_5C bound to: 5'b11001 
+	Parameter ELEM_PROD_C_PIPE bound to: 5'b11010 
+	Parameter ELEM_PROD_C bound to: 5'b11011 
+	Parameter END bound to: 5'b11100 
 INFO: [Synth 8-638] synthesizing module 'sigmoid' [/home/josefonseca/Documents/thesis/verilog/network/sigmoid.v:1]
 	Parameter QN bound to: 6 - type: integer 
 	Parameter QM bound to: 11 - type: integer 
@@ -325,7 +346,7 @@ INFO: [Synth 8-256] done synthesizing module 'array_prod' (7#1) [/home/josefonse
 WARNING: [Synth 8-3848] Net Wperceptron in module/entity top_network does not have driver. [/home/josefonseca/Documents/thesis/verilog/network/top_network.v:35]
 INFO: [Synth 8-256] done synthesizing module 'top_network' (8#1) [/home/josefonseca/Documents/thesis/verilog/network/top_network.v:3]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1078.797 ; gain = 233.184 ; free physical = 2507 ; free virtual = 8477
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1078.793 ; gain = 233.184 ; free physical = 1415 ; free virtual = 8089
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -436,7 +457,7 @@ WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[189] to constant 0 [/h
 WARNING: [Synth 8-3295] tying undriven pin GATE_Z:biasVec[188] to constant 0 [/home/josefonseca/Documents/thesis/verilog/network/network.v:128]
 INFO: [Common 17-14] Message 'Synth 8-3295' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1078.797 ; gain = 233.184 ; free physical = 2517 ; free virtual = 8486
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 1078.793 ; gain = 233.184 ; free physical = 1415 ; free virtual = 8089
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7z020clg484-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -450,24 +471,24 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.25 ; elapsed = 00:00:00.07 . Memory (MB): peak = 1517.500 ; gain = 6.000 ; free physical = 2156 ; free virtual = 8128
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.25 ; elapsed = 00:00:00.07 . Memory (MB): peak = 1516.496 ; gain = 5.000 ; free physical = 1109 ; free virtual = 7784
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 27727 
+INFO: Helper process launched with PID 27249 
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1517.500 ; gain = 671.887 ; free physical = 2189 ; free virtual = 8161
+Finished Constraint Validation : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1516.496 ; gain = 670.887 ; free physical = 1120 ; free virtual = 7794
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg484-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1517.500 ; gain = 671.887 ; free physical = 2189 ; free virtual = 8161
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1516.496 ; gain = 670.887 ; free physical = 1120 ; free virtual = 7794
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1517.500 ; gain = 671.887 ; free physical = 2189 ; free virtual = 8161
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1516.496 ; gain = 670.887 ; free physical = 1120 ; free virtual = 7794
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'dot_prod'
 INFO: [Synth 8-5544] ROM "NEXTrowMux" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
@@ -559,7 +580,7 @@ WARNING: [Synth 8-327] inferring latch for variable 'p2_reg' [/home/josefonseca/
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'array_prod'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 1517.500 ; gain = 671.887 ; free physical = 2177 ; free virtual = 8149
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1516.496 ; gain = 670.887 ; free physical = 1128 ; free virtual = 7802
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -572,7 +593,7 @@ Report RTL Partitions:
 |4     |dot_prod__parameterized0__GB1 |           1|      8995|
 |5     |gate__GC0                     |           1|      2306|
 |6     |network__GCB0                 |           1|     27505|
-|7     |network__GCB1                 |           1|      6741|
+|7     |network__GCB1                 |           1|      6775|
 |8     |top_network__GC0              |           1|       916|
 +------+------------------------------+------------+----------+
 ---------------------------------------------------------------------------------
@@ -621,7 +642,7 @@ Detailed RTL Component Info :
 	   6 Input      1 Bit        Muxes := 96    
 	   8 Input      1 Bit        Muxes := 4     
 	   5 Input      1 Bit        Muxes := 8     
-	  20 Input      1 Bit        Muxes := 5     
+	  30 Input      1 Bit        Muxes := 4     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -1122,7 +1143,7 @@ Detailed RTL Component Info :
 	   4 Input    288 Bit        Muxes := 2     
 	   2 Input    288 Bit        Muxes := 1     
 	   2 Input     18 Bit        Muxes := 1     
-	  20 Input      1 Bit        Muxes := 5     
+	  30 Input      1 Bit        Muxes := 4     
 Module array_prod 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -1150,7 +1171,7 @@ BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
 ---------------------------------------------------------------------------------
 Finished Part Resource Summary
 ---------------------------------------------------------------------------------
-Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 1517.500 ; gain = 671.887 ; free physical = 2174 ; free virtual = 8147
+Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 1516.496 ; gain = 670.887 ; free physical = 1128 ; free virtual = 7802
 ---------------------------------------------------------------------------------
 Start Cross Boundary Optimization
 ---------------------------------------------------------------------------------
@@ -1298,9 +1319,9 @@ DSP Report: Generating DSP outputMAC_reg, operation Mode is: (A*B2)'.
 DSP Report: register multiplierMux_reg is absorbed into DSP outputMAC_reg.
 DSP Report: register outputMAC_reg is absorbed into DSP outputMAC_reg.
 DSP Report: operator outputMAC0 is absorbed into DSP outputMAC_reg.
-WARNING: [Synth 8-3936] Found unconnected internal register 'elemWiseMult_out_reg' and it is trimmed from '608' to '599' bits. [/home/josefonseca/Documents/thesis/verilog/network/network.v:265]
-WARNING: [Synth 8-3936] Found unconnected internal register 'elemWise_mult1_reg' and it is trimmed from '288' to '18' bits. [/home/josefonseca/Documents/thesis/verilog/network/network.v:201]
-WARNING: [Synth 8-3936] Found unconnected internal register 'elemWise_mult2_FF_reg' and it is trimmed from '288' to '18' bits. [/home/josefonseca/Documents/thesis/verilog/network/network.v:259]
+WARNING: [Synth 8-3936] Found unconnected internal register 'elemWiseMult_out_reg' and it is trimmed from '608' to '599' bits. [/home/josefonseca/Documents/thesis/verilog/network/network.v:269]
+WARNING: [Synth 8-3936] Found unconnected internal register 'elemWise_mult1_reg' and it is trimmed from '288' to '18' bits. [/home/josefonseca/Documents/thesis/verilog/network/network.v:204]
+WARNING: [Synth 8-3936] Found unconnected internal register 'elemWise_mult2_FF_reg' and it is trimmed from '288' to '18' bits. [/home/josefonseca/Documents/thesis/verilog/network/network.v:263]
 DSP Report: Generating DSP elemWiseMult_out0, operation Mode is: A2*B2.
 DSP Report: register elemWise_mult1_reg is absorbed into DSP elemWiseMult_out0.
 DSP Report: register elemWise_mult2_FF_reg is absorbed into DSP elemWiseMult_out0.
@@ -1407,9 +1428,9 @@ DSP Report: Generating DSP PERCEPTRON/outputMAC0, operation Mode is: A*B.
 DSP Report: operator PERCEPTRON/outputMAC0 is absorbed into DSP PERCEPTRON/outputMAC0.
 WARNING: [Synth 8-3331] design top_network has unconnected port trainingFlag
 ---------------------------------------------------------------------------------
-Finished Cross Boundary Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 1517.500 ; gain = 671.887 ; free physical = 2176 ; free virtual = 8149
+Finished Cross Boundary Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1516.496 ; gain = 670.887 ; free physical = 1130 ; free virtual = 7805
 ---------------------------------------------------------------------------------
-Finished Parallel Reinference  : Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 1517.500 ; gain = 671.887 ; free physical = 2176 ; free virtual = 8149
+Finished Parallel Reinference  : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1516.496 ; gain = 670.887 ; free physical = 1130 ; free virtual = 7805
 
 Report RTL Partitions: 
 +------+------------------------------+------------+----------+
@@ -1421,7 +1442,7 @@ Report RTL Partitions:
 |4     |dot_prod__parameterized0__GB1 |           4|      8995|
 |5     |gate__GC0                     |           4|      2306|
 |6     |network__GCB0                 |           1|     31115|
-|7     |network__GCB1                 |           1|      7285|
+|7     |network__GCB1                 |           1|      7319|
 |8     |top_network__GC0              |           1|      1238|
 +------+------------------------------+------------+----------+
 Optimized 0 bits of RAM "WRAM_Z_Y/RAM_matrix_reg" due to constant propagation. Old ram width 288 bits, new ram width 288 bits
@@ -1438,8 +1459,10 @@ ROM:
 +--------------+------------+---------------+----------------+
 |network       | rom        | 32x2          | LUT            | 
 |network       | rom__1     | 32x1          | LUT            | 
+|network       | rom__2     | 32x1          | LUT            | 
 |network__GCB1 | rom        | 32x2          | LUT            | 
-|network__GCB1 | rom__2     | 32x1          | LUT            | 
+|network__GCB1 | rom__3     | 32x1          | LUT            | 
+|network__GCB1 | rom__4     | 32x1          | LUT            | 
 +--------------+------------+---------------+----------------+
 
 
@@ -1781,9 +1804,9 @@ INFO: [Synth 8-3333] propagating constant 0 across sequential element (LSTM_LAYE
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (LSTM_LAYERi_21/\genblk1[6].sigmoid_i/p1_reg[17] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (LSTM_LAYERi_21/\genblk1[7].sigmoid_i/p1_reg[17] )
 ---------------------------------------------------------------------------------
-Finished Area Optimization : Time (s): cpu = 00:00:33 ; elapsed = 00:00:34 . Memory (MB): peak = 1517.500 ; gain = 671.887 ; free physical = 2136 ; free virtual = 8108
+Finished Area Optimization : Time (s): cpu = 00:00:33 ; elapsed = 00:00:34 . Memory (MB): peak = 1516.496 ; gain = 670.887 ; free physical = 1102 ; free virtual = 7777
 ---------------------------------------------------------------------------------
-Finished Parallel Area Optimization  : Time (s): cpu = 00:00:33 ; elapsed = 00:00:34 . Memory (MB): peak = 1517.500 ; gain = 671.887 ; free physical = 2136 ; free virtual = 8108
+Finished Parallel Area Optimization  : Time (s): cpu = 00:00:33 ; elapsed = 00:00:34 . Memory (MB): peak = 1516.496 ; gain = 670.887 ; free physical = 1102 ; free virtual = 7777
 
 Report RTL Partitions: 
 +------+------------------------------+------------+----------+
@@ -1795,7 +1818,7 @@ Report RTL Partitions:
 |4     |dot_prod__parameterized0__GB1 |           4|       436|
 |5     |gate__GC0                     |           4|      1058|
 |6     |network__GCB0                 |           1|     12855|
-|7     |network__GCB1                 |           1|      1561|
+|7     |network__GCB1                 |           1|      1551|
 |8     |top_network__GC0              |           1|      1086|
 +------+------------------------------+------------+----------+
 ---------------------------------------------------------------------------------
@@ -1805,7 +1828,7 @@ Start Timing Optimization
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:42 ; elapsed = 00:00:43 . Memory (MB): peak = 1517.500 ; gain = 671.887 ; free physical = 2067 ; free virtual = 8039
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:42 ; elapsed = 00:00:43 . Memory (MB): peak = 1519.480 ; gain = 673.871 ; free physical = 1043 ; free virtual = 7718
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5584] The signal LSTM_LAYER/WRAM_O_Y/RAM_matrix_reg is implemented as distributed LUT RAM for the following reason(s): The timing constraints suggest that the chosen mapping will yield better timing results.
 INFO: [Synth 8-5584] The signal LSTM_LAYER/WRAM_O_Y/RAM_matrix_reg is implemented as distributed LUT RAM for the following reason(s): The timing constraints suggest that the chosen mapping will yield better timing results.
@@ -1816,7 +1839,7 @@ INFO: [Synth 8-5584] The signal LSTM_LAYER/WRAM_F_Y/RAM_matrix_reg is implemente
 INFO: [Synth 8-5584] The signal LSTM_LAYER/WRAM_Z_Y/RAM_matrix_reg is implemented as distributed LUT RAM for the following reason(s): The timing constraints suggest that the chosen mapping will yield better timing results.
 INFO: [Synth 8-5584] The signal LSTM_LAYER/WRAM_Z_Y/RAM_matrix_reg is implemented as distributed LUT RAM for the following reason(s): The timing constraints suggest that the chosen mapping will yield better timing results.
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:01:31 ; elapsed = 00:01:32 . Memory (MB): peak = 1612.512 ; gain = 766.898 ; free physical = 1987 ; free virtual = 7961
+Finished Timing Optimization : Time (s): cpu = 00:01:33 ; elapsed = 00:01:34 . Memory (MB): peak = 1615.508 ; gain = 769.898 ; free physical = 908 ; free virtual = 7584
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1828,7 +1851,7 @@ Report RTL Partitions:
 |3     |dot_prod__parameterized0__GB0 |           2|      2964|
 |4     |dot_prod__parameterized0__GB1 |           4|       436|
 |5     |gate__GC0                     |           4|      1058|
-|6     |network__GCB1                 |           1|      1561|
+|6     |network__GCB1                 |           1|      1551|
 |7     |top_network__GC0              |           1|      1086|
 |8     |top_network_GT0               |           1|     27751|
 +------+------------------------------+------------+----------+
@@ -1836,16 +1859,16 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:01:46 ; elapsed = 00:01:47 . Memory (MB): peak = 1684.289 ; gain = 838.676 ; free physical = 1940 ; free virtual = 7913
+Finished Technology Mapping : Time (s): cpu = 00:01:48 ; elapsed = 00:01:49 . Memory (MB): peak = 1682.590 ; gain = 836.980 ; free physical = 845 ; free virtual = 7519
 ---------------------------------------------------------------------------------
-Finished Parallel Technology Mapping Optimization  : Time (s): cpu = 00:01:46 ; elapsed = 00:01:47 . Memory (MB): peak = 1684.289 ; gain = 838.676 ; free physical = 1940 ; free virtual = 7913
+Finished Parallel Technology Mapping Optimization  : Time (s): cpu = 00:01:48 ; elapsed = 00:01:49 . Memory (MB): peak = 1682.590 ; gain = 836.980 ; free physical = 845 ; free virtual = 7519
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
 | |RTL Partition |Replication |Instances |
 +-+--------------+------------+----------+
 +-+--------------+------------+----------+
-Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:01:46 ; elapsed = 00:01:47 . Memory (MB): peak = 1684.289 ; gain = 838.676 ; free physical = 1940 ; free virtual = 7913
+Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:01:48 ; elapsed = 00:01:49 . Memory (MB): peak = 1682.590 ; gain = 836.980 ; free physical = 845 ; free virtual = 7519
 ---------------------------------------------------------------------------------
 Start IO Insertion
 ---------------------------------------------------------------------------------
@@ -1862,7 +1885,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:48 ; elapsed = 00:01:49 . Memory (MB): peak = 1684.289 ; gain = 838.676 ; free physical = 1946 ; free virtual = 7919
+Finished IO Insertion : Time (s): cpu = 00:01:50 ; elapsed = 00:01:51 . Memory (MB): peak = 1682.590 ; gain = 836.980 ; free physical = 844 ; free virtual = 7519
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -1875,7 +1898,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:48 ; elapsed = 00:01:49 . Memory (MB): peak = 1684.289 ; gain = 838.676 ; free physical = 1945 ; free virtual = 7919
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:50 ; elapsed = 00:01:51 . Memory (MB): peak = 1682.590 ; gain = 836.980 ; free physical = 844 ; free virtual = 7519
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1887,25 +1910,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:49 ; elapsed = 00:01:50 . Memory (MB): peak = 1684.289 ; gain = 838.676 ; free physical = 1948 ; free virtual = 7922
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:51 ; elapsed = 00:01:52 . Memory (MB): peak = 1682.590 ; gain = 836.980 ; free physical = 843 ; free virtual = 7518
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:49 ; elapsed = 00:01:50 . Memory (MB): peak = 1684.289 ; gain = 838.676 ; free physical = 1948 ; free virtual = 7922
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:51 ; elapsed = 00:01:52 . Memory (MB): peak = 1682.590 ; gain = 836.980 ; free physical = 844 ; free virtual = 7518
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:49 ; elapsed = 00:01:50 . Memory (MB): peak = 1684.289 ; gain = 838.676 ; free physical = 1948 ; free virtual = 7922
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:51 ; elapsed = 00:01:52 . Memory (MB): peak = 1682.590 ; gain = 836.980 ; free physical = 843 ; free virtual = 7518
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:01:49 ; elapsed = 00:01:50 . Memory (MB): peak = 1684.289 ; gain = 838.676 ; free physical = 1948 ; free virtual = 7922
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:51 ; elapsed = 00:01:52 . Memory (MB): peak = 1682.590 ; gain = 836.980 ; free physical = 843 ; free virtual = 7518
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -1923,15 +1946,15 @@ Report Cell Usage:
 +------+----------+------+
 |1     |BUFG      |     1|
 |2     |CARRY4    |  1183|
-|3     |DSP48E1_4 |    64|
-|4     |DSP48E1_5 |    32|
+|3     |DSP48E1_4 |    32|
+|4     |DSP48E1_5 |    64|
 |5     |DSP48E1_6 |    16|
 |6     |DSP48E1_7 |     4|
 |7     |LUT1      |  1376|
 |8     |LUT2      |  5892|
-|9     |LUT3      |  3967|
-|10    |LUT4      |  2316|
-|11    |LUT5      |  1197|
+|9     |LUT3      |  3966|
+|10    |LUT4      |  2323|
+|11    |LUT5      |  1190|
 |12    |LUT6      |   712|
 |13    |MUXF7     |    36|
 |14    |MUXF8     |    18|
@@ -1947,9 +1970,9 @@ Report Instance Areas:
 +------+----------------------------+----------------------------+------+
 |      |Instance                    |Module                      |Cells |
 +------+----------------------------+----------------------------+------+
-|1     |top                         |                            | 31625|
-|2     |  LSTM_LAYER                |network                     | 31333|
-|3     |    GATE_F                  |gate                        |  5278|
+|1     |top                         |                            | 31624|
+|2     |  LSTM_LAYER                |network                     | 31332|
+|3     |    GATE_F                  |gate                        |  5277|
 |4     |      DOTPROD_X             |dot_prod_40                 |  2197|
 |5     |      DOTPROD_Y             |dot_prod__parameterized0_41 |  2210|
 |6     |    GATE_I                  |gate_0                      |  4992|
@@ -1958,7 +1981,7 @@ Report Instance Areas:
 |9     |    GATE_O                  |gate_1                      |  4993|
 |10    |      DOTPROD_X             |dot_prod_36                 |  2198|
 |11    |      DOTPROD_Y             |dot_prod__parameterized0_37 |  2212|
-|12    |    GATE_Z                  |gate_2                      |  5412|
+|12    |    GATE_Z                  |gate_2                      |  5414|
 |13    |      DOTPROD_X             |dot_prod                    |  2198|
 |14    |      DOTPROD_Y             |dot_prod__parameterized0    |  2344|
 |15    |    WRAM_F_X                |weightRAM                   |   480|
@@ -1991,7 +2014,7 @@ Report Instance Areas:
 |42    |    \genblk2[12].tanh_i     |tanh_23                     |   199|
 |43    |    \genblk2[13].tanh_i     |tanh_24                     |   199|
 |44    |    \genblk2[14].tanh_i     |tanh_25                     |   199|
-|45    |    \genblk2[15].tanh_i     |tanh_26                     |   200|
+|45    |    \genblk2[15].tanh_i     |tanh_26                     |   199|
 |46    |    \genblk2[1].tanh_i      |tanh_27                     |   199|
 |47    |    \genblk2[2].tanh_i      |tanh_28                     |   199|
 |48    |    \genblk2[3].tanh_i      |tanh_29                     |   199|
@@ -2004,11 +2027,11 @@ Report Instance Areas:
 |55    |  PERCEPTRON                |array_prod                  |   230|
 +------+----------------------------+----------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:49 ; elapsed = 00:01:50 . Memory (MB): peak = 1684.289 ; gain = 838.676 ; free physical = 1948 ; free virtual = 7922
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:51 ; elapsed = 00:01:52 . Memory (MB): peak = 1682.590 ; gain = 836.980 ; free physical = 843 ; free virtual = 7518
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 1058 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:01:41 ; elapsed = 00:01:42 . Memory (MB): peak = 1684.289 ; gain = 278.168 ; free physical = 1948 ; free virtual = 7921
-Synthesis Optimization Complete : Time (s): cpu = 00:01:50 ; elapsed = 00:01:50 . Memory (MB): peak = 1684.289 ; gain = 838.676 ; free physical = 1948 ; free virtual = 7921
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:43 ; elapsed = 00:01:44 . Memory (MB): peak = 1682.590 ; gain = 277.473 ; free physical = 843 ; free virtual = 7518
+Synthesis Optimization Complete : Time (s): cpu = 00:01:52 ; elapsed = 00:01:52 . Memory (MB): peak = 1682.590 ; gain = 836.980 ; free physical = 843 ; free virtual = 7518
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 2091 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -2020,8 +2043,8 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   RAM32M => RAM32M (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 384 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-205 Infos, 329 Warnings, 0 Critical Warnings and 0 Errors encountered.
+206 Infos, 339 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:54 ; elapsed = 00:01:54 . Memory (MB): peak = 1716.305 ; gain = 799.355 ; free physical = 1943 ; free virtual = 7915
-report_utilization: Time (s): cpu = 00:00:00.25 ; elapsed = 00:00:00.27 . Memory (MB): peak = 1748.324 ; gain = 0.000 ; free physical = 1924 ; free virtual = 7899
-INFO: [Common 17-206] Exiting Vivado at Thu Jun 23 01:19:52 2016...
+synth_design: Time (s): cpu = 00:01:56 ; elapsed = 00:01:57 . Memory (MB): peak = 1714.605 ; gain = 797.660 ; free physical = 842 ; free virtual = 7517
+report_utilization: Time (s): cpu = 00:00:00.23 ; elapsed = 00:00:00.26 . Memory (MB): peak = 1746.625 ; gain = 0.000 ; free physical = 833 ; free virtual = 7511
+INFO: [Common 17-206] Exiting Vivado at Fri Jun 24 15:21:59 2016...

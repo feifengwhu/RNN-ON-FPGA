@@ -1,0 +1,29 @@
+#-----------------------------------------------------------
+# Vivado v2015.4 (64-bit)
+# SW Build 1412921 on Wed Nov 18 09:44:32 MST 2015
+# IP Build 1412160 on Tue Nov 17 13:47:24 MST 2015
+# Start of session at: Fri Jun 24 17:04:44 2016
+# Process ID: 9315
+# Current directory: /home/josefonseca/Documents/thesis/verilog/weight_ram/Synth_weight_ram/Synth_weight_ram.runs/impl_3
+# Command line: vivado -log weightRAM.vdi -applog -messageDb vivado.pb -mode batch -source weightRAM.tcl -notrace
+# Log file: /home/josefonseca/Documents/thesis/verilog/weight_ram/Synth_weight_ram/Synth_weight_ram.runs/impl_3/weightRAM.vdi
+# Journal file: /home/josefonseca/Documents/thesis/verilog/weight_ram/Synth_weight_ram/Synth_weight_ram.runs/impl_3/vivado.jou
+#-----------------------------------------------------------
+source weightRAM.tcl -notrace
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+INFO: [Netlist 29-17] Analyzing 4 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2015.4
+INFO: [Device 21-403] Loading part xc7z020clg484-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [/home/josefonseca/Documents/thesis/verilog/weight_ram/Synth_weight_ram/Synth_weight_ram.srcs/constrs_1/new/weightRAM_timing.xdc]
+Finished Parsing XDC File [/home/josefonseca/Documents/thesis/verilog/weight_ram/Synth_weight_ram/Synth_weight_ram.srcs/constrs_1/new/weightRAM_timing.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+link_design: Time (s): cpu = 00:00:03 ; elapsed = 00:01:23 . Memory (MB): peak = 1185.047 ; gain = 268.098 ; free physical = 721 ; free virtual = 7435
+Command: opt_design -directive Explore
+INFO: [Vivado_Tcl 4-136] Directive used for opt_design is: Explore
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'

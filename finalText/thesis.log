@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.2.18)  20 JUN 2016 12:49
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.2.18)  27 JUN 2016 19:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1140,12 +1140,11 @@ Package hyperref Info: Option `colorlinks' set `true' on input line 497.
 \@input{mymacros.aux}
 \openout2 = `mymacros.aux'.
 
-(./mymacros.tex) (./thesis.aux (./abbrevs.aux) (./intro.aux) (./theorBack.aux)
-(./stateArt.aux) (./proposedSol.aux
-
-LaTeX Warning: Label `sec:struct-fullpar' multiply defined.
-
-) (./results.aux))
+(./mymacros.tex) (./thesis.aux (./abstract.aux) (./acknows.aux) (./quote.aux)
+(./abbrevs.aux) (./intro.aux) (./theorBack.aux) (./stateArt.aux)
+(./proposedSol.aux) (./results.aux) (./appendix-remez.aux) (./appendix-lstm.aux
+) (./appendix-testLstm.aux) (./appendix-readres2.aux)
+(./appendix-transcript.aux))
 \openout1 = `thesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 94.
@@ -1162,7 +1161,8 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 94.
 LaTeX Font Info:    ... okay on input line 94.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 94.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 94.
- (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 94.
@@ -1270,7 +1270,7 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/sc' in size <14.4> not available
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <24.88> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 135.
 
-<figures/uporto-feup.pdf, id=143, 338.26375pt x 126.4725pt>
+<figures/uporto-feup.pdf, id=212, 338.26375pt x 126.4725pt>
 File: figures/uporto-feup.pdf Graphic file (type pdf)
 
 <use figures/uporto-feup.pdf>
@@ -1290,66 +1290,90 @@ LaTeX Font Info:    Try loading font information for TS1+ptm on input line 135.
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 ) [-2
 
-] (./thesis.toc
-LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 2.
-LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 3.
+]
+\openout2 = `abstract.aux'.
 
+ (./abstract.tex [1
 
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd
-File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
-)
-LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 3.
-
-
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omlztmcm.fd
-File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
-)
-LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 3.
-
-
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsztmcm.fd
-File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
-)
-LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 3.
-
-
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omxztmcm.fd
-File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
-)
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 3.
-
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
-File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
-)
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3.
-)
-\tf@toc=\write5
-\openout5 = `thesis.toc'.
-
- [1
 
 
 
 ] [2
 
 ]
-(./thesis.lof)
+LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 41
+.
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd
+File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
+)
+LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 41
+.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omlztmcm.fd
+File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
+)
+LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 41
+.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsztmcm.fd
+File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
+)
+LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 41
+.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omxztmcm.fd
+File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
+)
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 41.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 41.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 41.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 41.
+) [3]
+\openout2 = `acknows.aux'.
+
+ (./acknows.tex
+[4
+
+
+
+]) [5]
+\openout2 = `quote.aux'.
+
+ (./quote.tex [6
+
+
+
+]) [7] [8
+
+
+] (./thesis.toc
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10.95> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 2.
+ [9])
+\tf@toc=\write5
+\openout5 = `thesis.toc'.
+
+ [10] (./thesis.lof)
 \tf@lof=\write6
 \openout6 = `thesis.lof'.
 
- [3]
+
+[11
+
+]
 \openout2 = `abbrevs.aux'.
 
- (./abbrevs.tex [4
+ (./abbrevs.tex [12
 
 
-]) [5] [6
+]) [13] [14
 
 
 ]
@@ -1359,24 +1383,6 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
 Chapter 1.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <20.74> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 1.
-
-LaTeX Warning: Reference `chap:earlyWork' on page 1 undefined on input line 10.
-
-
-
-LaTeX Warning: Reference `chap:workPlan' on page 1 undefined on input line 12.
-
-
-LaTeX Warning: Reference `sec:wp_tasks_td' on page 1 undefined on input line 12
-.
-
-
-LaTeX Warning: Reference `sec:wp_tasks_gantt' on page 1 undefined on input line
- 12.
-
-
-LaTeX Warning: Reference `sec:wp_sh' on page 1 undefined on input line 12.
-
 [1
 
 
@@ -1406,7 +1412,7 @@ Package epstopdf Info: Source file: <figures/neuron.eps>
 ed-to.pdf figures/neuron.eps>
 (epstopdf)             \includegraphics on input line 36.
 Package epstopdf Info: Output file is already uptodate.
- <figures/neuron-eps-converted-to.pdf, id=323, 275.0275pt x 212.795pt>
+ <figures/neuron-eps-converted-to.pdf, id=463, 275.0275pt x 212.795pt>
 File: figures/neuron-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/neuron-eps-converted-to.pdf>
@@ -1414,7 +1420,7 @@ Package pdftex.def Info: figures/neuron-eps-converted-to.pdf used on input line
  36.
 (pdftex.def)             Requested size: 192.0548pt x 148.60155pt.
 
-<figures/MultipolarNeuron.png, id=324, 2509.375pt x 1618.045pt>
+<figures/MultipolarNeuron.png, id=464, 2509.375pt x 1618.045pt>
 File: figures/MultipolarNeuron.png Graphic file (type png)
 
 <use figures/MultipolarNeuron.png>
@@ -1435,7 +1441,7 @@ Package epstopdf Info: Source file: <figures/activFunc.eps>
 erted-to.pdf figures/activFunc.eps>
 (epstopdf)             \includegraphics on input line 56.
 Package epstopdf Info: Output file is already uptodate.
-<figures/activFunc-eps-converted-to.pdf, id=332, 578.16pt x 433.62pt>
+<figures/activFunc-eps-converted-to.pdf, id=472, 578.16pt x 433.62pt>
 File: figures/activFunc-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/activFunc-eps-converted-to.pdf>
@@ -1457,7 +1463,7 @@ to.pdf figures/ann.eps>
 (epstopdf)             \includegraphics on input line 67.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/ann-eps-converted-to.pdf, id=361, 442.65375pt x 290.08376pt>
+<figures/ann-eps-converted-to.pdf, id=501, 442.65375pt x 290.08376pt>
 File: figures/ann-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/ann-eps-converted-to.pdf>
@@ -1482,7 +1488,7 @@ erted-to.pdf figures/recneuron.eps>
 (epstopdf)             \includegraphics on input line 105.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/recneuron-eps-converted-to.pdf, id=419, 89.33376pt x 136.51pt>
+<figures/recneuron-eps-converted-to.pdf, id=560, 89.33376pt x 136.51pt>
 File: figures/recneuron-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/recneuron-eps-converted-to.pdf>
@@ -1501,7 +1507,7 @@ converted-to.pdf figures/recneuron_unf.eps>
 (epstopdf)             \includegraphics on input line 111.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/recneuron_unf-eps-converted-to.pdf, id=420, 292.09125pt x 164.615pt>
+<figures/recneuron_unf-eps-converted-to.pdf, id=561, 292.09125pt x 164.615pt>
 File: figures/recneuron_unf-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/recneuron_unf-eps-converted-to.pdf>
@@ -1520,28 +1526,17 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 3514) has occurred while \output is active []
 
  [11 <./figures/recneuron-eps-converted-to.pdf> <./figures/recneuron_unf-eps-co
-nverted-to.pdf>] <figures/lstmneuron.png, id=475, 913.16156pt x 409.53pt>
+nverted-to.pdf>] <figures/lstmneuron.png, id=615, 913.16156pt x 409.53pt>
 File: figures/lstmneuron.png Graphic file (type png)
 
 <use figures/lstmneuron.png>
 Package pdftex.def Info: figures/lstmneuron.png used on input line 134.
 (pdftex.def)             Requested size: 384.1096pt x 172.26387pt.
- [12 <./figures/lstmneuron.png>] [13]
-
-LaTeX Warning: Reference `sec:wp_sh' on page 14 undefined on input line 196.
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [14])
-[15]
+ [12 <./figures/lstmneuron.png>] [13]) [14]
 \openout2 = `stateArt.aux'.
 
- (./stateArt.tex [16
 
-
-
-]
+(./stateArt.tex
 Chapter 3.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 6.
@@ -1549,46 +1544,32 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 6.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 6.
-[17] [18]
+[15
+
+
+
+] [16]
 Overfull \hbox (4.26689pt too wide) in paragraph at lines 31--32
 []\T1/ptm/m/n/10.95 The im-ple-men-ta-tion it-self makes an ex-ten-sive use of 
 the Multiply-and-Accumulate units (MAC)
  []
 
-[19]) [20]
+[17]) [18]
 \openout2 = `proposedSol.aux'.
 
  (./proposedSol.tex
 Chapter 4.
-[21
+[19
 
 
 
-] [22]
+] [20]
 Underfull \vbox (badness 6348) has occurred while \output is active []
 
- [23]
-(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2013/08/26 1.5b listings language file
-)
-LaTeX Font Info:    Try loading font information for T1+pcrs on input line 73.
+ [21]
+Underfull \vbox (badness 5077) has occurred while \output is active []
 
-(/usr/share/texlive/texmf-dist/tex/latex/courier-scaled/t1pcrs.fd
-File: t1pcrs.fd 2004/07/09 scalable font definitions for T1/pcrs.
-)
-LaTeX Font Info:    Font shape `T1/pcrs/m/n' will be
-(Font)              scaled to size 10.40245pt on input line 73.
-LaTeX Font Info:    Font shape `T1/pcrs/m/n' will be
-(Font)              scaled to size 7.59998pt on input line 73.
- (./remez.py
-LaTeX Font Info:    Font shape `T1/pcrs/m/n' will be
-(Font)              scaled to size 5.69998pt on input line 1.
-
-[24]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [25])
-[26]
+ [22]
 Package epstopdf Info: Source file: <figures/non-lin.eps>
 (epstopdf)                    date: 2016-06-16 20:33:27
 (epstopdf)                    size: 195994 bytes
@@ -1597,57 +1578,66 @@ Package epstopdf Info: Source file: <figures/non-lin.eps>
 (epstopdf)                    size: 11412 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/non-lin-eps-conver
 ted-to.pdf figures/non-lin.eps>
-(epstopdf)             \includegraphics on input line 116.
+(epstopdf)             \includegraphics on input line 115.
 Package epstopdf Info: Output file is already uptodate.
- <figures/non-lin-eps-converted-to.pdf, id=751, 457.71pt x 364.36125pt>
+
+<figures/non-lin-eps-converted-to.pdf, id=785, 457.71pt x 364.36125pt>
 File: figures/non-lin-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/non-lin-eps-converted-to.pdf>
 Package pdftex.def Info: figures/non-lin-eps-converted-to.pdf used on input lin
-e 116.
+e 115.
 (pdftex.def)             Requested size: 384.1096pt x 305.78337pt.
 Package epstopdf Info: Source file: <figures/nonlin-out.eps>
-(epstopdf)                    date: 2016-06-16 22:33:04
-(epstopdf)                    size: 156790 bytes
+(epstopdf)                    date: 2016-06-24 17:36:16
+(epstopdf)                    size: 156673 bytes
 (epstopdf)             Output file: <figures/nonlin-out-eps-converted-to.pdf>
-(epstopdf)                    date: 2016-06-16 23:56:32
-(epstopdf)                    size: 28980 bytes
+(epstopdf)                    date: 2016-06-25 17:10:55
+(epstopdf)                    size: 29017 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/nonlin-out-eps-con
 verted-to.pdf figures/nonlin-out.eps>
-(epstopdf)             \includegraphics on input line 125.
+(epstopdf)             \includegraphics on input line 124.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/nonlin-out-eps-converted-to.pdf, id=752, 578.16pt x 433.62pt>
+<figures/nonlin-out-eps-converted-to.pdf, id=786, 578.16pt x 433.62pt>
 File: figures/nonlin-out-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/nonlin-out-eps-converted-to.pdf>
 Package pdftex.def Info: figures/nonlin-out-eps-converted-to.pdf used on input 
-line 125.
+line 124.
 (pdftex.def)             Requested size: 362.77525pt x 272.07709pt.
 Package epstopdf Info: Source file: <figures/nonlin-out-tanh.eps>
-(epstopdf)                    date: 2016-06-16 23:50:34
-(epstopdf)                    size: 140363 bytes
+(epstopdf)                    date: 2016-06-23 00:15:21
+(epstopdf)                    size: 140329 bytes
 (epstopdf)             Output file: <figures/nonlin-out-tanh-eps-converted-to.p
 df>
-(epstopdf)                    date: 2016-06-16 23:56:32
-(epstopdf)                    size: 21108 bytes
+(epstopdf)                    date: 2016-06-25 17:10:55
+(epstopdf)                    size: 21143 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/nonlin-out-tanh-ep
 s-converted-to.pdf figures/nonlin-out-tanh.eps>
-(epstopdf)             \includegraphics on input line 131.
+(epstopdf)             \includegraphics on input line 130.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/nonlin-out-tanh-eps-converted-to.pdf, id=753, 578.16pt x 433.62pt>
+<figures/nonlin-out-tanh-eps-converted-to.pdf, id=787, 578.16pt x 433.62pt>
 File: figures/nonlin-out-tanh-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/nonlin-out-tanh-eps-converted-to.pdf>
 Package pdftex.def Info: figures/nonlin-out-tanh-eps-converted-to.pdf used on i
-nput line 131.
+nput line 130.
 (pdftex.def)             Requested size: 362.77525pt x 272.07709pt.
- [27 <./figures/non-lin-eps-converted-to.pdf>] [28 <./figures/nonlin-out-eps-co
-nverted-to.pdf> <./figures/nonlin-out-tanh-eps-converted-to.pdf>]
+ [23] [24 <./figures/non-lin-eps-converted-to.pdf>] [25 <./figures/nonlin-out-e
+ps-converted-to.pdf> <./figures/nonlin-out-tanh-eps-converted-to.pdf>]
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 152.
- [29]
+put line 151.
+LaTeX Font Info:    Try loading font information for T1+pcrs on input line 158.
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/courier-scaled/t1pcrs.fd
+File: t1pcrs.fd 2004/07/09 scalable font definitions for T1/pcrs.
+)
+LaTeX Font Info:    Font shape `T1/pcrs/m/n' will be
+(Font)              scaled to size 10.40245pt on input line 158.
+ [26]
 Package epstopdf Info: Source file: <figures/mem-array-prod.eps>
 (epstopdf)                    date: 2016-06-17 17:39:02
 (epstopdf)                    size: 161229 bytes
@@ -1657,14 +1647,14 @@ f>
 (epstopdf)                    size: 9675 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/mem-array-prod-eps
 -converted-to.pdf figures/mem-array-prod.eps>
-(epstopdf)             \includegraphics on input line 163.
+(epstopdf)             \includegraphics on input line 162.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/mem-array-prod-eps-converted-to.pdf, id=819, 246.9225pt x 153.57375pt>
+<figures/mem-array-prod-eps-converted-to.pdf, id=860, 246.9225pt x 153.57375pt>
 File: figures/mem-array-prod-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/mem-array-prod-eps-converted-to.pdf>
 Package pdftex.def Info: figures/mem-array-prod-eps-converted-to.pdf used on in
-put line 163.
+put line 162.
 (pdftex.def)             Requested size: 384.1096pt x 238.9109pt.
 Package epstopdf Info: Source file: <figures/array-prod.eps>
 (epstopdf)                    date: 2016-06-17 17:30:38
@@ -1674,32 +1664,29 @@ Package epstopdf Info: Source file: <figures/array-prod.eps>
 (epstopdf)                    size: 14784 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/array-prod-eps-con
 verted-to.pdf figures/array-prod.eps>
-(epstopdf)             \includegraphics on input line 170.
+(epstopdf)             \includegraphics on input line 169.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/array-prod-eps-converted-to.pdf, id=820, 622.325pt x 134.5025pt>
+<figures/array-prod-eps-converted-to.pdf, id=861, 622.325pt x 134.5025pt>
 File: figures/array-prod-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/array-prod-eps-converted-to.pdf>
 Package pdftex.def Info: figures/array-prod-eps-converted-to.pdf used on input 
-line 170.
+line 169.
 (pdftex.def)             Requested size: 426.79135pt x 92.24242pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [30 <./figures/mem-array-prod-eps-converted-to.pdf> <./figures/array-prod-eps-
-converted-to.pdf>]
-Overfull \hbox (22.59451pt too wide) in paragraph at lines 187--187
+ [27 <./figures/mem-array-prod-eps-converted-to.pdf>]
+Overfull \hbox (22.59451pt too wide) in paragraph at lines 184--184
 []\T1/pcrs/m/n/10.95 (* ram_style = "block" *) reg [PORT_BITWIDTH-1:0] RAM_matr
 ix [NCOL-1:0];[] 
  []
 
 
-Overfull \hbox (33.85559pt too wide) in paragraph at lines 188--189
+Overfull \hbox (33.85559pt too wide) in paragraph at lines 185--186
 \T1/ptm/m/n/10.95 where we can see that each reg-is-ter con-tains the re-spec-t
 ive col-umn of the ma-trix, with $[] \OT1/ztmcm/m/n/10.95 =
  []
 
+[28 <./figures/array-prod-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <figures/gate.eps>
 (epstopdf)                    date: 2016-06-20 12:47:40
 (epstopdf)                    size: 242302 bytes
@@ -1710,19 +1697,15 @@ Package epstopdf Info: Source file: <figures/gate.eps>
 -to.pdf figures/gate.eps>
 (epstopdf)             \includegraphics on input line 203.
 Package epstopdf Info: Output file is already uptodate.
-<figures/gate-eps-converted-to.pdf, id=854, 519.9425pt x 182.6825pt>
+
+<figures/gate-eps-converted-to.pdf, id=903, 519.9425pt x 182.6825pt>
 File: figures/gate-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/gate-eps-converted-to.pdf>
 Package pdftex.def Info: figures/gate-eps-converted-to.pdf used on input line 2
 03.
 (pdftex.def)             Requested size: 426.79135pt x 149.95392pt.
-
-
-LaTeX Warning: Reference `sec:struct-shared' on page 31 undefined on input line
- 210.
-
-[31] [32 <./figures/gate-eps-converted-to.pdf>]
+ [29 <./figures/gate-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <figures/network.eps>
 (epstopdf)                    date: 2016-06-20 10:32:02
 (epstopdf)                    size: 226822 bytes
@@ -1733,8 +1716,7 @@ Package epstopdf Info: Source file: <figures/network.eps>
 ted-to.pdf figures/network.eps>
 (epstopdf)             \includegraphics on input line 233.
 Package epstopdf Info: Output file is already uptodate.
-
-<figures/network-eps-converted-to.pdf, id=897, 470.75874pt x 213.79875pt>
+ <figures/network-eps-converted-to.pdf, id=941, 470.75874pt x 213.79875pt>
 File: figures/network-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/network-eps-converted-to.pdf>
@@ -1752,61 +1734,268 @@ nverted-to.pdf figures/network-opt.eps>
 (epstopdf)             \includegraphics on input line 243.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/network-opt-eps-converted-to.pdf, id=901, 540.0175pt x 177.66376pt>
+<figures/network-opt-eps-converted-to.pdf, id=945, 540.0175pt x 177.66376pt>
 File: figures/network-opt-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/network-opt-eps-converted-to.pdf>
 Package pdftex.def Info: figures/network-opt-eps-converted-to.pdf used on input
  line 243.
 (pdftex.def)             Requested size: 384.1096pt x 126.37257pt.
+ [30] [31 <./figures/network-eps-converted-to.pdf> <./figures/network-opt-eps-c
+onverted-to.pdf>] [32]
+Package epstopdf Info: Source file: <figures/prng.eps>
+(epstopdf)                    date: 2016-06-27 16:23:53
+(epstopdf)                    size: 110713 bytes
+(epstopdf)             Output file: <figures/prng-eps-converted-to.pdf>
+(epstopdf)                    date: 2016-06-27 16:32:21
+(epstopdf)                    size: 21268 bytes
+(epstopdf)             Command: <repstopdf --outfile=figures/prng-eps-converted
+-to.pdf figures/prng.eps>
+(epstopdf)             \includegraphics on input line 276.
+Package epstopdf Info: Output file is already uptodate.
 
-Underfull \vbox (badness 1264) has occurred while \output is active []
+<figures/prng-eps-converted-to.pdf, id=1001, 209.78375pt x 98.3675pt>
+File: figures/prng-eps-converted-to.pdf Graphic file (type pdf)
 
- [33 <./figures/network-eps-converted-to.pdf>])
-Underfull \vbox (badness 2460) has occurred while \output is active []
+<use figures/prng-eps-converted-to.pdf>
+Package pdftex.def Info: figures/prng-eps-converted-to.pdf used on input line 2
+76.
+(pdftex.def)             Requested size: 426.79135pt x 200.12364pt.
+ [33 <./figures/prng-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <figures/prng_out.eps>
+(epstopdf)                    date: 2016-06-27 17:24:29
+(epstopdf)                    size: 471542 bytes
+(epstopdf)             Output file: <figures/prng_out-eps-converted-to.pdf>
+(epstopdf)                    date: 2016-06-27 17:25:45
+(epstopdf)                    size: 55707 bytes
+(epstopdf)             Command: <repstopdf --outfile=figures/prng_out-eps-conve
+rted-to.pdf figures/prng_out.eps>
+(epstopdf)             \includegraphics on input line 288.
+Package epstopdf Info: Output file is already uptodate.
 
- [34 <./figures/network-opt-eps-converted-to.pdf>] [35]
+<figures/prng_out-eps-converted-to.pdf, id=1012, 492.84125pt x 470.75874pt>
+File: figures/prng_out-eps-converted-to.pdf Graphic file (type pdf)
+
+<use figures/prng_out-eps-converted-to.pdf>
+Package pdftex.def Info: figures/prng_out-eps-converted-to.pdf used on input li
+ne 288.
+(pdftex.def)             Requested size: 426.79135pt x 407.68918pt.
+ [34 <./figures/prng_out-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <figures/train.eps>
+(epstopdf)                    date: 2016-06-27 19:05:10
+(epstopdf)                    size: 269197 bytes
+(epstopdf)             Output file: <figures/train-eps-converted-to.pdf>
+(epstopdf)                    date: 2016-06-27 19:09:09
+(epstopdf)                    size: 19430 bytes
+(epstopdf)             Command: <repstopdf --outfile=figures/train-eps-converte
+d-to.pdf figures/train.eps>
+(epstopdf)             \includegraphics on input line 305.
+Package epstopdf Info: Output file is already uptodate.
+
+<figures/train-eps-converted-to.pdf, id=1031, 545.03625pt x 480.79625pt>
+File: figures/train-eps-converted-to.pdf Graphic file (type pdf)
+
+<use figures/train-eps-converted-to.pdf>
+Package pdftex.def Info: figures/train-eps-converted-to.pdf used on input line 
+305.
+(pdftex.def)             Requested size: 426.79135pt x 376.48682pt.
+) [35] [36 <./figures/train-eps-converted-to.pdf>]
 \openout2 = `results.aux'.
 
- (./results.tex [36
+ (./results.tex
+Chapter 5.
+
+Overfull \hbox (99.92184pt too wide) in paragraph at lines 5--6
+[]\T1/pcrs/m/n/10.95 Flow_PerfOptimized_high\T1/ptm/m/n/10.95 , and the im-ple-
+men-ta-tion strat-egy was []\T1/pcrs/m/n/10.95 Performance_ExplorePostRoutePhys
+Opt
+ []
+
+[37
 
 
 
 ]
-Chapter 5.
-) [37] [38
+Package epstopdf Info: Source file: <figures/maxfreq.eps>
+(epstopdf)                    date: 2016-06-25 17:06:19
+(epstopdf)                    size: 128575 bytes
+(epstopdf)             Output file: <figures/maxfreq-eps-converted-to.pdf>
+(epstopdf)                    date: 2016-06-25 17:10:56
+(epstopdf)                    size: 11902 bytes
+(epstopdf)             Command: <repstopdf --outfile=figures/maxfreq-eps-conver
+ted-to.pdf figures/maxfreq.eps>
+(epstopdf)             \includegraphics on input line 14.
+Package epstopdf Info: Output file is already uptodate.
+ <figures/maxfreq-eps-converted-to.pdf, id=1068, 578.16pt x 433.62pt>
+File: figures/maxfreq-eps-converted-to.pdf Graphic file (type pdf)
+
+<use figures/maxfreq-eps-converted-to.pdf>
+Package pdftex.def Info: figures/maxfreq-eps-converted-to.pdf used on input lin
+e 14.
+(pdftex.def)             Requested size: 426.79135pt x 320.09303pt.
+Package epstopdf Info: Source file: <figures/dspuse.eps>
+(epstopdf)                    date: 2016-06-25 17:06:39
+(epstopdf)                    size: 129226 bytes
+(epstopdf)             Output file: <figures/dspuse-eps-converted-to.pdf>
+(epstopdf)                    date: 2016-06-25 17:13:49
+(epstopdf)                    size: 12214 bytes
+(epstopdf)             Command: <repstopdf --outfile=figures/dspuse-eps-convert
+ed-to.pdf figures/dspuse.eps>
+(epstopdf)             \includegraphics on input line 24.
+Package epstopdf Info: Output file is already uptodate.
+
+<figures/dspuse-eps-converted-to.pdf, id=1071, 578.16pt x 433.62pt>
+File: figures/dspuse-eps-converted-to.pdf Graphic file (type pdf)
+
+<use figures/dspuse-eps-converted-to.pdf>
+Package pdftex.def Info: figures/dspuse-eps-converted-to.pdf used on input line
+ 24.
+(pdftex.def)             Requested size: 426.79135pt x 320.09303pt.
+
+Underfull \vbox (badness 3179) has occurred while \output is active []
+
+ [38 <./figures/maxfreq-eps-converted-to.pdf>] [39 <./figures/dspuse-eps-conver
+ted-to.pdf>]
+Package epstopdf Info: Source file: <figures/power.eps>
+(epstopdf)                    date: 2016-06-25 17:24:40
+(epstopdf)                    size: 128101 bytes
+(epstopdf)             Output file: <figures/power-eps-converted-to.pdf>
+(epstopdf)                    date: 2016-06-25 17:24:59
+(epstopdf)                    size: 11553 bytes
+(epstopdf)             Command: <repstopdf --outfile=figures/power-eps-converte
+d-to.pdf figures/power.eps>
+(epstopdf)             \includegraphics on input line 34.
+Package epstopdf Info: Output file is already uptodate.
+<figures/power-eps-converted-to.pdf, id=1098, 578.16pt x 433.62pt>
+File: figures/power-eps-converted-to.pdf Graphic file (type pdf)
+
+<use figures/power-eps-converted-to.pdf>
+Package pdftex.def Info: figures/power-eps-converted-to.pdf used on input line 
+34.
+(pdftex.def)             Requested size: 426.79135pt x 320.09303pt.
+ [40 <./figures/power-eps-converted-to.pdf>] [41] <figures/wave.png, id=1135, 1
+917.1625pt x 837.1275pt>
+File: figures/wave.png Graphic file (type png)
+
+<use figures/wave.png>
+Package pdftex.def Info: figures/wave.png used on input line 98.
+(pdftex.def)             Requested size: 426.79135pt x 186.35289pt.
+ [42]
+Package epstopdf Info: Source file: <figures/Mclass-psec.eps>
+(epstopdf)                    date: 2016-06-26 15:15:01
+(epstopdf)                    size: 135162 bytes
+(epstopdf)             Output file: <figures/Mclass-psec-eps-converted-to.pdf>
+(epstopdf)                    date: 2016-06-26 15:18:47
+(epstopdf)                    size: 14652 bytes
+(epstopdf)             Command: <repstopdf --outfile=figures/Mclass-psec-eps-co
+nverted-to.pdf figures/Mclass-psec.eps>
+(epstopdf)             \includegraphics on input line 128.
+Package epstopdf Info: Output file is already uptodate.
+
+<figures/Mclass-psec-eps-converted-to.pdf, id=1147, 578.16pt x 433.62pt>
+File: figures/Mclass-psec-eps-converted-to.pdf Graphic file (type pdf)
+
+<use figures/Mclass-psec-eps-converted-to.pdf>
+Package pdftex.def Info: figures/Mclass-psec-eps-converted-to.pdf used on input
+ line 128.
+(pdftex.def)             Requested size: 426.79135pt x 320.09303pt.
+) [43 <./figures/wave.png>]
+[44 <./figures/Mclass-psec-eps-converted-to.pdf>]
+\openout2 = `appendix-remez.aux'.
+
+ (./appendix-remez.tex
+Appendix A.
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2013/08/26 1.5b listings language file
+)
+LaTeX Font Info:    Font shape `T1/pcrs/m/n' will be
+(Font)              scaled to size 7.59998pt on input line 3.
+ (./remez.py
+LaTeX Font Info:    Font shape `T1/pcrs/m/n' will be
+(Font)              scaled to size 5.69998pt on input line 1.
+
+[45
 
 
-] (./thesis.bbl [39
 
-] [40])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 174.
- [41]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 174.
- (./thesis.aux (./abbrevs.aux)
-(./intro.aux) (./theorBack.aux) (./stateArt.aux) (./proposedSol.aux)
-(./results.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 174.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 174.
+])) [46]
+\openout2 = `appendix-lstm.aux'.
+
+ (./appendix-lstm.tex
+Appendix B.
+(./LSTMlayer.py [47
+
+
+
+]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [48]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [49]))
+[50]
+\openout2 = `appendix-testLstm.aux'.
+
+ (./appendix-testLstm.tex
+Appendix C.
+(./testLSTM.py [51
+
+
+
+]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [52]))
+[53]
+\openout2 = `appendix-readres2.aux'.
+
+ (./appendix-readres2.tex [54
+
+
+
+]
+Appendix D.
+(./readres2.py [55]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [56]))
+[57]
+\openout2 = `appendix-transcript.aux'.
+
+ (./appendix-transcript.tex [58
+
+
+
+]
+Appendix E.
+(./transcript.txt [59])) [60] (./thesis.bbl [61
+
+
+
+] [62])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 181.
+ [63]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 181.
+ (./thesis.aux
+(./abstract.aux) (./acknows.aux) (./quote.aux) (./abbrevs.aux) (./intro.aux)
+(./theorBack.aux) (./stateArt.aux) (./proposedSol.aux) (./results.aux)
+(./appendix-remez.aux) (./appendix-lstm.aux) (./appendix-testLstm.aux)
+(./appendix-readres2.aux) (./appendix-transcript.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 181.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 181.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 4558BBA94DA676BBDEA00A8509871F83;2464.
-
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: There were multiply-defined labels.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 174.
+(rerunfilecheck)             Checksum: 77113F8050EEA8E8EAD0CE5D22C79A1C;3635.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 181.
  ) 
 Here is how much of TeX's memory you used:
- 21780 strings out of 493304
- 375518 string characters out of 6139871
- 650307 words of memory out of 5000000
- 24445 multiletter control sequences out of 15000+600000
+ 22646 strings out of 493304
+ 389043 string characters out of 6139871
+ 849799 words of memory out of 5000000
+ 24700 multiletter control sequences out of 15000+600000
  84298 words of font info for 115 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 63i,12n,59p,1500b,2024s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 63i,12n,59p,1853b,2023s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist
@@ -1829,10 +2018,10 @@ sr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive
 ts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/ti
 mes/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb
 >
-Output written on thesis.pdf (49 pages, 1696139 bytes).
+Output written on thesis.pdf (79 pages, 2048970 bytes).
 PDF statistics:
- 1085 PDF objects out of 1200 (max. 8388607)
- 976 compressed objects within 10 object streams
- 260 named destinations out of 1000 (max. 500000)
- 365 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2029 PDF objects out of 2073 (max. 8388607)
+ 1863 compressed objects within 19 object streams
+ 796 named destinations out of 1000 (max. 500000)
+ 541 words of extra memory for PDF output out of 10000 (max. 10000000)
 

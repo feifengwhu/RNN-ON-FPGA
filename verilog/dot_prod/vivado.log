@@ -2,120 +2,19 @@
 # Vivado v2015.4 (64-bit)
 # SW Build 1412921 on Wed Nov 18 09:44:32 MST 2015
 # IP Build 1412160 on Tue Nov 17 13:47:24 MST 2015
-# Start of session at: Sun May  8 23:49:06 2016
-# Process ID: 31799
+# Start of session at: Fri Jun 24 16:49:30 2016
+# Process ID: 2640
 # Current directory: /home/josefonseca/Documents/thesis/verilog/dot_prod
 # Command line: vivado
 # Log file: /home/josefonseca/Documents/thesis/verilog/dot_prod/vivado.log
 # Journal file: /home/josefonseca/Documents/thesis/verilog/dot_prod/vivado.jou
 #-----------------------------------------------------------
 start_gui
-create_project project_1 /home/josefonseca/Documents/thesis/verilog/dot_prod/project_1 -part xc7z020clg484-1
+open_project /home/josefonseca/Documents/thesis/verilog/dot_prod/Synth_dot_prod/Synth_dot_prod.xpr
+Scanning sources...
+Finished scanning sources
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2015.4/data/ip'.
-set_property board_part xilinx.com:zc702:part0:1.2 [current_project]
-set_property simulator_language Verilog [current_project]
-add_files -norecurse {/home/josefonseca/Documents/thesis/verilog/dot_prod/weightRAM.v /home/josefonseca/Documents/thesis/verilog/dot_prod/dot_prod.v}
-update_compile_order -fileset sources_1
-update_compile_order -fileset sim_1
-update_compile_order -fileset sources_1
-launch_runs synth_1
-INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/dot_prod/dot_prod.v" into library work [/home/josefonseca/Documents/thesis/verilog/dot_prod/dot_prod.v:1]
-INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/dot_prod/weightRAM.v" into library work [/home/josefonseca/Documents/thesis/verilog/dot_prod/weightRAM.v:1]
-[Sun May  8 23:50:02 2016] Launched synth_1...
-Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/dot_prod/project_1/project_1.runs/synth_1/runme.log
-open_run synth_1 -name synth_1
-Design is defaulting to impl run constrset: constrs_1
-Design is defaulting to synth run part: xc7z020clg484-1
-INFO: [Netlist 29-17] Analyzing 312 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
-WARNING: [Netlist 29-101] Netlist 'dot_prod' is not ideal for floorplanning, since the cellview 'dot_prod' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
-INFO: [Project 1-479] Netlist was created with Vivado 2015.4
-INFO: [Device 21-403] Loading part xc7z020clg484-1
-INFO: [Project 1-570] Preparing netlist for logic optimization
-INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-INFO: [Project 1-111] Unisim Transformation Summary:
-No Unisim elements were transformed.
-
-open_run: Time (s): cpu = 00:00:14 ; elapsed = 00:00:06 . Memory (MB): peak = 6256.789 ; gain = 385.938 ; free physical = 3717 ; free virtual = 8931
-close_design
-synth_design -rtl -name rtl_1
-Command: synth_design -rtl -name rtl_1
-Starting synth_design
-Using part: xc7z020clg484-1
-Top: dot_prod
-WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/dot_prod/dot_prod.v:14]
-WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/dot_prod/dot_prod.v:15]
-WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/dot_prod/dot_prod.v:16]
-WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/dot_prod/dot_prod.v:17]
-WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/dot_prod/dot_prod.v:18]
-WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/dot_prod/dot_prod.v:19]
-WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/dot_prod/dot_prod.v:20]
-WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/dot_prod/dot_prod.v:21]
-WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/dot_prod/dot_prod.v:46]
-WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/dot_prod/dot_prod.v:47]
-WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/dot_prod/dot_prod.v:48]
----------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:01:19 ; elapsed = 00:02:11 . Memory (MB): peak = 6538.180 ; gain = 5692.570 ; free physical = 3399 ; free virtual = 8615
----------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'dot_prod' [/home/josefonseca/Documents/thesis/verilog/dot_prod/dot_prod.v:1]
-	Parameter NROW bound to: 16 - type: integer 
-	Parameter NCOL bound to: 16 - type: integer 
-	Parameter QN bound to: 6 - type: integer 
-	Parameter QM bound to: 11 - type: integer 
-	Parameter DSP48_PER_ROW bound to: 4 - type: integer 
-	Parameter BITWIDTH bound to: 18 - type: integer 
-	Parameter ADDR_BITWIDTH bound to: 4 - type: integer 
-	Parameter LAYER_BITWIDTH bound to: 288 - type: integer 
-	Parameter N_DSP48 bound to: 4 - type: integer 
-	Parameter DSP48_INPUT_BITWIDTH bound to: 72 - type: integer 
-	Parameter DSP48_OUTPUT_BITWIDTH bound to: 592 - type: integer 
-	Parameter MAC_BITWIDTH bound to: 37 - type: integer 
-	Parameter MUX_BITWIDTH bound to: 2 - type: integer 
-	Parameter IDLE bound to: 2'b00 
-	Parameter CALC bound to: 2'b01 
-	Parameter END bound to: 2'b10 
-INFO: [Synth 8-256] done synthesizing module 'dot_prod' (1#1) [/home/josefonseca/Documents/thesis/verilog/dot_prod/dot_prod.v:1]
----------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:01:20 ; elapsed = 00:02:11 . Memory (MB): peak = 6538.180 ; gain = 5692.570 ; free physical = 3389 ; free virtual = 8605
----------------------------------------------------------------------------------
-
-Report Check Netlist: 
-+------+------------------+-------+---------+-------+------------------+
-|      |Item              |Errors |Warnings |Status |Description       |
-+------+------------------+-------+---------+-------+------------------+
-|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
-+------+------------------+-------+---------+-------+------------------+
----------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:01:20 ; elapsed = 00:02:12 . Memory (MB): peak = 6538.180 ; gain = 5692.570 ; free physical = 3394 ; free virtual = 8610
----------------------------------------------------------------------------------
-INFO: [Project 1-570] Preparing netlist for logic optimization
-INFO: [Opt 31-141] Inserted 293 OBUFs to IO ports without IO buffers.
-
-Processing XDC Constraints
-Initializing timing engine
-Completed Processing XDC Constraints
-
-INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-INFO: [Project 1-111] Unisim Transformation Summary:
-No Unisim elements were transformed.
-
-RTL Elaboration Complete:  : Time (s): cpu = 00:01:28 ; elapsed = 00:02:15 . Memory (MB): peak = 6606.488 ; gain = 5760.879 ; free physical = 3381 ; free virtual = 8598
-6 Infos, 11 Warnings, 0 Critical Warnings and 0 Errors encountered.
-synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:12 ; elapsed = 00:00:07 . Memory (MB): peak = 6606.488 ; gain = 68.309 ; free physical = 3381 ; free virtual = 8598
-open_run synth_1 -name synth_1
-Design is defaulting to impl run constrset: constrs_1
-Design is defaulting to synth run part: xc7z020clg484-1
-INFO: [Netlist 29-17] Analyzing 312 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
-WARNING: [Netlist 29-101] Netlist 'dot_prod' is not ideal for floorplanning, since the cellview 'dot_prod' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
-INFO: [Project 1-479] Netlist was created with Vivado 2015.4
-INFO: [Project 1-570] Preparing netlist for logic optimization
-INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-INFO: [Project 1-111] Unisim Transformation Summary:
-No Unisim elements were transformed.
-
 exit
-INFO: [Common 17-206] Exiting Vivado at Sun May  8 23:53:00 2016...
+INFO: [Common 17-206] Exiting Vivado at Fri Jun 24 16:50:42 2016...

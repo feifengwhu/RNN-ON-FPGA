@@ -1,0 +1,519 @@
+#-----------------------------------------------------------
+# Vivado v2015.4 (64-bit)
+# SW Build 1412921 on Wed Nov 18 09:44:32 MST 2015
+# IP Build 1412160 on Tue Nov 17 13:47:24 MST 2015
+# Start of session at: Fri Jun 24 17:28:10 2016
+# Process ID: 16950
+# Current directory: /home/josefonseca/Documents/thesis/verilog/gate/Synth_gate/Synth_gate.runs/synth_1
+# Command line: vivado -log gate.vds -mode batch -messageDb vivado.pb -notrace -source gate.tcl
+# Log file: /home/josefonseca/Documents/thesis/verilog/gate/Synth_gate/Synth_gate.runs/synth_1/gate.vds
+# Journal file: /home/josefonseca/Documents/thesis/verilog/gate/Synth_gate/Synth_gate.runs/synth_1/vivado.jou
+#-----------------------------------------------------------
+source gate.tcl -notrace
+Command: synth_design -top gate -part xc7z020clg484-1 -fanout_limit 400 -fsm_extraction one_hot -keep_equivalent_registers -resource_sharing off -no_lc -shreg_min_size 5 -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:14]
+WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:15]
+WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:16]
+WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:17]
+WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:18]
+WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:19]
+WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:20]
+WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:21]
+WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:47]
+WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:48]
+WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:49]
+WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:50]
+WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:51]
+WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:52]
+WARNING: [Synth 8-2507] parameter declaration becomes local in gate with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/gate/gate.v:20]
+WARNING: [Synth 8-2507] parameter declaration becomes local in gate with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/gate/gate.v:21]
+WARNING: [Synth 8-2507] parameter declaration becomes local in gate with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/gate/gate.v:22]
+WARNING: [Synth 8-2507] parameter declaration becomes local in gate with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/gate/gate.v:23]
+WARNING: [Synth 8-2507] parameter declaration becomes local in gate with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/gate/gate.v:26]
+WARNING: [Synth 8-2507] parameter declaration becomes local in gate with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/gate/gate.v:27]
+WARNING: [Synth 8-2507] parameter declaration becomes local in gate with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/gate/gate.v:28]
+WARNING: [Synth 8-2507] parameter declaration becomes local in gate with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/gate/gate.v:29]
+WARNING: [Synth 8-2507] parameter declaration becomes local in gate with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/gate/gate.v:30]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1037.539 ; gain = 191.926 ; free physical = 2033 ; free virtual = 8756
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'gate' [/home/josefonseca/Documents/thesis/verilog/gate/gate.v:1]
+	Parameter INPUT_SZ bound to: 2 - type: integer 
+	Parameter HIDDEN_SZ bound to: 16 - type: integer 
+	Parameter QN bound to: 6 - type: integer 
+	Parameter QM bound to: 11 - type: integer 
+	Parameter DSP48_PER_ROW bound to: 4 - type: integer 
+	Parameter BITWIDTH bound to: 18 - type: integer 
+	Parameter LAYER_BITWIDTH bound to: 288 - type: integer 
+	Parameter ADDR_BITWIDTH_X bound to: 1 - type: integer 
+	Parameter ADDR_BITWIDTH bound to: 4 - type: integer 
+	Parameter IDLE bound to: 3'b000 
+	Parameter CALC_XandY bound to: 3'b001 
+	Parameter SUM_X bound to: 3'b010 
+	Parameter CALC_Y bound to: 3'b011 
+	Parameter SUM_Y bound to: 3'b100 
+INFO: [Synth 8-638] synthesizing module 'dot_prod' [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:1]
+	Parameter NROW bound to: 16 - type: integer 
+	Parameter NCOL bound to: 2 - type: integer 
+	Parameter QN bound to: 6 - type: integer 
+	Parameter QM bound to: 11 - type: integer 
+	Parameter DSP48_PER_ROW bound to: 4 - type: integer 
+	Parameter BITWIDTH bound to: 18 - type: integer 
+	Parameter ADDR_BITWIDTH bound to: 1 - type: integer 
+	Parameter LAYER_BITWIDTH bound to: 288 - type: integer 
+	Parameter N_DSP48 bound to: 4 - type: integer 
+	Parameter DSP48_INPUT_BITWIDTH bound to: 72 - type: integer 
+	Parameter DSP48_OUTPUT_BITWIDTH bound to: 592 - type: integer 
+	Parameter MAC_BITWIDTH bound to: 37 - type: integer 
+	Parameter MUX_BITWIDTH bound to: 2 - type: integer 
+	Parameter IDLE bound to: 3'b000 
+	Parameter IDLE_RDY bound to: 3'b001 
+	Parameter CALC bound to: 3'b010 
+	Parameter END_PIPE bound to: 3'b011 
+	Parameter END_PIPE2 bound to: 3'b100 
+	Parameter END bound to: 3'b101 
+INFO: [Synth 8-256] done synthesizing module 'dot_prod' (1#1) [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:1]
+INFO: [Synth 8-638] synthesizing module 'dot_prod__parameterized0' [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:1]
+	Parameter NROW bound to: 16 - type: integer 
+	Parameter NCOL bound to: 16 - type: integer 
+	Parameter QN bound to: 6 - type: integer 
+	Parameter QM bound to: 11 - type: integer 
+	Parameter DSP48_PER_ROW bound to: 4 - type: integer 
+	Parameter BITWIDTH bound to: 18 - type: integer 
+	Parameter ADDR_BITWIDTH bound to: 4 - type: integer 
+	Parameter LAYER_BITWIDTH bound to: 288 - type: integer 
+	Parameter N_DSP48 bound to: 4 - type: integer 
+	Parameter DSP48_INPUT_BITWIDTH bound to: 72 - type: integer 
+	Parameter DSP48_OUTPUT_BITWIDTH bound to: 592 - type: integer 
+	Parameter MAC_BITWIDTH bound to: 37 - type: integer 
+	Parameter MUX_BITWIDTH bound to: 2 - type: integer 
+	Parameter IDLE bound to: 3'b000 
+	Parameter IDLE_RDY bound to: 3'b001 
+	Parameter CALC bound to: 3'b010 
+	Parameter END_PIPE bound to: 3'b011 
+	Parameter END_PIPE2 bound to: 3'b100 
+	Parameter END bound to: 3'b101 
+INFO: [Synth 8-256] done synthesizing module 'dot_prod__parameterized0' (1#1) [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:1]
+INFO: [Synth 8-256] done synthesizing module 'gate' (2#1) [/home/josefonseca/Documents/thesis/verilog/gate/gate.v:1]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1067.797 ; gain = 222.184 ; free physical = 1997 ; free virtual = 8721
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1067.797 ; gain = 222.184 ; free physical = 2002 ; free virtual = 8726
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z020clg484-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/josefonseca/Documents/thesis/verilog/gate/Synth_gate/Synth_gate.srcs/constrs_1/new/gate_constr.xdc]
+Finished Parsing XDC File [/home/josefonseca/Documents/thesis/verilog/gate/Synth_gate/Synth_gate.srcs/constrs_1/new/gate_constr.xdc]
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.11 ; elapsed = 00:00:00.07 . Memory (MB): peak = 1427.516 ; gain = 0.000 ; free physical = 1670 ; free virtual = 8393
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 16972 
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1427.516 ; gain = 581.902 ; free physical = 1665 ; free virtual = 8388
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg484-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1427.516 ; gain = 581.902 ; free physical = 1665 ; free virtual = 8388
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1427.516 ; gain = 581.902 ; free physical = 1664 ; free virtual = 8388
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'dot_prod'
+INFO: [Synth 8-5544] ROM "NEXTrowMux" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'dot_prod__parameterized0'
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'gate'
+INFO: [Synth 8-5544] ROM "dataReady_gate" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "enable_dotprodY" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "enable_dotprodX" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "NEXTstate" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "NEXTstate" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    IDLE |                           000001 |                              000
+                IDLE_RDY |                           000010 |                              001
+                    CALC |                           000100 |                              010
+                END_PIPE |                           001000 |                              011
+               END_PIPE2 |                           010000 |                              100
+                     END |                           100000 |                              101
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'dot_prod'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    IDLE |                           000001 |                              000
+                IDLE_RDY |                           000010 |                              001
+                    CALC |                           000100 |                              010
+                END_PIPE |                           001000 |                              011
+               END_PIPE2 |                           010000 |                              100
+                     END |                           100000 |                              101
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'dot_prod__parameterized0'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    IDLE |                            00001 |                              000
+              CALC_XandY |                            00010 |                              001
+                   SUM_X |                            00100 |                              010
+                  CALC_Y |                            01000 |                              011
+                   SUM_Y |                            10000 |                              100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'gate'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1427.516 ; gain = 581.902 ; free physical = 1663 ; free virtual = 8386
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++------+--------------+------------+----------+
+|      |RTL Partition |Replication |Instances |
++------+--------------+------------+----------+
+|1     |gate__GB0     |           1|     28974|
+|2     |gate__GB1     |           1|     28916|
++------+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     18 Bit       Adders := 32    
+	   2 Input      4 Bit       Adders := 1     
+	   2 Input      2 Bit       Adders := 2     
+	   2 Input      1 Bit       Adders := 1     
++---Registers : 
+	              592 Bit    Registers := 2     
+	              288 Bit    Registers := 4     
+	                4 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
+	                2 Bit    Registers := 8     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input    592 Bit        Muxes := 2     
+	   4 Input     37 Bit        Muxes := 8     
+	   4 Input     18 Bit        Muxes := 8     
+	   7 Input      6 Bit        Muxes := 2     
+	   8 Input      5 Bit        Muxes := 1     
+	   6 Input      4 Bit        Muxes := 1     
+	   7 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   6 Input      2 Bit        Muxes := 2     
+	   8 Input      1 Bit        Muxes := 1     
+	   6 Input      1 Bit        Muxes := 6     
+	   5 Input      1 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module gate 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     18 Bit       Adders := 32    
++---Registers : 
+	              288 Bit    Registers := 2     
++---Muxes : 
+	   8 Input      5 Bit        Muxes := 1     
+	   5 Input      1 Bit        Muxes := 2     
+Module dot_prod__parameterized0 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      4 Bit       Adders := 1     
+	   2 Input      2 Bit       Adders := 1     
++---Registers : 
+	              592 Bit    Registers := 1     
+	              288 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
+	                2 Bit    Registers := 4     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input    592 Bit        Muxes := 1     
+	   4 Input     37 Bit        Muxes := 4     
+	   4 Input     18 Bit        Muxes := 4     
+	   7 Input      6 Bit        Muxes := 1     
+	   6 Input      4 Bit        Muxes := 1     
+	   7 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   6 Input      2 Bit        Muxes := 1     
+	   8 Input      1 Bit        Muxes := 1     
+	   6 Input      1 Bit        Muxes := 2     
+Module dot_prod 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      2 Bit       Adders := 1     
+	   2 Input      1 Bit       Adders := 1     
++---Registers : 
+	              592 Bit    Registers := 1     
+	              288 Bit    Registers := 1     
+	                2 Bit    Registers := 4     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input    592 Bit        Muxes := 1     
+	   4 Input     37 Bit        Muxes := 4     
+	   4 Input     18 Bit        Muxes := 4     
+	   7 Input      6 Bit        Muxes := 1     
+	   6 Input      2 Bit        Muxes := 1     
+	   6 Input      1 Bit        Muxes := 4     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1427.516 ; gain = 581.902 ; free physical = 1667 ; free virtual = 8390
+---------------------------------------------------------------------------------
+Start Cross Boundary Optimization
+---------------------------------------------------------------------------------
+DSP Report: Generating DSP outputMAC4, operation Mode is: C+A*B.
+DSP Report: operator outputMAC4 is absorbed into DSP outputMAC4.
+DSP Report: operator outputMAC5 is absorbed into DSP outputMAC4.
+DSP Report: Generating DSP outputMAC3, operation Mode is: C+A*B.
+DSP Report: operator outputMAC3 is absorbed into DSP outputMAC3.
+DSP Report: operator outputMAC4 is absorbed into DSP outputMAC3.
+DSP Report: Generating DSP outputMAC2, operation Mode is: C+A*B.
+DSP Report: operator outputMAC2 is absorbed into DSP outputMAC2.
+DSP Report: operator outputMAC3 is absorbed into DSP outputMAC2.
+DSP Report: Generating DSP outputMAC1, operation Mode is: C+A*B.
+DSP Report: operator outputMAC1 is absorbed into DSP outputMAC1.
+DSP Report: operator outputMAC2 is absorbed into DSP outputMAC1.
+DSP Report: Generating DSP outputMAC4, operation Mode is: C+A*B.
+DSP Report: operator outputMAC4 is absorbed into DSP outputMAC4.
+DSP Report: operator outputMAC5 is absorbed into DSP outputMAC4.
+DSP Report: Generating DSP outputMAC3, operation Mode is: C+A*B.
+DSP Report: operator outputMAC3 is absorbed into DSP outputMAC3.
+DSP Report: operator outputMAC4 is absorbed into DSP outputMAC3.
+DSP Report: Generating DSP outputMAC2, operation Mode is: C+A*B.
+DSP Report: operator outputMAC2 is absorbed into DSP outputMAC2.
+DSP Report: operator outputMAC3 is absorbed into DSP outputMAC2.
+DSP Report: Generating DSP outputMAC1, operation Mode is: C+A*B.
+DSP Report: operator outputMAC1 is absorbed into DSP outputMAC1.
+DSP Report: operator outputMAC2 is absorbed into DSP outputMAC1.
+---------------------------------------------------------------------------------
+Finished Cross Boundary Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1427.516 ; gain = 581.902 ; free physical = 1670 ; free virtual = 8394
+---------------------------------------------------------------------------------
+Finished Parallel Reinference  : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1427.516 ; gain = 581.902 ; free physical = 1670 ; free virtual = 8394
+
+Report RTL Partitions: 
++------+--------------+------------+----------+
+|      |RTL Partition |Replication |Instances |
++------+--------------+------------+----------+
+|1     |gate__GB0     |           1|     22901|
+|2     |gate__GB1     |           1|     22843|
++------+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+DSP:
++------------+-------------+--------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping | Neg Edge Clk | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+-------------+--------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|dot_prod    | C+A*B       | No           | 18     | 18     | 37     | 25     | 37     | 0    | 0    | 0    | 1    | 1     | 0    | 0    | 
+|dot_prod    | C+A*B       | No           | 18     | 18     | 37     | 25     | 37     | 0    | 0    | 0    | 1    | 1     | 0    | 0    | 
+|dot_prod    | C+A*B       | No           | 18     | 18     | 37     | 25     | 37     | 0    | 0    | 0    | 1    | 1     | 0    | 0    | 
+|dot_prod    | C+A*B       | No           | 18     | 18     | 37     | 25     | 37     | 0    | 0    | 0    | 1    | 1     | 0    | 0    | 
+|dot_prod    | C+A*B       | No           | 18     | 18     | 37     | 25     | 37     | 0    | 0    | 0    | 1    | 1     | 0    | 0    | 
+|dot_prod    | C+A*B       | No           | 18     | 18     | 37     | 25     | 37     | 0    | 0    | 0    | 1    | 1     | 0    | 0    | 
+|dot_prod    | C+A*B       | No           | 18     | 18     | 37     | 25     | 37     | 0    | 0    | 0    | 1    | 1     | 0    | 0    | 
+|dot_prod    | C+A*B       | No           | 18     | 18     | 37     | 25     | 37     | 0    | 0    | 0    | 1    | 1     | 0    | 0    | 
++------------+-------------+--------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Area Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1427.516 ; gain = 581.902 ; free physical = 1717 ; free virtual = 8441
+---------------------------------------------------------------------------------
+Finished Parallel Area Optimization  : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1427.516 ; gain = 581.902 ; free physical = 1717 ; free virtual = 8441
+
+Report RTL Partitions: 
++------+--------------+------------+----------+
+|      |RTL Partition |Replication |Instances |
++------+--------------+------------+----------+
+|1     |gate__GB0     |           1|      4999|
+|2     |gate__GB1     |           1|      5385|
++------+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:31 ; elapsed = 00:00:33 . Memory (MB): peak = 1465.500 ; gain = 619.887 ; free physical = 1610 ; free virtual = 8334
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 1502.836 ; gain = 657.223 ; free physical = 1589 ; free virtual = 8313
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++------+--------------+------------+----------+
+|      |RTL Partition |Replication |Instances |
++------+--------------+------------+----------+
+|1     |gate__GB0     |           1|      4999|
+|2     |gate__GB1     |           1|      5118|
++------+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:36 ; elapsed = 00:00:38 . Memory (MB): peak = 1523.938 ; gain = 678.324 ; free physical = 1596 ; free virtual = 8320
+---------------------------------------------------------------------------------
+Finished Parallel Technology Mapping Optimization  : Time (s): cpu = 00:00:36 ; elapsed = 00:00:38 . Memory (MB): peak = 1523.938 ; gain = 678.324 ; free physical = 1596 ; free virtual = 8320
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:00:36 ; elapsed = 00:00:38 . Memory (MB): peak = 1523.938 ; gain = 678.324 ; free physical = 1596 ; free virtual = 8320
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:37 ; elapsed = 00:00:39 . Memory (MB): peak = 1523.938 ; gain = 678.324 ; free physical = 1595 ; free virtual = 8319
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:37 ; elapsed = 00:00:39 . Memory (MB): peak = 1523.938 ; gain = 678.324 ; free physical = 1595 ; free virtual = 8319
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:37 ; elapsed = 00:00:39 . Memory (MB): peak = 1523.938 ; gain = 678.324 ; free physical = 1595 ; free virtual = 8319
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:37 ; elapsed = 00:00:39 . Memory (MB): peak = 1523.938 ; gain = 678.324 ; free physical = 1595 ; free virtual = 8319
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:37 ; elapsed = 00:00:39 . Memory (MB): peak = 1523.938 ; gain = 678.324 ; free physical = 1590 ; free virtual = 8314
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:37 ; elapsed = 00:00:39 . Memory (MB): peak = 1523.938 ; gain = 678.324 ; free physical = 1590 ; free virtual = 8314
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+--------+------+
+|      |Cell    |Count |
++------+--------+------+
+|1     |CARRY4  |   160|
+|2     |DSP48E1 |     8|
+|3     |LUT2    |   657|
+|4     |LUT3    |  1071|
+|5     |LUT4    |    93|
+|6     |LUT5    |   117|
+|7     |LUT6    |   600|
+|8     |MUXF7   |     4|
+|9     |FDRE    |  2391|
+|10    |FDSE    |     3|
++------+--------+------+
+
+Report Instance Areas: 
++------+------------+-------------------------+------+
+|      |Instance    |Module                   |Cells |
++------+------------+-------------------------+------+
+|1     |top         |                         |  5104|
+|2     |  DOTPROD_X |dot_prod                 |  2243|
+|3     |  DOTPROD_Y |dot_prod__parameterized0 |  2279|
++------+------------+-------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:37 ; elapsed = 00:00:39 . Memory (MB): peak = 1523.938 ; gain = 678.324 ; free physical = 1590 ; free virtual = 8314
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:32 ; elapsed = 00:00:32 . Memory (MB): peak = 1523.938 ; gain = 196.801 ; free physical = 1586 ; free virtual = 8310
+Synthesis Optimization Complete : Time (s): cpu = 00:00:37 ; elapsed = 00:00:39 . Memory (MB): peak = 1523.938 ; gain = 678.324 ; free physical = 1586 ; free virtual = 8310
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 168 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+29 Infos, 23 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:37 ; elapsed = 00:00:39 . Memory (MB): peak = 1523.941 ; gain = 606.992 ; free physical = 1576 ; free virtual = 8300
+report_utilization: Time (s): cpu = 00:00:00.11 ; elapsed = 00:00:00.14 . Memory (MB): peak = 1531.945 ; gain = 0.000 ; free physical = 1577 ; free virtual = 8301
+INFO: [Common 17-206] Exiting Vivado at Fri Jun 24 17:28:54 2016...

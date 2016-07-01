@@ -1,77 +1,43 @@
 \chapter*{Resumo}
-%\addcontentsline{toc}{chapter}{Resumo}
+\addcontentsline{toc}{chapter}{Resumo}
 
-Este documento ilustra o formato a usar em dissertações na \Feup.
-São dados exemplos de margens, cabeçalhos, títulos, paginação, estilos
-de índices, etc. 
-São ainda dados exemplos de formatação de citações, figuras e tabelas,
-equações, referências cruzadas, lista de referências e índices.
-Este documento não pretende exemplificar conteúdos a usar. 
-É usado o \emph{Loren Ipsum} para preencher a dissertação.
+Esta dissertação tem como objetivo a implementação em hardware, numa plataforma
+FPGA, de uma Rede Neuronal \textit{Long Short-Term Memory} (LSTM). 
 
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam vitae
-quam sed mauris auctor porttitor. Mauris porta sem vitae arcu sagittis
-facilisis. Proin sodales risus sit amet arcu. Quisque eu pede eu elit
-pulvinar porttitor. Maecenas dignissim tincidunt dui. Pellentesque
-habitant morbi tristique senectus et netus et malesuada fames ac
-turpis egestas. Donec non augue sit amet nulla gravida
-rutrum. Vestibulum ante ipsum primis in faucibus orci luctus et
-ultrices posuere cubilia Curae; Nunc at nunc. Etiam egestas. 
+As redes neuronais são uma das técnicas mais usadas na área da Aprendizagem Computacional Profunda para tarefas em
+que a programação explícita de \textit{software}, para além de ser impraticavelmente complexa, é necessário que haja uma qualidade
+de tomada de decisão semelhante ou superior à inteligência Humana. Esta rede em particular, a LSTM, é uma rede recursiva, na medida em que a saída
+da cada neurónio, num instante de tempo, \emph{também} serve de entrada no instante seguinte, e assim
+os elementos de memória nela presentes conseguem encontrar padrões também em sequências de dados,
+apresentando vantagens claras, neste campo, face a redes neuronais convencionais.
 
-Donec malesuada pede eget nunc. Fusce porttitor felis eget mi mattis
-vestibulum. Pellentesque faucibus. Cras adipiscing dolor quis
-mi. Quisque sagittis, justo sed dapibus pharetra, lectus velit
-tincidunt eros, ac fermentum nulla velit vel sapien. Vestibulum sem
-mauris, hendrerit non, feugiat ac, varius ornare, lectus. Praesent
-urna tellus, euismod in, hendrerit sit amet, pretium vitae,
-nisi. Proin nisl sem, ultrices eget, faucibus a, feugiat non,
-purus. Etiam mi tortor, convallis quis, pharetra ut, consectetuer eu,
-orci. Vivamus aliquet. Aenean mollis fringilla erat. Vivamus mollis,
-purus at pellentesque faucibus, sapien lorem eleifend quam, mollis
-luctus mi purus in dui. Maecenas volutpat mauris eu lectus. Morbi vel
-risus et dolor bibendum malesuada. Donec feugiat tristique erat. Nam
-porta auctor mi. Nulla purus. Nam aliquam. 
+As aplicações desta rede são inúmeras, como se poderá atestar no capítulo
+que faz o levantamento do estado-da-arte. Embora a implementação em \textit{software}
+seja a solução comum para todas estas arquitecturas, as implementações em \textit{hardware}
+são ainda poucas e os benefícios do paralelismo inerente a uma plataforma de \textit{hardware} dedicado (no caso deste trabalho, uma FPGA) não
+são aproveitados. É nesse enquadramento que este trabalho se posiciona, apresentando uma implementação inédita de LSTM em FPGA, fazendo apenas uso de 
+recursos internos à mesma, que tem uma melhoria de rapidez de processamento de cerca de 195 vezes face 
+a uma implementação \textit{software}, assim como a proposta de um circuito que permita fazer o 
+treino \textit{on-chip} da rede, usando um método de perturbações estocásticas simultâneas (SPSA).
 
 
 \chapter*{Abstract}
-%\addcontentsline{toc}{chapter}{Abstract}
+\addcontentsline{toc}{chapter}{Abstract}
 
-Here goes the abstract written in English.
+The objective of this Dissertation work is to implement a Long Short-Term Memory (LSTM) Neural
+Network in an FPGA platform.
 
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed vehicula
-lorem commodo dui. Fusce mollis feugiat elit. Cum sociis natoque
-penatibus et magnis dis parturient montes, nascetur ridiculus
-mus. Donec eu quam. Aenean consectetuer odio quis nisi. Fusce molestie
-metus sed neque. Praesent nulla. Donec quis urna. Pellentesque
-hendrerit vulputate nunc. Donec id eros et leo ullamcorper
-placerat. Curabitur aliquam tellus et diam. 
+Neural Networks are one of the most commonly used techniques in Deep Learning for tasks
+where explicit programming of software, besides impractically complex, it is necessary that
+the quality of the decision making is similar, or even better, than that of Human intelligence.
+This particular type of network, LSTM, is a recursive network, given that the neuron outputs in a 
+given time is \emph{also} fed as the input in the next time instant, and that way their memory elements can
+make sense of patterns within data sequences, unlike conventional neural networks.
 
-Ut tortor. Morbi eget elit. Maecenas nec risus. Sed ultricies. Sed
-scelerisque libero faucibus sem. Nullam molestie leo quis
-tellus. Donec ipsum. Nulla lobortis purus pharetra turpis. Nulla
-laoreet, arcu nec hendrerit vulputate, tortor elit eleifend turpis, et
-aliquam leo metus in dolor. Praesent sed nulla. Mauris ac augue. Cras
-ac orci. Etiam sed urna eget nulla sodales venenatis. Donec faucibus
-ante eget dui. Nam magna. Suspendisse sollicitudin est et mi. 
+This type of network, as well as many other kinds of networks, have been profusely implemented
+in software, and their practical applications are plentiful, as one can attest
+in the State of the Art chapter. However, the benefits of the inherent parallelism offered by a dedicated hardware platform
+(in this work, an FPGA) are not availed, and there are relatively few the implementation of Machine Learning algorithms in
+these kind of platforms. It is within this grounding that this work positions itself, implementing an LSTM Network in FPGA, using only its internal resources, and achieving an $\times195$ increase in processing time when compared to a software implementation, and also proposes a circuit that will allow on-chip training for this network, using simultaneous stochastic perturbations (SPSA).
 
-Fusce sed ipsum vel velit imperdiet dictum. Sed nisi purus, dapibus
-ut, iaculis ac, placerat id, purus. Integer aliquet elementum
-libero. Phasellus facilisis leo eget elit. Nullam nisi magna, ornare
-at, aliquet et, porta id, odio. Sed volutpat tellus consectetuer
-ligula. Phasellus turpis augue, malesuada et, placerat fringilla,
-ornare nec, eros. Class aptent taciti sociosqu ad litora torquent per
-conubia nostra, per inceptos himenaeos. Vivamus ornare quam nec sem
-mattis vulputate. Nullam porta, diam nec porta mollis, orci leo
-condimentum sapien, quis venenatis mi dolor a metus. Nullam
-mollis. Aenean metus massa, pellentesque sit amet, sagittis eget,
-tincidunt in, arcu. Vestibulum porta laoreet tortor. Nullam mollis
-elit nec justo. In nulla ligula, pellentesque sit amet, consequat sed,
-faucibus id, velit. Fusce purus. Quisque sagittis urna at quam. Ut eu
-lacus. Maecenas tortor nibh, ultricies nec, vestibulum varius, egestas
-id, sapien. 
 
-Donec hendrerit. Vivamus suscipit egestas nibh. In ornare leo ut
-massa. Donec nisi nisl, dignissim quis, faucibus a, bibendum ac,
-diam. Nam adipiscing hendrerit mi. Morbi ac nulla. Nullam id est ac
-nisi consectetuer commodo. Pellentesque aliquam massa sit amet
-tellus. Vivamus sodales aliquam leo. 

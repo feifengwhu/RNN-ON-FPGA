@@ -129,11 +129,13 @@ module network  #(parameter INPUT_SZ   =  2,
                                                              clock, reset, colAddressRead_wZX, colAddressRead_wZY, gateReady_Z, gate_Z);
     weightRAM  #(HIDDEN_SZ,  INPUT_SZ, BITWIDTH)  WRAM_Z_X (colAddressWrite_wZX, colAddressRead_wZX, writeEn_wZX, clock, reset, wZX_in, wZX_out);
     weightRAM  #(HIDDEN_SZ, HIDDEN_SZ, BITWIDTH)  WRAM_Z_Y (colAddressWrite_wZY, colAddressRead_wZY, writeEn_wZY, clock, reset, wZY_in, wZY_out);
- 
+
+    
     gate #(INPUT_SZ, HIDDEN_SZ, QN, QM, DSP48_PER_ROW_G) GATE_I (inputVecSample, prevOutVecSample, wIX_out, wIY_out, bI, beginCalc,
                                                              clock, reset, colAddressRead_wIX, colAddressRead_wIY, gateReady_I, gate_I);
     weightRAM  #(HIDDEN_SZ,  INPUT_SZ, BITWIDTH)  WRAM_I_X (colAddressWrite_wIX, colAddressRead_wIX, writeEn_wIX, clock, reset, wIX_in, wIX_out);
     weightRAM  #(HIDDEN_SZ, HIDDEN_SZ, BITWIDTH)  WRAM_I_Y (colAddressWrite_wIY, colAddressRead_wIY, writeEn_wIY, clock, reset, wIY_in, wIY_out);
+
 
     gate #(INPUT_SZ, HIDDEN_SZ, QN, QM, DSP48_PER_ROW_G) GATE_F (inputVecSample, prevOutVecSample, wFX_out, wFY_out, bF, beginCalc,
                                                              clock, reset, colAddressRead_wFX, colAddressRead_wFY, gateReady_F, gate_F);
@@ -144,6 +146,7 @@ module network  #(parameter INPUT_SZ   =  2,
                                                              clock, reset, colAddressRead_wOX, colAddressRead_wOY, gateReady_O, gate_O);
     weightRAM  #(HIDDEN_SZ,  INPUT_SZ, BITWIDTH)  WRAM_O_X (colAddressWrite_wOX, colAddressRead_wOX, writeEn_wOX, clock, reset, wOX_in, wOX_out);
     weightRAM  #(HIDDEN_SZ, HIDDEN_SZ, BITWIDTH)  WRAM_O_Y (colAddressWrite_wOY, colAddressRead_wOY, writeEn_wOY, clock, reset, wOY_in, wOY_out);
+
 
     genvar i;
     generate 

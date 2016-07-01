@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="impl_8" LaunchPart="xc7z020clg484-1" LaunchTime="1466864159">
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <File Type="RDI-RDI" Name="top_network.vdi"/>
+  <File Type="BG-DRC" Name="top_network.drc"/>
+  <File Type="BG-BGN" Name="top_network.bgn"/>
+  <File Type="BITSTR-SYSDEF" Name="top_network.sysdef"/>
+  <File Type="BITSTR-MMI" Name="top_network.mmi"/>
+  <File Type="BITSTR-BMM" Name="top_network_bd.bmm"/>
+  <File Type="BITSTR-NKY" Name="top_network.nky"/>
+  <File Type="BITSTR-RBT" Name="top_network.rbt"/>
+  <File Type="BITSTR-MSK" Name="top_network.msk"/>
+  <File Type="BG-BIN" Name="top_network.bin"/>
+  <File Type="BG-BIT" Name="top_network.bit"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="top_network_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="top_network_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="top_network_postroute_physopt.dcp"/>
+  <File Type="ROUTE-CLK" Name="top_network_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-SIMILARITY" Name="top_network_incremental_reuse_routed.rpt"/>
+  <File Type="PLACE-CLK" Name="top_network_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-DCP" Name="top_network_placed.dcp"/>
+  <File Type="PWROPT-DRC" Name="top_network_drc_pwropted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="top_network_timing_summary_postroute_physopted.pb"/>
+  <File Type="PA-TCL" Name="top_network.tcl"/>
+  <File Type="PWROPT-DCP" Name="top_network_pwropt.dcp"/>
+  <File Type="OPT-HWDEF" Name="top_network.hwdef"/>
+  <File Type="PWROPT-TIMING" Name="top_network_timing_summary_pwropted.rpt"/>
+  <File Type="RUN-CONSTRS" Name="$PDATADIR/runs/impl_8/constrs_in.xml"/>
+  <File Type="OPT-DRC" Name="top_network_drc_opted.rpt"/>
+  <File Type="PHYSOPT-TIMING" Name="top_network_timing_summary_physopted.rpt"/>
+  <File Type="INIT-TIMING" Name="top_network_timing_summary_init.rpt"/>
+  <File Type="RUN-SRCS" Name="$PDATADIR/runs/impl_8/sources.xml"/>
+  <File Type="OPT-TIMING" Name="top_network_timing_summary_opted.rpt"/>
+  <File Type="RUN-STRAT" Name="$PDATADIR/runs/impl_8/impl_8.psg"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="top_network_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="PLACE-IO" Name="top_network_io_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="top_network_utilization_placed.rpt"/>
+  <File Type="OPT-DCP" Name="top_network_opt.dcp"/>
+  <File Type="PLACE-UTIL-PB" Name="top_network_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="top_network_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="top_network_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="top_network_incremental_reuse_pre_placed.rpt"/>
+  <File Type="PLACE-TIMING" Name="top_network_timing_summary_placed.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="top_network_postplace_pwropt.dcp"/>
+  <File Type="PHYSOPT-DCP" Name="top_network_physopt.dcp"/>
+  <File Type="PHYSOPT-DRC" Name="top_network_drc_physopted.rpt"/>
+  <File Type="ROUTE-DCP" Name="top_network_routed.dcp"/>
+  <File Type="ROUTE-DRC" Name="top_network_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="top_network_drc_routed.pb"/>
+  <File Type="ROUTE-PWR" Name="top_network_power_routed.rpt"/>
+  <File Type="ROUTE-PWR-SUM" Name="top_network_power_summary_routed.pb"/>
+  <File Type="ROUTE-STATUS" Name="top_network_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="top_network_route_status.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="top_network_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="top_network_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="top_network_timing_summary_routed.rpx"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PPRDIR/../dot_prod.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../tanh.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../weightRAM.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../sigmoid.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../gate.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../network.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../array_prod.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../top_network.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../test.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="top_network"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/lstm_const">
+    <File Path="$PSRCDIR/lstm_const/new/timing.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TargetConstrsFile" Val="$PSRCDIR/lstm_const/new/timing.xdc"/>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2015">
+      <Desc>Vivado Implementation Defaults</Desc>
+    </StratHandle>
+    <Step Id="init_design"/>
+    <Step Id="opt_design"/>
+    <Step Id="power_opt_design"/>
+    <Step Id="place_design"/>
+    <Step Id="post_place_power_opt_design"/>
+    <Step Id="phys_opt_design"/>
+    <Step Id="route_design"/>
+    <Step Id="post_route_phys_opt_design"/>
+    <Step Id="write_bitstream"/>
+  </Strategy>
+</GenRun>

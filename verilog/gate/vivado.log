@@ -2,29 +2,60 @@
 # Vivado v2015.4 (64-bit)
 # SW Build 1412921 on Wed Nov 18 09:44:32 MST 2015
 # IP Build 1412160 on Tue Nov 17 13:47:24 MST 2015
-# Start of session at: Tue Jun 21 17:48:02 2016
-# Process ID: 19934
+# Start of session at: Fri Jun 24 17:13:37 2016
+# Process ID: 9819
 # Current directory: /home/josefonseca/Documents/thesis/verilog/gate
 # Command line: vivado
 # Log file: /home/josefonseca/Documents/thesis/verilog/gate/vivado.log
 # Journal file: /home/josefonseca/Documents/thesis/verilog/gate/vivado.jou
 #-----------------------------------------------------------
 start_gui
-open_project /home/josefonseca/Documents/thesis/verilog/gate/gate_synth/gate_synth.xpr
-Scanning sources...
-Finished scanning sources
-WARNING: [filemgmt 56-3] IPUserFilesDir: Could not find the directory '/home/josefonseca/Documents/thesis/verilog/gate/gate_synth/gate_synth.ip_user_files'.
-WARNING: [filemgmt 56-3] IPStaticSourceDir: Could not find the directory '/home/josefonseca/Documents/thesis/verilog/gate/gate_synth/gate_synth.ip_user_files/ipstatic'.
+create_project Synth_gate /home/josefonseca/Documents/thesis/verilog/gate/Synth_gate -part xc7z020clg484-1
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2015.4/data/ip'.
-open_project: Time (s): cpu = 00:00:10 ; elapsed = 00:00:05 . Memory (MB): peak = 5819.074 ; gain = 129.242 ; free physical = 3049 ; free virtual = 8033
-reset_run synth_2
-launch_runs synth_2
-INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v" into library work [/home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v:1]
-INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/gate/gate.v" into library work [/home/josefonseca/Documents/thesis/verilog/gate/gate.v:1]
-INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/gate/weightRAM.v" into library work [/home/josefonseca/Documents/thesis/verilog/gate/weightRAM.v:1]
-[Tue Jun 21 17:49:55 2016] Launched synth_2...
-Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/gate/gate_synth/gate_synth.runs/synth_2/runme.log
+set_property board_part em.avnet.com:zed:part0:1.3 [current_project]
+set_property simulator_language Verilog [current_project]
+add_files -norecurse {/home/josefonseca/Documents/thesis/verilog/gate/gate.v /home/josefonseca/Documents/thesis/verilog/gate/dot_prod.v}
+file mkdir /home/josefonseca/Documents/thesis/verilog/gate/Synth_gate/Synth_gate.srcs/constrs_1/new
+close [ open /home/josefonseca/Documents/thesis/verilog/gate/Synth_gate/Synth_gate.srcs/constrs_1/new/gate_constr.xdc w ]
+add_files -fileset constrs_1 /home/josefonseca/Documents/thesis/verilog/gate/Synth_gate/Synth_gate.srcs/constrs_1/new/gate_constr.xdc
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+set_property strategy Performance_ExplorePostRoutePhysOpt [get_runs impl_1]
+set_property strategy Flow_PerfOptimized_high [get_runs synth_1]
+set_property -name {STEPS.SYNTH_DESIGN.ARGS.MORE OPTIONS} -value {-mode out_of_context} -objects [get_runs synth_1]
+launch_runs impl_1
+[Fri Jun 24 17:16:57 2016] Launched synth_1...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/gate/Synth_gate/Synth_gate.runs/synth_1/runme.log
+[Fri Jun 24 17:16:57 2016] Launched impl_1...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/gate/Synth_gate/Synth_gate.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:08 ; elapsed = 00:02:00 . Memory (MB): peak = 5876.906 ; gain = 52.438 ; free physical = 1258 ; free virtual = 8009
+reset_run synth_1
+launch_runs impl_1
+[Fri Jun 24 17:20:18 2016] Launched synth_1...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/gate/Synth_gate/Synth_gate.runs/synth_1/runme.log
+[Fri Jun 24 17:20:18 2016] Launched impl_1...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/gate/Synth_gate/Synth_gate.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:04 ; elapsed = 00:02:00 . Memory (MB): peak = 5878.906 ; gain = 0.000 ; free physical = 1258 ; free virtual = 8011
+reset_run synth_1
+launch_runs impl_1
+[Fri Jun 24 17:24:13 2016] Launched synth_1...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/gate/Synth_gate/Synth_gate.runs/synth_1/runme.log
+[Fri Jun 24 17:24:13 2016] Launched impl_1...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/gate/Synth_gate/Synth_gate.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1
+[Fri Jun 24 17:27:04 2016] Launched synth_1...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/gate/Synth_gate/Synth_gate.runs/synth_1/runme.log
+[Fri Jun 24 17:27:04 2016] Launched impl_1...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/gate/Synth_gate/Synth_gate.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1
+[Fri Jun 24 17:28:10 2016] Launched synth_1...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/gate/Synth_gate/Synth_gate.runs/synth_1/runme.log
+[Fri Jun 24 17:28:10 2016] Launched impl_1...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/gate/Synth_gate/Synth_gate.runs/impl_1/runme.log
 exit
-INFO: [Common 17-206] Exiting Vivado at Tue Jun 21 17:53:01 2016...
+INFO: [Common 17-206] Exiting Vivado at Fri Jun 24 17:35:56 2016...

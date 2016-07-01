@@ -1,0 +1,1729 @@
+#-----------------------------------------------------------
+# Vivado v2015.4 (64-bit)
+# SW Build 1412921 on Wed Nov 18 09:44:32 MST 2015
+# IP Build 1412160 on Tue Nov 17 13:47:24 MST 2015
+# Start of session at: Fri Jun 24 16:45:02 2016
+# Process ID: 30597
+# Current directory: /home/josefonseca/Documents/thesis/verilog/dot_prod/Synth_dot_prod/Synth_dot_prod.runs/impl_6
+# Command line: vivado -log dot_prod.vdi -applog -messageDb vivado.pb -mode batch -source dot_prod.tcl -notrace
+# Log file: /home/josefonseca/Documents/thesis/verilog/dot_prod/Synth_dot_prod/Synth_dot_prod.runs/impl_6/dot_prod.vdi
+# Journal file: /home/josefonseca/Documents/thesis/verilog/dot_prod/Synth_dot_prod/Synth_dot_prod.runs/impl_6/vivado.jou
+#-----------------------------------------------------------
+source dot_prod.tcl -notrace
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+INFO: [Netlist 29-17] Analyzing 4 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+WARNING: [Netlist 29-101] Netlist 'dot_prod' is not ideal for floorplanning, since the cellview 'dot_prod' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
+INFO: [Project 1-479] Netlist was created with Vivado 2015.4
+INFO: [Device 21-403] Loading part xc7z020clg484-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [/home/josefonseca/Documents/thesis/verilog/dot_prod/Synth_dot_prod/Synth_dot_prod.srcs/constrs_1/new/dot_prod_timing.xdc]
+Finished Parsing XDC File [/home/josefonseca/Documents/thesis/verilog/dot_prod/Synth_dot_prod/Synth_dot_prod.srcs/constrs_1/new/dot_prod_timing.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Command: opt_design -directive Explore
+INFO: [Vivado_Tcl 4-136] Directive used for opt_design is: Explore
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:00.12 ; elapsed = 00:00:00.12 . Memory (MB): peak = 1269.113 ; gain = 69.031 ; free physical = 847 ; free virtual = 7537
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+
+Starting Logic Optimization Task
+Implement Debug Cores | Checksum: b6f722d0
+
+Phase 1 Retarget
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Opt 31-49] Retargeted 0 cell(s).
+Phase 1 Retarget | Checksum: b6f722d0
+
+Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.03 . Memory (MB): peak = 1629.605 ; gain = 0.000 ; free physical = 513 ; free virtual = 7204
+
+Phase 2 Constant Propagation
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Opt 31-10] Eliminated 0 cells.
+Phase 2 Constant Propagation | Checksum: a2125aa7
+
+Time (s): cpu = 00:00:00.08 ; elapsed = 00:00:00.08 . Memory (MB): peak = 1629.605 ; gain = 0.000 ; free physical = 516 ; free virtual = 7207
+
+Phase 3 Sweep
+INFO: [Opt 31-12] Eliminated 0 unconnected nets.
+INFO: [Opt 31-11] Eliminated 0 unconnected cells.
+Phase 3 Sweep | Checksum: a2125aa7
+
+Time (s): cpu = 00:00:00.11 ; elapsed = 00:00:00.11 . Memory (MB): peak = 1629.605 ; gain = 0.000 ; free physical = 509 ; free virtual = 7200
+
+Phase 4 Constant Propagation
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Opt 31-10] Eliminated 0 cells.
+Phase 4 Constant Propagation | Checksum: a2125aa7
+
+Time (s): cpu = 00:00:00.15 ; elapsed = 00:00:00.15 . Memory (MB): peak = 1629.605 ; gain = 0.000 ; free physical = 516 ; free virtual = 7207
+
+Phase 5 Sweep
+INFO: [Opt 31-12] Eliminated 0 unconnected nets.
+INFO: [Opt 31-11] Eliminated 0 unconnected cells.
+Phase 5 Sweep | Checksum: a2125aa7
+
+Time (s): cpu = 00:00:00.18 ; elapsed = 00:00:00.18 . Memory (MB): peak = 1629.605 ; gain = 0.000 ; free physical = 513 ; free virtual = 7204
+
+Starting Connectivity Check Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 1629.605 ; gain = 0.000 ; free physical = 516 ; free virtual = 7207
+Ending Logic Optimization Task | Checksum: a2125aa7
+
+Time (s): cpu = 00:00:00.19 ; elapsed = 00:00:00.19 . Memory (MB): peak = 1629.605 ; gain = 0.000 ; free physical = 508 ; free virtual = 7199
+
+Starting Power Optimization Task
+INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
+Ending Power Optimization Task | Checksum: a2125aa7
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 1629.605 ; gain = 0.000 ; free physical = 508 ; free virtual = 7199
+INFO: [Common 17-83] Releasing license: Implementation
+25 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+opt_design completed successfully
+opt_design: Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1629.605 ; gain = 438.527 ; free physical = 513 ; free virtual = 7204
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Coretcl 2-168] The results of DRC are in file /home/josefonseca/Documents/thesis/verilog/dot_prod/Synth_dot_prod/Synth_dot_prod.runs/impl_6/dot_prod_drc_opted.rpt.
+INFO: [Vivado_Tcl 4-424] Cannot write hardware definition file as there are no IPI block design hardware handoff files present
+Command: place_design -directive Explore
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Running DRC as a precondition to command place_design
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+Starting Placer Task
+INFO: [Place 46-5] The placer was invoked with the 'Explore' directive.
+INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 8 CPUs
+
+Phase 1 Placer Initialization
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 1711.246 ; gain = 0.000 ; free physical = 484 ; free virtual = 7174
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1711.246 ; gain = 0.000 ; free physical = 484 ; free virtual = 7174
+
+Phase 1.1 IO Placement/ Clock Placement/ Build Placer Device
+
+Phase 1.1.1 Pre-Place Cells
+Phase 1.1.1 Pre-Place Cells | Checksum: 00000000
+
+Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.03 . Memory (MB): peak = 1711.246 ; gain = 0.000 ; free physical = 477 ; free virtual = 7167
+
+Phase 1.1.2 IO and Clk Clean Up
+Phase 1.1.2 IO and Clk Clean Up | Checksum: 00000000
+
+Time (s): cpu = 00:00:00.63 ; elapsed = 00:00:00.43 . Memory (MB): peak = 1727.254 ; gain = 16.008 ; free physical = 473 ; free virtual = 7163
+
+Phase 1.1.3 Implementation Feasibility check On IDelay
+Phase 1.1.3 Implementation Feasibility check On IDelay | Checksum: 00000000
+
+Time (s): cpu = 00:00:00.64 ; elapsed = 00:00:00.43 . Memory (MB): peak = 1727.254 ; gain = 16.008 ; free physical = 473 ; free virtual = 7163
+
+Phase 1.1.4 Commit IO Placement
+Phase 1.1.4 Commit IO Placement | Checksum: 00000000
+
+Time (s): cpu = 00:00:00.64 ; elapsed = 00:00:00.43 . Memory (MB): peak = 1727.254 ; gain = 16.008 ; free physical = 473 ; free virtual = 7163
+Phase 1.1 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 7c4024f6
+
+Time (s): cpu = 00:00:00.64 ; elapsed = 00:00:00.43 . Memory (MB): peak = 1727.254 ; gain = 16.008 ; free physical = 473 ; free virtual = 7163
+
+Phase 1.2 Build Placer Netlist Model
+
+Phase 1.2.1 Place Init Design
+
+Phase 1.2.1.1 Init Lut Pin Assignment
+Phase 1.2.1.1 Init Lut Pin Assignment | Checksum: b0066b70
+
+Time (s): cpu = 00:00:00.71 ; elapsed = 00:00:00.47 . Memory (MB): peak = 1727.254 ; gain = 16.008 ; free physical = 474 ; free virtual = 7164
+Phase 1.2.1 Place Init Design | Checksum: 1411d81f6
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.79 . Memory (MB): peak = 1781.934 ; gain = 70.688 ; free physical = 476 ; free virtual = 7166
+Phase 1.2 Build Placer Netlist Model | Checksum: 1411d81f6
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.79 . Memory (MB): peak = 1781.934 ; gain = 70.688 ; free physical = 476 ; free virtual = 7166
+
+Phase 1.3 Constrain Clocks/Macros
+
+Phase 1.3.1 Constrain Global/Regional Clocks
+Phase 1.3.1 Constrain Global/Regional Clocks | Checksum: 1411d81f6
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.79 . Memory (MB): peak = 1781.934 ; gain = 70.688 ; free physical = 476 ; free virtual = 7166
+Phase 1.3 Constrain Clocks/Macros | Checksum: 1411d81f6
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.79 . Memory (MB): peak = 1781.934 ; gain = 70.688 ; free physical = 476 ; free virtual = 7166
+Phase 1 Placer Initialization | Checksum: 1411d81f6
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.80 . Memory (MB): peak = 1781.934 ; gain = 70.688 ; free physical = 476 ; free virtual = 7166
+
+Phase 2 Global Placement
+Phase 2 Global Placement | Checksum: 17759fc19
+
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:03 . Memory (MB): peak = 1837.961 ; gain = 126.715 ; free physical = 461 ; free virtual = 7151
+
+Phase 3 Detail Placement
+
+Phase 3.1 Commit Multi Column Macros
+Phase 3.1 Commit Multi Column Macros | Checksum: 17759fc19
+
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:03 . Memory (MB): peak = 1837.961 ; gain = 126.715 ; free physical = 468 ; free virtual = 7158
+
+Phase 3.2 Commit Most Macros & LUTRAMs
+Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 184523965
+
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:03 . Memory (MB): peak = 1837.961 ; gain = 126.715 ; free physical = 467 ; free virtual = 7157
+
+Phase 3.3 Area Swap Optimization
+Phase 3.3 Area Swap Optimization | Checksum: 14fbc7bdc
+
+Time (s): cpu = 00:00:10 ; elapsed = 00:00:03 . Memory (MB): peak = 1837.961 ; gain = 126.715 ; free physical = 470 ; free virtual = 7160
+
+Phase 3.4 updateClock Trees: DP
+Phase 3.4 updateClock Trees: DP | Checksum: 14fbc7bdc
+
+Time (s): cpu = 00:00:10 ; elapsed = 00:00:03 . Memory (MB): peak = 1837.961 ; gain = 126.715 ; free physical = 470 ; free virtual = 7160
+
+Phase 3.5 Timing Path Optimizer
+Phase 3.5 Timing Path Optimizer | Checksum: 18d43d4a0
+
+Time (s): cpu = 00:00:10 ; elapsed = 00:00:04 . Memory (MB): peak = 1837.961 ; gain = 126.715 ; free physical = 467 ; free virtual = 7157
+
+Phase 3.6 Fast Optimization
+Phase 3.6 Fast Optimization | Checksum: 17d7eb60b
+
+Time (s): cpu = 00:00:10 ; elapsed = 00:00:04 . Memory (MB): peak = 1837.961 ; gain = 126.715 ; free physical = 472 ; free virtual = 7162
+
+Phase 3.7 Small Shape Detail Placement
+
+Phase 3.7.1 Commit Small Macros and Core Logic
+
+Phase 3.7.1.1 Commit Slice Clusters
+Phase 3.7.1.1 Commit Slice Clusters | Checksum: ed8d58a6
+
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:04 . Memory (MB): peak = 1837.961 ; gain = 126.715 ; free physical = 486 ; free virtual = 7176
+Phase 3.7.1 Commit Small Macros and Core Logic | Checksum: ed8d58a6
+
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:04 . Memory (MB): peak = 1837.961 ; gain = 126.715 ; free physical = 486 ; free virtual = 7176
+
+Phase 3.7.2 Clock Restriction Legalization for Leaf Columns
+Phase 3.7.2 Clock Restriction Legalization for Leaf Columns | Checksum: ed8d58a6
+
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:04 . Memory (MB): peak = 1837.961 ; gain = 126.715 ; free physical = 486 ; free virtual = 7176
+
+Phase 3.7.3 Clock Restriction Legalization for Non-Clock Pins
+Phase 3.7.3 Clock Restriction Legalization for Non-Clock Pins | Checksum: ed8d58a6
+
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:04 . Memory (MB): peak = 1837.961 ; gain = 126.715 ; free physical = 486 ; free virtual = 7176
+Phase 3.7 Small Shape Detail Placement | Checksum: ed8d58a6
+
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:04 . Memory (MB): peak = 1837.961 ; gain = 126.715 ; free physical = 486 ; free virtual = 7176
+
+Phase 3.8 Re-assign LUT pins
+Phase 3.8 Re-assign LUT pins | Checksum: 13ef622ac
+
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:05 . Memory (MB): peak = 1837.961 ; gain = 126.715 ; free physical = 482 ; free virtual = 7172
+Phase 3 Detail Placement | Checksum: 13ef622ac
+
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:05 . Memory (MB): peak = 1837.961 ; gain = 126.715 ; free physical = 482 ; free virtual = 7172
+
+Phase 4 Post Placement Optimization and Clean-Up
+
+Phase 4.1 Post Commit Optimization
+
+Phase 4.1.1 callUpdateTimingBeforePCO
+WARNING: [Timing 38-242] The property HD.CLK_SRC of clock port "clk" is not set. In out-of-context mode, this prevents timing estimation for clock delay/skew
+Resolution: Set the HD.CLK_SRC property of the out-of-context port to the location of the clock buffer instance in the top-level design
+Phase 4.1.1 callUpdateTimingBeforePCO | Checksum: 1c30dc2ed
+
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:05 . Memory (MB): peak = 1837.961 ; gain = 126.715 ; free physical = 481 ; free virtual = 7171
+
+Phase 4.1.2 updateClock Trees: PCOPT
+Phase 4.1.2 updateClock Trees: PCOPT | Checksum: 1c30dc2ed
+
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:05 . Memory (MB): peak = 1837.961 ; gain = 126.715 ; free physical = 481 ; free virtual = 7171
+
+Phase 4.1.3 Post Placement Optimization
+
+Phase 4.1.3.1 PCOPT Shape updates
+
+Phase 4.1.3.1.1 removeOptionalFFsFromShapes
+Phase 4.1.3.1.1 removeOptionalFFsFromShapes | Checksum: 1c30dc2ed
+
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:05 . Memory (MB): peak = 1837.961 ; gain = 126.715 ; free physical = 480 ; free virtual = 7170
+
+Phase 4.1.3.1.2 deleteLutnmShapes
+Phase 4.1.3.1.2 deleteLutnmShapes | Checksum: 1c30dc2ed
+
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:05 . Memory (MB): peak = 1837.961 ; gain = 126.715 ; free physical = 481 ; free virtual = 7171
+Phase 4.1.3.1 PCOPT Shape updates | Checksum: 1c30dc2ed
+
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:05 . Memory (MB): peak = 1837.961 ; gain = 126.715 ; free physical = 481 ; free virtual = 7171
+
+Phase 4.1.3.2 Post Placement Timing Optimization
+
+Phase 4.1.3.2.1 Restore Best Placement
+Phase 4.1.3.2.1 Restore Best Placement | Checksum: 1fa202c9d
+
+Time (s): cpu = 00:01:02 ; elapsed = 00:00:56 . Memory (MB): peak = 1837.961 ; gain = 126.715 ; free physical = 543 ; free virtual = 7234
+INFO: [Place 30-746] Post Placement Timing Summary WNS=-0.482. For the most accurate timing information please run report_timing.
+Phase 4.1.3.2 Post Placement Timing Optimization | Checksum: 1fa202c9d
+
+Time (s): cpu = 00:01:02 ; elapsed = 00:00:56 . Memory (MB): peak = 1837.961 ; gain = 126.715 ; free physical = 551 ; free virtual = 7242
+Phase 4.1.3 Post Placement Optimization | Checksum: 1fa202c9d
+
+Time (s): cpu = 00:01:02 ; elapsed = 00:00:56 . Memory (MB): peak = 1837.961 ; gain = 126.715 ; free physical = 549 ; free virtual = 7240
+Phase 4.1 Post Commit Optimization | Checksum: 1fa202c9d
+
+Time (s): cpu = 00:01:02 ; elapsed = 00:00:56 . Memory (MB): peak = 1837.961 ; gain = 126.715 ; free physical = 551 ; free virtual = 7242
+
+Phase 4.2 Sweep Clock Roots: Post-Placement
+Phase 4.2 Sweep Clock Roots: Post-Placement | Checksum: 1fa202c9d
+
+Time (s): cpu = 00:01:02 ; elapsed = 00:00:56 . Memory (MB): peak = 1837.961 ; gain = 126.715 ; free physical = 552 ; free virtual = 7243
+
+Phase 4.3 Post Placement Cleanup
+Phase 4.3 Post Placement Cleanup | Checksum: 1fa202c9d
+
+Time (s): cpu = 00:01:02 ; elapsed = 00:00:56 . Memory (MB): peak = 1837.961 ; gain = 126.715 ; free physical = 552 ; free virtual = 7243
+
+Phase 4.4 Placer Reporting
+
+Phase 4.4.1 Restore STA
+Phase 4.4.1 Restore STA | Checksum: 1fa202c9d
+
+Time (s): cpu = 00:01:02 ; elapsed = 00:00:56 . Memory (MB): peak = 1837.961 ; gain = 126.715 ; free physical = 552 ; free virtual = 7243
+Phase 4.4 Placer Reporting | Checksum: 1fa202c9d
+
+Time (s): cpu = 00:01:02 ; elapsed = 00:00:56 . Memory (MB): peak = 1837.961 ; gain = 126.715 ; free physical = 550 ; free virtual = 7241
+
+Phase 4.5 Final Placement Cleanup
+Phase 4.5 Final Placement Cleanup | Checksum: 17de007a7
+
+Time (s): cpu = 00:01:02 ; elapsed = 00:00:56 . Memory (MB): peak = 1837.961 ; gain = 126.715 ; free physical = 542 ; free virtual = 7233
+Phase 4 Post Placement Optimization and Clean-Up | Checksum: 17de007a7
+
+Time (s): cpu = 00:01:02 ; elapsed = 00:00:56 . Memory (MB): peak = 1837.961 ; gain = 126.715 ; free physical = 549 ; free virtual = 7240
+Ending Placer Task | Checksum: e648dd29
+
+Time (s): cpu = 00:01:02 ; elapsed = 00:00:56 . Memory (MB): peak = 1837.961 ; gain = 126.715 ; free physical = 549 ; free virtual = 7240
+INFO: [Common 17-83] Releasing license: Implementation
+40 Infos, 2 Warnings, 0 Critical Warnings and 0 Errors encountered.
+place_design completed successfully
+place_design: Time (s): cpu = 00:01:03 ; elapsed = 00:00:57 . Memory (MB): peak = 1837.961 ; gain = 126.715 ; free physical = 546 ; free virtual = 7237
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00.26 ; elapsed = 00:00:00.10 . Memory (MB): peak = 1837.961 ; gain = 0.000 ; free physical = 544 ; free virtual = 7238
+report_io: Time (s): cpu = 00:00:00.14 ; elapsed = 00:00:00.15 . Memory (MB): peak = 1837.961 ; gain = 0.000 ; free physical = 551 ; free virtual = 7242
+report_utilization: Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.11 . Memory (MB): peak = 1837.961 ; gain = 0.000 ; free physical = 540 ; free virtual = 7232
+report_control_sets: Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.09 . Memory (MB): peak = 1837.961 ; gain = 0.000 ; free physical = 551 ; free virtual = 7243
+Command: phys_opt_design -directive Explore
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Vivado_Tcl 4-137] Directive used for phys_opt_design is: Explore
+
+Starting Physical Synthesis Task
+
+Phase 1 Physical Synthesis Initialization
+WARNING: [Timing 38-242] The property HD.CLK_SRC of clock port "clk" is not set. In out-of-context mode, this prevents timing estimation for clock delay/skew
+Resolution: Set the HD.CLK_SRC property of the out-of-context port to the location of the clock buffer instance in the top-level design
+INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 8 CPUs
+Phase 1 Physical Synthesis Initialization | Checksum: 1885b37d0
+
+Time (s): cpu = 00:00:00.72 ; elapsed = 00:00:00.43 . Memory (MB): peak = 1837.961 ; gain = 0.000 ; free physical = 537 ; free virtual = 7228
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1837.961 ; gain = 0.000 ; free physical = 542 ; free virtual = 7233
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.482 | TNS=-16.329 |
+
+Phase 2 Fanout Optimization
+INFO: [Physopt 32-76] Pass 1. Identified 2 candidate nets for fanout optimization.
+INFO: [Physopt 32-81] Processed net rowMux[0]. Replicated 5 times.
+INFO: [Physopt 32-81] Processed net rowMux[1]. Replicated 3 times.
+INFO: [Physopt 32-29] End Pass 1. Optimized 2 nets. Created 8 new instances.
+
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.388 | TNS=-10.521 |
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 1837.961 ; gain = 0.000 ; free physical = 533 ; free virtual = 7224
+Phase 2 Fanout Optimization | Checksum: 167fe5b20
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:01 . Memory (MB): peak = 1837.961 ; gain = 0.000 ; free physical = 541 ; free virtual = 7232
+
+Phase 3 Placement Based Optimization
+INFO: [Physopt 32-660] Identified 100 candidate nets for placement-based optimization.
+INFO: [Physopt 32-662] Processed net rowMux[0]_repN_1.  Did not re-place instance rowMux_reg[0]_replica_1
+INFO: [Physopt 32-663] Processed net outputMAC[533]_i_2_n_0.  Re-placed instance outputMAC[533]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC[493]_i_2_n_0.  Did not re-place instance outputMAC[493]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC[565]_i_2_n_0.  Did not re-place instance outputMAC[565]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC010_out[437].  Did not re-place instance outputMAC[437]_i_1
+INFO: [Physopt 32-663] Processed net outputMAC1_i_4_n_0.  Re-placed instance outputMAC1_i_4
+INFO: [Physopt 32-662] Processed net outputMAC[537]_i_2_n_0.  Did not re-place instance outputMAC[537]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC[573]_i_3_n_0.  Did not re-place instance outputMAC[573]_i_3
+INFO: [Physopt 32-662] Processed net outputMAC[569]_i_2_n_0.  Did not re-place instance outputMAC[569]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC010_out[441].  Did not re-place instance outputMAC[441]_i_1
+INFO: [Physopt 32-663] Processed net outputMAC1_i_2_n_0.  Re-placed instance outputMAC1_i_2
+INFO: [Physopt 32-663] Processed net outputMAC1_i_3_n_0.  Re-placed instance outputMAC1_i_3
+INFO: [Physopt 32-662] Processed net outputMAC1_i_1_n_0.  Did not re-place instance outputMAC1_i_1
+INFO: [Physopt 32-662] Processed net rowMux[0].  Did not re-place instance rowMux_reg[0]
+INFO: [Physopt 32-662] Processed net outputMAC[475]_i_2_n_0.  Did not re-place instance outputMAC[475]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC[583]_i_2_n_0.  Did not re-place instance outputMAC[583]_i_2
+INFO: [Physopt 32-663] Processed net outputMAC[551]_i_2_n_0.  Re-placed instance outputMAC[551]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC[551]_i_1_n_0.  Did not re-place instance outputMAC[551]_i_1
+INFO: [Physopt 32-662] Processed net outputMAC[539]_i_2_n_0.  Did not re-place instance outputMAC[539]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC[575]_i_3_n_0.  Did not re-place instance outputMAC[575]_i_3
+INFO: [Physopt 32-662] Processed net outputMAC[571]_i_2_n_0.  Did not re-place instance outputMAC[571]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC010_out[443].  Did not re-place instance outputMAC[443]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC[471]_i_2_n_0.  Did not re-place instance outputMAC[471]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC010_out[423].  Did not re-place instance outputMAC[423]_i_1
+INFO: [Physopt 32-662] Processed net outputMAC[451]_i_2_n_0.  Did not re-place instance outputMAC[451]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC[531]_i_2_n_0.  Did not re-place instance outputMAC[531]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC010_out[403].  Did not re-place instance outputMAC[403]_i_1
+INFO: [Physopt 32-662] Processed net outputMAC[579]_i_2_n_0.  Did not re-place instance outputMAC[579]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC010_out[419].  Did not re-place instance outputMAC[419]_i_1
+INFO: [Physopt 32-662] Processed net outputMAC[419]_i_2_n_0.  Did not re-place instance outputMAC[419]_i_2
+INFO: [Physopt 32-663] Processed net rowMux[1].  Re-placed instance rowMux_reg[1]
+INFO: [Physopt 32-662] Processed net outputMAC[576]_i_2_n_0.  Did not re-place instance outputMAC[576]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC[576]_i_3_n_0.  Did not re-place instance outputMAC[576]_i_3
+INFO: [Physopt 32-662] Processed net outputMAC010_out[416].  Did not re-place instance outputMAC[416]_i_1
+INFO: [Physopt 32-662] Processed net outputMAC[416]_i_2_n_0.  Did not re-place instance outputMAC[416]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC[474]_i_2_n_0.  Did not re-place instance outputMAC[474]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC[582]_i_2_n_0.  Did not re-place instance outputMAC[582]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC[550]_i_2_n_0.  Did not re-place instance outputMAC[550]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC010_out[422].  Did not re-place instance outputMAC[422]_i_1
+INFO: [Physopt 32-662] Processed net outputMAC[491]_i_2_n_0.  Did not re-place instance outputMAC[491]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC[535]_i_2_n_0.  Did not re-place instance outputMAC[535]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC[567]_i_2_n_0.  Did not re-place instance outputMAC[567]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC010_out[439].  Did not re-place instance outputMAC[439]_i_1
+INFO: [Physopt 32-663] Processed net outputMAC1_i_15_n_0.  Re-placed instance outputMAC1_i_15
+INFO: [Physopt 32-662] Processed net outputMAC[486]_i_2_n_0.  Did not re-place instance outputMAC[486]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC[570]_i_2_n_0.  Did not re-place instance outputMAC[570]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC010_out[442].  Did not re-place instance outputMAC[442]_i_1
+INFO: [Physopt 32-663] Processed net outputMAC[570]_i_3_n_0.  Re-placed instance outputMAC[570]_i_3
+INFO: [Physopt 32-662] Processed net outputMAC[565]_i_1_n_0.  Did not re-place instance outputMAC[565]_i_1
+INFO: [Physopt 32-662] Processed net outputMAC[585]_i_3_n_0.  Did not re-place instance outputMAC[585]_i_3
+INFO: [Physopt 32-662] Processed net outputMAC[581]_i_2_n_0.  Did not re-place instance outputMAC[581]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC[549]_i_2_n_0.  Did not re-place instance outputMAC[549]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC010_out[421].  Did not re-place instance outputMAC[421]_i_1
+INFO: [Physopt 32-663] Processed net outputMAC[519]_i_2_n_0.  Re-placed instance outputMAC[519]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC010_out[391].  Did not re-place instance outputMAC[391]_i_1
+INFO: [Physopt 32-663] Processed net outputMAC[391]_i_2_n_0.  Re-placed instance outputMAC[391]_i_2
+INFO: [Physopt 32-663] Processed net outputMAC[558]_i_2_n_0.  Re-placed instance outputMAC[558]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC010_out[430].  Did not re-place instance outputMAC[430]_i_1
+INFO: [Physopt 32-663] Processed net outputMAC[559]_i_3_n_0.  Re-placed instance outputMAC[559]_i_3
+INFO: [Physopt 32-662] Processed net outputMAC[488]_i_2_n_0.  Did not re-place instance outputMAC[488]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC[448]_i_2_n_0.  Did not re-place instance outputMAC[448]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC[560]_i_2_n_0.  Did not re-place instance outputMAC[560]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC010_out[432].  Did not re-place instance outputMAC[432]_i_1
+INFO: [Physopt 32-662] Processed net outputMAC[476]_i_2_n_0.  Did not re-place instance outputMAC[476]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC[584]_i_2_n_0.  Did not re-place instance outputMAC[584]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC[552]_i_2_n_0.  Did not re-place instance outputMAC[552]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC010_out[424].  Did not re-place instance outputMAC[424]_i_1
+INFO: [Physopt 32-663] Processed net outputMAC[579]_i_3_n_0.  Re-placed instance outputMAC[579]_i_3
+INFO: [Physopt 32-663] Processed net outputMAC1_i_11_n_0.  Re-placed instance outputMAC1_i_11
+INFO: [Physopt 32-663] Processed net outputMAC1_i_16_n_0.  Re-placed instance outputMAC1_i_16
+INFO: [Physopt 32-662] Processed net outputMAC[485]_i_2_n_0.  Did not re-place instance outputMAC[485]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC[468]_i_2_n_0.  Did not re-place instance outputMAC[468]_i_2
+INFO: [Physopt 32-663] Processed net outputMAC[569]_i_3_n_0.  Re-placed instance outputMAC[569]_i_3
+INFO: [Physopt 32-662] Processed net outputMAC[568]_i_2_n_0.  Did not re-place instance outputMAC[568]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC010_out[440].  Did not re-place instance outputMAC[440]_i_1
+INFO: [Physopt 32-663] Processed net outputMAC[568]_i_3_n_0.  Re-placed instance outputMAC[568]_i_3
+INFO: [Physopt 32-663] Processed net outputMAC[534]_i_2_n_0.  Re-placed instance outputMAC[534]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC[494]_i_2_n_0.  Did not re-place instance outputMAC[494]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC[566]_i_2_n_0.  Did not re-place instance outputMAC[566]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC010_out[438].  Did not re-place instance outputMAC[438]_i_1
+INFO: [Physopt 32-663] Processed net outputMAC[577]_i_2_n_0.  Re-placed instance outputMAC[577]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC[469]_i_2_n_0.  Did not re-place instance outputMAC[469]_i_2
+INFO: [Physopt 32-663] Processed net outputMAC[545]_i_2_n_0.  Re-placed instance outputMAC[545]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC010_out[417].  Did not re-place instance outputMAC[417]_i_1
+INFO: [Physopt 32-662] Processed net outputMAC1_i_5_n_0.  Did not re-place instance outputMAC1_i_5
+INFO: [Physopt 32-663] Processed net outputMAC[577]_i_3_n_0.  Re-placed instance outputMAC[577]_i_3
+INFO: [Physopt 32-662] Processed net outputMAC[492]_i_2_n_0.  Did not re-place instance outputMAC[492]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC[532]_i_2_n_0.  Did not re-place instance outputMAC[532]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC[564]_i_2_n_0.  Did not re-place instance outputMAC[564]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC010_out[436].  Did not re-place instance outputMAC[436]_i_1
+INFO: [Physopt 32-663] Processed net outputMAC1_i_9_n_0.  Re-placed instance outputMAC1_i_9
+INFO: [Physopt 32-663] Processed net outputMAC[478]_i_2_n_0.  Re-placed instance outputMAC[478]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC[586]_i_2_n_0.  Did not re-place instance outputMAC[586]_i_2
+INFO: [Physopt 32-663] Processed net outputMAC[554]_i_3_n_0.  Re-placed instance outputMAC[554]_i_3
+INFO: [Physopt 32-662] Processed net outputMAC010_out[426].  Did not re-place instance outputMAC[426]_i_1
+INFO: [Physopt 32-662] Processed net outputMAC[523]_i_2_n_0.  Did not re-place instance outputMAC[523]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC[489]_i_2_n_0.  Did not re-place instance outputMAC[489]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC[585]_i_2_n_0.  Did not re-place instance outputMAC[585]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC[553]_i_2_n_0.  Did not re-place instance outputMAC[553]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC010_out[425].  Did not re-place instance outputMAC[425]_i_1
+INFO: [Physopt 32-661] Optimized 24 nets.  Re-placed 24 instances.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.333 | TNS=-5.912 |
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1837.961 ; gain = 0.000 ; free physical = 538 ; free virtual = 7229
+Phase 3 Placement Based Optimization | Checksum: 82162ac7
+
+Time (s): cpu = 00:00:32 ; elapsed = 00:00:08 . Memory (MB): peak = 1837.961 ; gain = 0.000 ; free physical = 531 ; free virtual = 7223
+
+Phase 4 Rewire
+INFO: [Physopt 32-246] Starting Signal Push optimization...
+INFO: [Physopt 32-197] Pass 1. Identified 16 candidate nets for rewire optimization.
+INFO: [Physopt 32-242] Processed net outputMAC[531]_i_2_n_0. Rewired (signal push) outputMAC[451]_i_2_n_0 to 2 loads. Replicated 0 times.
+INFO: [Physopt 32-242] Processed net outputMAC[419]_i_2_n_0. Rewired (signal push) outputMAC[579]_i_2_n_0 to 1 loads. Replicated 0 times.
+INFO: [Physopt 32-242] Processed net outputMAC[416]_i_2_n_0. Rewired (signal push) outputMAC[576]_i_2_n_0 to 1 loads. Replicated 0 times.
+INFO: [Physopt 32-242] Processed net outputMAC[550]_i_2_n_0. Rewired (signal push) outputMAC[582]_i_2_n_0 to 2 loads. Replicated 0 times.
+INFO: [Physopt 32-242] Processed net outputMAC[567]_i_2_n_0. Rewired (signal push) outputMAC[535]_i_2_n_0 to 2 loads. Replicated 0 times.
+INFO: [Physopt 32-242] Processed net outputMAC[549]_i_2_n_0. Rewired (signal push) outputMAC[581]_i_2_n_0 to 2 loads. Replicated 0 times.
+INFO: [Physopt 32-242] Processed net outputMAC[565]_i_2_n_0. Rewired (signal push) outputMAC[533]_i_2_n_0 to 2 loads. Replicated 0 times.
+INFO: [Physopt 32-242] Processed net outputMAC[552]_i_2_n_0. Rewired (signal push) outputMAC[584]_i_2_n_0 to 2 loads. Replicated 0 times.
+INFO: [Physopt 32-242] Processed net outputMAC[553]_i_2_n_0. Rewired (signal push) outputMAC[585]_i_2_n_0 to 2 loads. Replicated 0 times.
+INFO: [Physopt 32-242] Processed net outputMAC[528]_i_2_n_0. Rewired (signal push) outputMAC[448]_i_2_n_0 to 2 loads. Replicated 0 times.
+INFO: [Physopt 32-242] Processed net outputMAC[418]_i_2_n_0. Rewired (signal push) outputMAC[578]_i_2_n_0 to 1 loads. Replicated 0 times.
+INFO: [Physopt 32-242] Processed net outputMAC[551]_i_2_n_0. Rewired (signal push) outputMAC[583]_i_2_n_0 to 2 loads. Replicated 0 times.
+INFO: [Physopt 32-242] Processed net outputMAC[392]_i_2_n_0. Rewired (signal push) outputMAC[520]_i_2_n_0 to 1 loads. Replicated 0 times.
+INFO: [Physopt 32-242] Processed net outputMAC[131]_i_2_n_0. Rewired (signal push) outputMAC[579]_i_2_n_0 to 1 loads. Replicated 0 times.
+INFO: [Physopt 32-242] Processed net outputMAC[566]_i_2_n_0. Rewired (signal push) outputMAC[534]_i_2_n_0 to 2 loads. Replicated 0 times.
+INFO: [Physopt 32-242] Processed net outputMAC[128]_i_2_n_0. Rewired (signal push) outputMAC[576]_i_2_n_0 to 1 loads. Replicated 0 times.
+INFO: [Physopt 32-29] End Pass 1. Optimized 16 nets. Created 0 new instance.
+
+INFO: [Physopt 32-238] Finished Signal Push optimization...
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 1837.961 ; gain = 0.000 ; free physical = 561 ; free virtual = 7252
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.333 | TNS=-3.397 |
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1837.961 ; gain = 0.000 ; free physical = 560 ; free virtual = 7252
+Phase 4 Rewire | Checksum: 5e86db31
+
+Time (s): cpu = 00:00:38 ; elapsed = 00:00:11 . Memory (MB): peak = 1837.961 ; gain = 0.000 ; free physical = 559 ; free virtual = 7251
+
+Phase 5 Critical Cell Optimization
+INFO: [Physopt 32-46] Identified 30 candidate nets for critical-cell optimization.
+INFO: [Physopt 32-572] Net outputMAC[573]_i_3_n_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net outputMAC[537]_i_2_n_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net outputMAC[569]_i_2_n_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net outputMAC[539]_i_2_n_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-601] Processed net outputMAC[575]_i_3_n_0. Net driver outputMAC[575]_i_3 was replaced.
+INFO: [Physopt 32-572] Net outputMAC[571]_i_2_n_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net outputMAC[493]_i_2_n_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-81] Processed net outputMAC[488]_i_2_n_0. Replicated 2 times.
+INFO: [Physopt 32-571] Net outputMAC[448]_i_2_n_0 was not replicated.
+INFO: [Physopt 32-572] Net outputMAC[560]_i_2_n_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net outputMAC[559]_i_3_n_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-81] Processed net outputMAC[471]_i_2_n_0. Replicated 2 times.
+INFO: [Physopt 32-572] Net outputMAC[476]_i_2_n_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-81] Processed net outputMAC[584]_i_2_n_0. Replicated 1 times.
+INFO: [Physopt 32-81] Processed net outputMAC[492]_i_2_n_0. Replicated 3 times.
+INFO: [Physopt 32-572] Net outputMAC[532]_i_2_n_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net outputMAC[564]_i_2_n_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-81] Processed net outputMAC[582]_i_2_n_0. Replicated 1 times.
+INFO: [Physopt 32-81] Processed net outputMAC[474]_i_2_n_0. Replicated 1 times.
+INFO: [Physopt 32-81] Processed net outputMAC[576]_i_3_n_0. Replicated 1 times.
+INFO: [Physopt 32-572] Net outputMAC[485]_i_2_n_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-81] Processed net outputMAC[521]_i_2_n_0. Replicated 1 times.
+INFO: [Physopt 32-572] Net outputMAC[451]_i_2_n_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-81] Processed net outputMAC[563]_i_2_n_0. Replicated 1 times.
+INFO: [Physopt 32-81] Processed net outputMAC[520]_i_2_n_0. Replicated 1 times.
+INFO: [Physopt 32-81] Processed net outputMAC[536]_i_2_n_0. Replicated 2 times.
+INFO: [Physopt 32-572] Net outputMAC[469]_i_2_n_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-81] Processed net outputMAC[479]_i_2_n_0. Replicated 2 times.
+INFO: [Physopt 32-232] Optimized 13 nets. Created 18 new instances.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.333 | TNS=-2.840 |
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 1837.961 ; gain = 0.000 ; free physical = 496 ; free virtual = 7187
+Phase 5 Critical Cell Optimization | Checksum: cc98484e
+
+Time (s): cpu = 00:00:55 ; elapsed = 00:00:16 . Memory (MB): peak = 1837.961 ; gain = 0.000 ; free physical = 497 ; free virtual = 7187
+
+Phase 6 Fanout Optimization
+INFO: [Physopt 32-64] No nets found for fanout-optimization.
+Phase 6 Fanout Optimization | Checksum: cc98484e
+
+Time (s): cpu = 00:00:55 ; elapsed = 00:00:16 . Memory (MB): peak = 1837.961 ; gain = 0.000 ; free physical = 497 ; free virtual = 7187
+
+Phase 7 Placement Based Optimization
+INFO: [Physopt 32-660] Identified 100 candidate nets for placement-based optimization.
+INFO: [Physopt 32-662] Processed net outputMAC1_i_1_n_0.  Did not re-place instance outputMAC1_i_1
+INFO: [Physopt 32-662] Processed net outputMAC[573]_i_3_n_0.  Did not re-place instance outputMAC[573]_i_3
+INFO: [Physopt 32-662] Processed net rowMux[0].  Did not re-place instance rowMux_reg[0]
+INFO: [Physopt 32-662] Processed net outputMAC[537]_i_2_n_0.  Did not re-place instance outputMAC[537]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC[569]_i_2_n_0.  Did not re-place instance outputMAC[569]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC010_out[441].  Did not re-place instance outputMAC[441]_i_1
+INFO: [Physopt 32-662] Processed net outputMAC[493]_i_2_n_0.  Did not re-place instance outputMAC[493]_i_2
+INFO: [Physopt 32-662] Processed net rowMux[0]_repN_1.  Did not re-place instance rowMux_reg[0]_replica_1
+INFO: [Physopt 32-662] Processed net outputMAC1_i_2_n_0.  Did not re-place instance outputMAC1_i_2
+INFO: [Physopt 32-662] Processed net outputMAC[539]_i_2_n_0.  Did not re-place instance outputMAC[539]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC[575]_i_3_n_0.  Did not re-place instance outputMAC[575]_i_3
+INFO: [Physopt 32-662] Processed net outputMAC[571]_i_2_n_0.  Did not re-place instance outputMAC[571]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC010_out[443].  Did not re-place instance outputMAC[443]_i_2
+INFO: [Physopt 32-662] Processed net rowMux[1].  Did not re-place instance rowMux_reg[1]
+INFO: [Physopt 32-662] Processed net outputMAC1_i_5_n_0.  Did not re-place instance outputMAC1_i_5
+INFO: [Physopt 32-662] Processed net outputMAC1_i_16_n_0.  Did not re-place instance outputMAC1_i_16
+INFO: [Physopt 32-662] Processed net outputMAC1_i_3_n_0.  Did not re-place instance outputMAC1_i_3
+INFO: [Physopt 32-663] Processed net outputMAC[559]_i_3_n_0.  Re-placed instance outputMAC[559]_i_3
+INFO: [Physopt 32-662] Processed net outputMAC1_i_9_n_0.  Did not re-place instance outputMAC1_i_9
+INFO: [Physopt 32-663] Processed net outputMAC1_i_15_n_0.  Re-placed instance outputMAC1_i_15
+INFO: [Physopt 32-662] Processed net outputMAC1_i_6_n_0.  Did not re-place instance outputMAC1_i_6
+INFO: [Physopt 32-662] Processed net outputMAC1_i_11_n_0.  Did not re-place instance outputMAC1_i_11
+INFO: [Physopt 32-662] Processed net outputMAC1_i_8_n_0.  Did not re-place instance outputMAC1_i_8
+INFO: [Physopt 32-662] Processed net outputMAC1_i_7_n_0.  Did not re-place instance outputMAC1_i_7
+INFO: [Physopt 32-662] Processed net outputMAC[448]_i_2_n_0.  Did not re-place instance outputMAC[448]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC[560]_i_2_n_0.  Did not re-place instance outputMAC[560]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC[488]_i_2_n_0_repN.  Did not re-place instance outputMAC[488]_i_2_replica
+INFO: [Physopt 32-662] Processed net outputMAC010_out[432].  Did not re-place instance outputMAC[432]_i_1
+INFO: [Physopt 32-662] Processed net outputMAC[470]_i_2_n_0.  Did not re-place instance outputMAC[470]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC010_out[422].  Did not re-place instance outputMAC[422]_i_1_rewire
+INFO: [Physopt 32-663] Processed net outputMAC[582]_i_2_n_0_repN.  Re-placed instance outputMAC[582]_i_2_replica
+INFO: [Physopt 32-662] Processed net outputMAC[532]_i_2_n_0.  Did not re-place instance outputMAC[532]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC[564]_i_2_n_0.  Did not re-place instance outputMAC[564]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC010_out[436].  Did not re-place instance outputMAC[436]_i_1
+INFO: [Physopt 32-662] Processed net outputMAC[492]_i_2_n_0_repN.  Did not re-place instance outputMAC[492]_i_2_replica
+INFO: [Physopt 32-662] Processed net rowMux[1]_repN_1.  Did not re-place instance rowMux_reg[1]_replica_1
+INFO: [Physopt 32-662] Processed net outputMAC1_i_12_n_0.  Did not re-place instance outputMAC1_i_12
+INFO: [Physopt 32-662] Processed net outputMAC[469]_i_2_n_0.  Did not re-place instance outputMAC[469]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC1_i_14_n_0.  Did not re-place instance outputMAC1_i_14
+INFO: [Physopt 32-662] Processed net outputMAC1_i_10_n_0.  Did not re-place instance outputMAC1_i_10
+INFO: [Physopt 32-662] Processed net outputMAC[485]_i_2_n_0.  Did not re-place instance outputMAC[485]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC[569]_i_3_n_0.  Did not re-place instance outputMAC[569]_i_3
+INFO: [Physopt 32-663] Processed net outputMAC[520]_i_2_n_0_repN.  Re-placed instance outputMAC[520]_i_2_replica
+INFO: [Physopt 32-662] Processed net outputMAC[494]_i_2_n_0.  Did not re-place instance outputMAC[494]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC[538]_i_2_n_0.  Did not re-place instance outputMAC[538]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC[570]_i_2_n_0.  Did not re-place instance outputMAC[570]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC010_out[442].  Did not re-place instance outputMAC[442]_i_1
+INFO: [Physopt 32-662] Processed net outputMAC2_i_2_n_0.  Did not re-place instance outputMAC2_i_2
+INFO: [Physopt 32-662] Processed net rowMux[0]_repN_3.  Did not re-place instance rowMux_reg[0]_replica_3
+INFO: [Physopt 32-662] Processed net outputMAC010_out[440].  Did not re-place instance outputMAC[440]_i_1
+INFO: [Physopt 32-662] Processed net outputMAC[578]_i_3_n_0.  Did not re-place instance outputMAC[578]_i_3
+INFO: [Physopt 32-662] Processed net outputMAC010_out[426].  Did not re-place instance outputMAC[426]_i_1
+INFO: [Physopt 32-662] Processed net outputMAC1_i_18_n_0.  Did not re-place instance outputMAC1_i_18
+INFO: [Physopt 32-662] Processed net outputMAC[451]_i_2_n_0.  Did not re-place instance outputMAC[451]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC010_out[435].  Did not re-place instance outputMAC[435]_i_1
+INFO: [Physopt 32-663] Processed net outputMAC[563]_i_2_n_0_repN.  Re-placed instance outputMAC[563]_i_2_replica
+INFO: [Physopt 32-662] Processed net outputMAC[491]_i_2_n_0.  Did not re-place instance outputMAC[491]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC[489]_i_2_n_0.  Did not re-place instance outputMAC[489]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC1_i_13_n_0.  Did not re-place instance outputMAC1_i_13
+INFO: [Physopt 32-662] Processed net outputMAC[488]_i_2_n_0_repN_1.  Did not re-place instance outputMAC[488]_i_2_replica_1
+INFO: [Physopt 32-662] Processed net outputMAC[568]_i_2_n_0.  Did not re-place instance outputMAC[568]_i_2
+INFO: [Physopt 32-663] Processed net outputMAC[568]_i_3_n_0.  Re-placed instance outputMAC[568]_i_3
+INFO: [Physopt 32-662] Processed net outputMAC[572]_i_3_n_0.  Did not re-place instance outputMAC[572]_i_3
+INFO: [Physopt 32-663] Processed net outputMAC[527]_i_2_n_0.  Re-placed instance outputMAC[527]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC010_out[399].  Did not re-place instance outputMAC[399]_i_1
+INFO: [Physopt 32-662] Processed net outputMAC[579]_i_2_n_0.  Did not re-place instance outputMAC[579]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC010_out[419].  Did not re-place instance outputMAC[419]_i_1_rewire
+INFO: [Physopt 32-662] Processed net outputMAC[471]_i_2_n_0_repN_1.  Did not re-place instance outputMAC[471]_i_2_replica_1
+INFO: [Physopt 32-662] Processed net outputMAC010_out[427].  Did not re-place instance outputMAC[427]_i_1
+INFO: [Physopt 32-662] Processed net outputMAC[564]_i_1_n_0.  Did not re-place instance outputMAC[564]_i_1
+INFO: [Physopt 32-663] Processed net outputMAC[563]_i_2_n_0.  Re-placed instance outputMAC[563]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC1_i_4_n_0.  Did not re-place instance outputMAC1_i_4
+INFO: [Physopt 32-662] Processed net outputMAC[563]_i_1_n_0.  Did not re-place instance outputMAC[563]_i_1
+INFO: [Physopt 32-662] Processed net outputMAC[587]_i_2_n_0.  Did not re-place instance outputMAC[587]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC[555]_i_2_n_0.  Did not re-place instance outputMAC[555]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC[479]_i_2_n_0_repN.  Did not re-place instance outputMAC[479]_i_2_replica
+INFO: [Physopt 32-662] Processed net outputMAC[555]_i_1_n_0.  Did not re-place instance outputMAC[555]_i_1
+INFO: [Physopt 32-662] Processed net outputMAC1_i_17_n_0.  Did not re-place instance outputMAC1_i_17
+INFO: [Physopt 32-662] Processed net outputMAC[579]_i_3_n_0.  Did not re-place instance outputMAC[579]_i_3
+INFO: [Physopt 32-662] Processed net outputMAC[535]_i_2_n_0.  Did not re-place instance outputMAC[535]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC[486]_i_2_n_0.  Did not re-place instance outputMAC[486]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC[530]_i_2_n_0.  Did not re-place instance outputMAC[530]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC[562]_i_2_n_0.  Did not re-place instance outputMAC[562]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC010_out[434].  Did not re-place instance outputMAC[434]_i_1
+INFO: [Physopt 32-662] Processed net outputMAC010_out[439].  Did not re-place instance outputMAC[439]_i_1_rewire
+INFO: [Physopt 32-663] Processed net outputMAC[492]_i_2_n_0_repN_1.  Re-placed instance outputMAC[492]_i_2_replica_1
+INFO: [Physopt 32-662] Processed net outputMAC[536]_i_2_n_0.  Did not re-place instance outputMAC[536]_i_2
+INFO: [Physopt 32-662] Processed net p_8_in[500].  Did not re-place instance outputMAC[500]_i_1
+INFO: [Physopt 32-662] Processed net outputMAC[574]_i_3_n_0.  Did not re-place instance outputMAC[574]_i_3
+INFO: [Physopt 32-663] Processed net outputMAC[474]_i_2_n_0_repN.  Re-placed instance outputMAC[474]_i_2_replica
+INFO: [Physopt 32-662] Processed net outputMAC[529]_i_2_n_0.  Did not re-place instance outputMAC[529]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC[561]_i_2_n_0.  Did not re-place instance outputMAC[561]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC010_out[433].  Did not re-place instance outputMAC[433]_i_1
+INFO: [Physopt 32-662] Processed net outputMAC[523]_i_2_n_0.  Did not re-place instance outputMAC[523]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC[524]_i_2_n_0.  Did not re-place instance outputMAC[524]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC010_out[396].  Did not re-place instance outputMAC[396]_i_1
+INFO: [Physopt 32-662] Processed net outputMAC_reg_n_0_[555].  Did not re-place instance outputMAC_reg[555]
+INFO: [Physopt 32-662] Processed net p_15_out[242].  Did not re-place instance outputMAC_reg[500]
+INFO: [Physopt 32-662] Processed net outputMAC_reg_n_0_[564].  Did not re-place instance outputMAC_reg[564]
+INFO: [Physopt 32-662] Processed net outputMAC_reg_n_0_[443].  Did not re-place instance outputMAC_reg[443]
+INFO: [Physopt 32-661] Optimized 10 nets.  Re-placed 10 instances.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.333 | TNS=-2.568 |
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1837.961 ; gain = 0.000 ; free physical = 447 ; free virtual = 7137
+Phase 7 Placement Based Optimization | Checksum: 15f95656f
+
+Time (s): cpu = 00:01:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1837.961 ; gain = 0.000 ; free physical = 447 ; free virtual = 7137
+
+Phase 8 Rewire
+INFO: [Physopt 32-246] Starting Signal Push optimization...
+INFO: [Physopt 32-241] No nets found for rewiring (Signal Push) optimization.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 1837.961 ; gain = 0.000 ; free physical = 446 ; free virtual = 7137
+Phase 8 Rewire | Checksum: 15f95656f
+
+Time (s): cpu = 00:01:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1837.961 ; gain = 0.000 ; free physical = 446 ; free virtual = 7137
+
+Phase 9 Critical Cell Optimization
+INFO: [Physopt 32-46] Identified 30 candidate nets for critical-cell optimization.
+INFO: [Physopt 32-572] Net outputMAC[573]_i_3_n_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net outputMAC[537]_i_2_n_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net outputMAC[569]_i_2_n_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net outputMAC[493]_i_2_n_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net outputMAC[539]_i_2_n_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net outputMAC[575]_i_3_n_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net outputMAC[571]_i_2_n_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-571] Net outputMAC[448]_i_2_n_0 was not replicated.
+INFO: [Physopt 32-572] Net outputMAC[560]_i_2_n_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net outputMAC[488]_i_2_n_0_repN was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net outputMAC[532]_i_2_n_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net outputMAC[564]_i_2_n_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-81] Processed net outputMAC[485]_i_2_n_0. Replicated 1 times.
+INFO: [Physopt 32-572] Net outputMAC[535]_i_2_n_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net outputMAC[559]_i_3_n_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net outputMAC[494]_i_2_n_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net outputMAC[538]_i_2_n_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net outputMAC[570]_i_2_n_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net outputMAC[578]_i_3_n_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net outputMAC[470]_i_2_n_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-81] Processed net outputMAC[489]_i_2_n_0. Replicated 1 times.
+INFO: [Physopt 32-572] Net outputMAC[451]_i_2_n_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net outputMAC[572]_i_3_n_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net outputMAC[491]_i_2_n_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net outputMAC[579]_i_2_n_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-81] Processed net outputMAC[488]_i_2_n_0_repN_1. Replicated 1 times.
+INFO: [Physopt 32-572] Net outputMAC[587]_i_2_n_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net outputMAC[555]_i_2_n_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-232] Optimized 3 nets. Created 3 new instances.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.333 | TNS=-2.611 |
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 1837.961 ; gain = 0.000 ; free physical = 539 ; free virtual = 7230
+Phase 9 Critical Cell Optimization | Checksum: cb9395f8
+
+Time (s): cpu = 00:01:33 ; elapsed = 00:00:26 . Memory (MB): peak = 1837.961 ; gain = 0.000 ; free physical = 539 ; free virtual = 7230
+
+Phase 10 Fanout Optimization
+INFO: [Physopt 32-64] No nets found for fanout-optimization.
+Phase 10 Fanout Optimization | Checksum: cb9395f8
+
+Time (s): cpu = 00:01:33 ; elapsed = 00:00:26 . Memory (MB): peak = 1837.961 ; gain = 0.000 ; free physical = 539 ; free virtual = 7230
+
+Phase 11 Placement Based Optimization
+INFO: [Physopt 32-660] Identified 100 candidate nets for placement-based optimization.
+INFO: [Physopt 32-662] Processed net outputMAC1_i_1_n_0.  Did not re-place instance outputMAC1_i_1
+INFO: [Physopt 32-662] Processed net outputMAC[573]_i_3_n_0.  Did not re-place instance outputMAC[573]_i_3
+INFO: [Physopt 32-662] Processed net rowMux[0].  Did not re-place instance rowMux_reg[0]
+INFO: [Physopt 32-662] Processed net outputMAC[537]_i_2_n_0.  Did not re-place instance outputMAC[537]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC[569]_i_2_n_0.  Did not re-place instance outputMAC[569]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC010_out[441].  Did not re-place instance outputMAC[441]_i_1
+INFO: [Physopt 32-662] Processed net outputMAC[493]_i_2_n_0.  Did not re-place instance outputMAC[493]_i_2
+INFO: [Physopt 32-662] Processed net rowMux[0]_repN_1.  Did not re-place instance rowMux_reg[0]_replica_1
+INFO: [Physopt 32-662] Processed net outputMAC1_i_2_n_0.  Did not re-place instance outputMAC1_i_2
+INFO: [Physopt 32-662] Processed net outputMAC[539]_i_2_n_0.  Did not re-place instance outputMAC[539]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC[575]_i_3_n_0.  Did not re-place instance outputMAC[575]_i_3
+INFO: [Physopt 32-662] Processed net outputMAC[571]_i_2_n_0.  Did not re-place instance outputMAC[571]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC010_out[443].  Did not re-place instance outputMAC[443]_i_2
+INFO: [Physopt 32-662] Processed net rowMux[1].  Did not re-place instance rowMux_reg[1]
+INFO: [Physopt 32-662] Processed net outputMAC1_i_5_n_0.  Did not re-place instance outputMAC1_i_5
+INFO: [Physopt 32-662] Processed net outputMAC1_i_16_n_0.  Did not re-place instance outputMAC1_i_16
+INFO: [Physopt 32-662] Processed net outputMAC1_i_3_n_0.  Did not re-place instance outputMAC1_i_3
+INFO: [Physopt 32-662] Processed net outputMAC1_i_9_n_0.  Did not re-place instance outputMAC1_i_9
+INFO: [Physopt 32-662] Processed net outputMAC1_i_6_n_0.  Did not re-place instance outputMAC1_i_6
+INFO: [Physopt 32-662] Processed net outputMAC1_i_11_n_0.  Did not re-place instance outputMAC1_i_11
+INFO: [Physopt 32-662] Processed net outputMAC1_i_8_n_0.  Did not re-place instance outputMAC1_i_8
+INFO: [Physopt 32-662] Processed net outputMAC[448]_i_2_n_0.  Did not re-place instance outputMAC[448]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC[560]_i_2_n_0.  Did not re-place instance outputMAC[560]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC[488]_i_2_n_0_repN.  Did not re-place instance outputMAC[488]_i_2_replica
+INFO: [Physopt 32-662] Processed net outputMAC010_out[432].  Did not re-place instance outputMAC[432]_i_1
+INFO: [Physopt 32-662] Processed net outputMAC1_i_7_n_0.  Did not re-place instance outputMAC1_i_7
+INFO: [Physopt 32-662] Processed net outputMAC[532]_i_2_n_0.  Did not re-place instance outputMAC[532]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC[564]_i_2_n_0.  Did not re-place instance outputMAC[564]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC010_out[436].  Did not re-place instance outputMAC[436]_i_1
+INFO: [Physopt 32-662] Processed net outputMAC[492]_i_2_n_0_repN.  Did not re-place instance outputMAC[492]_i_2_replica
+INFO: [Physopt 32-662] Processed net rowMux[1]_repN_1.  Did not re-place instance rowMux_reg[1]_replica_1
+INFO: [Physopt 32-662] Processed net outputMAC1_i_12_n_0.  Did not re-place instance outputMAC1_i_12
+INFO: [Physopt 32-662] Processed net outputMAC[469]_i_2_n_0.  Did not re-place instance outputMAC[469]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC1_i_14_n_0.  Did not re-place instance outputMAC1_i_14
+INFO: [Physopt 32-662] Processed net outputMAC1_i_10_n_0.  Did not re-place instance outputMAC1_i_10
+INFO: [Physopt 32-662] Processed net outputMAC[535]_i_2_n_0.  Did not re-place instance outputMAC[535]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC[559]_i_3_n_0.  Did not re-place instance outputMAC[559]_i_3
+INFO: [Physopt 32-662] Processed net outputMAC[494]_i_2_n_0.  Did not re-place instance outputMAC[494]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC[538]_i_2_n_0.  Did not re-place instance outputMAC[538]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC[570]_i_2_n_0.  Did not re-place instance outputMAC[570]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC010_out[439].  Did not re-place instance outputMAC[439]_i_1_rewire
+INFO: [Physopt 32-662] Processed net outputMAC010_out[442].  Did not re-place instance outputMAC[442]_i_1
+INFO: [Physopt 32-662] Processed net outputMAC2_i_2_n_0.  Did not re-place instance outputMAC2_i_2
+INFO: [Physopt 32-662] Processed net rowMux[0]_repN_3.  Did not re-place instance rowMux_reg[0]_replica_3
+INFO: [Physopt 32-662] Processed net outputMAC010_out[440].  Did not re-place instance outputMAC[440]_i_1
+INFO: [Physopt 32-662] Processed net outputMAC1_i_15_n_0.  Did not re-place instance outputMAC1_i_15
+INFO: [Physopt 32-662] Processed net outputMAC[578]_i_3_n_0.  Did not re-place instance outputMAC[578]_i_3
+INFO: [Physopt 32-662] Processed net outputMAC010_out[426].  Did not re-place instance outputMAC[426]_i_1
+INFO: [Physopt 32-662] Processed net outputMAC1_i_18_n_0.  Did not re-place instance outputMAC1_i_18
+INFO: [Physopt 32-662] Processed net outputMAC[470]_i_2_n_0.  Did not re-place instance outputMAC[470]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC[485]_i_2_n_0_repN.  Did not re-place instance outputMAC[485]_i_2_replica
+INFO: [Physopt 32-662] Processed net outputMAC[569]_i_3_n_0.  Did not re-place instance outputMAC[569]_i_3
+INFO: [Physopt 32-662] Processed net outputMAC1_i_13_n_0.  Did not re-place instance outputMAC1_i_13
+INFO: [Physopt 32-662] Processed net outputMAC[491]_i_2_n_0.  Did not re-place instance outputMAC[491]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC[451]_i_2_n_0.  Did not re-place instance outputMAC[451]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC010_out[435].  Did not re-place instance outputMAC[435]_i_1
+INFO: [Physopt 32-662] Processed net outputMAC[563]_i_2_n_0_repN.  Did not re-place instance outputMAC[563]_i_2_replica
+INFO: [Physopt 32-662] Processed net outputMAC[488]_i_2_n_0_repN_1_repN.  Did not re-place instance outputMAC[488]_i_2_replica_2
+INFO: [Physopt 32-662] Processed net outputMAC[572]_i_3_n_0.  Did not re-place instance outputMAC[572]_i_3
+INFO: [Physopt 32-662] Processed net outputMAC[579]_i_2_n_0.  Did not re-place instance outputMAC[579]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC010_out[419].  Did not re-place instance outputMAC[419]_i_1_rewire
+INFO: [Physopt 32-662] Processed net outputMAC[471]_i_2_n_0_repN_1.  Did not re-place instance outputMAC[471]_i_2_replica_1
+INFO: [Physopt 32-662] Processed net outputMAC[564]_i_1_n_0.  Did not re-place instance outputMAC[564]_i_1
+INFO: [Physopt 32-662] Processed net outputMAC010_out[427].  Did not re-place instance outputMAC[427]_i_1
+INFO: [Physopt 32-662] Processed net outputMAC1_i_4_n_0.  Did not re-place instance outputMAC1_i_4
+INFO: [Physopt 32-662] Processed net outputMAC[489]_i_2_n_0_repN.  Did not re-place instance outputMAC[489]_i_2_replica
+INFO: [Physopt 32-662] Processed net outputMAC[587]_i_2_n_0.  Did not re-place instance outputMAC[587]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC[555]_i_2_n_0.  Did not re-place instance outputMAC[555]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC[479]_i_2_n_0_repN.  Did not re-place instance outputMAC[479]_i_2_replica
+INFO: [Physopt 32-662] Processed net outputMAC[555]_i_1_n_0.  Did not re-place instance outputMAC[555]_i_1
+INFO: [Physopt 32-662] Processed net outputMAC1_i_17_n_0.  Did not re-place instance outputMAC1_i_17
+INFO: [Physopt 32-662] Processed net outputMAC[486]_i_2_n_0.  Did not re-place instance outputMAC[486]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC[530]_i_2_n_0.  Did not re-place instance outputMAC[530]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC[562]_i_2_n_0.  Did not re-place instance outputMAC[562]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC010_out[434].  Did not re-place instance outputMAC[434]_i_1
+INFO: [Physopt 32-662] Processed net outputMAC[579]_i_3_n_0.  Did not re-place instance outputMAC[579]_i_3
+INFO: [Physopt 32-662] Processed net outputMAC[492]_i_2_n_0_repN_1.  Did not re-place instance outputMAC[492]_i_2_replica_1
+INFO: [Physopt 32-662] Processed net outputMAC[568]_i_2_n_0.  Did not re-place instance outputMAC[568]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC[536]_i_2_n_0.  Did not re-place instance outputMAC[536]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC010_out[422].  Did not re-place instance outputMAC[422]_i_1_rewire
+INFO: [Physopt 32-662] Processed net outputMAC[582]_i_2_n_0_repN.  Did not re-place instance outputMAC[582]_i_2_replica
+INFO: [Physopt 32-662] Processed net p_8_in[500].  Did not re-place instance outputMAC[500]_i_1
+INFO: [Physopt 32-662] Processed net outputMAC[574]_i_3_n_0.  Did not re-place instance outputMAC[574]_i_3
+INFO: [Physopt 32-662] Processed net outputMAC[474]_i_2_n_0_repN.  Did not re-place instance outputMAC[474]_i_2_replica
+INFO: [Physopt 32-662] Processed net outputMAC[489]_i_2_n_0.  Did not re-place instance outputMAC[489]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC[529]_i_2_n_0.  Did not re-place instance outputMAC[529]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC[561]_i_2_n_0.  Did not re-place instance outputMAC[561]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC010_out[433].  Did not re-place instance outputMAC[433]_i_1
+INFO: [Physopt 32-662] Processed net outputMAC[524]_i_2_n_0.  Did not re-place instance outputMAC[524]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC010_out[396].  Did not re-place instance outputMAC[396]_i_1
+INFO: [Physopt 32-662] Processed net outputMAC[523]_i_2_n_0.  Did not re-place instance outputMAC[523]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC[558]_i_2_n_0.  Did not re-place instance outputMAC[558]_i_2
+INFO: [Physopt 32-662] Processed net outputMAC010_out[430].  Did not re-place instance outputMAC[430]_i_1
+INFO: [Physopt 32-662] Processed net outputMAC_reg_n_0_[555].  Did not re-place instance outputMAC_reg[555]
+INFO: [Physopt 32-662] Processed net p_15_out[242].  Did not re-place instance outputMAC_reg[500]
+INFO: [Physopt 32-662] Processed net outputMAC_reg_n_0_[564].  Did not re-place instance outputMAC_reg[564]
+INFO: [Physopt 32-662] Processed net outputMAC_reg_n_0_[443].  Did not re-place instance outputMAC_reg[443]
+INFO: [Physopt 32-662] Processed net p_15_out[202].  Did not re-place instance outputMAC_reg[422]
+INFO: [Physopt 32-662] Processed net p_15_out[214].  Did not re-place instance outputMAC_reg[434]
+INFO: [Physopt 32-662] Processed net outputMAC_reg_n_0_[441].  Did not re-place instance outputMAC_reg[441]
+INFO: [Physopt 32-661] Optimized 0 nets.  Re-placed 0 instances.
+Phase 11 Placement Based Optimization | Checksum: cb9395f8
+
+Time (s): cpu = 00:01:53 ; elapsed = 00:00:31 . Memory (MB): peak = 1837.961 ; gain = 0.000 ; free physical = 605 ; free virtual = 7296
+
+Phase 12 Rewire
+INFO: [Physopt 32-246] Starting Signal Push optimization...
+INFO: [Physopt 32-241] No nets found for rewiring (Signal Push) optimization.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1837.961 ; gain = 0.000 ; free physical = 605 ; free virtual = 7296
+Phase 12 Rewire | Checksum: cb9395f8
+
+Time (s): cpu = 00:01:53 ; elapsed = 00:00:31 . Memory (MB): peak = 1837.961 ; gain = 0.000 ; free physical = 605 ; free virtual = 7296
+
+Phase 13 Critical Cell Optimization
+INFO: [Physopt 32-46] Identified 16 candidate nets for critical-cell optimization.
+INFO: [Physopt 32-572] Net outputMAC[569]_i_2_n_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net outputMAC[493]_i_2_n_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net outputMAC[575]_i_3_n_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net outputMAC[571]_i_2_n_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-571] Net outputMAC[448]_i_2_n_0 was not replicated.
+INFO: [Physopt 32-572] Net outputMAC[560]_i_2_n_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net outputMAC[488]_i_2_n_0_repN was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net outputMAC[532]_i_2_n_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net outputMAC[564]_i_2_n_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net outputMAC[535]_i_2_n_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net outputMAC[494]_i_2_n_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net outputMAC[570]_i_2_n_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net outputMAC[470]_i_2_n_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-572] Net outputMAC[491]_i_2_n_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-232] Optimized 0 net. Created 0 new instance.
+Phase 13 Critical Cell Optimization | Checksum: 14f1eb5e4
+
+Time (s): cpu = 00:01:59 ; elapsed = 00:00:33 . Memory (MB): peak = 1837.961 ; gain = 0.000 ; free physical = 593 ; free virtual = 7283
+
+Phase 14 DSP Register Optimization
+INFO: [Physopt 32-456] No candidate cells for DSP register optimization found in the design.
+Phase 14 DSP Register Optimization | Checksum: 14f1eb5e4
+
+Time (s): cpu = 00:01:59 ; elapsed = 00:00:33 . Memory (MB): peak = 1837.961 ; gain = 0.000 ; free physical = 589 ; free virtual = 7280
+
+Phase 15 BRAM Register Optimization
+INFO: [Physopt 32-526] No candidate cells for BRAM register optimization found in the design
+Phase 15 BRAM Register Optimization | Checksum: 14f1eb5e4
+
+Time (s): cpu = 00:02:00 ; elapsed = 00:00:33 . Memory (MB): peak = 1837.961 ; gain = 0.000 ; free physical = 608 ; free virtual = 7299
+
+Phase 16 Shift Register Optimization
+INFO: [Physopt 32-677] No candidate cells for Shift Register optimization found in the design
+Phase 16 Shift Register Optimization | Checksum: 14f1eb5e4
+
+Time (s): cpu = 00:02:00 ; elapsed = 00:00:33 . Memory (MB): peak = 1837.961 ; gain = 0.000 ; free physical = 609 ; free virtual = 7300
+
+Phase 17 DSP Register Optimization
+INFO: [Physopt 32-456] No candidate cells for DSP register optimization found in the design.
+Phase 17 DSP Register Optimization | Checksum: 14f1eb5e4
+
+Time (s): cpu = 00:02:00 ; elapsed = 00:00:33 . Memory (MB): peak = 1837.961 ; gain = 0.000 ; free physical = 609 ; free virtual = 7300
+
+Phase 18 BRAM Register Optimization
+INFO: [Physopt 32-526] No candidate cells for BRAM register optimization found in the design
+Phase 18 BRAM Register Optimization | Checksum: 14f1eb5e4
+
+Time (s): cpu = 00:02:00 ; elapsed = 00:00:33 . Memory (MB): peak = 1837.961 ; gain = 0.000 ; free physical = 609 ; free virtual = 7300
+
+Phase 19 Shift Register Optimization
+INFO: [Physopt 32-677] No candidate cells for Shift Register optimization found in the design
+Phase 19 Shift Register Optimization | Checksum: 14f1eb5e4
+
+Time (s): cpu = 00:02:00 ; elapsed = 00:00:33 . Memory (MB): peak = 1837.961 ; gain = 0.000 ; free physical = 609 ; free virtual = 7300
+
+Phase 20 Critical Pin Optimization
+INFO: [Physopt 32-606] Identified 67 candidate nets for critical-pin optimization.
+INFO: [Physopt 32-613] Processed net outputMAC1_n_91.  Swapped 3 critical pin.
+INFO: [Physopt 32-613] Processed net outputMAC1_n_90.  Swapped 2 critical pin.
+INFO: [Physopt 32-613] Processed net outputMAC1_n_95.  Swapped 3 critical pin.
+INFO: [Physopt 32-613] Processed net outputMAC1_n_94.  Swapped 3 critical pin.
+INFO: [Physopt 32-609] Processed net rowMux[0]_repN_1.  Critical pin optimization did not optimize the net.
+INFO: [Physopt 32-613] Processed net outputMAC1_n_88.  Swapped 1 critical pins.
+INFO: [Physopt 32-613] Processed net rowMux[1].  Swapped 1 critical pins.
+INFO: [Physopt 32-613] Processed net outputMAC1_n_100.  Swapped 4 critical pin.
+INFO: [Physopt 32-613] Processed net outputMAC1_n_99.  Swapped 2 critical pin.
+INFO: [Physopt 32-613] Processed net outputMAC1_n_96.  Swapped 3 critical pin.
+INFO: [Physopt 32-609] Processed net rowMux[1]_repN_1.  Critical pin optimization did not optimize the net.
+INFO: [Physopt 32-613] Processed net outputMAC1_n_89.  Swapped 2 critical pin.
+INFO: [Physopt 32-609] Processed net outputMAC1_n_83.  Critical pin optimization did not optimize the net.
+INFO: [Physopt 32-613] Processed net outputMAC[469]_i_2_n_0.  Swapped 2 critical pin.
+INFO: [Physopt 32-613] Processed net outputMAC1_n_93.  Swapped 1 critical pins.
+INFO: [Physopt 32-613] Processed net outputMAC[535]_i_2_n_0.  Swapped 2 critical pin.
+INFO: [Physopt 32-613] Processed net outputMAC2_n_70.  Swapped 1 critical pins.
+INFO: [Physopt 32-613] Processed net rowMux[0]_repN_3.  Swapped 1 critical pins.
+INFO: [Physopt 32-613] Processed net outputMAC1_n_81.  Swapped 4 critical pin.
+INFO: [Physopt 32-613] Processed net outputMAC2_n_72.  Swapped 1 critical pins.
+INFO: [Physopt 32-613] Processed net outputMAC2_n_71.  Swapped 1 critical pins.
+INFO: [Physopt 32-613] Processed net outputMAC1_n_86.  Swapped 1 critical pins.
+INFO: [Physopt 32-609] Processed net outputMAC1_n_82.  Critical pin optimization did not optimize the net.
+INFO: [Physopt 32-613] Processed net outputMAC2_n_86.  Swapped 1 critical pins.
+INFO: [Physopt 32-609] Processed net outputMAC[470]_i_2_n_0.  Critical pin optimization did not optimize the net.
+INFO: [Physopt 32-613] Processed net outputMAC1_n_103.  Swapped 3 critical pin.
+INFO: [Physopt 32-613] Processed net outputMAC[572]_i_3_n_0.  Swapped 1 critical pins.
+INFO: [Physopt 32-613] Processed net outputMAC1_n_92.  Swapped 2 critical pin.
+INFO: [Physopt 32-613] Processed net outputMAC[579]_i_2_n_0.  Swapped 1 critical pins.
+INFO: [Physopt 32-613] Processed net outputMAC1_n_85.  Swapped 3 critical pin.
+INFO: [Physopt 32-613] Processed net outputMAC1_n_102.  Swapped 2 critical pin.
+INFO: [Physopt 32-613] Processed net outputMAC2_n_85.  Swapped 1 critical pins.
+INFO: [Physopt 32-613] Processed net outputMAC1_n_73.  Swapped 2 critical pin.
+INFO: [Physopt 32-613] Processed net outputMAC1_n_101.  Swapped 1 critical pins.
+INFO: [Physopt 32-613] Processed net outputMAC[486]_i_2_n_0.  Swapped 1 critical pins.
+INFO: [Physopt 32-613] Processed net outputMAC1_n_72.  Swapped 1 critical pins.
+INFO: [Physopt 32-609] Processed net outputMAC1_n_98.  Critical pin optimization did not optimize the net.
+INFO: [Physopt 32-613] Processed net outputMAC2_n_69.  Swapped 1 critical pins.
+INFO: [Physopt 32-609] Processed net outputMAC1_n_78.  Critical pin optimization did not optimize the net.
+INFO: [Physopt 32-613] Processed net outputMAC[474]_i_2_n_0_repN.  Swapped 1 critical pins.
+INFO: [Physopt 32-613] Processed net outputMAC[489]_i_2_n_0.  Swapped 1 critical pins.
+INFO: [Physopt 32-609] Processed net outputMAC1_n_84.  Critical pin optimization did not optimize the net.
+INFO: [Physopt 32-608] Optimized 34 nets.  Swapped 60 pins.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.162 | TNS=-0.695 |
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1837.961 ; gain = 0.000 ; free physical = 701 ; free virtual = 7392
+Phase 20 Critical Pin Optimization | Checksum: 423c5942
+
+Time (s): cpu = 00:02:01 ; elapsed = 00:00:34 . Memory (MB): peak = 1837.961 ; gain = 0.000 ; free physical = 700 ; free virtual = 7391
+
+Phase 21 Very High Fanout Optimization
+INFO: [Physopt 32-64] No nets found for fanout-optimization.
+Phase 21 Very High Fanout Optimization | Checksum: 423c5942
+
+Time (s): cpu = 00:02:01 ; elapsed = 00:00:34 . Memory (MB): peak = 1837.961 ; gain = 0.000 ; free physical = 700 ; free virtual = 7391
+
+Phase 22 BRAM Enable Optimization
+Phase 22 BRAM Enable Optimization | Checksum: 423c5942
+
+Time (s): cpu = 00:02:01 ; elapsed = 00:00:34 . Memory (MB): peak = 1837.961 ; gain = 0.000 ; free physical = 700 ; free virtual = 7391
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1837.961 ; gain = 0.000 ; free physical = 700 ; free virtual = 7391
+INFO: [Physopt 32-603] Post Physical Optimization Timing Summary | WNS=-0.162 | TNS=-0.695 |
+Ending Physical Synthesis Task | Checksum: 4de7d8ea
+----- Checksum: : 423c5942 : 0bab7fa8 
+
+Time (s): cpu = 00:02:01 ; elapsed = 00:00:34 . Memory (MB): peak = 1837.961 ; gain = 0.000 ; free physical = 700 ; free virtual = 7391
+INFO: [Common 17-83] Releasing license: Implementation
+516 Infos, 3 Warnings, 0 Critical Warnings and 0 Errors encountered.
+phys_opt_design completed successfully
+phys_opt_design: Time (s): cpu = 00:02:01 ; elapsed = 00:00:35 . Memory (MB): peak = 1837.961 ; gain = 0.000 ; free physical = 700 ; free virtual = 7391
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00.35 ; elapsed = 00:00:00.17 . Memory (MB): peak = 1837.961 ; gain = 0.000 ; free physical = 698 ; free virtual = 7392
+Command: route_design -directive Explore -tns_cleanup
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Running DRC as a precondition to command route_design
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+
+Starting Routing Task
+INFO: [Route 35-270] Using Router directive 'Explore'.
+INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 8 CPUs
+Checksum: PlaceDB: 16dbfcf4 ConstDB: 0 ShapeSum: 0 RouteDB: bab7fa8
+
+Phase 1 Build RT Design
+WARNING: [Route 35-198] Port "inputVector[17]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "inputVector[17]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "inputVector[16]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "inputVector[16]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "inputVector[15]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "inputVector[15]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "inputVector[14]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "inputVector[14]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "inputVector[13]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "inputVector[13]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "inputVector[12]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "inputVector[12]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "inputVector[11]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "inputVector[11]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "inputVector[10]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "inputVector[10]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "inputVector[9]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "inputVector[9]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "inputVector[8]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "inputVector[8]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "inputVector[7]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "inputVector[7]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "inputVector[6]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "inputVector[6]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "inputVector[5]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "inputVector[5]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "inputVector[4]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "inputVector[4]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "inputVector[3]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "inputVector[3]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "inputVector[2]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "inputVector[2]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "inputVector[1]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "inputVector[1]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "inputVector[0]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "inputVector[0]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-197] Clock port "clk" does not have an associated HD.CLK_SRC. Without this constraint, timing analysis may not be accurate and upstream checks cannot be done to ensure correct clock placement.
+WARNING: [Route 35-198] Port "reset" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "reset". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "weightRow[273]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "weightRow[273]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "weightRow[237]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "weightRow[237]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "weightRow[255]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "weightRow[255]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "weightRow[219]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "weightRow[219]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "weightRow[271]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "weightRow[271]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "weightRow[235]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "weightRow[235]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "weightRow[253]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "weightRow[253]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "weightRow[217]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "weightRow[217]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "weightRow[284]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "weightRow[284]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "weightRow[248]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "weightRow[248]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "weightRow[266]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "weightRow[266]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "weightRow[230]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "weightRow[230]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "weightRow[276]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "weightRow[276]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "weightRow[240]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "weightRow[240]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "weightRow[258]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "weightRow[258]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "weightRow[222]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "weightRow[222]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "weightRow[274]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "weightRow[274]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "weightRow[238]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "weightRow[238]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "weightRow[256]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "weightRow[256]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "weightRow[220]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "weightRow[220]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "weightRow[283]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "weightRow[283]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "weightRow[247]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "weightRow[247]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "weightRow[265]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "weightRow[265]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "weightRow[229]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "weightRow[229]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "weightRow[277]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "weightRow[277]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "weightRow[241]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "weightRow[241]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "weightRow[259]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "weightRow[259]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "weightRow[223]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "weightRow[223]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "weightRow[275]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "weightRow[275]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "weightRow[239]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "weightRow[239]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "weightRow[257]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "weightRow[257]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "weightRow[221]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "weightRow[221]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "weightRow[270]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "weightRow[270]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "weightRow[234]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "weightRow[234]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "weightRow[252]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "weightRow[252]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "weightRow[216]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "weightRow[216]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "weightRow[281]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "weightRow[281]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "weightRow[245]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "weightRow[245]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "weightRow[263]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "weightRow[263]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "weightRow[227]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "weightRow[227]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "weightRow[280]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "weightRow[280]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "weightRow[244]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "weightRow[244]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "weightRow[262]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "weightRow[262]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "weightRow[226]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "weightRow[226]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "weightRow[279]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "weightRow[279]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "weightRow[243]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "weightRow[243]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "weightRow[261]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "weightRow[261]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "weightRow[225]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "weightRow[225]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "weightRow[285]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "weightRow[285]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "weightRow[249]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "weightRow[249]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "weightRow[267]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "weightRow[267]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "weightRow[231]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "weightRow[231]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "weightRow[282]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "weightRow[282]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "weightRow[246]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "weightRow[246]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "weightRow[264]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "weightRow[264]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "weightRow[228]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "weightRow[228]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "weightRow[286]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "weightRow[286]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "weightRow[250]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "weightRow[250]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "weightRow[268]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "weightRow[268]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "weightRow[232]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "weightRow[232]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "weightRow[126]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "weightRow[126]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "weightRow[90]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "weightRow[90]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "weightRow[108]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "weightRow[108]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "weightRow[72]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "weightRow[72]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "weightRow[199]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "weightRow[199]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "weightRow[163]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "weightRow[163]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "weightRow[181]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "weightRow[181]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "weightRow[145]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "weightRow[145]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "weightRow[129]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "weightRow[129]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "weightRow[93]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "weightRow[93]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "weightRow[111]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "weightRow[111]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "weightRow[75]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "weightRow[75]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "weightRow[128]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "weightRow[128]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "weightRow[92]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "weightRow[92]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "weightRow[110]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "weightRow[110]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "weightRow[74]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "weightRow[74]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "weightRow[127]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "weightRow[127]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "weightRow[91]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "weightRow[91]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "weightRow[109]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "weightRow[109]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "weightRow[73]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "weightRow[73]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "weightRow[131]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "weightRow[131]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+INFO: [Common 17-14] Message 'Route 35-198' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+Phase 1 Build RT Design | Checksum: 148da20f3
+
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:14 . Memory (MB): peak = 1893.605 ; gain = 55.645 ; free physical = 545 ; free virtual = 7238
+
+Phase 2 Router Initialization
+
+Phase 2.1 Create Timer
+Phase 2.1 Create Timer | Checksum: 148da20f3
+
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:14 . Memory (MB): peak = 1893.605 ; gain = 55.645 ; free physical = 544 ; free virtual = 7237
+
+Phase 2.2 Pre Route Cleanup
+Phase 2.2 Pre Route Cleanup | Checksum: 148da20f3
+
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:14 . Memory (MB): peak = 1904.594 ; gain = 66.633 ; free physical = 520 ; free virtual = 7213
+ Number of Nodes with overlaps = 0
+
+Phase 2.3 Update Timing
+Phase 2.3 Update Timing | Checksum: 28e7b0cec
+
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:14 . Memory (MB): peak = 1910.648 ; gain = 72.688 ; free physical = 510 ; free virtual = 7203
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.045  | TNS=0.000  | WHS=0.104  | THS=0.000  |
+
+Phase 2 Router Initialization | Checksum: 2ac08d38e
+
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:14 . Memory (MB): peak = 1910.648 ; gain = 72.688 ; free physical = 509 ; free virtual = 7202
+
+Phase 3 Initial Routing
+Phase 3 Initial Routing | Checksum: 19ccff483
+
+Time (s): cpu = 00:00:19 ; elapsed = 00:00:15 . Memory (MB): peak = 1914.648 ; gain = 76.688 ; free physical = 506 ; free virtual = 7199
+
+Phase 4 Rip-up And Reroute
+
+Phase 4.1 Global Iteration 0
+ Number of Nodes with overlaps = 289
+ Number of Nodes with overlaps = 112
+ Number of Nodes with overlaps = 44
+ Number of Nodes with overlaps = 31
+ Number of Nodes with overlaps = 15
+ Number of Nodes with overlaps = 6
+ Number of Nodes with overlaps = 4
+ Number of Nodes with overlaps = 5
+ Number of Nodes with overlaps = 2
+ Number of Nodes with overlaps = 3
+ Number of Nodes with overlaps = 2
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 0
+
+Phase 4.1.1 Update Timing
+Phase 4.1.1 Update Timing | Checksum: 139b479ee
+
+Time (s): cpu = 00:00:27 ; elapsed = 00:00:17 . Memory (MB): peak = 1917.648 ; gain = 79.688 ; free physical = 515 ; free virtual = 7208
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.421 | TNS=-6.164 | WHS=N/A    | THS=N/A    |
+
+
+Phase 4.1.2 GlobIterForTiming
+
+Phase 4.1.2.1 Update Timing
+Phase 4.1.2.1 Update Timing | Checksum: 198dba8c5
+
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:17 . Memory (MB): peak = 1917.648 ; gain = 79.688 ; free physical = 515 ; free virtual = 7208
+
+Phase 4.1.2.2 Fast Budgeting
+Phase 4.1.2.2 Fast Budgeting | Checksum: 1fc68ac2f
+
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:17 . Memory (MB): peak = 1917.648 ; gain = 79.688 ; free physical = 515 ; free virtual = 7208
+Phase 4.1.2 GlobIterForTiming | Checksum: 19ca0ad9d
+
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:17 . Memory (MB): peak = 1917.648 ; gain = 79.688 ; free physical = 515 ; free virtual = 7208
+Phase 4.1 Global Iteration 0 | Checksum: 19ca0ad9d
+
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:17 . Memory (MB): peak = 1917.648 ; gain = 79.688 ; free physical = 515 ; free virtual = 7208
+
+Phase 4.2 Global Iteration 1
+ Number of Nodes with overlaps = 101
+ Number of Nodes with overlaps = 61
+ Number of Nodes with overlaps = 32
+ Number of Nodes with overlaps = 20
+ Number of Nodes with overlaps = 4
+ Number of Nodes with overlaps = 0
+
+Phase 4.2.1 Update Timing
+Phase 4.2.1 Update Timing | Checksum: 2ab04f27d
+
+Time (s): cpu = 00:00:32 ; elapsed = 00:00:18 . Memory (MB): peak = 1918.648 ; gain = 80.688 ; free physical = 512 ; free virtual = 7205
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.331 | TNS=-4.917 | WHS=N/A    | THS=N/A    |
+
+
+Phase 4.2.2 GlobIterForTiming
+
+Phase 4.2.2.1 Update Timing
+Phase 4.2.2.1 Update Timing | Checksum: 16b09fd2e
+
+Time (s): cpu = 00:00:32 ; elapsed = 00:00:18 . Memory (MB): peak = 1918.648 ; gain = 80.688 ; free physical = 513 ; free virtual = 7206
+
+Phase 4.2.2.2 Fast Budgeting
+Phase 4.2.2.2 Fast Budgeting | Checksum: 1403b2f58
+
+Time (s): cpu = 00:00:33 ; elapsed = 00:00:18 . Memory (MB): peak = 1918.648 ; gain = 80.688 ; free physical = 513 ; free virtual = 7206
+Phase 4.2.2 GlobIterForTiming | Checksum: 1c9cec1c6
+
+Time (s): cpu = 00:00:33 ; elapsed = 00:00:18 . Memory (MB): peak = 1918.648 ; gain = 80.688 ; free physical = 513 ; free virtual = 7206
+Phase 4.2 Global Iteration 1 | Checksum: 1c9cec1c6
+
+Time (s): cpu = 00:00:33 ; elapsed = 00:00:18 . Memory (MB): peak = 1918.648 ; gain = 80.688 ; free physical = 513 ; free virtual = 7206
+
+Phase 4.3 Global Iteration 2
+ Number of Nodes with overlaps = 138
+ Number of Nodes with overlaps = 43
+ Number of Nodes with overlaps = 11
+ Number of Nodes with overlaps = 11
+ Number of Nodes with overlaps = 2
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 0
+
+Phase 4.3.1 Update Timing
+Phase 4.3.1 Update Timing | Checksum: 23d30bf99
+
+Time (s): cpu = 00:00:36 ; elapsed = 00:00:19 . Memory (MB): peak = 1918.648 ; gain = 80.688 ; free physical = 525 ; free virtual = 7217
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.439 | TNS=-6.274 | WHS=N/A    | THS=N/A    |
+
+Phase 4.3 Global Iteration 2 | Checksum: 1f772b466
+
+Time (s): cpu = 00:00:36 ; elapsed = 00:00:19 . Memory (MB): peak = 1918.648 ; gain = 80.688 ; free physical = 525 ; free virtual = 7217
+Phase 4 Rip-up And Reroute | Checksum: 1f772b466
+
+Time (s): cpu = 00:00:36 ; elapsed = 00:00:19 . Memory (MB): peak = 1918.648 ; gain = 80.688 ; free physical = 525 ; free virtual = 7217
+
+Phase 5 Delay and Skew Optimization
+
+Phase 5.1 Delay CleanUp
+
+Phase 5.1.1 Update Timing
+Phase 5.1.1 Update Timing | Checksum: 1f772b466
+
+Time (s): cpu = 00:00:36 ; elapsed = 00:00:20 . Memory (MB): peak = 1918.648 ; gain = 80.688 ; free physical = 511 ; free virtual = 7204
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.331 | TNS=-4.917 | WHS=N/A    | THS=N/A    |
+
+ Number of Nodes with overlaps = 0
+
+Phase 5.1.2 Update Timing
+Phase 5.1.2 Update Timing | Checksum: 5bead231
+
+Time (s): cpu = 00:00:37 ; elapsed = 00:00:20 . Memory (MB): peak = 1918.648 ; gain = 80.688 ; free physical = 522 ; free virtual = 7214
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.317 | TNS=-4.387 | WHS=N/A    | THS=N/A    |
+
+ Number of Nodes with overlaps = 0
+
+Phase 5.1.3 Update Timing
+Phase 5.1.3 Update Timing | Checksum: 68a7e5df
+
+Time (s): cpu = 00:00:37 ; elapsed = 00:00:20 . Memory (MB): peak = 1918.648 ; gain = 80.688 ; free physical = 523 ; free virtual = 7215
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.317 | TNS=-4.387 | WHS=N/A    | THS=N/A    |
+
+Phase 5.1 Delay CleanUp | Checksum: 68a7e5df
+
+Time (s): cpu = 00:00:37 ; elapsed = 00:00:20 . Memory (MB): peak = 1918.648 ; gain = 80.688 ; free physical = 523 ; free virtual = 7215
+
+Phase 5.2 Clock Skew Optimization
+Phase 5.2 Clock Skew Optimization | Checksum: 68a7e5df
+
+Time (s): cpu = 00:00:37 ; elapsed = 00:00:20 . Memory (MB): peak = 1918.648 ; gain = 80.688 ; free physical = 523 ; free virtual = 7215
+Phase 5 Delay and Skew Optimization | Checksum: 68a7e5df
+
+Time (s): cpu = 00:00:37 ; elapsed = 00:00:20 . Memory (MB): peak = 1918.648 ; gain = 80.688 ; free physical = 523 ; free virtual = 7215
+
+Phase 6 Post Hold Fix
+
+Phase 6.1 Update Timing
+Phase 6.1 Update Timing | Checksum: 138564355
+
+Time (s): cpu = 00:00:37 ; elapsed = 00:00:20 . Memory (MB): peak = 1918.648 ; gain = 80.688 ; free physical = 523 ; free virtual = 7215
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.317 | TNS=-4.387 | WHS=0.107  | THS=0.000  |
+
+Phase 6 Post Hold Fix | Checksum: 138564355
+
+Time (s): cpu = 00:00:37 ; elapsed = 00:00:20 . Memory (MB): peak = 1918.648 ; gain = 80.688 ; free physical = 523 ; free virtual = 7215
+
+Phase 7 Timing Verification
+
+Phase 7.1 Update Timing
+Phase 7.1 Update Timing | Checksum: 124210930
+
+Time (s): cpu = 00:00:37 ; elapsed = 00:00:20 . Memory (MB): peak = 1918.648 ; gain = 80.688 ; free physical = 522 ; free virtual = 7215
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.317 | TNS=-4.387 | WHS=N/A    | THS=N/A    |
+
+Phase 7 Timing Verification | Checksum: 124210930
+
+Time (s): cpu = 00:00:37 ; elapsed = 00:00:20 . Memory (MB): peak = 1918.648 ; gain = 80.688 ; free physical = 522 ; free virtual = 7215
+
+Phase 8 Route finalize
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0.23382 %
+  Global Horizontal Routing Utilization  = 0.652045 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 0
+  Number of Unrouted Nets             = 0
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+Congestion Report
+North Dir 1x1 Area, Max Cong = 36.036%, No Congested Regions.
+South Dir 1x1 Area, Max Cong = 27.9279%, No Congested Regions.
+East Dir 1x1 Area, Max Cong = 67.6471%, No Congested Regions.
+West Dir 1x1 Area, Max Cong = 66.1765%, No Congested Regions.
+Phase 8 Route finalize | Checksum: 124210930
+
+Time (s): cpu = 00:00:38 ; elapsed = 00:00:20 . Memory (MB): peak = 1918.648 ; gain = 80.688 ; free physical = 522 ; free virtual = 7215
+
+Phase 9 Verifying routed nets
+
+ Verification completed successfully
+Phase 9 Verifying routed nets | Checksum: 124210930
+
+Time (s): cpu = 00:00:38 ; elapsed = 00:00:20 . Memory (MB): peak = 1920.648 ; gain = 82.688 ; free physical = 520 ; free virtual = 7213
+
+Phase 10 Depositing Routes
+Phase 10 Depositing Routes | Checksum: 18504ce4b
+
+Time (s): cpu = 00:00:38 ; elapsed = 00:00:20 . Memory (MB): peak = 1920.648 ; gain = 82.688 ; free physical = 517 ; free virtual = 7210
+
+Phase 11 Incr Placement Change
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1920.648 ; gain = 0.000 ; free physical = 517 ; free virtual = 7210
+WARNING: [Timing 38-242] The property HD.CLK_SRC of clock port "clk" is not set. In out-of-context mode, this prevents timing estimation for clock delay/skew
+Resolution: Set the HD.CLK_SRC property of the out-of-context port to the location of the clock buffer instance in the top-level design
+WARNING: [Timing 38-242] The property HD.CLK_SRC of clock port "clk" is not set. In out-of-context mode, this prevents timing estimation for clock delay/skew
+Resolution: Set the HD.CLK_SRC property of the out-of-context port to the location of the clock buffer instance in the top-level design
+INFO: [Place 30-746] Post Placement Timing Summary WNS=-0.161. For the most accurate timing information please run report_timing.
+Phase 11 Incr Placement Change | Checksum: 18504ce4b
+
+Time (s): cpu = 00:00:44 ; elapsed = 00:00:25 . Memory (MB): peak = 1920.648 ; gain = 82.688 ; free physical = 510 ; free virtual = 7203
+
+Phase 12 Build RT Design
+WARNING: [Route 35-197] Clock port "clk" does not have an associated HD.CLK_SRC. Without this constraint, timing analysis may not be accurate and upstream checks cannot be done to ensure correct clock placement.
+Phase 12 Build RT Design | Checksum: 11bbbb799
+
+Time (s): cpu = 00:00:44 ; elapsed = 00:00:25 . Memory (MB): peak = 1920.648 ; gain = 82.688 ; free physical = 510 ; free virtual = 7203
+
+Phase 13 Router Initialization
+
+Phase 13.1 Create Timer
+Phase 13.1 Create Timer | Checksum: 135bc84e4
+
+Time (s): cpu = 00:00:44 ; elapsed = 00:00:25 . Memory (MB): peak = 1920.652 ; gain = 82.691 ; free physical = 510 ; free virtual = 7203
+
+Phase 13.2 Pre Route Cleanup
+Phase 13.2 Pre Route Cleanup | Checksum: 1482d4f7a
+
+Time (s): cpu = 00:00:44 ; elapsed = 00:00:25 . Memory (MB): peak = 1920.652 ; gain = 82.691 ; free physical = 507 ; free virtual = 7200
+ Number of Nodes with overlaps = 0
+
+Phase 13.3 Update Timing
+Phase 13.3 Update Timing | Checksum: 210724a57
+
+Time (s): cpu = 00:00:45 ; elapsed = 00:00:26 . Memory (MB): peak = 1920.652 ; gain = 82.691 ; free physical = 508 ; free virtual = 7200
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.146 | TNS=-0.464 | WHS=0.104  | THS=0.000  |
+
+Phase 13 Router Initialization | Checksum: 1a2a7a7ba
+
+Time (s): cpu = 00:00:46 ; elapsed = 00:00:26 . Memory (MB): peak = 1920.652 ; gain = 82.691 ; free physical = 508 ; free virtual = 7200
+
+Phase 14 Initial Routing
+Phase 14 Initial Routing | Checksum: 13bcc9561
+
+Time (s): cpu = 00:00:46 ; elapsed = 00:00:26 . Memory (MB): peak = 1920.652 ; gain = 82.691 ; free physical = 508 ; free virtual = 7200
+
+Phase 15 Rip-up And Reroute
+
+Phase 15.1 Global Iteration 0
+ Number of Nodes with overlaps = 131
+ Number of Nodes with overlaps = 76
+ Number of Nodes with overlaps = 41
+ Number of Nodes with overlaps = 24
+ Number of Nodes with overlaps = 17
+ Number of Nodes with overlaps = 21
+ Number of Nodes with overlaps = 5
+ Number of Nodes with overlaps = 2
+ Number of Nodes with overlaps = 2
+ Number of Nodes with overlaps = 0
+
+Phase 15.1.1 Update Timing
+Phase 15.1.1 Update Timing | Checksum: 204d5970c
+
+Time (s): cpu = 00:00:52 ; elapsed = 00:00:28 . Memory (MB): peak = 1920.652 ; gain = 82.691 ; free physical = 496 ; free virtual = 7188
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.289 | TNS=-6.263 | WHS=N/A    | THS=N/A    |
+
+
+Phase 15.1.2 GlobIterForTiming
+
+Phase 15.1.2.1 Update Timing
+Phase 15.1.2.1 Update Timing | Checksum: 1a22a3df7
+
+Time (s): cpu = 00:00:52 ; elapsed = 00:00:28 . Memory (MB): peak = 1920.652 ; gain = 82.691 ; free physical = 495 ; free virtual = 7188
+
+Phase 15.1.2.2 Fast Budgeting
+Phase 15.1.2.2 Fast Budgeting | Checksum: 1351ee501
+
+Time (s): cpu = 00:00:52 ; elapsed = 00:00:28 . Memory (MB): peak = 1920.652 ; gain = 82.691 ; free physical = 495 ; free virtual = 7188
+Phase 15.1.2 GlobIterForTiming | Checksum: 233e4d56a
+
+Time (s): cpu = 00:00:52 ; elapsed = 00:00:28 . Memory (MB): peak = 1920.652 ; gain = 82.691 ; free physical = 495 ; free virtual = 7188
+Phase 15.1 Global Iteration 0 | Checksum: 233e4d56a
+
+Time (s): cpu = 00:00:52 ; elapsed = 00:00:28 . Memory (MB): peak = 1920.652 ; gain = 82.691 ; free physical = 495 ; free virtual = 7188
+
+Phase 15.2 Global Iteration 1
+ Number of Nodes with overlaps = 110
+ Number of Nodes with overlaps = 46
+ Number of Nodes with overlaps = 31
+ Number of Nodes with overlaps = 14
+ Number of Nodes with overlaps = 3
+ Number of Nodes with overlaps = 11
+ Number of Nodes with overlaps = 10
+ Number of Nodes with overlaps = 2
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 0
+
+Phase 15.2.1 Update Timing
+Phase 15.2.1 Update Timing | Checksum: 1e0afa53c
+
+Time (s): cpu = 00:01:00 ; elapsed = 00:00:30 . Memory (MB): peak = 1920.652 ; gain = 82.691 ; free physical = 486 ; free virtual = 7179
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.385 | TNS=-8.299 | WHS=N/A    | THS=N/A    |
+
+Phase 15.2 Global Iteration 1 | Checksum: 1aed31bbd
+
+Time (s): cpu = 00:01:00 ; elapsed = 00:00:30 . Memory (MB): peak = 1920.652 ; gain = 82.691 ; free physical = 493 ; free virtual = 7185
+Phase 15 Rip-up And Reroute | Checksum: 1aed31bbd
+
+Time (s): cpu = 00:01:00 ; elapsed = 00:00:30 . Memory (MB): peak = 1920.652 ; gain = 82.691 ; free physical = 493 ; free virtual = 7185
+
+Phase 16 Delay and Skew Optimization
+
+Phase 16.1 Delay CleanUp
+
+Phase 16.1.1 Update Timing
+Phase 16.1.1 Update Timing | Checksum: 1aed31bbd
+
+Time (s): cpu = 00:01:00 ; elapsed = 00:00:30 . Memory (MB): peak = 1920.652 ; gain = 82.691 ; free physical = 493 ; free virtual = 7186
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.289 | TNS=-6.263 | WHS=N/A    | THS=N/A    |
+
+ Number of Nodes with overlaps = 0
+
+Phase 16.1.2 Update Timing
+Phase 16.1.2 Update Timing | Checksum: 16095f9af
+
+Time (s): cpu = 00:01:01 ; elapsed = 00:00:30 . Memory (MB): peak = 1920.652 ; gain = 82.691 ; free physical = 492 ; free virtual = 7185
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.289 | TNS=-5.885 | WHS=N/A    | THS=N/A    |
+
+ Number of Nodes with overlaps = 0
+
+Phase 16.1.3 Update Timing
+Phase 16.1.3 Update Timing | Checksum: 202b6b445
+
+Time (s): cpu = 00:01:01 ; elapsed = 00:00:31 . Memory (MB): peak = 1920.652 ; gain = 82.691 ; free physical = 492 ; free virtual = 7185
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.289 | TNS=-5.885 | WHS=N/A    | THS=N/A    |
+
+Phase 16.1 Delay CleanUp | Checksum: 202b6b445
+
+Time (s): cpu = 00:01:01 ; elapsed = 00:00:31 . Memory (MB): peak = 1920.652 ; gain = 82.691 ; free physical = 492 ; free virtual = 7185
+
+Phase 16.2 Clock Skew Optimization
+Phase 16.2 Clock Skew Optimization | Checksum: 202b6b445
+
+Time (s): cpu = 00:01:01 ; elapsed = 00:00:31 . Memory (MB): peak = 1920.652 ; gain = 82.691 ; free physical = 492 ; free virtual = 7185
+Phase 16 Delay and Skew Optimization | Checksum: 202b6b445
+
+Time (s): cpu = 00:01:01 ; elapsed = 00:00:31 . Memory (MB): peak = 1920.652 ; gain = 82.691 ; free physical = 492 ; free virtual = 7185
+
+Phase 17 Post Hold Fix
+
+Phase 17.1 Update Timing
+Phase 17.1 Update Timing | Checksum: 1464d5236
+
+Time (s): cpu = 00:01:01 ; elapsed = 00:00:31 . Memory (MB): peak = 1920.652 ; gain = 82.691 ; free physical = 492 ; free virtual = 7185
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.289 | TNS=-5.885 | WHS=0.107  | THS=0.000  |
+
+Phase 17 Post Hold Fix | Checksum: 1464d5236
+
+Time (s): cpu = 00:01:01 ; elapsed = 00:00:31 . Memory (MB): peak = 1920.652 ; gain = 82.691 ; free physical = 492 ; free virtual = 7185
+
+Phase 18 Timing Verification
+
+Phase 18.1 Update Timing
+Phase 18.1 Update Timing | Checksum: 1b10c7054
+
+Time (s): cpu = 00:01:01 ; elapsed = 00:00:31 . Memory (MB): peak = 1920.652 ; gain = 82.691 ; free physical = 492 ; free virtual = 7185
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.289 | TNS=-5.885 | WHS=N/A    | THS=N/A    |
+
+Phase 18 Timing Verification | Checksum: 1b10c7054
+
+Time (s): cpu = 00:01:01 ; elapsed = 00:00:31 . Memory (MB): peak = 1920.652 ; gain = 82.691 ; free physical = 492 ; free virtual = 7185
+
+Phase 19 Route finalize
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0.236823 %
+  Global Horizontal Routing Utilization  = 0.6714 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 0
+  Number of Unrouted Nets             = 0
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+Congestion Report
+North Dir 1x1 Area, Max Cong = 36.036%, No Congested Regions.
+South Dir 1x1 Area, Max Cong = 34.2342%, No Congested Regions.
+East Dir 1x1 Area, Max Cong = 69.1176%, No Congested Regions.
+West Dir 1x1 Area, Max Cong = 70.5882%, No Congested Regions.
+Phase 19 Route finalize | Checksum: 1b10c7054
+
+Time (s): cpu = 00:01:01 ; elapsed = 00:00:31 . Memory (MB): peak = 1920.652 ; gain = 82.691 ; free physical = 492 ; free virtual = 7185
+
+Phase 20 Verifying routed nets
+
+ Verification completed successfully
+Phase 20 Verifying routed nets | Checksum: 1b10c7054
+
+Time (s): cpu = 00:01:01 ; elapsed = 00:00:31 . Memory (MB): peak = 1922.648 ; gain = 84.688 ; free physical = 490 ; free virtual = 7183
+
+Phase 21 Depositing Routes
+Phase 21 Depositing Routes | Checksum: 23e30e05d
+
+Time (s): cpu = 00:01:01 ; elapsed = 00:00:31 . Memory (MB): peak = 1922.648 ; gain = 84.688 ; free physical = 490 ; free virtual = 7183
+
+Phase 22 Post Router Timing
+WARNING: [Timing 38-242] The property HD.CLK_SRC of clock port "clk" is not set. In out-of-context mode, this prevents timing estimation for clock delay/skew
+Resolution: Set the HD.CLK_SRC property of the out-of-context port to the location of the clock buffer instance in the top-level design
+INFO: [Route 35-20] Post Routing Timing Summary | WNS=-0.286 | TNS=-5.745 | WHS=0.108  | THS=0.000  |
+
+WARNING: [Route 35-39] The design did not meet timing requirements. Please run report_timing_summary for detailed reports.
+Resolution: Verify that the timing was met or had small violations at all previous steps (synthesis, placement, power_opt, and phys_opt). Run report_timing_summary and analyze individual timing paths.
+INFO: [Route 35-253] TNS is the sum of the worst slack violation on every endpoint in the design. Review the paths with the biggest WNS violations in the timing reports and modify your constraints or your design to improve both WNS and TNS.
+Phase 22 Post Router Timing | Checksum: 25cf7b938
+
+Time (s): cpu = 00:01:02 ; elapsed = 00:00:31 . Memory (MB): peak = 1922.648 ; gain = 84.688 ; free physical = 489 ; free virtual = 7182
+INFO: [Route 35-16] Router Completed Successfully
+
+Time (s): cpu = 00:01:02 ; elapsed = 00:00:31 . Memory (MB): peak = 1922.648 ; gain = 84.688 ; free physical = 489 ; free virtual = 7182
+
+Routing Is Done.
+INFO: [Common 17-83] Releasing license: Implementation
+548 Infos, 109 Warnings, 0 Critical Warnings and 0 Errors encountered.
+route_design completed successfully
+route_design: Time (s): cpu = 00:01:03 ; elapsed = 00:00:33 . Memory (MB): peak = 1922.648 ; gain = 84.688 ; free physical = 488 ; free virtual = 7181
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00.25 ; elapsed = 00:00:00.10 . Memory (MB): peak = 1922.648 ; gain = 0.000 ; free physical = 486 ; free virtual = 7182
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Coretcl 2-168] The results of DRC are in file /home/josefonseca/Documents/thesis/verilog/dot_prod/Synth_dot_prod/Synth_dot_prod.runs/impl_6/dot_prod_drc_routed.rpt.
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+WARNING: [Timing 38-242] The property HD.CLK_SRC of clock port "clk" is not set. In out-of-context mode, this prevents timing estimation for clock delay/skew
+Resolution: Set the HD.CLK_SRC property of the out-of-context port to the location of the clock buffer instance in the top-level design
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+Command: phys_opt_design -directive Explore
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Vivado_Tcl 4-241] Physical synthesis in post route mode ( 100.0% nets are fully routed)
+INFO: [Vivado_Tcl 4-137] Directive used for phys_opt_design is: Explore
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+Starting Physical Synthesis Task
+
+Phase 1 Physical Synthesis Initialization
+WARNING: [Timing 38-242] The property HD.CLK_SRC of clock port "clk" is not set. In out-of-context mode, this prevents timing estimation for clock delay/skew
+Resolution: Set the HD.CLK_SRC property of the out-of-context port to the location of the clock buffer instance in the top-level design
+INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 8 CPUs
+Phase 1 Physical Synthesis Initialization | Checksum: 139d59943
+----- Checksum: : 106b1c73c : 3323d207 
+
+Time (s): cpu = 00:00:00.95 ; elapsed = 00:00:00.55 . Memory (MB): peak = 2018.727 ; gain = 0.000 ; free physical = 510 ; free virtual = 7204
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2018.727 ; gain = 0.000 ; free physical = 510 ; free virtual = 7204
+
+Phase 2 Critical Path Optimization
+INFO: [Physopt 32-668] Current Timing Summary | WNS=-0.286 | TNS=-5.745 | WHS=0.108 | THS=0.000 |
+INFO: [Physopt 32-702] Processed net outputMAC_reg_n_0_[564]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net rowMux[0]_repN_1. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-710] Processed net outputMAC[564]_i_1_n_0. Critial path length was reduced through logic transformation on cell outputMAC[564]_i_1_comp.
+INFO: [Physopt 32-735] Processed net outputMAC[564]_i_2_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-668] Current Timing Summary | WNS=-0.279 | TNS=-5.554 | WHS=0.108 | THS=0.000 |
+INFO: [Physopt 32-702] Processed net p_15_out[212]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-710] Processed net outputMAC010_out[432]. Critial path length was reduced through logic transformation on cell outputMAC[432]_i_1_comp.
+INFO: [Physopt 32-735] Processed net outputMAC[560]_i_2_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-668] Current Timing Summary | WNS=-0.262 | TNS=-5.263 | WHS=0.108 | THS=0.000 |
+INFO: [Physopt 32-702] Processed net outputMAC_reg_n_0_[442]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-710] Processed net outputMAC010_out[442]. Critial path length was reduced through logic transformation on cell outputMAC[442]_i_1_comp.
+INFO: [Physopt 32-735] Processed net outputMAC[570]_i_2_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-668] Current Timing Summary | WNS=-0.260 | TNS=-4.988 | WHS=0.108 | THS=0.000 |
+INFO: [Physopt 32-702] Processed net p_15_out[207]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-710] Processed net outputMAC010_out[427]. Critial path length was reduced through logic transformation on cell outputMAC[427]_i_1_comp.
+INFO: [Physopt 32-735] Processed net outputMAC[555]_i_2_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-668] Current Timing Summary | WNS=-0.258 | TNS=-4.716 | WHS=0.108 | THS=0.000 |
+INFO: [Physopt 32-702] Processed net outputMAC_reg_n_0_[440]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-710] Processed net outputMAC010_out[440]. Critial path length was reduced through logic transformation on cell outputMAC[440]_i_1_comp.
+INFO: [Physopt 32-735] Processed net outputMAC[568]_i_2_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-668] Current Timing Summary | WNS=-0.258 | TNS=-4.446 | WHS=0.108 | THS=0.000 |
+INFO: [Physopt 32-702] Processed net outputMAC_reg_n_0_[443]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-710] Processed net outputMAC010_out[443]. Critial path length was reduced through logic transformation on cell outputMAC[443]_i_2_comp.
+INFO: [Physopt 32-735] Processed net outputMAC[571]_i_2_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-668] Current Timing Summary | WNS=-0.255 | TNS=-4.188 | WHS=0.108 | THS=0.000 |
+INFO: [Physopt 32-702] Processed net p_15_out[215]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-710] Processed net outputMAC010_out[435]. Critial path length was reduced through logic transformation on cell outputMAC[435]_i_1_comp.
+INFO: [Physopt 32-735] Processed net outputMAC[563]_i_2_n_0_repN. Optimization improves timing on the net.
+INFO: [Physopt 32-668] Current Timing Summary | WNS=-0.224 | TNS=-3.893 | WHS=0.108 | THS=0.000 |
+INFO: [Physopt 32-702] Processed net outputMAC_reg_n_0_[523]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-710] Processed net p_8_in[523]. Critial path length was reduced through logic transformation on cell outputMAC[523]_i_1_comp.
+INFO: [Physopt 32-735] Processed net outputMAC[587]_i_2_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-668] Current Timing Summary | WNS=-0.220 | TNS=-3.657 | WHS=0.108 | THS=0.000 |
+INFO: [Physopt 32-702] Processed net p_15_out[197]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-710] Processed net outputMAC010_out[398]. Critial path length was reduced through logic transformation on cell outputMAC[398]_i_1_comp.
+INFO: [Physopt 32-735] Processed net outputMAC[526]_i_2_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-668] Current Timing Summary | WNS=-0.218 | TNS=-3.437 | WHS=0.108 | THS=0.000 |
+INFO: [Physopt 32-702] Processed net p_15_out[214]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-710] Processed net outputMAC010_out[434]. Critial path length was reduced through logic transformation on cell outputMAC[434]_i_1_comp.
+INFO: [Physopt 32-735] Processed net outputMAC[562]_i_2_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-668] Current Timing Summary | WNS=-0.216 | TNS=-3.326 | WHS=0.108 | THS=0.000 |
+INFO: [Physopt 32-702] Processed net outputMAC_reg_n_0_[403]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net outputMAC[451]_i_2_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-735] Processed net outputMAC[559]_i_3_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-668] Current Timing Summary | WNS=-0.201 | TNS=-3.136 | WHS=0.108 | THS=0.000 |
+INFO: [Physopt 32-702] Processed net p_15_out[190]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-710] Processed net outputMAC010_out[391]. Critial path length was reduced through logic transformation on cell outputMAC[391]_i_1_comp.
+INFO: [Physopt 32-735] Processed net outputMAC[391]_i_2_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-668] Current Timing Summary | WNS=-0.170 | TNS=-2.935 | WHS=0.108 | THS=0.000 |
+INFO: [Physopt 32-702] Processed net outputMAC_reg_n_0_[441]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-710] Processed net outputMAC010_out[441]. Critial path length was reduced through logic transformation on cell outputMAC[441]_i_1_comp.
+INFO: [Physopt 32-735] Processed net outputMAC[569]_i_2_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-668] Current Timing Summary | WNS=-0.160 | TNS=-2.751 | WHS=0.108 | THS=0.000 |
+INFO: [Physopt 32-702] Processed net outputMAC_reg_n_0_[417]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-710] Processed net outputMAC010_out[417]. Critial path length was reduced through logic transformation on cell outputMAC[417]_i_1_comp.
+INFO: [Physopt 32-735] Processed net outputMAC[545]_i_2_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-668] Current Timing Summary | WNS=-0.153 | TNS=-2.591 | WHS=0.108 | THS=0.000 |
+INFO: [Physopt 32-702] Processed net outputMAC_reg_n_0_[436]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net rowMux[0]_repN_3. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-735] Processed net outputMAC2_n_76. Optimization improves timing on the net.
+INFO: [Physopt 32-668] Current Timing Summary | WNS=-0.153 | TNS=-2.555 | WHS=0.108 | THS=0.000 |
+INFO: [Physopt 32-702] Processed net outputMAC_reg_n_0_[452]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-710] Processed net outputMAC[452]_i_1_n_0. Critial path length was reduced through logic transformation on cell outputMAC[452]_i_1_comp.
+INFO: [Physopt 32-735] Processed net outputMAC[532]_i_2_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-668] Current Timing Summary | WNS=-0.151 | TNS=-2.423 | WHS=0.108 | THS=0.000 |
+INFO: [Physopt 32-663] Processed net outputMAC[559]_i_3_n_0.  Re-placed instance outputMAC[559]_i_3
+INFO: [Physopt 32-735] Processed net outputMAC[559]_i_3_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-668] Current Timing Summary | WNS=-0.142 | TNS=-2.418 | WHS=0.108 | THS=0.000 |
+INFO: [Physopt 32-702] Processed net p_15_out[195]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-710] Processed net outputMAC010_out[396]. Critial path length was reduced through logic transformation on cell outputMAC[396]_i_1_comp.
+INFO: [Physopt 32-735] Processed net outputMAC[524]_i_2_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-668] Current Timing Summary | WNS=-0.129 | TNS=-2.276 | WHS=0.108 | THS=0.000 |
+INFO: [Physopt 32-702] Processed net p_15_out[213]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-710] Processed net outputMAC010_out[433]. Critial path length was reduced through logic transformation on cell outputMAC[433]_i_1_comp.
+INFO: [Physopt 32-735] Processed net outputMAC[561]_i_2_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-668] Current Timing Summary | WNS=-0.128 | TNS=-2.147 | WHS=0.108 | THS=0.000 |
+INFO: [Physopt 32-702] Processed net outputMAC[491]_i_2_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net outputMAC1_n_95. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-735] Processed net outputMAC1_i_4_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-668] Current Timing Summary | WNS=-0.120 | TNS=-1.420 | WHS=0.108 | THS=0.000 |
+INFO: [Physopt 32-702] Processed net outputMAC2_n_78. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-735] Processed net outputMAC2_i_2_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-668] Current Timing Summary | WNS=-0.098 | TNS=-1.237 | WHS=0.108 | THS=0.000 |
+INFO: [Physopt 32-735] Processed net outputMAC1_i_2_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-668] Current Timing Summary | WNS=-0.009 | TNS=-0.020 | WHS=0.108 | THS=0.000 |
+INFO: [Physopt 32-702] Processed net outputMAC1_i_4_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-735] Processed net outputMAC010_out[403]. Optimization improves timing on the net.
+INFO: [Physopt 32-668] Current Timing Summary | WNS=-0.006 | TNS=-0.011 | WHS=0.108 | THS=0.000 |
+INFO: [Physopt 32-710] Processed net outputMAC010_out[436]. Critial path length was reduced through logic transformation on cell outputMAC[436]_i_1_comp.
+INFO: [Physopt 32-735] Processed net outputMAC[564]_i_2_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-668] Current Timing Summary | WNS=-0.006 | TNS=-0.006 | WHS=0.108 | THS=0.000 |
+INFO: [Physopt 32-702] Processed net p_15_out[256]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-710] Processed net p_8_in[533]. Critial path length was reduced through logic transformation on cell outputMAC[533]_i_1_comp.
+INFO: [Physopt 32-735] Processed net outputMAC[533]_i_2_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-668] Current Timing Summary | WNS=0.001 | TNS=0.000 | WHS=0.108 | THS=0.000 |
+INFO: [Physopt 32-668] Current Timing Summary | WNS=0.001 | TNS=0.000 | WHS=0.108 | THS=0.000 |
+Phase 2 Critical Path Optimization | Checksum: 1bd4cf5ee
+----- Checksum: : 14af2750a : 725a80e4 
+
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:20 . Memory (MB): peak = 2074.754 ; gain = 56.027 ; free physical = 507 ; free virtual = 7201
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2074.754 ; gain = 0.000 ; free physical = 507 ; free virtual = 7201
+INFO: [Physopt 32-669] Post Physical Optimization Timing Summary | WNS=0.001 | TNS=0.000 | WHS=0.108 | THS=0.000 |
+Ending Physical Synthesis Task | Checksum: 1e381577a
+----- Checksum: : 17126d696 : 725a80e4 
+
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:20 . Memory (MB): peak = 2074.754 ; gain = 56.027 ; free physical = 507 ; free virtual = 7201
+INFO: [Common 17-83] Releasing license: Implementation
+658 Infos, 111 Warnings, 0 Critical Warnings and 0 Errors encountered.
+phys_opt_design completed successfully
+phys_opt_design: Time (s): cpu = 00:00:28 ; elapsed = 00:00:21 . Memory (MB): peak = 2074.754 ; gain = 56.027 ; free physical = 507 ; free virtual = 7201
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00.26 ; elapsed = 00:00:00.11 . Memory (MB): peak = 2074.754 ; gain = 0.000 ; free physical = 504 ; free virtual = 7201
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+WARNING: [Timing 38-242] The property HD.CLK_SRC of clock port "clk" is not set. In out-of-context mode, this prevents timing estimation for clock delay/skew
+Resolution: Set the HD.CLK_SRC property of the out-of-context port to the location of the clock buffer instance in the top-level design
+INFO: [Common 17-206] Exiting Vivado at Fri Jun 24 16:47:51 2016...

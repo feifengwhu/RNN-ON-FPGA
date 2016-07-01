@@ -1,1 +1,1 @@
-create_clock -name sysClk -period 6.5 [get_ports clk -filter {DIRECTION == "In"} ]
+create_clock -name sysClk -period 6.6 [get_ports clk -filter {DIRECTION == "In"} ]

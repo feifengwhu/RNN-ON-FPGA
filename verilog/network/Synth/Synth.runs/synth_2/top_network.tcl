@@ -16,12 +16,12 @@ set_property board_part xilinx.com:zc702:part0:1.2 [current_project]
 set_property vhdl_version vhdl_2k [current_fileset]
 read_verilog -library xil_defaultlib {
   /home/josefonseca/Documents/thesis/verilog/network/dot_prod.v
-  /home/josefonseca/Documents/thesis/verilog/network/sigmoid.v
   /home/josefonseca/Documents/thesis/verilog/network/weightRAM.v
-  /home/josefonseca/Documents/thesis/verilog/network/gate.v
   /home/josefonseca/Documents/thesis/verilog/network/tanh.v
-  /home/josefonseca/Documents/thesis/verilog/network/array_prod.v
+  /home/josefonseca/Documents/thesis/verilog/network/sigmoid.v
+  /home/josefonseca/Documents/thesis/verilog/network/gate.v
   /home/josefonseca/Documents/thesis/verilog/network/network.v
+  /home/josefonseca/Documents/thesis/verilog/network/array_prod.v
   /home/josefonseca/Documents/thesis/verilog/network/top_network.v
 }
 read_xdc /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.srcs/lstm_const/new/timing.xdc

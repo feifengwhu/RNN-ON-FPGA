@@ -1,17 +1,26 @@
 This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: thesis.aux
+A level-1 auxiliary file: abstract.aux
+A level-1 auxiliary file: acknows.aux
+A level-1 auxiliary file: quote.aux
 A level-1 auxiliary file: abbrevs.aux
 A level-1 auxiliary file: intro.aux
 A level-1 auxiliary file: theorBack.aux
 A level-1 auxiliary file: stateArt.aux
 A level-1 auxiliary file: proposedSol.aux
 A level-1 auxiliary file: results.aux
+A level-1 auxiliary file: appendix-remez.aux
+A level-1 auxiliary file: appendix-lstm.aux
+A level-1 auxiliary file: appendix-testLstm.aux
+A level-1 auxiliary file: appendix-readres2.aux
+A level-1 auxiliary file: appendix-transcript.aux
 The style file: unsrt.bst
 Database file #1: bibliography.bib
 A bad cross reference---entry "Sak14"
 refers to entry "DBLP:conf/interspeech/2014", which doesn't exist
 Warning--I didn't find a database entry for "DBLP:conf/interspeech/2014"
+Warning--can't use both author and editor fields in Tkacik2003
 Warning--empty journal in Yoshua01
 Warning--empty booktitle in ICDAR09
 Warning--empty journal in Sak14
@@ -21,45 +30,45 @@ Warning--empty booktitle in Sonderby15
 Warning--empty booktitle in Lehner15
 Warning--empty booktitle in Coca13
 Warning--empty journal in Yates13
-You've used 35 entries,
+You've used 36 entries,
             1791 wiz_defined-function locations,
-            700 strings with 10445 characters,
-and the built_in function-call counts, 8984 in all, are:
-= -- 822
-> -- 356
-< -- 13
-+ -- 133
-- -- 98
-* -- 579
-:= -- 1359
-add.period$ -- 107
-call.type$ -- 35
+            718 strings with 10914 characters,
+and the built_in function-call counts, 9327 in all, are:
+= -- 859
+> -- 360
+< -- 14
++ -- 135
+- -- 99
+* -- 597
+:= -- 1400
+add.period$ -- 110
+call.type$ -- 36
 change.case$ -- 33
 chr.to.int$ -- 0
-cite$ -- 44
-duplicate$ -- 428
-empty$ -- 851
-format.name$ -- 98
-if$ -- 2083
+cite$ -- 46
+duplicate$ -- 448
+empty$ -- 886
+format.name$ -- 99
+if$ -- 2169
 int.to.chr$ -- 0
-int.to.str$ -- 35
-missing$ -- 36
-newline$ -- 179
-num.names$ -- 35
-pop$ -- 99
+int.to.str$ -- 36
+missing$ -- 38
+newline$ -- 184
+num.names$ -- 36
+pop$ -- 104
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 255
+skip$ -- 270
 stack$ -- 0
-substring$ -- 648
-swap$ -- 137
-text.length$ -- 13
+substring$ -- 680
+swap$ -- 148
+text.length$ -- 14
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 9
-while$ -- 73
-width$ -- 37
-write$ -- 388
+warning$ -- 10
+while$ -- 77
+width$ -- 38
+write$ -- 400
 (There was 1 error message)

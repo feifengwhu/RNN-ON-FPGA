@@ -1,0 +1,235 @@
+#-----------------------------------------------------------
+# Vivado v2015.4 (64-bit)
+# SW Build 1412921 on Wed Nov 18 09:44:32 MST 2015
+# IP Build 1412160 on Tue Nov 17 13:47:24 MST 2015
+# Start of session at: Fri Jun 24 16:20:39 2016
+# Process ID: 450
+# Current directory: /home/josefonseca/Documents/thesis/verilog/dot_prod/Synth_dot_prod/Synth_dot_prod.runs/impl_4
+# Command line: vivado -log dot_prod.vdi -applog -messageDb vivado.pb -mode batch -source dot_prod.tcl -notrace
+# Log file: /home/josefonseca/Documents/thesis/verilog/dot_prod/Synth_dot_prod/Synth_dot_prod.runs/impl_4/dot_prod.vdi
+# Journal file: /home/josefonseca/Documents/thesis/verilog/dot_prod/Synth_dot_prod/Synth_dot_prod.runs/impl_4/vivado.jou
+#-----------------------------------------------------------
+source dot_prod.tcl -notrace
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+INFO: [Netlist 29-17] Analyzing 312 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+WARNING: [Netlist 29-101] Netlist 'dot_prod' is not ideal for floorplanning, since the cellview 'dot_prod' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
+INFO: [Project 1-479] Netlist was created with Vivado 2015.4
+INFO: [Device 21-403] Loading part xc7z020clg484-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [/home/josefonseca/Documents/thesis/verilog/dot_prod/Synth_dot_prod/Synth_dot_prod.srcs/constrs_1/new/dot_prod_timing.xdc]
+Finished Parsing XDC File [/home/josefonseca/Documents/thesis/verilog/dot_prod/Synth_dot_prod/Synth_dot_prod.srcs/constrs_1/new/dot_prod_timing.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:00.10 ; elapsed = 00:00:00.10 . Memory (MB): peak = 1270.117 ; gain = 69.031 ; free physical = 1049 ; free virtual = 7754
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+
+Starting Logic Optimization Task
+Implement Debug Cores | Checksum: 11d1c6d6b
+
+Phase 1 Retarget
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Opt 31-49] Retargeted 0 cell(s).
+Phase 1 Retarget | Checksum: 11d1c6d6b
+
+Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.06 . Memory (MB): peak = 1629.609 ; gain = 0.000 ; free physical = 706 ; free virtual = 7411
+
+Phase 2 Constant Propagation
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Opt 31-10] Eliminated 0 cells.
+Phase 2 Constant Propagation | Checksum: 17856a40c
+
+Time (s): cpu = 00:00:00.11 ; elapsed = 00:00:00.11 . Memory (MB): peak = 1629.609 ; gain = 0.000 ; free physical = 708 ; free virtual = 7413
+
+Phase 3 Sweep
+INFO: [Opt 31-12] Eliminated 0 unconnected nets.
+INFO: [Opt 31-11] Eliminated 0 unconnected cells.
+Phase 3 Sweep | Checksum: 17856a40c
+
+Time (s): cpu = 00:00:00.16 ; elapsed = 00:00:00.16 . Memory (MB): peak = 1629.609 ; gain = 0.000 ; free physical = 705 ; free virtual = 7410
+
+Starting Connectivity Check Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1629.609 ; gain = 0.000 ; free physical = 703 ; free virtual = 7408
+Ending Logic Optimization Task | Checksum: 17856a40c
+
+Time (s): cpu = 00:00:00.17 ; elapsed = 00:00:00.17 . Memory (MB): peak = 1629.609 ; gain = 0.000 ; free physical = 700 ; free virtual = 7404
+
+Starting Power Optimization Task
+INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
+Ending Power Optimization Task | Checksum: 17856a40c
+
+Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 1629.609 ; gain = 0.000 ; free physical = 708 ; free virtual = 7412
+INFO: [Common 17-83] Releasing license: Implementation
+20 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+opt_design completed successfully
+opt_design: Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1629.609 ; gain = 437.527 ; free physical = 705 ; free virtual = 7410
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Coretcl 2-168] The results of DRC are in file /home/josefonseca/Documents/thesis/verilog/dot_prod/Synth_dot_prod/Synth_dot_prod.runs/impl_4/dot_prod_drc_opted.rpt.
+INFO: [Vivado_Tcl 4-424] Cannot write hardware definition file as there are no IPI block design hardware handoff files present
+Command: place_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Running DRC as a precondition to command place_design
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+Starting Placer Task
+INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 8 CPUs
+
+Phase 1 Placer Initialization
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1693.641 ; gain = 0.000 ; free physical = 679 ; free virtual = 7384
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1693.641 ; gain = 0.000 ; free physical = 679 ; free virtual = 7384
+
+Phase 1.1 IO Placement/ Clock Placement/ Build Placer Device
+
+Phase 1.1.1 Pre-Place Cells
+Phase 1.1.1 Pre-Place Cells | Checksum: 00000000
+
+Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.03 . Memory (MB): peak = 1693.641 ; gain = 0.000 ; free physical = 682 ; free virtual = 7387
+ERROR: [Place 30-415] IO Placement failed due to overutilization. This design contains 601 I/O ports
+ while the target  device: 7z020 package: clg484, contains only 330 available user I/O. The target device has 330 usable I/O pins of which 0 are already occupied by user-locked I/Os.
+ To rectify this issue:
+ 1. Ensure you are targeting the correct device and package.  Select a larger device or different package if necessary.
+ 2. Check the top-level ports of the design to ensure the correct number of ports are specified.
+ 3. Consider design changes to reduce the number of I/Os necessary.
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+
+Phase 1.1.2 IO and Clk Clean Up
+ERROR: [Place 30-68] Instance clk_IBUF_BUFG_inst (BUFG) is not placed
+ERROR: [Place 30-68] Instance clk_IBUF_inst (IBUF) is not placed
+ERROR: [Place 30-68] Instance colAddress_OBUF[0]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance colAddress_OBUF[1]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance colAddress_OBUF[2]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance colAddress_OBUF[3]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance dataReadyF_OBUF_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance inputVector_IBUF[0]_inst (IBUF) is not placed
+ERROR: [Place 30-68] Instance inputVector_IBUF[10]_inst (IBUF) is not placed
+ERROR: [Place 30-68] Instance inputVector_IBUF[11]_inst (IBUF) is not placed
+ERROR: [Place 30-68] Instance inputVector_IBUF[12]_inst (IBUF) is not placed
+ERROR: [Place 30-68] Instance inputVector_IBUF[13]_inst (IBUF) is not placed
+ERROR: [Place 30-68] Instance inputVector_IBUF[14]_inst (IBUF) is not placed
+ERROR: [Place 30-68] Instance inputVector_IBUF[15]_inst (IBUF) is not placed
+ERROR: [Place 30-68] Instance inputVector_IBUF[16]_inst (IBUF) is not placed
+ERROR: [Place 30-68] Instance inputVector_IBUF[17]_inst (IBUF) is not placed
+ERROR: [Place 30-68] Instance inputVector_IBUF[1]_inst (IBUF) is not placed
+ERROR: [Place 30-68] Instance inputVector_IBUF[2]_inst (IBUF) is not placed
+ERROR: [Place 30-68] Instance inputVector_IBUF[3]_inst (IBUF) is not placed
+ERROR: [Place 30-68] Instance inputVector_IBUF[4]_inst (IBUF) is not placed
+ERROR: [Place 30-68] Instance inputVector_IBUF[5]_inst (IBUF) is not placed
+ERROR: [Place 30-68] Instance inputVector_IBUF[6]_inst (IBUF) is not placed
+ERROR: [Place 30-68] Instance inputVector_IBUF[7]_inst (IBUF) is not placed
+ERROR: [Place 30-68] Instance inputVector_IBUF[8]_inst (IBUF) is not placed
+ERROR: [Place 30-68] Instance inputVector_IBUF[9]_inst (IBUF) is not placed
+ERROR: [Place 30-68] Instance outputVector_OBUF[0]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVector_OBUF[100]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVector_OBUF[101]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVector_OBUF[102]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVector_OBUF[103]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVector_OBUF[104]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVector_OBUF[105]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVector_OBUF[106]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVector_OBUF[107]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVector_OBUF[108]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVector_OBUF[109]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVector_OBUF[10]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVector_OBUF[110]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVector_OBUF[111]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVector_OBUF[112]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVector_OBUF[113]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVector_OBUF[114]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVector_OBUF[115]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVector_OBUF[116]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVector_OBUF[117]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVector_OBUF[118]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVector_OBUF[119]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVector_OBUF[11]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVector_OBUF[120]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVector_OBUF[121]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVector_OBUF[122]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVector_OBUF[123]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVector_OBUF[124]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVector_OBUF[125]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVector_OBUF[126]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVector_OBUF[127]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVector_OBUF[128]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVector_OBUF[129]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVector_OBUF[12]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVector_OBUF[130]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVector_OBUF[131]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVector_OBUF[132]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVector_OBUF[133]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVector_OBUF[134]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVector_OBUF[135]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVector_OBUF[136]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVector_OBUF[137]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVector_OBUF[138]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVector_OBUF[139]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVector_OBUF[13]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVector_OBUF[140]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVector_OBUF[141]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVector_OBUF[142]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVector_OBUF[143]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVector_OBUF[144]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVector_OBUF[145]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVector_OBUF[146]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVector_OBUF[147]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVector_OBUF[148]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVector_OBUF[149]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVector_OBUF[14]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVector_OBUF[150]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVector_OBUF[151]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVector_OBUF[152]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVector_OBUF[153]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVector_OBUF[154]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVector_OBUF[155]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVector_OBUF[156]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVector_OBUF[157]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVector_OBUF[158]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVector_OBUF[159]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVector_OBUF[15]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVector_OBUF[160]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVector_OBUF[161]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVector_OBUF[162]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVector_OBUF[163]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVector_OBUF[164]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVector_OBUF[165]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVector_OBUF[166]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVector_OBUF[167]_inst (OBUF) is not placed
+INFO: [Common 17-14] Message 'Place 30-68' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+Phase 1.1.2 IO and Clk Clean Up | Checksum: 00000000
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.76 . Memory (MB): peak = 1765.676 ; gain = 72.035 ; free physical = 681 ; free virtual = 7386
+Phase 1.1 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 9111472c
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.76 . Memory (MB): peak = 1765.676 ; gain = 72.035 ; free physical = 681 ; free virtual = 7386
+Phase 1 Placer Initialization | Checksum: 9111472c
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.76 . Memory (MB): peak = 1765.676 ; gain = 72.035 ; free physical = 681 ; free virtual = 7386
+ERROR: [Place 30-99] Placer failed with error: 'IO Clock Placer failed'
+Please review all ERROR, CRITICAL WARNING, and WARNING messages during placement to understand the cause for failure.
+Ending Placer Task | Checksum: 9111472c
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.77 . Memory (MB): peak = 1765.676 ; gain = 72.035 ; free physical = 681 ; free virtual = 7386
+INFO: [Common 17-83] Releasing license: Implementation
+34 Infos, 1 Warnings, 0 Critical Warnings and 103 Errors encountered.
+place_design failed
+ERROR: [Common 17-69] Command failed: Placer could not place all instances
+INFO: [Common 17-206] Exiting Vivado at Fri Jun 24 16:21:00 2016...

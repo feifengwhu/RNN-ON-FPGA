@@ -1,7 +1,7 @@
 Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2015.4 (lin64) Build 1412921 Wed Nov 18 09:44:32 MST 2015
-| Date         : Thu Jun 23 01:19:52 2016
+| Date         : Fri Jun 24 15:21:59 2016
 | Host         : desktop4480 running 64-bit Ubuntu 14.04.4 LTS
 | Command      : report_utilization -file top_network_utilization_synth.rpt -pb top_network_utilization_synth.pb
 | Design       : top_network
@@ -30,8 +30,8 @@ Table of Contents
 +----------------------------+-------+-------+-----------+-------+
 |          Site Type         |  Used | Fixed | Available | Util% |
 +----------------------------+-------+-------+-----------+-------+
-| Slice LUTs*                | 16644 |     0 |     53200 | 31.29 |
-|   LUT as Logic             | 15108 |     0 |     53200 | 28.40 |
+| Slice LUTs*                | 16643 |     0 |     53200 | 31.28 |
+|   LUT as Logic             | 15107 |     0 |     53200 | 28.40 |
 |   LUT as Memory            |  1536 |     0 |     17400 |  8.83 |
 |     LUT as Distributed RAM |  1536 |     0 |           |       |
 |     LUT as Shift Register  |     0 |     0 |           |       |
@@ -151,11 +151,11 @@ Table of Contents
 +----------+-------+---------------------+
 | FDRE     | 13954 |        Flop & Latch |
 | LUT2     |  5892 |                 LUT |
-| LUT3     |  3967 |                 LUT |
-| LUT4     |  2316 |                 LUT |
+| LUT3     |  3966 |                 LUT |
+| LUT4     |  2323 |                 LUT |
 | RAMD32   |  2304 |  Distributed Memory |
 | LUT1     |  1376 |                 LUT |
-| LUT5     |  1197 |                 LUT |
+| LUT5     |  1190 |                 LUT |
 | CARRY4   |  1183 |          CarryLogic |
 | RAMS32   |   768 |  Distributed Memory |
 | LUT6     |   712 |                 LUT |

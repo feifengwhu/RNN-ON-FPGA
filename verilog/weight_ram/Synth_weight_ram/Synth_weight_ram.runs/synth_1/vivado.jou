@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2015.4 (64-bit)
+# SW Build 1412921 on Wed Nov 18 09:44:32 MST 2015
+# IP Build 1412160 on Tue Nov 17 13:47:24 MST 2015
+# Start of session at: Fri Jun 24 16:54:25 2016
+# Process ID: 3296
+# Current directory: /home/josefonseca/Documents/thesis/verilog/weight_ram/Synth_weight_ram/Synth_weight_ram.runs/synth_1
+# Command line: vivado -log weightRAM.vds -mode batch -messageDb vivado.pb -notrace -source weightRAM.tcl
+# Log file: /home/josefonseca/Documents/thesis/verilog/weight_ram/Synth_weight_ram/Synth_weight_ram.runs/synth_1/weightRAM.vds
+# Journal file: /home/josefonseca/Documents/thesis/verilog/weight_ram/Synth_weight_ram/Synth_weight_ram.runs/synth_1/vivado.jou
+#-----------------------------------------------------------
+source weightRAM.tcl -notrace

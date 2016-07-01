@@ -49,7 +49,7 @@ module sigmoid  #(parameter QN = 6,
 			p1 <= 18'd0;
 			p0 <= 18'd0;
 		end
-		else if(interval_mux_active) begin
+		else begin
 			if (operand < $signed(18'b111101000000000000)) begin
 				p2 <= 18'd0;  
 				p1 <= 18'd0;   

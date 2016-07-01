@@ -1,0 +1,95 @@
+Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2015.4 (lin64) Build 1412921 Wed Nov 18 09:44:32 MST 2015
+| Date         : Fri Jun 24 17:29:50 2016
+| Host         : desktop4480 running 64-bit Ubuntu 14.04.4 LTS
+| Command      : report_control_sets -verbose -file gate_control_sets_placed.rpt
+| Design       : gate
+| Device       : xc7z020
+------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Flip-Flop Distribution
+3. Detailed Control Set Information
+
+1. Summary
+----------
+
++-------------------------------------------------------------------+-------+
+|                               Status                              | Count |
++-------------------------------------------------------------------+-------+
+| Number of unique control sets                                     |    42 |
+| Minimum Number of register sites lost to control set restrictions |   110 |
++-------------------------------------------------------------------+-------+
+
+
+2. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |               2 |            1 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |              25 |            9 |
+| Yes          | No                    | No                     |               0 |            0 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |            2367 |          857 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+3. Detailed Control Set Information
+-----------------------------------
+
++--------------+----------------------------------+---------------------------+------------------+----------------+
+| Clock Signal |           Enable Signal          |      Set/Reset Signal     | Slice Load Count | Bel Load Count |
++--------------+----------------------------------+---------------------------+------------------+----------------+
+|  clock       |                                  |                           |                1 |              2 |
+|  clock       |                                  | reset                     |                2 |              5 |
+|  clock       |                                  | DOTPROD_X/reset_dotProd_X |                2 |              7 |
+|  clock       |                                  | DOTPROD_Y/reset_dotProd_Y |                5 |             13 |
+|  clock       | DOTPROD_Y/rowMux0                | DOTPROD_Y/reset_dotProd_Y |                4 |             15 |
+|  clock       | DOTPROD_X/NEXTrowMux             | DOTPROD_X/reset_dotProd_X |                8 |             16 |
+|  clock       | DOTPROD_Y/p_0_in[287]            | DOTPROD_Y/reset_dotProd_Y |               16 |             37 |
+|  clock       | DOTPROD_Y/outputMAC[517]_i_1_n_0 | DOTPROD_Y/reset_dotProd_Y |               17 |             37 |
+|  clock       | DOTPROD_Y/p_0_in[583]            | DOTPROD_Y/reset_dotProd_Y |               20 |             37 |
+|  clock       | DOTPROD_Y/p_0_in[546]            | DOTPROD_Y/reset_dotProd_Y |               18 |             37 |
+|  clock       | DOTPROD_Y/p_0_in[472]            | DOTPROD_Y/reset_dotProd_Y |               15 |             37 |
+|  clock       | DOTPROD_Y/p_0_in[398]            | DOTPROD_Y/reset_dotProd_Y |               17 |             37 |
+|  clock       | DOTPROD_Y/p_0_in[361]            | DOTPROD_Y/reset_dotProd_Y |               13 |             37 |
+|  clock       | DOTPROD_Y/p_0_in[435]            | DOTPROD_Y/reset_dotProd_Y |               21 |             37 |
+|  clock       | DOTPROD_Y/p_0_in[324]            | DOTPROD_Y/reset_dotProd_Y |               13 |             37 |
+|  clock       | DOTPROD_Y/p_0_in[28]             | DOTPROD_Y/reset_dotProd_Y |               18 |             37 |
+|  clock       | DOTPROD_Y/p_0_in[250]            | DOTPROD_Y/reset_dotProd_Y |               16 |             37 |
+|  clock       | DOTPROD_Y/p_0_in[213]            | DOTPROD_Y/reset_dotProd_Y |               15 |             37 |
+|  clock       | DOTPROD_Y/p_0_in[176]            | DOTPROD_Y/reset_dotProd_Y |               17 |             37 |
+|  clock       | DOTPROD_Y/p_0_in[139]            | DOTPROD_Y/reset_dotProd_Y |               18 |             37 |
+|  clock       | DOTPROD_Y/p_0_in[102]            | DOTPROD_Y/reset_dotProd_Y |               20 |             37 |
+|  clock       | DOTPROD_Y/p_0_in[65]             | DOTPROD_Y/reset_dotProd_Y |               18 |             37 |
+|  clock       | DOTPROD_X/p_0_in[434]            | DOTPROD_X/reset_dotProd_X |               22 |             37 |
+|  clock       | DOTPROD_X/p_0_in[27]             | DOTPROD_X/reset_dotProd_X |               13 |             37 |
+|  clock       | DOTPROD_X/p_0_in[64]             | DOTPROD_X/reset_dotProd_X |               16 |             37 |
+|  clock       | DOTPROD_X/p_0_in[101]            | DOTPROD_X/reset_dotProd_X |               16 |             37 |
+|  clock       | DOTPROD_X/p_0_in[138]            | DOTPROD_X/reset_dotProd_X |               14 |             37 |
+|  clock       | DOTPROD_X/p_0_in[175]            | DOTPROD_X/reset_dotProd_X |               19 |             37 |
+|  clock       | DOTPROD_X/p_0_in[212]            | DOTPROD_X/reset_dotProd_X |               26 |             37 |
+|  clock       | DOTPROD_X/p_0_in[249]            | DOTPROD_X/reset_dotProd_X |               25 |             37 |
+|  clock       | DOTPROD_X/p_0_in[286]            | DOTPROD_X/reset_dotProd_X |               25 |             37 |
+|  clock       | DOTPROD_X/p_0_in[323]            | DOTPROD_X/reset_dotProd_X |               17 |             37 |
+|  clock       | DOTPROD_X/p_0_in[360]            | DOTPROD_X/reset_dotProd_X |               16 |             37 |
+|  clock       | DOTPROD_X/p_0_in[397]            | DOTPROD_X/reset_dotProd_X |               17 |             37 |
+|  clock       | DOTPROD_X/p_0_in[471]            | DOTPROD_X/reset_dotProd_X |               18 |             37 |
+|  clock       | DOTPROD_X/p_0_in[508]            | DOTPROD_X/reset_dotProd_X |               18 |             37 |
+|  clock       | DOTPROD_X/p_0_in[545]            | DOTPROD_X/reset_dotProd_X |               16 |             37 |
+|  clock       | DOTPROD_X/p_0_in[582]            | DOTPROD_X/reset_dotProd_X |               20 |             37 |
+|  clock       | DOTPROD_X/dataReadyF             | reset                     |               80 |            288 |
+|  clock       | DOTPROD_X/dataReady              | DOTPROD_X/reset_dotProd_X |               57 |            288 |
+|  clock       | DOTPROD_Y/dataReady              | DOTPROD_Y/reset_dotProd_Y |               58 |            288 |
+|  clock       | DOTPROD_Y/dataReadyF             | reset                     |               80 |            288 |
++--------------+----------------------------------+---------------------------+------------------+----------------+
+
+

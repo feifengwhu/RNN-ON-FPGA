@@ -2,29 +2,27 @@
 # Vivado v2015.4 (64-bit)
 # SW Build 1412921 on Wed Nov 18 09:44:32 MST 2015
 # IP Build 1412160 on Tue Nov 17 13:47:24 MST 2015
-# Start of session at: Wed Jun 22 23:59:26 2016
-# Process ID: 2816
+# Start of session at: Fri Jun 24 17:57:24 2016
+# Process ID: 8670
 # Current directory: /home/josefonseca/Documents/thesis/verilog/sigmoid/sigm_synth/sigm_synth.runs/synth_1
 # Command line: vivado -log sigmoid.vds -mode batch -messageDb vivado.pb -notrace -source sigmoid.tcl
 # Log file: /home/josefonseca/Documents/thesis/verilog/sigmoid/sigm_synth/sigm_synth.runs/synth_1/sigmoid.vds
 # Journal file: /home/josefonseca/Documents/thesis/verilog/sigmoid/sigm_synth/sigm_synth.runs/synth_1/vivado.jou
 #-----------------------------------------------------------
 source sigmoid.tcl -notrace
-Command: synth_design -top sigmoid -part xc7z020clg484-1
+Command: synth_design -top sigmoid -part xc7z020clg484-1 -fanout_limit 400 -fsm_extraction one_hot -keep_equivalent_registers -resource_sharing off -no_lc -shreg_min_size 5
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
 WARNING: [Synth 8-2507] parameter declaration becomes local in sigmoid with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/sigmoid/sigmoid.v:8]
+WARNING: [Synth 8-2507] parameter declaration becomes local in sigmoid with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/sigmoid/sigmoid.v:38]
 WARNING: [Synth 8-2507] parameter declaration becomes local in sigmoid with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/sigmoid/sigmoid.v:39]
 WARNING: [Synth 8-2507] parameter declaration becomes local in sigmoid with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/sigmoid/sigmoid.v:40]
 WARNING: [Synth 8-2507] parameter declaration becomes local in sigmoid with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/sigmoid/sigmoid.v:41]
 WARNING: [Synth 8-2507] parameter declaration becomes local in sigmoid with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/sigmoid/sigmoid.v:42]
 WARNING: [Synth 8-2507] parameter declaration becomes local in sigmoid with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/sigmoid/sigmoid.v:43]
-WARNING: [Synth 8-2507] parameter declaration becomes local in sigmoid with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/sigmoid/sigmoid.v:44]
-WARNING: [Synth 8-2507] parameter declaration becomes local in sigmoid with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/sigmoid/sigmoid.v:45]
-WARNING: [Synth 8-2507] parameter declaration becomes local in sigmoid with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/sigmoid/sigmoid.v:46]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1037.539 ; gain = 191.926 ; free physical = 2245 ; free virtual = 8266
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1037.535 ; gain = 191.926 ; free physical = 1921 ; free virtual = 8684
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'sigmoid' [/home/josefonseca/Documents/thesis/verilog/sigmoid/sigmoid.v:1]
 	Parameter QN bound to: 6 - type: integer 
@@ -36,13 +34,9 @@ INFO: [Synth 8-638] synthesizing module 'sigmoid' [/home/josefonseca/Documents/t
 	Parameter MAC1 bound to: 3'b011 
 	Parameter MAC2 bound to: 3'b100 
 	Parameter END bound to: 3'b101 
-	Parameter END1 bound to: 3'b110 
-	Parameter END2 bound to: 3'b111 
-INFO: [Synth 8-226] default block is never used [/home/josefonseca/Documents/thesis/verilog/sigmoid/sigmoid.v:134]
-INFO: [Synth 8-226] default block is never used [/home/josefonseca/Documents/thesis/verilog/sigmoid/sigmoid.v:212]
 INFO: [Synth 8-256] done synthesizing module 'sigmoid' (1#1) [/home/josefonseca/Documents/thesis/verilog/sigmoid/sigmoid.v:1]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1061.797 ; gain = 216.184 ; free physical = 2219 ; free virtual = 8240
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1061.793 ; gain = 216.184 ; free physical = 1892 ; free virtual = 8655
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -52,7 +46,7 @@ Report Check Netlist:
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1061.797 ; gain = 216.184 ; free physical = 2217 ; free virtual = 8239
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1061.793 ; gain = 216.184 ; free physical = 1892 ; free virtual = 8655
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7z020clg484-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -66,24 +60,24 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 1410.492 ; gain = 0.000 ; free physical = 1927 ; free virtual = 7949
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1410.488 ; gain = 0.000 ; free physical = 1651 ; free virtual = 8414
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 2842 
+INFO: Helper process launched with PID 8692 
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 1410.492 ; gain = 564.879 ; free physical = 1929 ; free virtual = 7951
+Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1410.488 ; gain = 564.879 ; free physical = 1646 ; free virtual = 8409
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg484-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 1410.492 ; gain = 564.879 ; free physical = 1929 ; free virtual = 7951
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1410.488 ; gain = 564.879 ; free physical = 1646 ; free virtual = 8409
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 1410.492 ; gain = 564.879 ; free physical = 1929 ; free virtual = 7951
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1410.488 ; gain = 564.879 ; free physical = 1646 ; free virtual = 8409
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5544] ROM "interval_mux_active" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
@@ -92,21 +86,19 @@ INFO: [Synth 8-802] inferred FSM for state register 'STATE_reg' in module 'sigmo
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
-                    IDLE |                         00000001 |                              000
-         INTERVAL_CHOICE |                         00000010 |                              001
-             COEF_CHOICE |                         00000100 |                              010
-                    MAC1 |                         00001000 |                              011
-                    MAC2 |                         00010000 |                              100
-                     END |                         00100000 |                              101
-                    END1 |                         01000000 |                              110
-                    END2 |                         10000000 |                              111
+                    IDLE |                           000001 |                              000
+         INTERVAL_CHOICE |                           000010 |                              001
+             COEF_CHOICE |                           000100 |                              010
+                    MAC1 |                           001000 |                              011
+                    MAC2 |                           010000 |                              100
+                     END |                           100000 |                              101
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'STATE_reg' using encoding 'one-hot' in module 'sigmoid'
-WARNING: [Synth 8-327] inferring latch for variable 'p0_reg' [/home/josefonseca/Documents/thesis/verilog/sigmoid/sigmoid.v:53]
-WARNING: [Synth 8-327] inferring latch for variable 'p1_reg' [/home/josefonseca/Documents/thesis/verilog/sigmoid/sigmoid.v:52]
-WARNING: [Synth 8-327] inferring latch for variable 'p2_reg' [/home/josefonseca/Documents/thesis/verilog/sigmoid/sigmoid.v:51]
+WARNING: [Synth 8-327] inferring latch for variable 'p0_reg' [/home/josefonseca/Documents/thesis/verilog/sigmoid/sigmoid.v:50]
+WARNING: [Synth 8-327] inferring latch for variable 'p1_reg' [/home/josefonseca/Documents/thesis/verilog/sigmoid/sigmoid.v:49]
+WARNING: [Synth 8-327] inferring latch for variable 'p2_reg' [/home/josefonseca/Documents/thesis/verilog/sigmoid/sigmoid.v:48]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1410.492 ; gain = 564.879 ; free physical = 1927 ; free virtual = 7949
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1410.488 ; gain = 564.879 ; free physical = 1654 ; free virtual = 8417
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -127,7 +119,7 @@ Detailed RTL Component Info :
 	   6 Input     17 Bit        Muxes := 1     
 	   6 Input     14 Bit        Muxes := 1     
 	   6 Input     11 Bit        Muxes := 1     
-	   8 Input      1 Bit        Muxes := 2     
+	   6 Input      1 Bit        Muxes := 2     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -146,7 +138,7 @@ Detailed RTL Component Info :
 	   6 Input     17 Bit        Muxes := 1     
 	   6 Input     14 Bit        Muxes := 1     
 	   6 Input     11 Bit        Muxes := 1     
-	   8 Input      1 Bit        Muxes := 2     
+	   6 Input      1 Bit        Muxes := 2     
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
@@ -159,7 +151,7 @@ BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
 ---------------------------------------------------------------------------------
 Finished Part Resource Summary
 ---------------------------------------------------------------------------------
-Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1410.492 ; gain = 564.879 ; free physical = 1927 ; free virtual = 7949
+Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1410.488 ; gain = 564.879 ; free physical = 1654 ; free virtual = 8418
 ---------------------------------------------------------------------------------
 Start Cross Boundary Optimization
 ---------------------------------------------------------------------------------
@@ -168,9 +160,9 @@ DSP Report: register multiplierMux_reg is absorbed into DSP outputMAC_reg.
 DSP Report: register outputMAC_reg is absorbed into DSP outputMAC_reg.
 DSP Report: operator outputMAC0 is absorbed into DSP outputMAC_reg.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1410.492 ; gain = 564.879 ; free physical = 1929 ; free virtual = 7951
+Finished Cross Boundary Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1410.488 ; gain = 564.879 ; free physical = 1656 ; free virtual = 8420
 ---------------------------------------------------------------------------------
-Finished Parallel Reinference  : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1410.492 ; gain = 564.879 ; free physical = 1929 ; free virtual = 7951
+Finished Parallel Reinference  : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1410.488 ; gain = 564.879 ; free physical = 1656 ; free virtual = 8420
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
@@ -292,9 +284,9 @@ WARNING: [Synth 8-3332] Sequential element (\p2_reg[6] ) is unused and will be r
 WARNING: [Synth 8-3332] Sequential element (\p2_reg[17] ) is unused and will be removed from module sigmoid.
 WARNING: [Synth 8-3332] Sequential element (\p0_reg[2] ) is unused and will be removed from module sigmoid.
 ---------------------------------------------------------------------------------
-Finished Area Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1410.492 ; gain = 564.879 ; free physical = 1930 ; free virtual = 7951
+Finished Area Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1410.488 ; gain = 564.879 ; free physical = 1655 ; free virtual = 8419
 ---------------------------------------------------------------------------------
-Finished Parallel Area Optimization  : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1410.492 ; gain = 564.879 ; free physical = 1930 ; free virtual = 7951
+Finished Parallel Area Optimization  : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1410.488 ; gain = 564.879 ; free physical = 1655 ; free virtual = 8419
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
@@ -308,10 +300,10 @@ Start Timing Optimization
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 1410.492 ; gain = 564.879 ; free physical = 1905 ; free virtual = 7927
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 1410.488 ; gain = 564.879 ; free physical = 1588 ; free virtual = 8353
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 1410.492 ; gain = 564.879 ; free physical = 1905 ; free virtual = 7926
+Finished Timing Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 1410.488 ; gain = 564.879 ; free physical = 1587 ; free virtual = 8352
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -323,16 +315,16 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 1410.492 ; gain = 564.879 ; free physical = 1887 ; free virtual = 7909
+Finished Technology Mapping : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 1410.488 ; gain = 564.879 ; free physical = 1572 ; free virtual = 8337
 ---------------------------------------------------------------------------------
-Finished Parallel Technology Mapping Optimization  : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 1410.492 ; gain = 564.879 ; free physical = 1887 ; free virtual = 7909
+Finished Parallel Technology Mapping Optimization  : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 1410.488 ; gain = 564.879 ; free physical = 1572 ; free virtual = 8337
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
 | |RTL Partition |Replication |Instances |
 +-+--------------+------------+----------+
 +-+--------------+------------+----------+
-Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 1410.492 ; gain = 564.879 ; free physical = 1887 ; free virtual = 7909
+Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 1410.488 ; gain = 564.879 ; free physical = 1572 ; free virtual = 8337
 ---------------------------------------------------------------------------------
 Start IO Insertion
 ---------------------------------------------------------------------------------
@@ -349,7 +341,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1410.492 ; gain = 564.879 ; free physical = 1893 ; free virtual = 7914
+Finished IO Insertion : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1410.488 ; gain = 564.879 ; free physical = 1579 ; free virtual = 8344
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -362,7 +354,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1410.492 ; gain = 564.879 ; free physical = 1893 ; free virtual = 7914
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1410.488 ; gain = 564.879 ; free physical = 1579 ; free virtual = 8344
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -374,25 +366,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1410.492 ; gain = 564.879 ; free physical = 1893 ; free virtual = 7914
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1410.488 ; gain = 564.879 ; free physical = 1579 ; free virtual = 8344
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1410.492 ; gain = 564.879 ; free physical = 1892 ; free virtual = 7914
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1410.488 ; gain = 564.879 ; free physical = 1579 ; free virtual = 8344
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1410.492 ; gain = 564.879 ; free physical = 1892 ; free virtual = 7914
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1410.488 ; gain = 564.879 ; free physical = 1579 ; free virtual = 8344
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1410.492 ; gain = 564.879 ; free physical = 1892 ; free virtual = 7914
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1410.488 ; gain = 564.879 ; free physical = 1579 ; free virtual = 8344
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -413,29 +405,28 @@ Report Cell Usage:
 |3     |DSP48E1 |     1|
 |4     |LUT1    |     9|
 |5     |LUT2    |    34|
-|6     |LUT3    |    11|
-|7     |LUT4    |    15|
-|8     |LUT5    |     7|
-|9     |LUT6    |    18|
-|10    |FDRE    |    19|
-|11    |FDSE    |     1|
-|12    |LDC     |     9|
-|13    |IBUF    |    20|
-|14    |OBUF    |    18|
+|6     |LUT4    |    21|
+|7     |LUT5    |    17|
+|8     |LUT6    |    12|
+|9     |FDRE    |    17|
+|10    |FDSE    |     1|
+|11    |LDC     |     9|
+|12    |IBUF    |    20|
+|13    |OBUF    |    18|
 +------+--------+------+
 
 Report Instance Areas: 
 +------+---------+-------+------+
 |      |Instance |Module |Cells |
 +------+---------+-------+------+
-|1     |top      |       |   177|
+|1     |top      |       |   174|
 +------+---------+-------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1410.492 ; gain = 564.879 ; free physical = 1892 ; free virtual = 7914
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1410.488 ; gain = 564.879 ; free physical = 1579 ; free virtual = 8344
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 54 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 1410.492 ; gain = 94.379 ; free physical = 1899 ; free virtual = 7920
-Synthesis Optimization Complete : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1410.492 ; gain = 564.879 ; free physical = 1899 ; free virtual = 7920
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 1410.488 ; gain = 94.379 ; free physical = 1590 ; free virtual = 8356
+Synthesis Optimization Complete : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1410.488 ; gain = 564.879 ; free physical = 1590 ; free virtual = 8356
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 44 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -446,8 +437,8 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   LDC => LDCE: 9 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-65 Infos, 63 Warnings, 0 Critical Warnings and 0 Errors encountered.
+63 Infos, 61 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 1436.523 ; gain = 519.574 ; free physical = 1899 ; free virtual = 7921
-report_utilization: Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.09 . Memory (MB): peak = 1468.543 ; gain = 0.000 ; free physical = 1899 ; free virtual = 7921
-INFO: [Common 17-206] Exiting Vivado at Wed Jun 22 23:59:51 2016...
+synth_design: Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 1410.488 ; gain = 493.543 ; free physical = 1589 ; free virtual = 8354
+report_utilization: Time (s): cpu = 00:00:00.08 ; elapsed = 00:00:00.09 . Memory (MB): peak = 1412.512 ; gain = 0.000 ; free physical = 1586 ; free virtual = 8351
+INFO: [Common 17-206] Exiting Vivado at Fri Jun 24 17:57:50 2016...

@@ -45,14 +45,13 @@ n@_opt3
 R3
 R0
 T_opt4
-!s110 1466527003
-VRUPWO_ziSDD28KBU_CPll0
-R1
-=1-d43d7e359f7e-57696d1b-1d0de-4be6
-R4
+!s110 1466936287
+V4d[?AQzU37Ll@zmGmKM5?1
+04 8 4 work dot_prod fast 0
+=1-d43d7e359f7e-576fabde-b74fb-1442
+R2
 n@_opt4
 R3
-R0
 T_opt5
 !s110 1461800514
 VVm<e17Y9Mj7`SE8]H68bF0
@@ -72,13 +71,13 @@ n@_opt6
 R3
 R0
 vdot_prod
-Z5 !s110 1466527139
+Z5 !s110 1466779939
 !i10b 1
 !s100 0;]]@ldm__2cWG>m_ecXf0
 I6l2E8`FP]MO6K;IDIXVTE0
 Z6 VDg1SIo80bB@j0V0VzS_@n1
 R0
-w1466526971
+w1466779927
 8dot_prod.v
 Fdot_prod.v
 L0 1
@@ -86,7 +85,7 @@ Z7 OL;L;10.4c_5;61
 r1
 !s85 0
 31
-Z8 !s108 1466527139.000000
+Z8 !s108 1466779939.000000
 Z9 !s107 weightRAM.v|test.v|tb_dot_prod.v|dot_prod.v|
 Z10 !s90 dot_prod.v|tb_dot_prod.v|test.v|weightRAM.v|
 !i113 0

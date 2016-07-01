@@ -1,18 +1,31 @@
 \select@language {english}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Representations of a Neuron in an ANN~\ref {fig:modelNeuron_a} and a biological multi polar neuron~\ref {fig:modelNeuron_b}}}{7}{figure.caption.4}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Possible activation functions of choice for a neuron}}{8}{figure.caption.5}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Three layer ANN}}{9}{figure.caption.6}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Representation of a Recurrent Neuron (Figure~\ref {fig:recneuron}) and a Recurrent Neuron unfolded through time (Figure~\ref {fig:recneuron_unf})}}{11}{figure.caption.7}
-\contentsline {figure}{\numberline {2.5}{\ignorespaces A complete LSTM neuron, with all the features as described in~\cite {Graves05}. Source:~\cite {Greff15}\relax }}{12}{figure.caption.8}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Representations of a Neuron in an ANN~\ref {fig:modelNeuron_a} and a biological multi polar neuron~\ref {fig:modelNeuron_b}}}{7}{figure.caption.7}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Possible activation functions of choice for a neuron}}{8}{figure.caption.8}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Three layer ANN}}{9}{figure.caption.9}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Representation of a Recurrent Neuron (Figure~\ref {fig:recneuron}) and a Recurrent Neuron unfolded through time (Figure~\ref {fig:recneuron_unf})}}{11}{figure.caption.10}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces A complete LSTM neuron, with all the features as described in~\cite {Graves05}. Source:~\cite {Greff15}\relax }}{12}{figure.caption.11}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Block Diagram of the Non-linearity Calculator}}{27}{figure.caption.9}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces The output of the HDL implementation of the activation functions}}{28}{figure.caption.10}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces A column of the matrix that serves as input to the module}}{30}{figure.caption.11}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces The $i$-th row multiplication unit of the Module}}{30}{figure.caption.12}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Diagram of the hardware block that implements the Gate}}{32}{figure.caption.13}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Hardware LSTM Network with full level of parallelism}}{33}{figure.caption.14}
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Optimised version of~\ref {fig:network} that shares the elementwise multiplication and the activation function blocks}}{34}{figure.caption.15}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Block Diagram of the Non-linearity Calculator}}{24}{figure.caption.12}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces The output of the HDL implementation of the activation functions}}{25}{figure.caption.13}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces A column of the matrix that serves as input to the module}}{27}{figure.caption.14}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces The $i$-th row multiplication unit of the Module}}{28}{figure.caption.15}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Diagram of the hardware block that implements the Gate}}{29}{figure.caption.16}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Hardware LSTM Network with full level of parallelism}}{31}{figure.caption.17}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Optimised version of~\ref {fig:network} that shares the elementwise multiplication and the activation function blocks}}{31}{figure.caption.18}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces The 32 bit Pseudo-random Number Generator. Source~\cite {Tkacik2003}}}{33}{figure.caption.19}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces The output of the implementation of the presented PRNG (right). The LFSR is the left column, and the CA is at the center}}{34}{figure.caption.20}
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Proposed Hardware Implementation of SPSA Training}}{36}{figure.caption.21}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces The maximum achievable clock frequency for several Network Sizes $N$ and resource sharing level $K_G$}}{38}{figure.caption.22}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces The number of DSP slices used for several Network Sizes $N$ and resource sharing level $K_G$}}{39}{figure.caption.23}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Power consumption estimates for several Network Sizes $N$ and resource sharing level $K_G$}}{40}{figure.caption.24}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Screenshot of the simulation run of a complete forward propagation for $N=8$ and $K_G=2$}}{43}{figure.caption.27}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Millions of classifications per second of each design according to the network size $N$}}{44}{figure.caption.29}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
 \addvspace {10\p@ }

@@ -1,0 +1,73 @@
+Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+-------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2015.4 (lin64) Build 1412921 Wed Nov 18 09:44:32 MST 2015
+| Date         : Fri Jun 24 16:16:06 2016
+| Host         : desktop4480 running 64-bit Ubuntu 14.04.4 LTS
+| Command      : report_control_sets -verbose -file dot_prod_control_sets_placed.rpt
+| Design       : dot_prod
+| Device       : xc7z020
+-------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Flip-Flop Distribution
+3. Detailed Control Set Information
+
+1. Summary
+----------
+
++-------------------------------------------------------------------+-------+
+|                               Status                              | Count |
++-------------------------------------------------------------------+-------+
+| Number of unique control sets                                     |    20 |
+| Minimum Number of register sites lost to control set restrictions |    59 |
++-------------------------------------------------------------------+-------+
+
+
+2. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |               1 |            1 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |              13 |            6 |
+| Yes          | No                    | No                     |               0 |            0 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |             895 |          400 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+3. Detailed Control Set Information
+-----------------------------------
+
++--------------+------------------------+------------------+------------------+----------------+
+| Clock Signal |      Enable Signal     | Set/Reset Signal | Slice Load Count | Bel Load Count |
++--------------+------------------------+------------------+------------------+----------------+
+|  clk         |                        |                  |                1 |              1 |
+|  clk         |                        | reset            |                6 |             13 |
+|  clk         | rowMux0                | reset            |                8 |             15 |
+|  clk         | p_0_in[435]            | reset            |               27 |             37 |
+|  clk         | outputMAC[554]_i_1_n_0 | reset            |               22 |             37 |
+|  clk         | p_0_in[28]             | reset            |               16 |             37 |
+|  clk         | p_0_in[583]            | reset            |               22 |             37 |
+|  clk         | p_0_in[509]            | reset            |               23 |             37 |
+|  clk         | p_0_in[472]            | reset            |               21 |             37 |
+|  clk         | p_0_in[398]            | reset            |               28 |             37 |
+|  clk         | p_0_in[361]            | reset            |               22 |             37 |
+|  clk         | p_0_in[324]            | reset            |               23 |             37 |
+|  clk         | p_0_in[287]            | reset            |               18 |             37 |
+|  clk         | p_0_in[250]            | reset            |               17 |             37 |
+|  clk         | p_0_in[213]            | reset            |               16 |             37 |
+|  clk         | p_0_in[176]            | reset            |               15 |             37 |
+|  clk         | p_0_in[139]            | reset            |               18 |             37 |
+|  clk         | p_0_in[102]            | reset            |               18 |             37 |
+|  clk         | p_0_in[65]             | reset            |               17 |             37 |
+|  clk         | dataReady              | reset            |               69 |            288 |
++--------------+------------------------+------------------+------------------+----------------+
+
+

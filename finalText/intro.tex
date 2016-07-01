@@ -1,17 +1,7 @@
 \chapter{Introduction}\label{chap:intro}
-Brief overview of the report:
 
-In Chapter~\ref{chap:intro}, I will present a conceptual background to the problem at hand, exposing the background that surrounds it~\ref{sec:intro_back}, the motivation for the desired solution~\ref{sec:intro_mot}, its objectives~\ref{sec:intro_obj} and, lastly, the people that will help me achieve them~\ref{sec:intro_people}.
-
-In Chapter~\ref{chap:theorBack}, the theoretical foundations will be layed out. Section~\ref{sec:tb_basicCon} presents the basic concepts of Machine Learning, and in the following sections, the theoretical details of ANNs, RNNs and LSTMs. Section~\ref{sec:training_lstm} provides a quick explanation of the training algorithm that will be used in the final solution, which will be outlined in Section~\ref{sec:propSol}.
-
-In Chapter~\ref{chap:stateArt}, the state of the art of LSTMs, their applications~\ref{sec:sa_apps}, their hardware implementations~\ref{sec:sa_hardware} and the current work regarding the chosen training algorithm~\ref{sec:sa_training} are presented.
-
-In Chapter~\ref{chap:earlyWork} I will present some of the work that I have already concluded.
-
-Finally, in Chapter~\ref{chap:workPlan}, the work plan for the Dissertation work is detailed as \emph{tasks} in Section~\ref{sec:wp_tasks_td}, and their temporal arrangement is pictured in a Gantt chart in Section~\ref{sec:wp_tasks_gantt}. Furthermore, the description of the Hardware and Software resources that I will be utilizing during the course of my work is done in Section~\ref{sec:wp_sh}
-
-
+In this work, a hardware implementation of an LSTM Neural Network is presented, along with a proposal for a digital circuit that performs on-chip training. In the reference example, the proposed hardware network was 195 times
+faster than the reference software implementation. The training convergence, although simulated, is not conclusive.
 
 \section{Background}\label{sec:intro_back}
 Artificial Neural Networks are one of the most popular models in the field of Machine Learning. As the name suggests, their operation is inspired by the operation of the building blocks of our brain, the \textbf{neurons}. In spite of its high performance, one of their shortcomings is the fact that they cannot retain temporal dependences among incoming data samples, thus not being suitable to process time-series data, such as audio, video or other kinds of time-varying data streams, where current inputs have a high temporal dependence with previous and future inputs. 
@@ -23,7 +13,7 @@ Hitherto, and to the best of my knowledge, all of the published applications tha
 
 All these techniques are generally implemented in mainstream processors, making use of general high-level or low-level languages, where all the real parallelism is limited to the number of simultaneous threads that we can run on each physical core, which up to now generally have between 2-8 cores (mobile devices and general use personal computers), 
 
-In order to parallelize the computations to the fullest extent, a solution is to port it both to a Graphics Processing Unit (GPU) or even a Field-Programmable Gate Array (FPGA), but the porting process is not entierely automatic and to have the least performance drop possible, it has to be explicitly programmed in CUDA/OpenCL for GPUs, and a Hardware Description Language for FPGAs, with an increasing level of complexity and low-level details. Therefore, it is necessary to provide frameworks that can allow an FPGA to quickly reconfigure itself to run these kind of networks on demand, for a particular task that requires them, achieving a lower computation time, and unburdening the CPU from running it, thus saving performance for running other tasks related with the Operating System, for instance. Furthermore, when processing an incoming stream of highly dimensional data, or with high throughput, a CPU solution might not be scalable, and could benefit greatly from a dedicated hardware implementation.
+In order to parallelize the computations to the fullest extent, a solution is to port it both to a Graphics Processing Unit (GPU) or even a Field-Programmable Gate Array (FPGA), but the porting process is not entirely automatic and to have the least performance drop possible, it has to be explicitly programmed in CUDA/OpenCL for GPUs, and a Hardware Description Language for FPGAs, with an increasing level of complexity and low-level details. Therefore, it is necessary to provide frameworks that can allow an FPGA to quickly reconfigure itself to run these kind of networks on demand, for a particular task that requires them, achieving a lower computation time, and unburdening the CPU from running it, thus saving performance for running other tasks related with the Operating System, for instance. Furthermore, when processing an incoming stream of highly dimensional data, or with high throughput, a CPU solution might not be scalable, and could benefit greatly from a dedicated hardware implementation.
 
 \section{Objectives}\label{sec:intro_obj}
 Taking into account the considerations done in~\ref{sec:intro_mot}, I propose to develop a hardware implementation of an LSTM Network, \emph{with on-chip learning}, improving the performance, capability and flexibility of the existing solution of~\cite{Chang15}. Moreover, I also propose to benchmark this solution and try to compare it with the software performance results of~\cite{Tavear13} and, as a secondary objective, try to use my developed structure to replicate some of the applications portrayed in~\ref{sec:sa_apps}. Lastly, I will work to make this structure reconfigurable on the go, and trying to minimize the reconfiguration time.
@@ -33,6 +23,16 @@ Besides me, the candidate to the Master's Degree, there are two more people invo
 
 \begin{itemize}
     \item \textbf{Supervisor} -- The \href{https://sigarra.up.pt/feup/pt/func\_geral.formview?p\_codigo=210963}{Professor João Canas Ferreira}, auxiliary professor at the Faculty of Engineering of the University of Porto.
-    \item \textbf{Second Supervisor} -- \href{http://www.cl.cam.ac.uk/~ijpdmt2/}{Ivo Timóteo}, MSc, a Computer Science PhD candidate at Cambridge University, UK, in the field of Artificial Inteligence.
+    \item \textbf{Second Supervisor} -- \href{http://www.cl.cam.ac.uk/~ijpdmt2/}{Ivo Timóteo}, MSc, a Computer Science PhD candidate at Cambridge University, UK, in the field of Artificial Intelligence.
 \end{itemize}
 
+\section{Overview of the Document}\label{sec:intro_overview}
+Chapter~\ref{chap:theorBack}, the theoretical foundations will be layed out. Section~\ref{sec:tb_basicCon} presents the basic concepts of Machine Learning, and in the following sections, the theoretical details of ANNs, RNNs and LSTMs. Section~\ref{sec:training_lstm} provides a quick explanation of the training algorithm that will be used in the final solution, which will be outlined in Section~\ref{chap:propSol}.
+
+In Chapter~\ref{chap:stateArt}, the state of the art of LSTMs, their applications~\ref{sec:sa_apps}, their hardware implementations~\ref{sec:sa_hardware} and the current work regarding the chosen training algorithm~\ref{sec:sa_training} are presented.
+
+In Chapter~\ref{chap:propSol} the proposed architecture of the hardware LSTM network is explained in detail, as well as details related to each of its constituent blocks.
+
+Finally, in Chapter~\ref{chap:results}, I present the results achieved with the hardware network of Chapter~\ref{chap:propSol}.
+
+\textbf{Disclaimer}: since this is a very innovative work, I will not present here any Verilog source code to protect my Intellectual Property. However, you can ask permission to have it by \href{mailto:ee11126@fe.up.pt}{emailing me}.

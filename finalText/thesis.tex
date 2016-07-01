@@ -96,7 +96,7 @@ tabsize=2}
 %%----------------------------------------
 %% Information about the work
 %%----------------------------------------
-\title{Dissertation Preparation}
+\title{FPGA implementation of a LSTM Neural Network}
 \author{José Pedro Castro Fonseca}
 
 %% Comment next line if not necessary for degree
@@ -109,7 +109,7 @@ tabsize=2}
 \copyrightnotice{José Fonseca, 2016}
 
 \supervisor{Supervisor}{João Canas Ferreira}
-\supervisor{Second Supervisor}{Ivo Timóteo}
+\supervisor{Second Supervisor}{Ivo JPM Timóteo}
 
 %% Uncomment next line if necessary
 %\supervisor{Second Supervisor}{Name of the Supervisor}
@@ -133,6 +133,9 @@ tabsize=2}
 
 % remove unnecessary \include{} commands
 \begin{Prolog}
+  \include{abstract}
+  \include{acknows}
+  \include{quote}
   \pdfbookmark[0]{Table of Contents}{contents}
   \tableofcontents
   \pdfbookmark[0]{List of Figures}{figures}
@@ -153,8 +156,12 @@ tabsize=2}
 \include{results}
 
 %% comment next 2 commands if numbered appendices are not used
-%\appendix
-%\include{appendix1}
+\appendix
+\include{appendix-remez}
+\include{appendix-lstm}
+\include{appendix-testLstm}
+\include{appendix-readres2}
+\include{appendix-transcript}
 
 %%----------------------------------------
 %% Final materials

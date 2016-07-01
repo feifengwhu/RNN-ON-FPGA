@@ -71,7 +71,7 @@ start_step opt_design
 set rc [catch {
   create_msg_db opt_design.pb
   catch {write_debug_probes -quiet -force debug_nets}
-  opt_design 
+  opt_design -directive Explore
   write_checkpoint -force sigmoid_opt.dcp
   report_drc -file sigmoid_drc_opted.rpt
   close_msg_db -file opt_design.pb
@@ -87,7 +87,7 @@ start_step place_design
 set rc [catch {
   create_msg_db place_design.pb
   catch {write_hwdef -file sigmoid.hwdef}
-  place_design 
+  place_design -directive Explore
   write_checkpoint -force sigmoid_placed.dcp
   report_io -file sigmoid_io_placed.rpt
   report_utilization -file sigmoid_utilization_placed.rpt -pb sigmoid_utilization_placed.pb
@@ -101,13 +101,28 @@ if {$rc} {
   end_step place_design
 }
 
+start_step phys_opt_design
+set rc [catch {
+  create_msg_db phys_opt_design.pb
+  phys_opt_design -directive Explore
+  write_checkpoint -force sigmoid_physopt.dcp
+  close_msg_db -file phys_opt_design.pb
+} RESULT]
+if {$rc} {
+  step_failed phys_opt_design
+  return -code error $RESULT
+} else {
+  end_step phys_opt_design
+}
+
+  set_msg_config -source 4 -id {Route 35-39} -severity "critical warning" -new_severity warning
 start_step route_design
 set rc [catch {
   create_msg_db route_design.pb
-  route_design 
+  route_design -directive Explore -tns_cleanup
   write_checkpoint -force sigmoid_routed.dcp
   report_drc -file sigmoid_drc_routed.rpt -pb sigmoid_drc_routed.pb
-  report_timing_summary -warn_on_violation -max_paths 10 -file sigmoid_timing_summary_routed.rpt -rpx sigmoid_timing_summary_routed.rpx
+  report_timing_summary -max_paths 10 -file sigmoid_timing_summary_routed.rpt -rpx sigmoid_timing_summary_routed.rpx
   report_power -file sigmoid_power_routed.rpt -pb sigmoid_power_summary_routed.pb
   report_route_status -file sigmoid_route_status.rpt -pb sigmoid_route_status.pb
   report_clock_utilization -file sigmoid_clock_utilization_routed.rpt
@@ -118,5 +133,20 @@ if {$rc} {
   return -code error $RESULT
 } else {
   end_step route_design
+}
+
+start_step post_route_phys_opt_design
+set rc [catch {
+  create_msg_db post_route_phys_opt_design.pb
+  phys_opt_design -directive Explore
+  write_checkpoint -force sigmoid_postroute_physopt.dcp
+  report_timing_summary -warn_on_violation -max_paths 10 -file sigmoid_timing_summary_postroute_physopted.rpt -rpx sigmoid_timing_summary_postroute_physopted.rpx
+  close_msg_db -file post_route_phys_opt_design.pb
+} RESULT]
+if {$rc} {
+  step_failed post_route_phys_opt_design
+  return -code error $RESULT
+} else {
+  end_step post_route_phys_opt_design
 }
 

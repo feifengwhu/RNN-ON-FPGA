@@ -1,7 +1,7 @@
 Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2015.4 (lin64) Build 1412921 Wed Nov 18 09:44:32 MST 2015
-| Date         : Thu Jun 23 01:22:09 2016
+| Date         : Fri Jun 24 15:24:11 2016
 | Host         : desktop4480 running 64-bit Ubuntu 14.04.4 LTS
 | Command      : report_drc
 ------------------------------------------------------------------------------------
@@ -20,7 +20,7 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max violations: <unlimited>
-             Violations found: 349
+             Violations found: 350
 
 2. REPORT DETAILS
 -----------------
@@ -1601,32 +1601,32 @@ Related violations: <none>
 
 PDRC-153#2 Warning
 Gated clock check  
-Net LSTM_LAYER/genblk1[10].sigmoid_i/interval_mux_active is a gated clock net sourced by a combinational pin LSTM_LAYER/genblk1[10].sigmoid_i/p0_reg[11]_i_2__9/O, cell LSTM_LAYER/genblk1[10].sigmoid_i/p0_reg[11]_i_2__9. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net LSTM_LAYER/genblk1[10].sigmoid_i/interval_mux_active is a gated clock net sourced by a combinational pin LSTM_LAYER/genblk1[10].sigmoid_i/p0_reg[11]_i_2__25/O, cell LSTM_LAYER/genblk1[10].sigmoid_i/p0_reg[11]_i_2__25. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#3 Warning
 Gated clock check  
-Net LSTM_LAYER/genblk1[11].sigmoid_i/interval_mux_active is a gated clock net sourced by a combinational pin LSTM_LAYER/genblk1[11].sigmoid_i/p0_reg[11]_i_2__10/O, cell LSTM_LAYER/genblk1[11].sigmoid_i/p0_reg[11]_i_2__10. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net LSTM_LAYER/genblk1[11].sigmoid_i/interval_mux_active is a gated clock net sourced by a combinational pin LSTM_LAYER/genblk1[11].sigmoid_i/p0_reg[11]_i_2__26/O, cell LSTM_LAYER/genblk1[11].sigmoid_i/p0_reg[11]_i_2__26. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#4 Warning
 Gated clock check  
-Net LSTM_LAYER/genblk1[12].sigmoid_i/interval_mux_active is a gated clock net sourced by a combinational pin LSTM_LAYER/genblk1[12].sigmoid_i/p0_reg[11]_i_2__11/O, cell LSTM_LAYER/genblk1[12].sigmoid_i/p0_reg[11]_i_2__11. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net LSTM_LAYER/genblk1[12].sigmoid_i/interval_mux_active is a gated clock net sourced by a combinational pin LSTM_LAYER/genblk1[12].sigmoid_i/p0_reg[11]_i_2__27/O, cell LSTM_LAYER/genblk1[12].sigmoid_i/p0_reg[11]_i_2__27. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#5 Warning
 Gated clock check  
-Net LSTM_LAYER/genblk1[13].sigmoid_i/interval_mux_active is a gated clock net sourced by a combinational pin LSTM_LAYER/genblk1[13].sigmoid_i/p0_reg[11]_i_2__12/O, cell LSTM_LAYER/genblk1[13].sigmoid_i/p0_reg[11]_i_2__12. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net LSTM_LAYER/genblk1[13].sigmoid_i/interval_mux_active is a gated clock net sourced by a combinational pin LSTM_LAYER/genblk1[13].sigmoid_i/p0_reg[11]_i_2__28/O, cell LSTM_LAYER/genblk1[13].sigmoid_i/p0_reg[11]_i_2__28. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#6 Warning
 Gated clock check  
-Net LSTM_LAYER/genblk1[14].sigmoid_i/interval_mux_active is a gated clock net sourced by a combinational pin LSTM_LAYER/genblk1[14].sigmoid_i/p0_reg[11]_i_2__13/O, cell LSTM_LAYER/genblk1[14].sigmoid_i/p0_reg[11]_i_2__13. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net LSTM_LAYER/genblk1[14].sigmoid_i/interval_mux_active is a gated clock net sourced by a combinational pin LSTM_LAYER/genblk1[14].sigmoid_i/p0_reg[11]_i_2__29/O, cell LSTM_LAYER/genblk1[14].sigmoid_i/p0_reg[11]_i_2__29. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#7 Warning
 Gated clock check  
-Net LSTM_LAYER/genblk1[15].sigmoid_i/interval_mux_active is a gated clock net sourced by a combinational pin LSTM_LAYER/genblk1[15].sigmoid_i/p0_reg[11]_i_2__14/O, cell LSTM_LAYER/genblk1[15].sigmoid_i/p0_reg[11]_i_2__14. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net LSTM_LAYER/genblk1[15].sigmoid_i/interval_mux_active is a gated clock net sourced by a combinational pin LSTM_LAYER/genblk1[15].sigmoid_i/p0_reg[11]_i_2__30/O, cell LSTM_LAYER/genblk1[15].sigmoid_i/p0_reg[11]_i_2__30. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#8 Warning
@@ -1666,12 +1666,12 @@ Related violations: <none>
 
 PDRC-153#15 Warning
 Gated clock check  
-Net LSTM_LAYER/genblk1[8].sigmoid_i/interval_mux_active is a gated clock net sourced by a combinational pin LSTM_LAYER/genblk1[8].sigmoid_i/p0_reg[11]_i_2__7/O, cell LSTM_LAYER/genblk1[8].sigmoid_i/p0_reg[11]_i_2__7. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net LSTM_LAYER/genblk1[8].sigmoid_i/interval_mux_active is a gated clock net sourced by a combinational pin LSTM_LAYER/genblk1[8].sigmoid_i/p0_reg[11]_i_2__23/O, cell LSTM_LAYER/genblk1[8].sigmoid_i/p0_reg[11]_i_2__23. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#16 Warning
 Gated clock check  
-Net LSTM_LAYER/genblk1[9].sigmoid_i/interval_mux_active is a gated clock net sourced by a combinational pin LSTM_LAYER/genblk1[9].sigmoid_i/p0_reg[11]_i_2__8/O, cell LSTM_LAYER/genblk1[9].sigmoid_i/p0_reg[11]_i_2__8. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net LSTM_LAYER/genblk1[9].sigmoid_i/interval_mux_active is a gated clock net sourced by a combinational pin LSTM_LAYER/genblk1[9].sigmoid_i/p0_reg[11]_i_2__24/O, cell LSTM_LAYER/genblk1[9].sigmoid_i/p0_reg[11]_i_2__24. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#17 Warning
@@ -1681,42 +1681,42 @@ Related violations: <none>
 
 PDRC-153#18 Warning
 Gated clock check  
-Net LSTM_LAYER/genblk2[10].tanh_i/interval_mux_active is a gated clock net sourced by a combinational pin LSTM_LAYER/genblk2[10].tanh_i/p0_reg[17]_i_2__9/O, cell LSTM_LAYER/genblk2[10].tanh_i/p0_reg[17]_i_2__9. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net LSTM_LAYER/genblk2[0].tanh_i/interval_mux_active is a gated clock net sourced by a combinational pin LSTM_LAYER/genblk2[0].tanh_i/p0_reg[17]_i_2/O, cell LSTM_LAYER/genblk2[0].tanh_i/p0_reg[17]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#19 Warning
 Gated clock check  
-Net LSTM_LAYER/genblk2[11].tanh_i/interval_mux_active is a gated clock net sourced by a combinational pin LSTM_LAYER/genblk2[11].tanh_i/p0_reg[17]_i_2__10/O, cell LSTM_LAYER/genblk2[11].tanh_i/p0_reg[17]_i_2__10. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net LSTM_LAYER/genblk2[10].tanh_i/interval_mux_active is a gated clock net sourced by a combinational pin LSTM_LAYER/genblk2[10].tanh_i/p0_reg[17]_i_2__9/O, cell LSTM_LAYER/genblk2[10].tanh_i/p0_reg[17]_i_2__9. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#20 Warning
 Gated clock check  
-Net LSTM_LAYER/genblk2[12].tanh_i/interval_mux_active is a gated clock net sourced by a combinational pin LSTM_LAYER/genblk2[12].tanh_i/p0_reg[17]_i_2__11/O, cell LSTM_LAYER/genblk2[12].tanh_i/p0_reg[17]_i_2__11. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net LSTM_LAYER/genblk2[11].tanh_i/interval_mux_active is a gated clock net sourced by a combinational pin LSTM_LAYER/genblk2[11].tanh_i/p0_reg[17]_i_2__10/O, cell LSTM_LAYER/genblk2[11].tanh_i/p0_reg[17]_i_2__10. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#21 Warning
 Gated clock check  
-Net LSTM_LAYER/genblk2[13].tanh_i/interval_mux_active is a gated clock net sourced by a combinational pin LSTM_LAYER/genblk2[13].tanh_i/p0_reg[17]_i_2__12/O, cell LSTM_LAYER/genblk2[13].tanh_i/p0_reg[17]_i_2__12. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net LSTM_LAYER/genblk2[12].tanh_i/interval_mux_active is a gated clock net sourced by a combinational pin LSTM_LAYER/genblk2[12].tanh_i/p0_reg[17]_i_2__11/O, cell LSTM_LAYER/genblk2[12].tanh_i/p0_reg[17]_i_2__11. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#22 Warning
 Gated clock check  
-Net LSTM_LAYER/genblk2[14].tanh_i/interval_mux_active is a gated clock net sourced by a combinational pin LSTM_LAYER/genblk2[14].tanh_i/p0_reg[17]_i_2__13/O, cell LSTM_LAYER/genblk2[14].tanh_i/p0_reg[17]_i_2__13. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net LSTM_LAYER/genblk2[13].tanh_i/interval_mux_active is a gated clock net sourced by a combinational pin LSTM_LAYER/genblk2[13].tanh_i/p0_reg[17]_i_2__12/O, cell LSTM_LAYER/genblk2[13].tanh_i/p0_reg[17]_i_2__12. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#23 Warning
 Gated clock check  
-Net LSTM_LAYER/genblk2[15].tanh_i/interval_mux_active is a gated clock net sourced by a combinational pin LSTM_LAYER/genblk2[15].tanh_i/p0_reg[17]_i_2__14/O, cell LSTM_LAYER/genblk2[15].tanh_i/p0_reg[17]_i_2__14. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net LSTM_LAYER/genblk2[14].tanh_i/interval_mux_active is a gated clock net sourced by a combinational pin LSTM_LAYER/genblk2[14].tanh_i/p0_reg[17]_i_2__13/O, cell LSTM_LAYER/genblk2[14].tanh_i/p0_reg[17]_i_2__13. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#24 Warning
 Gated clock check  
-Net LSTM_LAYER/genblk2[1].tanh_i/interval_mux_active is a gated clock net sourced by a combinational pin LSTM_LAYER/genblk2[1].tanh_i/p0_reg[17]_i_2__0/O, cell LSTM_LAYER/genblk2[1].tanh_i/p0_reg[17]_i_2__0. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net LSTM_LAYER/genblk2[15].tanh_i/interval_mux_active is a gated clock net sourced by a combinational pin LSTM_LAYER/genblk2[15].tanh_i/p0_reg[17]_i_2__14/O, cell LSTM_LAYER/genblk2[15].tanh_i/p0_reg[17]_i_2__14. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#25 Warning
 Gated clock check  
-Net LSTM_LAYER/genblk2[2].tanh_i/interval_mux_active is a gated clock net sourced by a combinational pin LSTM_LAYER/genblk2[2].tanh_i/p0_reg[17]_i_2__1/O, cell LSTM_LAYER/genblk2[2].tanh_i/p0_reg[17]_i_2__1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net LSTM_LAYER/genblk2[1].tanh_i/interval_mux_active is a gated clock net sourced by a combinational pin LSTM_LAYER/genblk2[1].tanh_i/p0_reg[17]_i_2__0/O, cell LSTM_LAYER/genblk2[1].tanh_i/p0_reg[17]_i_2__0. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#26 Warning
@@ -1741,12 +1741,12 @@ Related violations: <none>
 
 PDRC-153#30 Warning
 Gated clock check  
-Net LSTM_LAYER/genblk2[5].tanh_i/interval_mux_active is a gated clock net sourced by a combinational pin LSTM_LAYER/genblk2[5].tanh_i/p0_reg[17]_i_2__4/O, cell LSTM_LAYER/genblk2[5].tanh_i/p0_reg[17]_i_2__4. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net LSTM_LAYER/genblk2[6].tanh_i/interval_mux_active is a gated clock net sourced by a combinational pin LSTM_LAYER/genblk2[6].tanh_i/p0_reg[17]_i_2__5/O, cell LSTM_LAYER/genblk2[6].tanh_i/p0_reg[17]_i_2__5. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#31 Warning
 Gated clock check  
-Net LSTM_LAYER/genblk2[6].tanh_i/interval_mux_active is a gated clock net sourced by a combinational pin LSTM_LAYER/genblk2[6].tanh_i/p0_reg[17]_i_2__5/O, cell LSTM_LAYER/genblk2[6].tanh_i/p0_reg[17]_i_2__5. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net LSTM_LAYER/genblk2[7].tanh_i/interval_mux_active is a gated clock net sourced by a combinational pin LSTM_LAYER/genblk2[7].tanh_i/p0_reg[17]_i_2__6/O, cell LSTM_LAYER/genblk2[7].tanh_i/p0_reg[17]_i_2__6. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PDRC-153#32 Warning
@@ -1760,6 +1760,11 @@ Net LSTM_LAYER/genblk2[8].tanh_i/interval_mux_active is a gated clock net source
 Related violations: <none>
 
 PDRC-153#34 Warning
+Gated clock check  
+Net LSTM_LAYER/genblk2[9].tanh_i/interval_mux_active is a gated clock net sourced by a combinational pin LSTM_LAYER/genblk2[9].tanh_i/p0_reg[17]_i_2__8/O, cell LSTM_LAYER/genblk2[9].tanh_i/p0_reg[17]_i_2__8. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#35 Warning
 Gated clock check  
 Net LSTM_LAYER/genblk2[9].tanh_i/interval_mux_active is a gated clock net sourced by a combinational pin LSTM_LAYER/genblk2[9].tanh_i/p0_reg[17]_i_2__8/O, cell LSTM_LAYER/genblk2[9].tanh_i/p0_reg[17]_i_2__8. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>

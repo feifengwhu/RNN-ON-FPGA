@@ -1,8 +1,8 @@
-module gate     #(parameter INPUT_SZ  = 8,
-				  parameter HIDDEN_SZ = 64,
+module gate     #(parameter INPUT_SZ  = 2,
+				  parameter HIDDEN_SZ = 16,
 				  parameter QN = 6,
                   parameter QM = 11,
-				  parameter DSP48_PER_ROW = 8)
+				  parameter DSP48_PER_ROW = 4)
                  (inputVec,
                   prevLayerOut,
                   weightMem_X,

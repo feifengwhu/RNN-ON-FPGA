@@ -1,4 +1,4 @@
-`timescale 1ns / 1ps
+`timescale 1ns / 1fs
 
 module tb_network();
     
@@ -18,7 +18,7 @@ module tb_network();
     parameter MAC_BITWIDTH          = (2*BITWIDTH+1);
 	parameter ADDR_BITWIDTH    = $ln(HIDDEN_SZ)/$ln(2);
 	parameter ADDR_BITWIDTH_X  = $ln(INPUT_SZ)/$ln(2);
-    parameter HALF_CLOCK       = 1;
+    parameter HALF_CLOCK       = 3.7625;
     parameter FULL_CLOCK       = 2*HALF_CLOCK;
     parameter MAX_SAMPLES      = 8;
     parameter TRAIN_SAMPLES    = 1000;

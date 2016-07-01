@@ -1,7 +1,7 @@
 Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2015.4 (lin64) Build 1412921 Wed Nov 18 09:44:32 MST 2015
-| Date             : Thu Jun 23 01:22:15 2016
+| Date             : Fri Jun 24 15:24:17 2016
 | Host             : desktop4480 running 64-bit Ubuntu 14.04.4 LTS
 | Command          : report_power -file top_network_power_routed.rpt -pb top_network_power_summary_routed.pb
 | Design           : top_network
@@ -30,12 +30,12 @@ Table of Contents
 ----------
 
 +--------------------------+-------+
-| Total On-Chip Power (W)  | 0.391 |
-| Dynamic (W)              | 0.268 |
+| Total On-Chip Power (W)  | 0.385 |
+| Dynamic (W)              | 0.262 |
 | Device Static (W)        | 0.123 |
 | Effective TJA (C/W)      | 11.5  |
-| Max Ambient (C)          | 80.5  |
-| Junction Temperature (C) | 29.5  |
+| Max Ambient (C)          | 80.6  |
+| Junction Temperature (C) | 29.4  |
 | Confidence Level         | Low   |
 | Setting File             | ---   |
 | Simulation Activity File | ---   |
@@ -49,19 +49,19 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.046 |        3 |       --- |             --- |
-| Slice Logic              |     0.038 |    36526 |       --- |             --- |
-|   LUT as Logic           |     0.033 |    13849 |     53200 |           26.03 |
+| Clocks                   |     0.045 |        3 |       --- |             --- |
+| Slice Logic              |     0.036 |    36525 |       --- |             --- |
+|   LUT as Logic           |     0.032 |    13854 |     53200 |           26.04 |
 |   CARRY4                 |     0.003 |     1183 |     13300 |            8.89 |
-|   Register               |     0.001 |    14367 |    106400 |           13.50 |
+|   Register               |    <0.001 |    14367 |    106400 |           13.50 |
 |   F7/F8 Muxes            |    <0.001 |       54 |     53200 |            0.10 |
 |   Others                 |     0.000 |     3638 |       --- |             --- |
 |   LUT as Distributed RAM |     0.000 |     1536 |     17400 |            8.83 |
-| Signals                  |     0.078 |    25676 |       --- |             --- |
-| DSPs                     |     0.099 |      116 |       220 |           52.73 |
+| Signals                  |     0.075 |    25670 |       --- |             --- |
+| DSPs                     |     0.100 |      116 |       220 |           52.73 |
 | I/O                      |     0.006 |       60 |       200 |           30.00 |
 | Static Power             |     0.123 |          |           |                 |
-| Total                    |     0.391 |          |           |                 |
+| Total                    |     0.385 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -71,7 +71,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.270 |       0.262 |      0.008 |
+| Vccint    |       1.000 |     0.264 |       0.256 |      0.008 |
 | Vccaux    |       1.800 |     0.019 |       0.000 |      0.019 |
 | Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -134,7 +134,7 @@ Table of Contents
 +-------+--------+-----------------+
 | Clock | Domain | Constraint (ns) |
 +-------+--------+-----------------+
-| clock | clock  |             9.6 |
+| clock | clock  |             9.5 |
 +-------+--------+-----------------+
 
 
@@ -147,19 +147,19 @@ Table of Contents
 +-----------------------------------+-----------+
 | Name                              | Power (W) |
 +-----------------------------------+-----------+
-| top_network                       |     0.268 |
-|   LSTM_LAYER                      |     0.261 |
-|     GATE_F                        |     0.033 |
-|       DOTPROD_X                   |     0.013 |
-|       DOTPROD_Y                   |     0.015 |
+| top_network                       |     0.262 |
+|   LSTM_LAYER                      |     0.255 |
+|     GATE_F                        |     0.028 |
+|       DOTPROD_X                   |     0.012 |
+|       DOTPROD_Y                   |     0.012 |
 |     GATE_I                        |     0.024 |
-|       DOTPROD_X                   |     0.010 |
-|       DOTPROD_Y                   |     0.012 |
+|       DOTPROD_X                   |     0.011 |
+|       DOTPROD_Y                   |     0.011 |
 |     GATE_O                        |     0.024 |
-|       DOTPROD_X                   |     0.010 |
-|       DOTPROD_Y                   |     0.012 |
+|       DOTPROD_X                   |     0.011 |
+|       DOTPROD_Y                   |     0.011 |
 |     GATE_Z                        |     0.030 |
-|       DOTPROD_X                   |     0.010 |
+|       DOTPROD_X                   |     0.011 |
 |       DOTPROD_Y                   |     0.015 |
 |     WRAM_F_X                      |     0.002 |
 |       RAM_matrix_reg_0_1_0_5      |    <0.001 |
@@ -557,7 +557,7 @@ Table of Contents
 |     genblk1[10].sigmoid_i         |     0.003 |
 |     genblk1[11].sigmoid_i         |     0.003 |
 |     genblk1[12].sigmoid_i         |     0.003 |
-|     genblk1[13].sigmoid_i         |     0.002 |
+|     genblk1[13].sigmoid_i         |     0.003 |
 |     genblk1[14].sigmoid_i         |     0.003 |
 |     genblk1[15].sigmoid_i         |     0.003 |
 |     genblk1[1].sigmoid_i          |     0.003 |
@@ -575,11 +575,11 @@ Table of Contents
 |     genblk2[12].tanh_i            |     0.003 |
 |     genblk2[13].tanh_i            |     0.003 |
 |     genblk2[14].tanh_i            |     0.003 |
-|     genblk2[15].tanh_i            |     0.004 |
+|     genblk2[15].tanh_i            |     0.003 |
 |     genblk2[1].tanh_i             |     0.003 |
 |     genblk2[2].tanh_i             |     0.003 |
 |     genblk2[3].tanh_i             |     0.003 |
-|     genblk2[4].tanh_i             |     0.003 |
+|     genblk2[4].tanh_i             |     0.004 |
 |     genblk2[5].tanh_i             |     0.003 |
 |     genblk2[6].tanh_i             |     0.003 |
 |     genblk2[7].tanh_i             |     0.003 |

@@ -12,6 +12,11 @@ Klaus Greff, Rupesh~Kumar Srivastava, Jan Koutn{\'{\i}}k, Bas~R. Steunebrink,
 \newblock {LSTM:} {A} search space odyssey.
 \newblock {\em CoRR}, abs/1503.04069, 2015.
 
+\bibitem{Tkacik2003}
+Thomas~E. Tkacik.
+\newblock {\em A Hardware Random Number Generator}, pages 450--453.
+\newblock Springer Berlin Heidelberg, Berlin, Heidelberg, 2003.
+
 \bibitem{Hoch97}
 S.~Hochreiter and J.~Schmidhuber.
 \newblock Long short-term memory.

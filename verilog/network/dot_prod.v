@@ -188,7 +188,7 @@ module dot_prod #(parameter NROW = 16,
                 outputEn       = 1'b1;
                 clearMAC       = 1'b0;
             end
-            
+
             END_PIPE2 :
             begin
                 dataReady      = 1'b1;

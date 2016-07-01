@@ -1,7 +1,7 @@
 Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2015.4 (lin64) Build 1412921 Wed Nov 18 09:44:32 MST 2015
-| Date             : Thu Jun 23 00:00:29 2016
+| Date             : Fri Jun 24 17:58:29 2016
 | Host             : desktop4480 running 64-bit Ubuntu 14.04.4 LTS
 | Command          : report_power -file sigmoid_power_routed.rpt -pb sigmoid_power_summary_routed.pb
 | Design           : sigmoid
@@ -50,14 +50,14 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.001 |        3 |       --- |             --- |
-| Slice Logic    |    <0.001 |      135 |       --- |             --- |
-|   LUT as Logic |    <0.001 |       72 |     53200 |            0.14 |
+| Slice Logic    |    <0.001 |      132 |       --- |             --- |
+|   LUT as Logic |    <0.001 |       77 |     53200 |            0.14 |
 |   CARRY4       |    <0.001 |       14 |     13300 |            0.11 |
-|   Register     |    <0.001 |       29 |    106400 |            0.03 |
+|   Register     |    <0.001 |       27 |    106400 |            0.03 |
 |   Others       |     0.000 |        4 |       --- |             --- |
-| Signals        |     0.001 |      135 |       --- |             --- |
+| Signals        |     0.001 |      134 |       --- |             --- |
 | DSPs           |     0.001 |        1 |       220 |            0.45 |
-| I/O            |     0.027 |       38 |       200 |           19.00 |
+| I/O            |     0.026 |       38 |       200 |           19.00 |
 | Static Power   |     0.120 |          |           |                 |
 | Total          |     0.151 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
@@ -132,7 +132,7 @@ Table of Contents
 +--------+--------+-----------------+
 | Clock  | Domain | Constraint (ns) |
 +--------+--------+-----------------+
-| sysClk | clk    |             6.5 |
+| sysClk | clk    |             6.6 |
 +--------+--------+-----------------+
 
 

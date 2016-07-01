@@ -1,0 +1,77 @@
+QuestaSim-64 vlog 10.4c_5 Compiler 2015.11 Nov 14 2015
+Start time: 20:23:41 on Jun 26,2016
+vlog array_prod.v dot_prod.v gate.v network.v sigmoid.v tanh.v tb_network.v tb_top_network.v test.v top_network.v weightRAM.v 
+-- Compiling module array_prod
+-- Compiling module dot_prod
+-- Compiling module gate
+-- Compiling module network
+-- Compiling module sigmoid
+-- Compiling module tanh
+-- Compiling module tb_network
+-- Compiling module tb_top_network
+-- Compiling module test
+-- Compiling module top_network
+-- Compiling module weightRAM
+
+Top level modules:
+	tb_network
+	tb_top_network
+	test
+End time: 20:23:42 on Jun 26,2016, Elapsed time: 0:00:01
+Errors: 0, Warnings: 0
+Reading pref.tcl
+
+# 10.4c_5
+
+# vsim -voptargs="+acc" -c -do "run -all" tb_network 
+# Start time: 20:23:44 on Jun 26,2016
+# ** Note: (vsim-8009) Loading existing optimized design _opt7
+# //  Questa Sim-64
+# //  Version 10.4c_5 linux_x86_64 Nov 14 2015
+# //
+# //  Copyright 1991-2015 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //  THIS DOCUMENT CONTAINS TRADE SECRETS AND COMMERCIAL OR FINANCIAL
+# //  INFORMATION THAT ARE PRIVILEGED, CONFIDENTIAL, AND EXEMPT FROM
+# //  DISCLOSURE UNDER THE FREEDOM OF INFORMATION ACT, 5 U.S.C. SECTION 552.
+# //  FURTHERMORE, THIS INFORMATION IS PROHIBITED FROM DISCLOSURE UNDER
+# //  THE TRADE SECRETS ACT, 18 U.S.C. SECTION 1905.
+# //
+# Loading work.tb_network(fast)
+# Loading work.network(fast)
+# Loading work.gate(fast)
+# Loading work.dot_prod(fast)
+# Loading work.dot_prod(fast__1)
+# Loading work.weightRAM(fast)
+# Loading work.weightRAM(fast__1)
+# Loading work.sigmoid(fast)
+# Loading work.tanh(fast)
+# Loading work.array_prod(fast)
+# run -all
+# Simulation started at 0.000000
+# Input Sample           0
+# Input Sample         100
+# Input Sample         200
+# Input Sample         300
+# Input Sample         400
+# Input Sample         500
+# Input Sample         600
+# Input Sample         700
+# Input Sample         800
+# Input Sample         900
+# ** Note: $stop    : tb_network.v(216)
+#    Time: 1636005 ns  Iteration: 0  Instance: /tb_network
+# Break in Module tb_network at tb_network.v line 216
+# Stopped at tb_network.v line 216
+VSIM 2> 
+# End time: 20:23:52 on Jun 26,2016, Elapsed time: 0:00:08
+# Errors: 0, Warnings: 0
+Error:  [0, 1, 1, 1, 0, 0]  -->  [0, 1, 1, 1, 0, 1]
+0.46793955524  -->  [[ 0.50527151]]
+Error:  [0, 1, 1, 1, 0, 0]  -->  [0, 1, 1, 1, 0, 1]
+0.46793955524  -->  [[ 0.50527151]]
+% wrong bits:  0.025

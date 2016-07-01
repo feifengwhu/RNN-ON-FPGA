@@ -1,0 +1,42 @@
+#-----------------------------------------------------------
+# Vivado v2015.4 (64-bit)
+# SW Build 1412921 on Wed Nov 18 09:44:32 MST 2015
+# IP Build 1412160 on Tue Nov 17 13:47:24 MST 2015
+# Start of session at: Fri Jun 24 16:52:17 2016
+# Process ID: 2972
+# Current directory: /home/josefonseca/Documents/thesis/verilog/weight_ram
+# Command line: vivado
+# Log file: /home/josefonseca/Documents/thesis/verilog/weight_ram/vivado.log
+# Journal file: /home/josefonseca/Documents/thesis/verilog/weight_ram/vivado.jou
+#-----------------------------------------------------------
+start_gui
+create_project Synth_weight_ram /home/josefonseca/Documents/thesis/verilog/weight_ram/Synth_weight_ram -part xc7z020clg484-1
+set_property board_part em.avnet.com:zed:part0:1.3 [current_project]
+set_property simulator_language Verilog [current_project]
+add_files -norecurse /home/josefonseca/Documents/thesis/verilog/weight_ram/weightRAM.v
+file mkdir /home/josefonseca/Documents/thesis/verilog/weight_ram/Synth_weight_ram/Synth_weight_ram.srcs/constrs_1/new
+close [ open /home/josefonseca/Documents/thesis/verilog/weight_ram/Synth_weight_ram/Synth_weight_ram.srcs/constrs_1/new/weightRAM_timing.xdc w ]
+add_files -fileset constrs_1 /home/josefonseca/Documents/thesis/verilog/weight_ram/Synth_weight_ram/Synth_weight_ram.srcs/constrs_1/new/weightRAM_timing.xdc
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+set_property strategy Performance_ExplorePostRoutePhysOpt [get_runs impl_1]
+set_property strategy Flow_PerfOptimized_high [get_runs synth_1]
+launch_runs impl_1
+wait_on_run impl_1
+create_run synth_2 -flow {Vivado Synthesis 2015} -strategy Flow_PerfOptimized_high
+current_run [get_runs synth_2]
+set_property -name {STEPS.SYNTH_DESIGN.ARGS.MORE OPTIONS} -value {-mode out_of_context} -objects [get_runs synth_2]
+launch_runs impl_2
+wait_on_run impl_2
+create_run impl_3 -parent_run synth_2 -flow {Vivado Implementation 2015} -strategy {Vivado Implementation Defaults}
+current_run [get_runs impl_3]
+set_property strategy Performance_ExplorePostRoutePhysOpt [get_runs impl_3]
+launch_runs impl_3
+wait_on_run impl_3
+reset_run impl_3
+launch_runs impl_3
+wait_on_run impl_3
+reset_run synth_2
+launch_runs impl_3
+wait_on_run impl_3
+reset_run impl_3 -noclean_dir 
