@@ -21,7 +21,7 @@ module tb_network();
     parameter HALF_CLOCK       = 1;
     parameter FULL_CLOCK       = 2*HALF_CLOCK;
     parameter MAX_SAMPLES      = 8;
-	parameter TRAIN_SAMPLES    = 100000;
+	parameter TRAIN_SAMPLES    = 200000;
 
 	reg clock;
 	reg reset;
@@ -40,6 +40,7 @@ module tb_network();
     reg	 enPerceptron;
     reg  modelOutput;
     reg [BITWIDTH-1:0] costFunc;
+    reg [BITWIDTH-1:0] wmax;
     //reg [2*BITWIDTH-1:0] costFuncIntermediate;
     reg newCostFunc;
     reg [64:0] currSecs [1:0];
@@ -61,7 +62,7 @@ module tb_network();
  
     // DUT Instantiation
     network              #(INPUT_SZ, HIDDEN_SZ, OUTPUT_SZ, QN, QM, DSP48_PER_ROW_G, DSP48_PER_ROW_M) 
-			LSTM_LAYER    (inputVec, 1'b1, {11'd1298, $random(currSecs[0])}, 11'd9, 11'd4, clock, reset, resetRAM, newCostFunc, costFunc, newSample, dataReady, trainingReady, outputVec);
+			LSTM_LAYER    (inputVec, 1'b1, {11'd2311, $random(currSecs[0])}, 11'd9, 11'd4, (18'd7 << 11), clock, reset, resetRAM, newCostFunc, costFunc, newSample, dataReady, trainingReady, outputVec);
 			
     array_prod #(HIDDEN_SZ, QN, QM)  PERCEPTRON  (Wperceptron, outputVec, clock, resetP, dataReadyP, networkOutput);
    
@@ -176,6 +177,7 @@ module tb_network();
 		newSample    = 0;
 	    newCostFunc  = 0;
 	    enPerceptron = 0;
+        wmax = (18'd9 << 11);
 		// Applying the initial reset
 		reset     = 1'b1;
 		resetRAM  = 1'b1;
@@ -194,9 +196,9 @@ module tb_network();
 			#(2*FULL_CLOCK);
 			reset     = 1'b0;
 			
-			if(k % 1000 == 0) begin
+			if(k % 100 == 0) begin
 				$display("Input Sample %d", k);
-				$display("Percentage Wrong bits: %f percent", 100*quantError/8000.0);
+				$display("Percentage Wrong bits: %f percent", 100*quantError/800.0);
 				quantError=0;
 			end
 			

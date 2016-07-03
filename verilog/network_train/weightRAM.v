@@ -44,7 +44,9 @@ module weightRAM #(parameter NROW = 16,
         end
         else if(reset == 1'b1) begin
 			for(i=0; i < NCOL; i=i+1) begin
-				RAM_matrix[i] <= {OUTPUT_PORT_SIZE{1'b0}};
+			    for(j=0; j < NROW; j=j+1) begin
+				    RAM_matrix[i][j] <= 18'd00400;//{OUTPUT_PORT_SIZE{1'b0};
+                end
 			end
 		end
     end
