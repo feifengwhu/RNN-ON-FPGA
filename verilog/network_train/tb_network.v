@@ -62,7 +62,7 @@ module tb_network();
  
     // DUT Instantiation
     network              #(INPUT_SZ, HIDDEN_SZ, OUTPUT_SZ, QN, QM, DSP48_PER_ROW_G, DSP48_PER_ROW_M) 
-			LSTM_LAYER    (inputVec, 1'b1, {11'd2311, $random(currSecs[0])}, 11'd9, 11'd4, (18'd7 << 11), clock, reset, resetRAM, newCostFunc, costFunc, newSample, dataReady, trainingReady, outputVec);
+			LSTM_LAYER    (inputVec, 1'b1, {11'd2311, $random(currSecs[0])}, 11'd9, 11'd5, (18'd7 << 11), clock, reset, resetRAM, newCostFunc, costFunc, newSample, dataReady, trainingReady, outputVec);
 			
     array_prod #(HIDDEN_SZ, QN, QM)  PERCEPTRON  (Wperceptron, outputVec, clock, resetP, dataReadyP, networkOutput);
    

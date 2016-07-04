@@ -368,137 +368,137 @@ module network  #(parameter INPUT_SZ   =  2,
 			for(j = 0; j < HIDDEN_SZ; j = j + 1) begin
 				// ZX weights
                 if(sign_wZX[j] == 1)
-                    if($signed(PREVwZX_out[j*BITWIDTH +: BITWIDTH] - (deltaCost << (pertRate - learnRate))) > $signed(wmax)) begin
+                    if($signed($signed(PREVwZX_out[j*BITWIDTH +: BITWIDTH]) - $signed(deltaCost << (pertRate - learnRate))) > $signed(wmax)) begin
                         //$display("Reached Max: %d > %d", wZX_in[j*BITWIDTH +: BITWIDTH], wmax);
                         wZX_in[j*BITWIDTH +: BITWIDTH] = wmax;
                     end
-                    else if($signed(PREVwZX_out[j*BITWIDTH +: BITWIDTH] - (deltaCost << (pertRate - learnRate))) < $signed(-wmax)) begin
+                    else if($signed($signed(PREVwZX_out[j*BITWIDTH +: BITWIDTH]) - $signed(deltaCost << (pertRate - learnRate))) < $signed(-wmax)) begin
                         //$display("Reached Max: %18b < %18b", wZX_in[j*BITWIDTH +: BITWIDTH], -wmax);
                         wZX_in[j*BITWIDTH +: BITWIDTH] = -wmax;
                     end
                     else begin
-                        wZX_in[j*BITWIDTH +: BITWIDTH] = PREVwZX_out[j*BITWIDTH +: BITWIDTH] - (deltaCost << (pertRate - learnRate));
+                        wZX_in[j*BITWIDTH +: BITWIDTH] = $signed(PREVwZX_out[j*BITWIDTH +: BITWIDTH]) - $signed(deltaCost << (pertRate - learnRate));
                         //$display("Stuff: %18b", wZX_in[j*BITWIDTH +: BITWIDTH]);
                     end
 				else
-					if($signed(PREVwZX_out[j*BITWIDTH +: BITWIDTH] + (deltaCost << (pertRate - learnRate))) > $signed(wmax))
+					if($signed($signed(PREVwZX_out[j*BITWIDTH +: BITWIDTH]) + $signed(deltaCost << (pertRate - learnRate))) > $signed(wmax))
                         wZX_in[j*BITWIDTH +: BITWIDTH] = wmax;
-                    else if($signed(PREVwZX_out[j*BITWIDTH +: BITWIDTH] + (deltaCost << (pertRate - learnRate))) < $signed(-wmax))
+                    else if($signed($signed(PREVwZX_out[j*BITWIDTH +: BITWIDTH]) + $signed(deltaCost << (pertRate - learnRate))) < $signed(-wmax))
                         wZX_in[j*BITWIDTH +: BITWIDTH] = -wmax;
                     else
-                        wZX_in[j*BITWIDTH +: BITWIDTH] = PREVwZX_out[j*BITWIDTH +: BITWIDTH] + (deltaCost << (pertRate - learnRate));
+                        wZX_in[j*BITWIDTH +: BITWIDTH] = $signed(PREVwZX_out[j*BITWIDTH +: BITWIDTH]) + $signed(deltaCost << (pertRate - learnRate));
 
                 // ZY weights
                 if(sign_wZY[j] == 1)
-					if($signed(PREVwZY_out[j*BITWIDTH +: BITWIDTH] - (deltaCost << (pertRate - learnRate))) > $signed(wmax))
+					if($signed($signed(PREVwZY_out[j*BITWIDTH +: BITWIDTH]) - $signed(deltaCost << (pertRate - learnRate))) > $signed(wmax))
                         wZY_in[j*BITWIDTH +: BITWIDTH] = wmax;
-                    else if($signed(PREVwZY_out[j*BITWIDTH +: BITWIDTH] - (deltaCost << (pertRate - learnRate))) < $signed(-wmax))
+                    else if($signed($signed(PREVwZY_out[j*BITWIDTH +: BITWIDTH]) - $signed(deltaCost << (pertRate - learnRate))) < $signed(-wmax))
                         wZY_in[j*BITWIDTH +: BITWIDTH] = -wmax;
                     else
-                        wZY_in[j*BITWIDTH +: BITWIDTH] = PREVwZY_out[j*BITWIDTH +: BITWIDTH] - (deltaCost << (pertRate - learnRate));
+                        wZY_in[j*BITWIDTH +: BITWIDTH] = $signed(PREVwZY_out[j*BITWIDTH +: BITWIDTH]) - $signed(deltaCost << (pertRate - learnRate));
 				else
-					if($signed(PREVwZY_out[j*BITWIDTH +: BITWIDTH] + (deltaCost << (pertRate - learnRate))) > $signed(wmax))
+					if($signed($signed(PREVwZY_out[j*BITWIDTH +: BITWIDTH]) + $signed(deltaCost << (pertRate - learnRate))) > $signed(wmax))
                         wZY_in[j*BITWIDTH +: BITWIDTH] = wmax;
-                    else if($signed(PREVwZY_out[j*BITWIDTH +: BITWIDTH] + (deltaCost << (pertRate - learnRate))) < $signed(-wmax))
+                    else if($signed($signed(PREVwZY_out[j*BITWIDTH +: BITWIDTH]) + $signed(deltaCost << (pertRate - learnRate))) < $signed(-wmax))
                         wZY_in[j*BITWIDTH +: BITWIDTH] = -wmax;
                     else
-                        wZY_in[j*BITWIDTH +: BITWIDTH] = PREVwZY_out[j*BITWIDTH +: BITWIDTH] + (deltaCost << (pertRate - learnRate));
+                        wZY_in[j*BITWIDTH +: BITWIDTH] = $signed(PREVwZY_out[j*BITWIDTH +: BITWIDTH]) + $signed(deltaCost << (pertRate - learnRate));
 					
 				// IX weights
                 if(sign_wIX[j] == 1)
-					if($signed(PREVwIX_out[j*BITWIDTH +: BITWIDTH] - (deltaCost << (pertRate - learnRate))) > $signed(wmax))
+					if($signed($signed(PREVwIX_out[j*BITWIDTH +: BITWIDTH]) - $signed(deltaCost << (pertRate - learnRate))) > $signed(wmax))
                         wIX_in[j*BITWIDTH +: BITWIDTH] = wmax;
-                    else if($signed(PREVwIX_out[j*BITWIDTH +: BITWIDTH] - (deltaCost << (pertRate - learnRate))) < $signed(-wmax))
+                    else if($signed($signed(PREVwIX_out[j*BITWIDTH +: BITWIDTH]) - $signed(deltaCost << (pertRate - learnRate))) < $signed(-wmax))
                         wIX_in[j*BITWIDTH +: BITWIDTH] = -wmax;
                     else
-                        wIX_in[j*BITWIDTH +: BITWIDTH] = PREVwIX_out[j*BITWIDTH +: BITWIDTH] - (deltaCost << (pertRate - learnRate));
+                        wIX_in[j*BITWIDTH +: BITWIDTH] = $signed(PREVwIX_out[j*BITWIDTH +: BITWIDTH]) - $signed(deltaCost << (pertRate - learnRate));
 				else
-					if($signed(PREVwIX_out[j*BITWIDTH +: BITWIDTH] + (deltaCost << (pertRate - learnRate))) > $signed(wmax))
+					if($signed($signed(PREVwIX_out[j*BITWIDTH +: BITWIDTH]) + $signed(deltaCost << (pertRate - learnRate))) > $signed(wmax))
                         wIX_in[j*BITWIDTH +: BITWIDTH] = wmax;
-                    else if($signed(PREVwIX_out[j*BITWIDTH +: BITWIDTH] + (deltaCost << (pertRate - learnRate))) < $signed(-wmax))
+                    else if($signed($signed(PREVwIX_out[j*BITWIDTH +: BITWIDTH]) + $signed(deltaCost << (pertRate - learnRate))) < $signed(-wmax))
                         wIX_in[j*BITWIDTH +: BITWIDTH] = -wmax;
                     else
-                        wIX_in[j*BITWIDTH +: BITWIDTH] = PREVwIX_out[j*BITWIDTH +: BITWIDTH] + (deltaCost << (pertRate - learnRate));
+                        wIX_in[j*BITWIDTH +: BITWIDTH] = $signed(PREVwIX_out[j*BITWIDTH +: BITWIDTH]) + $signed(deltaCost << (pertRate - learnRate));
 
                 // IY weights
                 if(sign_wIY[j] == 1)
-					if($signed(PREVwIY_out[j*BITWIDTH +: BITWIDTH] - (deltaCost << (pertRate - learnRate))) > $signed(wmax))
+					if($signed($signed(PREVwIY_out[j*BITWIDTH +: BITWIDTH]) - $signed(deltaCost << (pertRate - learnRate))) > $signed(wmax))
                         wIY_in[j*BITWIDTH +: BITWIDTH] = wmax;
-                    else if($signed(PREVwIY_out[j*BITWIDTH +: BITWIDTH] - (deltaCost << (pertRate - learnRate))) < $signed(-wmax))
+                    else if($signed($signed(PREVwIY_out[j*BITWIDTH +: BITWIDTH]) - $signed(deltaCost << (pertRate - learnRate))) < $signed(-wmax))
                         wIY_in[j*BITWIDTH +: BITWIDTH] = -wmax;
                     else
-                        wIY_in[j*BITWIDTH +: BITWIDTH] = PREVwIY_out[j*BITWIDTH +: BITWIDTH] - (deltaCost << (pertRate - learnRate));
+                        wIY_in[j*BITWIDTH +: BITWIDTH] = $signed(PREVwIY_out[j*BITWIDTH +: BITWIDTH]) - $signed(deltaCost << (pertRate - learnRate));
 				else
-					if($signed(PREVwIY_out[j*BITWIDTH +: BITWIDTH] + (deltaCost << (pertRate - learnRate))) > $signed(wmax))
+					if($signed($signed(PREVwIY_out[j*BITWIDTH +: BITWIDTH]) + $signed(deltaCost << (pertRate - learnRate))) > $signed(wmax))
                         wIY_in[j*BITWIDTH +: BITWIDTH] = wmax;
-                    else if($signed(PREVwIY_out[j*BITWIDTH +: BITWIDTH] + (deltaCost << (pertRate - learnRate))) < $signed(-wmax))
+                    else if($signed($signed(PREVwIY_out[j*BITWIDTH +: BITWIDTH]) + $signed(deltaCost << (pertRate - learnRate))) < $signed(-wmax))
                         wIY_in[j*BITWIDTH +: BITWIDTH] = -wmax;
                     else
-                        wIY_in[j*BITWIDTH +: BITWIDTH] = PREVwIY_out[j*BITWIDTH +: BITWIDTH] + (deltaCost << (pertRate - learnRate));
+                        wIY_in[j*BITWIDTH +: BITWIDTH] = $signed(PREVwIY_out[j*BITWIDTH +: BITWIDTH]) + $signed(deltaCost << (pertRate - learnRate));
 
 				// FX weights
                 if(sign_wFX[j] == 1)
-					if($signed(PREVwFX_out[j*BITWIDTH +: BITWIDTH] - (deltaCost << (pertRate - learnRate))) > $signed(wmax))
+					if($signed($signed(PREVwFX_out[j*BITWIDTH +: BITWIDTH]) - $signed(deltaCost << (pertRate - learnRate))) > $signed(wmax))
                         wFX_in[j*BITWIDTH +: BITWIDTH] = wmax;
-                    else if($signed(PREVwFX_out[j*BITWIDTH +: BITWIDTH] - (deltaCost << (pertRate - learnRate))) < $signed(-wmax))
+                    else if($signed($signed(PREVwFX_out[j*BITWIDTH +: BITWIDTH]) - $signed(deltaCost << (pertRate - learnRate))) < $signed(-wmax))
                         wFX_in[j*BITWIDTH +: BITWIDTH] = -wmax;
                     else
-                        wFX_in[j*BITWIDTH +: BITWIDTH] = PREVwFX_out[j*BITWIDTH +: BITWIDTH] - (deltaCost << (pertRate - learnRate));
+                        wFX_in[j*BITWIDTH +: BITWIDTH] = $signed(PREVwFX_out[j*BITWIDTH +: BITWIDTH]) - $signed(deltaCost << (pertRate - learnRate));
 				else
-					if($signed(PREVwFX_out[j*BITWIDTH +: BITWIDTH] + (deltaCost << (pertRate - learnRate))) > $signed(wmax))
+					if($signed($signed(PREVwFX_out[j*BITWIDTH +: BITWIDTH]) + $signed(deltaCost << (pertRate - learnRate))) > $signed(wmax))
                         wFX_in[j*BITWIDTH +: BITWIDTH] = wmax;
-                    else if($signed(PREVwFX_out[j*BITWIDTH +: BITWIDTH] + (deltaCost << (pertRate - learnRate))) < $signed(-wmax))
+                    else if($signed($signed(PREVwFX_out[j*BITWIDTH +: BITWIDTH]) + $signed(deltaCost << (pertRate - learnRate))) < $signed(-wmax))
                         wFX_in[j*BITWIDTH +: BITWIDTH] = -wmax;
                     else
-                        wFX_in[j*BITWIDTH +: BITWIDTH] = PREVwFX_out[j*BITWIDTH +: BITWIDTH] + (deltaCost << (pertRate - learnRate));
+                        wFX_in[j*BITWIDTH +: BITWIDTH] = $signed(PREVwFX_out[j*BITWIDTH +: BITWIDTH]) + $signed(deltaCost << (pertRate - learnRate));
 
                 // FY weights
                 if(sign_wFY[j] == 1)
-					if($signed(PREVwFY_out[j*BITWIDTH +: BITWIDTH] - (deltaCost << (pertRate - learnRate))) > $signed(wmax))
+					if($signed($signed(PREVwFY_out[j*BITWIDTH +: BITWIDTH]) - $signed(deltaCost << (pertRate - learnRate))) > $signed(wmax))
                         wFY_in[j*BITWIDTH +: BITWIDTH] = wmax;
-                    else if($signed(PREVwFY_out[j*BITWIDTH +: BITWIDTH] - (deltaCost << (pertRate - learnRate))) < $signed(-wmax))
+                    else if($signed($signed(PREVwFY_out[j*BITWIDTH +: BITWIDTH]) - $signed(deltaCost << (pertRate - learnRate))) < $signed(-wmax))
                         wFY_in[j*BITWIDTH +: BITWIDTH] = -wmax;
                     else
-                        wFY_in[j*BITWIDTH +: BITWIDTH] = PREVwFY_out[j*BITWIDTH +: BITWIDTH] - (deltaCost << (pertRate - learnRate));
+                        wFY_in[j*BITWIDTH +: BITWIDTH] = $signed(PREVwFY_out[j*BITWIDTH +: BITWIDTH]) - $signed(deltaCost << (pertRate - learnRate));
 				else
-					if($signed(PREVwFY_out[j*BITWIDTH +: BITWIDTH] + (deltaCost << (pertRate - learnRate))) > $signed(wmax))
+					if($signed($signed(PREVwFY_out[j*BITWIDTH +: BITWIDTH]) + $signed(deltaCost << (pertRate - learnRate))) > $signed(wmax))
                         wFY_in[j*BITWIDTH +: BITWIDTH] = wmax;
-                    else if($signed(PREVwFY_out[j*BITWIDTH +: BITWIDTH] + (deltaCost << (pertRate - learnRate))) < $signed(-wmax))
+                    else if($signed($signed(PREVwFY_out[j*BITWIDTH +: BITWIDTH]) + $signed(deltaCost << (pertRate - learnRate))) < $signed(-wmax))
                         wFY_in[j*BITWIDTH +: BITWIDTH] = -wmax;
                     else
-                        wFY_in[j*BITWIDTH +: BITWIDTH] = PREVwFY_out[j*BITWIDTH +: BITWIDTH] + (deltaCost << (pertRate - learnRate));
+                        wFY_in[j*BITWIDTH +: BITWIDTH] = $signed(PREVwFY_out[j*BITWIDTH +: BITWIDTH]) + $signed(deltaCost << (pertRate - learnRate));
 
 				// OX weights
                 if(sign_wOX[j] == 1)
-					if($signed(PREVwOX_out[j*BITWIDTH +: BITWIDTH] - (deltaCost << (pertRate - learnRate))) > $signed(wmax))
+					if($signed($signed(PREVwOX_out[j*BITWIDTH +: BITWIDTH]) - $signed(deltaCost << (pertRate - learnRate))) > $signed(wmax))
                         wOX_in[j*BITWIDTH +: BITWIDTH] = wmax;
-                    else if($signed(PREVwOX_out[j*BITWIDTH +: BITWIDTH] - (deltaCost << (pertRate - learnRate))) < $signed(-wmax))
+                    else if($signed($signed(PREVwOX_out[j*BITWIDTH +: BITWIDTH]) - $signed(deltaCost << (pertRate - learnRate))) < $signed(-wmax))
                         wOX_in[j*BITWIDTH +: BITWIDTH] = -wmax;
                     else
-                        wOX_in[j*BITWIDTH +: BITWIDTH] = PREVwOX_out[j*BITWIDTH +: BITWIDTH] - (deltaCost << (pertRate - learnRate));
+                        wOX_in[j*BITWIDTH +: BITWIDTH] = $signed(PREVwOX_out[j*BITWIDTH +: BITWIDTH]) - $signed(deltaCost << (pertRate - learnRate));
 				else
-					if($signed(PREVwOX_out[j*BITWIDTH +: BITWIDTH] + (deltaCost << (pertRate - learnRate))) > $signed(wmax))
+					if($signed($signed(PREVwOX_out[j*BITWIDTH +: BITWIDTH]) + $signed(deltaCost << (pertRate - learnRate))) > $signed(wmax))
                         wOX_in[j*BITWIDTH +: BITWIDTH] = wmax;
-                    else if($signed(PREVwOX_out[j*BITWIDTH +: BITWIDTH] + (deltaCost << (pertRate - learnRate))) < $signed(-wmax))
+                    else if($signed($signed(PREVwOX_out[j*BITWIDTH +: BITWIDTH]) + $signed(deltaCost << (pertRate - learnRate))) < $signed(-wmax))
                         wOX_in[j*BITWIDTH +: BITWIDTH] = -wmax;
                     else
-                        wOX_in[j*BITWIDTH +: BITWIDTH] = PREVwOX_out[j*BITWIDTH +: BITWIDTH] + (deltaCost << (pertRate - learnRate));
+                        wOX_in[j*BITWIDTH +: BITWIDTH] = $signed(PREVwOX_out[j*BITWIDTH +: BITWIDTH]) + $signed(deltaCost << (pertRate - learnRate));
 
 				// OY weights
                 if(sign_wOY[j] == 1)
-					if($signed(PREVwOY_out[j*BITWIDTH +: BITWIDTH] - (deltaCost << (pertRate - learnRate))) > $signed(wmax))
+					if($signed($signed(PREVwOY_out[j*BITWIDTH +: BITWIDTH]) - $signed(deltaCost << (pertRate - learnRate))) > $signed(wmax))
                         wOY_in[j*BITWIDTH +: BITWIDTH] = wmax;
-                    else if($signed(PREVwOY_out[j*BITWIDTH +: BITWIDTH] - (deltaCost << (pertRate - learnRate))) < $signed(-wmax))
+                    else if($signed($signed(PREVwOY_out[j*BITWIDTH +: BITWIDTH]) - $signed(deltaCost << (pertRate - learnRate))) < $signed(-wmax))
                         wOY_in[j*BITWIDTH +: BITWIDTH] = -wmax;
                     else
-                        wOY_in[j*BITWIDTH +: BITWIDTH] = PREVwOY_out[j*BITWIDTH +: BITWIDTH] - (deltaCost << (pertRate - learnRate));
+                        wOY_in[j*BITWIDTH +: BITWIDTH] = $signed(PREVwOY_out[j*BITWIDTH +: BITWIDTH]) - $signed(deltaCost << (pertRate - learnRate));
 				else
-					if($signed(PREVwOY_out[j*BITWIDTH +: BITWIDTH] + (deltaCost << (pertRate - learnRate))) > $signed(wmax))
+					if($signed($signed(PREVwOY_out[j*BITWIDTH +: BITWIDTH]) + $signed(deltaCost << (pertRate - learnRate))) > $signed(wmax))
                         wOY_in[j*BITWIDTH +: BITWIDTH] = wmax;
-                    else if($signed(PREVwOY_out[j*BITWIDTH +: BITWIDTH] + (deltaCost << (pertRate - learnRate))) < $signed(-wmax))
+                    else if($signed($signed(PREVwOY_out[j*BITWIDTH +: BITWIDTH]) + $signed(deltaCost << (pertRate - learnRate))) < $signed(-wmax))
                         wOY_in[j*BITWIDTH +: BITWIDTH] = -wmax;
                     else
-                        wOY_in[j*BITWIDTH +: BITWIDTH] = PREVwOY_out[j*BITWIDTH +: BITWIDTH] + (deltaCost << (pertRate - learnRate));
+                        wOY_in[j*BITWIDTH +: BITWIDTH] = $signed(PREVwOY_out[j*BITWIDTH +: BITWIDTH]) + $signed(deltaCost << (pertRate - learnRate));
 				
 			end
 		end
@@ -508,67 +508,67 @@ module network  #(parameter INPUT_SZ   =  2,
 		for(j = 0; j < HIDDEN_SZ; j = j + 1) begin
             // bZ weights
 			if(sign_bZ[j] == 1)
-                if($signed(bZ[j*BITWIDTH +: BITWIDTH] - (deltaCost << (pertRate - learnRate))) > $signed(wmax))
+                if($signed($signed(bZ[j*BITWIDTH +: BITWIDTH]) - $signed(deltaCost << (pertRate - learnRate))) > $signed(wmax))
                     bZ[j*BITWIDTH +: BITWIDTH] <= wmax;
-                else if($signed(bZ[j*BITWIDTH +: BITWIDTH] - (deltaCost << (pertRate - learnRate))) < $signed(-wmax))
+                else if($signed($signed(bZ[j*BITWIDTH +: BITWIDTH]) - $signed(deltaCost << (pertRate - learnRate))) < $signed(-wmax))
                     bZ[j*BITWIDTH +: BITWIDTH] <= -wmax;
                 else
-				    bZ[j*BITWIDTH +: BITWIDTH] <= bZ[j*BITWIDTH +: BITWIDTH] - (deltaCost << (pertRate - learnRate));
+				    bZ[j*BITWIDTH +: BITWIDTH] <= $signed(bZ[j*BITWIDTH +: BITWIDTH]) - $signed(deltaCost << (pertRate - learnRate));
 			else
-                if($signed(bZ[j*BITWIDTH +: BITWIDTH] + (deltaCost << (pertRate - learnRate))) > $signed(wmax))
+                if($signed($signed(bZ[j*BITWIDTH +: BITWIDTH]) + $signed(deltaCost << (pertRate - learnRate))) > $signed(wmax))
                     bZ[j*BITWIDTH +: BITWIDTH] <= wmax;
-                else if($signed(bZ[j*BITWIDTH +: BITWIDTH] + (deltaCost << (pertRate - learnRate))) < $signed(-wmax))
+                else if($signed($signed(bZ[j*BITWIDTH +: BITWIDTH]) + $signed(deltaCost << (pertRate - learnRate))) < $signed(-wmax))
                     bZ[j*BITWIDTH +: BITWIDTH] <= -wmax;
                 else
-				    bZ[j*BITWIDTH +: BITWIDTH] <= bZ[j*BITWIDTH +: BITWIDTH] + (deltaCost << (pertRate - learnRate));
+				    bZ[j*BITWIDTH +: BITWIDTH] <= $signed(bZ[j*BITWIDTH +: BITWIDTH]) + $signed(deltaCost << (pertRate - learnRate));
 
             // bI weights
 			if(sign_bI[j] == 1)
-                if($signed(bI[j*BITWIDTH +: BITWIDTH] - (deltaCost << (pertRate - learnRate))) > $signed(wmax))
+                if($signed($signed(bI[j*BITWIDTH +: BITWIDTH]) - $signed(deltaCost << (pertRate - learnRate))) > $signed(wmax))
                     bI[j*BITWIDTH +: BITWIDTH] <= wmax;
-                else if($signed(bI[j*BITWIDTH +: BITWIDTH] - (deltaCost << (pertRate - learnRate))) < $signed(-wmax))
+                else if($signed($signed(bI[j*BITWIDTH +: BITWIDTH]) - $signed(deltaCost << (pertRate - learnRate))) < $signed(-wmax))
                     bI[j*BITWIDTH +: BITWIDTH] <= -wmax;
                 else
-				    bI[j*BITWIDTH +: BITWIDTH] <= bI[j*BITWIDTH +: BITWIDTH] - (deltaCost << (pertRate - learnRate));
+				    bI[j*BITWIDTH +: BITWIDTH] <= $signed(bI[j*BITWIDTH +: BITWIDTH]) - $signed(deltaCost << (pertRate - learnRate));
 			else
-                if($signed(bI[j*BITWIDTH +: BITWIDTH] + (deltaCost << (pertRate - learnRate))) > $signed(wmax))
+                if($signed($signed(bI[j*BITWIDTH +: BITWIDTH]) + $signed(deltaCost << (pertRate - learnRate))) > $signed(wmax))
                     bI[j*BITWIDTH +: BITWIDTH] <= wmax;
-                else if($signed(bI[j*BITWIDTH +: BITWIDTH] + (deltaCost << (pertRate - learnRate))) < $signed(-wmax))
+                else if($signed($signed(bI[j*BITWIDTH +: BITWIDTH]) + $signed(deltaCost << (pertRate - learnRate))) < $signed(-wmax))
                     bI[j*BITWIDTH +: BITWIDTH] <= -wmax;
                 else
-				    bI[j*BITWIDTH +: BITWIDTH] <= bI[j*BITWIDTH +: BITWIDTH] + (deltaCost << (pertRate - learnRate));
+				    bI[j*BITWIDTH +: BITWIDTH] <= $signed(bI[j*BITWIDTH +: BITWIDTH]) + $signed(deltaCost << (pertRate - learnRate));
 
             // bF weights
 			if(sign_bF[j] == 1)
-                if($signed(bF[j*BITWIDTH +: BITWIDTH] - (deltaCost << (pertRate - learnRate))) > $signed(wmax))
+                if($signed($signed(bF[j*BITWIDTH +: BITWIDTH]) - $signed(deltaCost << (pertRate - learnRate))) > $signed(wmax))
                     bF[j*BITWIDTH +: BITWIDTH] <= wmax;
-                else if($signed(bF[j*BITWIDTH +: BITWIDTH] - (deltaCost << (pertRate - learnRate))) < $signed(-wmax))
+                else if($signed($signed(bF[j*BITWIDTH +: BITWIDTH]) - $signed(deltaCost << (pertRate - learnRate))) < $signed(-wmax))
                     bF[j*BITWIDTH +: BITWIDTH] <= -wmax;
                 else
-				    bF[j*BITWIDTH +: BITWIDTH] <= bF[j*BITWIDTH +: BITWIDTH] - (deltaCost << (pertRate - learnRate));
+				    bF[j*BITWIDTH +: BITWIDTH] <= $signed(bF[j*BITWIDTH +: BITWIDTH]) - $signed(deltaCost << (pertRate - learnRate));
 			else
-                if($signed(bF[j*BITWIDTH +: BITWIDTH] + (deltaCost << (pertRate - learnRate))) > $signed(wmax))
+                if($signed($signed(bF[j*BITWIDTH +: BITWIDTH]) + $signed(deltaCost << (pertRate - learnRate))) > $signed(wmax))
                     bF[j*BITWIDTH +: BITWIDTH] <= wmax;
-                else if($signed(bF[j*BITWIDTH +: BITWIDTH] + (deltaCost << (pertRate - learnRate))) < $signed(-wmax))
+                else if($signed($signed(bF[j*BITWIDTH +: BITWIDTH]) + $signed(deltaCost << (pertRate - learnRate))) < $signed(-wmax))
                     bF[j*BITWIDTH +: BITWIDTH] <= -wmax;
                 else
-				    bF[j*BITWIDTH +: BITWIDTH] <= bF[j*BITWIDTH +: BITWIDTH] + (deltaCost << (pertRate - learnRate));
+				    bF[j*BITWIDTH +: BITWIDTH] <= $signed(bF[j*BITWIDTH +: BITWIDTH]) + $signed(deltaCost << (pertRate - learnRate));
 
             // bO weights
 			if(sign_bO[j] == 1)
-                if($signed(bO[j*BITWIDTH +: BITWIDTH] - (deltaCost << (pertRate - learnRate))) > $signed(wmax))
+                if($signed($signed(bO[j*BITWIDTH +: BITWIDTH]) - $signed(deltaCost << (pertRate - learnRate))) > $signed(wmax))
                     bO[j*BITWIDTH +: BITWIDTH] <= wmax;
-                else if($signed(bO[j*BITWIDTH +: BITWIDTH] - (deltaCost << (pertRate - learnRate))) < $signed(-wmax))
+                else if($signed($signed(bO[j*BITWIDTH +: BITWIDTH]) - $signed(deltaCost << (pertRate - learnRate))) < $signed(-wmax))
                     bO[j*BITWIDTH +: BITWIDTH] <= -wmax;
                 else
-				    bO[j*BITWIDTH +: BITWIDTH] <= bO[j*BITWIDTH +: BITWIDTH] - (deltaCost << (pertRate - learnRate));
+				    bO[j*BITWIDTH +: BITWIDTH] <= $signed(bO[j*BITWIDTH +: BITWIDTH]) - $signed(deltaCost << (pertRate - learnRate));
 			else
-                if($signed(bO[j*BITWIDTH +: BITWIDTH] + (deltaCost << (pertRate - learnRate))) > $signed(wmax))
+                if($signed($signed(bO[j*BITWIDTH +: BITWIDTH]) + $signed(deltaCost << (pertRate - learnRate))) > $signed(wmax))
                     bO[j*BITWIDTH +: BITWIDTH] <= wmax;
-                else if($signed(bO[j*BITWIDTH +: BITWIDTH] + (deltaCost << (pertRate - learnRate))) < $signed(-wmax))
+                else if($signed($signed(bO[j*BITWIDTH +: BITWIDTH]) + $signed(deltaCost << (pertRate - learnRate))) < $signed(-wmax))
                     bO[j*BITWIDTH +: BITWIDTH] <= -wmax;
                 else
-				    bO[j*BITWIDTH +: BITWIDTH] <= bO[j*BITWIDTH +: BITWIDTH] + (deltaCost << (pertRate - learnRate));
+				    bO[j*BITWIDTH +: BITWIDTH] <= $signed(bO[j*BITWIDTH +: BITWIDTH]) + $signed(deltaCost << (pertRate - learnRate));
 		end
 	end
 	

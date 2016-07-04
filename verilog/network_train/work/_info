@@ -90,211 +90,211 @@ n@_opt8
 R2
 R0
 T_opt9
-!s110 1467477243
-V:1Zdh[SNC8e::3izZ@Q;P1
+!s110 1467567088
+VcN[3>XW7CdbC0kWKFG9801
 R3
-=1-50465de28cf7-5777ecfb-9a502-dce
+=1-d43d7e359f7e-57794bf0-9b4fc-2c75
 R1
 n@_opt9
 R2
 varray_prod
-Z5 !s110 1467477241
+Z5 !s110 1467567087
 !i10b 1
 !s100 m[KFbYiYj3oaci2JZ4o0o1
 ISb4fQ>`i2c?4GzbEaDHIE2
 Z6 VDg1SIo80bB@j0V0VzS_@n1
-Z7 d/home/josefonseca/thesis/verilog/network_train
-Z8 w1466346092
+R0
+Z7 w1465990205
 8array_prod.v
 Farray_prod.v
 L0 1
-Z9 OL;L;10.4c_5;61
+Z8 OL;L;10.4c_5;61
 r1
 !s85 0
 31
-Z10 !s108 1467477240.000000
-Z11 !s107 weightRAM.v|test.v|tb_network.v|tanh.v|sigmoid.v|prng.v|network.v|gate.v|dot_prod.v|array_prod.v|
-Z12 !s90 array_prod.v|dot_prod.v|gate.v|network.v|prng.v|sigmoid.v|tanh.v|tb_network.v|test.v|weightRAM.v|
+Z9 !s108 1467567087.000000
+Z10 !s107 weightRAM.v|test.v|tb_network.v|tanh.v|sigmoid.v|prng.v|network.v|gate.v|dot_prod.v|array_prod.v|
+Z11 !s90 array_prod.v|dot_prod.v|gate.v|network.v|prng.v|sigmoid.v|tanh.v|tb_network.v|test.v|weightRAM.v|
 !i113 0
-Z13 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z12 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 vdot_prod
 R5
 !i10b 1
 !s100 oHCm7P2f5b6C>Z[d<Nj_S2
 IHNPaG32oGPknzB[=7<`6M1
 R6
+R0
 R7
-R8
 8dot_prod.v
 Fdot_prod.v
 L0 1
-R9
+R8
 r1
 !s85 0
 31
+R9
 R10
 R11
-R12
 !i113 0
-R13
+R12
 vgate
 R5
 !i10b 1
 !s100 ;Rcno4gAW<?oQ3=0hGD2]2
 IMfSmXg7zX;]H_OB1jKJ]_2
 R6
+R0
 R7
-R8
 8gate.v
 Fgate.v
 L0 1
-R9
+R8
 r1
 !s85 0
 31
+R9
 R10
 R11
-R12
 !i113 0
-R13
+R12
 vnetwork
 R5
 !i10b 1
-!s100 18OOAkgW8[_FeUP:YXQ:X1
-IHY@Y_Um1Il8ON8>XE4^lL3
+!s100 8HAQLz7c^98R5g8^m`HnL1
+I6n[==DPoHdV=?00Bb8;[S3
 R6
-R7
-w1467476927
+R0
+w1467558320
 8network.v
 Fnetwork.v
 L0 1
-R9
+R8
 r1
 !s85 0
 31
+R9
 R10
 R11
-R12
 !i113 0
-R13
+R12
 vprng
 R5
 !i10b 1
 !s100 dePj_k5mAjb::3M60HzJA3
 IMQ:c]c=g0GMa8YZOT0Fh83
 R6
+R0
 R7
-R8
 8prng.v
 Fprng.v
 L0 1
-R9
+R8
 r1
 !s85 0
 31
+R9
 R10
 R11
-R12
 !i113 0
-R13
+R12
 vsigmoid
 R5
 !i10b 1
 !s100 1:7_Q4dT_iT7d0C`djFhj1
 IEhe?kD14[Ab3ad:aeYXmY3
 R6
+R0
 R7
-R8
 8sigmoid.v
 Fsigmoid.v
 L0 1
-R9
+R8
 r1
 !s85 0
 31
+R9
 R10
 R11
-R12
 !i113 0
-R13
+R12
 vtanh
 R5
 !i10b 1
 !s100 IOXXJE>OW2b[ZX1`L7WPX0
 I0^e=H]?g@0lVVQXF>W]Ld2
 R6
+R0
 R7
-R8
 8tanh.v
 Ftanh.v
 L0 1
-R9
+R8
 r1
 !s85 0
 31
+R9
 R10
 R11
-R12
 !i113 0
-R13
+R12
 vtb_network
 R5
 !i10b 1
-!s100 j^PJ<I:SQOLnR]Rz]UlCA1
-IH`D07iE@N6E3mKl9Z;F7=0
+!s100 J?iGLO7JCT;BEcR`^faWZ2
+IcUc;Xg^V=:UU6SaII30:R0
 R6
-R7
-w1467477225
+R0
+w1467567083
 8tb_network.v
 Ftb_network.v
 L0 3
-R9
+R8
 r1
 !s85 0
 31
+R9
 R10
 R11
-R12
 !i113 0
-R13
+R12
 vtest
 R5
 !i10b 1
 !s100 SW@1IGQVWN7HGe39`D]jj2
 I;g]G6?;oDojb=aU@V2cHS2
 R6
+R0
 R7
-R8
 8test.v
 Ftest.v
 L0 1
-R9
+R8
 r1
 !s85 0
 31
+R9
 R10
 R11
-R12
 !i113 0
-R13
+R12
 vweightRAM
 R5
 !i10b 1
 !s100 _CHaCX4KGNhCj;M9^`<>^0
 I7QDac0H@A?8Mng[LG]`K:1
 R6
-R7
-w1467371823
+R0
+w1467556462
 8weightRAM.v
 FweightRAM.v
 L0 1
-R9
+R8
 r1
 !s85 0
 31
+R9
 R10
 R11
-R12
 !i113 0
-R13
+R12
 nweight@r@a@m
