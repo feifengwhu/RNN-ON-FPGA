@@ -1,22 +1,6 @@
-# vsim -c -do "run -all" tb_network 
-# Start time: 18:31:28 on Jul 03,2016
+# vsim -voptargs="+acc" -c -do "run -all" tb_network 
+# Start time: 20:27:34 on Jul 05,2016
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# ** Warning: network.v(228): (vopt-2241) Connection width does not match width of port 'addressIn'. The port definition is at: weightRAM.v(4).
-# ** Warning: network.v(229): (vopt-2241) Connection width does not match width of port 'addressIn'. The port definition is at: weightRAM.v(4).
-# ** Warning: network.v(233): (vopt-2241) Connection width does not match width of port 'addressIn'. The port definition is at: weightRAM.v(4).
-# ** Warning: network.v(234): (vopt-2241) Connection width does not match width of port 'addressIn'. The port definition is at: weightRAM.v(4).
-# ** Warning: network.v(238): (vopt-2241) Connection width does not match width of port 'addressIn'. The port definition is at: weightRAM.v(4).
-# ** Warning: network.v(239): (vopt-2241) Connection width does not match width of port 'addressIn'. The port definition is at: weightRAM.v(4).
-# ** Warning: network.v(243): (vopt-2241) Connection width does not match width of port 'addressIn'. The port definition is at: weightRAM.v(4).
-# ** Warning: network.v(244): (vopt-2241) Connection width does not match width of port 'addressIn'. The port definition is at: weightRAM.v(4).
-# ** Warning: network.v(275): (vopt-2241) Connection width does not match width of port 'addressOut'. The port definition is at: weightRAM.v(5).
-# ** Warning: network.v(276): (vopt-2241) Connection width does not match width of port 'addressOut'. The port definition is at: weightRAM.v(5).
-# ** Warning: network.v(277): (vopt-2241) Connection width does not match width of port 'addressOut'. The port definition is at: weightRAM.v(5).
-# ** Warning: network.v(278): (vopt-2241) Connection width does not match width of port 'addressOut'. The port definition is at: weightRAM.v(5).
-# ** Warning: network.v(279): (vopt-2241) Connection width does not match width of port 'addressOut'. The port definition is at: weightRAM.v(5).
-# ** Warning: network.v(280): (vopt-2241) Connection width does not match width of port 'addressOut'. The port definition is at: weightRAM.v(5).
-# ** Warning: network.v(281): (vopt-2241) Connection width does not match width of port 'addressOut'. The port definition is at: weightRAM.v(5).
-# ** Warning: network.v(282): (vopt-2241) Connection width does not match width of port 'addressOut'. The port definition is at: weightRAM.v(5).
 # //  Questa Sim-64
 # //  Version 10.4c_5 linux_x86_64 Nov 14 2015
 # //
@@ -33,90 +17,287 @@
 # //  THE TRADE SECRETS ACT, 18 U.S.C. SECTION 1905.
 # //
 # Loading work.tb_network(fast)
+# Loading work.network(fast)
+# Loading work.gate(fast)
+# Loading work.dot_prod(fast)
+# Loading work.dot_prod(fast__1)
+# Loading work.weightRAM(fast)
+# Loading work.weightRAM(fast__1)
+# Loading work.sigmoid(fast)
+# Loading work.tanh(fast)
+# Loading work.prng(fast)
+# Loading work.weightRAM(fast__2)
+# Loading work.weightRAM(fast__3)
+# Loading work.array_prod(fast)
+# ** Warning: (vsim-3015) network.v(228): [PCDPC] - Port size (1) does not match connection size (2) for port 'addressIn'. The port definition is at: weightRAM.v(4).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_network/LSTM_LAYER/WRAM_Z_X File: weightRAM.v
+# ** Warning: (vsim-3015) network.v(229): [PCDPC] - Port size (3) does not match connection size (4) for port 'addressIn'. The port definition is at: weightRAM.v(4).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_network/LSTM_LAYER/WRAM_Z_Y File: weightRAM.v
+# ** Warning: (vsim-3015) network.v(233): [PCDPC] - Port size (1) does not match connection size (2) for port 'addressIn'. The port definition is at: weightRAM.v(4).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_network/LSTM_LAYER/WRAM_I_X File: weightRAM.v
+# ** Warning: (vsim-3015) network.v(234): [PCDPC] - Port size (3) does not match connection size (4) for port 'addressIn'. The port definition is at: weightRAM.v(4).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_network/LSTM_LAYER/WRAM_I_Y File: weightRAM.v
+# ** Warning: (vsim-3015) network.v(238): [PCDPC] - Port size (1) does not match connection size (2) for port 'addressIn'. The port definition is at: weightRAM.v(4).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_network/LSTM_LAYER/WRAM_F_X File: weightRAM.v
+# ** Warning: (vsim-3015) network.v(239): [PCDPC] - Port size (3) does not match connection size (4) for port 'addressIn'. The port definition is at: weightRAM.v(4).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_network/LSTM_LAYER/WRAM_F_Y File: weightRAM.v
+# ** Warning: (vsim-3015) network.v(243): [PCDPC] - Port size (1) does not match connection size (2) for port 'addressIn'. The port definition is at: weightRAM.v(4).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_network/LSTM_LAYER/WRAM_O_X File: weightRAM.v
+# ** Warning: (vsim-3015) network.v(244): [PCDPC] - Port size (3) does not match connection size (4) for port 'addressIn'. The port definition is at: weightRAM.v(4).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_network/LSTM_LAYER/WRAM_O_Y File: weightRAM.v
+# ** Warning: (vsim-3015) network.v(275): [PCDPC] - Port size (1) does not match connection size (2) for port 'addressOut'. The port definition is at: weightRAM.v(5).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_network/LSTM_LAYER/PRAM_Z_X File: weightRAM.v
+# ** Warning: (vsim-3015) network.v(276): [PCDPC] - Port size (3) does not match connection size (4) for port 'addressOut'. The port definition is at: weightRAM.v(5).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_network/LSTM_LAYER/PRAM_Z_Y File: weightRAM.v
+# ** Warning: (vsim-3015) network.v(277): [PCDPC] - Port size (1) does not match connection size (2) for port 'addressOut'. The port definition is at: weightRAM.v(5).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_network/LSTM_LAYER/PRAM_I_X File: weightRAM.v
+# ** Warning: (vsim-3015) network.v(278): [PCDPC] - Port size (3) does not match connection size (4) for port 'addressOut'. The port definition is at: weightRAM.v(5).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_network/LSTM_LAYER/PRAM_I_Y File: weightRAM.v
+# ** Warning: (vsim-3015) network.v(279): [PCDPC] - Port size (1) does not match connection size (2) for port 'addressOut'. The port definition is at: weightRAM.v(5).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_network/LSTM_LAYER/PRAM_F_X File: weightRAM.v
+# ** Warning: (vsim-3015) network.v(280): [PCDPC] - Port size (3) does not match connection size (4) for port 'addressOut'. The port definition is at: weightRAM.v(5).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_network/LSTM_LAYER/PRAM_F_Y File: weightRAM.v
+# ** Warning: (vsim-3015) network.v(281): [PCDPC] - Port size (1) does not match connection size (2) for port 'addressOut'. The port definition is at: weightRAM.v(5).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_network/LSTM_LAYER/PRAM_O_X File: weightRAM.v
+# ** Warning: (vsim-3015) network.v(282): [PCDPC] - Port size (3) does not match connection size (4) for port 'addressOut'. The port definition is at: weightRAM.v(5).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_network/LSTM_LAYER/PRAM_O_Y File: weightRAM.v
 # run -all
-# cenas: 00000001467567089
+# cenas: 00000001467746854
 # Simulation started at 0.000000
 # Input Sample           0
-# Percentage Wrong bits: 0.000000 percent
-# Input Sample         100
-# Percentage Wrong bits: 4.625000 percent
-# Input Sample         200
-# Percentage Wrong bits: 9.500000 percent
-# Input Sample         300
-# Percentage Wrong bits: 17.750000 percent
-# Input Sample         400
-# Percentage Wrong bits: 19.125000 percent
-# Input Sample         500
-# Percentage Wrong bits: 24.250000 percent
-# Input Sample         600
-# Percentage Wrong bits: 28.250000 percent
-# Input Sample         700
-# Percentage Wrong bits: 30.750000 percent
-# Input Sample         800
-# Percentage Wrong bits: 40.500000 percent
-# Input Sample         900
-# Percentage Wrong bits: 44.500000 percent
+# Average Wrong bits: 0.0000 percent
 # Input Sample        1000
-# Percentage Wrong bits: 40.250000 percent
-# Input Sample        1100
-# Percentage Wrong bits: 47.500000 percent
-# Input Sample        1200
-# Percentage Wrong bits: 46.000000 percent
-# Input Sample        1300
-# Percentage Wrong bits: 54.125000 percent
-# Input Sample        1400
-# Percentage Wrong bits: 54.000000 percent
-# Input Sample        1500
-# Percentage Wrong bits: 48.000000 percent
-# Input Sample        1600
-# Percentage Wrong bits: 50.000000 percent
-# Input Sample        1700
-# Percentage Wrong bits: 46.500000 percent
-# Input Sample        1800
-# Percentage Wrong bits: 52.625000 percent
-# Input Sample        1900
-# Percentage Wrong bits: 47.000000 percent
+# Average Wrong bits: 3.8660 percent
 # Input Sample        2000
-# Percentage Wrong bits: 50.500000 percent
-# Input Sample        2100
-# Percentage Wrong bits: 50.500000 percent
-# Input Sample        2200
-# Percentage Wrong bits: 51.125000 percent
-# Input Sample        2300
-# Percentage Wrong bits: 53.750000 percent
-# Input Sample        2400
-# Percentage Wrong bits: 53.000000 percent
-# Input Sample        2500
-# Percentage Wrong bits: 53.250000 percent
-# Input Sample        2600
-# Percentage Wrong bits: 53.125000 percent
-# Input Sample        2700
-# Percentage Wrong bits: 56.875000 percent
-# Input Sample        2800
-# Percentage Wrong bits: 56.000000 percent
-# Input Sample        2900
-# Percentage Wrong bits: 57.375000 percent
+# Average Wrong bits: 3.7190 percent
 # Input Sample        3000
-# Percentage Wrong bits: 55.125000 percent
-# Input Sample        3100
-# Percentage Wrong bits: 52.125000 percent
-# Input Sample        3200
-# Percentage Wrong bits: 53.500000 percent
-# Input Sample        3300
-# Percentage Wrong bits: 53.625000 percent
-# Input Sample        3400
-# Percentage Wrong bits: 53.125000 percent
-# Input Sample        3500
-# Percentage Wrong bits: 51.500000 percent
-# Input Sample        3600
-# Percentage Wrong bits: 55.500000 percent
-# Input Sample        3700
-# Percentage Wrong bits: 55.250000 percent
-# Input Sample        3800
-# Percentage Wrong bits: 53.500000 percent
-# Input Sample        3900
-# Percentage Wrong bits: 56.500000 percent
+# Average Wrong bits: 3.5750 percent
 # Input Sample        4000
-# Percentage Wrong bits: 52.375000 percent
+# Average Wrong bits: 3.4210 percent
+# Input Sample        5000
+# Average Wrong bits: 3.5540 percent
+# Input Sample        6000
+# Average Wrong bits: 3.6550 percent
+# Input Sample        7000
+# Average Wrong bits: 3.7190 percent
+# Input Sample        8000
+# Average Wrong bits: 3.6910 percent
+# Input Sample        9000
+# Average Wrong bits: 3.5330 percent
+# Input Sample       10000
+# Average Wrong bits: 3.3130 percent
+# Input Sample       11000
+# Average Wrong bits: 3.9270 percent
+# Input Sample       12000
+# Average Wrong bits: 3.3750 percent
+# Input Sample       13000
+# Average Wrong bits: 3.7290 percent
+# Input Sample       14000
+# Average Wrong bits: 3.8120 percent
+# Input Sample       15000
+# Average Wrong bits: 3.7340 percent
+# Input Sample       16000
+# Average Wrong bits: 4.1100 percent
+# Input Sample       17000
+# Average Wrong bits: 3.9470 percent
+# Input Sample       18000
+# Average Wrong bits: 3.7410 percent
+# Input Sample       19000
+# Average Wrong bits: 3.6080 percent
+# Input Sample       20000
+# Average Wrong bits: 3.7470 percent
+# Input Sample       21000
+# Average Wrong bits: 3.9790 percent
+# Input Sample       22000
+# Average Wrong bits: 4.1020 percent
+# Input Sample       23000
+# Average Wrong bits: 3.5220 percent
+# Input Sample       24000
+# Average Wrong bits: 3.5800 percent
+# Input Sample       25000
+# Average Wrong bits: 3.3690 percent
+# Input Sample       26000
+# Average Wrong bits: 4.4020 percent
+# Input Sample       27000
+# Average Wrong bits: 4.0940 percent
+# Input Sample       28000
+# Average Wrong bits: 3.5650 percent
+# Input Sample       29000
+# Average Wrong bits: 3.4300 percent
+# Input Sample       30000
+# Average Wrong bits: 3.6720 percent
+# Input Sample       31000
+# Average Wrong bits: 3.6330 percent
+# Input Sample       32000
+# Average Wrong bits: 3.8150 percent
+# Input Sample       33000
+# Average Wrong bits: 3.8910 percent
+# Input Sample       34000
+# Average Wrong bits: 3.3670 percent
+# Input Sample       35000
+# Average Wrong bits: 3.4760 percent
+# Input Sample       36000
+# Average Wrong bits: 3.4900 percent
+# Input Sample       37000
+# Average Wrong bits: 3.5340 percent
+# Input Sample       38000
+# Average Wrong bits: 3.9470 percent
+# Input Sample       39000
+# Average Wrong bits: 3.9260 percent
+# Input Sample       40000
+# Average Wrong bits: 3.6970 percent
+# Input Sample       41000
+# Average Wrong bits: 4.2730 percent
+# Input Sample       42000
+# Average Wrong bits: 4.0910 percent
+# Input Sample       43000
+# Average Wrong bits: 4.4770 percent
+# Input Sample       44000
+# Average Wrong bits: 4.1650 percent
+# Input Sample       45000
+# Average Wrong bits: 3.7470 percent
+# Input Sample       46000
+# Average Wrong bits: 3.7840 percent
+# Input Sample       47000
+# Average Wrong bits: 3.9510 percent
+# Input Sample       48000
+# Average Wrong bits: 4.0020 percent
+# Input Sample       49000
+# Average Wrong bits: 4.0380 percent
+# Input Sample       50000
+# Average Wrong bits: 3.6660 percent
+# Input Sample       51000
+# Average Wrong bits: 4.2230 percent
+# Input Sample       52000
+# Average Wrong bits: 3.7700 percent
+# Input Sample       53000
+# Average Wrong bits: 3.7450 percent
+# Input Sample       54000
+# Average Wrong bits: 3.8180 percent
+# Input Sample       55000
+# Average Wrong bits: 4.2710 percent
+# Input Sample       56000
+# Average Wrong bits: 3.8410 percent
+# Input Sample       57000
+# Average Wrong bits: 3.7980 percent
+# Input Sample       58000
+# Average Wrong bits: 3.8100 percent
+# Input Sample       59000
+# Average Wrong bits: 3.7210 percent
+# Input Sample       60000
+# Average Wrong bits: 3.6790 percent
+# Input Sample       61000
+# Average Wrong bits: 3.7060 percent
+# Input Sample       62000
+# Average Wrong bits: 4.0420 percent
+# Input Sample       63000
+# Average Wrong bits: 3.9600 percent
+# Input Sample       64000
+# Average Wrong bits: 3.4760 percent
+# Input Sample       65000
+# Average Wrong bits: 3.6320 percent
+# Input Sample       66000
+# Average Wrong bits: 3.7090 percent
+# Input Sample       67000
+# Average Wrong bits: 3.7990 percent
+# Input Sample       68000
+# Average Wrong bits: 3.9650 percent
+# Input Sample       69000
+# Average Wrong bits: 3.9850 percent
+# Input Sample       70000
+# Average Wrong bits: 4.0910 percent
+# Input Sample       71000
+# Average Wrong bits: 3.8010 percent
+# Input Sample       72000
+# Average Wrong bits: 3.9410 percent
+# Input Sample       73000
+# Average Wrong bits: 3.6290 percent
+# Input Sample       74000
+# Average Wrong bits: 3.7030 percent
+# Input Sample       75000
+# Average Wrong bits: 3.4840 percent
+# Input Sample       76000
+# Average Wrong bits: 3.7070 percent
+# Input Sample       77000
+# Average Wrong bits: 3.8910 percent
+# Input Sample       78000
+# Average Wrong bits: 4.1720 percent
+# Input Sample       79000
+# Average Wrong bits: 3.8800 percent
+# Input Sample       80000
+# Average Wrong bits: 3.8410 percent
+# Input Sample       81000
+# Average Wrong bits: 3.7470 percent
+# Input Sample       82000
+# Average Wrong bits: 4.0450 percent
+# Input Sample       83000
+# Average Wrong bits: 3.7310 percent
+# Input Sample       84000
+# Average Wrong bits: 3.7980 percent
+# Input Sample       85000
+# Average Wrong bits: 4.3980 percent
+# Input Sample       86000
+# Average Wrong bits: 4.0890 percent
+# Input Sample       87000
+# Average Wrong bits: 4.1290 percent
+# Input Sample       88000
+# Average Wrong bits: 4.0260 percent
+# Input Sample       89000
+# Average Wrong bits: 3.9690 percent
+# Input Sample       90000
+# Average Wrong bits: 4.3620 percent
+# Input Sample       91000
+# Average Wrong bits: 4.0970 percent
+# Input Sample       92000
+# Average Wrong bits: 3.9670 percent
+# Input Sample       93000
+# Average Wrong bits: 3.7660 percent
+# Input Sample       94000
+# Average Wrong bits: 3.6640 percent
+# Input Sample       95000
+# Average Wrong bits: 3.8420 percent
+# Break key hit
+# Break in Module sigmoid at sigmoid.v line 101
+# Stopped at sigmoid.v line 101
+p requested.
+ts: 3.9710 percent
+# Input Sample       98000
+# Average Wrong bits: 4.1160 percent
+# Input Sample       99000
+# Average Wrong bits: 3.8580 percent
+# Input Sample      100000
+# Average Wrong bits: 4.0800 percent
+# Input Sample      101000
+# Average Wrong bits: 3.8120 percent
+# Break key hit
+# Break in Module dot_prod at dot_prod.v line 81
+# Stopped at dot_prod.v line 81
+# End time: 21:04:26 on Jul 05,2016, Elapsed time: 0:37:08
+# Errors: 0, Warnings: 16
+0 percent
+# Input Sample      105000
+# Average Wrong bits: 4.1980 percent
+# Input Sample      106000
+# Average Wrong bits: 3.7520 percent
+# Input Sample      107000
+# Average Wrong bits: 3.5410 percent
+# Input Sample      108000
+# Average Wrong bits: 3.5160 percent
+# Input Sample      109000
+# Average Wrong bits: 3.3060 percent
+# Input Sample      110000
+# Average Wrong bits: 3.6550 percent
+# Input Sample      111000
+# Average Wrong bits: 3.9060 percent
+# Input Sample      112000
+# Average Wrong bits: 4.0900 percent
+# Input Sample      113000
+# Average Wrong bits: 3.9870 percent
+# Input Sample      114000
+# Average Wrong bits: 4.4710 percent
+# Input Sample      115000
+# Average Wrong bits: 4.3700 percent
 # Break key hit
 # Simulation stop requested.
+# End time: 21:04:21 on Jul 05,2016, Elapsed time: 0:37:09
+# Errors: 0, Warnings: 16

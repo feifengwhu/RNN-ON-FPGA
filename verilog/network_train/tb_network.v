@@ -62,7 +62,7 @@ module tb_network();
  
     // DUT Instantiation
     network              #(INPUT_SZ, HIDDEN_SZ, OUTPUT_SZ, QN, QM, DSP48_PER_ROW_G, DSP48_PER_ROW_M) 
-			LSTM_LAYER    (inputVec, 1'b1, {11'd2311, $random(currSecs[0])}, 11'd9, 11'd5, (18'd7 << 11), clock, reset, resetRAM, newCostFunc, costFunc, newSample, dataReady, trainingReady, outputVec);
+			LSTM_LAYER    (inputVec, 1'b1, {11'd2311, $random(currSecs[0])}, 11'd9, 11'd2, (18'd7 << 11), clock, reset, resetRAM, newCostFunc, costFunc, newSample, dataReady, trainingReady, outputVec);
 			
     array_prod #(HIDDEN_SZ, QN, QM)  PERCEPTRON  (Wperceptron, outputVec, clock, resetP, dataReadyP, networkOutput);
    
@@ -101,67 +101,75 @@ module tb_network();
 		// -------------------------------- Loading the weight memory ------------------------------- //
 		for(i = 0; i < INPUT_SZ; i = i + 1) begin
             for(j = 0; j < HIDDEN_SZ; j = j + 1) begin
-                retVal = $fscanf(fid_Wz, "%b\n", LSTM_LAYER.WRAM_Z_X.RAM_matrix[i][j*BITWIDTH +: BITWIDTH]);
+                //retVal = $fscanf(fid_Wz, "%b\n", LSTM_LAYER.WRAM_Z_X.RAM_matrix[i][j*BITWIDTH +: BITWIDTH]);
+                LSTM_LAYER.WRAM_Z_X.RAM_matrix[i][j*BITWIDTH +: BITWIDTH] = 18'd00400;
             end
         end
         
         for(i = 0; i < HIDDEN_SZ; i = i + 1) begin
             for(j = 0; j < HIDDEN_SZ; j = j + 1) begin
-                retVal = $fscanf(fid_Rz, "%b\n", LSTM_LAYER.WRAM_Z_Y.RAM_matrix[i][j*BITWIDTH +: BITWIDTH]);
+                //retVal = $fscanf(fid_Rz, "%b\n", LSTM_LAYER.WRAM_Z_Y.RAM_matrix[i][j*BITWIDTH +: BITWIDTH]);
+                LSTM_LAYER.WRAM_Z_Y.RAM_matrix[i][j*BITWIDTH +: BITWIDTH] = 18'd00400;
             end
         end
         
         for(i = 0; i < INPUT_SZ; i = i + 1) begin
             for(j = 0; j < HIDDEN_SZ; j = j + 1) begin
-                retVal = $fscanf(fid_Wi, "%b\n", LSTM_LAYER.WRAM_I_X.RAM_matrix[i][j*BITWIDTH +: BITWIDTH]);
+                //retVal = $fscanf(fid_Wi, "%b\n", LSTM_LAYER.WRAM_I_X.RAM_matrix[i][j*BITWIDTH +: BITWIDTH]);
+                LSTM_LAYER.WRAM_I_X.RAM_matrix[i][j*BITWIDTH +: BITWIDTH] = 18'd00400;
             end
         end
         
         for(i = 0; i < HIDDEN_SZ; i = i + 1) begin
             for(j = 0; j < HIDDEN_SZ; j = j + 1) begin
-                retVal = $fscanf(fid_Ri, "%b\n", LSTM_LAYER.WRAM_I_Y.RAM_matrix[i][j*BITWIDTH +: BITWIDTH]);
+                //retVal = $fscanf(fid_Ri, "%b\n", LSTM_LAYER.WRAM_I_Y.RAM_matrix[i][j*BITWIDTH +: BITWIDTH]);
+                LSTM_LAYER.WRAM_I_Y.RAM_matrix[i][j*BITWIDTH +: BITWIDTH] = 18'd00400;
             end
         end
         
         for(i = 0; i < INPUT_SZ; i = i + 1) begin
             for(j = 0; j < HIDDEN_SZ; j = j + 1) begin
-                retVal = $fscanf(fid_Wf, "%b\n", LSTM_LAYER.WRAM_F_X.RAM_matrix[i][j*BITWIDTH +: BITWIDTH]);
+                //retVal = $fscanf(fid_Wf, "%b\n", LSTM_LAYER.WRAM_F_X.RAM_matrix[i][j*BITWIDTH +: BITWIDTH]);
+                LSTM_LAYER.WRAM_F_X.RAM_matrix[i][j*BITWIDTH +: BITWIDTH] = 18'd00400;
             end
         end
         
         for(i = 0; i < HIDDEN_SZ; i = i + 1) begin
             for(j = 0; j < HIDDEN_SZ; j = j + 1) begin
-                retVal = $fscanf(fid_Rf, "%b\n", LSTM_LAYER.WRAM_F_Y.RAM_matrix[i][j*BITWIDTH +: BITWIDTH]);
+                //retVal = $fscanf(fid_Rf, "%b\n", LSTM_LAYER.WRAM_F_Y.RAM_matrix[i][j*BITWIDTH +: BITWIDTH]);
+                LSTM_LAYER.WRAM_F_Y.RAM_matrix[i][j*BITWIDTH +: BITWIDTH] = 18'd00400;
             end
         end
         
         for(i = 0; i < INPUT_SZ; i = i + 1) begin
             for(j = 0; j < HIDDEN_SZ; j = j + 1) begin
-                retVal = $fscanf(fid_Wo, "%b\n", LSTM_LAYER.WRAM_O_X.RAM_matrix[i][j*BITWIDTH +: BITWIDTH]);
+                //retVal = $fscanf(fid_Wo, "%b\n", LSTM_LAYER.WRAM_O_X.RAM_matrix[i][j*BITWIDTH +: BITWIDTH]);
+                LSTM_LAYER.WRAM_O_X.RAM_matrix[i][j*BITWIDTH +: BITWIDTH] = 18'd00400;
             end
         end
         
         for(i = 0; i < HIDDEN_SZ; i = i + 1) begin
             for(j = 0; j < HIDDEN_SZ; j = j + 1) begin
-                retVal = $fscanf(fid_Ro, "%b\n", LSTM_LAYER.WRAM_O_Y.RAM_matrix[i][j*BITWIDTH +: BITWIDTH]);
+                //retVal = $fscanf(fid_Ro, "%b\n", LSTM_LAYER.WRAM_O_Y.RAM_matrix[i][j*BITWIDTH +: BITWIDTH]);
+                LSTM_LAYER.WRAM_O_Y.RAM_matrix[i][j*BITWIDTH +: BITWIDTH] = 18'd00400;
             end
         end
         
         for(i = 0; i < HIDDEN_SZ; i = i + 1) begin
 			retVal = $fscanf(fid_bz, "%18b\n",temp);
-			LSTM_LAYER.bZ[i*BITWIDTH +: BITWIDTH] = temp;
+			LSTM_LAYER.bZ[i*BITWIDTH +: BITWIDTH] = 18'd00400; //temp;
 			
 			retVal = $fscanf(fid_bi, "%18b\n",temp);
-			LSTM_LAYER.bI[i*BITWIDTH +: BITWIDTH] = temp;
+			LSTM_LAYER.bI[i*BITWIDTH +: BITWIDTH] = 18'd00400; //temp;
 			
 			retVal = $fscanf(fid_bf, "%18b\n",temp);
-			LSTM_LAYER.bF[i*BITWIDTH +: BITWIDTH] = temp;
+			LSTM_LAYER.bF[i*BITWIDTH +: BITWIDTH] = 18'd00400; //temp;
 			
 			retVal = $fscanf(fid_bo, "%18b\n",temp);
-			LSTM_LAYER.bO[i*BITWIDTH +: BITWIDTH] = temp;
+			LSTM_LAYER.bO[i*BITWIDTH +: BITWIDTH] = 18'd00400;//temp;
 
 			retVal = $fscanf(fid_outW, "%18b\n",temp);
-			Wperceptron[i*BITWIDTH +: BITWIDTH] = temp;
+			Wperceptron[i*BITWIDTH +: BITWIDTH] = 18'd00400;//temp;
         end
 		
 	end
@@ -196,9 +204,9 @@ module tb_network();
 			#(2*FULL_CLOCK);
 			reset     = 1'b0;
 			
-			if(k % 100 == 0) begin
+			if(k % 1000 == 0) begin
 				$display("Input Sample %d", k);
-				$display("Percentage Wrong bits: %f percent", 100*quantError/800.0);
+				$display("Average Wrong bits: %.4f percent", quantError/1000.0);
 				quantError=0;
 			end
 			
