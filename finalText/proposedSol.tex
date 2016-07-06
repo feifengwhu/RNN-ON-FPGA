@@ -215,8 +215,6 @@ Looking at equations~\ref{eq:equationsLSTM}, we note that the signals $\mb{z}^{(
 \subsubsection{Fully Parallel}\label{sec:struct-fullpar}
 By implementing directly the ideas outlined previously, we get the network of Figure~\ref{fig:network}. The memory element of the network is the array of flip-flops that keep the value of the vector $\mb{c}^{(t)}$, which is activated everytime we have a new incoming signal in order to store the last value, which is now $\mb{c}^{(t)}$
 
-(Talk about RAM usage)
-
 In terms of DSP slice usage, this proposed design comprises 3 elementwise multiplications and 5 activation function Modules. Since the number of elementwise multiplications is equal to the network size $N$, we need $3N$ DSP slices for each elementwise block. As far as the activation function module is concerned, since we need to apply it to each one of the elements of the layer, $N$, and each module uses one multiplication, the ensemble of all 5 modules needs $5N$ DSP slices. Therefore, and noting that each Gate has $\frac{2N}{K_G}$ DSP slices, the total number of DSP slices used is
 
 \begin{equation}\label{eq:numdsp_network}

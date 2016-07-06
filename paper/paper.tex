@@ -3,6 +3,10 @@
 %% Additional Packages
 \usepackage{cite}
 \usepackage{graphicx}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{siunitx}
+
 %% Macros
 \newcommand{\mb}[1]{\mathbf{#1}}
 
@@ -48,13 +52,23 @@ Hitherto, there is only one implementation~\cite{Chang15}, but its performance i
 by the external memory access. This implementation aims to make use of internal FPGA memory resources, and therefore
 achieve a higher speed performance.
 
-In overview, this article begins by explaining what are LSTM networks -- and their mathematical details -- in Section~\ref{sec:lstmnn}, and by providing a quick overview of their state of the art in Section~\ref{sec:relwork}.
-Section~\ref{sec:proparch} outlines the proposed hardware architecture and its main constituent modules, and the performance and synthesis results are reported in Section~\ref{sec:results}. A final concluding remark is given in Section~\ref{sec:concl}.
+In overview, this article begins by explaining what are LSTM networks -- and their mathematical 
+details -- in Section~\ref{sec:lstmnn}, followed by providing a quick overview of their state 
+of the art in Section~\ref{sec:relwork}. Section~\ref{sec:proparch} outlines the proposed 
+hardware architecture and its main constituent modules, and the performance and synthesis 
+results are reported in Section~\ref{sec:results}. A final concluding remark is given in Section~\ref{sec:concl}.
 
 \section{LSTM Neural Networks}\label{sec:lstmnn}
-Although originally formulated in~\cite{Hoch97}, its formulation has been incrementally updated in~\cite{Gers00} and~\cite{Gers2000}, and the most current version is the one in~\cite{Graves05}. One of the inital proposers of LSTM, Prof. Jürgen Schmidhüber, did a survey on the most common variations of the model last year~\cite{Greff15}, and this will the basis of this short theoretical presentation, as well as the work that will be developed in this thesis. 
+LSTM Networks were originally formulated in~\cite{Hoch97}, but its formulation has been incrementally 
+updated in~\cite{Gers00} and~\cite{Gers2000}, and the most current version is the one in~\cite{Graves05}. 
+One of the inital proposers of LSTM, Prof. Jürgen Schmidhüber, did a survey on the most common variations 
+of the model last year~\cite{Greff15}, which is the reference for this short discussion. 
 
-A single LSTM neuron is presented in Figure~\ref{fig:lstmneuron}. As we can see from the picture, we still have the recurrent connections from the regular RNNs, but now there are multiple entry points that control the flow of information through the network. Although omitted from the picture, all the gates are biased, as is suggested in Equations~\ref{eq:equationsLSTM}. The main components, their role and relevance, are explained as follows
+A single LSTM neuron is presented in Figure~\ref{fig:lstmneuron}. As it can be seen in the picture, 
+we still have the recurrent connections from the regular RNNs, but now there are multiple entry points 
+that control the flow of information through the network. Although omitted from the picture, all the 
+gates are biased, as is suggested in Equations~\ref{eq:equationsLSTM}. The main components, their 
+role and relevance, are explained as follows.
 
 \begin{figure}[!t]
 	\centering
@@ -64,23 +78,40 @@ A single LSTM neuron is presented in Figure~\ref{fig:lstmneuron}. As we can see 
 \end{figure}
 
 \begin{itemize}
-    \item \textbf{Input Gate} -- this is the input gate, where the importance of each feature of the input vector at time $t$, $\mb{x}^t$, and the output vector at the previous time step $\mb{y}^{t-1}$ is weighed in, producing an output $\mb{i}^{t}$.
+    \item \textbf{Input Gate} -- this is the input gate, where the relative importance of each feature of 
+the input vector at time $t$, $\mb{x}^{(t)}$, and the output vector at the previous time step, $\mb{y}^{(t-1)}$, 
+are weighed in, producing an output $\mb{i}^{(t)}$.
 
-    \item \textbf{Block Input Gate} -- as the name implies, this gate controls the flow of information from the input gate to the memory cell. It also receives the input vector and the previous output vector as inputs, but it does not have peephole connections and its dynamics are controlled by a different set of weights. The \textbf{activation function of this gate can be either}, but the most common choice is the \textbf{Hyperbolic Tangent}.
+    \item \textbf{Block Input Gate} -- as the name implies, this gate controls the flow of information 
+from the input gate to the memory cell. It also receives the input vector and the previous output 
+set, producing an output $\mb{z}^{(t)}$. The \textbf{activation function of this gate can be either}, 
+but the most common choice is the \textbf{Hyperbolic Tangent}.
 
-    \item \textbf{Forget Gate} -- its role is to control the contents of the Memory Cell, either to set them or reset them, using the \textit{Hadamard Elementwise} matrix multiplication of its output at time $t$, $\mb{c}^{(t)}$, with the contents of the memory unit at the previous time step, $\mb{c}^{(t-1)}$. The activation function of this gate is \textbf{always sigmoid}.
+    \item \textbf{Forget Gate} -- its role is to control the contents of the Memory Cell, either to 
+set or reset them, using the \textit{Hadamard Elementwise} vector multiplication of its output at time 
+$t$, $\mb{c}^{(t)}$, with the contents of the memory unit at the previous time step, $\mb{c}^{(t-1)}$. 
+The activation function of this gate is \textbf{always sigmoid}, and the resulting signal is $\mb{f}^{(t)}$.
 
-    \item \textbf{Output Block Gate} -- this gate has a role very similar to that of the Block Input Gate, but now it controls the information flow \textit{out} of the LSTM neuron, namely the activated Memory Cell output.
+    \item \textbf{Output Block Gate} -- this gate has a role very similar to that of the Block Input 
+Gate, but now it controls the information flow \textit{out} of the LSTM neuron, namely the activated 
+Memory Cell output. The control signal it produces is $\mb{o}^{(t)}$.
 
-    \item \textbf{Memory Cell} -- the cornerstone of the LSTM neuron. This is the memory element of the neuron, where the previous state is kept, and updated accordingly to the dynamics of the gates that connect to it. Also, this is where the peephole connections come from. 
+    \item \textbf{Memory Cell} -- the cornerstone of the LSTM neuron. This is the memory element of 
+the neuron, where the previous state is kept, and updated accordingly to the dynamics of the gates 
+that connect to it. Also, this is where the peephole connections come from. 
 
-    \item \textbf{Output Activation} -- the output of the Memory Cell goes through this activation function that, as the gate activation function, can be any, but the \textit{hyperbolic tangent} is the most common choice.
+    \item \textbf{Output Activation} -- the output of the Memory Cell goes through this activation 
+function that, as the gate activation function, can be any, but the \textit{hyperbolic tangent} 
+is the most common choice.
 
-    \item \textbf{Peepholes} -- direct connections \textit{from} the memory cell that allow for gates to `peep' at the states of the memory cell. They were added after the initial 1997 formulation, and their absence was proven to have a minimal performance impact~\cite{Greff15}.
+    \item \textbf{Peepholes} -- direct connections \textit{from} the memory cell that allow for gates 
+to `peep' at the states of the memory cell. They were added after the initial 1997 formulation, and their 
+absence was proven to have a minimal performance impact~\cite{Greff15}. For this reason, they were ommitted 
+in this architecture. 
+
 \end{itemize}
 
-After these small conceptual definitions, that allow us to grasp some intuition on the operation of a \textit{single} LSTM cell, I can present the overview of a \textit{layer} of LSTM neurons and their formal mathematical formulation, that will be needed both for the high-level model and the HDL description. The operation of each set of gates of the layer is given by the following set of equations
-
+The operation of each set of gates of the layer is given by the following set of equations
 \begin{eqnarray}
     \mb{z}^{(t)} & = g(\mb{W}_z \mb{x}^{(t)} + \mb{R}_z \mb{y}^{(t-1)} + \mb{b}_z) \nonumber\\
     \mb{i}^{(t)} & = \sigma(\mb{W}_i \mb{x}^{(t)} + \mb{R}_i \mb{y}^{(t-1)} + \mb{p}_i \odot \mb{c}^{(t-1)} + \mb{b}_i) \nonumber\\
@@ -89,19 +120,166 @@ After these small conceptual definitions, that allow us to grasp some intuition 
     \mb{c}^{(t)} & = \mb{i}^{(t)} \odot \mb{z}^{(t)} + \mb{f}^{(t)} \odot \mb{c}^{(t-1)} \nonumber \\
     \mb{y}^{(t)} & = \mb{o}^{(t)} \odot h(\mb{z}^{(t)}) \label{eq:equationsLSTM}
 \end{eqnarray}
-where $\odot$ is the Hadamard multiplication. The $i$-th element of the previous vectors in bold corresponds to the value of the gate of the $i$-th neuron of the layer, which is a very convenient and compact representation of the whole layer. Furthermore, if the layer has $N$ LSTM neurons and $M$ inputs (i.e. the size of the layer that precedes this), we see that the input weight matrices $\mb{W}_*$ and the  recurrent weight matrices $\mb{R}_*$ all have size $N \times M$, and that the bias weight matrices $\mb{b}_*$, the peephole weight matrices $\mb{p}_*$ and the matrices $\mb{z}^{(t)}$ through $\mb{c}^{(t)}$ have size $N \times 1$.
+where $\odot$ is the Hadamard multiplication. The $i$-th element of the previous vectors in bold corresponds 
+to the value of the $i$-th neuron in the layer, which is a very convenient and compact representation of the 
+whole layer. Furthermore, if the layer has $N$ LSTM neurons and $M$ inputs (i.e. the size of the layer that 
+precedes this), we see that the input weight matrices $\mb{W}_*$ have size $N \times M$, and the  recurrent 
+weight matrices $\mb{R}_*$ are squre matrices of size $N \times N$, and that the bias weight matrices $\mb{b}_*$ 
+and the matrices $\mb{y}^{(t)}$ through $\mb{c}^{(t)}$ have size $N \times 1$, and are thus, in fact, vectors.
 
 \section{Related Work}\label{sec:relwork}
+LSTM Networks are nowadays one of the state of the art algorithms in deep-learning, and their performance is
+superior to that of other kinds of RNNs and Hidden Markov Models, both of which are generally used to address 
+the same set of problems where LSTM are employed, namely predicting and producing classification decisions 
+from time-series data. A very comprehensive description of applications can be found in one of the initial 
+authors webpage dedicated to the subject~\footnote{http://people.idsia.ch/~juergen/rnn.html}.
+
+The use of LSTM Networks are plentiful: in \textbf{Handwriting Recognition}~\cite{ICDAR09}, where they surpass 
+HMM-based models in optical character recognition~\cite{Breuel13}; in \textbf{Speech Recognition}, where, for 
+instance, Graves et al.~\cite{Graves13}, in 2013, set a new record on the TIMT Phoneme Recognition Benchmark, 
+and also in \textbf{Large Scale Acoustic Modelling of Speech}~\cite{Sak14}. Other uses include 
+\textbf{Handwriting Synthesis}~\cite{Graves13_2}, \textbf{Translation}~\cite{Sustkever14}, \textbf{Biomedical Applications} such
+as protein homology detection~\cite{Hochreiter07}, \textbf{Music Analysis and Composition}, such as the transcription of piano music 
+to MIDI~\cite{Bock12} and automated composition~\cite{Coca13} and improvisation~\cite{Eck02}, and lastly \textbf{Video and Image Analysis} as
+in~\cite{Vinyals14},~\cite{Donahue14} and~\cite{Donahue14_2}.
+
+Hitherto, there is but one actual implementation of an LSTM network in hardware, published recently 
+(March 2016) by Chang et al.~\cite{Chang15}. A 2 layer LSTM network (two layers in series) was implemented,
+with 128 neurons each, which, for processing 1000 samples, yielded an execution time of $0.932 \, \si{\second}$. Assuming 
+that both layers are equal, and thus have the same execution time, this yields an approximate execution time of 
+$29.13 \, \si{\micro\second}$ per incoming sample (dividing the total execution time by $2 \times 1000$). 
+Therefore, this network is able to perform around 34.3 thousands of forward propagations per second. 
+Although the network is large, its performance is well below this work, because it does not have
+a full level of parallelism when compared to the proposed design of Section~\ref{sec:proparch}, and it
+makes use of external memory to store the weights. This last point is understandable, since the authors use
+the FPGA core as a co-processor for the main CPU.
+
 
 \section{Proposed Architecture}\label{sec:proparch}
+Before presenting the 
+\subsection{Activation Function Calculation}\label{sec:proprarch_af}
+In order to evaluate the transcendental activation functions $\sigma(x)$ and $\tanh(x)$, \textbf{Polynomial Approximations} were used, as detailed in~\cite{Muller05}, since evaluating a polynomial does not have high memory usage needs (as opposed to Table Methods, for instance) and, if the polynomial degree is sufficiently low, the number of multiplications needed is low enough to not pose a restriction both on resources (now DSP slices, and not memory) and in speed (number of number of clock cycles needed to output a result).
 
-\subsection{Activation Function Calculation}
+The error minimization strategy used to find the optimal polynomial was the \textbf{Least Maximum Approximation}, where the \emph{maximum} error is \emph{minimized}, making use of Remez's Algorithm, which sets a system of $n+2$ linear equations such as~\ref{eq:remezline}
 
-\subsection{Matrix-vector Dot Product Calculation}
+\begin{equation}\label{eq:remezline}
+    p(x_i) - f(x_i) = (-1)^{n+1} \epsilon \Leftrightarrow p_0 + p_1 x_i + p_2 x_i^2 + \cdots + p_n x_i^n - f(x_i) = (-1)^{n+1} \epsilon
+\end{equation}
+where $i \in \left[0, n+1\right]$. Of course, both functions have horizontal assymptotes, which can be used as the value in the edges, but instead of performing the optimization in the single interval in between the chosen points from where the module evaluates the function as the value of the assymptote, I have further split the interval in 4, in order to have lower degree polynomials -- simpler to evaluate -- at a reduced error cost. The algorithm was run using Python, and targeted second degree polynomials for each interval. After that, the Verilog model was described, where the correct coefficients are loaded according to the interval where the incoming operand is located. The evaluation of the polynomial was accomplished using the \textbf{Horner's Rule}, noting that
 
-\subsection{Weight storage}
+\begin{equation}\label{eq:factorPol}
+p(x) = p_0 + p_1x + p_2x^2 = p_0 + x(p_1 + xp_2)
+\end{equation}
+and, therefore, the calculation is simply the procedure of multiplying the operand by a value and adding a constant to the result,
+repeated two times. Again the internal machine state controls which values are multiplied and added according to the pipeline state.
+The output of the Sigmoid HDL block  and the $\tanh$ HDL block are presented in Figures~\ref{fig:nonlin-out-sig} 
+and~\ref{fig:nonlin-out-tanh}, respectively. Due to the internal datapath pipeline, the module takes 5 clock cycles to output a result.
 
-\subsection{Network Architecture}
+\begin{figure}[!t]
+    \centering
+    \includegraphics[width=\linewidth]{figures/nonlin-out.eps}
+    \caption[Plot of the output of the Sigmoid Calculator HDL module]{Plot of the output of the Sigmoid Calculator HDL module}
+    \label{fig:nonlin-out-sig}
+\end{figure}
+
+\begin{figure}[!t]
+    \centering
+    \includegraphics[width=\linewidth]{figures/nonlin-out-tanh.eps}
+    \caption[Plot of the output of the Hyperbolic Tangent HDL module]{Plot of the output of the Hyperbolic Tangent HDL module}
+    \label{fig:nonlin-out-tanh}
+\end{figure}
+
+\subsection{Matrix-vector Dot Product Calculation}\label{sec:proprarch_dot}
+From Equations~\ref{eq:equationsLSTM}, we see that the weight matrices $\mb{W}_*$ and $\mb{R}_*$ are 
+multiplied by the input vector $\mb{x}$ and the layer output vector $\mb{y}$, respectively. This way, 
+this block implements matrix-vector multiplication to perform those calculations, and is parameterized in 
+order to accommodate networks of various sizes, since $\mb{W}_*$ has size $N\times M$, and $\mb{R}_*$ 
+has size $N\times N$ -- $x$ has length $M$ (the number of inputs to the layer), while $y$ has length $N$ 
+(the number of neurons in the layer). This way, if a layer with different parameters is needed, either in terms of 
+number of inputs or number of neurons, we only need to change the respective parameter before the synthesis stage, 
+instead of having to redesign the whole block for that particular size. 
+
+The matrix-vector dot product of a matrix $A$ of size $N \times M$ by a vector $x$ of size $M$, if performed in a linear non-parallel way, can be described in terms of Algorithm~\ref{matvec-alg}
+
+\begin{algorithm}
+\begin{algorithmic}
+\For {$i$ = $1:N$}
+    \For {$j$ = $1:M$}
+    \State $y_i := y_i + A_{ij} \cdot x_j$
+    \EndFor
+\EndFor
+\end{algorithmic}
+\caption{Matrix-vector multiplication of a matrix}
+\label{matvec-alg}
+\end{algorithm}
+This operation has a computational complexity of $O(n^2)$. Each of the $i$-th components of the output vector $y$ can be calculated \textbf{in parallel}, each only requiring the corresponding $i$-th line from the matrix. Follow this approach, matrix-vector multiplication can now be performed in \textbf{linear time}, which is one of the great advantages of custom-tailored hardware solutions. 
+
+Although this solution only requires one multiplication per row of the input matrix (i.e. $N$ multiplications), if the row size is large, we may run out of resources in the FPGA; therefore, some sort of \textit{resource multiplexing} strategy must be used to ensure the flexibility of the solution to accomodate networks of larger dimensions. The solution found for this design was to \emph{share} the multiplication slice among the rows of the matrix: in a direct implementation of Algorithm~\ref{matvec-alg}, each multiplication slice was responsible for producing the $i$-th element of the output vector $y$ (of size $N$), therefore the final result for the vector would be ready in $M$ clock cycles (i.e. the number of columns); now, defining a parameter $K_G = \frac{\text{Number of rows}}{\text{Number of multipliers}}$ -- the number of rows that share the same multiplier -- the same multiplier is responsible for producing several $i$-th elements of the output vector, in consecutive time slots of $M$ clock cycles. For instance, in an $8\times2$ matrix scenario, with $K_G = 2$, we would have 4 multipliers, and the output vector elements $y_0$, $y_2$, $y_4$ and $y_6$ would be ready after $M=2$ clock cycles, and the remaining -- $y_1$, $y_3$, $y_5$ and $y_7$ --  are ready after another two clock cycles, that is $2M = 4$ clock cycles after the calculations began. 
+
+Figures-\ref{fig:mem-arrayprod} and~\ref{fig:array-prod} depict a diagram of the memory access for the Matrix, and the row multiplication units within the module, respectively, where I have set $K_G = 4$, for the same matrix and vector sizes as before. Note that in this situation, we would only have 2 multipliers, and the module would be composed of two multiplication units, such as those in Figure~\ref{fig:array-prod}, that work in parallel. They address a particular column using the signal \verb+colSel+, which is used by the RAM module to output the corresponding column of the matrix (in regard to the input vector, obviously this signal selects only a single position), depicted in Figure~\ref{fig:mem-arrayprod}. The dark shaded part of the memory is used by the first multiplier, and the light shaded is used by the other, in parallel for a fixed \verb+rowMux+ -- this signal is produced by the control unit of the module, and essentially operates the left multiplexer and right demultiplexer of Figure~\ref{fig:array-prod}, that allows to choose the proper position of the weight column and to write to the correct output register, respectively. In this example, for \verb+rowMux+=0, the control unit increments \verb+colSel+ from 0 to $M$, and thus evaluating $y_0$ and $y_4$. After this, \verb+rowMux+ is incremented to 1, and the process repeats until \verb+rowMux+ reaches $K_G-1$. Therefore, we have the correct result vector in a time proportional to $K_G \cdot M$: a 3 clock cycle overhead is added to the previous estimate, since the memory only outputs the appropriate column in the \emph{next clock cycle}, and that this module is pipelined both at the input and at the output in order to increase the maximum clock frequency. 
+
+\begin{figure}
+    \centering
+    \includegraphics[width=2.5in]{figures/mem-array-prod.eps}
+    \caption[A column of the matrix that serves as input to the module]{A column of the matrix that serves as input to the module. The dark shaded part is for the first multiplier, and the light shaded is for the other, in parallel. The rowMux signal addresses the position within each shaded area}.
+    \label{fig:mem-arrayprod}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=2.5in]{figures/array-prod.eps}
+    \caption[The $i$-th row multiplication unit of the Module]{The $i$-th row multiplication unit of the Module, where rowMux and colSel are internal signals produced by the control unit of the module. The flip-flop accumulates the sum, and the output demux selects the appropriate memory position on where to store this value, within the slot attributed to this multiplication, from $i\cdot K_G$ to $i\cdot K_G + \left[K_G-1\right]$}
+    \label{fig:array-prod}
+\end{figure}
+
+\subsection{Weight storage}\label{sec:proprarch_ram}
+The weights are stored in LUTRAM, and for that purpose, they are declared as a matrix of registers, where the access, both in terms
+of write and read operations, is made to each column. The write/read access can be performed at the same time, since the memory has
+separate communication ports for input/output, provided that the \textbf{addresses do not coincide}.
+
+\subsection{Gate Module}\label{sec:proparch_gate}
+The Gate modules are responsible for producing the internal signal vectors for $\mb{z}^{(t)}$, $\mb{i}^{(t)}$, $\mb{f}^{(t)}$ and $\mb{o}^{(t)}$. If we note that, according to~\cite{Greff15}, the removal of peepholes (the signals $\mb{p}_*$) does not compromise significantly the performance of the network~\ref{sec:struct_lstm}, we can ommit them in order to simplify the Gate Module and reduce the usage of DSP slices. This way, a Gate module needs to perform three tasks
+
+\begin{enumerate}
+    \item Multiply matrix $\mb{W}_*$ by the input vector $\mb{x}^{(t)}$
+    \item Multiply matrix $\mb{R}_*$ by the previous layer output vector $\mb{y}^{(t-1)}$
+    \item Sum the bias vector $\mb{b}_*$ to the remaining matrix-vector dot product results.
+\end{enumerate}
+Assuming that the network size $N$ is always larger than the input size $M$, if we use the matrix-vector dot product units of Section~\ref{sec:proprarch_dot}, the multiplication in task 1 takes approximately $K_G\cdot M$ cycles and the one in task 2 takes $K_G\cdot N$ cycles. This way, task 2 and task 1 can be performed in parallel, and we can use the extra time that task 2 takes, relative to task 1,  to perform task 3, and sum the bias vector to the output of task 1, whose result is ready by that time. The module is triggered by a \verb+beginCalc+ input signal that activates the internal state machine, and outputs a \verb+dataReady+ signal that informs the network that the calculations have been concluded, and the value at the output is the actual final result. 
+After validating and simulating this block, and taking into account the internal state-machine and that the internal datapath is pipelined, the exact number of clock cycles this module takes to produce an output is $6+K_G\cdot N$.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=2.5in]{figures/gate.eps}
+    \caption[Diagram of the hardware block that implements the Gate]{Diagram of the hardware block that implements the Gate}
+    \label{fig:gate}
+\end{figure}
+
+\subsection{Network Architecture}\label{sec:proprarch_net}
+Equations~\ref{eq:equationsLSTM} suggest that the signals $\mb{z}^{(t)}$, $\mb{i}^{(t)}$, $\mb{f}^{(t)}$ and $\mb{o}^{(t)}$ do not depend on each other -- they operate only on the current input vector $\mb{x}^{(t)}$ and the previous layer output $\mb{y}^{(t-1)}$ -- and therefore can be calculated in parallel. This way we need four Gate Modules working in parallel, each one with its respective weigth RAMs for $\mb{W}_*$ and $\mb{R}_*$, and followed by the respective activation function calculator (detailed in Section~\ref{sec:nonlincalc}). There are three elementwise multiplications, two for producing signal $\mb{c}^{(t)}$ (which can be done in parallel and then summed elementwise) and one for $\mb{y}^{(t)}$ (which can be done only after applying the activation function $\mb{c}^{(t)}$).
+
+Furthermore, we can avoid a naïve translation of the Equations~\ref{eq:equationsLSTM}, which would replicate unnecessary resources (such as elementwise multipliers and activation function calculatores) and require a higher area usage to save a negligible amount of clock cycles, by noting that one of the operands is the output of a $\tanh(\mb{x})$ block and the other of a $\sigma(\mb{x})$, and they are then multiplied (elementwise, of course) together. This way, instead of replicating these $\tanh$-$\sigma$-$(\cdot)$wise structures, we use a \emph{single one} and choose the operand accordingly to the state that the network is currently in. The issue about the elementwise multiplier for $\mb{c}^{(t)}$, which does not use the $\tanh$ activation function, can be solved by adding another multiplexer that chooses between the output of the $\tanh(\mb{x})$ module or the signal $\mb{c}^{(t-1)}$. These ideas resulted in the LSTM network design of Figure~\ref{fig:network-opt}, which is mathematically equivalent to Equations~\ref{eq:equationsLSTM}.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\linewidth]{figures/network-opt.eps}
+    \caption[Block diagram of the hardware LSTM Neural Network]{Block diagram of the hardware LSTM Neural Network}
+    \label{fig:network-opt}
+\end{figure}
+The two left multiplexers control the operands that are fed to the activation function modules, and the selecting signal is generated by the network's state machine, and its value is incremented after each complete usage of the $\tanh$-$\sigma$-$(\cdot)$wise structure: this is where the time multiplexing of the structure takes place. Since in state $\verb+Sel+=1$ the left operand of the elementwise multiplier (the one that preceded the flip-flops in the previous design) is the signal $\mb{c}^{(t-1)}$, another multiplexer was added before the elementwise multiplication, to select the $\mb{c}^{(t-1)}$ signal in that particular case, and the output from the $\tanh(\mb{x})$ block, otherwise.
+
+The flip-flops on the right hand side of Figure~\ref{fig:network-opt} are activated by signals generated within the network's state machine that enable the appropriate flip-flop, placing the output from the elementwise multiplicator in the correct place. The first activated flip-flop is the middle one, which keeps the result from the elementwise mutiplication of the $\mb{z}^{(t)}$ and $\mb{i}^{(t)}$ vectors, then, after a full operation of the $\tanh$-$\sigma$-$(\cdot)$wise structure, the bottom flip-flop saves the other portion of the sum that evaluates to the $\mb{c}^{(t)}$ signal. Lastly, the top flip-flop saves the network output $\mb{y}^{(t)}$, which in the next incoming sample becomes $\mb{y}^{(t-1)}$ and is used by the Gate modules in this next batch of calculations.
+
+Now, since there is only a single elementwise multiplier and only two activation function calculators, the total requirement for DSP slices is simply
+\begin{equation}\label{eq:numdsp_network-opt}
+    4\frac{2N}{K_G} + 2N + N = N \left( \frac{8}{K_G} + 3 \right).
+\end{equation}
+where we see that we saved $5N$ multipliers, which for a large value of $N$ can have a decisive impact. In terms of speed performance, although the Gate calculation time remains the same, now the $\tanh$-$\sigma$-$(\cdot)$wise structure runs for 3 consecutive times, in a non parallel fashion. After adjustments to the state machine, and accounting for pipelining and synchronization within the datapath, the clock cycles needed after the gate module calculations are 27, so the total clock cycles needed are 
+
+\begin{equation}\label{eq:numcc_network-opt}
+    (N \cdot K_G + 6) + 27  = 33 + N\cdot K_G
+\end{equation}
+which is only 13 clock cycles more than a fully-parallel, naïve architecture. For instance, an $N=32$ neuron network would require 320 DSP slices, while this new architecture would only require 160, only at the expense of 13 more clock cycles.
 
 \section{Results}\label{sec:results}
 

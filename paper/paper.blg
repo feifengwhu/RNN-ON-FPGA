@@ -8,49 +8,57 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: bibliography.bib
+A bad cross reference---entry "Sak14"
+refers to entry "DBLP:conf/interspeech/2014", which doesn't exist
+Warning--I didn't find a database entry for "DBLP:conf/interspeech/2014"
 -- IEEEtran.bst version 1.13 (2008/09/30) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+Warning--empty booktitle in ICDAR09
+Warning--empty journal in Sak14
+Warning--empty booktitle in Sustkever14
+Warning--empty booktitle in Coca13
 
 Done.
-You've used 6 entries,
+You've used 20 entries,
             4039 wiz_defined-function locations,
-            856 strings with 8418 characters,
-and the built_in function-call counts, 4799 in all, are:
-= -- 415
-> -- 104
-< -- 41
-+ -- 53
-- -- 17
-* -- 257
-:= -- 788
-add.period$ -- 12
-call.type$ -- 6
-change.case$ -- 6
-chr.to.int$ -- 90
-cite$ -- 6
-duplicate$ -- 331
-empty$ -- 334
-format.name$ -- 23
-if$ -- 1072
+            967 strings with 11803 characters,
+and the built_in function-call counts, 15744 in all, are:
+= -- 1289
+> -- 369
+< -- 135
++ -- 197
+- -- 61
+* -- 812
+:= -- 2428
+add.period$ -- 41
+call.type$ -- 20
+change.case$ -- 20
+chr.to.int$ -- 321
+cite$ -- 24
+duplicate$ -- 1105
+empty$ -- 1217
+format.name$ -- 79
+if$ -- 3599
 int.to.chr$ -- 0
-int.to.str$ -- 6
-missing$ -- 52
-newline$ -- 51
-num.names$ -- 6
-pop$ -- 105
+int.to.str$ -- 20
+missing$ -- 180
+newline$ -- 111
+num.names$ -- 20
+pop$ -- 425
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 374
+skip$ -- 1212
 stack$ -- 0
-substring$ -- 221
-swap$ -- 282
-text.length$ -- 11
+substring$ -- 760
+swap$ -- 909
+text.length$ -- 28
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 6
-warning$ -- 0
-while$ -- 19
-width$ -- 7
-write$ -- 96
+type$ -- 20
+warning$ -- 4
+while$ -- 60
+width$ -- 22
+write$ -- 248
+(There was 1 error message)
