@@ -9,12 +9,16 @@ add wave -noupdate /tb_network/inputVec
 add wave -noupdate /tb_network/outputVec
 add wave -noupdate /tb_network/networkOutput
 add wave -noupdate /tb_network/modelOutput
+add wave -noupdate /tb_network/roundOut
 add wave -noupdate /tb_network/resetP
 add wave -noupdate /tb_network/dataReadyP
 add wave -noupdate /tb_network/costFunc
 add wave -noupdate /tb_network/newCostFunc
+add wave -noupdate /tb_network/J
+add wave -noupdate /tb_network/Jpert
+add wave -noupdate /tb_network/diffJ
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {545890620 ps} 0}
+WaveRestoreCursors {{Cursor 1} {250955 ps} 0}
 quietly wave cursor active 1
 configure wave -namecolwidth 218
 configure wave -valuecolwidth 100
@@ -30,4 +34,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits ps
 update
-WaveRestoreZoom {545888492 ps} {546011132 ps}
+WaveRestoreZoom {0 ps} {1962240 ps}

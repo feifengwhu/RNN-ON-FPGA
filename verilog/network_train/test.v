@@ -14,7 +14,7 @@ module test();
 	reg signed [11:0] beta  = 9;
 	reg mo=1;
 	
-	assign test = 18'h0212f;
+	assign test = 18'h0023f;
 	
 	always @(*) begin
 		expShift = test;
@@ -44,12 +44,7 @@ module test();
 	$display("%f", costFuncIntermediate);
 	*/
 	
-	c = 18'h00800;
-	a = c <<< (-1);
-	b = c <<< (beta-alpha);
-	$display("%h", c);
-	$display("%h", a);
-	$display("%h", b);
+	$display("%f", sigmoid(test));
 	end
 		
 function real sigmoid;

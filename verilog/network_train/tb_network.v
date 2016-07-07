@@ -51,6 +51,9 @@ module tb_network();
     integer i=0,j=0,k=0,l=0, roundOut;
     real    quantError=0;
     real    costFuncIntermediate;
+    real    J;
+    real    Jpert;
+    real    diffJ;
     
     // Clock generation
     always begin
@@ -62,21 +65,21 @@ module tb_network();
  
     // DUT Instantiation
     network              #(INPUT_SZ, HIDDEN_SZ, OUTPUT_SZ, QN, QM, DSP48_PER_ROW_G, DSP48_PER_ROW_M) 
-			LSTM_LAYER    (inputVec, 1'b1, {11'd2311, $random(currSecs[0])}, 11'd9, 11'd2, (18'd7 << 11), clock, reset, resetRAM, newCostFunc, costFunc, newSample, dataReady, trainingReady, outputVec);
+			LSTM_LAYER    (inputVec, 1'b1, {11'd2311, $random(currSecs[0])}, 11'd9, 11'd4, (18'd7 << 11), clock, reset, resetRAM, newCostFunc, costFunc, newSample, dataReady, trainingReady, outputVec);
 			
     array_prod #(HIDDEN_SZ, QN, QM)  PERCEPTRON  (Wperceptron, outputVec, clock, resetP, dataReadyP, networkOutput);
    
    
-   
+   /*
     always @(posedge dataReadyP) begin
         costFuncIntermediate = (modelOutput - sigmoid(networkOutput))**2;
-        costFunc = costFuncIntermediate * (2**QM);
+        costFunc = costFuncIntermediate * (2**(QM);
         #(FULL_CLOCK);
 		newCostFunc = 1;
 		#(FULL_CLOCK);
 		newCostFunc = 0;
     end
-	
+	*/
     // Keeping track of the simulation time
     real time_start, time_end;
 
@@ -233,6 +236,7 @@ module tb_network();
 				enPerceptron = 1;
 				
 				@(posedge dataReadyP);
+				J = (modelOutput - sigmoid(networkOutput))**2;
 				roundOut = sigmoid(networkOutput);
 				enPerceptron = 0;
 				if (roundOut !=  modelOutput) begin
@@ -248,8 +252,13 @@ module tb_network();
 				enPerceptron = 1;
 				
 				@(posedge dataReadyP);
-				roundOut = sigmoid(networkOutput);
+				Jpert = (modelOutput - sigmoid(networkOutput))**2;
+				diffJ = (Jpert-J) * (2**5);
+				costFunc = diffJ * (2**QM);
 				enPerceptron = 0;
+				newCostFunc = 1;
+				#(FULL_CLOCK);
+				newCostFunc = 0;
 				
 				@(posedge trainingReady);
 				//$display("%d --> %b", roundOut, modelOutput);
@@ -274,7 +283,6 @@ function integer log2;
          end
     end
 endfunction
-
 		
 function real sigmoid;
 	input [BITWIDTH-1:0] bit_number;
@@ -284,7 +292,6 @@ function real sigmoid;
 		sigmoid = 1/(1+ e**(-conv)); 
 	end
 endfunction
-
 endmodule
             
     

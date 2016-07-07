@@ -240,7 +240,7 @@ class LSTMlayer :
 
         # The Cost Function evaluation for this perturbation
         cost = float(np.sum(Jpert-J))
-
+        print("Cost: ", J, "PertCost:", Jpert, "Diff: ", cost) 
         # ****TRAINING**** The LSTM Layer 
         #print("Gradient Check: ", np.divide(cost, self.Wz_update))
         for i in range(self.Wz.shape[0]):
