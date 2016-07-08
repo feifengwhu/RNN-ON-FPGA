@@ -41,24 +41,24 @@ class LSTMlayer :
 
         # Initializing the matrix weights
         #LSTM Block
-        self.Wz = np.random.random((hiddenUnits, inputUnits)) - 0.5 
-        self.Wi = np.random.random((hiddenUnits, inputUnits)) - 0.5
-        self.Wf = np.random.random((hiddenUnits, inputUnits)) - 0.5  
-        self.Wo = np.random.random((hiddenUnits, inputUnits)) - 0.5
+        self.Wz = np.zeros((hiddenUnits, inputUnits)) + 0.5 
+        self.Wi = np.zeros((hiddenUnits, inputUnits)) + 0.5
+        self.Wf = np.zeros((hiddenUnits, inputUnits)) + 0.5  
+        self.Wo = np.zeros((hiddenUnits, inputUnits)) + 0.5
         
-        self.Rz = np.random.random((hiddenUnits, hiddenUnits))- 0.5
-        self.Ri = np.random.random((hiddenUnits, hiddenUnits))- 0.5
-        self.Rf = np.random.random((hiddenUnits, hiddenUnits))- 0.5
-        self.Ro = np.random.random((hiddenUnits, hiddenUnits))- 0.5
+        self.Rz = np.zeros((hiddenUnits, hiddenUnits))+ 0.5
+        self.Ri = np.zeros((hiddenUnits, hiddenUnits))+ 0.5
+        self.Rf = np.zeros((hiddenUnits, hiddenUnits))+ 0.5
+        self.Ro = np.zeros((hiddenUnits, hiddenUnits))+ 0.5
         
         self.pi = np.random.random((hiddenUnits, 1))- 0.5
         self.pf = np.random.random((hiddenUnits, 1))- 0.5
         self.po = np.random.random((hiddenUnits, 1))- 0.5
         
-        self.bz = np.random.random((hiddenUnits, 1))-0.5
-        self.bi = np.random.random((hiddenUnits, 1))-0.5
-        self.bo = np.random.random((hiddenUnits, 1))-0.5
-        self.bf = np.random.random((hiddenUnits, 1))-0.5
+        self.bz = np.zeros((hiddenUnits, 1))+0.5
+        self.bi = np.zeros((hiddenUnits, 1))+0.5
+        self.bo = np.zeros((hiddenUnits, 1))+0.5
+        self.bf = np.zeros((hiddenUnits, 1))+0.5
         
         # Updates
         self.Wz_update = np.zeros_like(self.Wz)
@@ -126,24 +126,24 @@ class LSTMlayer :
             self.returnVal = np.zeros((self.T,1))
 
             # The perturbation weights
-            self.Wz_p = np.random.random((hiddenUnits, inputUnits)) - 0.5
-            self.Wi_p = np.random.random((hiddenUnits, inputUnits)) - 0.5
-            self.Wf_p = np.random.random((hiddenUnits, inputUnits)) - 0.5
-            self.Wo_p = np.random.random((hiddenUnits, inputUnits)) - 0.5
+            self.Wz_p = - 0.5
+            self.Wi_p = - 0.5
+            self.Wf_p = - 0.5
+            self.Wo_p = - 0.5
             
-            self.Rz_p = np.random.random((hiddenUnits, hiddenUnits)) - 0.5
-            self.Ri_p = np.random.random((hiddenUnits, hiddenUnits)) - 0.5
-            self.Rf_p = np.random.random((hiddenUnits, hiddenUnits)) - 0.5
-            self.Ro_p = np.random.random((hiddenUnits, hiddenUnits)) - 0.5
+            self.Rz_p =  - 0.5
+            self.Ri_p =  - 0.5
+            self.Rf_p =  - 0.5
+            self.Ro_p =  - 0.5
             
             self.pi_p = np.random.random((hiddenUnits, 1)) - 0.5
             self.pf_p = np.random.random((hiddenUnits, 1)) - 0.5
             self.po_p = np.random.random((hiddenUnits, 1)) - 0.5
             
-            self.bz_p = np.random.random((hiddenUnits, 1)) - 0.5
-            self.bi_p = np.random.random((hiddenUnits, 1)) - 0.5
-            self.bo_p = np.random.random((hiddenUnits, 1)) - 0.5
-            self.bf_p = np.random.random((hiddenUnits, 1)) - 0.5
+            self.bz_p =  - 0.5
+            self.bi_p =  - 0.5
+            self.bo_p =  - 0.5
+            self.bf_p =  - 0.5
             
             self.outW_p = np.random.random((outputUnits, hiddenUnits)) - 0.5
             self.outW_update = np.random.random((outputUnits, hiddenUnits)) - 0.5
@@ -240,7 +240,8 @@ class LSTMlayer :
 
         # The Cost Function evaluation for this perturbation
         cost = float(np.sum(Jpert-J))
-        print("Cost: ", J, "PertCost:", Jpert, "Diff: ", cost) 
+        #print("Cost: ", J, "PertCost:", Jpert, "Diff: ", cost, "DiffUp: ", cost*self.learnRate/self.beta) 
+        #print("Before: ", self.Wz.item(0,0))
         # ****TRAINING**** The LSTM Layer 
         #print("Gradient Check: ", np.divide(cost, self.Wz_update))
         for i in range(self.Wz.shape[0]):
@@ -332,6 +333,7 @@ class LSTMlayer :
             else :
                 self.bo.itemset(i,self.bo.item(i) - self.learnRate*(cost/ self.bo_update.item(i)))
 
+        #print("After: ",self.Wz.item(0,0))
         # ****TRAINING**** The Perceptron Layer 
         for i in range(self.outW.shape[0]):
             for j in range(self.outW.shape[1]):

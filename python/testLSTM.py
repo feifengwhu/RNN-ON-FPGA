@@ -115,6 +115,7 @@ for i in range(maxEpoch):
     
     
     print("Average Error:", epochError/testSamp)
+    print("Weight: ", lstmLayer1.Wz.item(0,0))
     #plt.scatter(i, epochError/testSamp, linestyle='-.')
     #plt.draw()
     epochError = 0

@@ -371,6 +371,7 @@ module network  #(parameter INPUT_SZ   =  2,
                     if($signed($signed(PREVwZX_out[j*BITWIDTH +: BITWIDTH]) - $signed(deltaCost)) > $signed(wmax)) begin
                         //$display("Reached Max: %d > %d", wZX_in[j*BITWIDTH +: BITWIDTH], wmax);
                         wZX_in[j*BITWIDTH +: BITWIDTH] = wmax;
+                        
                     end
                     else if($signed($signed(PREVwZX_out[j*BITWIDTH +: BITWIDTH]) - $signed(deltaCost)) < $signed(-wmax)) begin
                         //$display("Reached Max: %18b < %18b", wZX_in[j*BITWIDTH +: BITWIDTH], -wmax);
@@ -378,7 +379,9 @@ module network  #(parameter INPUT_SZ   =  2,
                     end
                     else begin
                         wZX_in[j*BITWIDTH +: BITWIDTH] = $signed(PREVwZX_out[j*BITWIDTH +: BITWIDTH]) - $signed(deltaCost);
-                        //$display("Stuff: %18b", wZX_in[j*BITWIDTH +: BITWIDTH]);
+                        //$display("Curr weight: %h", $signed(wZX_in[0 +: BITWIDTH]));
+                        //if(j==0) 
+							//$display("Stuff: %5h", wZX_in[0 +: BITWIDTH]);
                     end
 				else
 					if($signed($signed(PREVwZX_out[j*BITWIDTH +: BITWIDTH]) + $signed(deltaCost)) > $signed(wmax))
