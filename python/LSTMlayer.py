@@ -5,6 +5,7 @@ LSTM Layer Class
 """
 import numpy as np
 import time
+import pickle
 
 # Defines the seed for random() as the current time in seconds
 np.random.seed(round(time.time()))
@@ -41,24 +42,24 @@ class LSTMlayer :
 
         # Initializing the matrix weights
         #LSTM Block
-        self.Wz = np.zeros((hiddenUnits, inputUnits)) + 0.5 
-        self.Wi = np.zeros((hiddenUnits, inputUnits)) + 0.5
-        self.Wf = np.zeros((hiddenUnits, inputUnits)) + 0.5  
-        self.Wo = np.zeros((hiddenUnits, inputUnits)) + 0.5
+        self.Wz = np.random.random((hiddenUnits, inputUnits)) + 0.5 
+        self.Wi = np.random.random((hiddenUnits, inputUnits)) + 0.5
+        self.Wf = np.random.random((hiddenUnits, inputUnits)) + 0.5  
+        self.Wo = np.random.random((hiddenUnits, inputUnits)) + 0.5
         
-        self.Rz = np.zeros((hiddenUnits, hiddenUnits))+ 0.5
-        self.Ri = np.zeros((hiddenUnits, hiddenUnits))+ 0.5
-        self.Rf = np.zeros((hiddenUnits, hiddenUnits))+ 0.5
-        self.Ro = np.zeros((hiddenUnits, hiddenUnits))+ 0.5
+        self.Rz = np.random.random((hiddenUnits, hiddenUnits))+ 0.5
+        self.Ri = np.random.random((hiddenUnits, hiddenUnits))+ 0.5
+        self.Rf = np.random.random((hiddenUnits, hiddenUnits))+ 0.5
+        self.Ro = np.random.random((hiddenUnits, hiddenUnits))+ 0.5
         
         self.pi = np.random.random((hiddenUnits, 1))- 0.5
         self.pf = np.random.random((hiddenUnits, 1))- 0.5
         self.po = np.random.random((hiddenUnits, 1))- 0.5
         
-        self.bz = np.zeros((hiddenUnits, 1))+0.5
-        self.bi = np.zeros((hiddenUnits, 1))+0.5
-        self.bo = np.zeros((hiddenUnits, 1))+0.5
-        self.bf = np.zeros((hiddenUnits, 1))+0.5
+        self.bz = np.random.random((hiddenUnits, 1))+0.5
+        self.bi = np.random.random((hiddenUnits, 1))+0.5
+        self.bo = np.random.random((hiddenUnits, 1))+0.5
+        self.bf = np.random.random((hiddenUnits, 1))+0.5
         
         # Updates
         self.Wz_update = np.zeros_like(self.Wz)
@@ -118,6 +119,9 @@ class LSTMlayer :
             self.prev_y_p = np.zeros((hiddenUnits,1))
             self.prev_c_p = np.zeros((hiddenUnits,1))
             
+            f = open("layer.pickle", "rb")
+            lC = pickle.load(f)
+
             # The MLP Variables and Weights
             self.activOut = np.random.random((outputUnits,1)) - 0.5 
             self.outW = np.random.random((outputUnits, hiddenUnits)) - 0.5
@@ -227,9 +231,11 @@ class LSTMlayer :
         self.bi_p = self.bi + self.bi_update
         self.bo_p = self.bo + self.bo_update
         self.bf_p = self.bf + self.bf_update
-      
+     
+        
         self.outW_update = self.beta*np.sign(np.random.random(np.shape(self.outW)) - 0.5) 
         self.outW_p = self.outW + self.outW_update
+        
 
         # Forward Propagation, WITHOUT weight perturbation. J is the cost function 
         self.returnVal = self.forwardPropagate(X)
@@ -335,6 +341,7 @@ class LSTMlayer :
 
         #print("After: ",self.Wz.item(0,0))
         # ****TRAINING**** The Perceptron Layer 
+        
         for i in range(self.outW.shape[0]):
             for j in range(self.outW.shape[1]):
                 if (self.outW[i,j] - self.learnRate*np.divide(cost, self.outW_update[i,j]) > self.wmax) :
@@ -343,7 +350,7 @@ class LSTMlayer :
                     self.outW[i,j] = -self.wmax
                 else :
                     self.outW[i,j] = self.outW[i,j] - self.learnRate*np.divide(cost, self.outW_update[i,j])
-                
+             
         return self.returnVal
 
     def forwardPropagate_BPTT(self, X):    

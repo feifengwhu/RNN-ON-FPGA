@@ -33,6 +33,8 @@ module tb_network();
     reg  [BITWIDTH-1:0]        temp;
     reg 					    resetRAM;
     reg  [LAYER_BITWIDTH-1:0]  Wperceptron;
+    reg  [LAYER_BITWIDTH-1:0]  Wperceptron_p;
+    reg  [LAYER_BITWIDTH-1:0]  Wperceptron_IN;
     wire  [BITWIDTH-1:0]       networkOutput;
     wire                       resetP;
     wire                       dataReadyP;
@@ -44,6 +46,7 @@ module tb_network();
     //reg [2*BITWIDTH-1:0] costFuncIntermediate;
     reg newCostFunc;
     reg [64:0] currSecs [1:0];
+    reg [7:0] sign_outW;
     
     // File descriptors for the error/output dumps
     integer fid, fid_error_dump, retVal;
@@ -67,7 +70,7 @@ module tb_network();
     network              #(INPUT_SZ, HIDDEN_SZ, OUTPUT_SZ, QN, QM, DSP48_PER_ROW_G, DSP48_PER_ROW_M) 
 			LSTM_LAYER    (inputVec, 1'b1, {11'd2311, $random(currSecs[0])}, 11'd9, 11'd4, (18'd7 << QM), clock, reset, resetRAM, newCostFunc, costFunc, newSample, dataReady, trainingReady, outputVec);
 			
-    array_prod #(HIDDEN_SZ, QN, QM)  PERCEPTRON  (Wperceptron, outputVec, clock, resetP, dataReadyP, networkOutput);
+    array_prod #(HIDDEN_SZ, QN, QM)  PERCEPTRON  (Wperceptron_IN, outputVec, clock, resetP, dataReadyP, networkOutput);
    
    
    /*
@@ -172,7 +175,7 @@ module tb_network();
 			LSTM_LAYER.bO[i*BITWIDTH +: BITWIDTH] = 18'h00400;//temp;
 
 			retVal = $fscanf(fid_outW, "%18b\n",temp);
-			Wperceptron[i*BITWIDTH +: BITWIDTH] = 18'h00400;//temp;
+			Wperceptron[i*BITWIDTH +: BITWIDTH] = 18'h00400; //temp;
         end
 		
 	end
@@ -188,7 +191,7 @@ module tb_network();
 		newSample    = 0;
 	    newCostFunc  = 0;
 	    enPerceptron = 0;
-        wmax = (18'd9 << 11);
+        wmax = (18'd7 << 11);
 		// Applying the initial reset
 		reset     = 1'b1;
 		resetRAM  = 1'b1;
@@ -209,7 +212,7 @@ module tb_network();
 			
 			if(k % 1000 == 0) begin
 				$display("Input Sample %d", k);
-				$display("Average Wrong bits: %.4f percent", quantError/1000.0);
+				$display("Average Wrong bits: %.4f", quantError/1000.0);
 				quantError=0;
 			end
 			
@@ -223,6 +226,8 @@ module tb_network();
 				retVal = $fscanf(fid_x,  "%b\n", temp);
 				inputVec[35:18] = temp;
 				retVal = $fscanf(fid_out, "%b\n", modelOutput);
+				sign_outW = $random();
+				Wperceptron_IN = Wperceptron;
 				
 				newSample = 1'b1;
 				#(FULL_CLOCK);
@@ -244,6 +249,14 @@ module tb_network();
 					//$display("%d --> %b", roundOut, modelOutput);
 					//$display("ERROR!\n");
 				end
+				
+				// Applying perturbation to the weights
+				for(l=0; l < HIDDEN_SZ; l = l + 1) begin
+					if(sign_outW[l] == 1)
+						Wperceptron_IN[l*BITWIDTH +: BITWIDTH] = Wperceptron[l*BITWIDTH +: BITWIDTH] + (18'h00800 >>> 9);
+					else
+						Wperceptron_IN[l*BITWIDTH +: BITWIDTH] = Wperceptron[l*BITWIDTH +: BITWIDTH] - (18'h00800 >>> 9);
+				end
 
 				
 				// If we are training, wait for the perturbed FP, and uncomment this
@@ -259,6 +272,15 @@ module tb_network();
 				newCostFunc = 1;
 				#(FULL_CLOCK);
 				newCostFunc = 0;
+				
+				// Training the output perceptron
+				for(l=0; l < HIDDEN_SZ; l = l + 1) begin
+					if(sign_outW[l] == 1)
+						Wperceptron[l*BITWIDTH +: BITWIDTH] <= $signed(Wperceptron[l*BITWIDTH +: BITWIDTH]) - $signed(costFunc);
+					else
+						Wperceptron[l*BITWIDTH +: BITWIDTH] <= $signed(Wperceptron[l*BITWIDTH +: BITWIDTH]) + $signed(costFunc);
+				end
+				
 				
 				@(posedge trainingReady);
 				//$display("%d --> %b", roundOut, modelOutput);

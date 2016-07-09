@@ -27,22 +27,22 @@ n@_opt1
 R3
 R0
 T_opt10
-!s110 1467989811
-V<cJeJ>B@CQ0T4SHzKmaJF3
+!s110 1467997316
+Vgj@c;i:=^DJ<7ZQP:Eg3>2
 R1
-=1-50465de28cf7-577fbf33-a39d2-2d9c
+=1-50465de28cf7-577fdc84-622c9-309e
 R2
 n@_opt10
 R3
+R0
 T_opt11
-!s110 1467989561
-V9Tm=5M^Tn^6K21OQWnBzR0
+!s110 1467999885
+VSVnSoASUbeZfRRji89o_R0
 R1
-=1-50465de28cf7-577fbe39-4ab30-2d7a
+=1-50465de28cf7-577fe68d-54a81-3381
 R4
 n@_opt11
 R3
-R0
 T_opt2
 !s110 1467929404
 V22zYamkV3SD4SB1A3;^V@3
@@ -53,7 +53,7 @@ n@_opt2
 R3
 R0
 varray_prod
-Z5 !s110 1467989804
+Z5 !s110 1467999884
 !i10b 1
 !s100 m[KFbYiYj3oaci2JZ4o0o1
 ISb4fQ>`i2c?4GzbEaDHIE2
@@ -67,7 +67,7 @@ Z9 OL;L;10.4c_5;61
 r1
 !s85 0
 31
-Z10 !s108 1467989804.000000
+Z10 !s108 1467999884.000000
 Z11 !s107 weightRAM.v|test.v|tb_network.v|tanh.v|sigmoid.v|prng.v|network.v|gate.v|dot_prod.v|array_prod.v|
 Z12 !s90 array_prod.v|dot_prod.v|gate.v|network.v|prng.v|sigmoid.v|tanh.v|tb_network.v|test.v|weightRAM.v|
 !i113 0
@@ -195,11 +195,11 @@ R13
 vtb_network
 R5
 !i10b 1
-!s100 ^7XO15?6dUH4JA2gf[9mS3
-I:Pi3kc;g[kU@DIRbH1`S<0
+!s100 _RQPo3=QPl9f3oJmWCcO00
+IzZ1b^^WC@h]]XW`8kh83Y1
 R6
 R7
-w1467989601
+w1467999879
 8tb_network.v
 Ftb_network.v
 L0 3
