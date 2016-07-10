@@ -28,14 +28,14 @@ module network  #(parameter INPUT_SZ   =  2,
     parameter MULT_BITWIDTH      = (2*BITWIDTH+2);
     parameter ELEMWISE_BITWIDTH  = MULT_BITWIDTH*HIDDEN_SZ;
     parameter OUTPUT_BITWIDTH    = OUTPUT_SZ * BITWIDTH; //log2(NUM_OUTPUT_SYMBOLS);
-	parameter ADDR_BITWIDTH      = log2(HIDDEN_SZ);
-	parameter ADDR_BITWIDTH_X    = log2(INPUT_SZ);
-	parameter MUX_BITWIDTH		 = log2(DSP48_PER_ROW_M);  
-	parameter N_DSP48            = HIDDEN_SZ/DSP48_PER_ROW_M; 
-	parameter N_PRNG             = HIDDEN_SZ/4;
-	parameter N_PRNG_BIAS        = HIDDEN_SZ/8;
-	parameter RAND_GEN_BITWIDTH  = 32;
-	
+  	parameter ADDR_BITWIDTH      = log2(HIDDEN_SZ);
+  	parameter ADDR_BITWIDTH_X    = log2(INPUT_SZ);
+  	parameter MUX_BITWIDTH		 = log2(DSP48_PER_ROW_M);
+  	parameter N_DSP48            = HIDDEN_SZ/DSP48_PER_ROW_M;
+  	parameter N_PRNG             = HIDDEN_SZ/4;
+  	parameter N_PRNG_BIAS        = HIDDEN_SZ/8;
+  	parameter RAND_GEN_BITWIDTH  = 32;
+
     // Input/Output definitions
     input [INPUT_BITWIDTH-1:0]       inputVec;
     input                            trainingFlag;
@@ -47,13 +47,13 @@ module network  #(parameter INPUT_SZ   =  2,
     input                             reset;
     input 							  resetRAM;
     input 							  newCostFunc;
-    input [OUTPUT_BITWIDTH-1:0]       costFunc;
+    input signed [OUTPUT_BITWIDTH-1:0]       costFunc;
     input                             newSample;
     output reg                       dataoutReady;
     output reg                       trainingReady;
     output reg [LAYER_BITWIDTH-1:0]  outputVec;
-    
-        
+
+
     // The state tags
     parameter IDLE             = 5'd0;
     parameter GATE_CALC_INIT   = 5'd1;
@@ -82,12 +82,12 @@ module network  #(parameter INPUT_SZ   =  2,
     parameter TRAIN_END         = 5'd24;
     parameter WEIGHT_UPDATE_X   = 5'd25;
     parameter WEIGHT_UPDATE_Y   = 5'd26;
-    
+
     // The FSM registers
     reg [4:0] state;
     reg [4:0] NEXTstate;
     reg fpType;
-   
+
 
     // Connecting wires and auxiliary registers
     wire   [ADDR_BITWIDTH_X-1:0] colAddressRead_wZX;
@@ -150,7 +150,7 @@ module network  #(parameter INPUT_SZ   =  2,
     reg    [HIDDEN_SZ-1:0]  sign_bI;
     reg    [HIDDEN_SZ-1:0]  sign_bF;
     reg    [HIDDEN_SZ-1:0]  sign_bO;
-    
+
     wire   [LAYER_BITWIDTH-1:0]  gate_Z;
     wire   [LAYER_BITWIDTH-1:0]  gate_I;
     wire   [LAYER_BITWIDTH-1:0]  gate_F;
@@ -214,8 +214,8 @@ module network  #(parameter INPUT_SZ   =  2,
     reg  writeWeightUpdate_X;
     reg  writeWeightUpdate_Y;
     reg  saveSS_layerC;
-    
-    
+
+
     // The enable signals for the sigmoid/tanh evaluations
 	assign reset_sigm = reset || !sigmoidEnable;
 	assign reset_tanh = reset || !tanhEnable;
@@ -227,7 +227,7 @@ module network  #(parameter INPUT_SZ   =  2,
                                                              clock, reset, colAddressRead_wZX, colAddressRead_wZY, gateReady_Z, gate_Z);
     weightRAM  #(HIDDEN_SZ,  INPUT_SZ, BITWIDTH)  WRAM_Z_X (PREVcolAddressTRAIN_X, colAddressRead_X, writeWeightUpdate_X, clock, resetRAM, wZX_in, wZX_out);
     weightRAM  #(HIDDEN_SZ, HIDDEN_SZ, BITWIDTH)  WRAM_Z_Y (PREVcolAddressTRAIN_Y, colAddressRead_Y, writeWeightUpdate_Y, clock, resetRAM, wZY_in, wZY_out);
- 
+
     gate #(INPUT_SZ, HIDDEN_SZ, QN, QM, DSP48_PER_ROW_G) GATE_I (inputVecSample, prevOutVecSample, wIX_out_gate, wIY_out_gate, bI, beginCalc,
                                                              clock, reset, colAddressRead_wIX, colAddressRead_wIY, gateReady_I, gate_I);
     weightRAM  #(HIDDEN_SZ,  INPUT_SZ, BITWIDTH)  WRAM_I_X (PREVcolAddressTRAIN_X, colAddressRead_X, writeWeightUpdate_X, clock, resetRAM, wIX_in, wIX_out);
@@ -245,32 +245,32 @@ module network  #(parameter INPUT_SZ   =  2,
 
 	// The non-linearity modules
     genvar i;
-    generate 
+    generate
         for (i = 0; i < HIDDEN_SZ; i = i + 1) begin
             sigmoid #(QN,QM) sigmoid_i (elemWise_op2[i*BITWIDTH +: BITWIDTH], clock, reset_sigm, elemWise_mult2[i*BITWIDTH +: BITWIDTH]);
-        end 
-    endgenerate 
+        end
+    endgenerate
 
-    generate 
+    generate
         for (i = 0; i < HIDDEN_SZ; i = i + 1) begin
             tanh #(QN,QM) tanh_i (elemWise_op1[i*BITWIDTH +: BITWIDTH], clock, reset_tanh, tanh_result[i*BITWIDTH +: BITWIDTH]);
-        end 
-    endgenerate 
+        end
+    endgenerate
 
 	// The Pseudo-random Number Generators
 	prng PRNG_1 (initSeed, clock, reset, genRandNum_Y, genRandNum_Y, randGenOutput[0+:RAND_GEN_BITWIDTH]);
 	prng PRNG_2 (initSeed+43'd123, clock, reset, genRandNum_Y, genRandNum_Y, randGenOutput[RAND_GEN_BITWIDTH+:RAND_GEN_BITWIDTH]);
 	prng PRNG_b (initSeed+43'd812, clock, reset, genRandNum_Y, genRandNum_Y, randGenOutput_bias);
-	
+
 	/*
 	________________________THIS IS NOT WORKING, DON'T KNOW WHY???___________________________________
 	generate
 		for (i = 0; i < N_PRNG; i = i + 1) begin
 			prng PRNG_i (initSeed, clock, reset, genRandNum, genRandNum, randGenOutput[i*RAND_GEN_BITWIDTH+:RAND_GEN_BITWIDTH]);
-		end 
+		end
     endgenerate
 	*/
-	
+
 	// The sign matrix for the perturbations
 	weightRAM  #(HIDDEN_SZ,  INPUT_SZ, 1)  PRAM_Z_X (colAddressRead_wZX, colAddressTRAIN_X, genRandNum_X, clock, reset, randGenOutput[0 +: HIDDEN_SZ]        , sign_wZX);
     weightRAM  #(HIDDEN_SZ, HIDDEN_SZ, 1)  PRAM_Z_Y (colAddressRead_wZY, colAddressTRAIN_Y, genRandNum_Y, clock, reset, randGenOutput[HIDDEN_SZ +:HIDDEN_SZ] , sign_wZY);
@@ -279,7 +279,7 @@ module network  #(parameter INPUT_SZ   =  2,
 	weightRAM  #(HIDDEN_SZ,  INPUT_SZ, 1)  PRAM_F_X (colAddressRead_wFX, colAddressTRAIN_X, genRandNum_X, clock, reset, randGenOutput[4*HIDDEN_SZ+:HIDDEN_SZ], sign_wFX);
     weightRAM  #(HIDDEN_SZ, HIDDEN_SZ, 1)  PRAM_F_Y (colAddressRead_wFY, colAddressTRAIN_Y, genRandNum_Y, clock, reset, randGenOutput[5*HIDDEN_SZ+:HIDDEN_SZ], sign_wFY);
 	weightRAM  #(HIDDEN_SZ,  INPUT_SZ, 1)  PRAM_O_X (colAddressRead_wOX, colAddressTRAIN_X, genRandNum_X, clock, reset, randGenOutput[6*HIDDEN_SZ+:HIDDEN_SZ], sign_wOX);
-    weightRAM  #(HIDDEN_SZ, HIDDEN_SZ, 1)  PRAM_O_Y (colAddressRead_wOY, colAddressTRAIN_Y, genRandNum_Y, clock, reset, randGenOutput[7*HIDDEN_SZ+:HIDDEN_SZ], sign_wOY);  
+    weightRAM  #(HIDDEN_SZ, HIDDEN_SZ, 1)  PRAM_O_Y (colAddressRead_wOY, colAddressTRAIN_Y, genRandNum_Y, clock, reset, randGenOutput[7*HIDDEN_SZ+:HIDDEN_SZ], sign_wOY);
 
 	always @(*) begin
 		sign_bZ = randGenOutput_bias[0           +: HIDDEN_SZ];
@@ -287,7 +287,7 @@ module network  #(parameter INPUT_SZ   =  2,
 		sign_bF = randGenOutput_bias[2*HIDDEN_SZ +: HIDDEN_SZ];
 		sign_bO = randGenOutput_bias[3*HIDDEN_SZ +: HIDDEN_SZ];
 	end
-	
+
 	// Chooses to perturbate the weights going to the Gate, or not.
 	always @(*) begin
 		if(pertWeights) begin
@@ -300,7 +300,7 @@ module network  #(parameter INPUT_SZ   =  2,
 					wZY_out_gate[j*BITWIDTH +: BITWIDTH] = wZY_out[j*BITWIDTH +: BITWIDTH] + (18'h00800 >>> pertRate);
 				else
 					wZY_out_gate[j*BITWIDTH +: BITWIDTH] = wZY_out[j*BITWIDTH +: BITWIDTH] - (18'h00800 >>> pertRate);
-					
+
 				if(sign_wIX[j] == 1)
 					wIX_out_gate[j*BITWIDTH +: BITWIDTH] = wIX_out[j*BITWIDTH +: BITWIDTH] + (18'h00800 >>> pertRate);
 				else
@@ -309,7 +309,7 @@ module network  #(parameter INPUT_SZ   =  2,
 					wIY_out_gate[j*BITWIDTH +: BITWIDTH] = wIY_out[j*BITWIDTH +: BITWIDTH] + (18'h00800 >>> pertRate);
 				else
 					wIY_out_gate[j*BITWIDTH +: BITWIDTH] = wIY_out[j*BITWIDTH +: BITWIDTH] - (18'h00800 >>> pertRate);
-				
+
 				if(sign_wFX[j] == 1)
 					wFX_out_gate[j*BITWIDTH +: BITWIDTH] = wFX_out[j*BITWIDTH +: BITWIDTH] + (18'h00800 >>> pertRate);
 				else
@@ -318,32 +318,32 @@ module network  #(parameter INPUT_SZ   =  2,
 					wFY_out_gate[j*BITWIDTH +: BITWIDTH] = wFY_out[j*BITWIDTH +: BITWIDTH] + (18'h00800 >>> pertRate);
 				else
 					wFY_out_gate[j*BITWIDTH +: BITWIDTH] = wFY_out[j*BITWIDTH +: BITWIDTH] - (18'h00800 >>> pertRate);
-				
+
 				if(sign_wOX[j] == 1)
 					wOX_out_gate[j*BITWIDTH +: BITWIDTH] = wOX_out[j*BITWIDTH +: BITWIDTH] + (18'h00800 >>> pertRate);
 				else
-					wOX_out_gate[j*BITWIDTH +: BITWIDTH] = wOX_out[j*BITWIDTH +: BITWIDTH] - (18'h00800 >>> pertRate);	
+					wOX_out_gate[j*BITWIDTH +: BITWIDTH] = wOX_out[j*BITWIDTH +: BITWIDTH] - (18'h00800 >>> pertRate);
 				if(sign_wOY[j] == 1)
 					wOY_out_gate[j*BITWIDTH +: BITWIDTH] = wOY_out[j*BITWIDTH +: BITWIDTH] + (18'h00800 >>> pertRate);
 				else
-					wOY_out_gate[j*BITWIDTH +: BITWIDTH] = wOY_out[j*BITWIDTH +: BITWIDTH] - (18'h00800 >>> pertRate);	
-					
+					wOY_out_gate[j*BITWIDTH +: BITWIDTH] = wOY_out[j*BITWIDTH +: BITWIDTH] - (18'h00800 >>> pertRate);
+
 				if(sign_bZ[j] == 1)
 					bZ_out_gate[j*BITWIDTH +: BITWIDTH] = bZ[j*BITWIDTH +: BITWIDTH] + (18'h00800 >>> pertRate);
 				else
-					bZ_out_gate[j*BITWIDTH +: BITWIDTH] = bZ[j*BITWIDTH +: BITWIDTH] - (18'h00800 >>> pertRate);	
+					bZ_out_gate[j*BITWIDTH +: BITWIDTH] = bZ[j*BITWIDTH +: BITWIDTH] - (18'h00800 >>> pertRate);
 				if(sign_bI[j] == 1)
 					bI_out_gate[j*BITWIDTH +: BITWIDTH] = bI[j*BITWIDTH +: BITWIDTH] + (18'h00800 >>> pertRate);
 				else
-					bI_out_gate[j*BITWIDTH +: BITWIDTH] = bI[j*BITWIDTH +: BITWIDTH] - (18'h00800 >>> pertRate);	
+					bI_out_gate[j*BITWIDTH +: BITWIDTH] = bI[j*BITWIDTH +: BITWIDTH] - (18'h00800 >>> pertRate);
 				if(sign_bF[j] == 1)
 					bF_out_gate[j*BITWIDTH +: BITWIDTH] = bF[j*BITWIDTH +: BITWIDTH] + (18'h00800 >>> pertRate);
 				else
-					bF_out_gate[j*BITWIDTH +: BITWIDTH] = bF[j*BITWIDTH +: BITWIDTH] - (18'h00800 >>> pertRate);	
+					bF_out_gate[j*BITWIDTH +: BITWIDTH] = bF[j*BITWIDTH +: BITWIDTH] - (18'h00800 >>> pertRate);
 				if(sign_bO[j] == 1)
 					bO_out_gate[j*BITWIDTH +: BITWIDTH] = bO[j*BITWIDTH +: BITWIDTH] + (18'h00800 >>> pertRate);
 				else
-					bO_out_gate[j*BITWIDTH +: BITWIDTH] = bO[j*BITWIDTH +: BITWIDTH] - (18'h00800 >>> pertRate);	
+					bO_out_gate[j*BITWIDTH +: BITWIDTH] = bO[j*BITWIDTH +: BITWIDTH] - (18'h00800 >>> pertRate);
 			end
 		end
 		else begin
@@ -361,153 +361,153 @@ module network  #(parameter INPUT_SZ   =  2,
 			bO_out_gate = bO;
 		end
 	end
-	
+
 	// Evaluates the update to be applied for each training cycle
 	always @(*) begin
 		if(weightUpdate) begin
 			for(j = 0; j < HIDDEN_SZ; j = j + 1) begin
 				// ZX weights
-                if(sign_wZX[j] == 1)
-                    if($signed($signed(PREVwZX_out[j*BITWIDTH +: BITWIDTH]) - $signed(deltaCost)) > $signed(wmax)) begin
-                        //$display("Reached Max: %d > %d", wZX_in[j*BITWIDTH +: BITWIDTH], wmax);
-                        wZX_in[j*BITWIDTH +: BITWIDTH] = wmax;
-                        
-                    end
-                    else if($signed($signed(PREVwZX_out[j*BITWIDTH +: BITWIDTH]) - $signed(deltaCost)) < $signed(-wmax)) begin
-                        //$display("Reached Max: %18b < %18b", wZX_in[j*BITWIDTH +: BITWIDTH], -wmax);
-                        wZX_in[j*BITWIDTH +: BITWIDTH] = -wmax;
-                    end
-                    else begin
-                        wZX_in[j*BITWIDTH +: BITWIDTH] = $signed(PREVwZX_out[j*BITWIDTH +: BITWIDTH]) - $signed(deltaCost);
-                        //$display("Curr weight: %h", $signed(wZX_in[0 +: BITWIDTH]));
-                        //if(j==0) 
-							//$display("Stuff: %5h", wZX_in[0 +: BITWIDTH]);
-                    end
-				else
-					if($signed($signed(PREVwZX_out[j*BITWIDTH +: BITWIDTH]) + $signed(deltaCost)) > $signed(wmax))
-                        wZX_in[j*BITWIDTH +: BITWIDTH] = wmax;
-                    else if($signed($signed(PREVwZX_out[j*BITWIDTH +: BITWIDTH]) + $signed(deltaCost)) < $signed(-wmax))
-                        wZX_in[j*BITWIDTH +: BITWIDTH] = -wmax;
-                    else
-                        wZX_in[j*BITWIDTH +: BITWIDTH] = $signed(PREVwZX_out[j*BITWIDTH +: BITWIDTH]) + $signed(deltaCost);
+        if(sign_wZX[j] == 1)
+            if($signed($signed(PREVwZX_out[j*BITWIDTH +: BITWIDTH]) - $signed(deltaCost)) > $signed(wmax)) begin
+                //$display("Reached Max: %d > %d", wZX_in[j*BITWIDTH +: BITWIDTH], wmax);
+                wZX_in[j*BITWIDTH +: BITWIDTH] = wmax;
 
-                // ZY weights
-                if(sign_wZY[j] == 1)
+            end
+            else if($signed($signed(PREVwZX_out[j*BITWIDTH +: BITWIDTH]) - $signed(deltaCost)) < $signed(-wmax)) begin
+                //$display("Reached Max: %18b < %18b", wZX_in[j*BITWIDTH +: BITWIDTH], -wmax);
+                wZX_in[j*BITWIDTH +: BITWIDTH] = -wmax;
+            end
+            else begin
+                wZX_in[j*BITWIDTH +: BITWIDTH] = $signed(PREVwZX_out[j*BITWIDTH +: BITWIDTH]) - $signed(deltaCost);
+                //$display("Curr weight: %h", $signed(wZX_in[0 +: BITWIDTH]));
+                //if(j==0)
+			          //$display("Stuff: %5h", wZX_in[0 +: BITWIDTH]);
+            end
+      			else
+      				if($signed($signed(PREVwZX_out[j*BITWIDTH +: BITWIDTH]) + $signed(deltaCost)) > $signed(wmax))
+                  wZX_in[j*BITWIDTH +: BITWIDTH] = wmax;
+              else if($signed($signed(PREVwZX_out[j*BITWIDTH +: BITWIDTH]) + $signed(deltaCost)) < $signed(-wmax))
+                  wZX_in[j*BITWIDTH +: BITWIDTH] = -wmax;
+              else
+                  wZX_in[j*BITWIDTH +: BITWIDTH] = $signed(PREVwZX_out[j*BITWIDTH +: BITWIDTH]) + $signed(deltaCost);
+
+        // ZY weights
+        if(sign_wZY[j] == 1)
 					if($signed($signed(PREVwZY_out[j*BITWIDTH +: BITWIDTH]) - $signed(deltaCost)) > $signed(wmax))
-                        wZY_in[j*BITWIDTH +: BITWIDTH] = wmax;
-                    else if($signed($signed(PREVwZY_out[j*BITWIDTH +: BITWIDTH]) - $signed(deltaCost)) < $signed(-wmax))
-                        wZY_in[j*BITWIDTH +: BITWIDTH] = -wmax;
-                    else
-                        wZY_in[j*BITWIDTH +: BITWIDTH] = $signed(PREVwZY_out[j*BITWIDTH +: BITWIDTH]) - $signed(deltaCost);
+              wZY_in[j*BITWIDTH +: BITWIDTH] = wmax;
+          else if($signed($signed(PREVwZY_out[j*BITWIDTH +: BITWIDTH]) - $signed(deltaCost)) < $signed(-wmax))
+              wZY_in[j*BITWIDTH +: BITWIDTH] = -wmax;
+          else
+              wZY_in[j*BITWIDTH +: BITWIDTH] = $signed(PREVwZY_out[j*BITWIDTH +: BITWIDTH]) - $signed(deltaCost);
 				else
 					if($signed($signed(PREVwZY_out[j*BITWIDTH +: BITWIDTH]) + $signed(deltaCost)) > $signed(wmax))
-                        wZY_in[j*BITWIDTH +: BITWIDTH] = wmax;
-                    else if($signed($signed(PREVwZY_out[j*BITWIDTH +: BITWIDTH]) + $signed(deltaCost)) < $signed(-wmax))
-                        wZY_in[j*BITWIDTH +: BITWIDTH] = -wmax;
-                    else
-                        wZY_in[j*BITWIDTH +: BITWIDTH] = $signed(PREVwZY_out[j*BITWIDTH +: BITWIDTH]) + $signed(deltaCost);
-					
-				// IX weights
-                if(sign_wIX[j] == 1)
+              wZY_in[j*BITWIDTH +: BITWIDTH] = wmax;
+          else if($signed($signed(PREVwZY_out[j*BITWIDTH +: BITWIDTH]) + $signed(deltaCost)) < $signed(-wmax))
+              wZY_in[j*BITWIDTH +: BITWIDTH] = -wmax;
+          else
+              wZY_in[j*BITWIDTH +: BITWIDTH] = $signed(PREVwZY_out[j*BITWIDTH +: BITWIDTH]) + $signed(deltaCost);
+
+        // IX weights
+        if(sign_wIX[j] == 1)
 					if($signed($signed(PREVwIX_out[j*BITWIDTH +: BITWIDTH]) - $signed(deltaCost)) > $signed(wmax))
-                        wIX_in[j*BITWIDTH +: BITWIDTH] = wmax;
-                    else if($signed($signed(PREVwIX_out[j*BITWIDTH +: BITWIDTH]) - $signed(deltaCost)) < $signed(-wmax))
-                        wIX_in[j*BITWIDTH +: BITWIDTH] = -wmax;
-                    else
-                        wIX_in[j*BITWIDTH +: BITWIDTH] = $signed(PREVwIX_out[j*BITWIDTH +: BITWIDTH]) - $signed(deltaCost);
+              wIX_in[j*BITWIDTH +: BITWIDTH] = wmax;
+          else if($signed($signed(PREVwIX_out[j*BITWIDTH +: BITWIDTH]) - $signed(deltaCost)) < $signed(-wmax))
+              wIX_in[j*BITWIDTH +: BITWIDTH] = -wmax;
+          else
+              wIX_in[j*BITWIDTH +: BITWIDTH] = $signed(PREVwIX_out[j*BITWIDTH +: BITWIDTH]) - $signed(deltaCost);
 				else
 					if($signed($signed(PREVwIX_out[j*BITWIDTH +: BITWIDTH]) + $signed(deltaCost)) > $signed(wmax))
-                        wIX_in[j*BITWIDTH +: BITWIDTH] = wmax;
-                    else if($signed($signed(PREVwIX_out[j*BITWIDTH +: BITWIDTH]) + $signed(deltaCost)) < $signed(-wmax))
-                        wIX_in[j*BITWIDTH +: BITWIDTH] = -wmax;
-                    else
-                        wIX_in[j*BITWIDTH +: BITWIDTH] = $signed(PREVwIX_out[j*BITWIDTH +: BITWIDTH]) + $signed(deltaCost);
+              wIX_in[j*BITWIDTH +: BITWIDTH] = wmax;
+          else if($signed($signed(PREVwIX_out[j*BITWIDTH +: BITWIDTH]) + $signed(deltaCost)) < $signed(-wmax))
+              wIX_in[j*BITWIDTH +: BITWIDTH] = -wmax;
+          else
+              wIX_in[j*BITWIDTH +: BITWIDTH] = $signed(PREVwIX_out[j*BITWIDTH +: BITWIDTH]) + $signed(deltaCost);
 
-                // IY weights
-                if(sign_wIY[j] == 1)
+        // IY weights
+        if(sign_wIY[j] == 1)
 					if($signed($signed(PREVwIY_out[j*BITWIDTH +: BITWIDTH]) - $signed(deltaCost)) > $signed(wmax))
-                        wIY_in[j*BITWIDTH +: BITWIDTH] = wmax;
-                    else if($signed($signed(PREVwIY_out[j*BITWIDTH +: BITWIDTH]) - $signed(deltaCost)) < $signed(-wmax))
-                        wIY_in[j*BITWIDTH +: BITWIDTH] = -wmax;
-                    else
-                        wIY_in[j*BITWIDTH +: BITWIDTH] = $signed(PREVwIY_out[j*BITWIDTH +: BITWIDTH]) - $signed(deltaCost);
+              wIY_in[j*BITWIDTH +: BITWIDTH] = wmax;
+          else if($signed($signed(PREVwIY_out[j*BITWIDTH +: BITWIDTH]) - $signed(deltaCost)) < $signed(-wmax))
+              wIY_in[j*BITWIDTH +: BITWIDTH] = -wmax;
+          else
+              wIY_in[j*BITWIDTH +: BITWIDTH] = $signed(PREVwIY_out[j*BITWIDTH +: BITWIDTH]) - $signed(deltaCost);
 				else
 					if($signed($signed(PREVwIY_out[j*BITWIDTH +: BITWIDTH]) + $signed(deltaCost)) > $signed(wmax))
-                        wIY_in[j*BITWIDTH +: BITWIDTH] = wmax;
-                    else if($signed($signed(PREVwIY_out[j*BITWIDTH +: BITWIDTH]) + $signed(deltaCost)) < $signed(-wmax))
-                        wIY_in[j*BITWIDTH +: BITWIDTH] = -wmax;
-                    else
-                        wIY_in[j*BITWIDTH +: BITWIDTH] = $signed(PREVwIY_out[j*BITWIDTH +: BITWIDTH]) + $signed(deltaCost);
+              wIY_in[j*BITWIDTH +: BITWIDTH] = wmax;
+          else if($signed($signed(PREVwIY_out[j*BITWIDTH +: BITWIDTH]) + $signed(deltaCost)) < $signed(-wmax))
+              wIY_in[j*BITWIDTH +: BITWIDTH] = -wmax;
+          else
+              wIY_in[j*BITWIDTH +: BITWIDTH] = $signed(PREVwIY_out[j*BITWIDTH +: BITWIDTH]) + $signed(deltaCost);
 
-				// FX weights
-                if(sign_wFX[j] == 1)
+        // FX weights
+        if(sign_wFX[j] == 1)
 					if($signed($signed(PREVwFX_out[j*BITWIDTH +: BITWIDTH]) - $signed(deltaCost)) > $signed(wmax))
-                        wFX_in[j*BITWIDTH +: BITWIDTH] = wmax;
-                    else if($signed($signed(PREVwFX_out[j*BITWIDTH +: BITWIDTH]) - $signed(deltaCost)) < $signed(-wmax))
-                        wFX_in[j*BITWIDTH +: BITWIDTH] = -wmax;
-                    else
-                        wFX_in[j*BITWIDTH +: BITWIDTH] = $signed(PREVwFX_out[j*BITWIDTH +: BITWIDTH]) - $signed(deltaCost);
+              wFX_in[j*BITWIDTH +: BITWIDTH] = wmax;
+          else if($signed($signed(PREVwFX_out[j*BITWIDTH +: BITWIDTH]) - $signed(deltaCost)) < $signed(-wmax))
+              wFX_in[j*BITWIDTH +: BITWIDTH] = -wmax;
+          else
+              wFX_in[j*BITWIDTH +: BITWIDTH] = $signed(PREVwFX_out[j*BITWIDTH +: BITWIDTH]) - $signed(deltaCost);
 				else
 					if($signed($signed(PREVwFX_out[j*BITWIDTH +: BITWIDTH]) + $signed(deltaCost)) > $signed(wmax))
-                        wFX_in[j*BITWIDTH +: BITWIDTH] = wmax;
-                    else if($signed($signed(PREVwFX_out[j*BITWIDTH +: BITWIDTH]) + $signed(deltaCost)) < $signed(-wmax))
-                        wFX_in[j*BITWIDTH +: BITWIDTH] = -wmax;
-                    else
-                        wFX_in[j*BITWIDTH +: BITWIDTH] = $signed(PREVwFX_out[j*BITWIDTH +: BITWIDTH]) + $signed(deltaCost);
+              wFX_in[j*BITWIDTH +: BITWIDTH] = wmax;
+          else if($signed($signed(PREVwFX_out[j*BITWIDTH +: BITWIDTH]) + $signed(deltaCost)) < $signed(-wmax))
+              wFX_in[j*BITWIDTH +: BITWIDTH] = -wmax;
+          else
+              wFX_in[j*BITWIDTH +: BITWIDTH] = $signed(PREVwFX_out[j*BITWIDTH +: BITWIDTH]) + $signed(deltaCost);
 
-                // FY weights
-                if(sign_wFY[j] == 1)
+        // FY weights
+        if(sign_wFY[j] == 1)
 					if($signed($signed(PREVwFY_out[j*BITWIDTH +: BITWIDTH]) - $signed(deltaCost)) > $signed(wmax))
-                        wFY_in[j*BITWIDTH +: BITWIDTH] = wmax;
-                    else if($signed($signed(PREVwFY_out[j*BITWIDTH +: BITWIDTH]) - $signed(deltaCost)) < $signed(-wmax))
-                        wFY_in[j*BITWIDTH +: BITWIDTH] = -wmax;
-                    else
-                        wFY_in[j*BITWIDTH +: BITWIDTH] = $signed(PREVwFY_out[j*BITWIDTH +: BITWIDTH]) - $signed(deltaCost);
+              wFY_in[j*BITWIDTH +: BITWIDTH] = wmax;
+          else if($signed($signed(PREVwFY_out[j*BITWIDTH +: BITWIDTH]) - $signed(deltaCost)) < $signed(-wmax))
+              wFY_in[j*BITWIDTH +: BITWIDTH] = -wmax;
+          else
+              wFY_in[j*BITWIDTH +: BITWIDTH] = $signed(PREVwFY_out[j*BITWIDTH +: BITWIDTH]) - $signed(deltaCost);
 				else
 					if($signed($signed(PREVwFY_out[j*BITWIDTH +: BITWIDTH]) + $signed(deltaCost)) > $signed(wmax))
-                        wFY_in[j*BITWIDTH +: BITWIDTH] = wmax;
-                    else if($signed($signed(PREVwFY_out[j*BITWIDTH +: BITWIDTH]) + $signed(deltaCost)) < $signed(-wmax))
-                        wFY_in[j*BITWIDTH +: BITWIDTH] = -wmax;
-                    else
-                        wFY_in[j*BITWIDTH +: BITWIDTH] = $signed(PREVwFY_out[j*BITWIDTH +: BITWIDTH]) + $signed(deltaCost);
+              wFY_in[j*BITWIDTH +: BITWIDTH] = wmax;
+          else if($signed($signed(PREVwFY_out[j*BITWIDTH +: BITWIDTH]) + $signed(deltaCost)) < $signed(-wmax))
+              wFY_in[j*BITWIDTH +: BITWIDTH] = -wmax;
+          else
+              wFY_in[j*BITWIDTH +: BITWIDTH] = $signed(PREVwFY_out[j*BITWIDTH +: BITWIDTH]) + $signed(deltaCost);
 
-				// OX weights
-                if(sign_wOX[j] == 1)
+        // OX weights
+        if(sign_wOX[j] == 1)
 					if($signed($signed(PREVwOX_out[j*BITWIDTH +: BITWIDTH]) - $signed(deltaCost)) > $signed(wmax))
-                        wOX_in[j*BITWIDTH +: BITWIDTH] = wmax;
-                    else if($signed($signed(PREVwOX_out[j*BITWIDTH +: BITWIDTH]) - $signed(deltaCost)) < $signed(-wmax))
-                        wOX_in[j*BITWIDTH +: BITWIDTH] = -wmax;
-                    else
-                        wOX_in[j*BITWIDTH +: BITWIDTH] = $signed(PREVwOX_out[j*BITWIDTH +: BITWIDTH]) - $signed(deltaCost);
+              wOX_in[j*BITWIDTH +: BITWIDTH] = wmax;
+          else if($signed($signed(PREVwOX_out[j*BITWIDTH +: BITWIDTH]) - $signed(deltaCost)) < $signed(-wmax))
+              wOX_in[j*BITWIDTH +: BITWIDTH] = -wmax;
+          else
+              wOX_in[j*BITWIDTH +: BITWIDTH] = $signed(PREVwOX_out[j*BITWIDTH +: BITWIDTH]) - $signed(deltaCost);
 				else
 					if($signed($signed(PREVwOX_out[j*BITWIDTH +: BITWIDTH]) + $signed(deltaCost)) > $signed(wmax))
-                        wOX_in[j*BITWIDTH +: BITWIDTH] = wmax;
-                    else if($signed($signed(PREVwOX_out[j*BITWIDTH +: BITWIDTH]) + $signed(deltaCost)) < $signed(-wmax))
-                        wOX_in[j*BITWIDTH +: BITWIDTH] = -wmax;
-                    else
-                        wOX_in[j*BITWIDTH +: BITWIDTH] = $signed(PREVwOX_out[j*BITWIDTH +: BITWIDTH]) + $signed(deltaCost);
+              wOX_in[j*BITWIDTH +: BITWIDTH] = wmax;
+          else if($signed($signed(PREVwOX_out[j*BITWIDTH +: BITWIDTH]) + $signed(deltaCost)) < $signed(-wmax))
+              wOX_in[j*BITWIDTH +: BITWIDTH] = -wmax;
+          else
+              wOX_in[j*BITWIDTH +: BITWIDTH] = $signed(PREVwOX_out[j*BITWIDTH +: BITWIDTH]) + $signed(deltaCost);
 
-				// OY weights
-                if(sign_wOY[j] == 1)
+        // OY weights
+        if(sign_wOY[j] == 1)
 					if($signed($signed(PREVwOY_out[j*BITWIDTH +: BITWIDTH]) - $signed(deltaCost)) > $signed(wmax))
-                        wOY_in[j*BITWIDTH +: BITWIDTH] = wmax;
-                    else if($signed($signed(PREVwOY_out[j*BITWIDTH +: BITWIDTH]) - $signed(deltaCost)) < $signed(-wmax))
-                        wOY_in[j*BITWIDTH +: BITWIDTH] = -wmax;
-                    else
-                        wOY_in[j*BITWIDTH +: BITWIDTH] = $signed(PREVwOY_out[j*BITWIDTH +: BITWIDTH]) - $signed(deltaCost);
+              wOY_in[j*BITWIDTH +: BITWIDTH] = wmax;
+          else if($signed($signed(PREVwOY_out[j*BITWIDTH +: BITWIDTH]) - $signed(deltaCost)) < $signed(-wmax))
+              wOY_in[j*BITWIDTH +: BITWIDTH] = -wmax;
+          else
+              wOY_in[j*BITWIDTH +: BITWIDTH] = $signed(PREVwOY_out[j*BITWIDTH +: BITWIDTH]) - $signed(deltaCost);
 				else
 					if($signed($signed(PREVwOY_out[j*BITWIDTH +: BITWIDTH]) + $signed(deltaCost)) > $signed(wmax))
-                        wOY_in[j*BITWIDTH +: BITWIDTH] = wmax;
-                    else if($signed($signed(PREVwOY_out[j*BITWIDTH +: BITWIDTH]) + $signed(deltaCost)) < $signed(-wmax))
-                        wOY_in[j*BITWIDTH +: BITWIDTH] = -wmax;
-                    else
-                        wOY_in[j*BITWIDTH +: BITWIDTH] = $signed(PREVwOY_out[j*BITWIDTH +: BITWIDTH]) + $signed(deltaCost);
-				
+              wOY_in[j*BITWIDTH +: BITWIDTH] = wmax;
+          else if($signed($signed(PREVwOY_out[j*BITWIDTH +: BITWIDTH]) + $signed(deltaCost)) < $signed(-wmax))
+              wOY_in[j*BITWIDTH +: BITWIDTH] = -wmax;
+          else
+              wOY_in[j*BITWIDTH +: BITWIDTH] = $signed(PREVwOY_out[j*BITWIDTH +: BITWIDTH]) + $signed(deltaCost);
+
 			end
 		end
 	end
-	
-	always @(posedge weightUpdate) begin			
+
+	always @(posedge weightUpdate) begin
 		for(j = 0; j < HIDDEN_SZ; j = j + 1) begin
             // bZ weights
 			if(sign_bZ[j] == 1)
@@ -574,7 +574,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				    bO[j*BITWIDTH +: BITWIDTH] <= $signed(bO[j*BITWIDTH +: BITWIDTH]) + $signed(deltaCost);
 		end
 	end
-	
+
 	// One cycle delay for the weight RAM update
 	always @(posedge clock) begin
 		PREVwZX_out <= wZX_out;
@@ -586,7 +586,7 @@ module network  #(parameter INPUT_SZ   =  2,
 		PREVwOX_out <= wOX_out;
 		PREVwOY_out <= wOY_out;
 	end
-	
+
 	always @(*) begin
 		if(weightUpdate) begin
 			colAddressRead_X = colAddressTRAIN_X;
@@ -597,12 +597,12 @@ module network  #(parameter INPUT_SZ   =  2,
 			colAddressRead_Y = colAddressRead_wZY;
 		end
 	end
-	
+
 	always @(posedge clock) begin
 		PREVcolAddressTRAIN_X <= colAddressRead_X;
 		PREVcolAddressTRAIN_Y <= colAddressRead_Y;
 	end
-	
+
 	// Slicing the input and previous output vectors
 	always @(negedge clock) begin
         if( reset == 1'b1) begin
@@ -617,12 +617,12 @@ module network  #(parameter INPUT_SZ   =  2,
 
     // Selecting the source for the elementwise multiplication first operand
     always @(*) begin
-        case (muxStageSelector) 
+        case (muxStageSelector)
             2'd0 : begin
                 elemWise_op1 = gate_Z;
                 elemWise_op2 = gate_I;
             end
-        
+
             2'd1 : begin
                 elemWise_op1 = 18'b0;
                 elemWise_op2 = gate_F;
@@ -632,7 +632,7 @@ module network  #(parameter INPUT_SZ   =  2,
                 elemWise_op1 = layer_C;
                 elemWise_op2 = gate_O;
             end
-            
+
             default : begin
 				elemWise_op1 = gate_Z;
                 elemWise_op2 = gate_I;
@@ -646,8 +646,8 @@ module network  #(parameter INPUT_SZ   =  2,
             elemWise_mult1 = prev_C;
         else
             elemWise_mult1 = tanh_result;
-    end  
-    
+    end
+
     always @(posedge clock) begin
 		if(reset) begin
 			ZI_prod <= {LAYER_BITWIDTH{1'b0}};
@@ -655,8 +655,8 @@ module network  #(parameter INPUT_SZ   =  2,
 			prevLayerOut <= {LAYER_BITWIDTH{1'b0}};
 		end
 	end
-			
-    
+
+
     // Partial Non-liearity/Elementwise Block Result --- z signal TIMES i signal
     always @(posedge z_ready) begin
 		for(j=0; j < HIDDEN_SZ; j = j + 1) begin
@@ -670,7 +670,7 @@ module network  #(parameter INPUT_SZ   =  2,
 			CF_prod[j*BITWIDTH +: BITWIDTH] <= elemWiseMult_out[j*MULT_BITWIDTH +: MULT_BITWIDTH] >>> QM;
 		end
     end
-     
+
     // Saving the current layer output (that serves as input to the gate modules)
     always @(posedge y_ready) begin
 		for(j=0; j < HIDDEN_SZ; j = j + 1) begin
@@ -684,22 +684,22 @@ module network  #(parameter INPUT_SZ   =  2,
             layer_C[j*BITWIDTH +: BITWIDTH] = ZI_prod[j*BITWIDTH +: BITWIDTH] +  CF_prod[j*BITWIDTH +: BITWIDTH];
         end
     end
-    
+
     always @(posedge reset) begin
 		prev_C     <= {LAYER_BITWIDTH{1'b0}};
 		SS_layer_C <= {LAYER_BITWIDTH{1'b0}};
 		prev_y     <= {LAYER_BITWIDTH{1'b0}};
 		SS_layer_y <= {LAYER_BITWIDTH{1'b0}};
 	end
-	
+
     always @(posedge saveSS_layerC) begin
 		SS_layer_C <= layer_C;
     end
-    
+
     always @(posedge pertWeights) begin
 		SS_layer_y <= prevLayerOut;
 	end
-    
+
     always @(posedge newSample) begin
 		if(trainingFlag == 1) begin
 			prev_C <= SS_layer_C;
@@ -710,11 +710,11 @@ module network  #(parameter INPUT_SZ   =  2,
 			prev_y <= prevLayerOut;
 		end
 	end
-    
+
     // The elementwise multiplication DSP slices
     always @(posedge clock) begin
         for(j=0; j < HIDDEN_SZ; j = j + 1) begin
-            elemWiseMult_out[j*MULT_BITWIDTH +: MULT_BITWIDTH] <= ($signed(elemWise_mult2[j*BITWIDTH +: BITWIDTH]) * 
+            elemWiseMult_out[j*MULT_BITWIDTH +: MULT_BITWIDTH] <= ($signed(elemWise_mult2[j*BITWIDTH +: BITWIDTH]) *
 																							 $signed(elemWise_mult1[j*BITWIDTH +: BITWIDTH]));
         end
     end
@@ -727,19 +727,19 @@ module network  #(parameter INPUT_SZ   =  2,
 	always @(posedge newCostFunc) begin
 		fpType <= fpType + 1;
 	end
-	
+
 	always @(posedge clock) begin
 		if(reset)
 			fpType = 0;
 	end
-	
+
 	always @(posedge newCostFunc) begin
 		if(fpType)
 			pertCost   = costFunc;
 		else
 			normalCost = costFunc;
 	end
-	
+
 	always @(*) begin
 		deltaCost = costFunc;
 	end
@@ -759,10 +759,10 @@ module network  #(parameter INPUT_SZ   =  2,
 			colAddressTRAIN_Y <= NEXTcolAddressTRAIN_Y;
 		end
 	end
-	
+
 	// Combinational logic that produces the next state
 	always @(*) begin
-		case(state)		
+		case(state)
 			IDLE :
 			begin
 				if ( newSample == 1'b1) begin
@@ -772,12 +772,12 @@ module network  #(parameter INPUT_SZ   =  2,
 					NEXTstate = IDLE;
 				end
 			end
-			
+
 			GATE_CALC_INIT:
 			begin
 				NEXTstate = GATE_CALC;
 			end
-			
+
 			GATE_CALC:
 			begin
 				if (gateReady_Z == 1'b1 || gateReady_I == 1'b1 || gateReady_F == 1'b1 || gateReady_O == 1'b1) begin
@@ -787,53 +787,53 @@ module network  #(parameter INPUT_SZ   =  2,
 					NEXTstate = GATE_CALC;
 				end
 			end
-			
-			
-			NON_LIN_1A:		
+
+
+			NON_LIN_1A:
 			begin
 				NEXTstate = NON_LIN_2A;
 			end
-			
-			NON_LIN_2A:		
+
+			NON_LIN_2A:
 			begin
 				NEXTstate = ELEM_PROD_A;
-			end	
-			
+			end
+
 			ELEM_PROD_A:
 			begin
 					NEXTstate  = NON_LIN_1B;
 			end
-			
-			NON_LIN_1B:		
+
+			NON_LIN_1B:
 			begin
 				NEXTstate = NON_LIN_2B;
 			end
-			
-			NON_LIN_2B:		
+
+			NON_LIN_2B:
 			begin
 				NEXTstate = ELEM_PROD_B;
-			end	
-			
+			end
+
 			ELEM_PROD_B:
 			begin
 					NEXTstate  = NON_LIN_1C;
 			end
-			
-			NON_LIN_1C:		
+
+			NON_LIN_1C:
 			begin
 				NEXTstate = NON_LIN_2C;
 			end
-			
-			NON_LIN_2C:		
+
+			NON_LIN_2C:
 			begin
 				NEXTstate = ELEM_PROD_C;
-			end	
-			
+			end
+
 			ELEM_PROD_C:
 			begin
 					NEXTstate  = END;
 			end
-			
+
 			END :
 			begin
 				if(trainingFlag)
@@ -841,12 +841,12 @@ module network  #(parameter INPUT_SZ   =  2,
 				else
 					NEXTstate = IDLE;
 			end
-			
+
 			TRAIN_GATE_CALC_INIT:
 			begin
 				NEXTstate = TRAIN_GATE_CALC;
 			end
-			
+
 			TRAIN_GATE_CALC:
 			begin
 				if (gateReady_Z == 1'b1 || gateReady_I == 1'b1 || gateReady_F == 1'b1 || gateReady_O == 1'b1) begin
@@ -856,53 +856,53 @@ module network  #(parameter INPUT_SZ   =  2,
 					NEXTstate = TRAIN_GATE_CALC;
 				end
 			end
-			
-			
-			TRAIN_NON_LIN_1A:		
+
+
+			TRAIN_NON_LIN_1A:
 			begin
 				NEXTstate = TRAIN_NON_LIN_2A;
 			end
-			
-			TRAIN_NON_LIN_2A:		
+
+			TRAIN_NON_LIN_2A:
 			begin
 				NEXTstate = TRAIN_ELEM_PROD_A;
-			end	
-			
+			end
+
 			TRAIN_ELEM_PROD_A:
 			begin
 					NEXTstate  = TRAIN_NON_LIN_1B;
 			end
-			
-			TRAIN_NON_LIN_1B:		
+
+			TRAIN_NON_LIN_1B:
 			begin
 				NEXTstate = TRAIN_NON_LIN_2B;
 			end
-			
-			TRAIN_NON_LIN_2B:		
+
+			TRAIN_NON_LIN_2B:
 			begin
 				NEXTstate = TRAIN_ELEM_PROD_B;
-			end	
-			
+			end
+
 			TRAIN_ELEM_PROD_B:
 			begin
 					NEXTstate  = TRAIN_NON_LIN_1C;
 			end
-			
-			TRAIN_NON_LIN_1C:		
+
+			TRAIN_NON_LIN_1C:
 			begin
 				NEXTstate = TRAIN_NON_LIN_2C;
 			end
-			
-			TRAIN_NON_LIN_2C:		
+
+			TRAIN_NON_LIN_2C:
 			begin
 				NEXTstate = TRAIN_ELEM_PROD_C;
-			end	
-			
+			end
+
 			TRAIN_ELEM_PROD_C:
 			begin
 				NEXTstate = TRAIN_END;
 			end
-			
+
 			TRAIN_END:
 			begin
 				if(newCostFunc)
@@ -910,7 +910,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				else
 					NEXTstate = TRAIN_END; // Waits for the evaluation of the Cost Function with perturbed weights
 			end
-			
+
 			WEIGHT_UPDATE_X:
 			begin
 				if(colAddressTRAIN_X == (INPUT_SZ))
@@ -918,7 +918,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				else
 					NEXTstate = WEIGHT_UPDATE_X;
 			end
-			
+
 			WEIGHT_UPDATE_Y:
 			begin
 				if(colAddressTRAIN_Y == (HIDDEN_SZ))
@@ -926,17 +926,17 @@ module network  #(parameter INPUT_SZ   =  2,
 				else
 					NEXTstate = WEIGHT_UPDATE_Y;
 			end
-			
+
 			default:
 			begin
 				NEXTstate = IDLE;
 			end
 		endcase
 	end
-	
+
 	// Combinational block that produces the outputs and control signals
 	always @(*) begin
-		case(state)		
+		case(state)
 			IDLE :
 			begin
 				beginCalc        = 1'b0;
@@ -958,7 +958,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				genRandNum_Y  = 1'b0;
 				trainingReady = 1'b1;
 			end
-			
+
 			GATE_CALC_INIT:
 			begin
 				beginCalc        = 1'b1;
@@ -980,7 +980,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				genRandNum_Y  = 1'b0;
 				trainingReady = 1'b0;
 			end
-			
+
 			GATE_CALC:
 			begin
 				beginCalc        = 1'b0;
@@ -1002,8 +1002,8 @@ module network  #(parameter INPUT_SZ   =  2,
 				genRandNum_Y  = 1'b1;
 				trainingReady = 1'b0;
 			end
-			
-			NON_LIN_1A:		
+
+			NON_LIN_1A:
 			begin
 				beginCalc        = 1'b0;
 				muxStageSelector = 2'b0;
@@ -1024,8 +1024,8 @@ module network  #(parameter INPUT_SZ   =  2,
 				genRandNum_Y  = 1'b0;
 				trainingReady = 1'b0;
 			end
-			
-			NON_LIN_2A:		
+
+			NON_LIN_2A:
 			begin
 				beginCalc        = 1'b0;
 				muxStageSelector = 2'b0;
@@ -1046,7 +1046,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				genRandNum_Y  = 1'b0;
 				trainingReady = 1'b0;
 			end
-			
+
 			ELEM_PROD_A:
 			begin
 				beginCalc        = 1'b0;
@@ -1068,8 +1068,8 @@ module network  #(parameter INPUT_SZ   =  2,
 				genRandNum_Y  = 1'b0;
 				trainingReady = 1'b0;
 			end
-			
-			NON_LIN_1B:		
+
+			NON_LIN_1B:
 			begin
 				beginCalc        = 1'b0;
 				muxStageSelector = 2'b1;
@@ -1090,8 +1090,8 @@ module network  #(parameter INPUT_SZ   =  2,
 				genRandNum_Y  = 1'b0;
 				trainingReady = 1'b0;
 			end
-			
-			NON_LIN_2B:		
+
+			NON_LIN_2B:
 			begin
 				beginCalc        = 1'b0;
 				muxStageSelector = 2'b1;
@@ -1112,7 +1112,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				genRandNum_Y  = 1'b0;
 				trainingReady = 1'b0;
 			end
-			
+
 			ELEM_PROD_B:
 			begin
 				beginCalc        = 1'b0;
@@ -1134,8 +1134,8 @@ module network  #(parameter INPUT_SZ   =  2,
 				genRandNum_Y  = 1'b0;
 				trainingReady = 1'b0;
 			end
-			
-			NON_LIN_1C:		
+
+			NON_LIN_1C:
 			begin
 				beginCalc        = 1'b0;
 				muxStageSelector = 2'd2;
@@ -1156,8 +1156,8 @@ module network  #(parameter INPUT_SZ   =  2,
 				genRandNum_Y  = 1'b0;
 				trainingReady = 1'b0;
 			end
-			
-			NON_LIN_2C:		
+
+			NON_LIN_2C:
 			begin
 				beginCalc        = 1'b0;
 				muxStageSelector = 2'd2;
@@ -1178,7 +1178,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				genRandNum_Y  = 1'b0;
 				trainingReady = 1'b0;
 			end
-			
+
 			ELEM_PROD_C:
 			begin
 				beginCalc        = 1'b0;
@@ -1200,7 +1200,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				genRandNum_Y  = 1'b0;
 				trainingReady = 1'b0;
 			end
-			
+
 			END :
 			begin
 				beginCalc        = 1'b0;
@@ -1217,7 +1217,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				weightUpdate = 1'b0;
 				writeWeightUpdate_X = 1'b0;
 				writeWeightUpdate_Y = 1'b0;
-				if(trainingFlag == 1) 
+				if(trainingFlag == 1)
 					saveSS_layerC = 1'b1;
 				else
 					saveSS_layerC = 1'b0;
@@ -1225,7 +1225,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				genRandNum_Y  = 1'b0;
 				trainingReady = 1'b0;
 			end
-				
+
 			TRAIN_GATE_CALC_INIT:
 			begin
 				beginCalc        = 1'b1;
@@ -1247,7 +1247,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				genRandNum_Y  = 1'b0;
 				trainingReady = 1'b0;
 			end
-			
+
 			TRAIN_GATE_CALC:
 			begin
 				beginCalc        = 1'b0;
@@ -1269,8 +1269,8 @@ module network  #(parameter INPUT_SZ   =  2,
 				genRandNum_Y  = 1'b0;
 				trainingReady = 1'b0;
 			end
-			
-			TRAIN_NON_LIN_1A:		
+
+			TRAIN_NON_LIN_1A:
 			begin
 				beginCalc        = 1'b0;
 				muxStageSelector = 2'b0;
@@ -1291,8 +1291,8 @@ module network  #(parameter INPUT_SZ   =  2,
 				genRandNum_Y  = 1'b0;
 				trainingReady = 1'b0;
 			end
-			
-			TRAIN_NON_LIN_2A:		
+
+			TRAIN_NON_LIN_2A:
 			begin
 				beginCalc        = 1'b0;
 				muxStageSelector = 2'b0;
@@ -1313,7 +1313,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				genRandNum_Y  = 1'b0;
 				trainingReady = 1'b0;
 			end
-			
+
 			TRAIN_ELEM_PROD_A:
 			begin
 				beginCalc        = 1'b0;
@@ -1335,8 +1335,8 @@ module network  #(parameter INPUT_SZ   =  2,
 				genRandNum_Y  = 1'b0;
 				trainingReady = 1'b0;
 			end
-			
-			TRAIN_NON_LIN_1B:		
+
+			TRAIN_NON_LIN_1B:
 			begin
 				beginCalc        = 1'b0;
 				muxStageSelector = 2'b1;
@@ -1357,8 +1357,8 @@ module network  #(parameter INPUT_SZ   =  2,
 				genRandNum_Y  = 1'b0;
 				trainingReady = 1'b0;
 			end
-			
-			TRAIN_NON_LIN_2B:		
+
+			TRAIN_NON_LIN_2B:
 			begin
 				beginCalc        = 1'b0;
 				muxStageSelector = 2'b1;
@@ -1379,7 +1379,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				genRandNum_Y  = 1'b0;
 				trainingReady = 1'b0;
 			end
-			
+
 			TRAIN_ELEM_PROD_B:
 			begin
 				beginCalc        = 1'b0;
@@ -1401,8 +1401,8 @@ module network  #(parameter INPUT_SZ   =  2,
 				genRandNum_Y  = 1'b0;
 				trainingReady = 1'b0;
 			end
-			
-			TRAIN_NON_LIN_1C:		
+
+			TRAIN_NON_LIN_1C:
 			begin
 				beginCalc        = 1'b0;
 				muxStageSelector = 2'd2;
@@ -1423,8 +1423,8 @@ module network  #(parameter INPUT_SZ   =  2,
 				genRandNum_Y  = 1'b0;
 				trainingReady = 1'b0;
 			end
-			
-			TRAIN_NON_LIN_2C:		
+
+			TRAIN_NON_LIN_2C:
 			begin
 				beginCalc        = 1'b0;
 				muxStageSelector = 2'd2;
@@ -1445,7 +1445,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				genRandNum_Y  = 1'b0;
 				trainingReady = 1'b0;
 			end
-			
+
 			TRAIN_ELEM_PROD_C:
 			begin
 				beginCalc        = 1'b0;
@@ -1467,7 +1467,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				genRandNum_Y  = 1'b0;
 				trainingReady = 1'b0;
 			end
-			
+
 			TRAIN_END :
 			begin
 				beginCalc        = 1'b0;
@@ -1478,7 +1478,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				f_ready          = 1'b0;
 				y_ready          = 1'b1;
 				dataoutReady     = 1'b1;
-				pertWeights      = 1'b0;		
+				pertWeights      = 1'b0;
 				NEXTcolAddressTRAIN_X = {ADDR_BITWIDTH_X{1'b0}};
 				NEXTcolAddressTRAIN_Y = {ADDR_BITWIDTH{1'b0}};
 				weightUpdate = 1'b0;
@@ -1489,7 +1489,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				genRandNum_Y  = 1'b0;
 				trainingReady = 1'b0;
 			end
-			
+
 			WEIGHT_UPDATE_X:
 			begin
 				beginCalc        = 1'b0;
@@ -1500,7 +1500,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				f_ready          = 1'b0;
 				y_ready          = 1'b0;
 				dataoutReady     = 1'b0;
-				pertWeights      = 1'b0;	
+				pertWeights      = 1'b0;
 				NEXTcolAddressTRAIN_X = colAddressTRAIN_X + 1;
 				NEXTcolAddressTRAIN_Y = colAddressTRAIN_Y + 1;
 				weightUpdate = 1'b1;
@@ -1511,7 +1511,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				genRandNum_Y  = 1'b0;
 				trainingReady = 1'b0;
 			end
-			
+
 			WEIGHT_UPDATE_Y:
 			begin
 				beginCalc        = 1'b0;
@@ -1522,7 +1522,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				f_ready          = 1'b0;
 				y_ready          = 1'b0;
 				dataoutReady     = 1'b0;
-				pertWeights      = 1'b0;	
+				pertWeights      = 1'b0;
 				NEXTcolAddressTRAIN_X = {ADDR_BITWIDTH_X{1'b0}};
 				NEXTcolAddressTRAIN_Y = colAddressTRAIN_Y + 1;
 				weightUpdate = 1'b1;
@@ -1533,7 +1533,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				genRandNum_Y  = 1'b0;
 				trainingReady = 1'b0;
 			end
-			
+
 			default:
 			begin
 				beginCalc        = 1'b0;
@@ -1555,19 +1555,19 @@ module network  #(parameter INPUT_SZ   =  2,
 				genRandNum_Y  = 1'b0;
 				trainingReady = 1'b0;
 			end
-				
+
 		endcase
 	end
 
     // ---------------------------------------------------------------- //
-    
-        
+
+
 	function integer log2;
 		input [31:0] argument;
 		integer k;
 		begin
 			 log2 = -1;
-			 k = argument;  
+			 k = argument;
 			 while( k > 0 ) begin
 				log2 = log2 + 1;
 				k = k >> 1;

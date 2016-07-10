@@ -23,7 +23,7 @@ def tanhPrime(output):
     return (1-output**2)
 
 # training dataset generation
-binary_dim = 8 
+binary_dim = 8
 largest_number = pow(2,binary_dim)
 
 # Simulation Parameters
@@ -34,7 +34,7 @@ samplesPerEpoch = 500
 input_dim  = 2
 hidden_dim = int(sys.argv[4])
 output_dim = 1
-maxEpoch   = 100 
+maxEpoch   = 100
 trainSamp  = 5000
 testSamp   = 100
 
@@ -49,7 +49,7 @@ epochError = 0
 correct    = 0
 # training logic
 for i in range(maxEpoch):
-   
+
     print("Training Epoch: ", i)
 
     for j in range(trainSamp):
@@ -62,11 +62,11 @@ for i in range(maxEpoch):
 
         # true answer
         c_int = a_int + b_int
-        c = np.binary_repr(c_int, width=binary_dim) 
+        c = np.binary_repr(c_int, width=binary_dim)
 
         # -------------- THE FORWARD PROPAGATION STEP -------------- #
         for position in range(binary_dim):
-            
+
             # generate input and output
             X = np.array([[int(a[binary_dim - position - 1]), int(b[binary_dim - position - 1])]]).T
             y = np.array([int(c[binary_dim - position - 1])]).T
@@ -74,7 +74,7 @@ for i in range(maxEpoch):
             # Perform a forward propagation through the network
             y_pred = lstmLayer1.trainNetwork_SPSA(X, y)
 
-        lstmLayer1.resetNetwork()    
+        lstmLayer1.resetNetwork()
 
     for j in range(testSamp):
         # generate a simple addition problem (a + b = c)
@@ -86,24 +86,24 @@ for i in range(maxEpoch):
 
         # true answer
         c_int = a_int + b_int
-        c = np.binary_repr(c_int, width=binary_dim) 
+        c = np.binary_repr(c_int, width=binary_dim)
 
         # -------------- THE FORWARD PROPAGATION STEP -------------- #
         for position in range(binary_dim):
-            
+
             # generate input and output
             X = np.array([[int(a[binary_dim - position - 1]), int(b[binary_dim - position - 1])]]).T
             y = np.array([int(c[binary_dim - position - 1])]).T
 
             # Perform a forward propagation through the network
             y_pred = lstmLayer1.forwardPropagate(X)
-            lstmLayer1.prev_c = lstmLayer1.c            
-            lstmLayer1.prev_y = lstmLayer1.y           
+            lstmLayer1.prev_c = lstmLayer1.c
+            lstmLayer1.prev_y = lstmLayer1.y
 
             # decode estimate so we can print it out
             epochError += int(np.abs(y - np.round(y_pred)))
 
-        lstmLayer1.resetNetwork()    
+        lstmLayer1.resetNetwork()
 
     if (epochError/testSamp  == 0):
         correct += 1
@@ -111,11 +111,11 @@ for i in range(maxEpoch):
             print("Convergence Acheived in {0} epochs".format(i-2))
             break
     else:
-        correct = 0 
-    
-    
+        correct = 0
+
+
     print("Average Error:", epochError/testSamp)
-    print("Weight: ", lstmLayer1.Wz.item(0,0))
+    #print("Weight: ", lstmLayer1.Wz.item(0,0))
     #plt.scatter(i, epochError/testSamp, linestyle='-.')
     #plt.draw()
     epochError = 0
