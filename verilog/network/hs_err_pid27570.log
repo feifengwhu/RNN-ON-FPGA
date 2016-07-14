@@ -1,0 +1,14 @@
+#
+# An unexpected error has occurred (11)
+#
+Stack:
+/opt/Xilinx/Vivado/2015.4/tps/lnx64/jre/lib/amd64/server/libjvm.so(+0x90ea59) [0x7fc730531a59]
+/opt/Xilinx/Vivado/2015.4/tps/lnx64/jre/lib/amd64/server/libjvm.so(JVM_handle_linux_signal+0xb6) [0x7fc730537b46]
+/opt/Xilinx/Vivado/2015.4/tps/lnx64/jre/lib/amd64/server/libjvm.so(+0x90b493) [0x7fc73052e493]
+/lib/x86_64-linux-gnu/libc.so.6(+0x36cb0) [0x7fc76041dcb0]
+/opt/Xilinx/Vivado/2015.4/lib/lnx64.o/librdi_common.so(HI18N::Convert::In(wchar_t const*, wchar_t const*, std::string&, std::codecvt<wchar_t, char, __mbstate_t> const&)+0x28) [0x7fc7611dca58]
+/opt/Xilinx/Vivado/2015.4/lib/lnx64.o/librdi_common.so(Java_ui_data_msgmgr_messagemanageri_getMessages+0x152) [0x7fc761250ef2]
+[0x7fc721f443ea]
+8]
+/opt/Xilinx/Vivado/2015.4/lib/lnx64.o/librdi_project.so(Java_ui_project_projecti_ProjStateHelper_1getBlingString+0x73) [0x7fc73f4637a3]
+[0x7fc721057cf1]

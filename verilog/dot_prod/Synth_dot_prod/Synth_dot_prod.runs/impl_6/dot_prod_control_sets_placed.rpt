@@ -1,7 +1,7 @@
 Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2015.4 (lin64) Build 1412921 Wed Nov 18 09:44:32 MST 2015
-| Date         : Fri Jun 24 16:46:18 2016
+| Date         : Tue Jul 12 15:06:39 2016
 | Host         : desktop4480 running 64-bit Ubuntu 14.04.4 LTS
 | Command      : report_control_sets -verbose -file dot_prod_control_sets_placed.rpt
 | Design       : dot_prod
@@ -22,8 +22,8 @@ Table of Contents
 +-------------------------------------------------------------------+-------+
 |                               Status                              | Count |
 +-------------------------------------------------------------------+-------+
-| Number of unique control sets                                     |    20 |
-| Minimum Number of register sites lost to control set restrictions |    59 |
+| Number of unique control sets                                     |     6 |
+| Minimum Number of register sites lost to control set restrictions |    26 |
 +-------------------------------------------------------------------+-------+
 
 
@@ -35,39 +35,25 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | No           | No                    | No                     |               1 |            1 |
 | No           | No                    | Yes                    |               0 |            0 |
-| No           | Yes                   | No                     |              13 |            4 |
+| No           | Yes                   | No                     |            1185 |          761 |
 | Yes          | No                    | No                     |               0 |            0 |
 | Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |             895 |          373 |
+| Yes          | Yes                   | No                     |             644 |          286 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
 3. Detailed Control Set Information
 -----------------------------------
 
-+--------------+------------------------+------------------+------------------+----------------+
-| Clock Signal |      Enable Signal     | Set/Reset Signal | Slice Load Count | Bel Load Count |
-+--------------+------------------------+------------------+------------------+----------------+
-|  clk         |                        |                  |                1 |              1 |
-|  clk         |                        | reset            |                4 |             13 |
-|  clk         | rowMux0                | reset            |                9 |             15 |
-|  clk         | p_0_in[435]            | reset            |               25 |             37 |
-|  clk         | outputMAC[554]_i_1_n_0 | reset            |               19 |             37 |
-|  clk         | p_0_in[28]             | reset            |               14 |             37 |
-|  clk         | p_0_in[583]            | reset            |               23 |             37 |
-|  clk         | p_0_in[509]            | reset            |               22 |             37 |
-|  clk         | p_0_in[472]            | reset            |               21 |             37 |
-|  clk         | p_0_in[398]            | reset            |               23 |             37 |
-|  clk         | p_0_in[361]            | reset            |               18 |             37 |
-|  clk         | p_0_in[324]            | reset            |               15 |             37 |
-|  clk         | p_0_in[287]            | reset            |               16 |             37 |
-|  clk         | p_0_in[250]            | reset            |               15 |             37 |
-|  clk         | p_0_in[213]            | reset            |               13 |             37 |
-|  clk         | p_0_in[176]            | reset            |               18 |             37 |
-|  clk         | p_0_in[139]            | reset            |               14 |             37 |
-|  clk         | p_0_in[102]            | reset            |               19 |             37 |
-|  clk         | p_0_in[65]             | reset            |               15 |             37 |
-|  clk         | dataReady              | reset            |               74 |            288 |
-+--------------+------------------------+------------------+------------------+----------------+
++--------------+---------------+------------------+------------------+----------------+
+| Clock Signal | Enable Signal | Set/Reset Signal | Slice Load Count | Bel Load Count |
++--------------+---------------+------------------+------------------+----------------+
+|  clk         |               |                  |                1 |              1 |
+|  clk         | p_0_in[787]   | reset            |                4 |              4 |
+|  clk         | p_0_in[860]   | reset            |                4 |              9 |
+|  clk         | rowMux0       | reset            |               22 |             55 |
+|  clk         | dataReady     | reset            |              256 |            576 |
+|  clk         |               | reset            |              761 |           1185 |
++--------------+---------------+------------------+------------------+----------------+
 
 

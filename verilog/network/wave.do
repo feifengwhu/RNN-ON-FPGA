@@ -7,37 +7,16 @@ add wave -noupdate /tb_network/dataReady
 add wave -noupdate /tb_network/LSTM_LAYER/beginCalc
 add wave -noupdate /tb_network/inputVec
 add wave -noupdate /tb_network/outputVec
-add wave -noupdate /tb_network/LSTM_LAYER/inputVecSample
-add wave -noupdate /tb_network/LSTM_LAYER/prevOutVecSample
-add wave -noupdate /tb_network/LSTM_LAYER/colAddressRead_wZX
-add wave -noupdate /tb_network/LSTM_LAYER/colAddressRead_wZY
-add wave -noupdate /tb_network/LSTM_LAYER/state
-add wave -noupdate /tb_network/LSTM_LAYER/NEXTstate
-add wave -noupdate /tb_network/LSTM_LAYER/sigmoidEnable
-add wave -noupdate /tb_network/LSTM_LAYER/tanhEnable
-add wave -noupdate /tb_network/LSTM_LAYER/ZI_prod
-add wave -noupdate /tb_network/LSTM_LAYER/CF_prod
-add wave -noupdate /tb_network/LSTM_LAYER/layer_C
-add wave -noupdate /tb_network/LSTM_LAYER/prev_C
-add wave -noupdate /tb_network/LSTM_LAYER/prevLayerOut
-add wave -noupdate /tb_network/LSTM_LAYER/elemWise_op1
-add wave -noupdate /tb_network/LSTM_LAYER/elemWise_op2
-add wave -noupdate /tb_network/LSTM_LAYER/elemWise_mult2
-add wave -noupdate /tb_network/LSTM_LAYER/elemWise_mult2_FF
-add wave -noupdate /tb_network/LSTM_LAYER/tanh_result
-add wave -noupdate /tb_network/LSTM_LAYER/elemWise_mult1
-add wave -noupdate /tb_network/LSTM_LAYER/elemWiseMult_out
-add wave -noupdate /tb_network/LSTM_LAYER/gate_Z
-add wave -noupdate /tb_network/LSTM_LAYER/gate_I
-add wave -noupdate /tb_network/LSTM_LAYER/gate_F
-add wave -noupdate /tb_network/LSTM_LAYER/gate_O
-add wave -noupdate /tb_network/DSP48_PER_ROW_M
-add wave -noupdate /tb_network/LSTM_LAYER/GATE_Z/gateOutput
-add wave -noupdate /tb_network/LSTM_LAYER/z_ready
-add wave -noupdate /tb_network/LSTM_LAYER/f_ready
-add wave -noupdate /tb_network/LSTM_LAYER/y_ready
+add wave -noupdate /tb_network/dataReadyP
+add wave -noupdate /tb_network/enPerceptron
+add wave -noupdate /tb_network/networkOutput
+add wave -noupdate /tb_network/PERCEPTRON/Adder1
+add wave -noupdate /tb_network/PERCEPTRON/finalResult
+add wave -noupdate /tb_network/PERCEPTRON/outputMAC
+add wave -noupdate /tb_network/PERCEPTRON/rowMux
+add wave -noupdate /tb_network/LSTM_LAYER/GATE_I/DOTPROD_X/weightMAC
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {2179711922 ps} 0}
+WaveRestoreCursors {{Cursor 1} {890376812500 fs} 0} {{Cursor 2} {890745537500 fs} 0}
 quietly wave cursor active 1
 configure wave -namecolwidth 450
 configure wave -valuecolwidth 100
@@ -53,4 +32,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits ns
 update
-WaveRestoreZoom {2556090084 ps} {2556137364 ps}
+WaveRestoreZoom {3265150156500 fs} {3265906636500 fs}

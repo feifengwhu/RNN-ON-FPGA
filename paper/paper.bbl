@@ -160,4 +160,9 @@ J.~Donahue, L.~A. Hendricks, S.~Guadarrama, M.~Rohrbach, S.~Venugopalan,
 J.-M. Muller, \emph{Elementary Functions: Algorithms and Implementation},
   2nd~ed.\hskip 1em plus 0.5em minus 0.4em\relax Birkhauser, 2005.
 
+\bibitem{Spall98}
+J.~Spall, ``Multivariate stochastic approximation using a simultaneous
+  perturbation gradient approximation,'' \emph{IEEE Transactions on Automatic
+  Control}, vol.~37, no.~3, pp. 332--341, Mar 1992.
+
 \end{thebibliography}

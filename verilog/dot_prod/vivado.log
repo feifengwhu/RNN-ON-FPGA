@@ -2,8 +2,8 @@
 # Vivado v2015.4 (64-bit)
 # SW Build 1412921 on Wed Nov 18 09:44:32 MST 2015
 # IP Build 1412160 on Tue Nov 17 13:47:24 MST 2015
-# Start of session at: Fri Jun 24 16:49:30 2016
-# Process ID: 2640
+# Start of session at: Tue Jul 12 12:51:12 2016
+# Process ID: 6892
 # Current directory: /home/josefonseca/Documents/thesis/verilog/dot_prod
 # Command line: vivado
 # Log file: /home/josefonseca/Documents/thesis/verilog/dot_prod/vivado.log
@@ -16,5 +16,125 @@ Finished scanning sources
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2015.4/data/ip'.
+open_project: Time (s): cpu = 00:00:15 ; elapsed = 00:00:06 . Memory (MB): peak = 5826.102 ; gain = 105.734 ; free physical = 2651 ; free virtual = 9100
+reset_run synth_4
+launch_runs impl_6
+[Tue Jul 12 12:54:54 2016] Launched synth_4...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/dot_prod/Synth_dot_prod/Synth_dot_prod.runs/synth_4/runme.log
+[Tue Jul 12 12:54:54 2016] Launched impl_6...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/dot_prod/Synth_dot_prod/Synth_dot_prod.runs/impl_6/runme.log
+launch_runs: Time (s): cpu = 00:00:05 ; elapsed = 00:02:01 . Memory (MB): peak = 5878.434 ; gain = 43.430 ; free physical = 2482 ; free virtual = 8946
+reset_run synth_4
+launch_runs impl_6
+[Tue Jul 12 13:14:04 2016] Launched synth_4...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/dot_prod/Synth_dot_prod/Synth_dot_prod.runs/synth_4/runme.log
+[Tue Jul 12 13:14:04 2016] Launched impl_6...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/dot_prod/Synth_dot_prod/Synth_dot_prod.runs/impl_6/runme.log
+reset_run synth_4
+launch_runs impl_6
+[Tue Jul 12 13:19:56 2016] Launched synth_4...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/dot_prod/Synth_dot_prod/Synth_dot_prod.runs/synth_4/runme.log
+[Tue Jul 12 13:19:56 2016] Launched impl_6...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/dot_prod/Synth_dot_prod/Synth_dot_prod.runs/impl_6/runme.log
+reset_run synth_4
+launch_runs impl_6
+[Tue Jul 12 13:34:04 2016] Launched synth_4...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/dot_prod/Synth_dot_prod/Synth_dot_prod.runs/synth_4/runme.log
+[Tue Jul 12 13:34:04 2016] Launched impl_6...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/dot_prod/Synth_dot_prod/Synth_dot_prod.runs/impl_6/runme.log
+reset_run synth_4
+launch_runs impl_6
+[Tue Jul 12 13:36:30 2016] Launched synth_4...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/dot_prod/Synth_dot_prod/Synth_dot_prod.runs/synth_4/runme.log
+[Tue Jul 12 13:36:30 2016] Launched impl_6...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/dot_prod/Synth_dot_prod/Synth_dot_prod.runs/impl_6/runme.log
+reset_run synth_4
+launch_runs synth_4
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/dot_prod/dot_prod.v" into library work [/home/josefonseca/Documents/thesis/verilog/dot_prod/dot_prod.v:1]
+[Tue Jul 12 13:39:20 2016] Launched synth_4...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/dot_prod/Synth_dot_prod/Synth_dot_prod.runs/synth_4/runme.log
+launch_runs impl_6
+[Tue Jul 12 13:40:47 2016] Launched impl_6...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/dot_prod/Synth_dot_prod/Synth_dot_prod.runs/impl_6/runme.log
+reset_run synth_4
+launch_runs impl_6
+[Tue Jul 12 13:43:06 2016] Launched synth_4...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/dot_prod/Synth_dot_prod/Synth_dot_prod.runs/synth_4/runme.log
+[Tue Jul 12 13:43:06 2016] Launched impl_6...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/dot_prod/Synth_dot_prod/Synth_dot_prod.runs/impl_6/runme.log
+reset_run synth_4
+launch_runs impl_6
+[Tue Jul 12 13:47:20 2016] Launched synth_4...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/dot_prod/Synth_dot_prod/Synth_dot_prod.runs/synth_4/runme.log
+[Tue Jul 12 13:47:20 2016] Launched impl_6...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/dot_prod/Synth_dot_prod/Synth_dot_prod.runs/impl_6/runme.log
+reset_run synth_4
+launch_runs impl_6
+[Tue Jul 12 13:50:13 2016] Launched synth_4...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/dot_prod/Synth_dot_prod/Synth_dot_prod.runs/synth_4/runme.log
+[Tue Jul 12 13:50:13 2016] Launched impl_6...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/dot_prod/Synth_dot_prod/Synth_dot_prod.runs/impl_6/runme.log
+reset_run synth_4
+launch_runs impl_6
+[Tue Jul 12 13:53:07 2016] Launched synth_4...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/dot_prod/Synth_dot_prod/Synth_dot_prod.runs/synth_4/runme.log
+[Tue Jul 12 13:53:07 2016] Launched impl_6...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/dot_prod/Synth_dot_prod/Synth_dot_prod.runs/impl_6/runme.log
+reset_run synth_4
+launch_runs impl_6
+[Tue Jul 12 13:56:57 2016] Launched synth_4...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/dot_prod/Synth_dot_prod/Synth_dot_prod.runs/synth_4/runme.log
+[Tue Jul 12 13:56:57 2016] Launched impl_6...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/dot_prod/Synth_dot_prod/Synth_dot_prod.runs/impl_6/runme.log
+reset_run synth_4
+launch_runs impl_6
+[Tue Jul 12 14:02:02 2016] Launched synth_4...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/dot_prod/Synth_dot_prod/Synth_dot_prod.runs/synth_4/runme.log
+[Tue Jul 12 14:02:02 2016] Launched impl_6...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/dot_prod/Synth_dot_prod/Synth_dot_prod.runs/impl_6/runme.log
+reset_run synth_4
+launch_runs impl_6
+[Tue Jul 12 14:09:44 2016] Launched synth_4...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/dot_prod/Synth_dot_prod/Synth_dot_prod.runs/synth_4/runme.log
+[Tue Jul 12 14:09:44 2016] Launched impl_6...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/dot_prod/Synth_dot_prod/Synth_dot_prod.runs/impl_6/runme.log
+reset_run synth_4
+launch_runs impl_6
+[Tue Jul 12 14:20:58 2016] Launched synth_4...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/dot_prod/Synth_dot_prod/Synth_dot_prod.runs/synth_4/runme.log
+[Tue Jul 12 14:20:58 2016] Launched impl_6...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/dot_prod/Synth_dot_prod/Synth_dot_prod.runs/impl_6/runme.log
+reset_run synth_4
+launch_runs synth_4
+INFO: [HDL 9-2216] Analyzing Verilog file "/home/josefonseca/Documents/thesis/verilog/dot_prod/dot_prod.v" into library work [/home/josefonseca/Documents/thesis/verilog/dot_prod/dot_prod.v:1]
+[Tue Jul 12 14:29:43 2016] Launched synth_4...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/dot_prod/Synth_dot_prod/Synth_dot_prod.runs/synth_4/runme.log
+launch_runs impl_6
+[Tue Jul 12 14:32:43 2016] Launched impl_6...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/dot_prod/Synth_dot_prod/Synth_dot_prod.runs/impl_6/runme.log
+reset_run synth_4
+launch_runs impl_6
+[Tue Jul 12 14:37:12 2016] Launched synth_4...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/dot_prod/Synth_dot_prod/Synth_dot_prod.runs/synth_4/runme.log
+[Tue Jul 12 14:37:12 2016] Launched impl_6...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/dot_prod/Synth_dot_prod/Synth_dot_prod.runs/impl_6/runme.log
+reset_run synth_4
+launch_runs impl_6
+[Tue Jul 12 14:50:35 2016] Launched synth_4...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/dot_prod/Synth_dot_prod/Synth_dot_prod.runs/synth_4/runme.log
+[Tue Jul 12 14:50:35 2016] Launched impl_6...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/dot_prod/Synth_dot_prod/Synth_dot_prod.runs/impl_6/runme.log
+reset_run synth_4
+launch_runs impl_6
+[Tue Jul 12 14:57:35 2016] Launched synth_4...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/dot_prod/Synth_dot_prod/Synth_dot_prod.runs/synth_4/runme.log
+[Tue Jul 12 14:57:35 2016] Launched impl_6...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/dot_prod/Synth_dot_prod/Synth_dot_prod.runs/impl_6/runme.log
+reset_run synth_4
+launch_runs impl_6
+[Tue Jul 12 15:03:42 2016] Launched synth_4...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/dot_prod/Synth_dot_prod/Synth_dot_prod.runs/synth_4/runme.log
+[Tue Jul 12 15:03:42 2016] Launched impl_6...
+Run output will be captured here: /home/josefonseca/Documents/thesis/verilog/dot_prod/Synth_dot_prod/Synth_dot_prod.runs/impl_6/runme.log
 exit
-INFO: [Common 17-206] Exiting Vivado at Fri Jun 24 16:50:42 2016...
+INFO: [Common 17-206] Exiting Vivado at Tue Jul 12 15:17:28 2016...

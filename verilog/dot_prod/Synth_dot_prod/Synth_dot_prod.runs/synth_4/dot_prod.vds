@@ -2,8 +2,8 @@
 # Vivado v2015.4 (64-bit)
 # SW Build 1412921 on Wed Nov 18 09:44:32 MST 2015
 # IP Build 1412160 on Tue Nov 17 13:47:24 MST 2015
-# Start of session at: Fri Jun 24 16:44:27 2016
-# Process ID: 30468
+# Start of session at: Tue Jul 12 15:03:42 2016
+# Process ID: 21943
 # Current directory: /home/josefonseca/Documents/thesis/verilog/dot_prod/Synth_dot_prod/Synth_dot_prod.runs/synth_4
 # Command line: vivado -log dot_prod.vds -mode batch -messageDb vivado.pb -notrace -source dot_prod.tcl
 # Log file: /home/josefonseca/Documents/thesis/verilog/dot_prod/Synth_dot_prod/Synth_dot_prod.runs/synth_4/dot_prod.vds
@@ -29,20 +29,20 @@ WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with for
 WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/dot_prod/dot_prod.v:51]
 WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/dot_prod/dot_prod.v:52]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1037.539 ; gain = 191.926 ; free physical = 1192 ; free virtual = 7882
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 1036.535 ; gain = 190.926 ; free physical = 2939 ; free virtual = 8720
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'dot_prod' [/home/josefonseca/Documents/thesis/verilog/dot_prod/dot_prod.v:1]
-	Parameter NROW bound to: 16 - type: integer 
-	Parameter NCOL bound to: 16 - type: integer 
+	Parameter NROW bound to: 32 - type: integer 
+	Parameter NCOL bound to: 32 - type: integer 
 	Parameter QN bound to: 6 - type: integer 
 	Parameter QM bound to: 11 - type: integer 
 	Parameter DSP48_PER_ROW bound to: 4 - type: integer 
 	Parameter BITWIDTH bound to: 18 - type: integer 
-	Parameter ADDR_BITWIDTH bound to: 4 - type: integer 
-	Parameter LAYER_BITWIDTH bound to: 288 - type: integer 
-	Parameter N_DSP48 bound to: 4 - type: integer 
-	Parameter DSP48_INPUT_BITWIDTH bound to: 72 - type: integer 
-	Parameter DSP48_OUTPUT_BITWIDTH bound to: 592 - type: integer 
+	Parameter ADDR_BITWIDTH bound to: 5 - type: integer 
+	Parameter LAYER_BITWIDTH bound to: 576 - type: integer 
+	Parameter N_DSP48 bound to: 8 - type: integer 
+	Parameter DSP48_INPUT_BITWIDTH bound to: 144 - type: integer 
+	Parameter DSP48_OUTPUT_BITWIDTH bound to: 1184 - type: integer 
 	Parameter MAC_BITWIDTH bound to: 37 - type: integer 
 	Parameter MUX_BITWIDTH bound to: 2 - type: integer 
 	Parameter IDLE bound to: 3'b000 
@@ -53,7 +53,7 @@ INFO: [Synth 8-638] synthesizing module 'dot_prod' [/home/josefonseca/Documents/
 	Parameter END bound to: 3'b101 
 INFO: [Synth 8-256] done synthesizing module 'dot_prod' (1#1) [/home/josefonseca/Documents/thesis/verilog/dot_prod/dot_prod.v:1]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1064.797 ; gain = 219.184 ; free physical = 1164 ; free virtual = 7855
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1070.793 ; gain = 225.184 ; free physical = 2904 ; free virtual = 8686
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -63,7 +63,7 @@ Report Check Netlist:
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1064.797 ; gain = 219.184 ; free physical = 1163 ; free virtual = 7854
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1070.793 ; gain = 225.184 ; free physical = 2904 ; free virtual = 8685
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7z020clg484-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -77,26 +77,26 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.04 . Memory (MB): peak = 1418.492 ; gain = 1.000 ; free physical = 961 ; free virtual = 7652
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.18 ; elapsed = 00:00:00.13 . Memory (MB): peak = 1434.504 ; gain = 1.000 ; free physical = 2618 ; free virtual = 8399
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 30487 
+INFO: Helper process launched with PID 21975 
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1418.492 ; gain = 572.879 ; free physical = 958 ; free virtual = 7649
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1434.504 ; gain = 588.895 ; free physical = 2612 ; free virtual = 8394
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg484-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1418.492 ; gain = 572.879 ; free physical = 958 ; free virtual = 7649
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1434.504 ; gain = 588.895 ; free physical = 2612 ; free virtual = 8394
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1418.492 ; gain = 572.879 ; free physical = 958 ; free virtual = 7649
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1434.504 ; gain = 588.895 ; free physical = 2612 ; free virtual = 8394
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-5544] ROM "NEXTrowMux" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "NEXTrowMux" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'dot_prod'
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
@@ -110,69 +110,80 @@ INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'dot_p
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'dot_prod'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 1418.492 ; gain = 572.879 ; free physical = 953 ; free virtual = 7644
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1434.504 ; gain = 588.895 ; free physical = 2608 ; free virtual = 8390
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
-+-+--------------+------------+----------+
-| |RTL Partition |Replication |Instances |
-+-+--------------+------------+----------+
-+-+--------------+------------+----------+
++------+--------------+------------+----------+
+|      |RTL Partition |Replication |Instances |
++------+--------------+------------+----------+
+|1     |dot_prod__GB0 |           1|     50432|
+|2     |dot_prod__GB1 |           1|     16485|
+|3     |dot_prod__GB2 |           1|     11350|
+|4     |dot_prod__GB3 |           1|     17830|
+|5     |dot_prod__GB4 |           1|     17023|
++------+--------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-3538] Detected potentially large (wide) register outputMAC_reg [/home/josefonseca/Documents/thesis/verilog/dot_prod/dot_prod.v:82]
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input      4 Bit       Adders := 1     
+	   2 Input      5 Bit       Adders := 1     
 	   2 Input      2 Bit       Adders := 1     
 +---Registers : 
-	              592 Bit    Registers := 1     
-	              288 Bit    Registers := 1     
-	                4 Bit    Registers := 1     
+	             1184 Bit    Registers := 1     
+	              576 Bit    Registers := 1     
+	              144 Bit    Registers := 1     
+	               18 Bit    Registers := 7     
+	                5 Bit    Registers := 1     
 	                3 Bit    Registers := 1     
-	                2 Bit    Registers := 4     
+	                2 Bit    Registers := 8     
 	                1 Bit    Registers := 1     
 +---Muxes : 
-	   2 Input    592 Bit        Muxes := 1     
-	   4 Input     37 Bit        Muxes := 4     
-	   4 Input     18 Bit        Muxes := 4     
+	   2 Input   1184 Bit        Muxes := 1     
+	   4 Input     37 Bit        Muxes := 8     
+	   4 Input     18 Bit        Muxes := 8     
 	   7 Input      6 Bit        Muxes := 1     
-	   6 Input      4 Bit        Muxes := 1     
+	   6 Input      5 Bit        Muxes := 1     
 	   7 Input      3 Bit        Muxes := 1     
-	   2 Input      2 Bit        Muxes := 1     
 	   6 Input      2 Bit        Muxes := 1     
-	   8 Input      1 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
 	   6 Input      1 Bit        Muxes := 2     
+	   8 Input      1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Hierarchical Component Statistics 
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-3538] Detected potentially large (wide) register outputMAC_reg [/home/josefonseca/Documents/thesis/verilog/dot_prod/dot_prod.v:82]
 Hierarchical RTL Component report 
 Module dot_prod 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input      4 Bit       Adders := 1     
+	   2 Input      5 Bit       Adders := 1     
 	   2 Input      2 Bit       Adders := 1     
 +---Registers : 
-	              592 Bit    Registers := 1     
-	              288 Bit    Registers := 1     
-	                4 Bit    Registers := 1     
+	             1184 Bit    Registers := 1     
+	              576 Bit    Registers := 1     
+	              144 Bit    Registers := 1     
+	               18 Bit    Registers := 7     
+	                5 Bit    Registers := 1     
 	                3 Bit    Registers := 1     
-	                2 Bit    Registers := 4     
+	                2 Bit    Registers := 8     
 	                1 Bit    Registers := 1     
 +---Muxes : 
-	   2 Input    592 Bit        Muxes := 1     
-	   4 Input     37 Bit        Muxes := 4     
-	   4 Input     18 Bit        Muxes := 4     
+	   2 Input   1184 Bit        Muxes := 1     
+	   4 Input     37 Bit        Muxes := 8     
+	   4 Input     18 Bit        Muxes := 8     
 	   7 Input      6 Bit        Muxes := 1     
-	   6 Input      4 Bit        Muxes := 1     
+	   6 Input      5 Bit        Muxes := 1     
 	   7 Input      3 Bit        Muxes := 1     
-	   2 Input      2 Bit        Muxes := 1     
 	   6 Input      2 Bit        Muxes := 1     
-	   8 Input      1 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
 	   6 Input      1 Bit        Muxes := 2     
+	   8 Input      1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
@@ -185,32 +196,160 @@ BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
 ---------------------------------------------------------------------------------
 Finished Part Resource Summary
 ---------------------------------------------------------------------------------
-Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 1418.492 ; gain = 572.879 ; free physical = 953 ; free virtual = 7644
+INFO: [Synth 8-5580] Multithreading enabled for synth_design using a maximum of 4 processes.
+Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 1434.504 ; gain = 588.895 ; free physical = 2595 ; free virtual = 8377
 ---------------------------------------------------------------------------------
 Start Cross Boundary Optimization
 ---------------------------------------------------------------------------------
-DSP Report: Generating DSP outputMAC4, operation Mode is: C+A*B.
-DSP Report: operator outputMAC4 is absorbed into DSP outputMAC4.
-DSP Report: operator outputMAC5 is absorbed into DSP outputMAC4.
-DSP Report: Generating DSP outputMAC3, operation Mode is: C+A*B.
+DSP Report: Generating DSP outputMAC3, operation Mode is: C+A2*B.
+DSP Report: register A is absorbed into DSP outputMAC3.
 DSP Report: operator outputMAC3 is absorbed into DSP outputMAC3.
 DSP Report: operator outputMAC4 is absorbed into DSP outputMAC3.
-DSP Report: Generating DSP outputMAC2, operation Mode is: C+A*B.
+DSP Report: Generating DSP outputMAC4, operation Mode is: C+A2*B.
+DSP Report: register A is absorbed into DSP outputMAC4.
+DSP Report: operator outputMAC4 is absorbed into DSP outputMAC4.
+DSP Report: operator outputMAC5 is absorbed into DSP outputMAC4.
+DSP Report: Generating DSP outputMAC5, operation Mode is: C+A2*B.
+DSP Report: register A is absorbed into DSP outputMAC5.
+DSP Report: operator outputMAC5 is absorbed into DSP outputMAC5.
+DSP Report: operator outputMAC6 is absorbed into DSP outputMAC5.
+DSP Report: Generating DSP outputMAC2, operation Mode is: C+A2*B.
+DSP Report: register A is absorbed into DSP outputMAC2.
 DSP Report: operator outputMAC2 is absorbed into DSP outputMAC2.
 DSP Report: operator outputMAC3 is absorbed into DSP outputMAC2.
-DSP Report: Generating DSP outputMAC1, operation Mode is: C+A*B.
+DSP Report: Generating DSP outputMAC8, operation Mode is: C+A2*B.
+DSP Report: register weightMAC_reg is absorbed into DSP outputMAC8.
+DSP Report: operator outputMAC8 is absorbed into DSP outputMAC8.
+DSP Report: operator outputMAC9 is absorbed into DSP outputMAC8.
+DSP Report: Generating DSP outputMAC6, operation Mode is: C+A2*B.
+DSP Report: register A is absorbed into DSP outputMAC6.
+DSP Report: operator outputMAC6 is absorbed into DSP outputMAC6.
+DSP Report: operator outputMAC7 is absorbed into DSP outputMAC6.
+DSP Report: Generating DSP outputMAC7, operation Mode is: C+A2*B.
+DSP Report: register A is absorbed into DSP outputMAC7.
+DSP Report: operator outputMAC7 is absorbed into DSP outputMAC7.
+DSP Report: operator outputMAC8 is absorbed into DSP outputMAC7.
+DSP Report: Generating DSP outputMAC1, operation Mode is: C+A2*B.
+DSP Report: register A is absorbed into DSP outputMAC1.
 DSP Report: operator outputMAC1 is absorbed into DSP outputMAC1.
 DSP Report: operator outputMAC2 is absorbed into DSP outputMAC1.
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[1023] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[1022] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[1021] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[1020] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[1019] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[1018] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[1017] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[1016] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[1015] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[1014] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[1013] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[1012] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[1011] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[1010] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[1009] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[1008] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[1007] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[1006] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[1005] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[1004] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[1003] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[1002] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[1001] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[1000] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[999] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[998] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[997] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[996] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[995] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[994] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[993] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[992] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[991] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[990] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[989] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[988] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[987] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[986] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[985] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[984] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[983] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[982] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[981] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[980] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[979] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[978] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[977] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[976] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[975] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[974] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[973] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[972] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[971] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[970] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[969] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[968] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[967] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[966] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[965] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[964] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[963] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[962] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[961] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[960] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[959] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[958] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[957] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[956] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[955] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[954] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[953] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[952] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[951] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[950] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[949] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[948] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[947] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[946] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[945] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[944] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[943] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[942] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[941] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[940] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[939] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[938] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[937] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[936] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[935] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[934] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[933] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[932] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[931] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[930] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[929] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[928] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[927] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[926] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[925] driven by constant 0
+WARNING: [Synth 8-3917] design dot_prod__GB3 has port p_0_in1_out[924] driven by constant 0
+INFO: [Common 17-14] Message 'Synth 8-3917' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Common 17-14] Message 'Synth 8-3917' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1418.492 ; gain = 572.879 ; free physical = 948 ; free virtual = 7639
+Finished Cross Boundary Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:30 . Memory (MB): peak = 1434.504 ; gain = 588.895 ; free physical = 1055 ; free virtual = 6838
 ---------------------------------------------------------------------------------
-Finished Parallel Reinference  : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1418.492 ; gain = 572.879 ; free physical = 948 ; free virtual = 7639
+Finished Parallel Reinference  : Time (s): cpu = 00:00:14 ; elapsed = 00:00:30 . Memory (MB): peak = 1434.504 ; gain = 588.895 ; free physical = 1055 ; free virtual = 6838
 
 Report RTL Partitions: 
-+-+--------------+------------+----------+
-| |RTL Partition |Replication |Instances |
-+-+--------------+------------+----------+
-+-+--------------+------------+----------+
++------+--------------+------------+----------+
+|      |RTL Partition |Replication |Instances |
++------+--------------+------------+----------+
+|1     |dot_prod__GB0 |           1|     51616|
+|2     |dot_prod__GB1 |           1|     16485|
+|3     |dot_prod__GB2 |           1|     11350|
+|4     |dot_prod__GB3 |           1|      9114|
+|5     |dot_prod__GB4 |           1|     17023|
++------+--------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
 ---------------------------------------------------------------------------------
@@ -219,10 +358,14 @@ DSP:
 +------------+-------------+--------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
 |Module Name | DSP Mapping | Neg Edge Clk | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
 +------------+-------------+--------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
-|dot_prod    | C+A*B       | No           | 18     | 18     | 37     | 25     | 37     | 0    | 0    | 0    | 1    | 1     | 0    | 0    | 
-|dot_prod    | C+A*B       | No           | 18     | 18     | 37     | 25     | 37     | 0    | 0    | 0    | 1    | 1     | 0    | 0    | 
-|dot_prod    | C+A*B       | No           | 18     | 18     | 37     | 25     | 37     | 0    | 0    | 0    | 1    | 1     | 0    | 0    | 
-|dot_prod    | C+A*B       | No           | 18     | 18     | 37     | 25     | 37     | 0    | 0    | 0    | 1    | 1     | 0    | 0    | 
+|dot_prod    | C+A2*B      | No           | 18     | 18     | 37     | 25     | 37     | 1    | 0    | 0    | 1    | 1     | 0    | 0    | 
+|dot_prod    | C+A2*B      | No           | 18     | 18     | 37     | 25     | 37     | 1    | 0    | 0    | 1    | 1     | 0    | 0    | 
+|dot_prod    | C+A2*B      | No           | 18     | 18     | 37     | 25     | 37     | 1    | 0    | 0    | 1    | 1     | 0    | 0    | 
+|dot_prod    | C+A2*B      | No           | 18     | 18     | 37     | 25     | 37     | 1    | 0    | 0    | 1    | 1     | 0    | 0    | 
+|dot_prod    | C+A2*B      | No           | 18     | 18     | 37     | 25     | 37     | 1    | 0    | 0    | 1    | 1     | 0    | 0    | 
+|dot_prod    | C+A2*B      | No           | 18     | 18     | 37     | 25     | 37     | 1    | 0    | 0    | 1    | 1     | 0    | 0    | 
+|dot_prod    | C+A2*B      | No           | 18     | 18     | 37     | 25     | 37     | 1    | 0    | 0    | 1    | 1     | 0    | 0    | 
+|dot_prod    | C+A2*B      | No           | 18     | 18     | 37     | 25     | 37     | 1    | 0    | 0    | 1    | 1     | 0    | 0    | 
 +------------+-------------+--------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
 
 Note: The table above shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
@@ -233,15 +376,20 @@ Finished ROM, RAM, DSP and Shift Register Reporting
 Start Area Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Area Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1418.492 ; gain = 572.879 ; free physical = 811 ; free virtual = 7501
+Finished Area Optimization : Time (s): cpu = 00:00:24 ; elapsed = 00:00:40 . Memory (MB): peak = 1434.504 ; gain = 588.895 ; free physical = 744 ; free virtual = 6528
 ---------------------------------------------------------------------------------
-Finished Parallel Area Optimization  : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1418.492 ; gain = 572.879 ; free physical = 811 ; free virtual = 7501
+Finished Parallel Area Optimization  : Time (s): cpu = 00:00:24 ; elapsed = 00:00:40 . Memory (MB): peak = 1434.504 ; gain = 588.895 ; free physical = 744 ; free virtual = 6528
 
 Report RTL Partitions: 
-+-+--------------+------------+----------+
-| |RTL Partition |Replication |Instances |
-+-+--------------+------------+----------+
-+-+--------------+------------+----------+
++------+--------------+------------+----------+
+|      |RTL Partition |Replication |Instances |
++------+--------------+------------+----------+
+|1     |dot_prod__GB0 |           1|     42161|
+|2     |dot_prod__GB1 |           1|     11697|
+|3     |dot_prod__GB2 |           1|      5352|
+|4     |dot_prod__GB3 |           1|      1761|
+|5     |dot_prod__GB4 |           1|      6519|
++------+--------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
@@ -249,31 +397,33 @@ Start Timing Optimization
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 1431.477 ; gain = 585.863 ; free physical = 611 ; free virtual = 7302
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:32 ; elapsed = 00:00:48 . Memory (MB): peak = 1589.793 ; gain = 744.184 ; free physical = 459 ; free virtual = 6252
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 1470.500 ; gain = 624.887 ; free physical = 560 ; free virtual = 7251
+Finished Timing Optimization : Time (s): cpu = 00:01:11 ; elapsed = 00:01:27 . Memory (MB): peak = 1710.516 ; gain = 864.906 ; free physical = 416 ; free virtual = 6202
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
-+-+--------------+------------+----------+
-| |RTL Partition |Replication |Instances |
-+-+--------------+------------+----------+
-+-+--------------+------------+----------+
++------+--------------+------------+----------+
+|      |RTL Partition |Replication |Instances |
++------+--------------+------------+----------+
+|1     |dot_prod__GB4 |           1|      2649|
+|2     |dot_prod_GT0  |           1|     28130|
++------+--------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:28 ; elapsed = 00:00:30 . Memory (MB): peak = 1478.508 ; gain = 632.895 ; free physical = 593 ; free virtual = 7284
+Finished Technology Mapping : Time (s): cpu = 00:01:17 ; elapsed = 00:01:34 . Memory (MB): peak = 1827.512 ; gain = 981.902 ; free physical = 266 ; free virtual = 6051
 ---------------------------------------------------------------------------------
-Finished Parallel Technology Mapping Optimization  : Time (s): cpu = 00:00:28 ; elapsed = 00:00:30 . Memory (MB): peak = 1478.508 ; gain = 632.895 ; free physical = 593 ; free virtual = 7284
+Finished Parallel Technology Mapping Optimization  : Time (s): cpu = 00:01:17 ; elapsed = 00:01:34 . Memory (MB): peak = 1827.512 ; gain = 981.902 ; free physical = 266 ; free virtual = 6051
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
 | |RTL Partition |Replication |Instances |
 +-+--------------+------------+----------+
 +-+--------------+------------+----------+
-Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:00:28 ; elapsed = 00:00:30 . Memory (MB): peak = 1478.508 ; gain = 632.895 ; free physical = 593 ; free virtual = 7284
+Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:01:17 ; elapsed = 00:01:34 . Memory (MB): peak = 1827.512 ; gain = 981.902 ; free physical = 266 ; free virtual = 6051
 ---------------------------------------------------------------------------------
 Start IO Insertion
 ---------------------------------------------------------------------------------
@@ -290,7 +440,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 1478.508 ; gain = 632.895 ; free physical = 592 ; free virtual = 7283
+Finished IO Insertion : Time (s): cpu = 00:01:18 ; elapsed = 00:01:34 . Memory (MB): peak = 1827.512 ; gain = 981.902 ; free physical = 274 ; free virtual = 6059
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -303,7 +453,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 1478.508 ; gain = 632.895 ; free physical = 592 ; free virtual = 7283
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:18 ; elapsed = 00:01:34 . Memory (MB): peak = 1827.512 ; gain = 981.902 ; free physical = 276 ; free virtual = 6060
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -315,25 +465,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 1478.508 ; gain = 632.895 ; free physical = 597 ; free virtual = 7288
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:18 ; elapsed = 00:01:35 . Memory (MB): peak = 1827.512 ; gain = 981.902 ; free physical = 276 ; free virtual = 6060
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 1478.508 ; gain = 632.895 ; free physical = 597 ; free virtual = 7288
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:18 ; elapsed = 00:01:35 . Memory (MB): peak = 1827.512 ; gain = 981.902 ; free physical = 275 ; free virtual = 6060
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 1478.508 ; gain = 632.895 ; free physical = 600 ; free virtual = 7291
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:18 ; elapsed = 00:01:35 . Memory (MB): peak = 1827.512 ; gain = 981.902 ; free physical = 269 ; free virtual = 6054
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 1478.508 ; gain = 632.895 ; free physical = 600 ; free virtual = 7291
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:18 ; elapsed = 00:01:35 . Memory (MB): peak = 1827.512 ; gain = 981.902 ; free physical = 277 ; free virtual = 6061
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -349,13 +499,13 @@ Report Cell Usage:
 +------+--------+------+
 |      |Cell    |Count |
 +------+--------+------+
-|1     |DSP48E1 |     4|
-|2     |LUT2    |    37|
-|3     |LUT3    |   534|
-|4     |LUT4    |    50|
-|5     |LUT5    |    46|
-|6     |LUT6    |   298|
-|7     |FDRE    |   908|
+|1     |DSP48E1 |     8|
+|2     |LUT2    |   409|
+|3     |LUT3    |   724|
+|4     |LUT4    |  1397|
+|5     |LUT5    |  1188|
+|6     |LUT6    |  2002|
+|7     |FDRE    |  1829|
 |8     |FDSE    |     1|
 +------+--------+------+
 
@@ -363,16 +513,16 @@ Report Instance Areas:
 +------+---------+-------+------+
 |      |Instance |Module |Cells |
 +------+---------+-------+------+
-|1     |top      |       |  1878|
+|1     |top      |       |  7558|
 +------+---------+-------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 1478.508 ; gain = 632.895 ; free physical = 600 ; free virtual = 7291
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:18 ; elapsed = 00:01:35 . Memory (MB): peak = 1827.512 ; gain = 981.902 ; free physical = 275 ; free virtual = 6059
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:24 ; elapsed = 00:00:24 . Memory (MB): peak = 1478.508 ; gain = 157.395 ; free physical = 598 ; free virtual = 7289
-Synthesis Optimization Complete : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 1478.508 ; gain = 632.895 ; free physical = 598 ; free virtual = 7289
+Synthesis finished with 0 errors, 0 critical warnings and 100 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:13 ; elapsed = 00:01:28 . Memory (MB): peak = 1831.426 ; gain = 500.301 ; free physical = 278 ; free virtual = 6063
+Synthesis Optimization Complete : Time (s): cpu = 00:01:19 ; elapsed = 00:01:35 . Memory (MB): peak = 1831.426 ; gain = 985.816 ; free physical = 278 ; free virtual = 6063
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 4 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 8 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 WARNING: [Netlist 29-101] Netlist 'dot_prod' is not ideal for floorplanning, since the cellview 'dot_prod' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -381,8 +531,8 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-16 Infos, 15 Warnings, 0 Critical Warnings and 0 Errors encountered.
+21 Infos, 115 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 1478.512 ; gain = 561.562 ; free physical = 593 ; free virtual = 7284
-report_utilization: Time (s): cpu = 00:00:00.09 ; elapsed = 00:00:00.11 . Memory (MB): peak = 1486.516 ; gain = 0.000 ; free physical = 600 ; free virtual = 7291
-INFO: [Common 17-206] Exiting Vivado at Fri Jun 24 16:45:02 2016...
+synth_design: Time (s): cpu = 00:01:37 ; elapsed = 00:01:35 . Memory (MB): peak = 1831.426 ; gain = 914.480 ; free physical = 2116 ; free virtual = 7901
+report_utilization: Time (s): cpu = 00:00:00.12 ; elapsed = 00:00:00.14 . Memory (MB): peak = 1859.531 ; gain = 0.000 ; free physical = 2115 ; free virtual = 7900
+INFO: [Common 17-206] Exiting Vivado at Tue Jul 12 15:05:23 2016...

@@ -1,0 +1,93 @@
+Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+----------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2015.4 (lin64) Build 1412921 Wed Nov 18 09:44:32 MST 2015
+| Date         : Tue Jul 12 21:53:38 2016
+| Host         : desktop4480 running 64-bit Ubuntu 14.04.4 LTS
+| Command      : report_control_sets -verbose -file top_network_control_sets_placed.rpt
+| Design       : top_network
+| Device       : xc7z020
+----------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Flip-Flop Distribution
+3. Detailed Control Set Information
+
+1. Summary
+----------
+
++-------------------------------------------------------------------+-------+
+|                               Status                              | Count |
++-------------------------------------------------------------------+-------+
+| Number of unique control sets                                     |    40 |
+| Minimum Number of register sites lost to control set restrictions |    74 |
++-------------------------------------------------------------------+-------+
+
+
+2. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |             521 |          238 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |           15635 |         7009 |
+| Yes          | No                    | No                     |               0 |            0 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |           11914 |         3636 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+3. Detailed Control Set Information
+-----------------------------------
+
++--------------+--------------------------------------------------+---------------------------------------------+------------------+----------------+
+| Clock Signal |                   Enable Signal                  |               Set/Reset Signal              | Slice Load Count | Bel Load Count |
++--------------+--------------------------------------------------+---------------------------------------------+------------------+----------------+
+|  clock       | LSTM_LAYER/GATE_I/DOTPROD_X/NEXTrowMux           | LSTM_LAYER/GATE_I/DOTPROD_X/reset_dotProd_X |               24 |             46 |
+|  clock       | LSTM_LAYER/GATE_O/DOTPROD_Y/rowMux[1]_i_1__6_n_0 | LSTM_LAYER/GATE_O/DOTPROD_Y/reset_dotProd_Y |               37 |             46 |
+|  clock       | LSTM_LAYER/GATE_I/DOTPROD_Y/rowMux[1]_i_1__2_n_0 | LSTM_LAYER/GATE_I/DOTPROD_Y/reset_dotProd_Y |               18 |             46 |
+|  clock       | LSTM_LAYER/GATE_O/DOTPROD_X/NEXTrowMux           | LSTM_LAYER/GATE_O/DOTPROD_X/reset_dotProd_X |               23 |             46 |
+|  clock       | LSTM_LAYER/GATE_Z/DOTPROD_Y/rowMux[1]_i_1__0_n_0 | LSTM_LAYER/GATE_Z/DOTPROD_Y/reset_dotProd_Y |               14 |             51 |
+|  clock       | LSTM_LAYER/GATE_Z/DOTPROD_X/NEXTrowMux           | LSTM_LAYER/GATE_Z/DOTPROD_X/reset_dotProd_X |               29 |             51 |
+|  clock       | LSTM_LAYER/GATE_F/DOTPROD_Y/rowMux[1]_i_1__4_n_0 | LSTM_LAYER/GATE_F/DOTPROD_Y/reset_dotProd_Y |               38 |             54 |
+|  clock       | LSTM_LAYER/GATE_F/DOTPROD_X/NEXTrowMux           | LSTM_LAYER/GATE_F/DOTPROD_X/reset_dotProd_X |               34 |             54 |
+|  clock       |                                                  | PERCEPTRON/resetP                           |               16 |             58 |
+|  clock       | LSTM_LAYER/GATE_O/DOTPROD_X/E[0]                 | reset                                       |              160 |            576 |
+|  clock       | LSTM_LAYER/GATE_I/DOTPROD_X/E[0]                 | reset                                       |              160 |            576 |
+|  clock       | LSTM_LAYER/GATE_I/DOTPROD_Y/dataReady            | LSTM_LAYER/GATE_I/DOTPROD_Y/reset_dotProd_Y |              167 |            576 |
+|  clock       | LSTM_LAYER/GATE_I/DOTPROD_Y/E[0]                 | reset                                       |              160 |            576 |
+|  clock       | LSTM_LAYER/GATE_O/DOTPROD_X/dataReady            | LSTM_LAYER/GATE_O/DOTPROD_X/reset_dotProd_X |              170 |            576 |
+|  clock       | LSTM_LAYER/z_ready                               | reset                                       |              159 |            576 |
+|  clock       | LSTM_LAYER/GATE_O/DOTPROD_Y/dataReady            | LSTM_LAYER/GATE_O/DOTPROD_Y/reset_dotProd_Y |              198 |            576 |
+|  clock       | LSTM_LAYER/GATE_O/DOTPROD_Y/E[0]                 | reset                                       |              160 |            576 |
+|  clock       | LSTM_LAYER/GATE_Z/DOTPROD_X/dataReady            | LSTM_LAYER/GATE_Z/DOTPROD_X/reset_dotProd_X |              166 |            576 |
+|  clock       | LSTM_LAYER/GATE_Z/DOTPROD_X/E[0]                 | reset                                       |              160 |            576 |
+|  clock       | LSTM_LAYER/GATE_Z/DOTPROD_Y/dataReady            | LSTM_LAYER/GATE_Z/DOTPROD_Y/reset_dotProd_Y |              158 |            576 |
+|  clock       | LSTM_LAYER/f_ready                               | reset                                       |              172 |            576 |
+|  clock       | LSTM_LAYER/GATE_F/DOTPROD_Y/E[0]                 | reset                                       |              160 |            576 |
+|  clock       | LSTM_LAYER/GATE_F/DOTPROD_Y/dataReady            | LSTM_LAYER/GATE_F/DOTPROD_Y/reset_dotProd_Y |              179 |            576 |
+|  clock       | LSTM_LAYER/GATE_I/DOTPROD_X/dataReady            | LSTM_LAYER/GATE_I/DOTPROD_X/reset_dotProd_X |              194 |            576 |
+|  clock       | LSTM_LAYER/GATE_F/DOTPROD_X/E[0]                 | reset                                       |              160 |            576 |
+|  clock       | LSTM_LAYER/GATE_F/DOTPROD_X/dataReady            | LSTM_LAYER/GATE_F/DOTPROD_X/reset_dotProd_X |              186 |            576 |
+|  clock       |                                                  | LSTM_LAYER/reset_sigm                       |              292 |            576 |
+|  clock       | LSTM_LAYER/GATE_Z/DOTPROD_Y/E[0]                 | reset                                       |              160 |            576 |
+|  clock       |                                                  | LSTM_LAYER/reset_tanh                       |              313 |            768 |
+|  clock       | LSTM_LAYER/dataoutReady                          | reset                                       |              390 |           1152 |
+|  clock       |                                                  | LSTM_LAYER/GATE_Z/DOTPROD_X/reset_dotProd_X |              638 |           1193 |
+|  clock       |                                                  | LSTM_LAYER/GATE_F/DOTPROD_X/reset_dotProd_X |              671 |           1193 |
+|  clock       |                                                  | LSTM_LAYER/GATE_I/DOTPROD_X/reset_dotProd_X |              684 |           1193 |
+|  clock       |                                                  | LSTM_LAYER/GATE_O/DOTPROD_X/reset_dotProd_X |              704 |           1193 |
+|  clock       |                                                  | LSTM_LAYER/GATE_Z/DOTPROD_Y/reset_dotProd_Y |              704 |           1204 |
+|  clock       |                                                  | LSTM_LAYER/GATE_I/DOTPROD_Y/reset_dotProd_Y |              780 |           1208 |
+|  clock       |                                                  | LSTM_LAYER/GATE_F/DOTPROD_Y/reset_dotProd_Y |              704 |           1208 |
+|  clock       |                                                  | LSTM_LAYER/GATE_O/DOTPROD_Y/reset_dotProd_Y |              723 |           1208 |
+|  clock       |                                                  | reset                                       |              780 |           4633 |
+|  clock       |                                                  |                                             |             1006 |           6665 |
++--------------+--------------------------------------------------+---------------------------------------------+------------------+----------------+
+
+

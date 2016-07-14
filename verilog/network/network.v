@@ -1,5 +1,5 @@
 module network  #(parameter INPUT_SZ   =  2,
-                  parameter HIDDEN_SZ  = 16,
+                  parameter HIDDEN_SZ  = 256,
                   parameter OUTPUT_SZ  =  1,//NUM_OUTPUT_SYMBOLS = 2,
                   parameter QN        =  6,
                   parameter QM        = 11,

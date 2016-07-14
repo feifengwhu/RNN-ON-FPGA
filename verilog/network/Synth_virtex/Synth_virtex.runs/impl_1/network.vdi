@@ -1,0 +1,307 @@
+#-----------------------------------------------------------
+# Vivado v2015.4 (64-bit)
+# SW Build 1412921 on Wed Nov 18 09:44:32 MST 2015
+# IP Build 1412160 on Tue Nov 17 13:47:24 MST 2015
+# Start of session at: Tue Jul 12 23:14:49 2016
+# Process ID: 16459
+# Current directory: /home/josefonseca/Documents/thesis/verilog/network/Synth_virtex/Synth_virtex.runs/impl_1
+# Command line: vivado -log network.vdi -applog -messageDb vivado.pb -mode batch -source network.tcl -notrace
+# Log file: /home/josefonseca/Documents/thesis/verilog/network/Synth_virtex/Synth_virtex.runs/impl_1/network.vdi
+# Journal file: /home/josefonseca/Documents/thesis/verilog/network/Synth_virtex/Synth_virtex.runs/impl_1/vivado.jou
+#-----------------------------------------------------------
+source network.tcl -notrace
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+INFO: [Netlist 29-17] Analyzing 5287 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2015.4
+INFO: [Device 21-403] Loading part xc7vx485tffg1761-2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [/home/josefonseca/Documents/thesis/verilog/network/Synth_virtex/Synth_virtex.srcs/constrs_1/new/lstm.xdc]
+Finished Parsing XDC File [/home/josefonseca/Documents/thesis/verilog/network/Synth_virtex/Synth_virtex.srcs/constrs_1/new/lstm.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+link_design: Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 1511.684 ; gain = 594.734 ; free physical = 5006 ; free virtual = 8989
+Command: opt_design -directive Explore
+INFO: [Vivado_Tcl 4-136] Directive used for opt_design is: Explore
+Attempting to get a license for feature 'Implementation' and/or device 'xc7vx485t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7vx485t'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.93 . Memory (MB): peak = 1585.391 ; gain = 65.703 ; free physical = 5004 ; free virtual = 8987
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+
+Starting Logic Optimization Task
+Implement Debug Cores | Checksum: 104b0421f
+
+Phase 1 Retarget
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Opt 31-49] Retargeted 0 cell(s).
+Phase 1 Retarget | Checksum: 1cc97457c
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2216.141 ; gain = 0.000 ; free physical = 4380 ; free virtual = 8393
+
+Phase 2 Constant Propagation
+INFO: [Opt 31-138] Pushed 200 inverter(s) to 368 load pin(s).
+INFO: [Opt 31-10] Eliminated 3857 cells.
+Phase 2 Constant Propagation | Checksum: 1f0599a63
+
+Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 2216.141 ; gain = 0.000 ; free physical = 4374 ; free virtual = 8387
+
+Phase 3 Sweep
+WARNING: [Opt 31-6] Deleting driverless net: WRAM_F_X/RAM_matrix_reg_0_n_222.
+WARNING: [Opt 31-6] Deleting driverless net: WRAM_F_X/RAM_matrix_reg_15_n_132.
+WARNING: [Opt 31-6] Deleting driverless net: WRAM_F_Y/RAM_matrix_reg_15_n_127.
+WARNING: [Opt 31-6] Deleting driverless net: WRAM_F_Y/RAM_matrix_reg_15_n_128.
+WARNING: [Opt 31-6] Deleting driverless net: WRAM_F_Y/RAM_matrix_reg_15_n_129.
+WARNING: [Opt 31-6] Deleting driverless net: WRAM_F_Y/RAM_matrix_reg_15_n_130.
+WARNING: [Opt 31-6] Deleting driverless net: WRAM_F_Y/RAM_matrix_reg_15_n_131.
+WARNING: [Opt 31-6] Deleting driverless net: WRAM_F_Y/RAM_matrix_reg_15_n_132.
+WARNING: [Opt 31-6] Deleting driverless net: WRAM_F_Y/RAM_matrix_reg_15_n_215.
+WARNING: [Opt 31-6] Deleting driverless net: WRAM_I_X/RAM_matrix_reg_15_n_132.
+WARNING: [Opt 31-6] Deleting driverless net: WRAM_I_X/RAM_matrix_reg_15_n_215.
+WARNING: [Opt 31-6] Deleting driverless net: WRAM_I_Y/RAM_matrix_reg_15_n_127.
+WARNING: [Opt 31-6] Deleting driverless net: WRAM_I_Y/RAM_matrix_reg_15_n_128.
+WARNING: [Opt 31-6] Deleting driverless net: WRAM_I_Y/RAM_matrix_reg_15_n_129.
+WARNING: [Opt 31-6] Deleting driverless net: WRAM_I_Y/RAM_matrix_reg_15_n_130.
+WARNING: [Opt 31-6] Deleting driverless net: WRAM_I_Y/RAM_matrix_reg_15_n_131.
+WARNING: [Opt 31-6] Deleting driverless net: WRAM_I_Y/RAM_matrix_reg_15_n_132.
+WARNING: [Opt 31-6] Deleting driverless net: WRAM_I_Y/RAM_matrix_reg_15_n_215.
+WARNING: [Opt 31-6] Deleting driverless net: WRAM_O_X/RAM_matrix_reg_15_n_132.
+WARNING: [Opt 31-6] Deleting driverless net: WRAM_O_X/RAM_matrix_reg_15_n_215.
+WARNING: [Opt 31-6] Deleting driverless net: WRAM_O_Y/RAM_matrix_reg_15_n_127.
+WARNING: [Opt 31-6] Deleting driverless net: WRAM_O_Y/RAM_matrix_reg_15_n_128.
+WARNING: [Opt 31-6] Deleting driverless net: WRAM_O_Y/RAM_matrix_reg_15_n_129.
+WARNING: [Opt 31-6] Deleting driverless net: WRAM_O_Y/RAM_matrix_reg_15_n_130.
+WARNING: [Opt 31-6] Deleting driverless net: WRAM_O_Y/RAM_matrix_reg_15_n_131.
+WARNING: [Opt 31-6] Deleting driverless net: WRAM_O_Y/RAM_matrix_reg_15_n_132.
+WARNING: [Opt 31-6] Deleting driverless net: WRAM_O_Y/RAM_matrix_reg_15_n_215.
+WARNING: [Opt 31-6] Deleting driverless net: WRAM_Z_X/RAM_matrix_reg_15_n_132.
+WARNING: [Opt 31-6] Deleting driverless net: WRAM_Z_X/RAM_matrix_reg_15_n_215.
+WARNING: [Opt 31-6] Deleting driverless net: WRAM_Z_Y/RAM_matrix_reg_0_n_222.
+WARNING: [Opt 31-6] Deleting driverless net: WRAM_Z_Y/RAM_matrix_reg_15_n_127.
+WARNING: [Opt 31-6] Deleting driverless net: WRAM_Z_Y/RAM_matrix_reg_15_n_128.
+WARNING: [Opt 31-6] Deleting driverless net: WRAM_Z_Y/RAM_matrix_reg_15_n_129.
+WARNING: [Opt 31-6] Deleting driverless net: WRAM_Z_Y/RAM_matrix_reg_15_n_130.
+WARNING: [Opt 31-6] Deleting driverless net: WRAM_Z_Y/RAM_matrix_reg_15_n_131.
+WARNING: [Opt 31-6] Deleting driverless net: WRAM_Z_Y/RAM_matrix_reg_15_n_132.
+INFO: [Opt 31-12] Eliminated 25134 unconnected nets.
+INFO: [Opt 31-11] Eliminated 295 unconnected cells.
+Phase 3 Sweep | Checksum: 643b2641
+
+Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 2216.141 ; gain = 0.000 ; free physical = 4369 ; free virtual = 8382
+
+Phase 4 Constant Propagation
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Opt 31-10] Eliminated 0 cells.
+Phase 4 Constant Propagation | Checksum: 643b2641
+
+Time (s): cpu = 00:00:23 ; elapsed = 00:00:23 . Memory (MB): peak = 2216.141 ; gain = 0.000 ; free physical = 4368 ; free virtual = 8381
+
+Phase 5 Sweep
+INFO: [Opt 31-12] Eliminated 0 unconnected nets.
+INFO: [Opt 31-11] Eliminated 0 unconnected cells.
+Phase 5 Sweep | Checksum: 643b2641
+
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:28 . Memory (MB): peak = 2216.141 ; gain = 0.000 ; free physical = 4367 ; free virtual = 8380
+
+Starting Connectivity Check Task
+
+Time (s): cpu = 00:00:00.19 ; elapsed = 00:00:00.19 . Memory (MB): peak = 2216.141 ; gain = 0.000 ; free physical = 4367 ; free virtual = 8380
+Ending Logic Optimization Task | Checksum: 643b2641
+
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:28 . Memory (MB): peak = 2216.141 ; gain = 0.000 ; free physical = 4365 ; free virtual = 8378
+
+Starting Power Optimization Task
+INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Pwropt 34-9] Applying IDT optimizations ...
+INFO: [Pwropt 34-10] Applying ODC optimizations ...
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+
+
+Starting PowerOpt Patch Enables Task
+INFO: [Pwropt 34-162] WRITE_MODE attribute of 0 BRAM(s) out of a total of 128 has been updated to save power. Run report_power_opt to get a complete listing of the BRAMs updated.
+INFO: [Pwropt 34-201] Structural ODC has moved 0 WE to EN ports
+Number of BRAM Ports augmented: 0 newly gated: 128 Total Ports: 256
+Number of Flops added for Enable Generation: 1
+
+Ending PowerOpt Patch Enables Task | Checksum: 1477f8463
+
+Time (s): cpu = 00:00:00.31 ; elapsed = 00:00:00.32 . Memory (MB): peak = 2887.684 ; gain = 0.000 ; free physical = 3817 ; free virtual = 7837
+Ending Power Optimization Task | Checksum: 1477f8463
+
+Time (s): cpu = 00:00:42 ; elapsed = 00:00:16 . Memory (MB): peak = 2887.684 ; gain = 671.543 ; free physical = 3817 ; free virtual = 7838
+INFO: [Common 17-83] Releasing license: Implementation
+30 Infos, 36 Warnings, 0 Critical Warnings and 0 Errors encountered.
+opt_design completed successfully
+opt_design: Time (s): cpu = 00:01:34 ; elapsed = 00:00:59 . Memory (MB): peak = 2887.684 ; gain = 1376.000 ; free physical = 3817 ; free virtual = 7838
+write_checkpoint: Time (s): cpu = 00:00:11 ; elapsed = 00:00:09 . Memory (MB): peak = 2887.684 ; gain = 0.000 ; free physical = 3789 ; free virtual = 7821
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Coretcl 2-168] The results of DRC are in file /home/josefonseca/Documents/thesis/verilog/network/Synth_virtex/Synth_virtex.runs/impl_1/network_drc_opted.rpt.
+INFO: [Vivado_Tcl 4-424] Cannot write hardware definition file as there are no IPI block design hardware handoff files present
+Command: place_design -directive Explore
+Attempting to get a license for feature 'Implementation' and/or device 'xc7vx485t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7vx485t'
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Running DRC as a precondition to command place_design
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+Starting Placer Task
+INFO: [Place 46-5] The placer was invoked with the 'Explore' directive.
+INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 8 CPUs
+
+Phase 1 Placer Initialization
+Netlist sorting complete. Time (s): cpu = 00:00:00.08 ; elapsed = 00:00:00.08 . Memory (MB): peak = 2887.684 ; gain = 0.000 ; free physical = 3672 ; free virtual = 7711
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.04 . Memory (MB): peak = 2887.684 ; gain = 0.000 ; free physical = 3645 ; free virtual = 7688
+
+Phase 1.1 IO Placement/ Clock Placement/ Build Placer Device
+
+Phase 1.1.1 Pre-Place Cells
+Phase 1.1.1 Pre-Place Cells | Checksum: 00000000
+
+Time (s): cpu = 00:00:13 ; elapsed = 00:00:06 . Memory (MB): peak = 2887.684 ; gain = 0.000 ; free physical = 3642 ; free virtual = 7686
+ERROR: [Place 30-415] IO Placement failed due to overutilization. This design contains 1192 I/O ports
+ while the target  device: 7vx485t package: ffg1761, contains only 700 available user I/O. The target device has 700 usable I/O pins of which 0 are already occupied by user-locked I/Os.
+ To rectify this issue:
+ 1. Ensure you are targeting the correct device and package.  Select a larger device or different package if necessary.
+ 2. Check the top-level ports of the design to ensure the correct number of ports are specified.
+ 3. Consider design changes to reduce the number of I/Os necessary.
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+
+Phase 1.1.2 IO and Clk Clean Up
+ERROR: [Place 30-68] Instance clock_IBUF_BUFG_inst (BUFG) is not placed
+ERROR: [Place 30-68] Instance clock_IBUF_inst (IBUF) is not placed
+ERROR: [Place 30-68] Instance dataoutReady_OBUF_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance inputVec_IBUF[0]_inst (IBUF) is not placed
+ERROR: [Place 30-68] Instance inputVec_IBUF[10]_inst (IBUF) is not placed
+ERROR: [Place 30-68] Instance inputVec_IBUF[11]_inst (IBUF) is not placed
+ERROR: [Place 30-68] Instance inputVec_IBUF[12]_inst (IBUF) is not placed
+ERROR: [Place 30-68] Instance inputVec_IBUF[13]_inst (IBUF) is not placed
+ERROR: [Place 30-68] Instance inputVec_IBUF[14]_inst (IBUF) is not placed
+ERROR: [Place 30-68] Instance inputVec_IBUF[15]_inst (IBUF) is not placed
+ERROR: [Place 30-68] Instance inputVec_IBUF[16]_inst (IBUF) is not placed
+ERROR: [Place 30-68] Instance inputVec_IBUF[17]_inst (IBUF) is not placed
+ERROR: [Place 30-68] Instance inputVec_IBUF[18]_inst (IBUF) is not placed
+ERROR: [Place 30-68] Instance inputVec_IBUF[19]_inst (IBUF) is not placed
+ERROR: [Place 30-68] Instance inputVec_IBUF[1]_inst (IBUF) is not placed
+ERROR: [Place 30-68] Instance inputVec_IBUF[20]_inst (IBUF) is not placed
+ERROR: [Place 30-68] Instance inputVec_IBUF[21]_inst (IBUF) is not placed
+ERROR: [Place 30-68] Instance inputVec_IBUF[22]_inst (IBUF) is not placed
+ERROR: [Place 30-68] Instance inputVec_IBUF[23]_inst (IBUF) is not placed
+ERROR: [Place 30-68] Instance inputVec_IBUF[24]_inst (IBUF) is not placed
+ERROR: [Place 30-68] Instance inputVec_IBUF[25]_inst (IBUF) is not placed
+ERROR: [Place 30-68] Instance inputVec_IBUF[26]_inst (IBUF) is not placed
+ERROR: [Place 30-68] Instance inputVec_IBUF[27]_inst (IBUF) is not placed
+ERROR: [Place 30-68] Instance inputVec_IBUF[28]_inst (IBUF) is not placed
+ERROR: [Place 30-68] Instance inputVec_IBUF[29]_inst (IBUF) is not placed
+ERROR: [Place 30-68] Instance inputVec_IBUF[2]_inst (IBUF) is not placed
+ERROR: [Place 30-68] Instance inputVec_IBUF[30]_inst (IBUF) is not placed
+ERROR: [Place 30-68] Instance inputVec_IBUF[31]_inst (IBUF) is not placed
+ERROR: [Place 30-68] Instance inputVec_IBUF[32]_inst (IBUF) is not placed
+ERROR: [Place 30-68] Instance inputVec_IBUF[33]_inst (IBUF) is not placed
+ERROR: [Place 30-68] Instance inputVec_IBUF[34]_inst (IBUF) is not placed
+ERROR: [Place 30-68] Instance inputVec_IBUF[35]_inst (IBUF) is not placed
+ERROR: [Place 30-68] Instance inputVec_IBUF[3]_inst (IBUF) is not placed
+ERROR: [Place 30-68] Instance inputVec_IBUF[4]_inst (IBUF) is not placed
+ERROR: [Place 30-68] Instance inputVec_IBUF[5]_inst (IBUF) is not placed
+ERROR: [Place 30-68] Instance inputVec_IBUF[6]_inst (IBUF) is not placed
+ERROR: [Place 30-68] Instance inputVec_IBUF[7]_inst (IBUF) is not placed
+ERROR: [Place 30-68] Instance inputVec_IBUF[8]_inst (IBUF) is not placed
+ERROR: [Place 30-68] Instance inputVec_IBUF[9]_inst (IBUF) is not placed
+ERROR: [Place 30-68] Instance newSample_IBUF_inst (IBUF) is not placed
+ERROR: [Place 30-68] Instance outputVec_OBUF[0]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVec_OBUF[1000]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVec_OBUF[1001]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVec_OBUF[1002]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVec_OBUF[1003]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVec_OBUF[1004]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVec_OBUF[1005]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVec_OBUF[1006]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVec_OBUF[1007]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVec_OBUF[1008]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVec_OBUF[1009]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVec_OBUF[100]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVec_OBUF[1010]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVec_OBUF[1011]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVec_OBUF[1012]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVec_OBUF[1013]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVec_OBUF[1014]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVec_OBUF[1015]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVec_OBUF[1016]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVec_OBUF[1017]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVec_OBUF[1018]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVec_OBUF[1019]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVec_OBUF[101]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVec_OBUF[1020]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVec_OBUF[1021]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVec_OBUF[1022]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVec_OBUF[1023]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVec_OBUF[1024]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVec_OBUF[1025]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVec_OBUF[1026]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVec_OBUF[1027]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVec_OBUF[1028]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVec_OBUF[1029]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVec_OBUF[102]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVec_OBUF[1030]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVec_OBUF[1031]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVec_OBUF[1032]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVec_OBUF[1033]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVec_OBUF[1034]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVec_OBUF[1035]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVec_OBUF[1036]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVec_OBUF[1037]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVec_OBUF[1038]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVec_OBUF[1039]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVec_OBUF[103]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVec_OBUF[1040]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVec_OBUF[1041]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVec_OBUF[1042]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVec_OBUF[1043]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVec_OBUF[1044]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVec_OBUF[1045]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVec_OBUF[1046]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVec_OBUF[1047]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVec_OBUF[1048]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVec_OBUF[1049]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVec_OBUF[104]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVec_OBUF[1050]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVec_OBUF[1051]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVec_OBUF[1052]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance outputVec_OBUF[1053]_inst (OBUF) is not placed
+INFO: [Common 17-14] Message 'Place 30-68' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+Phase 1.1.2 IO and Clk Clean Up | Checksum: 00000000
+
+Time (s): cpu = 00:00:42 ; elapsed = 00:00:20 . Memory (MB): peak = 2926.727 ; gain = 39.043 ; free physical = 3701 ; free virtual = 7748
+Phase 1.1 IO Placement/ Clock Placement/ Build Placer Device | Checksum: eee93dc6
+
+Time (s): cpu = 00:00:42 ; elapsed = 00:00:20 . Memory (MB): peak = 2926.727 ; gain = 39.043 ; free physical = 3700 ; free virtual = 7747
+Phase 1 Placer Initialization | Checksum: eee93dc6
+
+Time (s): cpu = 00:00:42 ; elapsed = 00:00:21 . Memory (MB): peak = 2926.727 ; gain = 39.043 ; free physical = 3700 ; free virtual = 7747
+ERROR: [Place 30-99] Placer failed with error: 'IO Clock Placer failed'
+Please review all ERROR, CRITICAL WARNING, and WARNING messages during placement to understand the cause for failure.
+Ending Placer Task | Checksum: eee93dc6
+
+Time (s): cpu = 00:00:42 ; elapsed = 00:00:21 . Memory (MB): peak = 2926.727 ; gain = 39.043 ; free physical = 3700 ; free virtual = 7748
+INFO: [Common 17-83] Releasing license: Implementation
+47 Infos, 36 Warnings, 0 Critical Warnings and 103 Errors encountered.
+place_design failed
+ERROR: [Common 17-69] Command failed: Placer could not place all instances
+INFO: [Common 17-206] Exiting Vivado at Tue Jul 12 23:17:10 2016...

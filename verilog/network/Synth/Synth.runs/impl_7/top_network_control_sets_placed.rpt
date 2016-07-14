@@ -1,7 +1,7 @@
 Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2015.4 (lin64) Build 1412921 Wed Nov 18 09:44:32 MST 2015
-| Date         : Sat Jun 25 17:05:16 2016
+| Date         : Tue Jul 12 16:20:33 2016
 | Host         : desktop4480 running 64-bit Ubuntu 14.04.4 LTS
 | Command      : report_control_sets -verbose -file top_network_control_sets_placed.rpt
 | Design       : top_network
@@ -22,8 +22,8 @@ Table of Contents
 +-------------------------------------------------------------------+-------+
 |                               Status                              | Count |
 +-------------------------------------------------------------------+-------+
-| Number of unique control sets                                     |    40 |
-| Minimum Number of register sites lost to control set restrictions |    76 |
+| Number of unique control sets                                     |   104 |
+| Minimum Number of register sites lost to control set restrictions |   261 |
 +-------------------------------------------------------------------+-------+
 
 
@@ -33,61 +33,125 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |             521 |          226 |
+| No           | No                    | No                     |             138 |           58 |
 | No           | No                    | Yes                    |               0 |            0 |
-| No           | Yes                   | No                     |           15650 |         7025 |
+| No           | Yes                   | No                     |            1061 |          295 |
 | Yes          | No                    | No                     |               0 |            0 |
 | Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |           11977 |         3544 |
+| Yes          | Yes                   | No                     |            5292 |         1904 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
 3. Detailed Control Set Information
 -----------------------------------
 
-+--------------+--------------------------------------------------+---------------------------------------------+------------------+----------------+
-| Clock Signal |                   Enable Signal                  |               Set/Reset Signal              | Slice Load Count | Bel Load Count |
-+--------------+--------------------------------------------------+---------------------------------------------+------------------+----------------+
-|  clock       | LSTM_LAYER/GATE_O/DOTPROD_Y/rowMux[1]_i_1_n_0    | LSTM_LAYER/GATE_O/DOTPROD_Y/reset_dotProd_Y |               21 |             46 |
-|  clock       | LSTM_LAYER/GATE_I/DOTPROD_X/NEXTrowMux           | LSTM_LAYER/GATE_I/DOTPROD_X/reset_dotProd_X |               30 |             55 |
-|  clock       | LSTM_LAYER/GATE_F/DOTPROD_X/NEXTrowMux           | LSTM_LAYER/GATE_F/DOTPROD_X/reset_dotProd_X |               23 |             57 |
-|  clock       |                                                  | PERCEPTRON/resetP                           |               16 |             58 |
-|  clock       | LSTM_LAYER/GATE_Z/DOTPROD_X/NEXTrowMux           | LSTM_LAYER/GATE_Z/DOTPROD_X/reset_dotProd_X |               13 |             59 |
-|  clock       | LSTM_LAYER/GATE_Z/DOTPROD_Y/rowMux[1]_i_1__2_n_0 | LSTM_LAYER/GATE_Z/DOTPROD_Y/reset_dotProd_Y |               37 |             60 |
-|  clock       | LSTM_LAYER/GATE_F/DOTPROD_Y/rowMux[1]__0_i_1_n_0 | LSTM_LAYER/GATE_F/DOTPROD_Y/reset_dotProd_Y |               20 |             60 |
-|  clock       | LSTM_LAYER/GATE_I/DOTPROD_Y/rowMux[1]_i_1__3_n_0 | LSTM_LAYER/GATE_I/DOTPROD_Y/reset_dotProd_Y |               38 |             60 |
-|  clock       | LSTM_LAYER/GATE_O/DOTPROD_X/NEXTrowMux           | LSTM_LAYER/GATE_O/DOTPROD_X/reset_dotProd_X |               26 |             60 |
-|  clock       | LSTM_LAYER/GATE_O/DOTPROD_Y/dataReady            | LSTM_LAYER/GATE_O/DOTPROD_Y/reset_dotProd_Y |              165 |            576 |
-|  clock       | LSTM_LAYER/GATE_I/DOTPROD_X/E[0]                 | reset                                       |              160 |            576 |
-|  clock       | LSTM_LAYER/GATE_I/DOTPROD_Y/dataReady            | LSTM_LAYER/GATE_I/DOTPROD_Y/reset_dotProd_Y |              195 |            576 |
-|  clock       | LSTM_LAYER/GATE_I/DOTPROD_Y/E[0]                 | reset                                       |              160 |            576 |
-|  clock       | LSTM_LAYER/GATE_O/DOTPROD_X/dataReady            | LSTM_LAYER/GATE_O/DOTPROD_X/reset_dotProd_X |              161 |            576 |
-|  clock       | LSTM_LAYER/GATE_O/DOTPROD_X/E[0]                 | reset                                       |              160 |            576 |
-|  clock       | LSTM_LAYER/f_ready                               | reset                                       |              177 |            576 |
-|  clock       | LSTM_LAYER/GATE_O/DOTPROD_Y/E[0]                 | reset                                       |              160 |            576 |
-|  clock       | LSTM_LAYER/GATE_Z/DOTPROD_X/dataReady            | LSTM_LAYER/GATE_Z/DOTPROD_X/reset_dotProd_X |              167 |            576 |
-|  clock       | LSTM_LAYER/GATE_Z/DOTPROD_X/E[0]                 | reset                                       |              160 |            576 |
-|  clock       | LSTM_LAYER/GATE_Z/DOTPROD_Y/dataReady            | LSTM_LAYER/GATE_Z/DOTPROD_Y/reset_dotProd_Y |              157 |            576 |
-|  clock       | LSTM_LAYER/GATE_Z/DOTPROD_Y/E[0]                 | reset                                       |              160 |            576 |
-|  clock       | LSTM_LAYER/GATE_F/DOTPROD_Y/E[0]                 | reset                                       |              160 |            576 |
-|  clock       | LSTM_LAYER/GATE_F/DOTPROD_Y/dataReady            | LSTM_LAYER/GATE_F/DOTPROD_Y/reset_dotProd_Y |              161 |            576 |
-|  clock       | LSTM_LAYER/GATE_F/DOTPROD_X/E[0]                 | reset                                       |              160 |            576 |
-|  clock       | LSTM_LAYER/GATE_F/DOTPROD_X/dataReady            | LSTM_LAYER/GATE_F/DOTPROD_X/reset_dotProd_X |              151 |            576 |
-|  clock       | LSTM_LAYER/z_ready                               | reset                                       |              161 |            576 |
-|  clock       | LSTM_LAYER/GATE_I/DOTPROD_X/dataReady            | LSTM_LAYER/GATE_I/DOTPROD_X/reset_dotProd_X |              172 |            576 |
-|  clock       |                                                  | LSTM_LAYER/reset_sigm                       |              273 |            576 |
-|  clock       |                                                  | LSTM_LAYER/reset_tanh                       |              302 |            768 |
-|  clock       | LSTM_LAYER/dataReady_net                         | reset                                       |              389 |           1152 |
-|  clock       |                                                  | LSTM_LAYER/GATE_O/DOTPROD_X/reset_dotProd_X |              668 |           1191 |
-|  clock       |                                                  | LSTM_LAYER/GATE_I/DOTPROD_X/reset_dotProd_X |              699 |           1193 |
-|  clock       |                                                  | LSTM_LAYER/GATE_F/DOTPROD_X/reset_dotProd_X |              711 |           1193 |
-|  clock       |                                                  | LSTM_LAYER/GATE_Z/DOTPROD_X/reset_dotProd_X |              766 |           1202 |
-|  clock       |                                                  | LSTM_LAYER/GATE_O/DOTPROD_Y/reset_dotProd_Y |              789 |           1208 |
-|  clock       |                                                  | LSTM_LAYER/GATE_F/DOTPROD_Y/reset_dotProd_Y |              688 |           1208 |
-|  clock       |                                                  | LSTM_LAYER/GATE_I/DOTPROD_Y/reset_dotProd_Y |              690 |           1208 |
-|  clock       |                                                  | LSTM_LAYER/GATE_Z/DOTPROD_Y/reset_dotProd_Y |              641 |           1212 |
-|  clock       |                                                  | reset                                       |              782 |           4633 |
-|  clock       |                                                  |                                             |              994 |           6665 |
-+--------------+--------------------------------------------------+---------------------------------------------+------------------+----------------+
++--------------+--------------------------------------------------+------------------------------------------------------------+------------------+----------------+
+| Clock Signal |                   Enable Signal                  |                      Set/Reset Signal                      | Slice Load Count | Bel Load Count |
++--------------+--------------------------------------------------+------------------------------------------------------------+------------------+----------------+
+|  clock       | LSTM_LAYER/GATE_O/DOTPROD_X/NEXTrowMux           | LSTM_LAYER/GATE_O/DOTPROD_X/FSM_onehot_state[5]_i_1__5_n_0 |                2 |              5 |
+|  clock       | LSTM_LAYER/GATE_I/DOTPROD_X/NEXTrowMux           | LSTM_LAYER/GATE_I/DOTPROD_X/FSM_onehot_state[5]_i_1__1_n_0 |                1 |              5 |
+|  clock       | LSTM_LAYER/GATE_F/DOTPROD_X/NEXTrowMux           | LSTM_LAYER/GATE_F/DOTPROD_X/FSM_onehot_state[5]_i_1__3_n_0 |                1 |              5 |
+|  clock       | LSTM_LAYER/GATE_Z/DOTPROD_X/NEXTrowMux           | LSTM_LAYER/GATE_Z/DOTPROD_X/FSM_onehot_state[5]_i_1_n_0    |                1 |              5 |
+|  clock       | LSTM_LAYER/GATE_O/DOTPROD_Y/rowMux[0]_i_1__6_n_0 | LSTM_LAYER/GATE_O/DOTPROD_Y/FSM_onehot_state[5]_i_1__6_n_0 |                1 |              6 |
+|  clock       | LSTM_LAYER/GATE_I/DOTPROD_Y/rowMux[0]_i_1__2_n_0 | LSTM_LAYER/GATE_I/DOTPROD_Y/FSM_onehot_state[5]_i_1__2_n_0 |                3 |              6 |
+|  clock       | LSTM_LAYER/GATE_Z/DOTPROD_Y/rowMux[0]_i_1__0_n_0 | LSTM_LAYER/GATE_Z/DOTPROD_Y/FSM_onehot_state[5]_i_1__0_n_0 |                1 |              6 |
+|  clock       | LSTM_LAYER/GATE_F/DOTPROD_Y/rowMux[0]_i_1__4_n_0 | LSTM_LAYER/GATE_F/DOTPROD_Y/FSM_onehot_state[5]_i_1__4_n_0 |                2 |              6 |
+|  clock       |                                                  | LSTM_LAYER/GATE_Z/DOTPROD_X/FSM_onehot_state[5]_i_1_n_0    |                3 |              7 |
+|  clock       |                                                  | LSTM_LAYER/GATE_F/DOTPROD_X/FSM_onehot_state[5]_i_1__3_n_0 |                3 |              7 |
+|  clock       |                                                  | LSTM_LAYER/GATE_I/DOTPROD_X/FSM_onehot_state[5]_i_1__1_n_0 |                3 |              7 |
+|  clock       |                                                  | LSTM_LAYER/GATE_O/DOTPROD_X/FSM_onehot_state[5]_i_1__5_n_0 |                3 |              7 |
+|  clock       |                                                  | LSTM_LAYER/GATE_F/DOTPROD_Y/FSM_onehot_state[5]_i_1__4_n_0 |                3 |              9 |
+|  clock       |                                                  | LSTM_LAYER/GATE_I/DOTPROD_Y/FSM_onehot_state[5]_i_1__2_n_0 |                4 |              9 |
+|  clock       |                                                  | LSTM_LAYER/GATE_O/DOTPROD_Y/FSM_onehot_state[5]_i_1__6_n_0 |                3 |              9 |
+|  clock       |                                                  | LSTM_LAYER/GATE_Z/DOTPROD_Y/FSM_onehot_state[5]_i_1__0_n_0 |                5 |              9 |
+|  clock       | LSTM_LAYER/GATE_I/DOTPROD_Y/p_0_in[102]          | LSTM_LAYER/GATE_I/DOTPROD_Y/FSM_onehot_state[5]_i_1__2_n_0 |               18 |             37 |
+|  clock       | LSTM_LAYER/GATE_Z/DOTPROD_X/p_0_in[176]          | LSTM_LAYER/GATE_Z/DOTPROD_X/FSM_onehot_state[5]_i_1_n_0    |               19 |             37 |
+|  clock       | LSTM_LAYER/GATE_O/DOTPROD_X/p_0_in[287]          | LSTM_LAYER/GATE_O/DOTPROD_X/FSM_onehot_state[5]_i_1__5_n_0 |               22 |             37 |
+|  clock       | LSTM_LAYER/GATE_Z/DOTPROD_X/p_0_in[287]          | LSTM_LAYER/GATE_Z/DOTPROD_X/FSM_onehot_state[5]_i_1_n_0    |               21 |             37 |
+|  clock       | LSTM_LAYER/GATE_O/DOTPROD_X/p_0_in[28]           | LSTM_LAYER/GATE_O/DOTPROD_X/FSM_onehot_state[5]_i_1__5_n_0 |               14 |             37 |
+|  clock       | LSTM_LAYER/GATE_Z/DOTPROD_X/p_0_in[28]           | LSTM_LAYER/GATE_Z/DOTPROD_X/FSM_onehot_state[5]_i_1_n_0    |               16 |             37 |
+|  clock       | LSTM_LAYER/GATE_Z/DOTPROD_X/p_0_in[213]          | LSTM_LAYER/GATE_Z/DOTPROD_X/FSM_onehot_state[5]_i_1_n_0    |               21 |             37 |
+|  clock       | LSTM_LAYER/GATE_I/DOTPROD_Y/p_0_in[28]           | LSTM_LAYER/GATE_I/DOTPROD_Y/FSM_onehot_state[5]_i_1__2_n_0 |               21 |             37 |
+|  clock       | LSTM_LAYER/GATE_I/DOTPROD_Y/p_0_in[65]           | LSTM_LAYER/GATE_I/DOTPROD_Y/FSM_onehot_state[5]_i_1__2_n_0 |               20 |             37 |
+|  clock       | LSTM_LAYER/GATE_O/DOTPROD_X/p_0_in[250]          | LSTM_LAYER/GATE_O/DOTPROD_X/FSM_onehot_state[5]_i_1__5_n_0 |               20 |             37 |
+|  clock       | LSTM_LAYER/GATE_I/DOTPROD_Y/p_0_in[139]          | LSTM_LAYER/GATE_I/DOTPROD_Y/FSM_onehot_state[5]_i_1__2_n_0 |               18 |             37 |
+|  clock       | LSTM_LAYER/GATE_I/DOTPROD_Y/p_0_in[176]          | LSTM_LAYER/GATE_I/DOTPROD_Y/FSM_onehot_state[5]_i_1__2_n_0 |               17 |             37 |
+|  clock       | LSTM_LAYER/GATE_I/DOTPROD_Y/p_0_in[213]          | LSTM_LAYER/GATE_I/DOTPROD_Y/FSM_onehot_state[5]_i_1__2_n_0 |               18 |             37 |
+|  clock       | LSTM_LAYER/GATE_I/DOTPROD_Y/p_0_in[250]          | LSTM_LAYER/GATE_I/DOTPROD_Y/FSM_onehot_state[5]_i_1__2_n_0 |               12 |             37 |
+|  clock       | LSTM_LAYER/GATE_Z/DOTPROD_X/p_0_in[250]          | LSTM_LAYER/GATE_Z/DOTPROD_X/FSM_onehot_state[5]_i_1_n_0    |               22 |             37 |
+|  clock       | LSTM_LAYER/GATE_I/DOTPROD_Y/p_0_in[287]          | LSTM_LAYER/GATE_I/DOTPROD_Y/FSM_onehot_state[5]_i_1__2_n_0 |               17 |             37 |
+|  clock       | LSTM_LAYER/GATE_O/DOTPROD_Y/p_0_in[28]           | LSTM_LAYER/GATE_O/DOTPROD_Y/FSM_onehot_state[5]_i_1__6_n_0 |               16 |             37 |
+|  clock       | LSTM_LAYER/GATE_O/DOTPROD_Y/p_0_in[65]           | LSTM_LAYER/GATE_O/DOTPROD_Y/FSM_onehot_state[5]_i_1__6_n_0 |               21 |             37 |
+|  clock       | LSTM_LAYER/GATE_O/DOTPROD_X/p_0_in[213]          | LSTM_LAYER/GATE_O/DOTPROD_X/FSM_onehot_state[5]_i_1__5_n_0 |               19 |             37 |
+|  clock       | LSTM_LAYER/GATE_O/DOTPROD_X/p_0_in[176]          | LSTM_LAYER/GATE_O/DOTPROD_X/FSM_onehot_state[5]_i_1__5_n_0 |               15 |             37 |
+|  clock       | LSTM_LAYER/GATE_O/DOTPROD_X/p_0_in[139]          | LSTM_LAYER/GATE_O/DOTPROD_X/FSM_onehot_state[5]_i_1__5_n_0 |               18 |             37 |
+|  clock       | LSTM_LAYER/GATE_O/DOTPROD_X/p_0_in[102]          | LSTM_LAYER/GATE_O/DOTPROD_X/FSM_onehot_state[5]_i_1__5_n_0 |               19 |             37 |
+|  clock       | LSTM_LAYER/GATE_O/DOTPROD_X/p_0_in[65]           | LSTM_LAYER/GATE_O/DOTPROD_X/FSM_onehot_state[5]_i_1__5_n_0 |               21 |             37 |
+|  clock       | LSTM_LAYER/GATE_Z/DOTPROD_X/p_0_in[65]           | LSTM_LAYER/GATE_Z/DOTPROD_X/FSM_onehot_state[5]_i_1_n_0    |               18 |             37 |
+|  clock       | LSTM_LAYER/GATE_Z/DOTPROD_X/p_0_in[102]          | LSTM_LAYER/GATE_Z/DOTPROD_X/FSM_onehot_state[5]_i_1_n_0    |               20 |             37 |
+|  clock       | LSTM_LAYER/GATE_I/DOTPROD_X/p_0_in[176]          | LSTM_LAYER/GATE_I/DOTPROD_X/FSM_onehot_state[5]_i_1__1_n_0 |               14 |             37 |
+|  clock       | LSTM_LAYER/GATE_O/DOTPROD_Y/p_0_in[287]          | LSTM_LAYER/GATE_O/DOTPROD_Y/FSM_onehot_state[5]_i_1__6_n_0 |               20 |             37 |
+|  clock       | LSTM_LAYER/GATE_O/DOTPROD_Y/p_0_in[250]          | LSTM_LAYER/GATE_O/DOTPROD_Y/FSM_onehot_state[5]_i_1__6_n_0 |               15 |             37 |
+|  clock       | LSTM_LAYER/GATE_Z/DOTPROD_X/p_0_in[139]          | LSTM_LAYER/GATE_Z/DOTPROD_X/FSM_onehot_state[5]_i_1_n_0    |               19 |             37 |
+|  clock       | LSTM_LAYER/GATE_O/DOTPROD_Y/p_0_in[213]          | LSTM_LAYER/GATE_O/DOTPROD_Y/FSM_onehot_state[5]_i_1__6_n_0 |               20 |             37 |
+|  clock       | LSTM_LAYER/GATE_O/DOTPROD_Y/p_0_in[176]          | LSTM_LAYER/GATE_O/DOTPROD_Y/FSM_onehot_state[5]_i_1__6_n_0 |               18 |             37 |
+|  clock       | LSTM_LAYER/GATE_O/DOTPROD_Y/p_0_in[139]          | LSTM_LAYER/GATE_O/DOTPROD_Y/FSM_onehot_state[5]_i_1__6_n_0 |               18 |             37 |
+|  clock       | LSTM_LAYER/GATE_O/DOTPROD_Y/p_0_in[102]          | LSTM_LAYER/GATE_O/DOTPROD_Y/FSM_onehot_state[5]_i_1__6_n_0 |               21 |             37 |
+|  clock       | LSTM_LAYER/GATE_F/DOTPROD_X/p_0_in[250]          | LSTM_LAYER/GATE_F/DOTPROD_X/FSM_onehot_state[5]_i_1__3_n_0 |               14 |             37 |
+|  clock       | LSTM_LAYER/GATE_F/DOTPROD_Y/p_0_in[28]           | LSTM_LAYER/GATE_F/DOTPROD_Y/FSM_onehot_state[5]_i_1__4_n_0 |               15 |             37 |
+|  clock       | LSTM_LAYER/GATE_F/DOTPROD_Y/p_0_in[65]           | LSTM_LAYER/GATE_F/DOTPROD_Y/FSM_onehot_state[5]_i_1__4_n_0 |               19 |             37 |
+|  clock       | LSTM_LAYER/GATE_F/DOTPROD_Y/p_0_in[102]          | LSTM_LAYER/GATE_F/DOTPROD_Y/FSM_onehot_state[5]_i_1__4_n_0 |               17 |             37 |
+|  clock       | LSTM_LAYER/GATE_F/DOTPROD_Y/p_0_in[139]          | LSTM_LAYER/GATE_F/DOTPROD_Y/FSM_onehot_state[5]_i_1__4_n_0 |               14 |             37 |
+|  clock       | LSTM_LAYER/GATE_F/DOTPROD_Y/p_0_in[176]          | LSTM_LAYER/GATE_F/DOTPROD_Y/FSM_onehot_state[5]_i_1__4_n_0 |               13 |             37 |
+|  clock       | LSTM_LAYER/GATE_F/DOTPROD_Y/p_0_in[213]          | LSTM_LAYER/GATE_F/DOTPROD_Y/FSM_onehot_state[5]_i_1__4_n_0 |               18 |             37 |
+|  clock       | LSTM_LAYER/GATE_F/DOTPROD_Y/p_0_in[250]          | LSTM_LAYER/GATE_F/DOTPROD_Y/FSM_onehot_state[5]_i_1__4_n_0 |               19 |             37 |
+|  clock       | LSTM_LAYER/GATE_F/DOTPROD_Y/p_0_in[287]          | LSTM_LAYER/GATE_F/DOTPROD_Y/FSM_onehot_state[5]_i_1__4_n_0 |               21 |             37 |
+|  clock       | LSTM_LAYER/GATE_Z/DOTPROD_Y/p_0_in[102]          | LSTM_LAYER/GATE_Z/DOTPROD_Y/FSM_onehot_state[5]_i_1__0_n_0 |               20 |             37 |
+|  clock       | LSTM_LAYER/GATE_Z/DOTPROD_Y/p_0_in[139]          | LSTM_LAYER/GATE_Z/DOTPROD_Y/FSM_onehot_state[5]_i_1__0_n_0 |               18 |             37 |
+|  clock       | LSTM_LAYER/GATE_F/DOTPROD_X/p_0_in[65]           | LSTM_LAYER/GATE_F/DOTPROD_X/FSM_onehot_state[5]_i_1__3_n_0 |               19 |             37 |
+|  clock       | LSTM_LAYER/GATE_F/DOTPROD_X/p_0_in[102]          | LSTM_LAYER/GATE_F/DOTPROD_X/FSM_onehot_state[5]_i_1__3_n_0 |               17 |             37 |
+|  clock       | LSTM_LAYER/GATE_F/DOTPROD_X/p_0_in[139]          | LSTM_LAYER/GATE_F/DOTPROD_X/FSM_onehot_state[5]_i_1__3_n_0 |               17 |             37 |
+|  clock       | LSTM_LAYER/GATE_F/DOTPROD_X/p_0_in[176]          | LSTM_LAYER/GATE_F/DOTPROD_X/FSM_onehot_state[5]_i_1__3_n_0 |               16 |             37 |
+|  clock       | LSTM_LAYER/GATE_F/DOTPROD_X/p_0_in[213]          | LSTM_LAYER/GATE_F/DOTPROD_X/FSM_onehot_state[5]_i_1__3_n_0 |               21 |             37 |
+|  clock       | LSTM_LAYER/GATE_F/DOTPROD_X/p_0_in[287]          | LSTM_LAYER/GATE_F/DOTPROD_X/FSM_onehot_state[5]_i_1__3_n_0 |               16 |             37 |
+|  clock       | LSTM_LAYER/GATE_Z/DOTPROD_Y/p_0_in[176]          | LSTM_LAYER/GATE_Z/DOTPROD_Y/FSM_onehot_state[5]_i_1__0_n_0 |               20 |             37 |
+|  clock       | LSTM_LAYER/GATE_F/DOTPROD_X/p_0_in[28]           | LSTM_LAYER/GATE_F/DOTPROD_X/FSM_onehot_state[5]_i_1__3_n_0 |               17 |             37 |
+|  clock       | LSTM_LAYER/GATE_Z/DOTPROD_Y/p_0_in[213]          | LSTM_LAYER/GATE_Z/DOTPROD_Y/FSM_onehot_state[5]_i_1__0_n_0 |               21 |             37 |
+|  clock       | LSTM_LAYER/GATE_Z/DOTPROD_Y/p_0_in[250]          | LSTM_LAYER/GATE_Z/DOTPROD_Y/FSM_onehot_state[5]_i_1__0_n_0 |               21 |             37 |
+|  clock       | LSTM_LAYER/GATE_Z/DOTPROD_Y/p_0_in[287]          | LSTM_LAYER/GATE_Z/DOTPROD_Y/FSM_onehot_state[5]_i_1__0_n_0 |               21 |             37 |
+|  clock       | LSTM_LAYER/GATE_Z/DOTPROD_Y/p_0_in[65]           | LSTM_LAYER/GATE_Z/DOTPROD_Y/FSM_onehot_state[5]_i_1__0_n_0 |               19 |             37 |
+|  clock       | LSTM_LAYER/GATE_I/DOTPROD_X/p_0_in[28]           | LSTM_LAYER/GATE_I/DOTPROD_X/FSM_onehot_state[5]_i_1__1_n_0 |               13 |             37 |
+|  clock       | LSTM_LAYER/GATE_I/DOTPROD_X/p_0_in[287]          | LSTM_LAYER/GATE_I/DOTPROD_X/FSM_onehot_state[5]_i_1__1_n_0 |               18 |             37 |
+|  clock       | LSTM_LAYER/GATE_I/DOTPROD_X/p_0_in[250]          | LSTM_LAYER/GATE_I/DOTPROD_X/FSM_onehot_state[5]_i_1__1_n_0 |               13 |             37 |
+|  clock       | LSTM_LAYER/GATE_I/DOTPROD_X/p_0_in[213]          | LSTM_LAYER/GATE_I/DOTPROD_X/FSM_onehot_state[5]_i_1__1_n_0 |               17 |             37 |
+|  clock       | LSTM_LAYER/GATE_Z/DOTPROD_Y/p_0_in[28]           | LSTM_LAYER/GATE_Z/DOTPROD_Y/FSM_onehot_state[5]_i_1__0_n_0 |               19 |             37 |
+|  clock       | LSTM_LAYER/GATE_I/DOTPROD_X/p_0_in[139]          | LSTM_LAYER/GATE_I/DOTPROD_X/FSM_onehot_state[5]_i_1__1_n_0 |               21 |             37 |
+|  clock       | LSTM_LAYER/GATE_I/DOTPROD_X/p_0_in[102]          | LSTM_LAYER/GATE_I/DOTPROD_X/FSM_onehot_state[5]_i_1__1_n_0 |               20 |             37 |
+|  clock       | LSTM_LAYER/GATE_I/DOTPROD_X/p_0_in[65]           | LSTM_LAYER/GATE_I/DOTPROD_X/FSM_onehot_state[5]_i_1__1_n_0 |               18 |             37 |
+|  clock       |                                                  | PERCEPTRON/resetP                                          |               18 |             60 |
+|  clock       | LSTM_LAYER/GATE_Z/DOTPROD_Y/dataReady            | LSTM_LAYER/GATE_Z/DOTPROD_Y/FSM_onehot_state[5]_i_1__0_n_0 |               33 |            144 |
+|  clock       | LSTM_LAYER/z_ready                               | reset                                                      |               37 |            144 |
+|  clock       | LSTM_LAYER/f_ready                               | reset                                                      |               34 |            144 |
+|  clock       | LSTM_LAYER/GATE_Z/DOTPROD_Y/E[0]                 | reset                                                      |               40 |            144 |
+|  clock       | LSTM_LAYER/GATE_Z/DOTPROD_X/E[0]                 | reset                                                      |               40 |            144 |
+|  clock       |                                                  | LSTM_LAYER/g0_b0__0_n_0                                    |               62 |            144 |
+|  clock       | LSTM_LAYER/GATE_F/DOTPROD_Y/E[0]                 | reset                                                      |               40 |            144 |
+|  clock       | LSTM_LAYER/GATE_F/DOTPROD_Y/dataReady            | LSTM_LAYER/GATE_F/DOTPROD_Y/FSM_onehot_state[5]_i_1__4_n_0 |               29 |            144 |
+|  clock       | LSTM_LAYER/GATE_F/DOTPROD_X/E[0]                 | reset                                                      |               40 |            144 |
+|  clock       | LSTM_LAYER/GATE_F/DOTPROD_X/dataReady            | LSTM_LAYER/GATE_F/DOTPROD_X/FSM_onehot_state[5]_i_1__3_n_0 |               35 |            144 |
+|  clock       | LSTM_LAYER/GATE_I/DOTPROD_X/dataReady            | LSTM_LAYER/GATE_I/DOTPROD_X/FSM_onehot_state[5]_i_1__1_n_0 |               33 |            144 |
+|  clock       | LSTM_LAYER/GATE_I/DOTPROD_X/E[0]                 | reset                                                      |               40 |            144 |
+|  clock       | LSTM_LAYER/GATE_I/DOTPROD_Y/dataReady            | LSTM_LAYER/GATE_I/DOTPROD_Y/FSM_onehot_state[5]_i_1__2_n_0 |               35 |            144 |
+|  clock       | LSTM_LAYER/GATE_I/DOTPROD_Y/E[0]                 | reset                                                      |               40 |            144 |
+|  clock       | LSTM_LAYER/GATE_O/DOTPROD_X/dataReady            | LSTM_LAYER/GATE_O/DOTPROD_X/FSM_onehot_state[5]_i_1__5_n_0 |               32 |            144 |
+|  clock       | LSTM_LAYER/GATE_O/DOTPROD_X/E[0]                 | reset                                                      |               40 |            144 |
+|  clock       | LSTM_LAYER/GATE_O/DOTPROD_Y/dataReady            | LSTM_LAYER/GATE_O/DOTPROD_Y/FSM_onehot_state[5]_i_1__6_n_0 |               24 |            144 |
+|  clock       | LSTM_LAYER/GATE_O/DOTPROD_Y/E[0]                 | reset                                                      |               40 |            144 |
+|  clock       | LSTM_LAYER/GATE_Z/DOTPROD_X/dataReady            | LSTM_LAYER/GATE_Z/DOTPROD_X/FSM_onehot_state[5]_i_1_n_0    |               33 |            144 |
+|  clock       |                                                  | LSTM_LAYER/g0_b0__1_n_0                                    |               82 |            192 |
+|  clock       | LSTM_LAYER/dataReady_net                         | reset                                                      |               87 |            288 |
+|  clock       |                                                  | reset                                                      |              106 |            601 |
+|  clock       |                                                  |                                                            |              154 |            906 |
++--------------+--------------------------------------------------+------------------------------------------------------------+------------------+----------------+
 
 

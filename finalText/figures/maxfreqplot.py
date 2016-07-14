@@ -5,13 +5,13 @@ from matplotlib import rc
 rc('text', usetex=True);
 rc('font', family='serif', serif='Times');
 
-n4 = np.array([140.154, 136.054])
+n4 = np.array([158.228, 158.228])
 x_n4 = np.array([1,2])
-n8 = np.array([132.89, 131.579, 101.01])
+n8 = np.array([154.321, 154.321, 122.249])
 x_n8 = np.array([1,2,3])
-n16 = np.array([125.471, 105.263, 93.897])
+n16 = np.array([140.895, 131.406, 107.527])
 x_n16 = np.array([1,2,3])
-n32 = np.array([90.498])
+n32 = np.array([101.523])
 x_n32 = np.array([2])
 
 fig = plt.figure()

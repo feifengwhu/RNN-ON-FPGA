@@ -2,8 +2,8 @@
 # Vivado v2015.4 (64-bit)
 # SW Build 1412921 on Wed Nov 18 09:44:32 MST 2015
 # IP Build 1412160 on Tue Nov 17 13:47:24 MST 2015
-# Start of session at: Fri Jun 24 16:49:30 2016
-# Process ID: 2640
+# Start of session at: Tue Jul 12 12:51:12 2016
+# Process ID: 6892
 # Current directory: /home/josefonseca/Documents/thesis/verilog/dot_prod
 # Command line: vivado
 # Log file: /home/josefonseca/Documents/thesis/verilog/dot_prod/vivado.log
@@ -11,3 +11,64 @@
 #-----------------------------------------------------------
 start_gui
 open_project /home/josefonseca/Documents/thesis/verilog/dot_prod/Synth_dot_prod/Synth_dot_prod.xpr
+reset_run synth_4
+launch_runs impl_6
+wait_on_run impl_6
+reset_run synth_4
+launch_runs impl_6
+wait_on_run impl_6
+reset_run synth_4
+launch_runs impl_6
+wait_on_run impl_6
+reset_run synth_4
+launch_runs impl_6
+wait_on_run impl_6
+reset_run synth_4
+launch_runs impl_6
+wait_on_run impl_6
+reset_run synth_4
+launch_runs synth_4
+wait_on_run synth_4
+launch_runs impl_6
+wait_on_run impl_6
+reset_run synth_4
+launch_runs impl_6
+wait_on_run impl_6
+reset_run synth_4
+launch_runs impl_6
+wait_on_run impl_6
+reset_run synth_4
+launch_runs impl_6
+wait_on_run impl_6
+reset_run synth_4
+launch_runs impl_6
+wait_on_run impl_6
+reset_run synth_4
+launch_runs impl_6
+wait_on_run impl_6
+reset_run synth_4
+launch_runs impl_6
+wait_on_run impl_6
+reset_run synth_4
+launch_runs impl_6
+wait_on_run impl_6
+reset_run synth_4
+launch_runs impl_6
+wait_on_run impl_6
+reset_run synth_4
+launch_runs synth_4
+wait_on_run synth_4
+launch_runs impl_6
+wait_on_run impl_6
+reset_run synth_4
+launch_runs impl_6
+wait_on_run impl_6
+reset_run synth_4
+launch_runs impl_6
+wait_on_run impl_6
+reset_run synth_4
+launch_runs impl_6
+wait_on_run impl_6
+reset_run synth_4
+launch_runs impl_6
+wait_on_run impl_6

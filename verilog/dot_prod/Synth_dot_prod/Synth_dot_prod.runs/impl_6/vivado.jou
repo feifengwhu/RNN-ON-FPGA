@@ -2,8 +2,8 @@
 # Vivado v2015.4 (64-bit)
 # SW Build 1412921 on Wed Nov 18 09:44:32 MST 2015
 # IP Build 1412160 on Tue Nov 17 13:47:24 MST 2015
-# Start of session at: Fri Jun 24 16:45:02 2016
-# Process ID: 30597
+# Start of session at: Tue Jul 12 15:05:23 2016
+# Process ID: 22257
 # Current directory: /home/josefonseca/Documents/thesis/verilog/dot_prod/Synth_dot_prod/Synth_dot_prod.runs/impl_6
 # Command line: vivado -log dot_prod.vdi -applog -messageDb vivado.pb -mode batch -source dot_prod.tcl -notrace
 # Log file: /home/josefonseca/Documents/thesis/verilog/dot_prod/Synth_dot_prod/Synth_dot_prod.runs/impl_6/dot_prod.vdi

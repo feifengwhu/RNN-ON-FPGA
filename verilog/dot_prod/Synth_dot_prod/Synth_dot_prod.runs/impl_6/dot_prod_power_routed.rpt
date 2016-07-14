@@ -1,7 +1,7 @@
 Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2015.4 (lin64) Build 1412921 Wed Nov 18 09:44:32 MST 2015
-| Date             : Fri Jun 24 16:47:28 2016
+| Date             : Tue Jul 12 15:08:38 2016
 | Host             : desktop4480 running 64-bit Ubuntu 14.04.4 LTS
 | Command          : report_power -file dot_prod_power_routed.rpt -pb dot_prod_power_summary_routed.pb
 | Design           : dot_prod
@@ -30,12 +30,12 @@ Table of Contents
 ----------
 
 +--------------------------+--------+
-| Total On-Chip Power (W)  | 0.137  |
-| Dynamic (W)              | 0.019  |
-| Device Static (W)        | 0.118  |
+| Total On-Chip Power (W)  | 0.209  |
+| Dynamic (W)              | 0.090  |
+| Device Static (W)        | 0.119  |
 | Effective TJA (C/W)      | 11.5   |
-| Max Ambient (C)          | 83.4   |
-| Junction Temperature (C) | 26.6   |
+| Max Ambient (C)          | 82.6   |
+| Junction Temperature (C) | 27.4   |
 | Confidence Level         | Medium |
 | Setting File             | ---    |
 | Simulation Activity File | ---    |
@@ -50,14 +50,14 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.000 |        3 |       --- |             --- |
-| Slice Logic    |     0.005 |     1906 |       --- |             --- |
-|   LUT as Logic |     0.005 |      986 |     53200 |            1.85 |
-|   Register     |    <0.001 |      917 |    106400 |            0.86 |
+| Slice Logic    |     0.030 |     7341 |       --- |             --- |
+|   LUT as Logic |     0.030 |     5394 |     53200 |           10.14 |
+|   Register     |    <0.001 |     1879 |    106400 |            1.77 |
 |   Others       |     0.000 |        3 |       --- |             --- |
-| Signals        |     0.009 |     1159 |       --- |             --- |
-| DSPs           |     0.005 |        4 |       220 |            1.82 |
-| Static Power   |     0.118 |          |           |                 |
-| Total          |     0.137 |          |           |                 |
+| Signals        |     0.051 |     5868 |       --- |             --- |
+| DSPs           |     0.009 |        8 |       220 |            3.64 |
+| Static Power   |     0.119 |          |           |                 |
+| Total          |     0.209 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -67,7 +67,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.027 |       0.019 |      0.008 |
+| Vccint    |       1.000 |     0.098 |       0.090 |      0.008 |
 | Vccaux    |       1.800 |     0.019 |       0.000 |      0.019 |
 | Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -130,7 +130,7 @@ Table of Contents
 +--------+--------+-----------------+
 | Clock  | Domain | Constraint (ns) |
 +--------+--------+-----------------+
-| sysClk | clk    |             9.1 |
+| sysClk | clk    |             9.2 |
 +--------+--------+-----------------+
 
 
@@ -143,7 +143,7 @@ Table of Contents
 +----------+-----------+
 | Name     | Power (W) |
 +----------+-----------+
-| dot_prod |     0.019 |
+| dot_prod |     0.090 |
 +----------+-----------+
 
 

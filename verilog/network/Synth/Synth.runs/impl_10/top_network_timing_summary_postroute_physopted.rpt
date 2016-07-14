@@ -1,0 +1,1286 @@
+Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2015.4 (lin64) Build 1412921 Wed Nov 18 09:44:32 MST 2015
+| Date         : Tue Jul 12 22:04:42 2016
+| Host         : desktop4480 running 64-bit Ubuntu 14.04.4 LTS
+| Command      : report_timing_summary -warn_on_violation -max_paths 10 -file top_network_timing_summary_postroute_physopted.rpt -rpx top_network_timing_summary_postroute_physopted.rpx
+| Design       : top_network
+| Device       : 7z020-clg484
+| Speed File   : -1  PRODUCTION 1.11 2014-09-11
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Summary Report
+
+------------------------------------------------------------------------------------------------
+| Timer Settings
+| --------------
+------------------------------------------------------------------------------------------------
+
+  Enable Multi Corner Analysis               :  Yes
+  Enable Pessimism Removal                   :  Yes
+  Pessimism Removal Resolution               :  Nearest Common Node
+  Enable Input Delay Default Clock           :  No
+  Enable Preset / Clear Arcs                 :  No
+  Disable Flight Delays                      :  No
+  Ignore I/O Paths                           :  No
+  Timing Early Launch at Borrowing Latches   :  false
+
+  Corner  Analyze    Analyze    
+  Name    Max Paths  Min Paths  
+  ------  ---------  ---------  
+  Slow    Yes        Yes        
+  Fast    Yes        Yes        
+
+
+
+check_timing report
+
+Table of Contents
+-----------------
+1. checking no_clock
+2. checking constant_clock
+3. checking pulse_width_clock
+4. checking unconstrained_internal_endpoints
+5. checking no_input_delay
+6. checking no_output_delay
+7. checking multiple_clock
+8. checking generated_clocks
+9. checking loops
+10. checking partial_input_delay
+11. checking partial_output_delay
+12. checking latch_loops
+
+1. checking no_clock
+--------------------
+ There are 0 register/latch pins with no clock.
+
+
+2. checking constant_clock
+--------------------------
+ There are 0 register/latch pins with constant_clock.
+
+
+3. checking pulse_width_clock
+-----------------------------
+ There are 0 register/latch pins which need pulse_width check
+
+
+4. checking unconstrained_internal_endpoints
+--------------------------------------------
+ There are 0 pins that are not constrained for maximum delay.
+
+ There are 0 pins that are not constrained for maximum delay due to constant clock.
+
+
+5. checking no_input_delay
+--------------------------
+ There are 39 input ports with no input delay specified. (HIGH)
+
+ There are 0 input ports with no input delay but user has a false path constraint.
+
+
+6. checking no_output_delay
+---------------------------
+ There are 19 ports with no output delay specified. (HIGH)
+
+ There are 0 ports with no output delay but user has a false path constraint
+
+ There are 0 ports with no output delay but with a timing clock defined on it or propagating through it
+
+
+7. checking multiple_clock
+--------------------------
+ There are 0 register/latch pins with multiple clocks.
+
+
+8. checking generated_clocks
+----------------------------
+ There are 0 generated clocks that are not connected to a clock source.
+
+
+9. checking loops
+-----------------
+ There are 0 combinational loops in the design.
+
+
+10. checking partial_input_delay
+--------------------------------
+ There are 0 input ports with partial input delay specified.
+
+
+11. checking partial_output_delay
+---------------------------------
+ There are 0 ports with partial output delay specified.
+
+
+12. checking latch_loops
+------------------------
+ There are 0 combinational latch loops in the design through latch input
+
+
+
+------------------------------------------------------------------------------------------------
+| Design Timing Summary
+| ---------------------
+------------------------------------------------------------------------------------------------
+
+    WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+    -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+      0.000        0.000                      0                64370        0.145        0.000                      0                64370        3.675        0.000                       0                 34467  
+
+
+All user specified timing constraints are met.
+
+
+------------------------------------------------------------------------------------------------
+| Clock Summary
+| -------------
+------------------------------------------------------------------------------------------------
+
+Clock  Waveform(ns)         Period(ns)      Frequency(MHz)
+-----  ------------         ----------      --------------
+clock  {0.000 4.925}        9.850           101.523         
+
+
+------------------------------------------------------------------------------------------------
+| Intra Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+Clock             WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+-----             -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+clock               0.000        0.000                      0                64370        0.145        0.000                      0                64370        3.675        0.000                       0                 34467  
+
+
+------------------------------------------------------------------------------------------------
+| Inter Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| Other Path Groups Table
+| -----------------------
+------------------------------------------------------------------------------------------------
+
+Path Group    From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    ----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| Timing Details
+| --------------
+------------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------
+From Clock:  clock
+  To Clock:  clock
+
+Setup :            0  Failing Endpoints,  Worst Slack        0.000ns,  Total Violation        0.000ns
+Hold  :            0  Failing Endpoints,  Worst Slack        0.145ns,  Total Violation        0.000ns
+PW    :            0  Failing Endpoints,  Worst Slack        3.675ns,  Total Violation        0.000ns
+---------------------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             0.000ns  (required time - arrival time)
+  Source:                 LSTM_LAYER/GATE_O/DOTPROD_Y/outputMAC_reg[977]/C
+                            (rising edge-triggered cell FDRE clocked by clock  {rise@0.000ns fall@4.925ns period=9.850ns})
+  Destination:            LSTM_LAYER/GATE_O/DOTPROD_Y/outputMAC_reg[995]/D
+                            (rising edge-triggered cell FDRE clocked by clock  {rise@0.000ns fall@4.925ns period=9.850ns})
+  Path Group:             clock
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            9.850ns  (clock rise@9.850ns - clock rise@0.000ns)
+  Data Path Delay:        9.738ns  (logic 2.896ns (29.739%)  route 6.842ns (70.261%))
+  Logic Levels:           6  (DSP48E1=1 LUT4=1 LUT6=4)
+  Clock Path Skew:        -0.049ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.924ns = ( 10.774 - 9.850 ) 
+    Source Clock Delay      (SCD):    0.973ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clock rise edge)      0.000     0.000 r  
+                                                      0.000     0.000 r  clock (IN)
+                         net (fo=34530, unset)        0.973     0.973    LSTM_LAYER/GATE_O/DOTPROD_Y/clock
+    SLICE_X67Y60         FDRE                                         r  LSTM_LAYER/GATE_O/DOTPROD_Y/outputMAC_reg[977]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X67Y60         FDRE (Prop_fdre_C_Q)         0.456     1.429 r  LSTM_LAYER/GATE_O/DOTPROD_Y/outputMAC_reg[977]/Q
+                         net (fo=3, routed)           1.163     2.592    LSTM_LAYER/GATE_O/DOTPROD_Y/p_31_out[472]
+    SLICE_X71Y46         LUT6 (Prop_lut6_I2_O)        0.124     2.716 r  LSTM_LAYER/GATE_O/DOTPROD_Y/outputMAC2_i_40__2/O
+                         net (fo=1, routed)           1.195     3.912    LSTM_LAYER/GATE_O/DOTPROD_Y/outputMAC2_i_40__2_n_0
+    DSP48_X3Y16          DSP48E1 (Prop_dsp48e1_C[15]_P[0])
+                                                      1.820     5.732 r  LSTM_LAYER/GATE_O/DOTPROD_Y/outputMAC2/P[0]
+                         net (fo=14, routed)          1.659     7.390    LSTM_LAYER/GATE_O/DOTPROD_Y/outputMAC2_n_105
+    SLICE_X78Y46         LUT6 (Prop_lut6_I3_O)        0.124     7.514 r  LSTM_LAYER/GATE_O/DOTPROD_Y/outputMAC[1019]_i_8__2/O
+                         net (fo=5, routed)           0.860     8.374    LSTM_LAYER/GATE_O/DOTPROD_Y/outputMAC[1019]_i_8__2_n_0
+    SLICE_X72Y48         LUT6 (Prop_lut6_I1_O)        0.124     8.498 r  LSTM_LAYER/GATE_O/DOTPROD_Y/outputMAC[995]_i_13__2/O
+                         net (fo=1, routed)           0.872     9.370    LSTM_LAYER/GATE_O/DOTPROD_Y/outputMAC[995]_i_13__2_n_0
+    SLICE_X67Y60         LUT4 (Prop_lut4_I3_O)        0.124     9.494 r  LSTM_LAYER/GATE_O/DOTPROD_Y/outputMAC[995]_i_9__2/O
+                         net (fo=1, routed)           0.548    10.043    LSTM_LAYER/GATE_O/DOTPROD_Y/outputMAC[995]_i_9__2_n_0
+    SLICE_X67Y58         LUT6 (Prop_lut6_I0_O)        0.124    10.167 r  LSTM_LAYER/GATE_O/DOTPROD_Y/outputMAC[995]_i_1__6_rewire/O
+                         net (fo=1, routed)           0.544    10.711    LSTM_LAYER/GATE_O/DOTPROD_Y/outputMAC[995]_i_1__6_n_0
+    SLICE_X66Y51         FDRE                                         r  LSTM_LAYER/GATE_O/DOTPROD_Y/outputMAC_reg[995]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clock rise edge)      9.850     9.850 r  
+                                                      0.000     9.850 r  clock (IN)
+                         net (fo=34530, unset)        0.924    10.774    LSTM_LAYER/GATE_O/DOTPROD_Y/clock
+    SLICE_X66Y51         FDRE                                         r  LSTM_LAYER/GATE_O/DOTPROD_Y/outputMAC_reg[995]/C
+                         clock pessimism              0.000    10.774    
+                         clock uncertainty           -0.035    10.739    
+    SLICE_X66Y51         FDRE (Setup_fdre_C_D)       -0.028    10.711    LSTM_LAYER/GATE_O/DOTPROD_Y/outputMAC_reg[995]
+  -------------------------------------------------------------------
+                         required time                         10.711    
+                         arrival time                         -10.711    
+  -------------------------------------------------------------------
+                         slack                                  0.000    
+
+Slack (MET) :             0.005ns  (required time - arrival time)
+  Source:                 LSTM_LAYER/GATE_F/DOTPROD_Y/outputMAC_reg[480]/C
+                            (rising edge-triggered cell FDRE clocked by clock  {rise@0.000ns fall@4.925ns period=9.850ns})
+  Destination:            LSTM_LAYER/GATE_F/DOTPROD_Y/outputMAC_reg[530]/D
+                            (rising edge-triggered cell FDRE clocked by clock  {rise@0.000ns fall@4.925ns period=9.850ns})
+  Path Group:             clock
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            9.850ns  (clock rise@9.850ns - clock rise@0.000ns)
+  Data Path Delay:        9.703ns  (logic 3.144ns (32.402%)  route 6.559ns (67.598%))
+  Logic Levels:           8  (DSP48E1=1 LUT3=2 LUT4=2 LUT6=3)
+  Clock Path Skew:        -0.049ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.924ns = ( 10.774 - 9.850 ) 
+    Source Clock Delay      (SCD):    0.973ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clock rise edge)      0.000     0.000 r  
+                                                      0.000     0.000 r  clock (IN)
+                         net (fo=34530, unset)        0.973     0.973    LSTM_LAYER/GATE_F/DOTPROD_Y/clock
+    SLICE_X44Y75         FDRE                                         r  LSTM_LAYER/GATE_F/DOTPROD_Y/outputMAC_reg[480]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X44Y75         FDRE (Prop_fdre_C_Q)         0.456     1.429 r  LSTM_LAYER/GATE_F/DOTPROD_Y/outputMAC_reg[480]/Q
+                         net (fo=2, routed)           1.200     2.629    LSTM_LAYER/GATE_F/DOTPROD_Y/outputMAC[480]
+    SLICE_X37Y74         LUT6 (Prop_lut6_I4_O)        0.124     2.753 r  LSTM_LAYER/GATE_F/DOTPROD_Y/outputMAC5_i_19__3/O
+                         net (fo=12, routed)          0.744     3.498    LSTM_LAYER/GATE_F/DOTPROD_Y/outputMAC5_i_19__3_n_0
+    DSP48_X2Y29          DSP48E1 (Prop_dsp48e1_C[43]_P[8])
+                                                      1.820     5.318 r  LSTM_LAYER/GATE_F/DOTPROD_Y/outputMAC5/P[8]
+                         net (fo=4, routed)           1.105     6.422    LSTM_LAYER/GATE_F/DOTPROD_Y/outputMAC5_n_97
+    SLICE_X40Y70         LUT6 (Prop_lut6_I1_O)        0.124     6.546 r  LSTM_LAYER/GATE_F/DOTPROD_Y/outputMAC[590]_i_9__0/O
+                         net (fo=7, routed)           0.890     7.436    LSTM_LAYER/GATE_F/DOTPROD_Y/outputMAC[590]_i_9__0_n_0
+    SLICE_X44Y68         LUT6 (Prop_lut6_I1_O)        0.124     7.560 r  LSTM_LAYER/GATE_F/DOTPROD_Y/outputMAC[642]_i_6/O
+                         net (fo=4, routed)           0.474     8.035    LSTM_LAYER/GATE_F/DOTPROD_Y/outputMAC[642]_i_6_n_0
+    SLICE_X47Y68         LUT3 (Prop_lut3_I0_O)        0.124     8.159 f  LSTM_LAYER/GATE_F/DOTPROD_Y/outputMAC[594]_i_7__4/O
+                         net (fo=7, routed)           0.661     8.819    LSTM_LAYER/GATE_F/DOTPROD_Y/outputMAC[594]_i_7__4_n_0
+    SLICE_X52Y66         LUT3 (Prop_lut3_I2_O)        0.124     8.943 f  LSTM_LAYER/GATE_F/DOTPROD_Y/outputMAC[530]_i_5__3/O
+                         net (fo=2, routed)           0.577     9.521    LSTM_LAYER/GATE_F/DOTPROD_Y/outputMAC[530]_i_5__3_n_0
+    SLICE_X48Y66         LUT4 (Prop_lut4_I3_O)        0.124     9.645 r  LSTM_LAYER/GATE_F/DOTPROD_Y/outputMAC[530]_i_3__3_rewire/O
+                         net (fo=1, routed)           0.574    10.219    LSTM_LAYER/GATE_F/DOTPROD_Y/outputMAC[530]_i_3__3_n_0
+    SLICE_X44Y68         LUT4 (Prop_lut4_I1_O)        0.124    10.343 r  LSTM_LAYER/GATE_F/DOTPROD_Y/outputMAC[530]_i_1__4/O
+                         net (fo=1, routed)           0.333    10.676    LSTM_LAYER/GATE_F/DOTPROD_Y/outputMAC[530]_i_1__4_n_0
+    SLICE_X44Y68         FDRE                                         r  LSTM_LAYER/GATE_F/DOTPROD_Y/outputMAC_reg[530]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clock rise edge)      9.850     9.850 r  
+                                                      0.000     9.850 r  clock (IN)
+                         net (fo=34530, unset)        0.924    10.774    LSTM_LAYER/GATE_F/DOTPROD_Y/clock
+    SLICE_X44Y68         FDRE                                         r  LSTM_LAYER/GATE_F/DOTPROD_Y/outputMAC_reg[530]/C
+                         clock pessimism              0.000    10.774    
+                         clock uncertainty           -0.035    10.739    
+    SLICE_X44Y68         FDRE (Setup_fdre_C_D)       -0.058    10.681    LSTM_LAYER/GATE_F/DOTPROD_Y/outputMAC_reg[530]
+  -------------------------------------------------------------------
+                         required time                         10.681    
+                         arrival time                         -10.676    
+  -------------------------------------------------------------------
+                         slack                                  0.005    
+
+Slack (MET) :             0.006ns  (required time - arrival time)
+  Source:                 LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC_reg[1045]/C
+                            (rising edge-triggered cell FDRE clocked by clock  {rise@0.000ns fall@4.925ns period=9.850ns})
+  Destination:            LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC_reg[1053]/D
+                            (rising edge-triggered cell FDRE clocked by clock  {rise@0.000ns fall@4.925ns period=9.850ns})
+  Path Group:             clock
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            9.850ns  (clock rise@9.850ns - clock rise@0.000ns)
+  Data Path Delay:        9.789ns  (logic 3.144ns (32.118%)  route 6.645ns (67.882%))
+  Logic Levels:           8  (DSP48E1=1 LUT2=1 LUT3=2 LUT4=2 LUT6=2)
+  Clock Path Skew:        -0.049ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.924ns = ( 10.774 - 9.850 ) 
+    Source Clock Delay      (SCD):    0.973ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clock rise edge)      0.000     0.000 r  
+                                                      0.000     0.000 r  clock (IN)
+                         net (fo=34530, unset)        0.973     0.973    LSTM_LAYER/GATE_O/DOTPROD_X/clock
+    SLICE_X61Y21         FDRE                                         r  LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC_reg[1045]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X61Y21         FDRE (Prop_fdre_C_Q)         0.456     1.429 r  LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC_reg[1045]/Q
+                         net (fo=2, routed)           1.149     2.578    LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC[1045]
+    SLICE_X73Y22         LUT6 (Prop_lut6_I4_O)        0.124     2.702 r  LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC1_i_46__1/O
+                         net (fo=1, routed)           1.189     3.891    LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC1_i_46__1_n_0
+    DSP48_X3Y9           DSP48E1 (Prop_dsp48e1_C[9]_P[17])
+                                                      1.820     5.711 r  LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC1/P[17]
+                         net (fo=4, routed)           0.839     6.551    LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC1_n_88
+    SLICE_X92Y28         LUT3 (Prop_lut3_I1_O)        0.124     6.675 r  LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC[1165]_i_7__1/O
+                         net (fo=1, routed)           1.185     7.860    LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC[1165]_i_7__1_n_0
+    SLICE_X89Y26         LUT4 (Prop_lut4_I2_O)        0.124     7.984 r  LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC[1165]_i_4__1/O
+                         net (fo=4, routed)           0.879     8.863    LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC[1165]_i_4__1_n_0
+    SLICE_X76Y24         LUT6 (Prop_lut6_I1_O)        0.124     8.987 r  LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC[1149]_i_4__1/O
+                         net (fo=3, routed)           0.673     9.660    LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC[1149]_i_4__1_n_0
+    SLICE_X72Y27         LUT3 (Prop_lut3_I2_O)        0.124     9.784 r  LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC[1053]_i_5__1/O
+                         net (fo=1, routed)           0.427    10.212    LSTM_LAYER/GATE_O/DOTPROD_X/p_16_in[1053]
+    SLICE_X68Y27         LUT2 (Prop_lut2_I1_O)        0.124    10.336 r  LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC[1053]_i_2__1/O
+                         net (fo=1, routed)           0.302    10.638    LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC018_out[1053]
+    SLICE_X68Y28         LUT4 (Prop_lut4_I0_O)        0.124    10.762 r  LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC[1053]_i_1__1/O
+                         net (fo=1, routed)           0.000    10.762    LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC[1053]_i_1__1_n_0
+    SLICE_X68Y28         FDRE                                         r  LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC_reg[1053]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clock rise edge)      9.850     9.850 r  
+                                                      0.000     9.850 r  clock (IN)
+                         net (fo=34530, unset)        0.924    10.774    LSTM_LAYER/GATE_O/DOTPROD_X/clock
+    SLICE_X68Y28         FDRE                                         r  LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC_reg[1053]/C
+                         clock pessimism              0.000    10.774    
+                         clock uncertainty           -0.035    10.739    
+    SLICE_X68Y28         FDRE (Setup_fdre_C_D)        0.029    10.768    LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC_reg[1053]
+  -------------------------------------------------------------------
+                         required time                         10.768    
+                         arrival time                         -10.762    
+  -------------------------------------------------------------------
+                         slack                                  0.006    
+
+Slack (MET) :             0.009ns  (required time - arrival time)
+  Source:                 LSTM_LAYER/GATE_O/DOTPROD_X/rowMux_reg[1]_rep_replica/C
+                            (rising edge-triggered cell FDRE clocked by clock  {rise@0.000ns fall@4.925ns period=9.850ns})
+  Destination:            LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC_reg[467]/D
+                            (rising edge-triggered cell FDRE clocked by clock  {rise@0.000ns fall@4.925ns period=9.850ns})
+  Path Group:             clock
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            9.850ns  (clock rise@9.850ns - clock rise@0.000ns)
+  Data Path Delay:        9.690ns  (logic 3.020ns (31.166%)  route 6.670ns (68.834%))
+  Logic Levels:           7  (DSP48E1=1 LUT4=2 LUT6=4)
+  Clock Path Skew:        -0.049ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.924ns = ( 10.774 - 9.850 ) 
+    Source Clock Delay      (SCD):    0.973ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clock rise edge)      0.000     0.000 r  
+                                                      0.000     0.000 r  clock (IN)
+                         net (fo=34530, unset)        0.973     0.973    LSTM_LAYER/GATE_O/DOTPROD_X/clock
+    SLICE_X81Y22         FDRE                                         r  LSTM_LAYER/GATE_O/DOTPROD_X/rowMux_reg[1]_rep_replica/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X81Y22         FDRE (Prop_fdre_C_Q)         0.456     1.429 r  LSTM_LAYER/GATE_O/DOTPROD_X/rowMux_reg[1]_rep_replica/Q
+                         net (fo=24, routed)          1.144     2.573    LSTM_LAYER/GATE_O/DOTPROD_X/rowMux_reg[1]_rep_n_0_repN
+    SLICE_X84Y22         LUT6 (Prop_lut6_I3_O)        0.124     2.697 r  LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC5_i_45__1/O
+                         net (fo=1, routed)           0.876     3.573    LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC5_i_45__1_n_0
+    DSP48_X3Y8           DSP48E1 (Prop_dsp48e1_C[10]_P[16])
+                                                      1.820     5.393 r  LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC5/P[16]
+                         net (fo=4, routed)           1.078     6.471    LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC5_n_89
+    SLICE_X91Y23         LUT6 (Prop_lut6_I0_O)        0.124     6.595 r  LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC[511]_i_9__1/O
+                         net (fo=4, routed)           0.969     7.564    LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC[511]_i_9__1_n_0
+    SLICE_X88Y20         LUT6 (Prop_lut6_I5_O)        0.124     7.688 r  LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC[643]_i_6__3/O
+                         net (fo=7, routed)           0.995     8.683    LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC[643]_i_6__3_n_0
+    SLICE_X71Y17         LUT6 (Prop_lut6_I2_O)        0.124     8.807 f  LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC[595]_i_6__5/O
+                         net (fo=4, routed)           0.444     9.250    LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC[595]_i_6__5_n_0
+    SLICE_X70Y18         LUT4 (Prop_lut4_I3_O)        0.124     9.374 r  LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC[467]_i_3__1/O
+                         net (fo=1, routed)           0.642    10.016    LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC[467]_i_3__1_n_0
+    SLICE_X79Y18         LUT4 (Prop_lut4_I1_O)        0.124    10.140 r  LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC[467]_i_1__5/O
+                         net (fo=1, routed)           0.523    10.663    LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC[467]_i_1__5_n_0
+    SLICE_X89Y18         FDRE                                         r  LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC_reg[467]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clock rise edge)      9.850     9.850 r  
+                                                      0.000     9.850 r  clock (IN)
+                         net (fo=34530, unset)        0.924    10.774    LSTM_LAYER/GATE_O/DOTPROD_X/clock
+    SLICE_X89Y18         FDRE                                         r  LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC_reg[467]/C
+                         clock pessimism              0.000    10.774    
+                         clock uncertainty           -0.035    10.739    
+    SLICE_X89Y18         FDRE (Setup_fdre_C_D)       -0.067    10.672    LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC_reg[467]
+  -------------------------------------------------------------------
+                         required time                         10.672    
+                         arrival time                         -10.663    
+  -------------------------------------------------------------------
+                         slack                                  0.009    
+
+Slack (MET) :             0.019ns  (required time - arrival time)
+  Source:                 LSTM_LAYER/GATE_O/DOTPROD_X/rowMux_reg[1]_rep_replica/C
+                            (rising edge-triggered cell FDRE clocked by clock  {rise@0.000ns fall@4.925ns period=9.850ns})
+  Destination:            LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC_reg[779]/D
+                            (rising edge-triggered cell FDRE clocked by clock  {rise@0.000ns fall@4.925ns period=9.850ns})
+  Path Group:             clock
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            9.850ns  (clock rise@9.850ns - clock rise@0.000ns)
+  Data Path Delay:        9.776ns  (logic 3.144ns (32.160%)  route 6.632ns (67.840%))
+  Logic Levels:           8  (DSP48E1=1 LUT2=1 LUT4=2 LUT5=1 LUT6=3)
+  Clock Path Skew:        -0.049ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.924ns = ( 10.774 - 9.850 ) 
+    Source Clock Delay      (SCD):    0.973ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clock rise edge)      0.000     0.000 r  
+                                                      0.000     0.000 r  clock (IN)
+                         net (fo=34530, unset)        0.973     0.973    LSTM_LAYER/GATE_O/DOTPROD_X/clock
+    SLICE_X81Y22         FDRE                                         r  LSTM_LAYER/GATE_O/DOTPROD_X/rowMux_reg[1]_rep_replica/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X81Y22         FDRE (Prop_fdre_C_Q)         0.456     1.429 r  LSTM_LAYER/GATE_O/DOTPROD_X/rowMux_reg[1]_rep_replica/Q
+                         net (fo=24, routed)          1.144     2.573    LSTM_LAYER/GATE_O/DOTPROD_X/rowMux_reg[1]_rep_n_0_repN
+    SLICE_X84Y22         LUT6 (Prop_lut6_I3_O)        0.124     2.697 r  LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC5_i_45__1/O
+                         net (fo=1, routed)           0.876     3.573    LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC5_i_45__1_n_0
+    DSP48_X3Y8           DSP48E1 (Prop_dsp48e1_C[10]_P[34])
+                                                      1.820     5.393 r  LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC5/P[34]
+                         net (fo=4, routed)           1.192     6.585    LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC5_n_71
+    SLICE_X91Y24         LUT6 (Prop_lut6_I3_O)        0.124     6.709 r  LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC[511]_i_8__1/O
+                         net (fo=5, routed)           0.697     7.406    LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC[511]_i_8__1_n_0
+    SLICE_X88Y23         LUT4 (Prop_lut4_I2_O)        0.124     7.530 r  LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC[491]_i_4__1/O
+                         net (fo=5, routed)           1.052     8.582    LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC[491]_i_4__1_n_0
+    SLICE_X68Y22         LUT6 (Prop_lut6_I3_O)        0.124     8.706 f  LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC[523]_i_6__1/O
+                         net (fo=2, routed)           0.750     9.456    LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC[523]_i_6__1_n_0
+    SLICE_X64Y25         LUT2 (Prop_lut2_I1_O)        0.124     9.580 r  LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC[779]_i_5__1/O
+                         net (fo=1, routed)           0.492    10.072    LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC[779]_i_5__1_n_0
+    SLICE_X62Y29         LUT5 (Prop_lut5_I4_O)        0.124    10.196 r  LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC[779]_i_2__1/O
+                         net (fo=1, routed)           0.429    10.625    LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC018_out[779]
+    SLICE_X61Y29         LUT4 (Prop_lut4_I0_O)        0.124    10.749 r  LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC[779]_i_1__1/O
+                         net (fo=1, routed)           0.000    10.749    LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC[779]_i_1__1_n_0
+    SLICE_X61Y29         FDRE                                         r  LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC_reg[779]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clock rise edge)      9.850     9.850 r  
+                                                      0.000     9.850 r  clock (IN)
+                         net (fo=34530, unset)        0.924    10.774    LSTM_LAYER/GATE_O/DOTPROD_X/clock
+    SLICE_X61Y29         FDRE                                         r  LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC_reg[779]/C
+                         clock pessimism              0.000    10.774    
+                         clock uncertainty           -0.035    10.739    
+    SLICE_X61Y29         FDRE (Setup_fdre_C_D)        0.029    10.768    LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC_reg[779]
+  -------------------------------------------------------------------
+                         required time                         10.768    
+                         arrival time                         -10.749    
+  -------------------------------------------------------------------
+                         slack                                  0.019    
+
+Slack (MET) :             0.024ns  (required time - arrival time)
+  Source:                 LSTM_LAYER/GATE_O/DOTPROD_X/rowMux_reg[1]_rep_replica/C
+                            (rising edge-triggered cell FDRE clocked by clock  {rise@0.000ns fall@4.925ns period=9.850ns})
+  Destination:            LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC_reg[1030]/D
+                            (rising edge-triggered cell FDRE clocked by clock  {rise@0.000ns fall@4.925ns period=9.850ns})
+  Path Group:             clock
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            9.850ns  (clock rise@9.850ns - clock rise@0.000ns)
+  Data Path Delay:        9.771ns  (logic 3.144ns (32.177%)  route 6.627ns (67.823%))
+  Logic Levels:           8  (DSP48E1=1 LUT2=1 LUT4=1 LUT6=5)
+  Clock Path Skew:        -0.049ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.924ns = ( 10.774 - 9.850 ) 
+    Source Clock Delay      (SCD):    0.973ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clock rise edge)      0.000     0.000 r  
+                                                      0.000     0.000 r  clock (IN)
+                         net (fo=34530, unset)        0.973     0.973    LSTM_LAYER/GATE_O/DOTPROD_X/clock
+    SLICE_X81Y22         FDRE                                         r  LSTM_LAYER/GATE_O/DOTPROD_X/rowMux_reg[1]_rep_replica/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X81Y22         FDRE (Prop_fdre_C_Q)         0.456     1.429 r  LSTM_LAYER/GATE_O/DOTPROD_X/rowMux_reg[1]_rep_replica/Q
+                         net (fo=24, routed)          1.144     2.573    LSTM_LAYER/GATE_O/DOTPROD_X/rowMux_reg[1]_rep_n_0_repN
+    SLICE_X84Y22         LUT6 (Prop_lut6_I3_O)        0.124     2.697 r  LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC5_i_45__1/O
+                         net (fo=1, routed)           0.876     3.573    LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC5_i_45__1_n_0
+    DSP48_X3Y8           DSP48E1 (Prop_dsp48e1_C[10]_P[26])
+                                                      1.820     5.393 r  LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC5/P[26]
+                         net (fo=4, routed)           1.045     6.438    LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC5_n_79
+    SLICE_X91Y21         LUT6 (Prop_lut6_I5_O)        0.124     6.562 r  LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC[506]_i_14__1/O
+                         net (fo=4, routed)           1.036     7.598    LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC[506]_i_14__1_n_0
+    SLICE_X87Y23         LUT6 (Prop_lut6_I1_O)        0.124     7.722 r  LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC[502]_i_4__1/O
+                         net (fo=11, routed)          1.019     8.741    LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC[502]_i_4__1_n_0
+    SLICE_X74Y24         LUT6 (Prop_lut6_I3_O)        0.124     8.865 f  LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC[518]_i_6__1/O
+                         net (fo=2, routed)           0.598     9.463    LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC[518]_i_6__1_n_0
+    SLICE_X71Y25         LUT2 (Prop_lut2_I1_O)        0.124     9.587 f  LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC[518]_i_3__3/O
+                         net (fo=2, routed)           0.605    10.193    LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC[518]_i_3__3_n_0
+    SLICE_X61Y26         LUT6 (Prop_lut6_I5_O)        0.124    10.317 r  LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC[1030]_i_2__5/O
+                         net (fo=1, routed)           0.303    10.620    LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC018_out[1030]
+    SLICE_X59Y26         LUT4 (Prop_lut4_I0_O)        0.124    10.744 r  LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC[1030]_i_1__1/O
+                         net (fo=1, routed)           0.000    10.744    LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC[1030]_i_1__1_n_0
+    SLICE_X59Y26         FDRE                                         r  LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC_reg[1030]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clock rise edge)      9.850     9.850 r  
+                                                      0.000     9.850 r  clock (IN)
+                         net (fo=34530, unset)        0.924    10.774    LSTM_LAYER/GATE_O/DOTPROD_X/clock
+    SLICE_X59Y26         FDRE                                         r  LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC_reg[1030]/C
+                         clock pessimism              0.000    10.774    
+                         clock uncertainty           -0.035    10.739    
+    SLICE_X59Y26         FDRE (Setup_fdre_C_D)        0.029    10.768    LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC_reg[1030]
+  -------------------------------------------------------------------
+                         required time                         10.768    
+                         arrival time                         -10.744    
+  -------------------------------------------------------------------
+                         slack                                  0.024    
+
+Slack (MET) :             0.024ns  (required time - arrival time)
+  Source:                 LSTM_LAYER/GATE_O/DOTPROD_X/rowMux_reg[1]_rep_replica/C
+                            (rising edge-triggered cell FDRE clocked by clock  {rise@0.000ns fall@4.925ns period=9.850ns})
+  Destination:            LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC_reg[1035]/D
+                            (rising edge-triggered cell FDRE clocked by clock  {rise@0.000ns fall@4.925ns period=9.850ns})
+  Path Group:             clock
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            9.850ns  (clock rise@9.850ns - clock rise@0.000ns)
+  Data Path Delay:        9.771ns  (logic 3.345ns (34.235%)  route 6.426ns (65.765%))
+  Logic Levels:           8  (DSP48E1=1 LUT2=1 LUT4=2 LUT6=4)
+  Clock Path Skew:        -0.049ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.924ns = ( 10.774 - 9.850 ) 
+    Source Clock Delay      (SCD):    0.973ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clock rise edge)      0.000     0.000 r  
+                                                      0.000     0.000 r  clock (IN)
+                         net (fo=34530, unset)        0.973     0.973    LSTM_LAYER/GATE_O/DOTPROD_X/clock
+    SLICE_X81Y22         FDRE                                         r  LSTM_LAYER/GATE_O/DOTPROD_X/rowMux_reg[1]_rep_replica/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X81Y22         FDRE (Prop_fdre_C_Q)         0.456     1.429 r  LSTM_LAYER/GATE_O/DOTPROD_X/rowMux_reg[1]_rep_replica/Q
+                         net (fo=24, routed)          1.144     2.573    LSTM_LAYER/GATE_O/DOTPROD_X/rowMux_reg[1]_rep_n_0_repN
+    SLICE_X84Y22         LUT6 (Prop_lut6_I3_O)        0.124     2.697 r  LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC5_i_45__1/O
+                         net (fo=1, routed)           0.876     3.573    LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC5_i_45__1_n_0
+    DSP48_X3Y8           DSP48E1 (Prop_dsp48e1_C[10]_P[34])
+                                                      1.820     5.393 r  LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC5/P[34]
+                         net (fo=4, routed)           1.192     6.585    LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC5_n_71
+    SLICE_X91Y24         LUT6 (Prop_lut6_I3_O)        0.124     6.709 r  LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC[511]_i_8__1/O
+                         net (fo=5, routed)           0.697     7.406    LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC[511]_i_8__1_n_0
+    SLICE_X88Y23         LUT4 (Prop_lut4_I2_O)        0.124     7.530 r  LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC[491]_i_4__1/O
+                         net (fo=5, routed)           1.052     8.582    LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC[491]_i_4__1_n_0
+    SLICE_X68Y22         LUT6 (Prop_lut6_I3_O)        0.124     8.706 f  LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC[523]_i_6__1/O
+                         net (fo=2, routed)           0.629     9.335    LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC[523]_i_6__1_n_0
+    SLICE_X64Y22         LUT2 (Prop_lut2_I1_O)        0.117     9.452 f  LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC[523]_i_3__3/O
+                         net (fo=2, routed)           0.533     9.985    LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC[523]_i_3__3_n_0
+    SLICE_X61Y28         LUT4 (Prop_lut4_I3_O)        0.332    10.317 r  LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC[1035]_i_2__1_comp/O
+                         net (fo=1, routed)           0.303    10.620    LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC018_out[1035]
+    SLICE_X60Y27         LUT6 (Prop_lut6_I4_O)        0.124    10.744 r  LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC[1035]_i_1__1_comp/O
+                         net (fo=1, routed)           0.000    10.744    LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC[1035]_i_1__1_n_0
+    SLICE_X60Y27         FDRE                                         r  LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC_reg[1035]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clock rise edge)      9.850     9.850 r  
+                                                      0.000     9.850 r  clock (IN)
+                         net (fo=34530, unset)        0.924    10.774    LSTM_LAYER/GATE_O/DOTPROD_X/clock
+    SLICE_X60Y27         FDRE                                         r  LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC_reg[1035]/C
+                         clock pessimism              0.000    10.774    
+                         clock uncertainty           -0.035    10.739    
+    SLICE_X60Y27         FDRE (Setup_fdre_C_D)        0.029    10.768    LSTM_LAYER/GATE_O/DOTPROD_X/outputMAC_reg[1035]
+  -------------------------------------------------------------------
+                         required time                         10.768    
+                         arrival time                         -10.744    
+  -------------------------------------------------------------------
+                         slack                                  0.024    
+
+Slack (MET) :             0.025ns  (required time - arrival time)
+  Source:                 LSTM_LAYER/GATE_O/DOTPROD_Y/outputMAC_reg[977]/C
+                            (rising edge-triggered cell FDRE clocked by clock  {rise@0.000ns fall@4.925ns period=9.850ns})
+  Destination:            LSTM_LAYER/GATE_O/DOTPROD_Y/outputMAC_reg[1010]/D
+                            (rising edge-triggered cell FDRE clocked by clock  {rise@0.000ns fall@4.925ns period=9.850ns})
+  Path Group:             clock
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            9.850ns  (clock rise@9.850ns - clock rise@0.000ns)
+  Data Path Delay:        9.772ns  (logic 3.020ns (30.906%)  route 6.752ns (69.094%))
+  Logic Levels:           7  (DSP48E1=1 LUT3=3 LUT4=2 LUT6=1)
+  Clock Path Skew:        -0.049ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.924ns = ( 10.774 - 9.850 ) 
+    Source Clock Delay      (SCD):    0.973ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clock rise edge)      0.000     0.000 r  
+                                                      0.000     0.000 r  clock (IN)
+                         net (fo=34530, unset)        0.973     0.973    LSTM_LAYER/GATE_O/DOTPROD_Y/clock
+    SLICE_X67Y60         FDRE                                         r  LSTM_LAYER/GATE_O/DOTPROD_Y/outputMAC_reg[977]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X67Y60         FDRE (Prop_fdre_C_Q)         0.456     1.429 r  LSTM_LAYER/GATE_O/DOTPROD_Y/outputMAC_reg[977]/Q
+                         net (fo=3, routed)           1.163     2.592    LSTM_LAYER/GATE_O/DOTPROD_Y/p_31_out[472]
+    SLICE_X71Y46         LUT6 (Prop_lut6_I2_O)        0.124     2.716 r  LSTM_LAYER/GATE_O/DOTPROD_Y/outputMAC2_i_40__2/O
+                         net (fo=1, routed)           1.195     3.912    LSTM_LAYER/GATE_O/DOTPROD_Y/outputMAC2_i_40__2_n_0
+    DSP48_X3Y16          DSP48E1 (Prop_dsp48e1_C[15]_P[11])
+                                                      1.820     5.732 r  LSTM_LAYER/GATE_O/DOTPROD_Y/outputMAC2/P[11]
+                         net (fo=4, routed)           1.421     7.153    LSTM_LAYER/GATE_O/DOTPROD_Y/outputMAC2_n_94
+    SLICE_X74Y48         LUT4 (Prop_lut4_I0_O)        0.124     7.277 r  LSTM_LAYER/GATE_O/DOTPROD_Y/outputMAC[1002]_i_7__2/O
+                         net (fo=2, routed)           1.025     8.302    LSTM_LAYER/GATE_O/DOTPROD_Y/outputMAC[1002]_i_7__2_n_0
+    SLICE_X67Y59         LUT3 (Prop_lut3_I2_O)        0.124     8.426 r  LSTM_LAYER/GATE_O/DOTPROD_Y/outputMAC[914]_i_5__2/O
+                         net (fo=4, routed)           0.498     8.924    LSTM_LAYER/GATE_O/DOTPROD_Y/outputMAC[914]_i_5__2_n_0
+    SLICE_X65Y58         LUT3 (Prop_lut3_I0_O)        0.124     9.048 r  LSTM_LAYER/GATE_O/DOTPROD_Y/outputMAC[1010]_i_4__2/O
+                         net (fo=4, routed)           0.611     9.660    LSTM_LAYER/GATE_O/DOTPROD_Y/outputMAC[1010]_i_4__2_n_0
+    SLICE_X65Y59         LUT3 (Prop_lut3_I0_O)        0.124     9.784 r  LSTM_LAYER/GATE_O/DOTPROD_Y/outputMAC[1010]_i_2__2/O
+                         net (fo=1, routed)           0.837    10.621    LSTM_LAYER/GATE_O/DOTPROD_Y/outputMAC018_out[1010]
+    SLICE_X69Y48         LUT4 (Prop_lut4_I0_O)        0.124    10.745 r  LSTM_LAYER/GATE_O/DOTPROD_Y/outputMAC[1010]_i_1__2/O
+                         net (fo=1, routed)           0.000    10.745    LSTM_LAYER/GATE_O/DOTPROD_Y/outputMAC[1010]_i_1__2_n_0
+    SLICE_X69Y48         FDRE                                         r  LSTM_LAYER/GATE_O/DOTPROD_Y/outputMAC_reg[1010]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clock rise edge)      9.850     9.850 r  
+                                                      0.000     9.850 r  clock (IN)
+                         net (fo=34530, unset)        0.924    10.774    LSTM_LAYER/GATE_O/DOTPROD_Y/clock
+    SLICE_X69Y48         FDRE                                         r  LSTM_LAYER/GATE_O/DOTPROD_Y/outputMAC_reg[1010]/C
+                         clock pessimism              0.000    10.774    
+                         clock uncertainty           -0.035    10.739    
+    SLICE_X69Y48         FDRE (Setup_fdre_C_D)        0.031    10.770    LSTM_LAYER/GATE_O/DOTPROD_Y/outputMAC_reg[1010]
+  -------------------------------------------------------------------
+                         required time                         10.770    
+                         arrival time                         -10.745    
+  -------------------------------------------------------------------
+                         slack                                  0.025    
+
+Slack (MET) :             0.035ns  (required time - arrival time)
+  Source:                 LSTM_LAYER/GATE_O/DOTPROD_Y/outputMAC_reg[977]/C
+                            (rising edge-triggered cell FDRE clocked by clock  {rise@0.000ns fall@4.925ns period=9.850ns})
+  Destination:            LSTM_LAYER/GATE_O/DOTPROD_Y/outputMAC_reg[940]/D
+                            (rising edge-triggered cell FDRE clocked by clock  {rise@0.000ns fall@4.925ns period=9.850ns})
+  Path Group:             clock
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            9.850ns  (clock rise@9.850ns - clock rise@0.000ns)
+  Data Path Delay:        9.762ns  (logic 3.020ns (30.937%)  route 6.742ns (69.063%))
+  Logic Levels:           7  (DSP48E1=1 LUT2=1 LUT4=3 LUT6=2)
+  Clock Path Skew:        -0.049ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.924ns = ( 10.774 - 9.850 ) 
+    Source Clock Delay      (SCD):    0.973ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clock rise edge)      0.000     0.000 r  
+                                                      0.000     0.000 r  clock (IN)
+                         net (fo=34530, unset)        0.973     0.973    LSTM_LAYER/GATE_O/DOTPROD_Y/clock
+    SLICE_X67Y60         FDRE                                         r  LSTM_LAYER/GATE_O/DOTPROD_Y/outputMAC_reg[977]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X67Y60         FDRE (Prop_fdre_C_Q)         0.456     1.429 r  LSTM_LAYER/GATE_O/DOTPROD_Y/outputMAC_reg[977]/Q
+                         net (fo=3, routed)           1.163     2.592    LSTM_LAYER/GATE_O/DOTPROD_Y/p_31_out[472]
+    SLICE_X71Y46         LUT6 (Prop_lut6_I2_O)        0.124     2.716 r  LSTM_LAYER/GATE_O/DOTPROD_Y/outputMAC2_i_40__2/O
+                         net (fo=1, routed)           1.195     3.912    LSTM_LAYER/GATE_O/DOTPROD_Y/outputMAC2_i_40__2_n_0
+    DSP48_X3Y16          DSP48E1 (Prop_dsp48e1_C[15]_P[7])
+                                                      1.820     5.732 r  LSTM_LAYER/GATE_O/DOTPROD_Y/outputMAC2/P[7]
+                         net (fo=5, routed)           1.579     7.311    LSTM_LAYER/GATE_O/DOTPROD_Y/outputMAC2_n_98
+    SLICE_X75Y46         LUT4 (Prop_lut4_I3_O)        0.124     7.435 r  LSTM_LAYER/GATE_O/DOTPROD_Y/outputMAC[1004]_i_9__2/O
+                         net (fo=2, routed)           0.714     8.149    LSTM_LAYER/GATE_O/DOTPROD_Y/outputMAC[1004]_i_9__2_n_0
+    SLICE_X70Y49         LUT6 (Prop_lut6_I4_O)        0.124     8.273 r  LSTM_LAYER/GATE_O/DOTPROD_Y/outputMAC[1004]_i_5__6_rewire/O
+                         net (fo=9, routed)           0.973     9.246    LSTM_LAYER/GATE_O/DOTPROD_Y/outputMAC[1004]_i_5__6_n_0
+    SLICE_X67Y61         LUT4 (Prop_lut4_I1_O)        0.124     9.370 r  LSTM_LAYER/GATE_O/DOTPROD_Y/outputMAC[940]_i_4__2/O
+                         net (fo=1, routed)           0.550     9.921    LSTM_LAYER/GATE_O/DOTPROD_Y/outputMAC[940]_i_4__2_n_0
+    SLICE_X65Y61         LUT2 (Prop_lut2_I0_O)        0.124    10.045 r  LSTM_LAYER/GATE_O/DOTPROD_Y/outputMAC[940]_i_2__2/O
+                         net (fo=1, routed)           0.566    10.611    LSTM_LAYER/GATE_O/DOTPROD_Y/outputMAC018_out[940]
+    SLICE_X67Y57         LUT4 (Prop_lut4_I0_O)        0.124    10.735 r  LSTM_LAYER/GATE_O/DOTPROD_Y/outputMAC[940]_i_1__2/O
+                         net (fo=1, routed)           0.000    10.735    LSTM_LAYER/GATE_O/DOTPROD_Y/outputMAC[940]_i_1__2_n_0
+    SLICE_X67Y57         FDRE                                         r  LSTM_LAYER/GATE_O/DOTPROD_Y/outputMAC_reg[940]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clock rise edge)      9.850     9.850 r  
+                                                      0.000     9.850 r  clock (IN)
+                         net (fo=34530, unset)        0.924    10.774    LSTM_LAYER/GATE_O/DOTPROD_Y/clock
+    SLICE_X67Y57         FDRE                                         r  LSTM_LAYER/GATE_O/DOTPROD_Y/outputMAC_reg[940]/C
+                         clock pessimism              0.000    10.774    
+                         clock uncertainty           -0.035    10.739    
+    SLICE_X67Y57         FDRE (Setup_fdre_C_D)        0.031    10.770    LSTM_LAYER/GATE_O/DOTPROD_Y/outputMAC_reg[940]
+  -------------------------------------------------------------------
+                         required time                         10.770    
+                         arrival time                         -10.735    
+  -------------------------------------------------------------------
+                         slack                                  0.035    
+
+Slack (MET) :             0.041ns  (required time - arrival time)
+  Source:                 LSTM_LAYER/GATE_I/DOTPROD_Y/outputMAC_reg[536]/C
+                            (rising edge-triggered cell FDRE clocked by clock  {rise@0.000ns fall@4.925ns period=9.850ns})
+  Destination:            LSTM_LAYER/GATE_I/DOTPROD_Y/outputMAC_reg[775]/D
+                            (rising edge-triggered cell FDRE clocked by clock  {rise@0.000ns fall@4.925ns period=9.850ns})
+  Path Group:             clock
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            9.850ns  (clock rise@9.850ns - clock rise@0.000ns)
+  Data Path Delay:        9.802ns  (logic 3.343ns (34.104%)  route 6.459ns (65.896%))
+  Logic Levels:           8  (DSP48E1=1 LUT2=1 LUT4=1 LUT6=5)
+  Clock Path Skew:        -0.049ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.924ns = ( 10.774 - 9.850 ) 
+    Source Clock Delay      (SCD):    0.973ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clock rise edge)      0.000     0.000 r  
+                                                      0.000     0.000 r  clock (IN)
+                         net (fo=34530, unset)        0.973     0.973    LSTM_LAYER/GATE_I/DOTPROD_Y/clock
+    SLICE_X28Y9          FDRE                                         r  LSTM_LAYER/GATE_I/DOTPROD_Y/outputMAC_reg[536]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X28Y9          FDRE (Prop_fdre_C_Q)         0.456     1.429 r  LSTM_LAYER/GATE_I/DOTPROD_Y/outputMAC_reg[536]/Q
+                         net (fo=3, routed)           1.103     2.532    LSTM_LAYER/GATE_I/DOTPROD_Y/p_31_out[259]
+    SLICE_X31Y11         LUT6 (Prop_lut6_I2_O)        0.124     2.656 r  LSTM_LAYER/GATE_I/DOTPROD_Y/outputMAC5_i_37__0/O
+                         net (fo=1, routed)           0.833     3.489    LSTM_LAYER/GATE_I/DOTPROD_Y/outputMAC5_i_37__0_n_0
+    DSP48_X2Y2           DSP48E1 (Prop_dsp48e1_C[18]_P[31])
+                                                      1.820     5.309 r  LSTM_LAYER/GATE_I/DOTPROD_Y/outputMAC5/P[31]
+                         net (fo=4, routed)           1.084     6.393    LSTM_LAYER/GATE_I/DOTPROD_Y/outputMAC5_n_74
+    SLICE_X34Y8          LUT6 (Prop_lut6_I5_O)        0.124     6.517 r  LSTM_LAYER/GATE_I/DOTPROD_Y/outputMAC[511]_i_12__0/O
+                         net (fo=5, routed)           0.922     7.439    LSTM_LAYER/GATE_I/DOTPROD_Y/outputMAC[511]_i_12__0_n_0
+    SLICE_X30Y6          LUT6 (Prop_lut6_I2_O)        0.124     7.563 r  LSTM_LAYER/GATE_I/DOTPROD_Y/outputMAC[503]_i_4__0/O
+                         net (fo=11, routed)          0.618     8.181    LSTM_LAYER/GATE_I/DOTPROD_Y/outputMAC[503]_i_4__0_n_0
+    SLICE_X28Y4          LUT6 (Prop_lut6_I3_O)        0.124     8.305 f  LSTM_LAYER/GATE_I/DOTPROD_Y/outputMAC[519]_i_6__0/O
+                         net (fo=2, routed)           0.793     9.098    LSTM_LAYER/GATE_I/DOTPROD_Y/outputMAC[519]_i_6__0_n_0
+    SLICE_X23Y3          LUT2 (Prop_lut2_I1_O)        0.120     9.218 r  LSTM_LAYER/GATE_I/DOTPROD_Y/outputMAC[775]_i_6__0/O
+                         net (fo=1, routed)           0.752     9.970    LSTM_LAYER/GATE_I/DOTPROD_Y/outputMAC[775]_i_6__0_n_0
+    SLICE_X13Y2          LUT6 (Prop_lut6_I5_O)        0.327    10.297 r  LSTM_LAYER/GATE_I/DOTPROD_Y/outputMAC[775]_i_2__0/O
+                         net (fo=1, routed)           0.354    10.651    LSTM_LAYER/GATE_I/DOTPROD_Y/outputMAC018_out[775]
+    SLICE_X12Y2          LUT4 (Prop_lut4_I0_O)        0.124    10.775 r  LSTM_LAYER/GATE_I/DOTPROD_Y/outputMAC[775]_i_1__0/O
+                         net (fo=1, routed)           0.000    10.775    LSTM_LAYER/GATE_I/DOTPROD_Y/outputMAC[775]_i_1__0_n_0
+    SLICE_X12Y2          FDRE                                         r  LSTM_LAYER/GATE_I/DOTPROD_Y/outputMAC_reg[775]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clock rise edge)      9.850     9.850 r  
+                                                      0.000     9.850 r  clock (IN)
+                         net (fo=34530, unset)        0.924    10.774    LSTM_LAYER/GATE_I/DOTPROD_Y/clock
+    SLICE_X12Y2          FDRE                                         r  LSTM_LAYER/GATE_I/DOTPROD_Y/outputMAC_reg[775]/C
+                         clock pessimism              0.000    10.774    
+                         clock uncertainty           -0.035    10.739    
+    SLICE_X12Y2          FDRE (Setup_fdre_C_D)        0.077    10.816    LSTM_LAYER/GATE_I/DOTPROD_Y/outputMAC_reg[775]
+  -------------------------------------------------------------------
+                         required time                         10.816    
+                         arrival time                         -10.775    
+  -------------------------------------------------------------------
+                         slack                                  0.041    
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             0.145ns  (arrival time - required time)
+  Source:                 LSTM_LAYER/GATE_Z/DOTPROD_Y/outputMAC_reg[797]/C
+                            (rising edge-triggered cell FDRE clocked by clock  {rise@0.000ns fall@4.925ns period=9.850ns})
+  Destination:            LSTM_LAYER/GATE_Z/DOTPROD_Y/outputVector_reg[387]/D
+                            (rising edge-triggered cell FDRE clocked by clock  {rise@0.000ns fall@4.925ns period=9.850ns})
+  Path Group:             clock
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clock rise@0.000ns - clock rise@0.000ns)
+  Data Path Delay:        0.251ns  (logic 0.141ns (56.085%)  route 0.110ns (43.915%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.022ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.432ns
+    Source Clock Delay      (SCD):    0.410ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clock rise edge)      0.000     0.000 r  
+                                                      0.000     0.000 r  clock (IN)
+                         net (fo=34530, unset)        0.410     0.410    LSTM_LAYER/GATE_Z/DOTPROD_Y/clock
+    SLICE_X91Y146        FDRE                                         r  LSTM_LAYER/GATE_Z/DOTPROD_Y/outputMAC_reg[797]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X91Y146        FDRE (Prop_fdre_C_Q)         0.141     0.551 r  LSTM_LAYER/GATE_Z/DOTPROD_Y/outputMAC_reg[797]/Q
+                         net (fo=3, routed)           0.110     0.662    LSTM_LAYER/GATE_Z/DOTPROD_Y/p_31_out[387]
+    SLICE_X90Y146        FDRE                                         r  LSTM_LAYER/GATE_Z/DOTPROD_Y/outputVector_reg[387]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clock rise edge)      0.000     0.000 r  
+                                                      0.000     0.000 r  clock (IN)
+                         net (fo=34530, unset)        0.432     0.432    LSTM_LAYER/GATE_Z/DOTPROD_Y/clock
+    SLICE_X90Y146        FDRE                                         r  LSTM_LAYER/GATE_Z/DOTPROD_Y/outputVector_reg[387]/C
+                         clock pessimism              0.000     0.432    
+    SLICE_X90Y146        FDRE (Hold_fdre_C_D)         0.085     0.517    LSTM_LAYER/GATE_Z/DOTPROD_Y/outputVector_reg[387]
+  -------------------------------------------------------------------
+                         required time                         -0.517    
+                         arrival time                           0.662    
+  -------------------------------------------------------------------
+                         slack                                  0.145    
+
+Slack (MET) :             0.151ns  (arrival time - required time)
+  Source:                 LSTM_LAYER/GATE_Z/DOTPROD_Y/outputVector_reg[31]/C
+                            (rising edge-triggered cell FDRE clocked by clock  {rise@0.000ns fall@4.925ns period=9.850ns})
+  Destination:            LSTM_LAYER/GATE_Z/gateOutput_reg[31]/D
+                            (rising edge-triggered cell FDRE clocked by clock  {rise@0.000ns fall@4.925ns period=9.850ns})
+  Path Group:             clock
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clock rise@0.000ns - clock rise@0.000ns)
+  Data Path Delay:        0.306ns  (logic 0.252ns (82.325%)  route 0.054ns (17.675%))
+  Logic Levels:           2  (CARRY4=1 LUT2=1)
+  Clock Path Skew:        0.022ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.432ns
+    Source Clock Delay      (SCD):    0.410ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clock rise edge)      0.000     0.000 r  
+                                                      0.000     0.000 r  clock (IN)
+                         net (fo=34530, unset)        0.410     0.410    LSTM_LAYER/GATE_Z/DOTPROD_Y/clock
+    SLICE_X109Y75        FDRE                                         r  LSTM_LAYER/GATE_Z/DOTPROD_Y/outputVector_reg[31]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X109Y75        FDRE (Prop_fdre_C_Q)         0.141     0.551 r  LSTM_LAYER/GATE_Z/DOTPROD_Y/outputVector_reg[31]/Q
+                         net (fo=1, routed)           0.054     0.605    LSTM_LAYER/GATE_Z/DOTPROD_Y/outputVec_Y[31]
+    SLICE_X108Y75        LUT2 (Prop_lut2_I1_O)        0.045     0.650 r  LSTM_LAYER/GATE_Z/DOTPROD_Y/gateOutput[33]_i_4/O
+                         net (fo=1, routed)           0.000     0.650    LSTM_LAYER/GATE_Z/DOTPROD_Y/gateOutput[33]_i_4_n_0
+    SLICE_X108Y75        CARRY4 (Prop_carry4_S[1]_O[1])
+                                                      0.066     0.716 r  LSTM_LAYER/GATE_Z/DOTPROD_Y/gateOutput_reg[33]_i_1/O[1]
+                         net (fo=1, routed)           0.000     0.716    LSTM_LAYER/GATE_Z/gateOutput01_out[13]
+    SLICE_X108Y75        FDRE                                         r  LSTM_LAYER/GATE_Z/gateOutput_reg[31]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clock rise edge)      0.000     0.000 r  
+                                                      0.000     0.000 r  clock (IN)
+                         net (fo=34530, unset)        0.432     0.432    LSTM_LAYER/GATE_Z/clock
+    SLICE_X108Y75        FDRE                                         r  LSTM_LAYER/GATE_Z/gateOutput_reg[31]/C
+                         clock pessimism              0.000     0.432    
+    SLICE_X108Y75        FDRE (Hold_fdre_C_D)         0.134     0.566    LSTM_LAYER/GATE_Z/gateOutput_reg[31]
+  -------------------------------------------------------------------
+                         required time                         -0.566    
+                         arrival time                           0.716    
+  -------------------------------------------------------------------
+                         slack                                  0.151    
+
+Slack (MET) :             0.154ns  (arrival time - required time)
+  Source:                 LSTM_LAYER/CF_prod_reg[236]/C
+                            (rising edge-triggered cell FDRE clocked by clock  {rise@0.000ns fall@4.925ns period=9.850ns})
+  Destination:            LSTM_LAYER/prev_C_reg[236]/D
+                            (rising edge-triggered cell FDRE clocked by clock  {rise@0.000ns fall@4.925ns period=9.850ns})
+  Path Group:             clock
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clock rise@0.000ns - clock rise@0.000ns)
+  Data Path Delay:        0.305ns  (logic 0.251ns (82.267%)  route 0.054ns (17.733%))
+  Logic Levels:           2  (CARRY4=1 LUT2=1)
+  Clock Path Skew:        0.022ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.432ns
+    Source Clock Delay      (SCD):    0.410ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clock rise edge)      0.000     0.000 r  
+                                                      0.000     0.000 r  clock (IN)
+                         net (fo=34530, unset)        0.410     0.410    LSTM_LAYER/clock
+    SLICE_X93Y89         FDRE                                         r  LSTM_LAYER/CF_prod_reg[236]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X93Y89         FDRE (Prop_fdre_C_Q)         0.141     0.551 r  LSTM_LAYER/CF_prod_reg[236]/Q
+                         net (fo=1, routed)           0.054     0.605    LSTM_LAYER/p_0_in34_in[2]
+    SLICE_X92Y89         LUT2 (Prop_lut2_I1_O)        0.045     0.650 r  LSTM_LAYER/prev_C[237]_i_3/O
+                         net (fo=1, routed)           0.000     0.650    LSTM_LAYER/prev_C[237]_i_3_n_0
+    SLICE_X92Y89         CARRY4 (Prop_carry4_S[2]_O[2])
+                                                      0.065     0.715 r  LSTM_LAYER/prev_C_reg[237]_i_1/O[2]
+                         net (fo=2, routed)           0.000     0.715    LSTM_LAYER/layer_C[236]
+    SLICE_X92Y89         FDRE                                         r  LSTM_LAYER/prev_C_reg[236]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clock rise edge)      0.000     0.000 r  
+                                                      0.000     0.000 r  clock (IN)
+                         net (fo=34530, unset)        0.432     0.432    LSTM_LAYER/clock
+    SLICE_X92Y89         FDRE                                         r  LSTM_LAYER/prev_C_reg[236]/C
+                         clock pessimism              0.000     0.432    
+    SLICE_X92Y89         FDRE (Hold_fdre_C_D)         0.130     0.562    LSTM_LAYER/prev_C_reg[236]
+  -------------------------------------------------------------------
+                         required time                         -0.562    
+                         arrival time                           0.715    
+  -------------------------------------------------------------------
+                         slack                                  0.154    
+
+Slack (MET) :             0.154ns  (arrival time - required time)
+  Source:                 LSTM_LAYER/CF_prod_reg[262]/C
+                            (rising edge-triggered cell FDRE clocked by clock  {rise@0.000ns fall@4.925ns period=9.850ns})
+  Destination:            LSTM_LAYER/prev_C_reg[262]/D
+                            (rising edge-triggered cell FDRE clocked by clock  {rise@0.000ns fall@4.925ns period=9.850ns})
+  Path Group:             clock
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clock rise@0.000ns - clock rise@0.000ns)
+  Data Path Delay:        0.305ns  (logic 0.251ns (82.267%)  route 0.054ns (17.733%))
+  Logic Levels:           2  (CARRY4=1 LUT2=1)
+  Clock Path Skew:        0.022ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.432ns
+    Source Clock Delay      (SCD):    0.410ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clock rise edge)      0.000     0.000 r  
+                                                      0.000     0.000 r  clock (IN)
+                         net (fo=34530, unset)        0.410     0.410    LSTM_LAYER/clock
+    SLICE_X35Y117        FDRE                                         r  LSTM_LAYER/CF_prod_reg[262]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X35Y117        FDRE (Prop_fdre_C_Q)         0.141     0.551 r  LSTM_LAYER/CF_prod_reg[262]/Q
+                         net (fo=1, routed)           0.054     0.605    LSTM_LAYER/p_0_in37_in[10]
+    SLICE_X34Y117        LUT2 (Prop_lut2_I1_O)        0.045     0.650 r  LSTM_LAYER/prev_C[263]_i_3/O
+                         net (fo=1, routed)           0.000     0.650    LSTM_LAYER/prev_C[263]_i_3_n_0
+    SLICE_X34Y117        CARRY4 (Prop_carry4_S[2]_O[2])
+                                                      0.065     0.715 r  LSTM_LAYER/prev_C_reg[263]_i_1/O[2]
+                         net (fo=2, routed)           0.000     0.715    LSTM_LAYER/layer_C[262]
+    SLICE_X34Y117        FDRE                                         r  LSTM_LAYER/prev_C_reg[262]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clock rise edge)      0.000     0.000 r  
+                                                      0.000     0.000 r  clock (IN)
+                         net (fo=34530, unset)        0.432     0.432    LSTM_LAYER/clock
+    SLICE_X34Y117        FDRE                                         r  LSTM_LAYER/prev_C_reg[262]/C
+                         clock pessimism              0.000     0.432    
+    SLICE_X34Y117        FDRE (Hold_fdre_C_D)         0.130     0.562    LSTM_LAYER/prev_C_reg[262]
+  -------------------------------------------------------------------
+                         required time                         -0.562    
+                         arrival time                           0.715    
+  -------------------------------------------------------------------
+                         slack                                  0.154    
+
+Slack (MET) :             0.154ns  (arrival time - required time)
+  Source:                 LSTM_LAYER/CF_prod_reg[536]/C
+                            (rising edge-triggered cell FDRE clocked by clock  {rise@0.000ns fall@4.925ns period=9.850ns})
+  Destination:            LSTM_LAYER/prev_C_reg[536]/D
+                            (rising edge-triggered cell FDRE clocked by clock  {rise@0.000ns fall@4.925ns period=9.850ns})
+  Path Group:             clock
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clock rise@0.000ns - clock rise@0.000ns)
+  Data Path Delay:        0.305ns  (logic 0.251ns (82.267%)  route 0.054ns (17.733%))
+  Logic Levels:           2  (CARRY4=1 LUT2=1)
+  Clock Path Skew:        0.022ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.432ns
+    Source Clock Delay      (SCD):    0.410ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clock rise edge)      0.000     0.000 r  
+                                                      0.000     0.000 r  clock (IN)
+                         net (fo=34530, unset)        0.410     0.410    LSTM_LAYER/clock
+    SLICE_X47Y145        FDRE                                         r  LSTM_LAYER/CF_prod_reg[536]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X47Y145        FDRE (Prop_fdre_C_Q)         0.141     0.551 r  LSTM_LAYER/CF_prod_reg[536]/Q
+                         net (fo=1, routed)           0.054     0.605    LSTM_LAYER/p_0_in82_in[14]
+    SLICE_X46Y145        LUT2 (Prop_lut2_I1_O)        0.045     0.650 r  LSTM_LAYER/prev_C[537]_i_3/O
+                         net (fo=1, routed)           0.000     0.650    LSTM_LAYER/prev_C[537]_i_3_n_0
+    SLICE_X46Y145        CARRY4 (Prop_carry4_S[2]_O[2])
+                                                      0.065     0.715 r  LSTM_LAYER/prev_C_reg[537]_i_1/O[2]
+                         net (fo=2, routed)           0.000     0.715    LSTM_LAYER/layer_C[536]
+    SLICE_X46Y145        FDRE                                         r  LSTM_LAYER/prev_C_reg[536]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clock rise edge)      0.000     0.000 r  
+                                                      0.000     0.000 r  clock (IN)
+                         net (fo=34530, unset)        0.432     0.432    LSTM_LAYER/clock
+    SLICE_X46Y145        FDRE                                         r  LSTM_LAYER/prev_C_reg[536]/C
+                         clock pessimism              0.000     0.432    
+    SLICE_X46Y145        FDRE (Hold_fdre_C_D)         0.130     0.562    LSTM_LAYER/prev_C_reg[536]
+  -------------------------------------------------------------------
+                         required time                         -0.562    
+                         arrival time                           0.715    
+  -------------------------------------------------------------------
+                         slack                                  0.154    
+
+Slack (MET) :             0.155ns  (arrival time - required time)
+  Source:                 LSTM_LAYER/CF_prod_reg[13]/C
+                            (rising edge-triggered cell FDRE clocked by clock  {rise@0.000ns fall@4.925ns period=9.850ns})
+  Destination:            LSTM_LAYER/prev_C_reg[13]/D
+                            (rising edge-triggered cell FDRE clocked by clock  {rise@0.000ns fall@4.925ns period=9.850ns})
+  Path Group:             clock
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clock rise@0.000ns - clock rise@0.000ns)
+  Data Path Delay:        0.306ns  (logic 0.252ns (82.325%)  route 0.054ns (17.675%))
+  Logic Levels:           2  (CARRY4=1 LUT2=1)
+  Clock Path Skew:        0.022ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.432ns
+    Source Clock Delay      (SCD):    0.410ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clock rise edge)      0.000     0.000 r  
+                                                      0.000     0.000 r  clock (IN)
+                         net (fo=34530, unset)        0.410     0.410    LSTM_LAYER/clock
+    SLICE_X87Y91         FDRE                                         r  LSTM_LAYER/CF_prod_reg[13]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X87Y91         FDRE (Prop_fdre_C_Q)         0.141     0.551 r  LSTM_LAYER/CF_prod_reg[13]/Q
+                         net (fo=1, routed)           0.054     0.605    LSTM_LAYER/CF_prod_reg_n_0_[13]
+    SLICE_X86Y91         LUT2 (Prop_lut2_I1_O)        0.045     0.650 r  LSTM_LAYER/prev_C[15]_i_4/O
+                         net (fo=1, routed)           0.000     0.650    LSTM_LAYER/prev_C[15]_i_4_n_0
+    SLICE_X86Y91         CARRY4 (Prop_carry4_S[1]_O[1])
+                                                      0.066     0.716 r  LSTM_LAYER/prev_C_reg[15]_i_1/O[1]
+                         net (fo=2, routed)           0.000     0.716    LSTM_LAYER/layer_C[13]
+    SLICE_X86Y91         FDRE                                         r  LSTM_LAYER/prev_C_reg[13]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clock rise edge)      0.000     0.000 r  
+                                                      0.000     0.000 r  clock (IN)
+                         net (fo=34530, unset)        0.432     0.432    LSTM_LAYER/clock
+    SLICE_X86Y91         FDRE                                         r  LSTM_LAYER/prev_C_reg[13]/C
+                         clock pessimism              0.000     0.432    
+    SLICE_X86Y91         FDRE (Hold_fdre_C_D)         0.130     0.562    LSTM_LAYER/prev_C_reg[13]
+  -------------------------------------------------------------------
+                         required time                         -0.562    
+                         arrival time                           0.716    
+  -------------------------------------------------------------------
+                         slack                                  0.155    
+
+Slack (MET) :             0.155ns  (arrival time - required time)
+  Source:                 LSTM_LAYER/CF_prod_reg[157]/C
+                            (rising edge-triggered cell FDRE clocked by clock  {rise@0.000ns fall@4.925ns period=9.850ns})
+  Destination:            LSTM_LAYER/prev_C_reg[157]/D
+                            (rising edge-triggered cell FDRE clocked by clock  {rise@0.000ns fall@4.925ns period=9.850ns})
+  Path Group:             clock
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clock rise@0.000ns - clock rise@0.000ns)
+  Data Path Delay:        0.306ns  (logic 0.252ns (82.325%)  route 0.054ns (17.675%))
+  Logic Levels:           2  (CARRY4=1 LUT2=1)
+  Clock Path Skew:        0.022ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.432ns
+    Source Clock Delay      (SCD):    0.410ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clock rise edge)      0.000     0.000 r  
+                                                      0.000     0.000 r  clock (IN)
+                         net (fo=34530, unset)        0.410     0.410    LSTM_LAYER/clock
+    SLICE_X101Y53        FDRE                                         r  LSTM_LAYER/CF_prod_reg[157]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X101Y53        FDRE (Prop_fdre_C_Q)         0.141     0.551 r  LSTM_LAYER/CF_prod_reg[157]/Q
+                         net (fo=1, routed)           0.054     0.605    LSTM_LAYER/p_0_in19_in[13]
+    SLICE_X100Y53        LUT2 (Prop_lut2_I1_O)        0.045     0.650 r  LSTM_LAYER/prev_C[159]_i_4/O
+                         net (fo=1, routed)           0.000     0.650    LSTM_LAYER/prev_C[159]_i_4_n_0
+    SLICE_X100Y53        CARRY4 (Prop_carry4_S[1]_O[1])
+                                                      0.066     0.716 r  LSTM_LAYER/prev_C_reg[159]_i_1/O[1]
+                         net (fo=2, routed)           0.000     0.716    LSTM_LAYER/layer_C[157]
+    SLICE_X100Y53        FDRE                                         r  LSTM_LAYER/prev_C_reg[157]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clock rise edge)      0.000     0.000 r  
+                                                      0.000     0.000 r  clock (IN)
+                         net (fo=34530, unset)        0.432     0.432    LSTM_LAYER/clock
+    SLICE_X100Y53        FDRE                                         r  LSTM_LAYER/prev_C_reg[157]/C
+                         clock pessimism              0.000     0.432    
+    SLICE_X100Y53        FDRE (Hold_fdre_C_D)         0.130     0.562    LSTM_LAYER/prev_C_reg[157]
+  -------------------------------------------------------------------
+                         required time                         -0.562    
+                         arrival time                           0.716    
+  -------------------------------------------------------------------
+                         slack                                  0.155    
+
+Slack (MET) :             0.155ns  (arrival time - required time)
+  Source:                 LSTM_LAYER/CF_prod_reg[23]/C
+                            (rising edge-triggered cell FDRE clocked by clock  {rise@0.000ns fall@4.925ns period=9.850ns})
+  Destination:            LSTM_LAYER/prev_C_reg[23]/D
+                            (rising edge-triggered cell FDRE clocked by clock  {rise@0.000ns fall@4.925ns period=9.850ns})
+  Path Group:             clock
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clock rise@0.000ns - clock rise@0.000ns)
+  Data Path Delay:        0.306ns  (logic 0.252ns (82.325%)  route 0.054ns (17.675%))
+  Logic Levels:           2  (CARRY4=1 LUT2=1)
+  Clock Path Skew:        0.022ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.432ns
+    Source Clock Delay      (SCD):    0.410ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clock rise edge)      0.000     0.000 r  
+                                                      0.000     0.000 r  clock (IN)
+                         net (fo=34530, unset)        0.410     0.410    LSTM_LAYER/clock
+    SLICE_X93Y68         FDRE                                         r  LSTM_LAYER/CF_prod_reg[23]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X93Y68         FDRE (Prop_fdre_C_Q)         0.141     0.551 r  LSTM_LAYER/CF_prod_reg[23]/Q
+                         net (fo=1, routed)           0.054     0.605    LSTM_LAYER/p_0_in[5]
+    SLICE_X92Y68         LUT2 (Prop_lut2_I1_O)        0.045     0.650 r  LSTM_LAYER/prev_C[25]_i_4/O
+                         net (fo=1, routed)           0.000     0.650    LSTM_LAYER/prev_C[25]_i_4_n_0
+    SLICE_X92Y68         CARRY4 (Prop_carry4_S[1]_O[1])
+                                                      0.066     0.716 r  LSTM_LAYER/prev_C_reg[25]_i_1/O[1]
+                         net (fo=2, routed)           0.000     0.716    LSTM_LAYER/layer_C[23]
+    SLICE_X92Y68         FDRE                                         r  LSTM_LAYER/prev_C_reg[23]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clock rise edge)      0.000     0.000 r  
+                                                      0.000     0.000 r  clock (IN)
+                         net (fo=34530, unset)        0.432     0.432    LSTM_LAYER/clock
+    SLICE_X92Y68         FDRE                                         r  LSTM_LAYER/prev_C_reg[23]/C
+                         clock pessimism              0.000     0.432    
+    SLICE_X92Y68         FDRE (Hold_fdre_C_D)         0.130     0.562    LSTM_LAYER/prev_C_reg[23]
+  -------------------------------------------------------------------
+                         required time                         -0.562    
+                         arrival time                           0.716    
+  -------------------------------------------------------------------
+                         slack                                  0.155    
+
+Slack (MET) :             0.155ns  (arrival time - required time)
+  Source:                 LSTM_LAYER/ZI_prod_reg[251]/C
+                            (rising edge-triggered cell FDRE clocked by clock  {rise@0.000ns fall@4.925ns period=9.850ns})
+  Destination:            LSTM_LAYER/prev_C_reg[251]/D
+                            (rising edge-triggered cell FDRE clocked by clock  {rise@0.000ns fall@4.925ns period=9.850ns})
+  Path Group:             clock
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clock rise@0.000ns - clock rise@0.000ns)
+  Data Path Delay:        0.306ns  (logic 0.252ns (82.325%)  route 0.054ns (17.675%))
+  Logic Levels:           2  (CARRY4=1 LUT2=1)
+  Clock Path Skew:        0.022ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.432ns
+    Source Clock Delay      (SCD):    0.410ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clock rise edge)      0.000     0.000 r  
+                                                      0.000     0.000 r  clock (IN)
+                         net (fo=34530, unset)        0.410     0.410    LSTM_LAYER/clock
+    SLICE_X93Y93         FDRE                                         r  LSTM_LAYER/ZI_prod_reg[251]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X93Y93         FDRE (Prop_fdre_C_Q)         0.141     0.551 r  LSTM_LAYER/ZI_prod_reg[251]/Q
+                         net (fo=1, routed)           0.054     0.605    LSTM_LAYER/p_1_in35_in[17]
+    SLICE_X92Y93         LUT2 (Prop_lut2_I0_O)        0.045     0.650 r  LSTM_LAYER/prev_C[251]_i_2/O
+                         net (fo=1, routed)           0.000     0.650    LSTM_LAYER/prev_C[251]_i_2_n_0
+    SLICE_X92Y93         CARRY4 (Prop_carry4_S[1]_O[1])
+                                                      0.066     0.716 r  LSTM_LAYER/prev_C_reg[251]_i_1/O[1]
+                         net (fo=2, routed)           0.000     0.716    LSTM_LAYER/layer_C[251]
+    SLICE_X92Y93         FDRE                                         r  LSTM_LAYER/prev_C_reg[251]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clock rise edge)      0.000     0.000 r  
+                                                      0.000     0.000 r  clock (IN)
+                         net (fo=34530, unset)        0.432     0.432    LSTM_LAYER/clock
+    SLICE_X92Y93         FDRE                                         r  LSTM_LAYER/prev_C_reg[251]/C
+                         clock pessimism              0.000     0.432    
+    SLICE_X92Y93         FDRE (Hold_fdre_C_D)         0.130     0.562    LSTM_LAYER/prev_C_reg[251]
+  -------------------------------------------------------------------
+                         required time                         -0.562    
+                         arrival time                           0.716    
+  -------------------------------------------------------------------
+                         slack                                  0.155    
+
+Slack (MET) :             0.155ns  (arrival time - required time)
+  Source:                 LSTM_LAYER/CF_prod_reg[319]/C
+                            (rising edge-triggered cell FDRE clocked by clock  {rise@0.000ns fall@4.925ns period=9.850ns})
+  Destination:            LSTM_LAYER/prev_C_reg[319]/D
+                            (rising edge-triggered cell FDRE clocked by clock  {rise@0.000ns fall@4.925ns period=9.850ns})
+  Path Group:             clock
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clock rise@0.000ns - clock rise@0.000ns)
+  Data Path Delay:        0.306ns  (logic 0.252ns (82.325%)  route 0.054ns (17.675%))
+  Logic Levels:           2  (CARRY4=1 LUT2=1)
+  Clock Path Skew:        0.022ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.432ns
+    Source Clock Delay      (SCD):    0.410ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clock rise edge)      0.000     0.000 r  
+                                                      0.000     0.000 r  clock (IN)
+                         net (fo=34530, unset)        0.410     0.410    LSTM_LAYER/clock
+    SLICE_X95Y131        FDRE                                         r  LSTM_LAYER/CF_prod_reg[319]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X95Y131        FDRE (Prop_fdre_C_Q)         0.141     0.551 r  LSTM_LAYER/CF_prod_reg[319]/Q
+                         net (fo=1, routed)           0.054     0.605    LSTM_LAYER/p_0_in46_in[13]
+    SLICE_X94Y131        LUT2 (Prop_lut2_I1_O)        0.045     0.650 r  LSTM_LAYER/prev_C[321]_i_4/O
+                         net (fo=1, routed)           0.000     0.650    LSTM_LAYER/prev_C[321]_i_4_n_0
+    SLICE_X94Y131        CARRY4 (Prop_carry4_S[1]_O[1])
+                                                      0.066     0.716 r  LSTM_LAYER/prev_C_reg[321]_i_1/O[1]
+                         net (fo=2, routed)           0.000     0.716    LSTM_LAYER/layer_C[319]
+    SLICE_X94Y131        FDRE                                         r  LSTM_LAYER/prev_C_reg[319]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clock rise edge)      0.000     0.000 r  
+                                                      0.000     0.000 r  clock (IN)
+                         net (fo=34530, unset)        0.432     0.432    LSTM_LAYER/clock
+    SLICE_X94Y131        FDRE                                         r  LSTM_LAYER/prev_C_reg[319]/C
+                         clock pessimism              0.000     0.432    
+    SLICE_X94Y131        FDRE (Hold_fdre_C_D)         0.130     0.562    LSTM_LAYER/prev_C_reg[319]
+  -------------------------------------------------------------------
+                         required time                         -0.562    
+                         arrival time                           0.716    
+  -------------------------------------------------------------------
+                         slack                                  0.155    
+
+
+
+
+
+Pulse Width Checks
+--------------------------------------------------------------------------------------
+Clock Name:         clock
+Waveform(ns):       { 0.000 4.925 }
+Period(ns):         9.850
+Sources:            { clock }
+
+Check Type        Corner  Lib Pin      Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location      Pin
+Min Period        n/a     DSP48E1/CLK  n/a            3.884         9.850       5.966      DSP48_X2Y26   LSTM_LAYER/elemWiseMult_out0__16/CLK
+Min Period        n/a     DSP48E1/CLK  n/a            3.884         9.850       5.966      DSP48_X2Y54   LSTM_LAYER/elemWiseMult_out0__26/CLK
+Min Period        n/a     DSP48E1/CLK  n/a            3.884         9.850       5.966      DSP48_X4Y14   LSTM_LAYER/elemWiseMult_out0__9/CLK
+Min Period        n/a     DSP48E1/CLK  n/a            3.884         9.850       5.966      DSP48_X3Y49   LSTM_LAYER/elemWiseMult_out0__17/CLK
+Min Period        n/a     DSP48E1/CLK  n/a            3.884         9.850       5.966      DSP48_X2Y53   LSTM_LAYER/elemWiseMult_out0__27/CLK
+Min Period        n/a     DSP48E1/CLK  n/a            3.884         9.850       5.966      DSP48_X2Y40   LSTM_LAYER/genblk1[19].sigmoid_i/outputMAC_reg/CLK
+Min Period        n/a     DSP48E1/CLK  n/a            3.884         9.850       5.966      DSP48_X4Y51   LSTM_LAYER/genblk1[29].sigmoid_i/outputMAC_reg/CLK
+Min Period        n/a     DSP48E1/CLK  n/a            3.884         9.850       5.966      DSP48_X3Y33   LSTM_LAYER/genblk2[0].tanh_i/outputMAC_reg/CLK
+Min Period        n/a     DSP48E1/CLK  n/a            3.884         9.850       5.966      DSP48_X4Y23   LSTM_LAYER/genblk2[1].tanh_i/outputMAC_reg/CLK
+Min Period        n/a     DSP48E1/CLK  n/a            3.884         9.850       5.966      DSP48_X3Y27   LSTM_LAYER/genblk2[2].tanh_i/outputMAC_reg/CLK
+Low Pulse Width   Fast    RAMD32/CLK   n/a            1.250         4.925       3.675      SLICE_X92Y51  LSTM_LAYER/WRAM_F_X/RAM_matrix_reg_0_1_0_5/RAMA/CLK
+Low Pulse Width   Fast    RAMD32/CLK   n/a            1.250         4.925       3.675      SLICE_X92Y51  LSTM_LAYER/WRAM_F_X/RAM_matrix_reg_0_1_0_5/RAMA_D1/CLK
+Low Pulse Width   Fast    RAMD32/CLK   n/a            1.250         4.925       3.675      SLICE_X92Y51  LSTM_LAYER/WRAM_F_X/RAM_matrix_reg_0_1_0_5/RAMB/CLK
+Low Pulse Width   Fast    RAMD32/CLK   n/a            1.250         4.925       3.675      SLICE_X92Y51  LSTM_LAYER/WRAM_F_X/RAM_matrix_reg_0_1_0_5/RAMB_D1/CLK
+Low Pulse Width   Fast    RAMD32/CLK   n/a            1.250         4.925       3.675      SLICE_X92Y51  LSTM_LAYER/WRAM_F_X/RAM_matrix_reg_0_1_0_5/RAMC/CLK
+Low Pulse Width   Fast    RAMD32/CLK   n/a            1.250         4.925       3.675      SLICE_X92Y51  LSTM_LAYER/WRAM_F_X/RAM_matrix_reg_0_1_0_5/RAMC_D1/CLK
+Low Pulse Width   Fast    RAMS32/CLK   n/a            1.250         4.925       3.675      SLICE_X92Y51  LSTM_LAYER/WRAM_F_X/RAM_matrix_reg_0_1_0_5/RAMD/CLK
+Low Pulse Width   Fast    RAMS32/CLK   n/a            1.250         4.925       3.675      SLICE_X92Y51  LSTM_LAYER/WRAM_F_X/RAM_matrix_reg_0_1_0_5/RAMD_D1/CLK
+Low Pulse Width   Fast    RAMD32/CLK   n/a            1.250         4.925       3.675      SLICE_X86Y65  LSTM_LAYER/WRAM_F_X/RAM_matrix_reg_0_1_102_107/RAMA/CLK
+Low Pulse Width   Fast    RAMD32/CLK   n/a            1.250         4.925       3.675      SLICE_X86Y65  LSTM_LAYER/WRAM_F_X/RAM_matrix_reg_0_1_102_107/RAMA_D1/CLK
+High Pulse Width  Slow    RAMD32/CLK   n/a            1.250         4.925       3.675      SLICE_X92Y51  LSTM_LAYER/WRAM_F_X/RAM_matrix_reg_0_1_0_5/RAMA/CLK
+High Pulse Width  Fast    RAMD32/CLK   n/a            1.250         4.925       3.675      SLICE_X92Y51  LSTM_LAYER/WRAM_F_X/RAM_matrix_reg_0_1_0_5/RAMA/CLK
+High Pulse Width  Slow    RAMD32/CLK   n/a            1.250         4.925       3.675      SLICE_X92Y51  LSTM_LAYER/WRAM_F_X/RAM_matrix_reg_0_1_0_5/RAMA_D1/CLK
+High Pulse Width  Fast    RAMD32/CLK   n/a            1.250         4.925       3.675      SLICE_X92Y51  LSTM_LAYER/WRAM_F_X/RAM_matrix_reg_0_1_0_5/RAMA_D1/CLK
+High Pulse Width  Slow    RAMD32/CLK   n/a            1.250         4.925       3.675      SLICE_X92Y51  LSTM_LAYER/WRAM_F_X/RAM_matrix_reg_0_1_0_5/RAMB/CLK
+High Pulse Width  Fast    RAMD32/CLK   n/a            1.250         4.925       3.675      SLICE_X92Y51  LSTM_LAYER/WRAM_F_X/RAM_matrix_reg_0_1_0_5/RAMB/CLK
+High Pulse Width  Slow    RAMD32/CLK   n/a            1.250         4.925       3.675      SLICE_X92Y51  LSTM_LAYER/WRAM_F_X/RAM_matrix_reg_0_1_0_5/RAMB_D1/CLK
+High Pulse Width  Fast    RAMD32/CLK   n/a            1.250         4.925       3.675      SLICE_X92Y51  LSTM_LAYER/WRAM_F_X/RAM_matrix_reg_0_1_0_5/RAMB_D1/CLK
+High Pulse Width  Slow    RAMD32/CLK   n/a            1.250         4.925       3.675      SLICE_X92Y51  LSTM_LAYER/WRAM_F_X/RAM_matrix_reg_0_1_0_5/RAMC/CLK
+High Pulse Width  Fast    RAMD32/CLK   n/a            1.250         4.925       3.675      SLICE_X92Y51  LSTM_LAYER/WRAM_F_X/RAM_matrix_reg_0_1_0_5/RAMC/CLK
+
+
+

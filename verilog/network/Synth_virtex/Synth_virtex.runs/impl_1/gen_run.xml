@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="impl_1" LaunchPart="xc7vx485tffg1761-2" LaunchTime="1468359329">
+  <File Type="PLACE-UTIL" Name="network_utilization_placed.rpt"/>
+  <File Type="PLACE-IO" Name="network_io_placed.rpt"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="network_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="RUN-STRAT" Name="$PDATADIR/runs/impl_1/impl_1.psg"/>
+  <File Type="OPT-TIMING" Name="network_timing_summary_opted.rpt"/>
+  <File Type="RUN-SRCS" Name="$PDATADIR/runs/impl_1/sources.xml"/>
+  <File Type="INIT-TIMING" Name="network_timing_summary_init.rpt"/>
+  <File Type="RUN-CONSTRS" Name="$PDATADIR/runs/impl_1/constrs_in.xml"/>
+  <File Type="PWROPT-TIMING" Name="network_timing_summary_pwropted.rpt"/>
+  <File Type="OPT-HWDEF" Name="network.hwdef"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="network_timing_summary_postroute_physopted.pb"/>
+  <File Type="PA-TCL" Name="network.tcl"/>
+  <File Type="PLACE-CLK" Name="network_clock_utilization_placed.rpt"/>
+  <File Type="BITSTR-SYSDEF" Name="network.sysdef"/>
+  <File Type="BITSTR-MMI" Name="network.mmi"/>
+  <File Type="ROUTE-SIMILARITY" Name="network_incremental_reuse_routed.rpt"/>
+  <File Type="BG-DRC" Name="network.drc"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="network_postroute_physopt.dcp"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="network_incremental_reuse_pre_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="network_incremental_reuse_placed.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="network_postplace_pwropt.dcp"/>
+  <File Type="BITSTR-NKY" Name="network.nky"/>
+  <File Type="ROUTE-DCP" Name="network_routed.dcp"/>
+  <File Type="PHYSOPT-DCP" Name="network_physopt.dcp"/>
+  <File Type="ROUTE-DRC" Name="network_drc_routed.rpt"/>
+  <File Type="PHYSOPT-DRC" Name="network_drc_physopted.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="network_drc_routed.pb"/>
+  <File Type="ROUTE-PWR" Name="network_power_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="network_timing_summary_routed.pb"/>
+  <File Type="PLACE-TIMING" Name="network_timing_summary_placed.rpt"/>
+  <File Type="ROUTE-TIMING-RPX" Name="network_timing_summary_routed.rpx"/>
+  <File Type="BG-BIT" Name="network.bit"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="network_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="network_route_status.pb"/>
+  <File Type="ROUTE-STATUS" Name="network_route_status.rpt"/>
+  <File Type="ROUTE-PWR-SUM" Name="network_power_summary_routed.pb"/>
+  <File Type="PLACE-CTRL" Name="network_control_sets_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="network_utilization_placed.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="network_timing_summary_postroute_physopted.rpt"/>
+  <File Type="BG-BIN" Name="network.bin"/>
+  <File Type="OPT-DCP" Name="network_opt.dcp"/>
+  <File Type="BITSTR-MSK" Name="network.msk"/>
+  <File Type="PLACE-DCP" Name="network_placed.dcp"/>
+  <File Type="ROUTE-CLK" Name="network_clock_utilization_routed.rpt"/>
+  <File Type="BG-BGN" Name="network.bgn"/>
+  <File Type="BITSTR-RBT" Name="network.rbt"/>
+  <File Type="PWROPT-DCP" Name="network_pwropt.dcp"/>
+  <File Type="BITSTR-BMM" Name="network_bd.bmm"/>
+  <File Type="PWROPT-DRC" Name="network_drc_pwropted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="network_timing_summary_postroute_physopted.rpx"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <File Type="RDI-RDI" Name="network.vdi"/>
+  <File Type="OPT-DRC" Name="network_drc_opted.rpt"/>
+  <File Type="PHYSOPT-TIMING" Name="network_timing_summary_physopted.rpt"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PPRDIR/../dot_prod.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../weightRAM.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../sigmoid.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../gate.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../tanh.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../network.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../array_prod.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="network"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/new/lstm.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Performance_Explore" Flow="Vivado Implementation 2015"/>
+    <Step Id="init_design"/>
+    <Step Id="opt_design">
+      <Option Id="Directive">0</Option>
+    </Step>
+    <Step Id="power_opt_design"/>
+    <Step Id="place_design">
+      <Option Id="Directive">0</Option>
+    </Step>
+    <Step Id="post_place_power_opt_design"/>
+    <Step Id="phys_opt_design" EnableStepBool="1">
+      <Option Id="Directive">0</Option>
+    </Step>
+    <Step Id="route_design">
+      <Option Id="Directive">0</Option>
+    </Step>
+    <Step Id="post_route_phys_opt_design"/>
+    <Step Id="write_bitstream"/>
+  </Strategy>
+</GenRun>

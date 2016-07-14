@@ -20,45 +20,45 @@ Warning--empty booktitle in Sustkever14
 Warning--empty booktitle in Coca13
 
 Done.
-You've used 20 entries,
+You've used 21 entries,
             4039 wiz_defined-function locations,
-            967 strings with 11803 characters,
-and the built_in function-call counts, 15744 in all, are:
-= -- 1289
-> -- 369
-< -- 135
-+ -- 197
-- -- 61
-* -- 812
-:= -- 2428
-add.period$ -- 41
-call.type$ -- 20
-change.case$ -- 20
-chr.to.int$ -- 321
-cite$ -- 24
-duplicate$ -- 1105
-empty$ -- 1217
-format.name$ -- 79
-if$ -- 3599
+            976 strings with 11976 characters,
+and the built_in function-call counts, 16568 in all, are:
+= -- 1363
+> -- 380
+< -- 145
++ -- 205
+- -- 62
+* -- 851
+:= -- 2556
+add.period$ -- 43
+call.type$ -- 21
+change.case$ -- 21
+chr.to.int$ -- 342
+cite$ -- 25
+duplicate$ -- 1164
+empty$ -- 1277
+format.name$ -- 80
+if$ -- 3791
 int.to.chr$ -- 0
-int.to.str$ -- 20
-missing$ -- 180
-newline$ -- 111
-num.names$ -- 20
-pop$ -- 425
+int.to.str$ -- 21
+missing$ -- 188
+newline$ -- 114
+num.names$ -- 21
+pop$ -- 435
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 1212
+skip$ -- 1278
 stack$ -- 0
-substring$ -- 760
-swap$ -- 909
-text.length$ -- 28
+substring$ -- 810
+swap$ -- 965
+text.length$ -- 31
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 20
+type$ -- 21
 warning$ -- 4
-while$ -- 60
-width$ -- 22
-write$ -- 248
+while$ -- 64
+width$ -- 23
+write$ -- 259
 (There was 1 error message)

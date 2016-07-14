@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.6.19)  6 JUL 2016 18:04
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.2.18)  14 JUL 2016 14:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -538,18 +538,18 @@ Package: translator 2010/06/12 ver 1.10
 .tex))) (./paper.aux)
 \openout1 = `paper.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -618,15 +618,18 @@ File: siunitx-abbreviations.cfg 2013/07/31 v2.5s siunitx: Abbreviated units
 )
 \c__siunitx_mathsf_int=\count155
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 22.
+(Font)              <7> on input line 21.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 22.
+(Font)              <5> on input line 21.
 \c__siunitx_mathtt_int=\count156
-Missing character: There is no Ã in font ptmr7t!
-Missing character: There is no ¼ in font ptmr7t!
-Missing character: There is no Ã in font ptmr7t!
-Missing character: There is no ¼ in font ptmr7t!
- <figures/lstmneuron.png, id=1, 913.16156pt x 409.53pt>
+
+
+LaTeX Warning: No \author given.
+
+
+LaTeX Warning: No \author given.
+
+<figures/lstmneuron.png, id=1, 913.16156pt x 409.53pt>
 File: figures/lstmneuron.png Graphic file (type png)
 
 <use figures/lstmneuron.png>
@@ -645,46 +648,35 @@ LaTeX Font Info:    Try loading font information for TS1+ptm on input line 150.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
-)
-Overfull \hbox (65.79547pt too wide) detected at line 167
-[]\OML/cmm/m/it/10 p\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[]\OT1/cmr/m/n/10 ) \OMS
-/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[]\OT1/cm
-r/m/n/10 ) = (\OMS/cmsy/m/n/10 ^^@\OT1/cmr/m/n/10 1)[]\OML/cmm/m/it/10 ^^O \OMS
-/cmsy/m/n/10 , \OML/cmm/m/it/10 p[] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 p[]x[] \
-OT1/cmr/m/n/10 + \OML/cmm/m/it/10 p[]x[] \OT1/cmr/m/n/10 + [] + \OML/cmm/m/it/1
-0 p[]x[] \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 f\OT1/cmr/m/n/10 (\OML/cmm/m/it/
-10 x[]\OT1/cmr/m/n/10 ) = (\OMS/cmsy/m/n/10 ^^@\OT1/cmr/m/n/10 1)[]\OML/cmm/m/i
-t/10 ^^O
- []
-
-[2]
+) [2]
 Package epstopdf Info: Source file: <figures/nonlin-out.eps>
-(epstopdf)                    date: 2016-07-06 10:07:52
+(epstopdf)                    date: 2016-07-13 16:47:12
 (epstopdf)                    size: 156673 bytes
 (epstopdf)             Output file: <figures/nonlin-out-eps-converted-to.pdf>
-(epstopdf)                    date: 2016-07-06 10:07:52
+(epstopdf)                    date: 2016-07-13 16:47:12
 (epstopdf)                    size: 29017 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/nonlin-out-eps-con
 verted-to.pdf figures/nonlin-out.eps>
-(epstopdf)             \includegraphics on input line 180.
+(epstopdf)             \includegraphics on input line 194.
 Package epstopdf Info: Output file is already uptodate.
- <figures/nonlin-out-eps-converted-to.pdf, id=21, 578.16pt x 433.62pt>
+
+<figures/nonlin-out-eps-converted-to.pdf, id=21, 578.16pt x 433.62pt>
 File: figures/nonlin-out-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/nonlin-out-eps-converted-to.pdf>
 Package pdftex.def Info: figures/nonlin-out-eps-converted-to.pdf used on input 
-line 180.
+line 194.
 (pdftex.def)             Requested size: 252.0pt x 189.00032pt.
 Package epstopdf Info: Source file: <figures/nonlin-out-tanh.eps>
-(epstopdf)                    date: 2016-07-06 10:07:52
+(epstopdf)                    date: 2016-07-13 16:47:12
 (epstopdf)                    size: 140329 bytes
 (epstopdf)             Output file: <figures/nonlin-out-tanh-eps-converted-to.p
 df>
-(epstopdf)                    date: 2016-07-06 10:07:52
+(epstopdf)                    date: 2016-07-13 16:47:12
 (epstopdf)                    size: 21143 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/nonlin-out-tanh-ep
 s-converted-to.pdf figures/nonlin-out-tanh.eps>
-(epstopdf)             \includegraphics on input line 187.
+(epstopdf)             \includegraphics on input line 201.
 Package epstopdf Info: Output file is already uptodate.
 
 <figures/nonlin-out-tanh-eps-converted-to.pdf, id=22, 578.16pt x 433.62pt>
@@ -692,25 +684,28 @@ File: figures/nonlin-out-tanh-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/nonlin-out-tanh-eps-converted-to.pdf>
 Package pdftex.def Info: figures/nonlin-out-tanh-eps-converted-to.pdf used on i
-nput line 187.
+nput line 201.
 (pdftex.def)             Requested size: 252.0pt x 189.00032pt.
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 219.
 
+
+LaTeX Warning: Reference `matvec-alg' on page 3 undefined on input line 236.
+
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 248.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 ) [3 <./figures/nonlin-out-eps-converted-to.pdf> <./figures/nonlin-out-tanh-eps
 -converted-to.pdf>]
 Package epstopdf Info: Source file: <figures/mem-array-prod.eps>
-(epstopdf)                    date: 2016-07-06 10:07:52
+(epstopdf)                    date: 2016-07-13 16:47:12
 (epstopdf)                    size: 161229 bytes
 (epstopdf)             Output file: <figures/mem-array-prod-eps-converted-to.pd
 f>
-(epstopdf)                    date: 2016-07-06 10:07:52
+(epstopdf)                    date: 2016-07-13 16:47:12
 (epstopdf)                    size: 9675 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/mem-array-prod-eps
 -converted-to.pdf figures/mem-array-prod.eps>
-(epstopdf)             \includegraphics on input line 223.
+(epstopdf)             \includegraphics on input line 260.
 Package epstopdf Info: Output file is already uptodate.
 
 <figures/mem-array-prod-eps-converted-to.pdf, id=65, 246.9225pt x 153.57375pt>
@@ -718,17 +713,17 @@ File: figures/mem-array-prod-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/mem-array-prod-eps-converted-to.pdf>
 Package pdftex.def Info: figures/mem-array-prod-eps-converted-to.pdf used on in
-put line 223.
+put line 260.
 (pdftex.def)             Requested size: 180.67499pt x 112.37035pt.
 Package epstopdf Info: Source file: <figures/array-prod.eps>
-(epstopdf)                    date: 2016-07-06 10:07:52
+(epstopdf)                    date: 2016-07-13 16:47:12
 (epstopdf)                    size: 217074 bytes
 (epstopdf)             Output file: <figures/array-prod-eps-converted-to.pdf>
-(epstopdf)                    date: 2016-07-06 10:07:52
+(epstopdf)                    date: 2016-07-13 16:47:12
 (epstopdf)                    size: 14784 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/array-prod-eps-con
 verted-to.pdf figures/array-prod.eps>
-(epstopdf)             \includegraphics on input line 230.
+(epstopdf)             \includegraphics on input line 267.
 Package epstopdf Info: Output file is already uptodate.
 
 <figures/array-prod-eps-converted-to.pdf, id=66, 622.325pt x 134.5025pt>
@@ -736,62 +731,127 @@ File: figures/array-prod-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/array-prod-eps-converted-to.pdf>
 Package pdftex.def Info: figures/array-prod-eps-converted-to.pdf used on input 
-line 230.
-(pdftex.def)             Requested size: 180.67499pt x 39.0478pt.
-
-
-LaTeX Warning: Reference `sec:struct_lstm' on page 4 undefined on input line 24
-1.
-
+line 267.
+(pdftex.def)             Requested size: 516.0pt x 111.52414pt.
 Package epstopdf Info: Source file: <figures/gate.eps>
-(epstopdf)                    date: 2016-07-06 10:07:52
+(epstopdf)                    date: 2016-07-13 16:47:12
 (epstopdf)                    size: 242302 bytes
 (epstopdf)             Output file: <figures/gate-eps-converted-to.pdf>
-(epstopdf)                    date: 2016-07-06 10:07:52
+(epstopdf)                    date: 2016-07-13 16:47:12
 (epstopdf)                    size: 15982 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/gate-eps-converted
 -to.pdf figures/gate.eps>
-(epstopdf)             \includegraphics on input line 253.
+(epstopdf)             \includegraphics on input line 294.
 Package epstopdf Info: Output file is already uptodate.
+
 <figures/gate-eps-converted-to.pdf, id=67, 519.9425pt x 182.6825pt>
 File: figures/gate-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/gate-eps-converted-to.pdf>
 Package pdftex.def Info: figures/gate-eps-converted-to.pdf used on input line 2
-53.
+94.
 (pdftex.def)             Requested size: 180.67499pt x 63.47989pt.
-
-
-LaTeX Warning: Reference `sec:nonlincalc' on page 4 undefined on input line 259
-.
-
-Missing character: There is no Ã in font ptmr7t!
-Missing character: There is no ¯ in font ptmr7t!
 Package epstopdf Info: Source file: <figures/network-opt.eps>
-(epstopdf)                    date: 2016-07-06 10:07:52
+(epstopdf)                    date: 2016-07-13 16:47:12
 (epstopdf)                    size: 229338 bytes
 (epstopdf)             Output file: <figures/network-opt-eps-converted-to.pdf>
-(epstopdf)                    date: 2016-07-06 10:07:52
+(epstopdf)                    date: 2016-07-13 16:47:12
 (epstopdf)                    size: 13894 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/network-opt-eps-co
 nverted-to.pdf figures/network-opt.eps>
-(epstopdf)             \includegraphics on input line 265.
+(epstopdf)             \includegraphics on input line 316.
 Package epstopdf Info: Output file is already uptodate.
+
 <figures/network-opt-eps-converted-to.pdf, id=68, 540.0175pt x 177.66376pt>
 File: figures/network-opt-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/network-opt-eps-converted-to.pdf>
 Package pdftex.def Info: figures/network-opt-eps-converted-to.pdf used on input
- line 265.
-(pdftex.def)             Requested size: 226.79846pt x 74.61555pt.
- [4 <./figures/mem-array-prod-eps-converted-to.pdf> <./figures/array-prod-eps-c
-onverted-to.pdf> <./figures/gate-eps-converted-to.pdf>]
-Missing character: There is no Ã in font ptmr7t!
-Missing character: There is no ¯ in font ptmr7t!
+ line 316.
+(pdftex.def)             Requested size: 464.39685pt x 152.78784pt.
+ [4 <./figures/mem-array-prod-eps-converted-to.pdf> <./figures/gate-eps-convert
+ed-to.pdf>] [5 <./figures/array-prod-eps-converted-to.pdf> <./figures/network-o
+pt-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <figures/maxfreq.eps>
+(epstopdf)                    date: 2016-07-13 16:48:47
+(epstopdf)                    size: 128941 bytes
+(epstopdf)             Output file: <figures/maxfreq-eps-converted-to.pdf>
+(epstopdf)                    date: 2016-07-13 17:09:29
+(epstopdf)                    size: 12040 bytes
+(epstopdf)             Command: <repstopdf --outfile=figures/maxfreq-eps-conver
+ted-to.pdf figures/maxfreq.eps>
+(epstopdf)             \includegraphics on input line 381.
+Package epstopdf Info: Output file is already uptodate.
+
+<figures/maxfreq-eps-converted-to.pdf, id=144, 578.16pt x 433.62pt>
+File: figures/maxfreq-eps-converted-to.pdf Graphic file (type pdf)
+
+<use figures/maxfreq-eps-converted-to.pdf>
+Package pdftex.def Info: figures/maxfreq-eps-converted-to.pdf used on input lin
+e 381.
+(pdftex.def)             Requested size: 252.0pt x 189.00032pt.
+Package epstopdf Info: Source file: <figures/dspuse.eps>
+(epstopdf)                    date: 2016-07-13 16:47:12
+(epstopdf)                    size: 129226 bytes
+(epstopdf)             Output file: <figures/dspuse-eps-converted-to.pdf>
+(epstopdf)                    date: 2016-07-13 16:47:12
+(epstopdf)                    size: 12214 bytes
+(epstopdf)             Command: <repstopdf --outfile=figures/dspuse-eps-convert
+ed-to.pdf figures/dspuse.eps>
+(epstopdf)             \includegraphics on input line 414.
+Package epstopdf Info: Output file is already uptodate.
+
+<figures/dspuse-eps-converted-to.pdf, id=145, 578.16pt x 433.62pt>
+File: figures/dspuse-eps-converted-to.pdf Graphic file (type pdf)
+
+<use figures/dspuse-eps-converted-to.pdf>
+Package pdftex.def Info: figures/dspuse-eps-converted-to.pdf used on input line
+ 414.
+(pdftex.def)             Requested size: 252.0pt x 189.00032pt.
+Package epstopdf Info: Source file: <figures/power.eps>
+(epstopdf)                    date: 2016-07-13 16:52:25
+(epstopdf)                    size: 128174 bytes
+(epstopdf)             Output file: <figures/power-eps-converted-to.pdf>
+(epstopdf)                    date: 2016-07-13 17:09:30
+(epstopdf)                    size: 11652 bytes
+(epstopdf)             Command: <repstopdf --outfile=figures/power-eps-converte
+d-to.pdf figures/power.eps>
+(epstopdf)             \includegraphics on input line 431.
+Package epstopdf Info: Output file is already uptodate.
+
+<figures/power-eps-converted-to.pdf, id=146, 578.16pt x 433.62pt>
+File: figures/power-eps-converted-to.pdf Graphic file (type pdf)
+
+<use figures/power-eps-converted-to.pdf>
+Package pdftex.def Info: figures/power-eps-converted-to.pdf used on input line 
+431.
+(pdftex.def)             Requested size: 252.0pt x 189.00032pt.
+ [6 <./figures/maxfreq-eps-converted-to.pdf> <./figures/dspuse-eps-converted-to
+.pdf>]
+Overfull \hbox (3.20949pt too wide) in paragraph at lines 547--560
+ [][] 
+ []
+
+[7 <./figures/power-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <figures/Mclass-psec.eps>
+(epstopdf)                    date: 2016-07-14 01:21:32
+(epstopdf)                    size: 131691 bytes
+(epstopdf)             Output file: <figures/Mclass-psec-eps-converted-to.pdf>
+(epstopdf)                    date: 2016-07-14 01:24:52
+(epstopdf)                    size: 13633 bytes
+(epstopdf)             Command: <repstopdf --outfile=figures/Mclass-psec-eps-co
+nverted-to.pdf figures/Mclass-psec.eps>
+(epstopdf)             \includegraphics on input line 571.
+Package epstopdf Info: Output file is already uptodate.
+
+<figures/Mclass-psec-eps-converted-to.pdf, id=179, 578.16pt x 433.62pt>
+File: figures/Mclass-psec-eps-converted-to.pdf Graphic file (type pdf)
+
+<use figures/Mclass-psec-eps-converted-to.pdf>
+Package pdftex.def Info: figures/Mclass-psec-eps-converted-to.pdf used on input
+ line 571.
+(pdftex.def)             Requested size: 252.0pt x 189.00032pt.
  (./paper.bbl
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
 ! Missing $ inserted.
 <inserted text> 
                 $
@@ -825,19 +885,17 @@ l.94
 ** WARNING: IEEEtran.bst: No hyphenation pattern has been
 ** loaded for the language `English'. Using the pattern for
 ** the default language instead.
-[5 <./figures/network-opt-eps-converted-to.pdf>]) [6
-
-] (./paper.aux)
+) [8 <./figures/Mclass-psec-eps-converted-to.pdf>] (./paper.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 11088 strings out of 493304
- 238777 string characters out of 6139871
- 254330 words of memory out of 5000000
- 14381 multiletter control sequences out of 15000+600000
- 48367 words of font info for 97 fonts, out of 8000000 for 9000
+ 11126 strings out of 493304
+ 239765 string characters out of 6139871
+ 256395 words of memory out of 5000000
+ 14416 multiletter control sequences out of 15000+600000
+ 47877 words of font info for 97 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  39i,8n,35p,10397b,771s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
@@ -859,10 +917,10 @@ mbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><
 /usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/tex
 live/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/urw/times/utmri8a.pfb>
-Output written on paper.pdf (6 pages, 352368 bytes).
+Output written on paper.pdf (8 pages, 389613 bytes).
 PDF statistics:
- 199 PDF objects out of 1000 (max. 8388607)
- 162 compressed objects within 2 object streams
+ 243 PDF objects out of 1000 (max. 8388607)
+ 200 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 36 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 56 words of extra memory for PDF output out of 10000 (max. 10000000)
 

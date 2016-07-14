@@ -1,13 +1,3 @@
-# vsim -voptargs="+acc" -c -do "run -all" tb_network 
-# Start time: 10:35:05 on Jul 01,2016
-# ** Note: (vsim-3812) Design is being optimized...
-# ** Note: (vopt-143) Recognized 1 FSM in module "network(fast)".
-# ** Note: (vopt-143) Recognized 1 FSM in module "dot_prod(fast)".
-# ** Note: (vopt-143) Recognized 1 FSM in module "dot_prod(fast__1)".
-# ** Note: (vopt-143) Recognized 1 FSM in module "tanh(fast)".
-# ** Note: (vopt-143) Recognized 1 FSM in module "sigmoid(fast)".
-# ** Note: (vopt-143) Recognized 1 FSM in module "gate(fast)".
-# ** Note: (vopt-143) Recognized 1 FSM in module "array_prod(fast)".
 # //  Questa Sim-64
 # //  Version 10.4c_5 linux_x86_64 Nov 14 2015
 # //
@@ -23,6 +13,10 @@
 # //  FURTHERMORE, THIS INFORMATION IS PROHIBITED FROM DISCLOSURE UNDER
 # //  THE TRADE SECRETS ACT, 18 U.S.C. SECTION 1905.
 # //
+vsim -voptargs=+acc work.tb_network
+# vsim -voptargs="+acc" work.tb_network 
+# Start time: 22:22:53 on Jul 12,2016
+# ** Note: (vsim-8009) Loading existing optimized design _opt7
 # Loading work.tb_network(fast)
 # Loading work.network(fast)
 # Loading work.gate(fast)
@@ -33,7 +27,10 @@
 # Loading work.sigmoid(fast)
 # Loading work.tanh(fast)
 # Loading work.array_prod(fast)
-# run -all
+do wave2.do
+# ** Error: (vish-4014) No objects found matching '/tb_network/outputVecPIPE'.
+# Executing ONERROR command at macro ./wave2.do line 10
+run -all
 # Simulation started at 0.000000
 # Input Sample           0
 # Input Sample         100
@@ -48,6 +45,32 @@
 # ** Note: $stop    : tb_network.v(216)
 #    Time: 3265868812500 fs  Iteration: 0  Instance: /tb_network
 # Break in Module tb_network at tb_network.v line 216
-# Stopped at tb_network.v line 216
-# End time: 10:35:15 on Jul 01,2016, Elapsed time: 0:00:10
+add wave -position insertpoint  \
+sim:/tb_network/LSTM_LAYER/GATE_I/DOTPROD_X/weightMAC
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf /home/josefonseca/Documents/thesis/verilog/network/wave.do
+vsim -voptargs=+acc work.tb_network
+# End time: 22:25:49 on Jul 12,2016, Elapsed time: 0:02:56
+# Errors: 3, Warnings: 0
+# vsim -voptargs="+acc" work.tb_network 
+# Start time: 22:25:49 on Jul 12,2016
+# ** Note: (vsim-8009) Loading existing optimized design _opt7
+# Loading work.tb_network(fast)
+# Loading work.network(fast)
+# Loading work.gate(fast)
+# Loading work.dot_prod(fast)
+# Loading work.dot_prod(fast__1)
+# Loading work.weightRAM(fast)
+# Loading work.weightRAM(fast__1)
+# Loading work.sigmoid(fast)
+# Loading work.tanh(fast)
+# Loading work.array_prod(fast)
+do wave.do
+run -all
+# Simulation started at 0.000000
+# Input Sample           0
+# Input Sample         100
+# Input Sample         200
+# Input Sample         300
+# Input Sample         400
+# End time: 22:27:52 on Jul 12,2016, Elapsed time: 0:02:03
 # Errors: 0, Warnings: 0

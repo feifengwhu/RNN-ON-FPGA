@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2015.4 (64-bit)
+# SW Build 1412921 on Wed Nov 18 09:44:32 MST 2015
+# IP Build 1412160 on Tue Nov 17 13:47:24 MST 2015
+# Start of session at: Wed Jul 13 00:01:01 2016
+# Process ID: 18896
+# Current directory: /home/josefonseca/Documents/thesis/verilog/network/Synth_virtex/Synth_virtex.runs/impl_2
+# Command line: vivado -log network.vdi -applog -messageDb vivado.pb -mode batch -source network.tcl -notrace
+# Log file: /home/josefonseca/Documents/thesis/verilog/network/Synth_virtex/Synth_virtex.runs/impl_2/network.vdi
+# Journal file: /home/josefonseca/Documents/thesis/verilog/network/Synth_virtex/Synth_virtex.runs/impl_2/vivado.jou
+#-----------------------------------------------------------
+source network.tcl -notrace
