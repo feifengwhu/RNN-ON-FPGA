@@ -1,6 +1,3 @@
-# vsim -voptargs="+acc" -c -do "run -all" tb_array 
-# Start time: 22:04:26 on Jun 21,2016
-# ** Note: (vsim-8009) Loading existing optimized design _opt1
 # //  Questa Sim-64
 # //  Version 10.4c_5 linux_x86_64 Nov 14 2015
 # //
@@ -16,9 +13,14 @@
 # //  FURTHERMORE, THIS INFORMATION IS PROHIBITED FROM DISCLOSURE UNDER
 # //  THE TRADE SECRETS ACT, 18 U.S.C. SECTION 1905.
 # //
+vsim -voptargs=+acc work.tb_array
+# vsim -voptargs="+acc" work.tb_array 
+# Start time: 18:36:40 on Jul 15,2016
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Note: (vopt-143) Recognized 1 FSM in module "array_prod(fast)".
 # Loading work.tb_array(fast)
 # Loading work.array_prod(fast)
-# run -all
+run -all
 # Simulation started at 0.000000
 # Input Sample           0
 # Input Sample         100
@@ -30,10 +32,58 @@
 # Input Sample         700
 # Input Sample         800
 # Input Sample         900
-# Average Quantization Error: -0.001883
+# Average Quantization Error: -0.001965
 # ** Note: $stop    : tb_array.v(116)
 #    Time: 12005 ns  Iteration: 0  Instance: /tb_array
 # Break in Module tb_array at tb_array.v line 116
-# Stopped at tb_array.v line 116
-# End time: 22:04:30 on Jun 21,2016, Elapsed time: 0:00:04
+vsim -voptargs=+acc work.tb_array
+# End time: 18:40:22 on Jul 15,2016, Elapsed time: 0:03:42
+# Errors: 0, Warnings: 0
+# vsim -voptargs="+acc" work.tb_array 
+# Start time: 18:40:22 on Jul 15,2016
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Note: (vopt-143) Recognized 1 FSM in module "array_prod(fast)".
+# Loading work.tb_array(fast)
+# Loading work.array_prod(fast)
+run -all
+# Simulation started at 0.000000
+# Input Sample           0
+# Input Sample         100
+# Input Sample         200
+# Input Sample         300
+# Input Sample         400
+# Input Sample         500
+# Input Sample         600
+# Input Sample         700
+# Input Sample         800
+# Input Sample         900
+# Average Quantization Error: -0.001920
+# ** Note: $stop    : tb_array.v(117)
+#    Time: 12005 ns  Iteration: 0  Instance: /tb_array
+# Break in Module tb_array at tb_array.v line 117
+vsim -voptargs=+acc work.tb_array
+# End time: 18:41:16 on Jul 15,2016, Elapsed time: 0:00:54
+# Errors: 0, Warnings: 0
+# vsim -voptargs="+acc" work.tb_array 
+# Start time: 18:41:16 on Jul 15,2016
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.tb_array(fast)
+# Loading work.array_prod(fast)
+run -all
+# Simulation started at 0.000000
+# Input Sample           0
+# Input Sample         100
+# Input Sample         200
+# Input Sample         300
+# Input Sample         400
+# Input Sample         500
+# Input Sample         600
+# Input Sample         700
+# Input Sample         800
+# Input Sample         900
+# Average Quantization Error: 0.013285
+# ** Note: $stop    : tb_array.v(117)
+#    Time: 12005 ns  Iteration: 0  Instance: /tb_array
+# Break in Module tb_array at tb_array.v line 117
+# End time: 18:53:29 on Jul 15,2016, Elapsed time: 0:12:13
 # Errors: 0, Warnings: 0

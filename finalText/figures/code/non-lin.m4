@@ -11,8 +11,7 @@ define FF   {FlipFlopX(wid 6.5*L_unit ht 13*L_unit,,:D;E:CK,,:Q;)}
 Origin: Here
   # The d
   Mux_sum:  Mux(2,Prod,,8*L_unit, 21*L_unit)
-  line  from Mux_sum.In1-(elen,0) to Mux_sum.In1 "$p_0$" above; 
-  line  from Mux_sum.In0-(elen,0) to Mux_sum.In0 "$p_1$" above;
+  line  from Mux_sum.In0-(elen,0) to Mux_sum.In0 "$p_2$" above;
   
   # The FlipFlop that keeps the current state
   FlipFlop_state: FF at Mux_sum.sw-(elen,1.5*elen)
@@ -29,7 +28,8 @@ Origin: Here
   
   # The down mux that selects the input to the output sum block
   Mux_prod: Mux(2,Sum,BN, 8*L_unit, 21*L_unit) at Mux_sum.s+(0,1.4*FlipFlop_state.E1.y)
-  line  from Mux_prod.In0-(elen,0) to Mux_prod.In0 "$p_2$" above; 
+  line  from Mux_prod.In0-(elen,0) to Mux_prod.In0 "$p_1$" above; 
+  line  from Mux_prod.In1-(elen,0) to Mux_prod.In1 "$p_0$" above; 
   
   
   line from Mux_prod.Sel to Mux_sum.Sel
@@ -53,6 +53,6 @@ Origin: Here
   line from Out_sum.e to FlipFlop_out.W1
   line from FlipFlop_out.E1 right 0.5*elen
   { right; line 0.5*elen "$f(x)$" above}
-  line down 1.5*elen; line from Here to (Mux_sum.In1.x-0.5*elen, Here.y); line from Here to (Here.x, Mux_prod.In1.y) then to Mux_prod.In1
+  line up to (Here.x, Mult.y+2*elen); line right to (Mux_sum.In1.x-1.5*elen,Here.y); line down to (Here.x, Mux_sum.In1.y) then right to Mux_sum.In1
 .PE
 

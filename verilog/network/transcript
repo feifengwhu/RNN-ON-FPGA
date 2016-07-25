@@ -15,7 +15,7 @@
 # //
 vsim -voptargs=+acc work.tb_network
 # vsim -voptargs="+acc" work.tb_network 
-# Start time: 22:22:53 on Jul 12,2016
+# Start time: 02:24:15 on Jul 18,2016
 # ** Note: (vsim-8009) Loading existing optimized design _opt7
 # Loading work.tb_network(fast)
 # Loading work.network(fast)
@@ -27,9 +27,12 @@ vsim -voptargs=+acc work.tb_network
 # Loading work.sigmoid(fast)
 # Loading work.tanh(fast)
 # Loading work.array_prod(fast)
-do wave2.do
-# ** Error: (vish-4014) No objects found matching '/tb_network/outputVecPIPE'.
-# Executing ONERROR command at macro ./wave2.do line 10
+do wave.do
+add wave -position insertpoint  \
+sim:/tb_network/LSTM_LAYER/f_ready \
+sim:/tb_network/LSTM_LAYER/y_ready \
+sim:/tb_network/LSTM_LAYER/z_ready
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf /home/josefonseca/Documents/thesis/verilog/network/wave.do
 run -all
 # Simulation started at 0.000000
 # Input Sample           0
@@ -43,16 +46,14 @@ run -all
 # Input Sample         800
 # Input Sample         900
 # ** Note: $stop    : tb_network.v(216)
-#    Time: 3265868812500 fs  Iteration: 0  Instance: /tb_network
+#    Time: 3326068812500 fs  Iteration: 0  Instance: /tb_network
 # Break in Module tb_network at tb_network.v line 216
-add wave -position insertpoint  \
-sim:/tb_network/LSTM_LAYER/GATE_I/DOTPROD_X/weightMAC
 write format wave -window .main_pane.wave.interior.cs.body.pw.wf /home/josefonseca/Documents/thesis/verilog/network/wave.do
 vsim -voptargs=+acc work.tb_network
-# End time: 22:25:49 on Jul 12,2016, Elapsed time: 0:02:56
-# Errors: 3, Warnings: 0
+# End time: 02:26:03 on Jul 18,2016, Elapsed time: 0:01:48
+# Errors: 0, Warnings: 0
 # vsim -voptargs="+acc" work.tb_network 
-# Start time: 22:25:49 on Jul 12,2016
+# Start time: 02:26:03 on Jul 18,2016
 # ** Note: (vsim-8009) Loading existing optimized design _opt7
 # Loading work.tb_network(fast)
 # Loading work.network(fast)
@@ -72,5 +73,44 @@ run -all
 # Input Sample         200
 # Input Sample         300
 # Input Sample         400
-# End time: 22:27:52 on Jul 12,2016, Elapsed time: 0:02:03
+# Input Sample         500
+# Input Sample         600
+# Input Sample         700
+# Input Sample         800
+# Input Sample         900
+# ** Note: $stop    : tb_network.v(216)
+#    Time: 3326068812500 fs  Iteration: 0  Instance: /tb_network
+# Break in Module tb_network at tb_network.v line 216
+vsim -voptargs=+acc work.tb_network
+# End time: 02:30:52 on Jul 18,2016, Elapsed time: 0:04:49
 # Errors: 0, Warnings: 0
+# vsim -voptargs="+acc" work.tb_network 
+# Start time: 02:30:52 on Jul 18,2016
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.tb_network(fast)
+# Loading work.network(fast)
+# Loading work.gate(fast)
+# Loading work.dot_prod(fast)
+# Loading work.dot_prod(fast__1)
+# Loading work.weightRAM(fast)
+# Loading work.weightRAM(fast__1)
+# Loading work.sigmoid(fast)
+# Loading work.tanh(fast)
+# Loading work.array_prod(fast)
+do wave.do
+run -all
+# Simulation started at 0.000000
+# Input Sample           0
+# Input Sample         100
+# Input Sample         200
+# Input Sample         300
+# Input Sample         400
+# Input Sample         500
+# Input Sample         600
+# Input Sample         700
+# Input Sample         800
+# Input Sample         900
+# ** Note: $stop    : tb_network.v(216)
+#    Time: 2864176200 ps  Iteration: 0  Instance: /tb_network
+# Break in Module tb_network at tb_network.v line 216
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf /home/josefonseca/Documents/thesis/verilog/network/wave.do

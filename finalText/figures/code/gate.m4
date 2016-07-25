@@ -12,7 +12,7 @@ define FF   {FlipFlopX(wid 6.5*L_unit ht 13*L_unit,,:D;E:CK,,:Q;)}
 
 # The Dot Prods
 DotProdX: box "Dot Prod." "$\mathbf{W}_* \cdot \mathbf{x}^{(t)}$"
-DotProdY: box at DotProdX+(0,-2*elen) "Dot Prod." "$\mathbf{R}_* \cdot \mathbf{x}^{(t)}$"
+DotProdY: box at DotProdX+(0,-2*elen) "Dot Prod." "$\mathbf{R}_* \cdot \mathbf{y}^{(t-1)}$"
 
 # The RAMs
 RamX: box at DotProdX-(2.5*elen,0) "$\mathbf{W}_*$" "RAM"

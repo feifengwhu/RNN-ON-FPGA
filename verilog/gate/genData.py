@@ -15,11 +15,11 @@ def Qnm_to_real(real, n, m):
 def sign_ext(value, newSize, oldSize):
     if(value >= 2**(oldSize-1)):
         return value + 2**(newSize) - 2**(oldSize)
-    else: 
+    else:
         return value
 
 NUM_MATRICES = 50
-NROW         = 32
+NROW         = 16
 NCOL         = 4
 QN           = 6
 QM           = 11
@@ -52,7 +52,7 @@ for n in range(NUM_MATRICES) :
         xq[i,0] = real_to_Qnm(x[i,0],QN,QM)
         fin_x.write("{0:018b}\n".format(int(xq[i,0])))
 
-    for i in range(NROW) : 
+    for i in range(NROW) :
         bq[i,0] = real_to_Qnm(b[i,0],QN,QM)
         yq[i,0] = real_to_Qnm(y[i,0],QN,QM)
         fin_b.write("{0:018b}\n".format(int(bq[i,0])))
@@ -64,7 +64,7 @@ for n in range(NUM_MATRICES) :
             Wxq[i,j] = real_to_Qnm(Wx[i,j],QN,QM)
             fin_Wx.write("{0:018b}\n".format(int(Wxq[i,j])))
 
-    out  = np.dot(Wx,x) + np.dot(Wy,y) + b    
+    out  = np.dot(Wx,x) + np.dot(Wy,y) + b
     outq = np.zeros_like(out)
 
     for i in range(NROW):
@@ -75,13 +75,13 @@ for n in range(NUM_MATRICES) :
 
     #yq = np.dot(Wq,xq)
     outrec = np.zeros_like(outq)
- 
+
     for i in range(NROW):
         #yq[i,0]   = int(yq[i,0]/(2**11)) & int(0x3ffff)
         outrec[i,0] = Qnm_to_real(outq[i,0],QN,QM)
         #fout.write("{0:018b}\n".format(int(yq[i,0]) & int(2**(QN+QM+1)-1)))
         fout.write("{0:018b}\n".format(real_to_Qnm(out[i,0],QN,QM)))
-    
+
     quantError += sum(out-outrec)
 
 print("Quantizaion Error: ", quantError/(NUM_MATRICES*NROW))

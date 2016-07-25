@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_8" LaunchPart="xc7z020clg484-1" LaunchTime="1468356076">
+<GenRun Id="synth_8" LaunchPart="xc7z020clg484-1" LaunchTime="1468786218">
   <File Type="VDS-TIMING-PB" Name="top_network_timing_summary_synth.pb"/>
   <File Type="VDS-TIMINGSUMMARY" Name="top_network_timing_summary_synth.rpt"/>
   <File Type="RDS-DCP" Name="top_network.dcp"/>
@@ -96,16 +96,12 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Flow_PerfOptimized_high" Flow="Vivado Synthesis 2015"/>
+    <StratHandle Name="Flow_AreaOptimized_high" Flow="Vivado Synthesis 2015">
+      <Desc>Performs general area optimizations including changing the threshold for control set optimizations, forcing ternary adder implementation, applying lower thresholds for use of carry chain in comparators and also area optimized mux optimizations.</Desc>
+    </StratHandle>
     <Step Id="synth_design">
-      <Option Id="ShregMinSize">5</Option>
-      <Option Id="KeepEquivalentRegisters">1</Option>
-      <Option Id="NoCombineLuts">1</Option>
-      <Option Id="ResourceSharing">2</Option>
-      <Option Id="MoreOptsStr"><![CDATA[-mode out_of_context]]></Option>
-      <Option Id="MaxBram">0</Option>
-      <Option Id="FsmExtraction">1</Option>
-      <Option Id="RepFanoutThreshold">400</Option>
+      <Option Id="Directive">1</Option>
+      <Option Id="ControlSetOptThreshold">1</Option>
     </Step>
   </Strategy>
 </GenRun>

@@ -21,10 +21,23 @@ add wave -noupdate /tb_gate/GATE/state
 add wave -noupdate /tb_gate/GATE/enable_dotprodX
 add wave -noupdate /tb_gate/GATE/enable_dotprodY
 add wave -noupdate /tb_gate/ROM_goldenOut
+add wave -noupdate /tb_gate/GATE/DOTPROD_X/dataReady
+add wave -noupdate /tb_gate/GATE/DOTPROD_X/dataReadyF
+add wave -noupdate /tb_gate/GATE/DOTPROD_X/colAddress
+add wave -noupdate /tb_gate/GATE/DOTPROD_X/inputVector
+add wave -noupdate /tb_gate/GATE/DOTPROD_X/inputVectorPipe
+add wave -noupdate /tb_gate/GATE/DOTPROD_X/inputVectorPipe2
+add wave -noupdate /tb_gate/GATE/DOTPROD_X/weightRow
+add wave -noupdate /tb_gate/GATE/DOTPROD_X/weightMAC
+add wave -noupdate /tb_gate/GATE/DOTPROD_X/outputMAC
+add wave -noupdate /tb_gate/GATE/DOTPROD_X/outputVector
+add wave -noupdate /tb_gate/GATE/DOTPROD_X/rowMux
+add wave -noupdate /tb_gate/GATE/DOTPROD_X/rowMuxP
+add wave -noupdate /tb_gate/GATE/DOTPROD_X/rowMuxP2
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {208000 ps} 0}
+WaveRestoreCursors {{Cursor 1} {5328000 ps} 0}
 quietly wave cursor active 1
-configure wave -namecolwidth 246
+configure wave -namecolwidth 363
 configure wave -valuecolwidth 63
 configure wave -justifyvalue left
 configure wave -signalnamewidth 0
@@ -38,4 +51,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits ns
 update
-WaveRestoreZoom {453932 ps} {561372 ps}
+WaveRestoreZoom {5320108 ps} {5357858 ps}

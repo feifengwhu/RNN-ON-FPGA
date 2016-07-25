@@ -1,7 +1,7 @@
 `timescale 1ns / 1fs
 
 module tb_network();
-    
+
 	parameter INPUT_SZ  = 2;
 	parameter HIDDEN_SZ = 8;
 	parameter OUTPUT_SZ = 1;
@@ -9,7 +9,7 @@ module tb_network();
     parameter QM = 11;
 	parameter DSP48_PER_ROW_G = 2;
 	parameter DSP48_PER_ROW_M = 4;
-    
+
     // Dependent Parameters
     parameter BITWIDTH         = QN + QM + 1;
     parameter INPUT_BITWIDTH   = BITWIDTH*INPUT_SZ;
@@ -18,7 +18,7 @@ module tb_network();
     parameter MAC_BITWIDTH          = (2*BITWIDTH+1);
 	parameter ADDR_BITWIDTH    = $ln(HIDDEN_SZ)/$ln(2);
 	parameter ADDR_BITWIDTH_X  = $ln(INPUT_SZ)/$ln(2);
-    parameter HALF_CLOCK       = 3.7625;
+    parameter HALF_CLOCK       = 3.24;
     parameter FULL_CLOCK       = 2*HALF_CLOCK;
     parameter MAX_SAMPLES      = 8;
     parameter TRAIN_SAMPLES    = 1000;
@@ -38,13 +38,13 @@ module tb_network();
     wire                  dataReadyP;
     reg	 enPerceptron;
     reg	 enPerceptronPIPE;
-    
+
     // File descriptors for the error/output dumps
     integer fid, fid_error_dump, retVal;
     integer fid_x, fid_Wz, fid_Wi, fid_Wf, fid_Wo, fid_Rz, fid_Ri, fid_Rf, fid_Ro, fid_bz, fid_bi, fid_bf, fid_bo, fid_outW;
     integer i=0,j=0,k=0,l=0;
     real    quantError=0;
-    
+
     // Clock generation
     always begin
         #(HALF_CLOCK) clock = ~clock;
@@ -54,11 +54,11 @@ module tb_network();
 	always @(posedge clock) begin
 		enPerceptronPIPE <= enPerceptron;
 	end
-    
+
     assign resetP = reset || !enPerceptronPIPE;
-    
+
     // DUT Instantiation
-    network              #(INPUT_SZ, HIDDEN_SZ, OUTPUT_SZ, QN, QM, DSP48_PER_ROW_G, DSP48_PER_ROW_M) 
+    network              #(INPUT_SZ, HIDDEN_SZ, OUTPUT_SZ, QN, QM, DSP48_PER_ROW_G, DSP48_PER_ROW_M)
 			LSTM_LAYER    (inputVec, 1'b0, clock, reset, newSample, dataReady, outputVec);
     array_prod #(HIDDEN_SZ, QN, QM)  PERCEPTRON  (Wperceptron, outputVec, clock, resetP, dataReadyP, networkOutput);
 
@@ -85,82 +85,82 @@ module tb_network();
 		fid_bo = $fopen("goldenIn_bo.bin", "r");
 		fid_outW = $fopen("goldenIn_outW.bin", "r");
 		fid    = $fopen("output.bin", "w");
-		
+
 		// -------------------------------- Loading the weight memory ------------------------------- //
 		for(i = 0; i < INPUT_SZ; i = i + 1) begin
             for(j = 0; j < HIDDEN_SZ; j = j + 1) begin
                 retVal = $fscanf(fid_Wz, "%b\n", LSTM_LAYER.WRAM_Z_X.RAM_matrix[i][j*BITWIDTH +: BITWIDTH]);
             end
         end
-        
+
         for(i = 0; i < HIDDEN_SZ; i = i + 1) begin
             for(j = 0; j < HIDDEN_SZ; j = j + 1) begin
                 retVal = $fscanf(fid_Rz, "%b\n", LSTM_LAYER.WRAM_Z_Y.RAM_matrix[i][j*BITWIDTH +: BITWIDTH]);
             end
         end
-        
+
         for(i = 0; i < INPUT_SZ; i = i + 1) begin
             for(j = 0; j < HIDDEN_SZ; j = j + 1) begin
                 retVal = $fscanf(fid_Wi, "%b\n", LSTM_LAYER.WRAM_I_X.RAM_matrix[i][j*BITWIDTH +: BITWIDTH]);
             end
         end
-        
+
         for(i = 0; i < HIDDEN_SZ; i = i + 1) begin
             for(j = 0; j < HIDDEN_SZ; j = j + 1) begin
                 retVal = $fscanf(fid_Ri, "%b\n", LSTM_LAYER.WRAM_I_Y.RAM_matrix[i][j*BITWIDTH +: BITWIDTH]);
             end
         end
-        
+
         for(i = 0; i < INPUT_SZ; i = i + 1) begin
             for(j = 0; j < HIDDEN_SZ; j = j + 1) begin
                 retVal = $fscanf(fid_Wf, "%b\n", LSTM_LAYER.WRAM_F_X.RAM_matrix[i][j*BITWIDTH +: BITWIDTH]);
             end
         end
-        
+
         for(i = 0; i < HIDDEN_SZ; i = i + 1) begin
             for(j = 0; j < HIDDEN_SZ; j = j + 1) begin
                 retVal = $fscanf(fid_Rf, "%b\n", LSTM_LAYER.WRAM_F_Y.RAM_matrix[i][j*BITWIDTH +: BITWIDTH]);
             end
         end
-        
+
         for(i = 0; i < INPUT_SZ; i = i + 1) begin
             for(j = 0; j < HIDDEN_SZ; j = j + 1) begin
                 retVal = $fscanf(fid_Wo, "%b\n", LSTM_LAYER.WRAM_O_X.RAM_matrix[i][j*BITWIDTH +: BITWIDTH]);
             end
         end
-        
+
         for(i = 0; i < HIDDEN_SZ; i = i + 1) begin
             for(j = 0; j < HIDDEN_SZ; j = j + 1) begin
                 retVal = $fscanf(fid_Ro, "%b\n", LSTM_LAYER.WRAM_O_Y.RAM_matrix[i][j*BITWIDTH +: BITWIDTH]);
             end
         end
-        
+
         for(i = 0; i < HIDDEN_SZ; i = i + 1) begin
 			retVal = $fscanf(fid_bz, "%18b\n",temp);
 			LSTM_LAYER.bZ[i*BITWIDTH +: BITWIDTH] = temp;
-			
+
 			retVal = $fscanf(fid_bi, "%18b\n",temp);
 			LSTM_LAYER.bI[i*BITWIDTH +: BITWIDTH] = temp;
-			
+
 			retVal = $fscanf(fid_bf, "%18b\n",temp);
 			LSTM_LAYER.bF[i*BITWIDTH +: BITWIDTH] = temp;
-			
+
 			retVal = $fscanf(fid_bo, "%18b\n",temp);
 			LSTM_LAYER.bO[i*BITWIDTH +: BITWIDTH] = temp;
-			
+
 			retVal = $fscanf(fid_outW, "%18b\n",temp);
 			Wperceptron[i*BITWIDTH +: BITWIDTH] = temp;
         end
-		
+
 	end
-	
+
     // Running the simulation
     initial begin
         time_start = $realtime;
 		clock = 0;
 		newSample = 0;
 		enPerceptron = 0;
-		
+
 		// Applying the initial reset
 		reset     = 1'b1;
 		#(2*FULL_CLOCK);
@@ -171,57 +171,57 @@ module tb_network();
         $display("Simulation started at %f", time_start);
 
 		for(k=0; k < TRAIN_SAMPLES; k = k + 1) begin
-			
+
 			// Applying the initial reset
 			reset     = 1'b1;
 			#(2*FULL_CLOCK);
 			reset     = 1'b0;
-			
+
 			if(k % 100 == 0) begin
 				$display("Input Sample %d", k);
 			end
-			
+
 			for(i=0; i < MAX_SAMPLES; i = i + 1) begin
-				
+
 				// ---------- Applying a new input signal ---------- //
-				
+
 				@(posedge clock);
 				retVal = $fscanf(fid_x,  "%b\n", temp);
 				inputVec[17:0]  = temp;
 				retVal = $fscanf(fid_x,  "%b\n", temp);
 				inputVec[35:18] = temp;
 
-				
+
 				newSample = 1'b1;
 				#(FULL_CLOCK);
 				newSample = 1'b0;
-				
+
 				// ------------------------------------------------- //
-				
+
 				// Waiting for the result
 				@(posedge dataReady);
-				
-				#(FULL_CLOCK);
+
+    		#(FULL_CLOCK);
 				enPerceptron = 1;
-				
+
 				@(posedge dataReadyP);
 				#(FULL_CLOCK);
 				$fwrite(fid, "%d\n", networkOutput);
 				enPerceptron = 0;
-
+        #(FULL_CLOCK);
 			end
        end
         //$display("Average Quantization Error: %f", quantError/(MAX_SAMPLES*HIDDEN_SZ));
- 
-        $stop; 
+
+        $stop;
     end
-    
+
 function integer log2;
     input [31:0] argument;
     integer i;
     begin
          log2 = -1;
-         i = argument;  
+         i = argument;
          while( i > 0 ) begin
             log2 = log2 + 1;
             i = i >> 1;
@@ -230,7 +230,3 @@ function integer log2;
 endfunction
 
 endmodule
-            
-    
-        
-

@@ -7,7 +7,7 @@
 \contentsline {section}{\numberline {1.2}Motivation}{1}{section.1.2}
 \contentsline {section}{\numberline {1.3}Objectives}{2}{section.1.3}
 \contentsline {section}{\numberline {1.4}People Involved}{2}{section.1.4}
-\contentsline {section}{\numberline {1.5}Overview of the Document}{3}{section.1.5}
+\contentsline {section}{\numberline {1.5}Overview of the Document}{2}{section.1.5}
 \contentsline {chapter}{\numberline {2}Problem Characterization}{5}{chapter.2}
 \contentsline {section}{\numberline {2.1}Theoretical Background}{5}{section.2.1}
 \contentsline {subsection}{\numberline {2.1.1}Basic Concepts of Machine Learning}{5}{subsection.2.1.1}
@@ -27,7 +27,7 @@
 \contentsline {subsubsection}{\numberline {4.1.1.1}Precision bitwidth}{19}{subsubsection.4.1.1.1}
 \contentsline {subsubsection}{\numberline {4.1.1.2}Conversion between real and fixed-point}{20}{subsubsection.4.1.1.2}
 \contentsline {subsubsection}{\numberline {4.1.1.3}Fixed-point arithmetic rules}{20}{subsubsection.4.1.1.3}
-\contentsline {subsection}{\numberline {4.1.2}Non-linearity Calculator}{21}{subsection.4.1.2}
+\contentsline {subsection}{\numberline {4.1.2}Activation Function Calculator}{21}{subsection.4.1.2}
 \contentsline {subsubsection}{\numberline {4.1.2.1}Theoretical considerations on the approximation method}{21}{subsubsection.4.1.2.1}
 \contentsline {subsubsection}{\numberline {4.1.2.2}Hardware Implementation}{23}{subsubsection.4.1.2.2}
 \contentsline {subsection}{\numberline {4.1.3}Matrix-vector Dot Product Unit}{26}{subsection.4.1.3}
@@ -38,21 +38,22 @@
 \contentsline {subsubsection}{\numberline {4.2.1.1}Fully Parallel}{30}{subsubsection.4.2.1.1}
 \contentsline {subsubsection}{\numberline {4.2.1.2}Shared Elementwise Multiplication Block}{30}{subsubsection.4.2.1.2}
 \contentsline {section}{\numberline {4.3}Hardware LSTM Network -- SPSA Training}{32}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}Pseudo-random Number Generator}{33}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}Training Algorithm Circuit}{34}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.3.1}Pseudo-random Number Generator}{32}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Training Algorithm Circuit}{33}{subsection.4.3.2}
 \contentsline {chapter}{\numberline {5}Results}{37}{chapter.5}
 \contentsline {section}{\numberline {5.1}Synthesis}{37}{section.5.1}
-\contentsline {subsection}{\numberline {5.1.1}Maximum Frequency}{37}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.1}Maximum Frequency}{38}{subsection.5.1.1}
 \contentsline {subsection}{\numberline {5.1.2}DSP Slices Usage}{38}{subsection.5.1.2}
-\contentsline {subsection}{\numberline {5.1.3}Power Usage}{40}{subsection.5.1.3}
-\contentsline {subsection}{\numberline {5.1.4}Other Resources Usage}{40}{subsection.5.1.4}
-\contentsline {section}{\numberline {5.2}Validation and Comparison}{41}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}Reference Python Module}{41}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}Methodology}{42}{subsection.5.2.2}
-\contentsline {subsection}{\numberline {5.2.3}Performance}{42}{subsection.5.2.3}
-\contentsline {chapter}{\numberline {A}Remez Algorithm Implementation}{45}{appendix.A}
-\contentsline {chapter}{\numberline {B}LSTM Layer Implementation}{47}{appendix.B}
-\contentsline {chapter}{\numberline {C}LSTM Layer Testbench}{51}{appendix.C}
-\contentsline {chapter}{\numberline {D}LSTM Layer Implementation}{55}{appendix.D}
-\contentsline {chapter}{\numberline {E}Transcript from a successful simulation of the Hardware Network}{59}{appendix.E}
-\contentsline {chapter}{References}{61}{section*.30}
+\contentsline {subsection}{\numberline {5.1.3}Power Consumption}{38}{subsection.5.1.3}
+\contentsline {subsection}{\numberline {5.1.4}Other Resources Usage}{38}{subsection.5.1.4}
+\contentsline {section}{\numberline {5.2}Validation and Comparison}{42}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Reference Python Module}{42}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Methodology}{43}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.3}Performance}{44}{subsection.5.2.3}
+\contentsline {chapter}{\numberline {6}Conclusion}{49}{chapter.6}
+\contentsline {chapter}{\numberline {A}Remez Algorithm Implementation}{51}{appendix.A}
+\contentsline {chapter}{\numberline {B}LSTM Layer Implementation}{53}{appendix.B}
+\contentsline {chapter}{\numberline {C}LSTM Layer Testbench}{57}{appendix.C}
+\contentsline {chapter}{\numberline {D}Verification script for the Verilog simulation of the network}{61}{appendix.D}
+\contentsline {chapter}{\numberline {E}Transcript from a successful simulation of the Hardware Network}{65}{appendix.E}
+\contentsline {chapter}{References}{67}{section*.31}

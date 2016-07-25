@@ -22,9 +22,9 @@ module network  #(parameter INPUT_SZ   =  2,
     parameter OUTPUT_BITWIDTH    = OUTPUT_SZ * BITWIDTH; //log2(NUM_OUTPUT_SYMBOLS);
 	parameter ADDR_BITWIDTH      = log2(HIDDEN_SZ);
 	parameter ADDR_BITWIDTH_X    = log2(INPUT_SZ);
-	parameter MUX_BITWIDTH		  = log2(DSP48_PER_ROW_M);  
-	parameter N_DSP48            = HIDDEN_SZ/DSP48_PER_ROW_M; 
-	
+	parameter MUX_BITWIDTH		  = log2(DSP48_PER_ROW_M);
+	parameter N_DSP48            = HIDDEN_SZ/DSP48_PER_ROW_M;
+
     // Input/Output definitions
     input [INPUT_BITWIDTH-1:0]       inputVec;
     input                            trainingFlag;
@@ -33,7 +33,7 @@ module network  #(parameter INPUT_SZ   =  2,
     input                            newSample;
     output reg                       dataoutReady;
     output reg [LAYER_BITWIDTH-1:0] outputVec;
-            
+
 
     // Connecting wires and auxiliary registers
     reg    [ADDR_BITWIDTH_X-1:0] colAddressWrite_wZX;
@@ -116,11 +116,11 @@ module network  #(parameter INPUT_SZ   =  2,
     wire reset_tanh;
     reg  sigmoidEnable;
     reg  tanhEnable;
-    
-    
+
+
     // The enable signals for the sigmoid/tanh evaluations
-	assign reset_sigm = reset || !sigmoidEnable;
-	assign reset_tanh = reset || !tanhEnable;
+	  assign reset_sigm = reset || !sigmoidEnable;
+	  assign reset_tanh = reset || !tanhEnable;
 
     integer j;
 
@@ -130,7 +130,7 @@ module network  #(parameter INPUT_SZ   =  2,
     weightRAM  #(HIDDEN_SZ,  INPUT_SZ, BITWIDTH)  WRAM_Z_X (colAddressWrite_wZX, colAddressRead_wZX, writeEn_wZX, clock, reset, wZX_in, wZX_out);
     weightRAM  #(HIDDEN_SZ, HIDDEN_SZ, BITWIDTH)  WRAM_Z_Y (colAddressWrite_wZY, colAddressRead_wZY, writeEn_wZY, clock, reset, wZY_in, wZY_out);
 
-    
+
     gate #(INPUT_SZ, HIDDEN_SZ, QN, QM, DSP48_PER_ROW_G) GATE_I (inputVecSample, prevOutVecSample, wIX_out, wIY_out, bI, beginCalc,
                                                              clock, reset, colAddressRead_wIX, colAddressRead_wIY, gateReady_I, gate_I);
     weightRAM  #(HIDDEN_SZ,  INPUT_SZ, BITWIDTH)  WRAM_I_X (colAddressWrite_wIX, colAddressRead_wIX, writeEn_wIX, clock, reset, wIX_in, wIX_out);
@@ -149,17 +149,17 @@ module network  #(parameter INPUT_SZ   =  2,
 
 
     genvar i;
-    generate 
+    generate
         for (i = 0; i < HIDDEN_SZ; i = i + 1) begin
             sigmoid #(QN,QM) sigmoid_i (elemWise_op2[i*BITWIDTH +: BITWIDTH], clock, reset_sigm, elemWise_mult2[i*BITWIDTH +: BITWIDTH]);
-        end 
-    endgenerate 
+        end
+    endgenerate
 
-    generate 
+    generate
         for (i = 0; i < HIDDEN_SZ; i = i + 1) begin
             tanh #(QN,QM) tanh_i (elemWise_op1[i*BITWIDTH +: BITWIDTH], clock, reset_tanh, tanh_result[i*BITWIDTH +: BITWIDTH]);
-        end 
-    endgenerate 
+        end
+    endgenerate
 
 	// Slicing the input and previous output vectors
 	always @(posedge clock) begin
@@ -175,12 +175,12 @@ module network  #(parameter INPUT_SZ   =  2,
 
     // Selecting the source for the elementwise multiplication first operand
     always @(posedge clock) begin
-        case (muxStageSelector) 
+        case (muxStageSelector)
             2'd0 : begin
                 elemWise_op1 <= gate_Z;
                 elemWise_op2 <= gate_I;
             end
-        
+
             2'd1 : begin
                 elemWise_op1 <= 18'b0;
                 elemWise_op2 <= gate_F;
@@ -190,7 +190,7 @@ module network  #(parameter INPUT_SZ   =  2,
                 elemWise_op1 <= layer_C;
                 elemWise_op2 <= gate_O;
             end
-            
+
             default : begin
 				elemWise_op1 <= gate_Z;
                 elemWise_op2 <= gate_I;
@@ -204,10 +204,10 @@ module network  #(parameter INPUT_SZ   =  2,
             elemWise_mult1 <= prev_C;
         else
             elemWise_mult1 <= tanh_result;
-    end  
-    
+    end
 
-	
+
+
     // Partial Non-liearity/Elementwise Block Result --- z signal TIMES i signal
     always @(posedge clock) begin
 		if(reset) begin
@@ -219,7 +219,7 @@ module network  #(parameter INPUT_SZ   =  2,
             end
         end
 	end
-    
+
     // Partial Non-liearity/Elementwise Block Result --- c signal TIMES f signal
     always @(posedge clock) begin
 		if(reset) begin
@@ -243,7 +243,7 @@ module network  #(parameter INPUT_SZ   =  2,
             end
         end
 	end
-     
+
 
     // The C signal --- The memory element
     always @(*) begin
@@ -251,22 +251,22 @@ module network  #(parameter INPUT_SZ   =  2,
             layer_C[j*BITWIDTH +: BITWIDTH] = ZI_prod[j*BITWIDTH +: BITWIDTH] +  CF_prod[j*BITWIDTH +: BITWIDTH];
         end
     end
-    
+
     always @(posedge clock) begin
         if (reset)
     		prev_C <= {LAYER_BITWIDTH{1'b0}};
         else if(y_ready)
-            prev_C <= layer_C;   
+            prev_C <= layer_C;
 	end
-	
+
     always @(posedge clock) begin
 		elemWise_mult2_FF <= elemWise_mult2;
 	end
-    
+
     // The elementwise multiplication DSP slices
     always @(posedge clock) begin
         for(j=0; j < HIDDEN_SZ; j = j + 1) begin
-            elemWiseMult_out[j*MULT_BITWIDTH +: MULT_BITWIDTH] <= ($signed(elemWise_mult2_FF[j*BITWIDTH +: BITWIDTH]) * 
+            elemWiseMult_out[j*MULT_BITWIDTH +: MULT_BITWIDTH] <= ($signed(elemWise_mult2_FF[j*BITWIDTH +: BITWIDTH]) *
 																							 $signed(elemWise_mult1[j*BITWIDTH +: BITWIDTH]));
         end
     end
@@ -276,7 +276,7 @@ module network  #(parameter INPUT_SZ   =  2,
 	end
 
     // --------------------- FINITE STATE MACHINE --------------------- //
-    
+
     // The state tags
     parameter IDLE             = 5'd0;
     parameter GATE_CALC_INIT   = 5'd1;
@@ -307,7 +307,7 @@ module network  #(parameter INPUT_SZ   =  2,
     parameter ELEM_PROD_C_PIPE = 5'd26;
     parameter ELEM_PROD_C      = 5'd27;
     parameter END              = 5'd28;
-    
+
     // The FSM registers
     reg [4:0] state;
     reg [4:0] NEXTstate;
@@ -321,10 +321,10 @@ module network  #(parameter INPUT_SZ   =  2,
 			state  <= NEXTstate;
 		end
 	end
-	
+
 	// Combinational logic that produces the next state
 	always @(*) begin
-		case(state)		
+		case(state)
 			IDLE :
 			begin
 				if ( newSample == 1'b1) begin
@@ -334,12 +334,12 @@ module network  #(parameter INPUT_SZ   =  2,
 					NEXTstate = IDLE;
 				end
 			end
-			
+
 			GATE_CALC_INIT:
 			begin
 				NEXTstate = GATE_CALC;
 			end
-			
+
 			GATE_CALC:
 			begin
 				if (gateReady_Z == 1'b1 || gateReady_I == 1'b1 || gateReady_F == 1'b1 || gateReady_O == 1'b1) begin
@@ -349,153 +349,153 @@ module network  #(parameter INPUT_SZ   =  2,
 					NEXTstate = GATE_CALC;
 				end
 			end
-			
-			
-			NON_LIN_1A_PIPE:		
+
+
+			NON_LIN_1A_PIPE:
 			begin
 				NEXTstate = NON_LIN_1A;
 			end
-			
-			NON_LIN_1A:		
+
+			NON_LIN_1A:
 			begin
 				NEXTstate = NON_LIN_2A;
 			end
-			
-			NON_LIN_2A:		
+
+			NON_LIN_2A:
 			begin
 				NEXTstate = NON_LIN_3A;
 			end
-			
-			NON_LIN_3A:		
+
+			NON_LIN_3A:
 			begin
 				NEXTstate = NON_LIN_4A;
 			end
-			
-			NON_LIN_4A:		
+
+			NON_LIN_4A:
 			begin
 				NEXTstate = NON_LIN_5A;
-			end	
-			
-			NON_LIN_5A:		
+			end
+
+			NON_LIN_5A:
 			begin
 				NEXTstate = ELEM_PROD_A_PIPE;
-			end	
-			
+			end
+
 			ELEM_PROD_A_PIPE:
 			begin
 					NEXTstate  = ELEM_PROD_A;
 			end
-			
+
 			ELEM_PROD_A:
 			begin
 					NEXTstate  = NON_LIN_1B_PIPE;
 			end
-			
-			NON_LIN_1B_PIPE:		
+
+			NON_LIN_1B_PIPE:
 			begin
 				NEXTstate = NON_LIN_1B;
 			end
-			
-			NON_LIN_1B:		
+
+			NON_LIN_1B:
 			begin
 				NEXTstate = NON_LIN_2B;
 			end
-			
-			NON_LIN_2B:		
+
+			NON_LIN_2B:
 			begin
 				NEXTstate = NON_LIN_3B;
 			end
-			
-			NON_LIN_3B:		
+
+			NON_LIN_3B:
 			begin
 				NEXTstate = NON_LIN_4B;
 			end
-			
-			NON_LIN_4B:		
+
+			NON_LIN_4B:
 			begin
 				NEXTstate = NON_LIN_5B;
-			end	
-			
-			NON_LIN_5B:		
+			end
+
+			NON_LIN_5B:
 			begin
 				NEXTstate = ELEM_PROD_B_PIPE;
-			end	
-			
+			end
+
 			ELEM_PROD_B_PIPE:
 			begin
 					NEXTstate  = ELEM_PROD_B;
 			end
-			
+
 			ELEM_PROD_B:
 			begin
 					NEXTstate  = NON_LIN_1C_PIPE;
 			end
-			
-			NON_LIN_1C_PIPE:		
+
+			NON_LIN_1C_PIPE:
 			begin
 				NEXTstate = NON_LIN_1C_PIPE2;
 			end
-			
-			NON_LIN_1C_PIPE2:		
+
+			NON_LIN_1C_PIPE2:
 			begin
 				NEXTstate = NON_LIN_1C;
 			end
 			/*
-			NON_LIN_1C_PIPE3:		
+			NON_LIN_1C_PIPE3:
 			begin
 				NEXTstate = NON_LIN_1C;
 			end
 			*/
-			NON_LIN_1C:		
+			NON_LIN_1C:
 			begin
 				NEXTstate = NON_LIN_2C;
 			end
-			
-			NON_LIN_2C:		
+
+			NON_LIN_2C:
 			begin
 				NEXTstate = NON_LIN_3C;
 			end
-			
-			NON_LIN_3C:		
+
+			NON_LIN_3C:
 			begin
 				NEXTstate = NON_LIN_4C;
 			end
-			
-			NON_LIN_4C:		
+
+			NON_LIN_4C:
 			begin
 				NEXTstate = NON_LIN_5C;
-			end	
-			
-			NON_LIN_5C:		
+			end
+
+			NON_LIN_5C:
 			begin
 				NEXTstate = ELEM_PROD_C_PIPE;
-			end	
-			
+			end
+
 			ELEM_PROD_C_PIPE:
 			begin
 					NEXTstate  = ELEM_PROD_C;
 			end
-			
+
 			ELEM_PROD_C:
 			begin
 					NEXTstate  = END;
 			end
-			
+
 			END :
 			begin
 				NEXTstate = IDLE;
 			end
-			
+
 			default:
 			begin
 				NEXTstate = IDLE;
 			end
 		endcase
 	end
-	
+
 	// Combinational block that produces the outputs and control signals
 	always @(*) begin
-		case(state)		
+		case(state)
 			IDLE :
 			begin
 				beginCalc        = 1'b0;
@@ -507,7 +507,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				y_ready          = 1'b0;
 				dataoutReady     = 1'b0;
 			end
-			
+
 			GATE_CALC_INIT:
 			begin
 				beginCalc        = 1'b1;
@@ -519,7 +519,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				y_ready          = 1'b0;
 				dataoutReady     = 1'b0;
 			end
-			
+
 			GATE_CALC:
 			begin
 				beginCalc        = 1'b0;
@@ -531,8 +531,8 @@ module network  #(parameter INPUT_SZ   =  2,
 				y_ready          = 1'b0;
 				dataoutReady     = 1'b0;
 			end
-			
-			NON_LIN_1A_PIPE:		
+
+			NON_LIN_1A_PIPE:
 			begin
 				beginCalc        = 1'b0;
 				muxStageSelector = 2'b0;
@@ -543,8 +543,8 @@ module network  #(parameter INPUT_SZ   =  2,
 				y_ready          = 1'b0;
 				dataoutReady     = 1'b0;
 			end
-			
-			NON_LIN_1A:		
+
+			NON_LIN_1A:
 			begin
 				beginCalc        = 1'b0;
 				muxStageSelector = 2'b0;
@@ -555,8 +555,8 @@ module network  #(parameter INPUT_SZ   =  2,
 				y_ready          = 1'b0;
 				dataoutReady     = 1'b0;
 			end
-			
-			NON_LIN_2A:		
+
+			NON_LIN_2A:
 			begin
 				beginCalc        = 1'b0;
 				muxStageSelector = 2'b0;
@@ -567,8 +567,8 @@ module network  #(parameter INPUT_SZ   =  2,
 				y_ready          = 1'b0;
 				dataoutReady     = 1'b0;
 			end
-			
-			NON_LIN_3A:		
+
+			NON_LIN_3A:
 			begin
 				beginCalc        = 1'b0;
 				muxStageSelector = 2'b0;
@@ -579,8 +579,8 @@ module network  #(parameter INPUT_SZ   =  2,
 				y_ready          = 1'b0;
 				dataoutReady     = 1'b0;
 			end
-			
-			NON_LIN_4A:		
+
+			NON_LIN_4A:
 			begin
 				beginCalc        = 1'b0;
 				muxStageSelector = 2'b0;
@@ -591,8 +591,8 @@ module network  #(parameter INPUT_SZ   =  2,
 				y_ready          = 1'b0;
 				dataoutReady     = 1'b0;
 			end
-			
-			NON_LIN_5A:		
+
+			NON_LIN_5A:
 			begin
 				beginCalc        = 1'b0;
 				muxStageSelector = 2'b0;
@@ -603,7 +603,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				y_ready          = 1'b0;
 				dataoutReady     = 1'b0;
 			end
-			
+
 			ELEM_PROD_A_PIPE:
 			begin
 				beginCalc        = 1'b0;
@@ -615,7 +615,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				y_ready          = 1'b0;
 				dataoutReady     = 1'b0;
 			end
-			
+
 			ELEM_PROD_A:
 			begin
 				beginCalc        = 1'b0;
@@ -627,8 +627,8 @@ module network  #(parameter INPUT_SZ   =  2,
 				y_ready          = 1'b0;
 				dataoutReady     = 1'b0;
 			end
-			
-			NON_LIN_1B_PIPE:		
+
+			NON_LIN_1B_PIPE:
 			begin
 				beginCalc        = 1'b0;
 				muxStageSelector = 2'b1;
@@ -639,8 +639,8 @@ module network  #(parameter INPUT_SZ   =  2,
 				y_ready          = 1'b0;
 				dataoutReady     = 1'b0;
 			end
-			
-			NON_LIN_1B:		
+
+			NON_LIN_1B:
 			begin
 				beginCalc        = 1'b0;
 				muxStageSelector = 2'b1;
@@ -651,8 +651,8 @@ module network  #(parameter INPUT_SZ   =  2,
 				y_ready          = 1'b0;
 				dataoutReady     = 1'b0;
 			end
-			
-			NON_LIN_2B:		
+
+			NON_LIN_2B:
 			begin
 				beginCalc        = 1'b0;
 				muxStageSelector = 2'b1;
@@ -663,8 +663,8 @@ module network  #(parameter INPUT_SZ   =  2,
 				y_ready          = 1'b0;
 				dataoutReady     = 1'b0;
 			end
-			
-			NON_LIN_3B:		
+
+			NON_LIN_3B:
 			begin
 				beginCalc        = 1'b0;
 				muxStageSelector = 2'b1;
@@ -675,8 +675,8 @@ module network  #(parameter INPUT_SZ   =  2,
 				y_ready          = 1'b0;
 				dataoutReady     = 1'b0;
 			end
-			
-			NON_LIN_4B:		
+
+			NON_LIN_4B:
 			begin
 				beginCalc        = 1'b0;
 				muxStageSelector = 2'b1;
@@ -687,8 +687,8 @@ module network  #(parameter INPUT_SZ   =  2,
 				y_ready          = 1'b0;
 				dataoutReady     = 1'b0;
 			end
-			
-			NON_LIN_5B:		
+
+			NON_LIN_5B:
 			begin
 				beginCalc        = 1'b0;
 				muxStageSelector = 2'b1;
@@ -699,7 +699,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				y_ready          = 1'b0;
 				dataoutReady     = 1'b0;
 			end
-			
+
 			ELEM_PROD_B_PIPE:
 			begin
 				beginCalc        = 1'b0;
@@ -711,7 +711,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				y_ready          = 1'b0;
 				dataoutReady     = 1'b0;
 			end
-			
+
 			ELEM_PROD_B:
 			begin
 				beginCalc        = 1'b0;
@@ -723,8 +723,8 @@ module network  #(parameter INPUT_SZ   =  2,
 				y_ready          = 1'b0;
 				dataoutReady     = 1'b0;
 			end
-			
-			NON_LIN_1C_PIPE:		
+
+			NON_LIN_1C_PIPE:
 			begin
 				beginCalc        = 1'b0;
 				muxStageSelector = 2'd2;
@@ -735,8 +735,8 @@ module network  #(parameter INPUT_SZ   =  2,
 				y_ready          = 1'b0;
 				dataoutReady     = 1'b0;
 			end
-			
-			NON_LIN_1C_PIPE2:		
+
+			NON_LIN_1C_PIPE2:
 			begin
 				beginCalc        = 1'b0;
 				muxStageSelector = 2'd2;
@@ -748,7 +748,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				dataoutReady     = 1'b0;
 			end
 			/*
-			NON_LIN_1C_PIPE3:		
+			NON_LIN_1C_PIPE3:
 			begin
 				beginCalc        = 1'b0;
 				muxStageSelector = 2'd2;
@@ -760,7 +760,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				dataoutReady     = 1'b0;
 			end
 			*/
-			NON_LIN_1C:		
+			NON_LIN_1C:
 			begin
 				beginCalc        = 1'b0;
 				muxStageSelector = 2'd2;
@@ -771,8 +771,8 @@ module network  #(parameter INPUT_SZ   =  2,
 				y_ready          = 1'b0;
 				dataoutReady     = 1'b0;
 			end
-			
-			NON_LIN_2C:		
+
+			NON_LIN_2C:
 			begin
 				beginCalc        = 1'b0;
 				muxStageSelector = 2'd2;
@@ -783,8 +783,8 @@ module network  #(parameter INPUT_SZ   =  2,
 				y_ready          = 1'b0;
 				dataoutReady     = 1'b0;
 			end
-			
-			NON_LIN_3C:		
+
+			NON_LIN_3C:
 			begin
 				beginCalc        = 1'b0;
 				muxStageSelector = 2'd2;
@@ -795,8 +795,8 @@ module network  #(parameter INPUT_SZ   =  2,
 				y_ready          = 1'b0;
 				dataoutReady     = 1'b0;
 			end
-			
-			NON_LIN_4C:		
+
+			NON_LIN_4C:
 			begin
 				beginCalc        = 1'b0;
 				muxStageSelector = 2'd2;
@@ -807,8 +807,8 @@ module network  #(parameter INPUT_SZ   =  2,
 				y_ready          = 1'b0;
 				dataoutReady     = 1'b0;
 			end
-			
-			NON_LIN_5C:		
+
+			NON_LIN_5C:
 			begin
 				beginCalc        = 1'b0;
 				muxStageSelector = 2'd2;
@@ -819,7 +819,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				y_ready          = 1'b0;
 				dataoutReady     = 1'b0;
 			end
-			
+
 			ELEM_PROD_C_PIPE:
 			begin
 				beginCalc        = 1'b0;
@@ -831,7 +831,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				y_ready          = 1'b0;
 				dataoutReady     = 1'b0;
 			end
-			
+
 			ELEM_PROD_C:
 			begin
 				beginCalc        = 1'b0;
@@ -843,7 +843,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				y_ready          = 1'b0;
 				dataoutReady     = 1'b0;
 			end
-			
+
 			END :
 			begin
 				beginCalc        = 1'b0;
@@ -855,7 +855,7 @@ module network  #(parameter INPUT_SZ   =  2,
 				y_ready          = 1'b1;
 				dataoutReady     = 1'b1;
 			end
-				
+
 			default:
 			begin
 				beginCalc        = 1'b0;
@@ -867,19 +867,19 @@ module network  #(parameter INPUT_SZ   =  2,
 				y_ready          = 1'b0;
 				dataoutReady     = 1'b0;
 			end
-				
+
 		endcase
 	end
-    
+
     // ---------------------------------------------------------------- //
-    
-        
+
+
 	function integer log2;
 		input [31:0] argument;
 		integer k;
 		begin
 			 log2 = -1;
-			 k = argument;  
+			 k = argument;
 			 while( k > 0 ) begin
 				log2 = log2 + 1;
 				k = k >> 1;

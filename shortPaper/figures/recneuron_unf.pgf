@@ -1,0 +1,41 @@
+\usetikzlibrary{positioning}
+\usetikzlibrary{calc}
+%% --- Declaring the Shapes --- %%
+
+
+\tikzstyle{invnode}=[circle,radius=10mm, minimum height = 12mm, rounded corners=3mm, very thick, draw=white, top color=white]
+\tikzstyle{node}=[circle, radius=10mm, minimum height = 12mm, rounded corners=3mm, very thick, draw=black, top color=white]
+\tikzstyle{sqrnode}=[rectangle, minimum height=12mm, minimum width=12mm, rounded corners=3mm, very thick, draw=black, top color=white]
+
+%% --- Building the image --- %%
+
+\begin{tikzpicture}
+	%% The nodes
+	\node (input1)       [node] {$x_{t-1}$};
+	\node (neuron1)    [sqrnode, above = of input1] {$h_{t-1}$};
+	\node (output1)     [invnode, above = of neuron1] {$y_{t-1}$};
+
+	\node (input2)       [node, right = of input1] {$x_t$};
+	\node (neuron2)    [sqrnode, above = of input2] {$h_t$};
+	\node (output2)     [invnode, above = of neuron2] {$y_t$};
+
+	\node (input3)       [node, right = of input2] {$x_{t+1}$};
+	\node (neuron3)    [sqrnode, above = of input3] {$h_ {t+1}$};
+	\node (output3)     [invnode, above = of neuron3] {$y_{t+1}$};
+
+	\node (neuron4)     [invnode, right = of neuron3] {};
+	\node (neuron0)     [invnode, left = of neuron1] {};
+
+	%% The Connections
+	\draw[->] (input1) -- (neuron1)    [thick] node [right, midway, align=center] {$\theta_x$};
+	\draw[->] (neuron1) -- (output1) [thick] node [right, midway, align=center] {$\theta_y$};
+	\draw[->] (input2) -- (neuron2)    [thick] node [right, midway, align=center] {$\theta_x$};
+	\draw[->] (neuron2) -- (output2) [thick] node [right, midway, align=center] {$\theta_y$};
+	\draw[->] (input3) -- (neuron3)    [thick] node [right, midway, align=center] {$\theta_x$};
+	\draw[->] (neuron3) -- (output3) [thick] node [right, midway, align=center] {$\theta_y$};
+
+	\draw[->] (neuron0.east) -- (neuron1.west) [thick] node [above, midway, align=center] {$\theta_h$};
+	\draw[->] (neuron1.east) -- (neuron2.west) [thick] node [above, midway, align=center] {$\theta_h$};
+	\draw[->] (neuron2.east) -- (neuron3.west) [thick] node [above, midway, align=center] {$\theta_h$};
+	\draw[->] (neuron3.east) -- (neuron4.west) [thick] node [above, midway, align=center] {$\theta_h$};
+\end{tikzpicture}

@@ -22,7 +22,7 @@
 \usepackage{subcaption}
 \usepackage{amsmath}
 \usepackage{float}
-\usepackage{lscape}
+\usepackage{rotating}
 \usepackage{textcomp}
 \usepackage{listings}
 \usepackage{algorithm}
@@ -40,21 +40,21 @@
 \definecolor{subsectioncol}{HTML}{CC100C}
 
 \lstdefinestyle{mystyle}{
-backgroundcolor=\color{backcolour},   
+backgroundcolor=\color{backcolour},
 commentstyle=\color{codegreen},
 keywordstyle=\color{magenta},
 numberstyle=\ttfamily\tiny\color{codegray},
 stringstyle=\color{codepurple},
 basicstyle=\ttfamily\scriptsize,
-breakatwhitespace=false,         
-breaklines=true,                 
-captionpos=b,                    
-keepspaces=true,                 
-numbers=left,                    
-numbersep=5pt,                  
-showspaces=false,                
+breakatwhitespace=false,
+breaklines=true,
+captionpos=b,
+keepspaces=true,
+numbers=left,
+numbersep=5pt,
+showspaces=false,
 showstringspaces=false,
-showtabs=false,                 
+showtabs=false,
 tabsize=2}
 \lstset{style=mystyle}
 %\usepackage[latin1]{inputenc}
@@ -75,7 +75,7 @@ tabsize=2}
 %% For other degrees
 %\usepackage{feupteses} % you must define the degree bellow
 
-%% Additional options for feupteses.sty: 
+%% Additional options for feupteses.sty:
 %% - onpaper: links are not shown (for paper versions)
 %% - backrefs: include back references from bibliography to citation place
 
@@ -154,6 +154,7 @@ tabsize=2}
 \include{stateArt}
 \include{proposedSol}
 \include{results}
+\include{conclusion}
 
 %% comment next 2 commands if numbered appendices are not used
 \appendix

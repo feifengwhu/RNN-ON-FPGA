@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps
 
 module tb_array();
-    
+
 	parameter INPUT_SZ  = 2;
 	parameter HIDDEN_SZ = 8;
 	parameter OUTPUT_SZ = 1;
@@ -9,7 +9,7 @@ module tb_array();
     parameter QM = 11;
 	parameter DSP48_PER_ROW_G = 2;
 	parameter DSP48_PER_ROW_M = 4;
-    
+
     // Dependent Parameters
     parameter BITWIDTH         = QN + QM + 1;
     parameter INPUT_BITWIDTH   = BITWIDTH*INPUT_SZ;
@@ -38,7 +38,7 @@ module tb_array();
     wire                 resetP;
     wire                 dataReadyP;
     reg	 enPerceptron;
-    
+
     // File descriptors for the error/output dumps
     integer fid, fid_error_dump, retVal;
     integer fid_X, fid_w, fid_y;
@@ -50,9 +50,9 @@ module tb_array();
         #(HALF_CLOCK) clock = ~clock;
         #(HALF_CLOCK) clock = ~clock;
     end
-    
+
     assign resetP = reset || !enPerceptron;
-    
+
     // DUT Instantiation
     array_prod #(HIDDEN_SZ, QN, QM)  PERCEPTRON  (Wperceptron, outputVec, clock, resetP, dataReadyP, networkOutput);
 
@@ -67,14 +67,14 @@ module tb_array();
 		fid_w = $fopen("array_w.bin", "r");
 		fid_y = $fopen("array_y.bin", "r");
 	end
-	
+
     // Running the simulation
     initial begin
         time_start = $realtime;
 		clock = 0;
 		newSample = 0;
 		enPerceptron = 0;
-		
+
 		// Applying the initial reset
 		reset     = 1'b1;
 		#(2*FULL_CLOCK);
@@ -84,16 +84,16 @@ module tb_array();
 
         $display("Simulation started at %f", time_start);
 
-		for(k=0; k < TRAIN_SAMPLES; k = k + 1) begin			
-			
+		for(k=0; k < TRAIN_SAMPLES; k = k + 1) begin
+
 			if(k % 100 == 0) begin
 				$display("Input Sample %d", k);
 			end
-				
+
 				// ---------- Applying a new input signal ---------- //
-				
+
 				@(posedge clock);
-				for (l = 0; l < HIDDEN_SZ; l = l + 1) begin 
+				for (l = 0; l < HIDDEN_SZ; l = l + 1) begin
 					retVal = $fscanf(fid_X,  "%18b\n", temp);
 					outputVec[l*BITWIDTH +: BITWIDTH]  = temp;
 					retVal = $fscanf(fid_w,  "%18b\n", temp);
@@ -102,26 +102,26 @@ module tb_array();
 				retVal = $fscanf(fid_y,  "%18b\n", temp);
 
 				// ------------------------------------------------- //
-				
+
 				#(FULL_CLOCK);
-				enPerceptron = 1;				
+				enPerceptron = 1;
 				@(posedge dataReadyP);
 				#(FULL_CLOCK);
 				enPerceptron = 0;
-				
+
 				#(FULL_CLOCK);
        end
        $display("Average Quantization Error: %f", quantError/(TRAIN_SAMPLES));
- 
-        $stop; 
+
+        $stop;
     end
-    
+
 function integer log2;
     input [31:0] argument;
     integer i;
     begin
          log2 = -1;
-         i = argument;  
+         i = argument;
          while( i > 0 ) begin
             log2 = log2 + 1;
             i = i >> 1;
@@ -130,7 +130,3 @@ function integer log2;
 endfunction
 
 endmodule
-            
-    
-        
-

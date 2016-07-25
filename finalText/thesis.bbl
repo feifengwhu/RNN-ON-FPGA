@@ -24,33 +24,28 @@ S.~Hochreiter and J.~Schmidhuber.
 
 \bibitem{Chang15}
 Andre Xian~Ming Chang, Berin Martini, and Eugenio Culurciello.
-\newblock Recurrent neural networks hardware implementation on {FPGA}.
+\newblock Recurrent {N}eural {N}etworks {H}ardware {I}mplementation on {FPGA}.
 \newblock {\em CoRR}, abs/1511.05552, 2015.
-
-\bibitem{Tavear13}
-R.~Tavear, J.~Dedic, D.~Bokal, and A.~Zemva.
-\newblock Transforming the lstm training algorithm for efficient fpga -based
-  adaptive control of nonlinear dynamic systems.
-\newblock {\em Informacije MIDEM}, 43(2):131 -- 8, 2013.
 
 \bibitem{Bishop2006}
 Christopher~M. Bishop.
-\newblock {\em Pattern Recognition and Machine Learning (Information Science
-  and Statistics)}.
+\newblock {\em Pattern {R}ecognition and {M}achine {L}earning ({I}nformation
+  {S}cience and {S}tatistics)}.
 \newblock Springer-Verlag New York, Inc., Secaucus, NJ, USA, 2006.
 
 \bibitem{Bengio1991}
 Yoshua Bengio.
-\newblock {\em Artificial Neural Networks and Their Application to Sequence
+\newblock {\em Artificial {N}eural {N}etworks and Their Application to Sequence
   Recognition}.
 \newblock PhD thesis, McGill University, Montreal, Que., Canada, Canada, 1991.
 \newblock UMI Order No. GAXNN-72116 (Canadian dissertation).
 
 \bibitem{Yoshua01}
 Sepp Hochreiter, Yoshua Bengio, Paolo Frasconi, and Jürgen Schmidhuber.
-\newblock Gradient flow in recurrent nets: the difficulty of learning long-term
-  dependencies.
-\newblock 2001.
+\newblock Gradient {F}low in {R}ecurrent {N}ets: the {D}ifficulty of {L}earning
+  {L}ong-{T}erm {D}ependencies.
+\newblock {\em A Field Guide to Dynamical Recurrent Neural Networks, IEEE
+  Press}, 2001.
 
 \bibitem{Yoshua94}
 Yoshua Bengio, Patrice Simard, and Paolo Frasconi.
@@ -59,7 +54,7 @@ Yoshua Bengio, Patrice Simard, and Paolo Frasconi.
 
 \bibitem{Gers00}
 F.A. Gers, J.~Schmidhuber, and F.~Cummins.
-\newblock Learning to forget: continual prediction with lstm.
+\newblock Learning to forget: continual prediction with {LSTM}.
 \newblock {\em Neural Computation}, 12(10):2451 -- 71, 2000.
 
 \bibitem{Gers2000}
@@ -79,25 +74,25 @@ J.C. Spall.
 \bibitem{Maeda05}
 Y.~Maeda and M.~Wakamura.
 \newblock Simultaneous perturbation learning rule for recurrent neural networks
-  and its fpga implementation.
+  and its {FPGA} implementation.
 \newblock {\em IEEE Transactions on Neural Networks}, 16(6):1664 -- 72, 2005.
 
 \bibitem{Bertolami09}
 A.~Graves, M.~Liwicki, S.~Fernandez, R.~Bertolami, H.~Bunke, and
   J.~Schmidhuber.
-\newblock A novel connectionist system for unconstrained handwriting
-  recognition.
+\newblock A {N}ovel {C}onnectionist {S}ystem for {U}nconstrained {H}andwriting
+  {R}ecognition.
 \newblock {\em IEEE Transactions on Pattern Analysis and Machine Intelligence},
   31(5):855--868, May 2009.
 
 \bibitem{ICDAR09}
 E.~Grosicki and H.~El~Abed.
-\newblock Icdar 2009 handwriting recognition competition.
+\newblock {ICDAR} 2009 {H}andwriting {R}ecognition {C}ompetition.
 \newblock pages 1398--1402, July 2009.
 
 \bibitem{Breuel13}
 Thomas~M. Breuel, Adnan Ul-Hasan, Mayce~Ali Al-Azawi, and Faisal Shafait.
-\newblock High-performance ocr for printed english and fraktur using lstm
+\newblock High-performance {OCR} for printed english and fraktur using {LSTM}
   networks.
 \newblock In {\em Proceedings of the 2013 12th International Conference on
   Document Analysis and Recognition}, ICDAR '13, pages 683--687, Washington,
@@ -117,7 +112,7 @@ Hasim Sak, Andrew~W. Senior, and Fran{\c{c}}oise Beaufays.
 
 \bibitem{Graves13_2}
 Alex Graves.
-\newblock Generating sequences with recurrent neural networks.
+\newblock {G}enerating {S}equences with {R}ecurrent {N}eural {N}etworks.
 \newblock {\em CoRR}, abs/1308.0850, 2013.
 
 \bibitem{Sustkever14}
@@ -128,17 +123,19 @@ Ilya Sutskever, Oriol Vinyals, and Quoc~V. Le.
 \bibitem{Hochreiter07}
 Sepp Hochreiter, Martin Heusel, and Klaus Obermayer.
 \newblock Fast model-based protein homology detection without alignment.
-\newblock {\em BIOINFORMATICS}, {23}({14}):{1728--1736}, {JUL 15} 2007.
+\newblock {\em Oxford Journal in Bioinformatics}, {23}({14}):{1728--1736}, {JUL
+  15} 2007.
 
 \bibitem{Sonderby15}
 Soren~Kaae Sonderby, Casper~Kaae Sonderby, Henrik Nielsen, and Ole Winther.
-\newblock Convolutional lstm networks for subcellular localization of proteins.
+\newblock Convolutional {LSTM} networks for subcellular localization of
+  proteins.
 \newblock volume 9199, pages 68 -- 80, Mexico City, Mexico, 2015.
 
 \bibitem{Lehner15}
 B.~Lehner, G.~Widmer, and S.~Bock.
 \newblock A low-latency, real-time-capable singing voice detection method with
-  lstm recurrent neural networks.
+  {LSTM} recurrent neural networks.
 \newblock pages 21 -- 5, Piscataway, NJ, USA, 2015.
 
 \bibitem{Bock12}
@@ -149,14 +146,14 @@ Sebastian Bock and Markus Schedl.
 
 \bibitem{Coca13}
 Andres~E. Coca, Debora~C. Correa, and Liang Zhao.
-\newblock Computer-aided music composition with lstm neural network and chaotic
-  inspiration.
+\newblock Computer-aided music composition with {LSTM} neural network and
+  chaotic inspiration.
 \newblock Dallas, TX, United states, 2013.
 
 \bibitem{Eck02}
 D.~Eck and J.~Schmidhuber.
-\newblock Finding temporal structure in music: Blues improvisation with {LSTM}
-  recurrent networks.
+\newblock Finding temporal structure in music: {B}lues improvisation with
+  {LSTM} recurrent networks.
 \newblock {\em Neural Networks for Signal Processing - Proceedings of the IEEE
   Workshop}, 2002-January:747 -- 756, 2002.
 
@@ -175,8 +172,8 @@ Subhashini Venugopalan, Huijuan Xu, Jeff Donahue, Marcus Rohrbach, Raymond~J.
 \bibitem{Donahue14_2}
 Jeff Donahue, Lisa~Anne Hendricks, Sergio Guadarrama, Marcus Rohrbach,
   Subhashini Venugopalan, Kate Saenko, and Trevor Darrell.
-\newblock Long-term recurrent convolutional networks for visual recognition and
-  description.
+\newblock Long-term {R}ecurrent {C}onvolutional {N}etworks for {V}isual
+  {R}ecognition and {D}escription.
 \newblock {\em CoRR}, abs/1411.4389, 2014.
 
 \bibitem{Maeda95}
@@ -187,7 +184,7 @@ Yutaka Maeda, Hiroaki Hirano, and Yakichi Kanata.
 
 \bibitem{Cauwen96}
 G.~Cauwenberghs.
-\newblock An analog vlsi recurrent neural network learning a continuous-time
+\newblock An analog {VLSI} recurrent neural network learning a continuous-time
   trajectory.
 \newblock {\em IEEE Transactions on Neural Networks}, 7(2):346--361, Mar 1996.
 
@@ -195,6 +192,12 @@ G.~Cauwenberghs.
 Y.~Maeda and Rui~J.P. de~Figueiredo.
 \newblock Learning rules for neuro-controller via simultaneous perturbation.
 \newblock {\em IEEE Transactions on Neural Networks}, 8(5):1119--1130, 1997.
+
+\bibitem{Tavear13}
+R.~Tavear, J.~Dedic, D.~Bokal, and A.~Zemva.
+\newblock Transforming the {LSTM} training algorithm for efficient {FPGA}
+  -based adaptive control of nonlinear dynamic systems.
+\newblock {\em Informacije MIDEM}, 43(2):131 -- 8, 2013.
 
 \bibitem{Yates13}
 Randy Yates.
@@ -205,11 +208,5 @@ Randy Yates.
 Jean-Michel Muller.
 \newblock {\em Elementary Functions: Algorithms and Implementation}.
 \newblock Birkhauser, 2nd edition edition, 2005.
-
-\bibitem{Weierstrass1885}
-K.~Weierstrass.
-\newblock Über die analytische darstellbarkeit sogenannter willkürlicher
-  functionen einer reellen veränderlichen.
-\newblock {\em Sitzungsberichte der Akademie zu Berlin}, pages 633--639, 1885.
 
 \end{thebibliography}

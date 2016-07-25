@@ -13,7 +13,7 @@ from scipy.signal import argrelmax
 
 # The target approximation function
 def f(x):
-    return np.tanh(x)
+    return 1/(1+np.exp(-x))
 
 # Nber of iterations
 numIter = 8

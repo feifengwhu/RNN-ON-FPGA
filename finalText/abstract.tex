@@ -1,24 +1,23 @@
 \chapter*{Resumo}
 \addcontentsline{toc}{chapter}{Resumo}
 
-Esta dissertação tem como objetivo a implementação em hardware, numa plataforma
-FPGA, de uma Rede Neuronal \textit{Long Short-Term Memory} (LSTM). 
+Esta dissertação tem como objetivo a implementação em FPGA de uma Rede Neuronal \textit{Long Short-Term Memory} (LSTM).
 
-As redes neuronais são uma das técnicas mais usadas na área da Aprendizagem Computacional Profunda para tarefas em
-que a programação explícita de \textit{software}, para além de ser impraticavelmente complexa, é necessário que haja uma qualidade
-de tomada de decisão semelhante ou superior à inteligência Humana. Esta rede em particular, a LSTM, é uma rede recursiva, na medida em que a saída
-da cada neurónio, num instante de tempo, \emph{também} serve de entrada no instante seguinte, e assim
-os elementos de memória nela presentes conseguem encontrar padrões também em sequências de dados,
+As redes neuronais são uma das técnicas mais usadas na área da Aprendizagem Computacional Profunda.
+Esta rede em particular, a LSTM, é uma rede recursiva, na medida em que a saída
+da cada neurónio, num instante de tempo, \emph{também} serve de entrada no instante de tempo seguinte, e
+os seus elementos de memória conseguem recordar padrões em sequências de dados,
 apresentando vantagens claras, neste campo, face a redes neuronais convencionais.
 
-As aplicações desta rede são inúmeras, como se poderá atestar no capítulo
+As aplicações das Redes Neuronais são inúmeras, como se poderá atestar no capítulo
 que faz o levantamento do estado-da-arte. Embora a implementação em \textit{software}
 seja a solução comum para todas estas arquitecturas, as implementações em \textit{hardware}
-são ainda poucas e os benefícios do paralelismo inerente a uma plataforma de \textit{hardware} dedicado (no caso deste trabalho, uma FPGA) não
-são aproveitados. É nesse enquadramento que este trabalho se posiciona, apresentando uma implementação inédita de LSTM em FPGA, fazendo apenas uso de 
-recursos internos à mesma, que tem uma melhoria de rapidez de processamento de cerca de 195 vezes face 
-a uma implementação \textit{software}, assim como a proposta de um circuito que permita fazer o 
-treino \textit{on-chip} da rede, usando um método de perturbações estocásticas simultâneas (SPSA).
+são ainda poucas e os benefícios do paralelismo inerente a uma plataforma de \textit{hardware} dedicado não
+são aproveitados. É nesse enquadramento que este trabalho se posiciona, apresentando uma implementação inédita de LSTM em FPGA,
+fazendo apenas uso de recursos internos à mesma, apresentando um \textit{speed-up} de 251 vezes face
+a uma implementação \textit{software} --- executada num Computador de alta \textit{performance} --- assim como a
+proposta de um circuito auxiliar que permita fazer o treino \textit{on-chip} da rede, usando um método de perturbações
+estocásticas simultâneas (SPSA).
 
 
 \chapter*{Abstract}
@@ -27,17 +26,15 @@ treino \textit{on-chip} da rede, usando um método de perturbações estocástic
 The objective of this Dissertation work is to implement a Long Short-Term Memory (LSTM) Neural
 Network in an FPGA platform.
 
-Neural Networks are one of the most commonly used techniques in Deep Learning for tasks
-where explicit programming of software, besides impractically complex, it is necessary that
-the quality of the decision making is similar, or even better, than that of Human intelligence.
-This particular type of network, LSTM, is a recursive network, given that the neuron outputs in a 
-given time is \emph{also} fed as the input in the next time instant, and that way their memory elements can
+Neural Networks are one of the most commonly used techniques in Deep Learning.
+This particular type of network, as LSTM Network, is a recursive network, given that the neuron outputs in a
+given time are \emph{also} fed as the input in the next time step and, that way, their memory elements can
 make sense of patterns within data sequences, unlike conventional neural networks.
 
 This type of network, as well as many other kinds of networks, have been profusely implemented
 in software, and their practical applications are plentiful, as one can attest
-in the State of the Art chapter. However, the benefits of the inherent parallelism offered by a dedicated hardware platform
-(in this work, an FPGA) are not availed, and there are relatively few the implementation of Machine Learning algorithms in
-these kind of platforms. It is within this grounding that this work positions itself, implementing an LSTM Network in FPGA, using only its internal resources, and achieving an $\times195$ increase in processing time when compared to a software implementation, and also proposes a circuit that will allow on-chip training for this network, using simultaneous stochastic perturbations (SPSA).
-
-
+in the State of the Art chapter. However, there are only few FPGA implementation of these algorithms, and the benefits of the inherent
+parallelism offered by a dedicated hardware platform are not availed. This work, then, implements an LSTM Network in FPGA, using only
+its internal resources, and achieving a $251 \times$ \textit{speed-up} in processing time when compared to a software implementation,
+running on a high-end Desktop. A circuit that will allow on-chip training for this network, using simultaneous stochastic perturbations (SPSA),
+is also proposed.

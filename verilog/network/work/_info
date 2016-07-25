@@ -72,14 +72,13 @@ n@_opt6
 R3
 R0
 T_opt7
-!s110 1468333029
-Vc0jYcUh09``8c3Ki338dK1
+!s110 1468805452
+VXeINhCM@?HYYJI;8K2[HD3
 R1
-=1-d43d7e359f7e-5784fbe5-6fe16-6b70
+=1-d43d7e359f7e-578c314c-8a9a4-321a
 R4
 n@_opt7
 R3
-R0
 T_opt8
 !s110 1466699513
 Vo9aBX@G@3d5b7V<hzBcEG1
@@ -90,16 +89,16 @@ n@_opt8
 R3
 R0
 T_opt9
-!s110 1467365708
-V@cEi7<P<fW<UL9fmcd]TX3
+!s110 1468701576
+Vfk8Ig^_R@I[VWL`o9ALZX0
 R1
-=1-50465de28cf7-5776394a-cd36a-118b
+=1-d43d7e359f7e-578a9b88-e2628-2f9d
 R4
 n@_opt9
 R3
 R0
 varray_prod
-Z5 !s110 1468358451
+Z5 !s110 1468805445
 !i10b 1
 !s100 A=>PV6O:Ual]JLS`<Iimf3
 IeUDVnzYGRg^CSf:Ll4W7z3
@@ -113,7 +112,7 @@ Z7 OL;L;10.4c_5;61
 r1
 !s85 0
 31
-Z8 !s108 1468358451.000000
+Z8 !s108 1468805445.000000
 Z9 !s107 weightRAM.v|top_network.v|test.v|tb_top_network.v|tb_network.v|tanh.v|sigmoid.v|network.v|gate.v|dot_prod.v|array_prod.v|
 Z10 !s90 array_prod.v|dot_prod.v|gate.v|network.v|sigmoid.v|tanh.v|tb_network.v|tb_top_network.v|test.v|top_network.v|weightRAM.v|
 !i113 0
@@ -121,11 +120,11 @@ Z11 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 vdot_prod
 R5
 !i10b 1
-!s100 IBO]=7Oh?8foI=L5k<AC30
-I74hR_=0=Lj7_Ja`NSiWOB3
+!s100 ]>=ZCDaZo>;]ZB]]7b6><3
+IzH<N3ISbJ56g?1][BcE9P3
 R6
 R0
-w1468333009
+w1468786124
 8dot_prod.v
 Fdot_prod.v
 L0 1
@@ -141,11 +140,11 @@ R11
 vgate
 R5
 !i10b 1
-!s100 ZfBU:1[S]UB::10lCYgee1
-I@h7_deO4U_PPE9nJ8U9@00
+!s100 [=`?R3R7__X[9?b<TQ=n@1
+II>`i`2Z:mH<N50`5<j]jM0
 R6
 R0
-w1466528056
+w1468701336
 8gate.v
 Fgate.v
 L0 1
@@ -161,11 +160,11 @@ R11
 vnetwork
 R5
 !i10b 1
-!s100 ?k8:3hkF3`E>LSC;=BCkV1
-Ig@g8Ri8GhBlPK??51bjnd2
+!s100 0=`4Pb^Q^VD2>U8c<?ODf2
+I@h3d]`O=6NKoWWeQ;JFY42
 R6
 R0
-w1466777987
+w1468700005
 8network.v
 Fnetwork.v
 L0 1
@@ -241,11 +240,11 @@ R11
 vtb_network
 R5
 !i10b 1
-!s100 daI?YB]F6g2i=IBf8L5[A1
-I3TiklkeVTNlO3[YT8mRAW2
+!s100 flP0>hf8d^8ATH3Uj>fU03
+IlZSdef7@GVHU;=CnROY2^0
 R6
 R0
-w1466969887
+w1468805012
 8tb_network.v
 Ftb_network.v
 L0 3
@@ -305,7 +304,7 @@ R5
 I8MB]Y]UaMQI_lSF01?>2S1
 R6
 R0
-w1468349264
+w1468786191
 8top_network.v
 Ftop_network.v
 L0 3

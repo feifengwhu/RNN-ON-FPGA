@@ -8,7 +8,7 @@
 \contentsline {figure}{\numberline {2.5}{\ignorespaces A complete LSTM neuron, with all the features as described in~\cite {Graves05}. Source:~\cite {Greff15}\relax }}{12}{figure.caption.11}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Block Diagram of the Non-linearity Calculator}}{24}{figure.caption.12}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Block Diagram of the Activation Function Calculator}}{24}{figure.caption.12}
 \contentsline {figure}{\numberline {4.2}{\ignorespaces The output of the HDL implementation of the activation functions}}{25}{figure.caption.13}
 \contentsline {figure}{\numberline {4.3}{\ignorespaces A column of the matrix that serves as input to the module}}{27}{figure.caption.14}
 \contentsline {figure}{\numberline {4.4}{\ignorespaces The $i$-th row multiplication unit of the Module}}{28}{figure.caption.15}
@@ -19,11 +19,12 @@
 \contentsline {figure}{\numberline {4.9}{\ignorespaces The output of the implementation of the presented PRNG (right). The LFSR is the left column, and the CA is at the center}}{34}{figure.caption.20}
 \contentsline {figure}{\numberline {4.10}{\ignorespaces Proposed Hardware Implementation of SPSA Training}}{36}{figure.caption.21}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces The maximum achievable clock frequency for several Network Sizes $N$ and resource sharing level $K_G$}}{38}{figure.caption.22}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces The number of DSP slices used for several Network Sizes $N$ and resource sharing level $K_G$}}{39}{figure.caption.23}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Power consumption estimates for several Network Sizes $N$ and resource sharing level $K_G$}}{40}{figure.caption.24}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Screenshot of the simulation run of a complete forward propagation for $N=8$ and $K_G=2$}}{43}{figure.caption.27}
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Millions of classifications per second of each design according to the network size $N$}}{44}{figure.caption.29}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces The maximum achievable clock frequency for several Network Sizes $N$ and resource sharing level $K_G$}}{39}{figure.caption.22}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces The number of DSP slices used for several Network Sizes $N$ and resource sharing level $K_G$}}{40}{figure.caption.23}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Power consumption estimates for several Network Sizes $N$ and resource sharing level $K_G$}}{41}{figure.caption.24}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Screenshot of the simulation run of a complete forward propagation for $N=8$ and $K_G=2$}}{45}{figure.caption.28}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Millions of classifications per second of each design according to the network size $N$}}{46}{figure.caption.30}
+\addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

@@ -1,0 +1,256 @@
+#-----------------------------------------------------------
+# Vivado v2015.4 (64-bit)
+# SW Build 1412921 on Wed Nov 18 09:44:32 MST 2015
+# IP Build 1412160 on Tue Nov 17 13:47:24 MST 2015
+# Start of session at: Sun Jul 17 20:58:59 2016
+# Process ID: 19856
+# Current directory: /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.runs/synth_8
+# Command line: vivado -log top_network.vds -mode batch -messageDb vivado.pb -notrace -source top_network.tcl
+# Log file: /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.runs/synth_8/top_network.vds
+# Journal file: /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.runs/synth_8/vivado.jou
+#-----------------------------------------------------------
+source top_network.tcl -notrace
+Command: synth_design -top top_network -part xc7z020clg484-1 -fanout_limit 400 -fsm_extraction one_hot -keep_equivalent_registers -resource_sharing off -no_lc -shreg_min_size 5 -max_bram 0 -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Vivado_Tcl 4-288] User specified maximum number of block RAM allowed in design is 0
+WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v:14]
+WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v:15]
+WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v:16]
+WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v:17]
+WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v:18]
+WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v:19]
+WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v:20]
+WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v:21]
+WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v:22]
+WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v:53]
+WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v:54]
+WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v:55]
+WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v:56]
+WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v:57]
+WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v:58]
+WARNING: [Synth 8-2507] parameter declaration becomes local in dot_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v:59]
+WARNING: [Synth 8-2507] parameter declaration becomes local in tanh with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/tanh.v:8]
+WARNING: [Synth 8-2507] parameter declaration becomes local in tanh with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/tanh.v:38]
+WARNING: [Synth 8-2507] parameter declaration becomes local in tanh with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/tanh.v:39]
+WARNING: [Synth 8-2507] parameter declaration becomes local in tanh with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/tanh.v:40]
+WARNING: [Synth 8-2507] parameter declaration becomes local in tanh with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/tanh.v:41]
+WARNING: [Synth 8-2507] parameter declaration becomes local in tanh with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/tanh.v:42]
+WARNING: [Synth 8-2507] parameter declaration becomes local in tanh with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/tanh.v:43]
+WARNING: [Synth 8-2507] parameter declaration becomes local in weightRAM with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/weightRAM.v:13]
+WARNING: [Synth 8-2507] parameter declaration becomes local in weightRAM with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/weightRAM.v:14]
+WARNING: [Synth 8-2507] parameter declaration becomes local in sigmoid with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/sigmoid.v:8]
+WARNING: [Synth 8-2507] parameter declaration becomes local in sigmoid with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/sigmoid.v:38]
+WARNING: [Synth 8-2507] parameter declaration becomes local in sigmoid with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/sigmoid.v:39]
+WARNING: [Synth 8-2507] parameter declaration becomes local in sigmoid with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/sigmoid.v:40]
+WARNING: [Synth 8-2507] parameter declaration becomes local in sigmoid with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/sigmoid.v:41]
+WARNING: [Synth 8-2507] parameter declaration becomes local in sigmoid with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/sigmoid.v:42]
+WARNING: [Synth 8-2507] parameter declaration becomes local in sigmoid with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/sigmoid.v:43]
+WARNING: [Synth 8-2507] parameter declaration becomes local in gate with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/gate.v:20]
+WARNING: [Synth 8-2507] parameter declaration becomes local in gate with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/gate.v:21]
+WARNING: [Synth 8-2507] parameter declaration becomes local in gate with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/gate.v:22]
+WARNING: [Synth 8-2507] parameter declaration becomes local in gate with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/gate.v:23]
+WARNING: [Synth 8-2507] parameter declaration becomes local in gate with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/gate.v:26]
+WARNING: [Synth 8-2507] parameter declaration becomes local in gate with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/gate.v:27]
+WARNING: [Synth 8-2507] parameter declaration becomes local in gate with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/gate.v:28]
+WARNING: [Synth 8-2507] parameter declaration becomes local in gate with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/gate.v:29]
+WARNING: [Synth 8-2507] parameter declaration becomes local in gate with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/gate.v:30]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:17]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:18]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:19]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:20]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:21]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:22]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:23]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:24]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:25]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:26]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:281]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:282]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:283]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:284]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:285]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:286]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:287]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:288]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:289]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:290]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:291]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:292]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:293]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:294]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:295]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:296]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:297]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:298]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:299]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:300]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:301]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:302]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:303]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:304]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:305]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:306]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:307]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:308]
+WARNING: [Synth 8-2507] parameter declaration becomes local in network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/network.v:309]
+WARNING: [Synth 8-2507] parameter declaration becomes local in array_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/array_prod.v:11]
+WARNING: [Synth 8-2507] parameter declaration becomes local in array_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/array_prod.v:12]
+WARNING: [Synth 8-2507] parameter declaration becomes local in array_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/array_prod.v:13]
+WARNING: [Synth 8-2507] parameter declaration becomes local in array_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/array_prod.v:14]
+WARNING: [Synth 8-2507] parameter declaration becomes local in array_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/array_prod.v:15]
+WARNING: [Synth 8-2507] parameter declaration becomes local in array_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/array_prod.v:16]
+WARNING: [Synth 8-2507] parameter declaration becomes local in array_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/array_prod.v:17]
+WARNING: [Synth 8-2507] parameter declaration becomes local in array_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/array_prod.v:18]
+WARNING: [Synth 8-2507] parameter declaration becomes local in array_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/array_prod.v:19]
+WARNING: [Synth 8-2507] parameter declaration becomes local in array_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/array_prod.v:20]
+WARNING: [Synth 8-2507] parameter declaration becomes local in array_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/array_prod.v:40]
+WARNING: [Synth 8-2507] parameter declaration becomes local in array_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/array_prod.v:41]
+WARNING: [Synth 8-2507] parameter declaration becomes local in array_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/array_prod.v:42]
+WARNING: [Synth 8-2507] parameter declaration becomes local in array_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/array_prod.v:43]
+WARNING: [Synth 8-2507] parameter declaration becomes local in array_prod with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/array_prod.v:44]
+WARNING: [Synth 8-2507] parameter declaration becomes local in top_network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/top_network.v:13]
+WARNING: [Synth 8-2507] parameter declaration becomes local in top_network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/top_network.v:14]
+WARNING: [Synth 8-2507] parameter declaration becomes local in top_network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/top_network.v:15]
+WARNING: [Synth 8-2507] parameter declaration becomes local in top_network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/top_network.v:16]
+WARNING: [Synth 8-2507] parameter declaration becomes local in top_network with formal parameter declaration list [/home/josefonseca/Documents/thesis/verilog/network/top_network.v:17]
+INFO: [Common 17-14] Message 'Synth 8-2507' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1037.531 ; gain = 191.926 ; free physical = 1993 ; free virtual = 8593
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'top_network' [/home/josefonseca/Documents/thesis/verilog/network/top_network.v:3]
+	Parameter INPUT_SZ bound to: 2 - type: integer 
+	Parameter HIDDEN_SZ bound to: 8 - type: integer 
+	Parameter OUTPUT_SZ bound to: 1 - type: integer 
+	Parameter QN bound to: 6 - type: integer 
+	Parameter QM bound to: 11 - type: integer 
+	Parameter DSP48_PER_ROW_G bound to: 2 - type: integer 
+	Parameter DSP48_PER_ROW_M bound to: 4 - type: integer 
+	Parameter BITWIDTH bound to: 18 - type: integer 
+	Parameter INPUT_BITWIDTH bound to: 36 - type: integer 
+	Parameter OUTPUT_BITWIDTH bound to: 18 - type: integer 
+	Parameter LAYER_BITWIDTH bound to: 144 - type: integer 
+	Parameter MAC_BITWIDTH bound to: 37 - type: integer 
+	Parameter ADDR_BITWIDTH bound to: 3 - type: integer 
+	Parameter ADDR_BITWIDTH_X bound to: 1 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'network' [/home/josefonseca/Documents/thesis/verilog/network/network.v:1]
+	Parameter INPUT_SZ bound to: 2 - type: integer 
+	Parameter HIDDEN_SZ bound to: 8 - type: integer 
+	Parameter OUTPUT_SZ bound to: 1 - type: integer 
+	Parameter QN bound to: 6 - type: integer 
+	Parameter QM bound to: 11 - type: integer 
+	Parameter DSP48_PER_ROW_G bound to: 2 - type: integer 
+	Parameter DSP48_PER_ROW_M bound to: 4 - type: integer 
+	Parameter BITWIDTH bound to: 18 - type: integer 
+	Parameter INPUT_BITWIDTH bound to: 36 - type: integer 
+	Parameter LAYER_BITWIDTH bound to: 144 - type: integer 
+	Parameter MULT_BITWIDTH bound to: 38 - type: integer 
+	Parameter ELEMWISE_BITWIDTH bound to: 304 - type: integer 
+	Parameter OUTPUT_BITWIDTH bound to: 18 - type: integer 
+	Parameter ADDR_BITWIDTH bound to: 3 - type: integer 
+	Parameter ADDR_BITWIDTH_X bound to: 1 - type: integer 
+	Parameter MUX_BITWIDTH bound to: 2 - type: integer 
+	Parameter N_DSP48 bound to: 2 - type: integer 
+	Parameter IDLE bound to: 5'b00000 
+	Parameter GATE_CALC_INIT bound to: 5'b00001 
+	Parameter GATE_CALC bound to: 5'b00010 
+	Parameter NON_LIN_1A_PIPE bound to: 5'b00011 
+	Parameter NON_LIN_1A bound to: 5'b00100 
+	Parameter NON_LIN_2A bound to: 5'b00101 
+	Parameter NON_LIN_3A bound to: 5'b00110 
+	Parameter NON_LIN_4A bound to: 5'b00111 
+	Parameter NON_LIN_5A bound to: 5'b01000 
+	Parameter ELEM_PROD_A_PIPE bound to: 5'b01001 
+	Parameter ELEM_PROD_A bound to: 5'b01010 
+	Parameter NON_LIN_1B_PIPE bound to: 5'b01011 
+	Parameter NON_LIN_1B bound to: 5'b01100 
+	Parameter NON_LIN_2B bound to: 5'b01101 
+	Parameter NON_LIN_3B bound to: 5'b01110 
+	Parameter NON_LIN_4B bound to: 5'b01111 
+	Parameter NON_LIN_5B bound to: 5'b10000 
+	Parameter ELEM_PROD_B_PIPE bound to: 5'b10001 
+	Parameter ELEM_PROD_B bound to: 5'b10010 
+	Parameter NON_LIN_1C_PIPE bound to: 5'b10011 
+	Parameter NON_LIN_1C_PIPE2 bound to: 5'b10100 
+	Parameter NON_LIN_1C bound to: 5'b10101 
+	Parameter NON_LIN_2C bound to: 5'b10110 
+	Parameter NON_LIN_3C bound to: 5'b10111 
+	Parameter NON_LIN_4C bound to: 5'b11000 
+	Parameter NON_LIN_5C bound to: 5'b11001 
+	Parameter ELEM_PROD_C_PIPE bound to: 5'b11010 
+	Parameter ELEM_PROD_C bound to: 5'b11011 
+	Parameter END bound to: 5'b11100 
+INFO: [Synth 8-638] synthesizing module 'sigmoid' [/home/josefonseca/Documents/thesis/verilog/network/sigmoid.v:1]
+	Parameter QN bound to: 6 - type: integer 
+	Parameter QM bound to: 11 - type: integer 
+	Parameter BITWIDTH bound to: 18 - type: integer 
+	Parameter IDLE bound to: 3'b000 
+	Parameter INTERVAL_CHOICE bound to: 3'b001 
+	Parameter COEF_CHOICE bound to: 3'b010 
+	Parameter MAC1 bound to: 3'b011 
+	Parameter MAC2 bound to: 3'b100 
+	Parameter END bound to: 3'b101 
+INFO: [Synth 8-256] done synthesizing module 'sigmoid' (1#1) [/home/josefonseca/Documents/thesis/verilog/network/sigmoid.v:1]
+INFO: [Synth 8-638] synthesizing module 'tanh' [/home/josefonseca/Documents/thesis/verilog/network/tanh.v:1]
+	Parameter QN bound to: 6 - type: integer 
+	Parameter QM bound to: 11 - type: integer 
+	Parameter BITWIDTH bound to: 18 - type: integer 
+	Parameter IDLE bound to: 3'b000 
+	Parameter INTERVAL_CHOICE bound to: 3'b001 
+	Parameter COEF_CHOICE bound to: 3'b010 
+	Parameter MAC1 bound to: 3'b011 
+	Parameter MAC2 bound to: 3'b100 
+	Parameter END bound to: 3'b101 
+INFO: [Synth 8-256] done synthesizing module 'tanh' (2#1) [/home/josefonseca/Documents/thesis/verilog/network/tanh.v:1]
+INFO: [Synth 8-638] synthesizing module 'gate' [/home/josefonseca/Documents/thesis/verilog/network/gate.v:1]
+	Parameter INPUT_SZ bound to: 2 - type: integer 
+	Parameter HIDDEN_SZ bound to: 8 - type: integer 
+	Parameter QN bound to: 6 - type: integer 
+	Parameter QM bound to: 11 - type: integer 
+	Parameter DSP48_PER_ROW bound to: 2 - type: integer 
+	Parameter BITWIDTH bound to: 18 - type: integer 
+	Parameter LAYER_BITWIDTH bound to: 144 - type: integer 
+	Parameter ADDR_BITWIDTH_X bound to: 1 - type: integer 
+	Parameter ADDR_BITWIDTH bound to: 3 - type: integer 
+	Parameter IDLE bound to: 3'b000 
+	Parameter CALC_XandY bound to: 3'b001 
+	Parameter SUM_X bound to: 3'b010 
+	Parameter CALC_Y bound to: 3'b011 
+	Parameter SUM_Y bound to: 3'b100 
+INFO: [Synth 8-638] synthesizing module 'dot_prod' [/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v:1]
+	Parameter NROW bound to: 8 - type: integer 
+	Parameter NCOL bound to: 2 - type: integer 
+	Parameter QN bound to: 6 - type: integer 
+	Parameter QM bound to: 11 - type: integer 
+	Parameter DSP48_PER_ROW bound to: 2 - type: integer 
+	Parameter BITWIDTH bound to: 18 - type: integer 
+	Parameter ADDR_BITWIDTH bound to: 1 - type: integer 
+	Parameter LAYER_BITWIDTH bound to: 144 - type: integer 
+	Parameter N_DSP48 bound to: 4 - type: integer 
+	Parameter DSP48_INPUT_BITWIDTH bound to: 72 - type: integer 
+	Parameter DSP48_OUTPUT_BITWIDTH bound to: 296 - type: integer 
+	Parameter MAC_BITWIDTH bound to: 37 - type: integer 
+	Parameter MULT_BITWIDTH bound to: 148 - type: integer 
+	Parameter MUX_BITWIDTH bound to: 1 - type: integer 
+	Parameter IDLE bound to: 3'b000 
+	Parameter IDLE_RDY bound to: 3'b001 
+	Parameter CALC bound to: 3'b010 
+	Parameter END_PIPE bound to: 3'b011 
+	Parameter END_PIPE2 bound to: 3'b100 
+	Parameter END_PIPE3 bound to: 3'b101 
+	Parameter END bound to: 3'b110 
+ERROR: [Synth 8-524] part-select [148:295] out of range of prefix 'mult' [/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v:105]
+ERROR: [Synth 8-285] failed synthesizing module 'dot_prod' [/home/josefonseca/Documents/thesis/verilog/network/dot_prod.v:1]
+ERROR: [Synth 8-285] failed synthesizing module 'gate' [/home/josefonseca/Documents/thesis/verilog/network/gate.v:1]
+ERROR: [Synth 8-285] failed synthesizing module 'network' [/home/josefonseca/Documents/thesis/verilog/network/network.v:1]
+ERROR: [Synth 8-285] failed synthesizing module 'top_network' [/home/josefonseca/Documents/thesis/verilog/network/top_network.v:3]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1062.781 ; gain = 217.176 ; free physical = 1968 ; free virtual = 8568
+---------------------------------------------------------------------------------
+RTL Elaboration failed
+INFO: [Common 17-83] Releasing license: Synthesis
+12 Infos, 100 Warnings, 0 Critical Warnings and 6 Errors encountered.
+synth_design failed
+ERROR: [Common 17-69] Command failed: Synthesis failed - please see the console or run log file for details
+INFO: [Common 17-206] Exiting Vivado at Sun Jul 17 20:59:08 2016...

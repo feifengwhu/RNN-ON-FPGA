@@ -2,8 +2,8 @@
 # Vivado v2015.4 (64-bit)
 # SW Build 1412921 on Wed Nov 18 09:44:32 MST 2015
 # IP Build 1412160 on Tue Nov 17 13:47:24 MST 2015
-# Start of session at: Fri Jun 24 18:02:32 2016
-# Process ID: 10780
+# Start of session at: Sun Jul 17 20:34:38 2016
+# Process ID: 10942
 # Current directory: /home/josefonseca/Documents/thesis/verilog/network
 # Command line: vivado
 # Log file: /home/josefonseca/Documents/thesis/verilog/network/vivado.log
@@ -11,211 +11,22 @@
 #-----------------------------------------------------------
 start_gui
 open_project /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.xpr
-create_run synth_6 -flow {Vivado Synthesis 2015} -strategy Flow_PerfOptimized_high
-current_run [get_runs synth_6]
-set_property -name {STEPS.SYNTH_DESIGN.ARGS.MORE OPTIONS} -value {-mode out_of_context} -objects [get_runs synth_6]
-launch_runs impl_6
-wait_on_run impl_6
-reset_run synth_6
-launch_runs impl_6
-wait_on_run impl_6
-reset_run synth_6
-launch_runs impl_6
-wait_on_run impl_6
-reset_run synth_6
-launch_runs impl_6
-wait_on_run impl_6
-reset_run synth_6
-launch_runs impl_6
-wait_on_run impl_6
-reset_run synth_6
-launch_runs impl_6
-wait_on_run impl_6
-reset_run synth_6
-launch_runs impl_6
-wait_on_run impl_6
-reset_run synth_6
-launch_runs impl_6
-wait_on_run impl_6
-reset_run synth_6
-launch_runs impl_6
-wait_on_run impl_6
-reset_run synth_6
-launch_runs impl_6
-wait_on_run impl_6
-reset_run synth_6
-launch_runs impl_6
-wait_on_run impl_6
-reset_run synth_6
-launch_runs impl_6
-wait_on_run impl_6
-reset_run synth_6
-launch_runs impl_6
-wait_on_run impl_6
-reset_run synth_6
-launch_runs impl_6
-wait_on_run impl_6
-open_run impl_6
-close_design
-reset_run synth_6
-launch_runs impl_6
-wait_on_run impl_6
-update_compile_order -fileset sources_1
-update_compile_order -fileset sources_1
-reset_run synth_6
-launch_runs impl_6
-wait_on_run impl_6
-reset_run synth_6
-launch_runs impl_6
-wait_on_run impl_6
-reset_run impl_6 -noclean_dir 
-reset_run synth_6
-launch_runs impl_6
-wait_on_run impl_6
-reset_run synth_6
-launch_runs impl_6
-wait_on_run impl_6
-create_run impl_7 -parent_run synth_6 -flow {Vivado Implementation 2015} -strategy {Vivado Implementation Defaults}
-current_run [get_runs impl_7]
-set_property strategy Performance_ExplorePostRoutePhysOpt [get_runs impl_7]
-launch_runs impl_7
-wait_on_run impl_7
-reset_run synth_6
-launch_runs impl_7
-wait_on_run impl_7
-reset_run synth_6
-launch_runs impl_7
-wait_on_run impl_7
-reset_run synth_6
-launch_runs impl_7
-wait_on_run impl_7
-reset_run synth_6
-launch_runs impl_7
-wait_on_run impl_7
-reset_run synth_6
-launch_runs impl_7
-wait_on_run impl_7
-reset_run synth_6
-launch_runs impl_7
-wait_on_run impl_7
-reset_run synth_6
-launch_runs impl_7
-wait_on_run impl_7
-reset_run synth_6
-launch_runs synth_6
-wait_on_run synth_6
-launch_runs impl_7
-wait_on_run impl_7
-reset_run synth_6
-launch_runs impl_7
-wait_on_run impl_7
-reset_run synth_6
-launch_runs impl_7
-wait_on_run impl_7
-reset_run synth_6
-launch_runs impl_7
-wait_on_run impl_7
-reset_run synth_6
-launch_runs impl_7
-wait_on_run impl_7
-reset_run synth_6
-launch_runs impl_7
-wait_on_run impl_7
-reset_run synth_6
-launch_runs impl_7
-wait_on_run impl_7
-reset_run synth_6
-launch_runs impl_7
-wait_on_run impl_7
-reset_run synth_6
-launch_runs impl_7
-wait_on_run impl_7
-reset_run synth_6
-launch_runs impl_7
-wait_on_run impl_7
-reset_run synth_6
-launch_runs impl_7
-wait_on_run impl_7
-reset_run synth_6
-launch_runs impl_7
-wait_on_run impl_7
-reset_run synth_6
-launch_runs impl_7
-wait_on_run impl_7
-reset_run synth_6
-launch_runs impl_7
-wait_on_run impl_7
-reset_run synth_6
-launch_runs impl_7
-wait_on_run impl_7
-reset_run synth_6
-launch_runs impl_7
-wait_on_run impl_7
-reset_run synth_6
-launch_runs impl_7
-wait_on_run impl_7
-reset_run synth_6
-launch_runs impl_7
-wait_on_run impl_7
-reset_run synth_6
-launch_runs impl_7
-wait_on_run impl_7
-reset_run synth_6
-launch_runs impl_7
-wait_on_run impl_7
-reset_run synth_6
-launch_runs impl_7
-wait_on_run impl_7
-reset_run impl_7
-launch_runs impl_7
-wait_on_run impl_7
-reset_run synth_6
-launch_runs impl_7
-wait_on_run impl_7
-reset_run synth_6
-launch_runs impl_7
-wait_on_run impl_7
-reset_run synth_6
-launch_runs impl_7
-wait_on_run impl_7
-reset_run synth_6
-launch_runs impl_7
-wait_on_run impl_7
-create_run synth_7 -flow {Vivado Synthesis 2015} -strategy Flow_PerfOptimized_high
-set_property -name {STEPS.SYNTH_DESIGN.ARGS.MORE OPTIONS} -value {-mode out_of_context} -objects [get_runs synth_7]
-current_run [get_runs synth_7]
-set_property strategy Flow_AreaOptimized_high [get_runs synth_7]
-launch_runs impl_8
-wait_on_run impl_8
-current_run [get_runs synth_6]
-current_run [get_runs impl_7]
-reset_run synth_6
-launch_runs impl_7
-wait_on_run impl_7
-reset_run synth_6
-launch_runs impl_7
-wait_on_run impl_7
-reset_run synth_6
-launch_runs impl_7
-wait_on_run impl_7
-reset_run synth_6
-launch_runs impl_7
-wait_on_run impl_7
-reset_run synth_6
-launch_runs impl_7
-wait_on_run impl_7
-reset_run synth_6
-launch_runs impl_7
-wait_on_run impl_7
-reset_run synth_6
-launch_runs impl_7
-wait_on_run impl_7
-reset_run synth_6
-launch_runs impl_7
-wait_on_run impl_7
-reset_run synth_6
-launch_runs impl_7
-wait_on_run impl_7
-reset_run synth_6
-launch_runs impl_7
-wait_on_run impl_7
+reset_run synth_8
+launch_runs impl_10
+wait_on_run impl_10
+reset_run synth_8
+launch_runs impl_10
+wait_on_run impl_10
+reset_run synth_8
+launch_runs impl_10
+wait_on_run impl_10
+reset_run synth_8 -noclean_dir 
+launch_runs impl_10
+wait_on_run impl_10
+reset_run synth_8
+launch_runs impl_10
+wait_on_run impl_10
+reset_run synth_8
+set_property strategy Flow_AreaOptimized_high [get_runs synth_8]
+launch_runs impl_10
+wait_on_run impl_10

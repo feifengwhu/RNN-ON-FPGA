@@ -56,10 +56,10 @@ arrow from Signchg.w to RowFF.E1
 arrow from RowFF.W1 right to (PrevYSum.s.x,RowFF.W1.y) then up to PrevYSum.s
 DiffY: diff at PrevYSum+(0,elen)
 arrow from DiffY.s to PrevYSum.n
-arrow from DiffY.w-(0.3,0) to DiffY.w "$\mathbf{y}^{(t)}$" above
-arrow from DiffY.e+(0.3,0) to DiffY.e "$\mathbf{y}^{(t)}_p$" above ljust
+arrow from DiffY.w-(0.3,0) to DiffY.w "$J^{(t)}$" above
+arrow from DiffY.e+(0.3,0) to DiffY.e "$J^{(t)}_p$" above ljust
 
-Shift: box wid 0.75 ht 0.45 at PrevYSum.e+(0.85*elen,0) "Shift Right" "by $(\alpha-\beta)$"
+Shift: box wid 0.75 ht 0.45 at PrevYSum.e+(0.85*elen,0) "Shift Right" "by $(\beta-\alpha)$"
 arrow from PrevYSum.e to Shift.w
 arrow from Shift.e to Wram.w
 UpdateMux: Mux(2) at PrevYSum-(0,3*elen)

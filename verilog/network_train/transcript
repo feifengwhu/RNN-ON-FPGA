@@ -1,22 +1,3 @@
-# vsim -c -do "run -all" tb_network 
-# Start time: 19:40:58 on Jul 10,2016
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# ** Warning: network.v(228): (vopt-2241) Connection width does not match width of port 'addressIn'. The port definition is at: weightRAM.v(4).
-# ** Warning: network.v(229): (vopt-2241) Connection width does not match width of port 'addressIn'. The port definition is at: weightRAM.v(4).
-# ** Warning: network.v(233): (vopt-2241) Connection width does not match width of port 'addressIn'. The port definition is at: weightRAM.v(4).
-# ** Warning: network.v(234): (vopt-2241) Connection width does not match width of port 'addressIn'. The port definition is at: weightRAM.v(4).
-# ** Warning: network.v(238): (vopt-2241) Connection width does not match width of port 'addressIn'. The port definition is at: weightRAM.v(4).
-# ** Warning: network.v(239): (vopt-2241) Connection width does not match width of port 'addressIn'. The port definition is at: weightRAM.v(4).
-# ** Warning: network.v(243): (vopt-2241) Connection width does not match width of port 'addressIn'. The port definition is at: weightRAM.v(4).
-# ** Warning: network.v(244): (vopt-2241) Connection width does not match width of port 'addressIn'. The port definition is at: weightRAM.v(4).
-# ** Warning: network.v(275): (vopt-2241) Connection width does not match width of port 'addressOut'. The port definition is at: weightRAM.v(5).
-# ** Warning: network.v(276): (vopt-2241) Connection width does not match width of port 'addressOut'. The port definition is at: weightRAM.v(5).
-# ** Warning: network.v(277): (vopt-2241) Connection width does not match width of port 'addressOut'. The port definition is at: weightRAM.v(5).
-# ** Warning: network.v(278): (vopt-2241) Connection width does not match width of port 'addressOut'. The port definition is at: weightRAM.v(5).
-# ** Warning: network.v(279): (vopt-2241) Connection width does not match width of port 'addressOut'. The port definition is at: weightRAM.v(5).
-# ** Warning: network.v(280): (vopt-2241) Connection width does not match width of port 'addressOut'. The port definition is at: weightRAM.v(5).
-# ** Warning: network.v(281): (vopt-2241) Connection width does not match width of port 'addressOut'. The port definition is at: weightRAM.v(5).
-# ** Warning: network.v(282): (vopt-2241) Connection width does not match width of port 'addressOut'. The port definition is at: weightRAM.v(5).
 # //  Questa Sim-64
 # //  Version 10.4c_5 linux_x86_64 Nov 14 2015
 # //
@@ -32,215 +13,128 @@
 # //  FURTHERMORE, THIS INFORMATION IS PROHIBITED FROM DISCLOSURE UNDER
 # //  THE TRADE SECRETS ACT, 18 U.S.C. SECTION 1905.
 # //
+vsim -voptargs=+acc work.tb_network
+# vsim -voptargs="+acc" work.tb_network 
+# Start time: 20:11:39 on Jul 17,2016
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # Loading work.tb_network(fast)
-# run -all
+# Loading work.network(fast)
+# Loading work.gate(fast)
+# Loading work.dot_prod(fast)
+# Loading work.dot_prod(fast__1)
+# Loading work.weightRAM(fast)
+# Loading work.weightRAM(fast__1)
+# Loading work.sigmoid(fast)
+# Loading work.tanh(fast)
+# Loading work.prng(fast)
+# Loading work.weightRAM(fast__2)
+# Loading work.weightRAM(fast__3)
+# Loading work.array_prod(fast)
+# ** Warning: (vsim-3015) network.v(228): [PCDPC] - Port size (1) does not match connection size (2) for port 'addressIn'. The port definition is at: weightRAM.v(4).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_network/LSTM_LAYER/WRAM_Z_X File: weightRAM.v
+# ** Warning: (vsim-3015) network.v(229): [PCDPC] - Port size (3) does not match connection size (4) for port 'addressIn'. The port definition is at: weightRAM.v(4).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_network/LSTM_LAYER/WRAM_Z_Y File: weightRAM.v
+# ** Warning: (vsim-3015) network.v(233): [PCDPC] - Port size (1) does not match connection size (2) for port 'addressIn'. The port definition is at: weightRAM.v(4).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_network/LSTM_LAYER/WRAM_I_X File: weightRAM.v
+# ** Warning: (vsim-3015) network.v(234): [PCDPC] - Port size (3) does not match connection size (4) for port 'addressIn'. The port definition is at: weightRAM.v(4).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_network/LSTM_LAYER/WRAM_I_Y File: weightRAM.v
+# ** Warning: (vsim-3015) network.v(238): [PCDPC] - Port size (1) does not match connection size (2) for port 'addressIn'. The port definition is at: weightRAM.v(4).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_network/LSTM_LAYER/WRAM_F_X File: weightRAM.v
+# ** Warning: (vsim-3015) network.v(239): [PCDPC] - Port size (3) does not match connection size (4) for port 'addressIn'. The port definition is at: weightRAM.v(4).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_network/LSTM_LAYER/WRAM_F_Y File: weightRAM.v
+# ** Warning: (vsim-3015) network.v(243): [PCDPC] - Port size (1) does not match connection size (2) for port 'addressIn'. The port definition is at: weightRAM.v(4).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_network/LSTM_LAYER/WRAM_O_X File: weightRAM.v
+# ** Warning: (vsim-3015) network.v(244): [PCDPC] - Port size (3) does not match connection size (4) for port 'addressIn'. The port definition is at: weightRAM.v(4).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_network/LSTM_LAYER/WRAM_O_Y File: weightRAM.v
+# ** Warning: (vsim-3015) network.v(275): [PCDPC] - Port size (1) does not match connection size (2) for port 'addressOut'. The port definition is at: weightRAM.v(5).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_network/LSTM_LAYER/PRAM_Z_X File: weightRAM.v
+# ** Warning: (vsim-3015) network.v(276): [PCDPC] - Port size (3) does not match connection size (4) for port 'addressOut'. The port definition is at: weightRAM.v(5).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_network/LSTM_LAYER/PRAM_Z_Y File: weightRAM.v
+# ** Warning: (vsim-3015) network.v(277): [PCDPC] - Port size (1) does not match connection size (2) for port 'addressOut'. The port definition is at: weightRAM.v(5).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_network/LSTM_LAYER/PRAM_I_X File: weightRAM.v
+# ** Warning: (vsim-3015) network.v(278): [PCDPC] - Port size (3) does not match connection size (4) for port 'addressOut'. The port definition is at: weightRAM.v(5).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_network/LSTM_LAYER/PRAM_I_Y File: weightRAM.v
+# ** Warning: (vsim-3015) network.v(279): [PCDPC] - Port size (1) does not match connection size (2) for port 'addressOut'. The port definition is at: weightRAM.v(5).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_network/LSTM_LAYER/PRAM_F_X File: weightRAM.v
+# ** Warning: (vsim-3015) network.v(280): [PCDPC] - Port size (3) does not match connection size (4) for port 'addressOut'. The port definition is at: weightRAM.v(5).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_network/LSTM_LAYER/PRAM_F_Y File: weightRAM.v
+# ** Warning: (vsim-3015) network.v(281): [PCDPC] - Port size (1) does not match connection size (2) for port 'addressOut'. The port definition is at: weightRAM.v(5).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_network/LSTM_LAYER/PRAM_O_X File: weightRAM.v
+# ** Warning: (vsim-3015) network.v(282): [PCDPC] - Port size (3) does not match connection size (4) for port 'addressOut'. The port definition is at: weightRAM.v(5).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_network/LSTM_LAYER/PRAM_O_Y File: weightRAM.v
+do wave.do
+run -all
 # Average Wrong bits: 0.0000
-# Average Wrong bits: 3.8560
-# Average Wrong bits: 3.8420
-# Average Wrong bits: 3.8990
-# Average Wrong bits: 3.8310
-# Average Wrong bits: 3.7340
-# Average Wrong bits: 3.7150
-# Average Wrong bits: 3.8510
-# Average Wrong bits: 3.9570
-# Average Wrong bits: 3.8460
-# Average Wrong bits: 3.8370
-# Average Wrong bits: 3.8810
-# Average Wrong bits: 3.6440
-# Average Wrong bits: 3.7270
-# Average Wrong bits: 3.7980
-# Average Wrong bits: 3.6280
-# Average Wrong bits: 3.6460
-# Average Wrong bits: 3.7780
-# Average Wrong bits: 3.4640
-# Average Wrong bits: 3.8040
-# Average Wrong bits: 3.9610
-# Average Wrong bits: 3.6020
-# Average Wrong bits: 3.8170
-# Average Wrong bits: 3.9440
-# Average Wrong bits: 3.9910
-# Average Wrong bits: 3.8900
-# Average Wrong bits: 3.6260
-# Average Wrong bits: 3.8620
-# Average Wrong bits: 3.6020
-# Average Wrong bits: 3.3070
-# Average Wrong bits: 3.7680
-# Average Wrong bits: 3.8260
-# Average Wrong bits: 3.6730
-# Average Wrong bits: 3.9100
-# Average Wrong bits: 3.7150
-# Average Wrong bits: 3.8390
-# Average Wrong bits: 3.7550
-# Average Wrong bits: 3.9930
-# Average Wrong bits: 4.0690
-# Average Wrong bits: 3.7690
-# Average Wrong bits: 4.1150
-# Average Wrong bits: 3.8500
-# Average Wrong bits: 3.6940
-# Average Wrong bits: 3.4690
-# Average Wrong bits: 3.6900
-# Average Wrong bits: 3.9460
-# Average Wrong bits: 3.7520
-# Average Wrong bits: 3.5460
-# Average Wrong bits: 3.6820
-# Average Wrong bits: 3.6480
-# Average Wrong bits: 3.6530
-# Average Wrong bits: 3.8430
-# Average Wrong bits: 3.6520
-# Average Wrong bits: 3.8480
-# Average Wrong bits: 3.9880
-# Average Wrong bits: 3.7040
-# Average Wrong bits: 3.6970
-# Average Wrong bits: 3.2400
-# Average Wrong bits: 3.6120
-# Average Wrong bits: 3.7400
-# Average Wrong bits: 3.8840
-# Average Wrong bits: 3.7920
-# Average Wrong bits: 3.7750
-# Average Wrong bits: 3.6590
-# Average Wrong bits: 3.4320
-# Average Wrong bits: 3.6440
-# Average Wrong bits: 3.9060
-# Average Wrong bits: 3.5380
-# Average Wrong bits: 3.7250
-# Average Wrong bits: 3.3900
-# Average Wrong bits: 3.5430
-# Average Wrong bits: 3.7310
-# Average Wrong bits: 3.4580
-# Average Wrong bits: 3.4770
-# Average Wrong bits: 3.7320
-# Average Wrong bits: 3.5890
-# Average Wrong bits: 3.5170
-# Average Wrong bits: 3.5710
-# Average Wrong bits: 3.6090
-# Average Wrong bits: 3.5800
-# Average Wrong bits: 3.7290
-# Average Wrong bits: 3.7960
-# Average Wrong bits: 3.8010
-# Average Wrong bits: 3.8860
-# Average Wrong bits: 3.9210
-# Average Wrong bits: 4.1320
-# Average Wrong bits: 3.6450
-# Average Wrong bits: 3.7010
-# Average Wrong bits: 3.8160
-# Average Wrong bits: 4.0320
-# Average Wrong bits: 3.7940
-# Average Wrong bits: 3.6750
-# Average Wrong bits: 3.8710
-# Average Wrong bits: 3.7170
-# Average Wrong bits: 3.6870
-# Average Wrong bits: 3.7380
-# Average Wrong bits: 3.9150
-# Average Wrong bits: 3.7370
-# Average Wrong bits: 3.9910
-# Average Wrong bits: 3.9350
-# Average Wrong bits: 3.7570
-# Average Wrong bits: 3.9090
-# Average Wrong bits: 3.7640
-# Average Wrong bits: 4.0010
-# Average Wrong bits: 3.5600
-# Average Wrong bits: 3.8240
-# Average Wrong bits: 3.3120
-# Average Wrong bits: 3.8460
-# Average Wrong bits: 3.7380
-# Average Wrong bits: 3.7670
-# Average Wrong bits: 3.7990
-# Average Wrong bits: 3.7660
-# Average Wrong bits: 4.1540
-# Average Wrong bits: 3.8660
-# Average Wrong bits: 3.6440
-# Average Wrong bits: 3.8060
-# Average Wrong bits: 3.7200
-# Average Wrong bits: 3.5630
-# Average Wrong bits: 3.4380
-# Average Wrong bits: 3.3460
-# Average Wrong bits: 3.7570
-# Average Wrong bits: 3.6200
-# Average Wrong bits: 3.8200
-# Average Wrong bits: 4.0170
-# Average Wrong bits: 3.8960
-# Average Wrong bits: 3.7780
-# Average Wrong bits: 3.9250
-# Average Wrong bits: 3.8870
-# Average Wrong bits: 3.7530
-# Average Wrong bits: 3.7310
-# Average Wrong bits: 3.6790
-# Average Wrong bits: 3.8180
-# Average Wrong bits: 3.8550
-# Average Wrong bits: 3.7420
-# Average Wrong bits: 3.6080
-# Average Wrong bits: 3.3480
-# Average Wrong bits: 3.7030
-# Average Wrong bits: 3.8760
-# Average Wrong bits: 3.8340
-# Average Wrong bits: 3.8600
-# Average Wrong bits: 3.6250
-# Average Wrong bits: 3.6520
-# Average Wrong bits: 4.0350
-# Average Wrong bits: 3.7150
-# Average Wrong bits: 4.0240
-# Average Wrong bits: 3.8490
-# Average Wrong bits: 3.9280
-# Average Wrong bits: 3.7110
-# Average Wrong bits: 3.6800
-# Average Wrong bits: 3.8980
-# Average Wrong bits: 3.8060
-# Average Wrong bits: 3.5310
-# Average Wrong bits: 3.5180
-# Average Wrong bits: 3.5860
-# Average Wrong bits: 3.9170
-# Average Wrong bits: 3.6630
-# Average Wrong bits: 3.6190
-# Average Wrong bits: 3.6590
-# Average Wrong bits: 3.9040
-# Average Wrong bits: 3.6400
-# Average Wrong bits: 3.5290
-# Average Wrong bits: 3.4270
-# Average Wrong bits: 3.5420
-# Average Wrong bits: 3.5360
-# Average Wrong bits: 3.7080
-# Average Wrong bits: 3.5360
-# Average Wrong bits: 3.7620
-# Average Wrong bits: 3.5830
-# Average Wrong bits: 3.6370
-# Average Wrong bits: 3.2230
-# Average Wrong bits: 3.3320
-# Average Wrong bits: 3.2090
-# Average Wrong bits: 3.6900
-# Average Wrong bits: 3.6360
-# Average Wrong bits: 3.7110
-# Average Wrong bits: 3.7760
-# Average Wrong bits: 3.9870
-# Average Wrong bits: 4.0190
-# Average Wrong bits: 3.7900
-# Average Wrong bits: 3.5890
-# Average Wrong bits: 3.8710
-# Average Wrong bits: 3.7970
-# Average Wrong bits: 3.9610
-# Average Wrong bits: 4.0440
-# Average Wrong bits: 3.6290
-# Average Wrong bits: 3.6460
-# Average Wrong bits: 3.9820
-# Average Wrong bits: 3.9120
-# Average Wrong bits: 3.6500
-# Average Wrong bits: 3.7500
-# Average Wrong bits: 3.9220
-# Average Wrong bits: 3.7860
-# Average Wrong bits: 3.7780
-# Average Wrong bits: 3.7910
-# Average Wrong bits: 3.8990
-# Average Wrong bits: 3.8010
-# Average Wrong bits: 4.0270
-# Average Wrong bits: 3.8400
-# Average Wrong bits: 3.4890
-# Average Wrong bits: 3.3870
-# ** Note: $stop    : tb_network.v(303)
-#    Time: 240400005 ns  Iteration: 3  Instance: /tb_network
-# Break at tb_network.v line 303
-# Stopped at tb_network.v line 303
-# FATAL ERROR: License connection lost and unable to reconnect after multiple attempts.
-# End time: 22:57:20 on Jul 10,2016, Elapsed time: 3:16:22
+# Average Wrong bits: 0.0350
+# Average Wrong bits: 0.0440
+vsim -voptargs=+acc work.tb_network
+# End time: 20:14:25 on Jul 17,2016, Elapsed time: 0:02:46
 # Errors: 0, Warnings: 16
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           # FATAL ERROR: License connection lost and unable to reconnect after multiple attempts.
-# End time: 22:55:37 on Jul 10,2016, Elapsed time: 4:24:59
+# vsim -voptargs="+acc" work.tb_network 
+# Start time: 20:14:25 on Jul 17,2016
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# Loading work.tb_network(fast)
+# Loading work.network(fast)
+# Loading work.gate(fast)
+# Loading work.dot_prod(fast)
+# Loading work.dot_prod(fast__1)
+# Loading work.weightRAM(fast)
+# Loading work.weightRAM(fast__1)
+# Loading work.sigmoid(fast)
+# Loading work.tanh(fast)
+# Loading work.prng(fast)
+# Loading work.weightRAM(fast__2)
+# Loading work.weightRAM(fast__3)
+# Loading work.array_prod(fast)
+# ** Warning: (vsim-3015) network.v(228): [PCDPC] - Port size (1) does not match connection size (2) for port 'addressIn'. The port definition is at: weightRAM.v(4).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_network/LSTM_LAYER/WRAM_Z_X File: weightRAM.v
+# ** Warning: (vsim-3015) network.v(229): [PCDPC] - Port size (3) does not match connection size (4) for port 'addressIn'. The port definition is at: weightRAM.v(4).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_network/LSTM_LAYER/WRAM_Z_Y File: weightRAM.v
+# ** Warning: (vsim-3015) network.v(233): [PCDPC] - Port size (1) does not match connection size (2) for port 'addressIn'. The port definition is at: weightRAM.v(4).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_network/LSTM_LAYER/WRAM_I_X File: weightRAM.v
+# ** Warning: (vsim-3015) network.v(234): [PCDPC] - Port size (3) does not match connection size (4) for port 'addressIn'. The port definition is at: weightRAM.v(4).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_network/LSTM_LAYER/WRAM_I_Y File: weightRAM.v
+# ** Warning: (vsim-3015) network.v(238): [PCDPC] - Port size (1) does not match connection size (2) for port 'addressIn'. The port definition is at: weightRAM.v(4).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_network/LSTM_LAYER/WRAM_F_X File: weightRAM.v
+# ** Warning: (vsim-3015) network.v(239): [PCDPC] - Port size (3) does not match connection size (4) for port 'addressIn'. The port definition is at: weightRAM.v(4).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_network/LSTM_LAYER/WRAM_F_Y File: weightRAM.v
+# ** Warning: (vsim-3015) network.v(243): [PCDPC] - Port size (1) does not match connection size (2) for port 'addressIn'. The port definition is at: weightRAM.v(4).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_network/LSTM_LAYER/WRAM_O_X File: weightRAM.v
+# ** Warning: (vsim-3015) network.v(244): [PCDPC] - Port size (3) does not match connection size (4) for port 'addressIn'. The port definition is at: weightRAM.v(4).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_network/LSTM_LAYER/WRAM_O_Y File: weightRAM.v
+# ** Warning: (vsim-3015) network.v(275): [PCDPC] - Port size (1) does not match connection size (2) for port 'addressOut'. The port definition is at: weightRAM.v(5).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_network/LSTM_LAYER/PRAM_Z_X File: weightRAM.v
+# ** Warning: (vsim-3015) network.v(276): [PCDPC] - Port size (3) does not match connection size (4) for port 'addressOut'. The port definition is at: weightRAM.v(5).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_network/LSTM_LAYER/PRAM_Z_Y File: weightRAM.v
+# ** Warning: (vsim-3015) network.v(277): [PCDPC] - Port size (1) does not match connection size (2) for port 'addressOut'. The port definition is at: weightRAM.v(5).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_network/LSTM_LAYER/PRAM_I_X File: weightRAM.v
+# ** Warning: (vsim-3015) network.v(278): [PCDPC] - Port size (3) does not match connection size (4) for port 'addressOut'. The port definition is at: weightRAM.v(5).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_network/LSTM_LAYER/PRAM_I_Y File: weightRAM.v
+# ** Warning: (vsim-3015) network.v(279): [PCDPC] - Port size (1) does not match connection size (2) for port 'addressOut'. The port definition is at: weightRAM.v(5).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_network/LSTM_LAYER/PRAM_F_X File: weightRAM.v
+# ** Warning: (vsim-3015) network.v(280): [PCDPC] - Port size (3) does not match connection size (4) for port 'addressOut'. The port definition is at: weightRAM.v(5).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_network/LSTM_LAYER/PRAM_F_Y File: weightRAM.v
+# ** Warning: (vsim-3015) network.v(281): [PCDPC] - Port size (1) does not match connection size (2) for port 'addressOut'. The port definition is at: weightRAM.v(5).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_network/LSTM_LAYER/PRAM_O_X File: weightRAM.v
+# ** Warning: (vsim-3015) network.v(282): [PCDPC] - Port size (3) does not match connection size (4) for port 'addressOut'. The port definition is at: weightRAM.v(5).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_network/LSTM_LAYER/PRAM_O_Y File: weightRAM.v
+do wave.do
+run -all
+# Average Wrong bits: 0.0000
+# Average Wrong bits: 0.0330
+# Average Wrong bits: 2.5790
+# Average Wrong bits: 3.6960
+# Average Wrong bits: 3.5120
+# Average Wrong bits: 3.4460
+# Average Wrong bits: 3.6200
+# Average Wrong bits: 3.7230
+# Average Wrong bits: 3.6370
+# Average Wrong bits: 3.5430
+# Average Wrong bits: 3.6210
+# Average Wrong bits: 3.6120
+# Average Wrong bits: 3.5480
+# Average Wrong bits: 3.5910
+# Average Wrong bits: 3.8280
+# Average Wrong bits: 3.7160
+# End time: 20:34:04 on Jul 17,2016, Elapsed time: 0:19:39
 # Errors: 0, Warnings: 16

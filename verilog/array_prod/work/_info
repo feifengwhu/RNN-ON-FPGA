@@ -9,31 +9,39 @@ z2
 cModel Technology
 Z0 d/home/josefonseca/Documents/thesis/verilog/array_prod
 T_opt
-!s110 1466542802
-V4cOoz3iRz^lAAJ]aCjAlc1
-Z1 04 8 4 work tb_array fast 0
-=1-d43d7e359f7e-5769aad2-5692e-1a29
-Z2 o-quiet -auto_acc_if_foreign -work work +acc
+!s110 1468603539
+V7l9GY;7f@B0Y0GaC8F>331
+04 10 4 work array_prod fast 0
+=1-d43d7e359f7e-57891c93-c16d2-18c4
+Z1 o-quiet -auto_acc_if_foreign -work work
 n@_opt
-Z3 OL;O;10.4c_5;61
+Z2 OL;O;10.4c_5;61
 R0
 T_opt1
-!s110 1466542870
-V@6jiQ3ziQ@j]0XSP4eHZc1
-R1
-=1-d43d7e359f7e-5769ab16-6e705-1a6e
-R2
+!s110 1468604476
+VbHQn0PnN6h49FUU91zC>;3
+Z3 04 8 4 work tb_array fast 0
+=1-d43d7e359f7e-5789203c-bfadb-1ccd
+o-quiet -auto_acc_if_foreign -work work +acc
 n@_opt1
+R2
+T_opt2
+!s110 1468603820
+VnEdKb[bL`KNnO:@UMmWW>3
 R3
+=1-d43d7e359f7e-57891dac-46f43-19e5
+R1
+n@_opt2
+R2
 R0
 varray_prod
-Z4 !s110 1466543061
+Z4 !s110 1468604469
 !i10b 1
 !s100 A=>PV6O:Ual]JLS`<Iimf3
 IeUDVnzYGRg^CSf:Ll4W7z3
 Z5 VDg1SIo80bB@j0V0VzS_@n1
 R0
-w1466542853
+w1468603962
 8array_prod.v
 Farray_prod.v
 L0 1
@@ -41,7 +49,7 @@ Z6 OL;L;10.4c_5;61
 r1
 !s85 0
 31
-Z7 !s108 1466543061.000000
+Z7 !s108 1468604468.000000
 Z8 !s107 tb_array.v|array_prod.v|
 Z9 !s90 array_prod.v|tb_array.v|
 !i113 0
@@ -49,11 +57,11 @@ Z10 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 vtb_array
 R4
 !i10b 1
-!s100 BWf1MI5];6QA17@KCkRlM2
-IM;nU7h4L7L@;NhjoUU:m<3
+!s100 bc=IhlQJ3zkLG]=JF]VZi3
+I7Si2@k@jE[242=`k<a4^U2
 R5
 R0
-w1465990204
+w1468604465
 8tb_array.v
 Ftb_array.v
 L0 3

@@ -27,6 +27,6 @@ read_verilog -library xil_defaultlib {
 read_xdc /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.srcs/lstm_const/new/timing.xdc
 set_property used_in_implementation false [get_files /home/josefonseca/Documents/thesis/verilog/network/Synth/Synth.srcs/lstm_const/new/timing.xdc]
 
-synth_design -top top_network -part xc7z020clg484-1 -fanout_limit 400 -fsm_extraction one_hot -keep_equivalent_registers -resource_sharing off -no_lc -shreg_min_size 5 -max_bram 0 -mode out_of_context
+synth_design -top top_network -part xc7z020clg484-1 -directive AreaOptimized_high -control_set_opt_threshold 1
 write_checkpoint -noxdef top_network.dcp
 catch { report_utilization -file top_network_utilization_synth.rpt -pb top_network_utilization_synth.pb }

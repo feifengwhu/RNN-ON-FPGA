@@ -1,0 +1,14 @@
+\chapter{Conclusion}\label{chap:conclusion}
+The LSTM Hardware architecture presented surpassed the performance of the custom-built software implementation by $251\times$, at best,
+and also the only current hardware implementation by $14\times$, and solely making use of internal FPGA
+resources, achieving a higher level of parallelism. The higher levels of parallelism of this work are achieved at the cost of increasing
+design complexity, which undermines its scalability for higher sized networks, unlike the implementation of Chang et al.~\cite{Chang15}.
+On the other hand, the HDL description of this work is parameterized, and is thus very flexible for networks of any size, not requiring
+a redesign of the system every time a different sized network is required. Furthermore, making use of internal memory makes it suitable
+for including an on-chip learning system that can perform training on the network weights.
+
+Given these results, this architecture places itself as the current state of the art system in LSTM Neural Networks
+implementations in hardware, providing the most efficient implementation to date.
+
+A possible follow-up of the work of this thesis, is the integration of the training circuit in Section~\ref{sec:train-circ}, providing
+an LSTM Network with on-chip training capabilities.

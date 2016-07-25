@@ -36,30 +36,31 @@ n@_opt2
 R3
 R0
 T_opt3
-!s110 1466527629
-V@NTZCZ=gMz0Ia2F7FzEhY1
+!s110 1468690529
+VBi5?=nm>k]J<T6=i[:SFN0
 R1
-=1-d43d7e359f7e-57696f8d-460c7-4db6
+=1-d43d7e359f7e-578a7061-28047-ef6
 R4
 n@_opt3
 R3
+R0
 T_opt4
-!s110 1466527607
-VKX^FB8WkgBXa_nLFhj=j@1
+!s110 1468687209
+VTTA^dag:F293i4PbGggPU1
 R1
-=1-d43d7e359f7e-57696f77-26b32-4dad
+=1-d43d7e359f7e-578a6369-75b9c-4183
 R4
 n@_opt4
 R3
 R0
 vdot_prod
-Z5 !s110 1466527606
+Z5 !s110 1468691622
 !i10b 1
-!s100 0;]]@ldm__2cWG>m_ecXf0
-I6l2E8`FP]MO6K;IDIXVTE0
+!s100 WAe5oP@klAC8fbDYk8[Gf2
+IU3?QG[Ic1Ca1TDj5nHlK=2
 Z6 VDg1SIo80bB@j0V0VzS_@n1
 R0
-w1466527222
+w1468687200
 8dot_prod.v
 Fdot_prod.v
 L0 1
@@ -67,7 +68,7 @@ Z7 OL;L;10.4c_5;61
 r1
 !s85 0
 31
-Z8 !s108 1466527606.000000
+Z8 !s108 1468691622.000000
 Z9 !s107 weightRAM.v|test.v|tb_gate.v|gate.v|dot_prod.v|
 Z10 !s90 dot_prod.v|gate.v|tb_gate.v|test.v|weightRAM.v|
 !i113 0
@@ -75,11 +76,11 @@ Z11 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 vgate
 R5
 !i10b 1
-!s100 ZfBU:1[S]UB::10lCYgee1
-I@h7_deO4U_PPE9nJ8U9@00
+!s100 ET0jn0_[i34kVAm85nA7l0
+IBTmTfFl01j5g^goaJl5Ca1
 R6
 R0
-w1466527599
+w1468690526
 8gate.v
 Fgate.v
 L0 1
@@ -95,11 +96,11 @@ R11
 vtb_gate
 R5
 !i10b 1
-!s100 aI^2;alJGjoRiZkW=Fm[S2
-I7jOl?jN56EY?RnIT=@N:C1
+!s100 DFQJzg2:C5003:?I3]i>l3
+IQ?UHmk7ZaPZP[:08Yj02m1
 R6
 R0
-w1466527278
+w1468690476
 8tb_gate.v
 Ftb_gate.v
 L0 3

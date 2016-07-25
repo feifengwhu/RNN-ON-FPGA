@@ -1,0 +1,22 @@
+\usetikzlibrary{positioning}
+\usetikzlibrary{calc}
+%% --- Declaring the Shapes --- %%
+
+
+\tikzstyle{invnode}=[circle,radius=10mm, rounded corners=3mm, very thick, draw=white, top color=white]
+\tikzstyle{node}=[circle, radius=10mm, rounded corners=3mm, very thick, draw=black, top color=white]
+\tikzstyle{sqrnode}=[rectangle, minimum height=10mm, minimum width=10mm, rounded corners=3mm, very thick, draw=black, top color=white]
+
+%% --- Building the image --- %%
+
+\begin{tikzpicture}
+	%% The nodes
+	\node (input)       [node] {$x_t$};
+	\node (neuron)    [sqrnode, above = of input] {$h_t$};
+	\node (output)     [invnode, above = of neuron] {$y_t$};
+
+	%% The Connections
+	\draw[->] (input) -- (neuron)    [thick] node [right, midway, align=center] {$\theta_x$};
+	\draw[->] (neuron) -- (output) [thick] node [right, midway, align=center] {$\theta_y$};
+	\draw[->, bend left] (neuron.north west) arc (40:320:0.7) [thick] node [right, midway, align=center, anchor=east] {$\theta_h$};
+\end{tikzpicture}

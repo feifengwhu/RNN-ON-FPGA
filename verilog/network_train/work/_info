@@ -81,10 +81,10 @@ n@_opt15
 R3
 R0
 T_opt16
-!s110 1468176050
-Vo`H_zaIVOzkbVV<ZIEc@K0
+!s110 1468777354
+V;7kGN5KeIB=XQ`ogZ;jBl2
 R1
-=1-d43d7e359f7e-578296b2-2d20d-3dcf
+=1-d43d7e359f7e-578bc389-1e6b7-1d20
 R4
 n@_opt16
 R3
@@ -106,15 +106,15 @@ R1
 R4
 n@_opt18
 R3
+R0
 T_opt2
-!s110 1468171838
-V`UWQQ:NG_Yol:cH;7gB0L1
+!s110 1468782700
+V0Sh]P>UjVnh0:4b<7ZIRe1
 R1
-=1-d43d7e359f7e-5782863e-739d1-32e1
+=1-d43d7e359f7e-578bd86c-1a1b8-2603
 R2
 n@_opt2
 R3
-R0
 T_opt3
 !s110 1468080371
 V6]8<Th75UTHaOlALT=kBO3
@@ -179,7 +179,7 @@ n@_opt9
 R3
 R0
 varray_prod
-Z5 !s110 1468176048
+Z5 !s110 1468777283
 !i10b 1
 !s100 m[KFbYiYj3oaci2JZ4o0o1
 ISb4fQ>`i2c?4GzbEaDHIE2
@@ -193,7 +193,7 @@ Z8 OL;L;10.4c_5;61
 r1
 !s85 0
 31
-Z9 !s108 1468176048.000000
+Z9 !s108 1468777283.000000
 Z10 !s107 weightRAM.v|test.v|tb_network.v|tanh.v|sigmoid.v|prng.v|network.v|gate.v|dot_prod.v|array_prod.v|
 Z11 !s90 array_prod.v|dot_prod.v|gate.v|network.v|prng.v|sigmoid.v|tanh.v|tb_network.v|test.v|weightRAM.v|
 !i113 0
@@ -239,13 +239,13 @@ R11
 !i113 0
 R12
 vnetwork
-R5
+Z13 !s110 1468777284
 !i10b 1
 !s100 2_PTK6NnZ6>VGJ<Lo^lh[3
 I=hl@KQX^=?Y_JSo^h9VQL1
 R6
 R0
-w1468175713
+w1468176165
 8network.v
 Fnetwork.v
 L0 1
@@ -259,7 +259,7 @@ R11
 !i113 0
 R12
 vprng
-R5
+R13
 !i10b 1
 !s100 dePj_k5mAjb::3M60HzJA3
 IMQ:c]c=g0GMa8YZOT0Fh83
@@ -279,7 +279,7 @@ R11
 !i113 0
 R12
 vsigmoid
-R5
+R13
 !i10b 1
 !s100 1:7_Q4dT_iT7d0C`djFhj1
 IEhe?kD14[Ab3ad:aeYXmY3
@@ -299,7 +299,7 @@ R11
 !i113 0
 R12
 vtanh
-R5
+R13
 !i10b 1
 !s100 IOXXJE>OW2b[ZX1`L7WPX0
 I0^e=H]?g@0lVVQXF>W]Ld2
@@ -319,13 +319,13 @@ R11
 !i113 0
 R12
 vtb_network
-R5
+R13
 !i10b 1
-!s100 MEaG_f6K_]z:G1gniB8^V0
-I_9N`W0WQBSm_07S2;:?8Y0
+!s100 NB_5N@KNE;71fNh0z:3m62
+IV`NiRe<DmWUc0ZDf[4GBC0
 R6
 R0
-w1468175958
+w1468777082
 8tb_network.v
 Ftb_network.v
 L0 3
@@ -339,7 +339,7 @@ R11
 !i113 0
 R12
 vtest
-R5
+R13
 !i10b 1
 !s100 N3?d[3MlC508i6SAn^lH_0
 IXz[dz1cPMd?EVa5;`[L9Q2
@@ -359,7 +359,7 @@ R11
 !i113 0
 R12
 vweightRAM
-R5
+R13
 !i10b 1
 !s100 _CHaCX4KGNhCj;M9^`<>^0
 I7QDac0H@A?8Mng[LG]`K:1

@@ -24,7 +24,7 @@
 \BOOKMARK [0][-]{chapter.4}{4 Proposed Architecture}{}% 24
 \BOOKMARK [1][-]{section.4.1}{4.1 Constituent Modules}{chapter.4}% 25
 \BOOKMARK [2][-]{subsection.4.1.1}{4.1.1 Finite-precision representation system}{section.4.1}% 26
-\BOOKMARK [2][-]{subsection.4.1.2}{4.1.2 Non-linearity Calculator}{section.4.1}% 27
+\BOOKMARK [2][-]{subsection.4.1.2}{4.1.2 Activation Function Calculator}{section.4.1}% 27
 \BOOKMARK [2][-]{subsection.4.1.3}{4.1.3 Matrix-vector Dot Product Unit}{section.4.1}% 28
 \BOOKMARK [2][-]{subsection.4.1.4}{4.1.4 Dual-port weight RAM}{section.4.1}% 29
 \BOOKMARK [2][-]{subsection.4.1.5}{4.1.5 Gate Module}{section.4.1}% 30
@@ -37,15 +37,16 @@
 \BOOKMARK [1][-]{section.5.1}{5.1 Synthesis}{chapter.5}% 37
 \BOOKMARK [2][-]{subsection.5.1.1}{5.1.1 Maximum Frequency}{section.5.1}% 38
 \BOOKMARK [2][-]{subsection.5.1.2}{5.1.2 DSP Slices Usage}{section.5.1}% 39
-\BOOKMARK [2][-]{subsection.5.1.3}{5.1.3 Power Usage}{section.5.1}% 40
+\BOOKMARK [2][-]{subsection.5.1.3}{5.1.3 Power Consumption}{section.5.1}% 40
 \BOOKMARK [2][-]{subsection.5.1.4}{5.1.4 Other Resources Usage}{section.5.1}% 41
 \BOOKMARK [1][-]{section.5.2}{5.2 Validation and Comparison}{chapter.5}% 42
 \BOOKMARK [2][-]{subsection.5.2.1}{5.2.1 Reference Python Module}{section.5.2}% 43
 \BOOKMARK [2][-]{subsection.5.2.2}{5.2.2 Methodology}{section.5.2}% 44
 \BOOKMARK [2][-]{subsection.5.2.3}{5.2.3 Performance}{section.5.2}% 45
-\BOOKMARK [0][-]{appendix.A}{A Remez Algorithm Implementation}{}% 46
-\BOOKMARK [0][-]{appendix.B}{B LSTM Layer Implementation}{}% 47
-\BOOKMARK [0][-]{appendix.C}{C LSTM Layer Testbench}{}% 48
-\BOOKMARK [0][-]{appendix.D}{D LSTM Layer Implementation}{}% 49
-\BOOKMARK [0][-]{appendix.E}{E Transcript from a successful simulation of the Hardware Network}{}% 50
-\BOOKMARK [0][-]{section*.30}{References}{}% 51
+\BOOKMARK [0][-]{chapter.6}{6 Conclusion}{}% 46
+\BOOKMARK [0][-]{appendix.A}{A Remez Algorithm Implementation}{}% 47
+\BOOKMARK [0][-]{appendix.B}{B LSTM Layer Implementation}{}% 48
+\BOOKMARK [0][-]{appendix.C}{C LSTM Layer Testbench}{}% 49
+\BOOKMARK [0][-]{appendix.D}{D Verification script for the Verilog simulation of the network}{}% 50
+\BOOKMARK [0][-]{appendix.E}{E Transcript from a successful simulation of the Hardware Network}{}% 51
+\BOOKMARK [0][-]{section*.31}{References}{}% 52
