@@ -92,7 +92,7 @@ are weighed, producing an output $\mb{i}^{(t)}$.
 from the input gate to the memory cell. It also receives the input vector and the previous output
 set, producing an output $\mb{z}^{(t)}$. The \textbf{activation function of this gate can both} the logistic
 sigmoid, $\sigma(x) = 1 \over (1+e^{-x})$, or the hyperbolic tangent, $\tanh(x)$ but the most common choice is the
-\textbf{hyperbolic hangent}.
+\textbf{hyperbolic tangent}.
 
     \item \textbf{Forget Gate} -- its role is to control the contents of the Memory Cell, either to
 set or reset them, using the \textit{Hadamard} vector multiplication of its output at time
@@ -153,11 +153,9 @@ in~\cite{Vinyals14, Donahue14, Donahue14_2}.
 Hitherto, there is but one actual implementation of an LSTM network in hardware, published recently
 (March 2016) by Chang et al.~\cite{Chang15}. A 2 layer LSTM network (two layers in series) was implemented in FPGA,
 with 128 neurons each, which, for processing 1000 samples, yielded an execution time of \SI{0.932}{\second}. Assuming
-that both layers are equal, and thus have the same execution time, this yields an approximate execution time of
-$29.13 \, \si{\micro\second}$ per incoming sample (dividing the total execution time by $2 \times 1000$).
-Therefore, the network~\cite{Chang15} is able to perform around \num{34.3d3} forward propagations per second.
-Although the network is large, its performance is well below this work, which achieves \num{487d3} forward propagations per second, for that network size.
-This is because the work in~\cite{Chang15} does not have a full level of parallelism when compared to the proposed design of
+that both layers are equal, this yields an approximate execution time of $466 \, \si{\micro\second}$ per incoming sample (dividing the total execution time by $2 \times 1000$), and
+if the computation time increases linearly with time, an 8 neuron layer would have an execution time of $29.13 \, \si{\micro\second}$.
+Therefore, an 8-neuron network of~\cite{Chang15} would be able to perform around \num{34.3d3} forward propagations per second, while this work achieves \num{487d3} forward propagations per second, for that network size. This is because the work in~\cite{Chang15} does not have a full level of parallelism when compared to the proposed design of
 Section~\ref{sec:proparch}, and it makes use of external memory to store the weights. On the other hand, the authors use it as a co-processor for the main CPU, and not as a
 standalone implementation.
 
@@ -282,7 +280,7 @@ parameter $K_G$, such that
 \begin{equation}\label{eq:kg}
 K_G = \frac{\text{Number of rows}}{\text{Number of multipliers}}.
 \end{equation}
-This parameters represents the number of rows that share the same multiplier. The
+This parameters represent the number of rows that share the same multiplier. The
 same multiplier is responsible for producing several $i$-th elements of the output vector, in consecutive time slots of $M$ clock cycles.
 For instance, in an $8\times2$ matrix scenario, with $K_G = 2$, we would have 4 multipliers, and the output vector
 elements $y_0$, $y_2$, $y_4$ and $y_6$ would be ready after $M=2$ clock cycles, and the remaining -- $y_1$, $y_3$, $y_5$ and $y_7$ --  are
@@ -405,7 +403,7 @@ task can be presented to the network. Even though this seems a rather simple pro
 network excels: first, this is a \emph{classification} problem in which the Machine Learning algorithm needs to output a prediction based on
 the input feature vector, and that prediction has to take into account the \emph{history} of predictions and inputs so far, because the current
 bit is the sum of not only the bits of the two operands, but also the \emph{carry} generated at the last few positions -- this is where the
-memory cells of this special Recursive Neural Network come into effect.
+memory cells of this special Recurrent Neural Network come into effect.
 
 The software network was trained for 50 epochs. In each epoch, 5000 training sequences were presented, and then tested with 100 sequences, where the
 prediction error was evaluated for that epoch. The trained weights were loaded into the network and several addition problems
@@ -451,7 +449,6 @@ Section~\ref{sec:res-val} is an $N=8$ and $K_G=2$ network clocked at $154.321$ M
     \hline
     $N=128$ & 140.854 MHz\\
     \hline
-\hline
   \end{tabular}
 
 \end{table}

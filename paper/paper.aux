@@ -49,22 +49,20 @@
 \@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces Matrix-vector multiplication of a matrix}}{3}}
 \newlabel{alg:matvec-alg}{{1}{3}}
 \newlabel{eq:kg}{{4}{3}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces The $i$-th row multiplication unit of the Module, where rowMux and colSel are internal signals produced by the control unit of the module. The flip-flop accumulates the sum, and the output demux selects the appropriate memory position on where to store this value, within the slot attributed to this multiplication, from $i\cdot K_G$ to $i\cdot K_G + \left [K_G-1\right ]$}}{4}}
-\newlabel{fig:array-prod}{{3}{4}}
 \@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces A column of the matrix that serves as input to the module. The dark shaded part is for the first multiplier, and the light shaded is for the other, in parallel. The rowMux signal addresses the position within each shaded area}}{4}}
 \newlabel{fig:mem-arrayprod}{{2}{4}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {IV-C}}Weight storage}{4}}
 \newlabel{sec:proprarch_ram}{{\unhbox \voidb@x \hbox {IV-C}}{4}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {IV-D}}Gate Module}{4}}
 \newlabel{sec:proparch_gate}{{\unhbox \voidb@x \hbox {IV-D}}{4}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Diagram of the hardware block that implements the Gate}}{4}}
-\newlabel{fig:gate}{{4}{4}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {IV-E}}Network Architecture}{4}}
 \newlabel{sec:proprarch_net}{{\unhbox \voidb@x \hbox {IV-E}}{4}}
+\newlabel{eq:numdsp_network-opt}{{5}{4}}
 \citation{Spall98}
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Block diagram of the hardware LSTM Neural Network}}{5}}
-\newlabel{fig:network-opt}{{5}{5}}
-\newlabel{eq:numdsp_network-opt}{{5}{5}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces The $i$-th row multiplication unit of the Module, where rowMux and colSel are internal signals produced by the control unit of the module. The flip-flop accumulates the sum, and the output demux selects the appropriate memory position on where to store this value, within the slot attributed to this multiplication, from $i\cdot K_G$ to $i\cdot K_G + \left [K_G-1\right ]$}}{5}}
+\newlabel{fig:array-prod}{{3}{5}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Diagram of the hardware block that implements the Gate}}{5}}
+\newlabel{fig:gate}{{4}{5}}
 \newlabel{eq:numcc_network-opt}{{6}{5}}
 \@writefile{toc}{\contentsline {section}{\numberline {V}Results}{5}}
 \newlabel{sec:results}{{V}{5}}
@@ -72,22 +70,23 @@
 \newlabel{sec:res-val}{{\unhbox \voidb@x \hbox {V-A}}{5}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {V-B}}Synthesis}{5}}
 \newlabel{sec:results_synth}{{\unhbox \voidb@x \hbox {V-B}}{5}}
+\newlabel{sec:results_synth_maxfreq}{{\unhbox \voidb@x \hbox {V-B}1}{5}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {V-B}1}Maximum Frequency}{5}}
 \citation{Chang15}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Block diagram of the hardware LSTM Neural Network}}{6}}
+\newlabel{fig:network-opt}{{5}{6}}
 \@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces The maximum achievable clock frequency for feasible network sizes in the XC7Z020}}{6}}
 \newlabel{fig:maxfreq}{{6}{6}}
 \@writefile{lot}{\contentsline {table}{\numberline {III}{\ignorespaces Maximum clock frequencies for the VC707}}{6}}
 \newlabel{tab:maxfreq-virtx7}{{III}{6}}
-\newlabel{sec:results_synth_maxfreq}{{\unhbox \voidb@x \hbox {V-B}1}{6}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {V-B}1}Maximum Frequency}{6}}
 \newlabel{sec:results_synth_dsp}{{\unhbox \voidb@x \hbox {V-B}2}{6}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {V-B}2}DSP Slices Usage}{6}}
+\newlabel{sec:res-synth-otheres}{{\unhbox \voidb@x \hbox {V-B}3}{6}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {V-B}3}Other Resources Usage}{6}}
 \@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces The number of DSP slices used for several Network Sizes $N$ and resource sharing level $K_G$}}{6}}
 \newlabel{fig:dspused}{{7}{6}}
 \@writefile{lot}{\contentsline {table}{\numberline {IV}{\ignorespaces LUT usage for different $N$ and $K_G$ in the XC7Z020}}{6}}
 \newlabel{tab:lut}{{IV}{6}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {V-B}2}DSP Slices Usage}{6}}
-\newlabel{sec:res-synth-otheres}{{\unhbox \voidb@x \hbox {V-B}3}{6}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {V-B}3}Other Resources Usage}{6}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {V-C}}Performance}{6}}
 \citation{Chang15}
 \citation{Chang15}
 \citation{Chang15}
@@ -95,6 +94,7 @@
 \newlabel{tab:ff}{{V}{7}}
 \@writefile{lot}{\contentsline {table}{\numberline {VI}{\ignorespaces Flip-flop, LUTRAM and LUT usage for the VC707}}{7}}
 \newlabel{tab:ff-virtx7}{{VI}{7}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {V-C}}Performance}{7}}
 \@writefile{lot}{\contentsline {table}{\numberline {VII}{\ignorespaces Total processing time for a single forward propagation on the XC7Z020}}{7}}
 \newlabel{tab:process-time}{{VII}{7}}
 \@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Millions of classifications per second of each design according to the network size $N$}}{7}}
