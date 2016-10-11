@@ -7,7 +7,7 @@
 \usepackage{algpseudocode}
 \usepackage{siunitx}
 \usepackage[utf8]{inputenc}
-
+\usepackage[T1]{fontenc}
 %% Macros
 \newcommand{\mb}[1]{\mathbf{#1}}
 \renewcommand\IEEEkeywordsname{Keywords}
@@ -18,7 +18,11 @@
 %%\IEEEauthorblockA{Faculty of Engineering University of Porto \\
 %%Porto, Portugal}}
 %%\IEEEspecialpapernotice{(Working Version)}
-
+\author{
+    \IEEEauthorblockN{Joao Canas Ferreira\IEEEauthorrefmark{1}, Jose Fonseca\IEEEauthorrefmark{2}}\\
+    \IEEEauthorblockA{\IEEEauthorrefmark{1}INESC TEC and Faculty of Engineering of the University of Porto, Portugal, jcf@fe.up.pt}\\
+    \IEEEauthorblockA{\IEEEauthorrefmark{2}CERN, Switzerland, jose.pedro.castro.fonseca@cern.ch}
+}
 
 \begin{document}
 
@@ -72,7 +76,7 @@ of the model~\cite{Greff15}, which is the reference for this short discussion.
 
 A single LSTM neuron is presented in Figure~\ref{fig:lstmneuron}. As can be seen in the picture,
 we still have the recurrent connections from the regular RNNs, but now there are multiple entry points
-that control the flow of information through the network. Although omitted from the picture, all the
+that control the flow of information through the network. Furthermore, all the
 gates are biased, as defined in Equations~\ref{eq:equationsLSTM}. The role and relevance of the main components can
 be summarized as follows.
 
@@ -136,9 +140,7 @@ and the vectors $\mb{y}^{(t)}$ through $\mb{c}^{(t)}$ have size $N$.
 
 \section{Related Work}\label{sec:relwork}
 LSTM Networks are nowadays one of the state-of-the-art algorithms in Deep Learning, and their performance is
-superior to that of other kinds of RNNs and Hidden Markov Models, both of which are generally used to address
-the same set of problems where LSTM are employed, namely predicting and producing classification decisions
-from time-series data. A very comprehensive description of applications can be found in one of the initial
+superior to that of other kinds of RNNs and Hidden Markov Models. A very comprehensive description of applications can be found in one of the initial
 authors webpage dedicated to the subject~\footnote{http://people.idsia.ch/\~{}juergen/rnn.html}.
 
 The uses of LSTM Networks are plentiful: in \textbf{Handwriting Recognition}~\cite{ICDAR09}, where they surpass
@@ -151,9 +153,9 @@ to MIDI~\cite{Bock12} and automated composition~\cite{Coca13} and improvisation~
 in~\cite{Vinyals14, Donahue14, Donahue14_2}.
 
 Hitherto, there is but one actual implementation of an LSTM network in hardware, published recently
-(March 2016) by Chang et al.~\cite{Chang15}. A 2 layer LSTM network (two layers in series) was implemented in FPGA,
-with 128 neurons each, which, for processing 1000 samples, yielded an execution time of \SI{0.932}{\second}. Assuming
-that both layers are equal, this yields an approximate execution time of $466 \, \si{\micro\second}$ per incoming sample (dividing the total execution time by $2 \times 1000$), and
+(March 2016) by Chang et al.~\cite{Chang15}. A 2 layer LSTM network was implemented,
+with 128 neurons each, which, for processing 1000 samples, had an execution time of \SI{0.932}{\second}. Assuming
+two equal layers, this yields an approximate execution time of $466 \, \si{\micro\second}$ per incoming sample (dividing the total execution time by $2 \times 1000$), and
 if the computation time increases linearly with time, an 8 neuron layer would have an execution time of $29.13 \, \si{\micro\second}$.
 Therefore, an 8-neuron network of~\cite{Chang15} would be able to perform around \num{34.3d3} forward propagations per second, while this work achieves \num{487d3} forward propagations per second, for that network size. This is because the work in~\cite{Chang15} does not have a full level of parallelism when compared to the proposed design of
 Section~\ref{sec:proparch}, and it makes use of external memory to store the weights. On the other hand, the authors use it as a co-processor for the main CPU, and not as a
@@ -168,7 +170,7 @@ in the FPGAs.
 
 \subsection{Activation Function Calculation}\label{sec:proprarch_af}
 In order to evaluate the transcendental activation functions $\sigma(x)$ and $\tanh(x)$, \textbf{Polynomial Approximations} were used, as detailed in~\cite{Muller05},
-since evaluating a polynomial does not have high memory usage requirements (as opposed to Table Methods, for instance) and, if the polynomial degree is sufficiently low, the
+since evaluating a polynomial does not have high memory usage requirements and, if the polynomial degree is sufficiently low, the
 number of multiplications needed is small enough to not pose a restriction both on resources (now DSP slices, and not memory) and on speed (number of clock cycles
 needed to output a result).
 
@@ -179,7 +181,7 @@ the \emph{maximum} error is \emph{minimized}, making use of Remez's Algorithm, w
     & p(x_i) - f(x_i) = (-1)^{n+1} \epsilon \Leftrightarrow  \nonumber \\
 		& p_0 + p_1 x_i + p_2 x_i^2 + \cdots + p_n x_i^n - f(x_i) = (-1)^{n+1} \epsilon
 \end{eqnarray}
-where $i \in \left[0, n+1\right]$. Of course, both functions have horizontal asymptotes, which can be used as the value in the edges.
+where $i \in \left[0, n+1\right]$. Both functions have horizontal asymptotes, which were used as the value in the edges.
 Instead of performing the optimization in the single interval in between the chosen points from where the module evaluates the function
 as the value of the asymptote, the interval was further split in 4, in order to have lower degree polynomials -- simpler to evaluate -- at a reduced error cost.
 The algorithm was run using Python, and targeted second degree polynomials for each interval. The coefficients achieved for the Sigmoid and Hyperbolic Tangent functions
@@ -232,14 +234,14 @@ are reported in Tables~\ref{tab:coefs-sigm} and ~\ref{tab:coefs-tanh}. The maxim
 \end{table}
 The Verilog model was described, where the correct
 coefficients are loaded according to the interval where the incoming operand is located. The evaluation of the polynomial
-was accomplished using the \textbf{Horner's Rule}, that is
+was accomplished using \textbf{Horner's Rule}, that is
 
 \begin{equation}\label{eq:factorPol}
 p(x) = p_0 + p_1x + p_2x^2 = p_0 + x(p_1 + xp_2)
 \end{equation}
 and, therefore, the calculation is simply the procedure of multiplying the operand by a value and adding a constant to the result,
-repeated two times. Again the internal machine state controls which values are multiplied and added according to the pipeline state.
-Due to the internal datapath pipeline, each module takes 5 clock cycles to output one result.
+repeated two times. An internal machine state controls which values are multiplied and added according to the pipeline state, and due to it,
+each module takes 5 clock cycles to output one result.
 
 
 \subsection{Matrix-vector Dot Product Calculation}\label{sec:proprarch_dot}
@@ -248,9 +250,8 @@ multiplied by the input vector $\mb{x}$ and the layer output vector $\mb{y}$, re
 matrix-vector multiplication to perform those calculations, and its description is parameterized in
 order to accommodate networks of various sizes, since $\mb{W}_*$ has size $N\times M$, and $\mb{R}_*$
 has size $N\times N$, because $x$ has length $M$ (the number of inputs to the layer), while $y$ has length $N$
-(the number of neurons in the layer). If a layer with different parameters is needed, either in terms of
-number of inputs or number of neurons, we only need to change the respective parameter before the synthesis stage,
-instead of having to redesign the whole block for that particular size.
+(the number of neurons in the layer). If a layer with different parameters is needed, we only need to change the respective parameter before the synthesis stage,
+instead of having to redesign the whole block.
 
 The matrix-vector dot product of a matrix $A$ of size $N \times M$ by a vector $x$ of size $M$, if performed in a linear non-parallel way, can be described in terms of Algorithm~\ref{alg:matvec-alg}
 
@@ -266,8 +267,7 @@ The matrix-vector dot product of a matrix $A$ of size $N \times M$ by a vector $
 \label{alg:matvec-alg}
 \end{algorithm}
 This operation has a computational complexity of $O(n^2)$. Each of the $i$-th components of the output vector $y$ can be calculated \textbf{in parallel},
-each one only requiring the corresponding $i$-th line from the matrix. Using this approach, matrix-vector multiplication can now be performed in \textbf{linear time},
-which is one of the great advantages of custom-tailored hardware solutions.
+each one only requiring the corresponding $i$-th line from the matrix. Using this approach, matrix-vector multiplication can now be performed in \textbf{linear time}.
 
 Although this solution only requires one multiplication per row of the input matrix (i.e. $N$ multiplications), if the row
 size is large, we may run out of resources in the FPGA; therefore, some sort of \textit{resource multiplexing} strategy must
@@ -280,8 +280,7 @@ parameter $K_G$, such that
 \begin{equation}\label{eq:kg}
 K_G = \frac{\text{Number of rows}}{\text{Number of multipliers}}.
 \end{equation}
-This parameters represent the number of rows that share the same multiplier. The
-same multiplier is responsible for producing several $i$-th elements of the output vector, in consecutive time slots of $M$ clock cycles.
+This parameter represents the number of rows that share the same multiplier: it is responsible for producing several $i$-th elements of the output vector, in consecutive time slots of $M$ clock cycles.
 For instance, in an $8\times2$ matrix scenario, with $K_G = 2$, we would have 4 multipliers, and the output vector
 elements $y_0$, $y_2$, $y_4$ and $y_6$ would be ready after $M=2$ clock cycles, and the remaining -- $y_1$, $y_3$, $y_5$ and $y_7$ --  are
 ready after another two clock cycles, that is $2M = 4$ clock cycles after the calculations began.
@@ -289,15 +288,15 @@ ready after another two clock cycles, that is $2M = 4$ clock cycles after the ca
 Figures~\ref{fig:mem-arrayprod} and~\ref{fig:array-prod} depict a diagram of the memory access for the Matrix, and the row multiplication
 units within the module, respectively, where $K_G = 4$ and for the same matrix and vector sizes as before. Note that in this situation,
 we would only have 2 multipliers, and the module would be composed of two multiplication units, such as those in Figure~\ref{fig:array-prod},
-that work in parallel. They address a particular column using the signal \verb+colSel+, which is used by the RAM module to output the corresponding
+working in parallel. They address a particular column using the signal \verb+colSel+, which is used by the RAM module to output the corresponding
 column of the matrix (in regard to the input vector, obviously this signal selects only a single position), depicted in Figure~\ref{fig:mem-arrayprod}.
 The dark shaded part of the memory is used by the first multiplier, and the light shaded one is used by the other, in parallel for a
-fixed \verb+rowMux+. This signal is produced by the control unit of the module, and essentially operates the left multiplexer and right demultiplexer
+fixed \verb+rowMux+. This signal is produced by the control unit of the module, and operates the left multiplexer and right demultiplexer
 of Figure~\ref{fig:array-prod}, that allows choosing the proper position of the weight column and writing to the correct output vector position, respectively.
 In this example, for \verb+rowMux+=0, the control unit increments \verb+colSel+ from 0 to $M$, and thus evaluates $y_0$ and $y_4$. After this, \verb+rowMux+
 is incremented to 1, and the process repeats until \verb+rowMux+ reaches $K_G-1$. Therefore, we have the correct result vector in a time
 proportional to $K_G \times M$: a 3 clock cycle overhead is added to the previous estimate, since the memory only outputs the appropriate column
-in the \emph{next clock cycle}, and this module is pipelined both at the input and at the output, in order to increase the maximum clock frequency.
+in the \emph{next clock cycle}, and this module is pipelined both at the input and at the output.
 
 \begin{figure}
     \centering
@@ -315,7 +314,7 @@ in the \emph{next clock cycle}, and this module is pipelined both at the input a
 
 \subsection{Weight storage}\label{sec:proprarch_ram}
 The weights are stored in LUTRAM, and for that purpose, they are declared as a matrix of registers, where the access, both in terms
-of write and read operations, is made to each column. The write/read access can be performed at the same time, since the memory has
+of write and read operations, is made to each column. The write/read access can be performed simultaneously, since the memory has
 separate communication ports for input/output, provided that the \textbf{addresses do not coincide}.
 
 \subsection{Gate Module}\label{sec:proparch_gate}
@@ -330,8 +329,7 @@ each Gate module needs to perform three tasks
 Assuming that the network size $N$ is always larger than the input size $M$, if we use the matrix-vector dot product units of Section~\ref{sec:proprarch_dot}, the multiplication
 in task 1 takes approximately $K_G\cdot M$ cycles and the one in task 2 takes $K_G\cdot N$ cycles. This way, tasks 1 and 2 can be performed in parallel, and we can use the extra
 time that task 2 takes, relative to task 1,  to perform task 3, and sum the bias vector to the output of task 1, whose result is ready by that time. The module is triggered by a
-\verb+beginCalc+ input signal that activates the internal state machine, and outputs a \verb+dataReady+ signal that informs the network that the calculations have been concluded,
-and the value at the output is the final result.
+\verb+beginCalc+ input signal that activates the internal state machine, and outputs a \verb+dataReady+ signal that informs the network that the calculations have been concluded.
 After validating and simulating this block, and taking into account the internal state-machine and that the internal datapath is pipelined, the exact number
 of clock cycles this module takes to produce an output is $6+K_G\cdot N$.
 
@@ -639,6 +637,9 @@ for including an on-chip learning system that can perform training on the networ
 
 Given these results, this architecture advances the current state of the art in LSTM Neural Networks
 hardware implementations, providing the most efficient implementation to date.
+
+\smallskip
+\emph{\textbf{This work is financed by the ERDF – European Regional Development Fund through the Operational Programme for Competitiveness and Internationalisation - COMPETE 2020 Programme within project \guillemotleft POCI-01-0145-FEDER-006961\guillemotright, and by National Funds through the FCT – Fundação para a Ciência e a Tecnologia (Portuguese Foundation for Science and Technology) as part of project \guillemotleft UID/EEA/50014/2013\guillemotright.}}
 
 \bibliographystyle{IEEEtran}
 \bibliography{bibliography}

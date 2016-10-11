@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.10.5)  9 OCT 2016 15:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.10.5)  11 OCT 2016 22:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -803,21 +803,73 @@ Now handling font encoding U ...
    defining Unicode char U+2026 (decimal 8230)
    defining Unicode char U+2122 (decimal 8482)
    defining Unicode char U+2423 (decimal 9251)
+))
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1enc.def
+File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
+)
+LaTeX Font Info:    Try loading font information for T1+ptm on input line 105.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1ptm.fd
+File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 )) (./paper.aux)
 \openout1 = `paper.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <5> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 27.
+LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <5> not available
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 27.
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <7> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 27.
+LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <7> not available
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 27.
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <8> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 27.
+LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <8> not available
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 27.
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 27.
+LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <9> not available
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 27.
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 27.
+LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <10> not available
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 27.
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <11> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 27.
+LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <11> not available
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 27.
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 27.
+LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <12> not available
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 27.
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <17> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 27.
+LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <17> not available
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 27.
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <20> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 27.
+LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <20> not available
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 27.
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <24> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 27.
+LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <24> not available
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 27.
 
 -- Lines per column: 58 (exact).
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
@@ -965,28 +1017,30 @@ File: siunitx-abbreviations.cfg 2016/03/01 v2.6q siunitx: Abbreviated units
 )
 \c__siunitx_mathsf_int=\count155
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 23.
+(Font)              <7> on input line 27.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 23.
+(Font)              <5> on input line 27.
 \c__siunitx_mathtt_int=\count156
-
-
-LaTeX Warning: No \author given.
-
-
-LaTeX Warning: No \author given.
-
-
-LaTeX Warning: No \author given.
+LaTeX Font Info:    Calculating math sizes for size <11> on input line 29.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <11> on input line 29.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7.69997> on input line 29.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5.5> on input line 29.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 29.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 29.
 
 <figures/lstmneuron.png, id=1, 913.16156pt x 409.53pt>
 File: figures/lstmneuron.png Graphic file (type png)
 
 <use figures/lstmneuron.png>
-Package pdftex.def Info: figures/lstmneuron.png used on input line 81.
+Package pdftex.def Info: figures/lstmneuron.png used on input line 85.
 (pdftex.def)             Requested size: 277.20154pt x 124.31593pt.
 
-Overfull \hbox (25.20154pt too wide) in paragraph at lines 81--82
+Overfull \hbox (25.20154pt too wide) in paragraph at lines 85--86
  [][] 
  []
 
@@ -994,21 +1048,16 @@ Overfull \hbox (25.20154pt too wide) in paragraph at lines 81--82
 
 
  <./figures/lstmneuron.png>]
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 142.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 142.
-LaTeX Font Info:    Try loading font information for TS1+ptm on input line 156.
+LaTeX Font Info:    Try loading font information for TS1+ptm on input line 158.
 
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 ) [2]
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 292.
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 291.
 
-
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
-File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
-) [3]
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
+File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
+)
 Package epstopdf Info: Source file: <figures/mem-array-prod.eps>
 (epstopdf)                    date: 2016-10-04 22:22:12
 (epstopdf)                    size: 161229 bytes
@@ -1018,15 +1067,15 @@ f>
 (epstopdf)                    size: 9675 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/mem-array-prod-eps
 -converted-to.pdf figures/mem-array-prod.eps>
-(epstopdf)             \includegraphics on input line 304.
+(epstopdf)             \includegraphics on input line 303.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/mem-array-prod-eps-converted-to.pdf, id=31, 246.9225pt x 153.57375pt>
+<figures/mem-array-prod-eps-converted-to.pdf, id=24, 246.9225pt x 153.57375pt>
 File: figures/mem-array-prod-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/mem-array-prod-eps-converted-to.pdf>
 Package pdftex.def Info: figures/mem-array-prod-eps-converted-to.pdf used on in
-put line 304.
+put line 303.
 (pdftex.def)             Requested size: 180.67499pt x 112.37035pt.
 Package epstopdf Info: Source file: <figures/array-prod.eps>
 (epstopdf)                    date: 2016-10-04 22:22:12
@@ -1036,16 +1085,17 @@ Package epstopdf Info: Source file: <figures/array-prod.eps>
 (epstopdf)                    size: 14784 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/array-prod-eps-con
 verted-to.pdf figures/array-prod.eps>
-(epstopdf)             \includegraphics on input line 311.
+(epstopdf)             \includegraphics on input line 310.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/array-prod-eps-converted-to.pdf, id=32, 622.325pt x 134.5025pt>
+<figures/array-prod-eps-converted-to.pdf, id=25, 622.325pt x 134.5025pt>
 File: figures/array-prod-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/array-prod-eps-converted-to.pdf>
 Package pdftex.def Info: figures/array-prod-eps-converted-to.pdf used on input 
-line 311.
+line 310.
 (pdftex.def)             Requested size: 516.0pt x 111.52414pt.
+ [3]
 Package epstopdf Info: Source file: <figures/gate.eps>
 (epstopdf)                    date: 2016-10-04 22:22:12
 (epstopdf)                    size: 242302 bytes
@@ -1054,7 +1104,7 @@ Package epstopdf Info: Source file: <figures/gate.eps>
 (epstopdf)                    size: 15982 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/gate-eps-converted
 -to.pdf figures/gate.eps>
-(epstopdf)             \includegraphics on input line 340.
+(epstopdf)             \includegraphics on input line 338.
 Package epstopdf Info: Output file is already uptodate.
 
 <figures/gate-eps-converted-to.pdf, id=33, 519.9425pt x 182.6825pt>
@@ -1062,7 +1112,7 @@ File: figures/gate-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/gate-eps-converted-to.pdf>
 Package pdftex.def Info: figures/gate-eps-converted-to.pdf used on input line 3
-40.
+38.
 (pdftex.def)             Requested size: 180.67499pt x 63.47989pt.
 Package epstopdf Info: Source file: <figures/network-opt.eps>
 (epstopdf)                    date: 2016-10-04 22:22:12
@@ -1072,7 +1122,7 @@ Package epstopdf Info: Source file: <figures/network-opt.eps>
 (epstopdf)                    size: 13894 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/network-opt-eps-co
 nverted-to.pdf figures/network-opt.eps>
-(epstopdf)             \includegraphics on input line 362.
+(epstopdf)             \includegraphics on input line 360.
 Package epstopdf Info: Output file is already uptodate.
 
 <figures/network-opt-eps-converted-to.pdf, id=34, 540.0175pt x 177.66376pt>
@@ -1080,10 +1130,9 @@ File: figures/network-opt-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/network-opt-eps-converted-to.pdf>
 Package pdftex.def Info: figures/network-opt-eps-converted-to.pdf used on input
- line 362.
+ line 360.
 (pdftex.def)             Requested size: 464.39685pt x 152.78784pt.
- [4 <./figures/mem-array-prod-eps-converted-to.pdf>] [5 <./figures/array-prod-e
-ps-converted-to.pdf> <./figures/gate-eps-converted-to.pdf>]
+ [4 <./figures/mem-array-prod-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <figures/maxfreq.eps>
 (epstopdf)                    date: 2016-10-04 22:22:12
 (epstopdf)                    size: 128941 bytes
@@ -1092,15 +1141,15 @@ Package epstopdf Info: Source file: <figures/maxfreq.eps>
 (epstopdf)                    size: 12040 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/maxfreq-eps-conver
 ted-to.pdf figures/maxfreq.eps>
-(epstopdf)             \includegraphics on input line 434.
+(epstopdf)             \includegraphics on input line 432.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/maxfreq-eps-converted-to.pdf, id=99, 578.16pt x 433.62pt>
+<figures/maxfreq-eps-converted-to.pdf, id=53, 578.16pt x 433.62pt>
 File: figures/maxfreq-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/maxfreq-eps-converted-to.pdf>
 Package pdftex.def Info: figures/maxfreq-eps-converted-to.pdf used on input lin
-e 434.
+e 432.
 (pdftex.def)             Requested size: 252.0pt x 189.00032pt.
 Package epstopdf Info: Source file: <figures/dspuse.eps>
 (epstopdf)                    date: 2016-10-04 22:22:12
@@ -1110,22 +1159,20 @@ Package epstopdf Info: Source file: <figures/dspuse.eps>
 (epstopdf)                    size: 12214 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/dspuse-eps-convert
 ed-to.pdf figures/dspuse.eps>
-(epstopdf)             \includegraphics on input line 462.
+(epstopdf)             \includegraphics on input line 460.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/dspuse-eps-converted-to.pdf, id=100, 578.16pt x 433.62pt>
+<figures/dspuse-eps-converted-to.pdf, id=54, 578.16pt x 433.62pt>
 File: figures/dspuse-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/dspuse-eps-converted-to.pdf>
 Package pdftex.def Info: figures/dspuse-eps-converted-to.pdf used on input line
- 462.
+ 460.
 (pdftex.def)             Requested size: 252.0pt x 189.00032pt.
-
-Underfull \vbox (badness 1783) has occurred while \output is active []
-
- [6 <./figures/network-opt-eps-converted-to.pdf> <./figures/maxfreq-eps-convert
-ed-to.pdf> <./figures/dspuse-eps-converted-to.pdf>]
-Overfull \hbox (3.20949pt too wide) in paragraph at lines 554--567
+ [5 <./figures/array-prod-eps-converted-to.pdf> <./figures/gate-eps-converted-t
+o.pdf>] [6 <./figures/network-opt-eps-converted-to.pdf> <./figures/maxfreq-eps-
+converted-to.pdf> <./figures/dspuse-eps-converted-to.pdf>]
+Overfull \hbox (3.20949pt too wide) in paragraph at lines 552--565
  [][] 
  []
 
@@ -1137,14 +1184,14 @@ Package epstopdf Info: Source file: <figures/Mclass-psec.eps>
 (epstopdf)                    size: 13633 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/Mclass-psec-eps-co
 nverted-to.pdf figures/Mclass-psec.eps>
-(epstopdf)             \includegraphics on input line 578.
+(epstopdf)             \includegraphics on input line 576.
 Package epstopdf Info: Output file is already uptodate.
 <figures/Mclass-psec-eps-converted-to.pdf, id=138, 578.16pt x 433.62pt>
 File: figures/Mclass-psec-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/Mclass-psec-eps-converted-to.pdf>
 Package pdftex.def Info: figures/Mclass-psec-eps-converted-to.pdf used on input
- line 578.
+ line 576.
 (pdftex.def)             Requested size: 252.0pt x 189.00032pt.
 Package epstopdf Info: Source file: <figures/power.eps>
 (epstopdf)                    date: 2016-10-04 22:22:12
@@ -1154,7 +1201,7 @@ Package epstopdf Info: Source file: <figures/power.eps>
 (epstopdf)                    size: 11652 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/power-eps-converte
 d-to.pdf figures/power.eps>
-(epstopdf)             \includegraphics on input line 604.
+(epstopdf)             \includegraphics on input line 602.
 Package epstopdf Info: Output file is already uptodate.
 
 <figures/power-eps-converted-to.pdf, id=139, 578.16pt x 433.62pt>
@@ -1162,8 +1209,11 @@ File: figures/power-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/power-eps-converted-to.pdf>
 Package pdftex.def Info: figures/power-eps-converted-to.pdf used on input line 
-604.
+602.
 (pdftex.def)             Requested size: 252.0pt x 189.00032pt.
+
+Underfull \vbox (badness 1616) has occurred while \output is active []
+
  [7 <./figures/Mclass-psec-eps-converted-to.pdf>] (./paper.bbl
 ** WARNING: IEEEtran.bst: No hyphenation pattern has been
 ** loaded for the language `English'. Using the pattern for
@@ -1176,11 +1226,11 @@ Package pdftex.def Info: figures/power-eps-converted-to.pdf used on input line
 ** the default language instead.
 ) [8 <./figures/power-eps-converted-to.pdf>] (./paper.aux) ) 
 Here is how much of TeX's memory you used:
- 13000 strings out of 493029
- 266921 string characters out of 6136234
- 284168 words of memory out of 5000000
- 16411 multiletter control sequences out of 15000+600000
- 47877 words of font info for 97 fonts, out of 8000000 for 9000
+ 13317 strings out of 493029
+ 269976 string characters out of 6136234
+ 284554 words of memory out of 5000000
+ 16714 multiletter control sequences out of 15000+600000
+ 130905 words of font info for 145 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  38i,10n,42p,10383b,769s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive
@@ -1205,7 +1255,7 @@ exlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-di
 st/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1
 /urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr
 i8a.pfb>
-Output written on paper.pdf (8 pages, 386297 bytes).
+Output written on paper.pdf (8 pages, 395051 bytes).
 PDF statistics:
  224 PDF objects out of 1000 (max. 8388607)
  181 compressed objects within 2 object streams
