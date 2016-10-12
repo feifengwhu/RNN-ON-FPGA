@@ -55,14 +55,13 @@ these kind of platforms.
 Hardware platforms could achieve a considerable speed-up over software implementations, which would prove
 useful for high data throughput systems, where the calculation overhead is critical and limits the performance.
 Furthermore, a hardware implementation can even benefit \emph{offline} Deep Learning tasks by providing the results
-of a given experiment faster than in a regular CPU, yielding an increase in scientific productivity.
+of a given experiment faster than in a regular CPU, increasing scientific productivity.
 
 Hitherto, there is only one implementation, the one of~\cite{Chang15}, but its performance is undermined
 by the external memory access. Our implementation aims to make use of internal FPGA memory resources,
 and therefore achieve a higher throughput.
 
-Summarizing, this article begins by explaining what are LSTM networks -- and their mathematical
-details -- in Section~\ref{sec:lstmnn}, followed by a quick overview of their state
+This article begins by explaining what are LSTM networks  in Section~\ref{sec:lstmnn}, followed by a quick overview of their state
 of the art in Section~\ref{sec:relwork}. Section~\ref{sec:proparch} outlines the proposed
 hardware architecture and its main constituent modules, and the performance and synthesis
 results are reported in Section~\ref{sec:results}. Concluding remarks are given in
@@ -329,8 +328,8 @@ each Gate module needs to perform three tasks
 Assuming that the network size $N$ is always larger than the input size $M$, if we use the matrix-vector dot product units of Section~\ref{sec:proprarch_dot}, the multiplication
 in task 1 takes approximately $K_G\cdot M$ cycles and the one in task 2 takes $K_G\cdot N$ cycles. This way, tasks 1 and 2 can be performed in parallel, and we can use the extra
 time that task 2 takes, relative to task 1,  to perform task 3, and sum the bias vector to the output of task 1, whose result is ready by that time. The module is triggered by a
-\verb+beginCalc+ input signal that activates the internal state machine, and outputs a \verb+dataReady+ signal that informs the network that the calculations have been concluded.
-After validating and simulating this block, and taking into account the internal state-machine and that the internal datapath is pipelined, the exact number
+\verb+beginCalc+ input signal that activates the internal state machine, and outputs a \verb+dataReady+ signal that informs the network that the calculations have been concluded. 
+Taking into account the internal state-machine and that the internal datapath is pipelined, the exact number
 of clock cycles this module takes to produce an output is $6+K_G\cdot N$.
 
 \begin{figure}
@@ -349,7 +348,7 @@ can be done in parallel and then summed elementwise) and one for $\mb{y}^{(t)}$ 
 
 Furthermore, we can avoid a naive translation of the Equations~\ref{eq:equationsLSTM}, which would replicate unnecessary resources (such as elementwise multipliers
 and activation function calculators) and require more area to save a negligible number of clock cycles, by noting that one of the operands is the output
-of a $\tanh(\mb{x})$ block and the other of a $\sigma(\mb{x})$, and they are then multiplied (elementwise, of course) together. Instead of replicating
+of a $\tanh(\mb{x})$ block and the other of a $\sigma(\mb{x})$, and they are then multiplied, elementwise, together. Instead of replicating
 these `$\tanh$-$\sigma$-$(\cdot)$wise' structures, we use a \emph{single one} and choose the operand according to the state that the network is currently in. The
 issue about the elementwise multiplier for $\mb{c}^{(t)}$, which does not use the $\tanh$ activation function, can be solved by adding another multiplexer that chooses
 between the output of the $\tanh(\mb{x})$ module or the signal $\mb{c}^{(t-1)}$. These ideas resulted in the LSTM network design of Figure~\ref{fig:network-opt}, which
@@ -384,7 +383,7 @@ complete forward propagation are
     (N \cdot K_G + 6) + 27  = 33 + N\cdot K_G
 \end{equation}
 which is only 13 clock cycles more than a fully-parallel, naïve architecture. For instance, an $N=32$ neuron network would
-require 320 DSP slices, while this new architecture use 160, at the expense of 13 more clock cycles.
+require 320 DSP slices, while this new architecture uses 160, at the expense of 13 more clock cycles.
 
 \section{Results}\label{sec:results}
 
@@ -566,7 +565,7 @@ powered by an i7-3770k Intel Processor, running at 4.2GHz, with 8GB of RAM.
 The performance increase is impressive, even for the slowest of the designs (the $N=32$ network). The hardware network is, at best, $\times251$ faster than the software counterpart,
 and at worst $\times117$ faster. Also, it is noticeable that increasing the level of resource sharing increases the computation time, since the level of parallelism is lower.
 
-Since the previous values are the time needed for a \emph{single} forward propagation, to know how many forward propagations we can perform \emph{per second},
+To know how many forward propagations we can perform \emph{per second},
 we only need to invert the previous values. These values are presented in Figure~\ref{fig:Mclass-psec}. While the $N=8$ and $K_G=2$ network is able to
 perform around 3.15 million predictions per second, the Python model can only output around 14 thousand predictions, which is a very significant result that
 proves the relevance of this implementation.
@@ -638,8 +637,9 @@ for including an on-chip learning system that can perform training on the networ
 Given these results, this architecture advances the current state of the art in LSTM Neural Networks
 hardware implementations, providing the most efficient implementation to date.
 
-\smallskip
-\emph{\textbf{This work is financed by the ERDF – European Regional Development Fund through the Operational Programme for Competitiveness and Internationalisation - COMPETE 2020 Programme within project \guillemotleft POCI-01-0145-FEDER-006961\guillemotright, and by National Funds through the FCT – Fundação para a Ciência e a Tecnologia (Portuguese Foundation for Science and Technology) as part of project \guillemotleft UID/EEA/50014/2013\guillemotright.}}
+\section*{Acknowledgements}
+This work is financed by the ERDF – European Regional Development Fund through the Operational Programme for Competitiveness and Internationalisation - COMPETE 2020 Programme within project \guillemotleft POCI-01-0145-FEDER-006961\guillemotright, and by National Funds through the FCT – Fundação para a Ciência e a Tecnologia (Portuguese Foundation for Science and Technology) as part of project \guillemotleft UID/EEA/50014/2013\guillemotright.
+
 
 \bibliographystyle{IEEEtran}
 \bibliography{bibliography}

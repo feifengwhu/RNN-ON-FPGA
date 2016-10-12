@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.10.5)  11 OCT 2016 22:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.10.5)  12 OCT 2016 22:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1037,10 +1037,10 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 File: figures/lstmneuron.png Graphic file (type png)
 
 <use figures/lstmneuron.png>
-Package pdftex.def Info: figures/lstmneuron.png used on input line 85.
+Package pdftex.def Info: figures/lstmneuron.png used on input line 84.
 (pdftex.def)             Requested size: 277.20154pt x 124.31593pt.
 
-Overfull \hbox (25.20154pt too wide) in paragraph at lines 85--86
+Overfull \hbox (25.20154pt too wide) in paragraph at lines 84--85
  [][] 
  []
 
@@ -1048,12 +1048,12 @@ Overfull \hbox (25.20154pt too wide) in paragraph at lines 85--86
 
 
  <./figures/lstmneuron.png>]
-LaTeX Font Info:    Try loading font information for TS1+ptm on input line 158.
+LaTeX Font Info:    Try loading font information for TS1+ptm on input line 157.
 
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 ) [2]
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 291.
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 290.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
@@ -1067,7 +1067,7 @@ f>
 (epstopdf)                    size: 9675 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/mem-array-prod-eps
 -converted-to.pdf figures/mem-array-prod.eps>
-(epstopdf)             \includegraphics on input line 303.
+(epstopdf)             \includegraphics on input line 302.
 Package epstopdf Info: Output file is already uptodate.
 
 <figures/mem-array-prod-eps-converted-to.pdf, id=24, 246.9225pt x 153.57375pt>
@@ -1075,7 +1075,7 @@ File: figures/mem-array-prod-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/mem-array-prod-eps-converted-to.pdf>
 Package pdftex.def Info: figures/mem-array-prod-eps-converted-to.pdf used on in
-put line 303.
+put line 302.
 (pdftex.def)             Requested size: 180.67499pt x 112.37035pt.
 Package epstopdf Info: Source file: <figures/array-prod.eps>
 (epstopdf)                    date: 2016-10-04 22:22:12
@@ -1085,7 +1085,7 @@ Package epstopdf Info: Source file: <figures/array-prod.eps>
 (epstopdf)                    size: 14784 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/array-prod-eps-con
 verted-to.pdf figures/array-prod.eps>
-(epstopdf)             \includegraphics on input line 310.
+(epstopdf)             \includegraphics on input line 309.
 Package epstopdf Info: Output file is already uptodate.
 
 <figures/array-prod-eps-converted-to.pdf, id=25, 622.325pt x 134.5025pt>
@@ -1093,7 +1093,7 @@ File: figures/array-prod-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/array-prod-eps-converted-to.pdf>
 Package pdftex.def Info: figures/array-prod-eps-converted-to.pdf used on input 
-line 310.
+line 309.
 (pdftex.def)             Requested size: 516.0pt x 111.52414pt.
  [3]
 Package epstopdf Info: Source file: <figures/gate.eps>
@@ -1104,7 +1104,7 @@ Package epstopdf Info: Source file: <figures/gate.eps>
 (epstopdf)                    size: 15982 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/gate-eps-converted
 -to.pdf figures/gate.eps>
-(epstopdf)             \includegraphics on input line 338.
+(epstopdf)             \includegraphics on input line 337.
 Package epstopdf Info: Output file is already uptodate.
 
 <figures/gate-eps-converted-to.pdf, id=33, 519.9425pt x 182.6825pt>
@@ -1112,7 +1112,7 @@ File: figures/gate-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/gate-eps-converted-to.pdf>
 Package pdftex.def Info: figures/gate-eps-converted-to.pdf used on input line 3
-38.
+37.
 (pdftex.def)             Requested size: 180.67499pt x 63.47989pt.
 Package epstopdf Info: Source file: <figures/network-opt.eps>
 (epstopdf)                    date: 2016-10-04 22:22:12
@@ -1122,7 +1122,7 @@ Package epstopdf Info: Source file: <figures/network-opt.eps>
 (epstopdf)                    size: 13894 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/network-opt-eps-co
 nverted-to.pdf figures/network-opt.eps>
-(epstopdf)             \includegraphics on input line 360.
+(epstopdf)             \includegraphics on input line 359.
 Package epstopdf Info: Output file is already uptodate.
 
 <figures/network-opt-eps-converted-to.pdf, id=34, 540.0175pt x 177.66376pt>
@@ -1130,7 +1130,7 @@ File: figures/network-opt-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/network-opt-eps-converted-to.pdf>
 Package pdftex.def Info: figures/network-opt-eps-converted-to.pdf used on input
- line 360.
+ line 359.
 (pdftex.def)             Requested size: 464.39685pt x 152.78784pt.
  [4 <./figures/mem-array-prod-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <figures/maxfreq.eps>
@@ -1141,7 +1141,7 @@ Package epstopdf Info: Source file: <figures/maxfreq.eps>
 (epstopdf)                    size: 12040 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/maxfreq-eps-conver
 ted-to.pdf figures/maxfreq.eps>
-(epstopdf)             \includegraphics on input line 432.
+(epstopdf)             \includegraphics on input line 431.
 Package epstopdf Info: Output file is already uptodate.
 
 <figures/maxfreq-eps-converted-to.pdf, id=53, 578.16pt x 433.62pt>
@@ -1149,8 +1149,13 @@ File: figures/maxfreq-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/maxfreq-eps-converted-to.pdf>
 Package pdftex.def Info: figures/maxfreq-eps-converted-to.pdf used on input lin
-e 432.
+e 431.
 (pdftex.def)             Requested size: 252.0pt x 189.00032pt.
+
+Underfull \vbox (badness 1231) has occurred while \output is active []
+
+ [5 <./figures/array-prod-eps-converted-to.pdf> <./figures/gate-eps-converted-t
+o.pdf>]
 Package epstopdf Info: Source file: <figures/dspuse.eps>
 (epstopdf)                    date: 2016-10-04 22:22:12
 (epstopdf)                    size: 129226 bytes
@@ -1159,20 +1164,22 @@ Package epstopdf Info: Source file: <figures/dspuse.eps>
 (epstopdf)                    size: 12214 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/dspuse-eps-convert
 ed-to.pdf figures/dspuse.eps>
-(epstopdf)             \includegraphics on input line 460.
+(epstopdf)             \includegraphics on input line 459.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/dspuse-eps-converted-to.pdf, id=54, 578.16pt x 433.62pt>
+<figures/dspuse-eps-converted-to.pdf, id=100, 578.16pt x 433.62pt>
 File: figures/dspuse-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/dspuse-eps-converted-to.pdf>
 Package pdftex.def Info: figures/dspuse-eps-converted-to.pdf used on input line
- 460.
+ 459.
 (pdftex.def)             Requested size: 252.0pt x 189.00032pt.
- [5 <./figures/array-prod-eps-converted-to.pdf> <./figures/gate-eps-converted-t
-o.pdf>] [6 <./figures/network-opt-eps-converted-to.pdf> <./figures/maxfreq-eps-
-converted-to.pdf> <./figures/dspuse-eps-converted-to.pdf>]
-Overfull \hbox (3.20949pt too wide) in paragraph at lines 552--565
+
+Underfull \vbox (badness 4291) has occurred while \output is active []
+
+ [6 <./figures/network-opt-eps-converted-to.pdf> <./figures/maxfreq-eps-convert
+ed-to.pdf> <./figures/dspuse-eps-converted-to.pdf>]
+Overfull \hbox (3.20949pt too wide) in paragraph at lines 551--564
  [][] 
  []
 
@@ -1184,14 +1191,14 @@ Package epstopdf Info: Source file: <figures/Mclass-psec.eps>
 (epstopdf)                    size: 13633 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/Mclass-psec-eps-co
 nverted-to.pdf figures/Mclass-psec.eps>
-(epstopdf)             \includegraphics on input line 576.
+(epstopdf)             \includegraphics on input line 575.
 Package epstopdf Info: Output file is already uptodate.
 <figures/Mclass-psec-eps-converted-to.pdf, id=138, 578.16pt x 433.62pt>
 File: figures/Mclass-psec-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/Mclass-psec-eps-converted-to.pdf>
 Package pdftex.def Info: figures/Mclass-psec-eps-converted-to.pdf used on input
- line 576.
+ line 575.
 (pdftex.def)             Requested size: 252.0pt x 189.00032pt.
 Package epstopdf Info: Source file: <figures/power.eps>
 (epstopdf)                    date: 2016-10-04 22:22:12
@@ -1201,7 +1208,7 @@ Package epstopdf Info: Source file: <figures/power.eps>
 (epstopdf)                    size: 11652 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/power-eps-converte
 d-to.pdf figures/power.eps>
-(epstopdf)             \includegraphics on input line 602.
+(epstopdf)             \includegraphics on input line 601.
 Package epstopdf Info: Output file is already uptodate.
 
 <figures/power-eps-converted-to.pdf, id=139, 578.16pt x 433.62pt>
@@ -1209,11 +1216,8 @@ File: figures/power-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/power-eps-converted-to.pdf>
 Package pdftex.def Info: figures/power-eps-converted-to.pdf used on input line 
-602.
+601.
 (pdftex.def)             Requested size: 252.0pt x 189.00032pt.
-
-Underfull \vbox (badness 1616) has occurred while \output is active []
-
  [7 <./figures/Mclass-psec-eps-converted-to.pdf>] (./paper.bbl
 ** WARNING: IEEEtran.bst: No hyphenation pattern has been
 ** loaded for the language `English'. Using the pattern for
@@ -1226,11 +1230,11 @@ Underfull \vbox (badness 1616) has occurred while \output is active []
 ** the default language instead.
 ) [8 <./figures/power-eps-converted-to.pdf>] (./paper.aux) ) 
 Here is how much of TeX's memory you used:
- 13317 strings out of 493029
- 269976 string characters out of 6136234
+ 13316 strings out of 493029
+ 269969 string characters out of 6136234
  284554 words of memory out of 5000000
  16714 multiletter control sequences out of 15000+600000
- 130905 words of font info for 145 fonts, out of 8000000 for 9000
+ 129809 words of font info for 144 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  38i,10n,42p,10383b,769s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive
@@ -1255,7 +1259,7 @@ exlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-di
 st/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1
 /urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr
 i8a.pfb>
-Output written on paper.pdf (8 pages, 395051 bytes).
+Output written on paper.pdf (8 pages, 388258 bytes).
 PDF statistics:
  224 PDF objects out of 1000 (max. 8388607)
  181 compressed objects within 2 object streams
