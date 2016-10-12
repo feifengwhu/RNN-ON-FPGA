@@ -1,4 +1,4 @@
-\documentclass{IEEEtran}
+\documentclass[conference]{IEEEtran}
 
 %% Additional Packages
 \usepackage{cite}
@@ -8,6 +8,8 @@
 \usepackage{siunitx}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
+\usepackage{eso-pic} 
+
 %% Macros
 \newcommand{\mb}[1]{\mathbf{#1}}
 \renewcommand\IEEEkeywordsname{Keywords}
@@ -21,8 +23,10 @@
 \author{
     \IEEEauthorblockN{Joao Canas Ferreira\IEEEauthorrefmark{1}, Jose Fonseca\IEEEauthorrefmark{2}}\\
     \IEEEauthorblockA{\IEEEauthorrefmark{1}INESC TEC and Faculty of Engineering of the University of Porto, Portugal, jcf@fe.up.pt}\\
-    \IEEEauthorblockA{\IEEEauthorrefmark{2}CERN, Switzerland, jose.pedro.castro.fonseca@cern.ch}
+    \IEEEauthorblockA{\IEEEauthorrefmark{2}Faculty of Engineering of the University of Porto, Portugal, jose.pedro.castro.fonseca@cern.ch}
 }
+
+\AddToShipoutPicture*{\small\sffamily\raisebox{1.8cm}{\hspace{1.8cm}978-1-5090-3707-0/16/\$31.00 \copyright2016 European Union}}
 
 \begin{document}
 
@@ -73,18 +77,10 @@ updated in~\cite{Gers00} and~\cite{Gers2000}, and the most recent version is~\ci
 One of the inital proposers of LSTM, Prof. Jürgen Schmidhüber, did a survey on the most common variations
 of the model~\cite{Greff15}, which is the reference for this short discussion.
 
-A single LSTM neuron is presented in Figure~\ref{fig:lstmneuron}. As can be seen in the picture,
-we still have the recurrent connections from the regular RNNs, but now there are multiple entry points
+The structure of an LSTM neuron is presented in~\cite{Greff15}. LSTM Networks retain recurrent connections from the regular RNNs, but now there are multiple entry points
 that control the flow of information through the network. Furthermore, all the
 gates are biased, as defined in Equations~\ref{eq:equationsLSTM}. The role and relevance of the main components can
 be summarized as follows.
-
-\begin{figure}[!t]
-	\centering
-	\includegraphics[width=1.1\linewidth]{figures/lstmneuron.png}
-    \caption{A complete LSTM neuron, with all the features as described in~\cite{Graves05}. Source:~\cite{Greff15}}
-	\label{fig:lstmneuron}
-\end{figure}
 
 \begin{itemize}
     \item \textbf{Input Gate} -- this is the input gate, where the relative importance of each feature of
@@ -424,7 +420,7 @@ increasingly complex for higher values of $K_G$. On the other hand, when $K_G$ i
 than larger networks. The fastest design is an $N=4$ and $K_G = 2$ network, with a clock frequency of $158.228$ MHz, and
 the slowest one is an $N=32$ and $K_G=4$ network, clocked at $101.523$ MHz. The reference design used for validation in
 Section~\ref{sec:res-val} is an $N=8$ and $K_G=2$ network clocked at $154.321$ MHz, which yields a clock period of
-\SI{6.48}{\nano\second}. The maximum clock achievable for the VC707 networks is reported in Table~\ref{tab:maxfreq-virtx7}
+\SI{6.48}{\nano\second}. The maximum clock achievable for the VC707 networks is 140.854 MHz, for $N=64$ and $N=128$.
 
 \begin{figure}
     \centering
@@ -432,23 +428,6 @@ Section~\ref{sec:res-val} is an $N=8$ and $K_G=2$ network clocked at $154.321$ M
     \caption{The maximum achievable clock frequency for feasible network sizes in the XC7Z020}
     \label{fig:maxfreq}
 \end{figure}
-
-
-\begin{table}
-	\caption{Maximum clock frequencies for the VC707}
-	\label{tab:maxfreq-virtx7}
-    \centering
-  \begin{tabular}{ | l | c | }
-    \hline
-     & $Frequency$  \\
-    \hline
-    $N=64$ & 140.854 MHz \\
-    \hline
-    $N=128$ & 140.854 MHz\\
-    \hline
-  \end{tabular}
-
-\end{table}
 
 \subsubsection{DSP Slices Usage}\label{sec:results_synth_dsp}
 The estimates made in Equation~\ref{eq:numdsp_network-opt} were shown to be accurate, as Figure~\ref{fig:dspused} confirms.
@@ -603,27 +582,7 @@ elapsed per forward propagation.
     \label{fig:power}
 \end{figure}
 
-For the networks synthesized on the VC707, the power consumption figures are reported in Table~\ref{tab:power-virtx7}. Since the device is bigger,
-and since the network size is larger, the power consumption is higher than before, but still within reasonable levels given
-the complexity of the system.
-
-\begin{table}
-	\caption{Power Consumption estimates for several Network Sizes $N$ in the VC707}
-	\label{tab:power-virtx7}
-    \centering
-  \begin{tabular}{ | l | c | }
-    \hline
-     & $Power$  \\
-    \hline
-    $N=64$ & 1.34 W \\
-    \hline
-    $N=128$ & 1.509 W\\
-\hline
-  \end{tabular}
-
-\end{table}
-
-All these estimates were provided by Vivado, and have a \textbf{medium} confidence level.
+For the networks synthesized on the VC707, the power consumption was 1.34 Watt for $N=64$, and 1.51 Watt for $N=128$. Since the network size is larger, the power consumption is higher than before, but still within reasonable levels given the complexity of the system. These estimates were provided by Vivado, and have a \textbf{medium} confidence level.
 
 \section{Conclusion}\label{sec:concl}
 The LSTM Hardware architecture presented surpassed the performance of the custom-built software implementation by $251\times$, at best,
